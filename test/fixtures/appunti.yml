@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  destinatario: MyString
+  scuola: MyString
+  note: MyText
+  telefono: MyString
+  stato: MyString
+  scadenza: 2010-12-07
+
+two:
+  destinatario: MyString
+  scuola: MyString
+  note: MyText
+  telefono: MyString
+  stato: MyString
+  scadenza: 2010-12-07

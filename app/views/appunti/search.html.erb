@@ -1,0 +1,35 @@
+<h1>Listing appunti</h1>
+
+<table>
+  <tr>
+    <th>Destinatario</th>
+    <th>Scuola</th>
+    <th>Note</th>
+    <th>Telefono</th>
+    <th>Stato</th>
+    <th>Scadenza</th>
+    <th>Data Inserimento</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @appunti.each do |appunto| %>
+  <tr>
+    <td><%= appunto.destinatario %></td>
+    <td><%= appunto.scuola %></td>
+    <td><%= appunto.note %></td>
+    <td><%= appunto.telefono %></td>
+    <td><%= appunto.stato %></td>
+    <td><%= appunto.scadenza %></td>
+    <td><%= appunto.created_at %></td>
+    <td><%= link_to 'Show', appunto %></td>
+    <td><%= link_to 'Edit', edit_appunto_path(appunto) %></td>
+    <td><%= link_to 'Destroy', appunto, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nuovo Appunto', new_appunto_path %>

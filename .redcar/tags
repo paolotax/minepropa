@@ -1,0 +1,11 @@
+1292860222
+AppuntiController	/home/user/Dropbox/progetti/minepropa/app/controllers/appunti_controller.rb	class AppuntiController 
+create	/home/user/Dropbox/progetti/minepropa/app/controllers/appunti_controller.rb	  def create
+destroy	/home/user/Dropbox/progetti/minepropa/app/controllers/appunti_controller.rb	  def destroy
+edit	/home/user/Dropbox/progetti/minepropa/app/controllers/appunti_controller.rb	  def edit
+index	/home/user/Dropbox/progetti/minepropa/app/controllers/appunti_controller.rb	  def index
+new	/home/user/Dropbox/progetti/minepropa/app/controllers/appunti_controller.rb	  def new
+show	/home/user/Dropbox/progetti/minepropa/app/controllers/appunti_controller.rb	  def show
+sort_column	/home/user/Dropbox/progetti/minepropa/app/controllers/appunti_controller.rb	  def sort_column  
+sort_direction	/home/user/Dropbox/progetti/minepropa/app/controllers/appunti_controller.rb	  def sort_direction  
+update	/home/user/Dropbox/progetti/minepropa/app/controllers/appunti_controller.rb	  def update

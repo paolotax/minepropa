@@ -1,0 +1,41 @@
+
+/* Styles for products/index */
+
+#appunto_list table {
+        border-collapse: collapse;
+}
+
+#appunto_list table tr td {
+        padding: 5px;
+        vertical-align: top;
+}
+
+#appunto_list .list_image {
+  width:        60px;
+  height:       70px;
+}
+
+#appunto_list .list_description {
+  width:        60%;
+}
+
+#appunto_list .list_description dl {
+        margin: 0;
+}
+
+#appunto_list .list_description dt {
+	color:        #244;
+	font-weight:  bold;
+	font-size:    larger;
+}
+
+#appunto_list .list_description dd {
+        margin: 0;
+}
+
+#appunto_list .list_actions {
+  font-size:    x-small;
+  text-align:   right;
+  padding-left: 1em;
+}
+
