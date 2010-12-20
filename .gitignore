@@ -3,6 +3,8 @@ db/*.sqlite3
 log/*.log
 tmp/**/*
 tmp/*
+.idea/*
+.redcar/*
 doc/api
 doc/app
 *.swp
