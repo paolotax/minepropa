@@ -1,35 +1,22 @@
-#notice notice
+#notice
 
-<p>
-  <b>Destinatario:</b>
-  <%= @appunto.destinatario %>
-</p>
+%p
+	%b Destinatario:
+	= @appunto.destinatario
+%p
+	%b Scuola:
+    = @appunto.scuola.nome_scuola
+%p
+	%b Note:
+	= @appunto.note
+%p
+	%b Telefono:
+	= @appunto.telefono
+%p
+	%b Stato:
+	= @appunto.stato
 
-<p>
-  <b>Scuola:</b>
-  <%= @appunto.scuola.nome_scuola %>
-</p>
-
-<p>
-  <b>Note:</b>
-  <%= @appunto.note %>
-</p>
-
-<p>
-  <b>Telefono:</b>
-  <%= @appunto.telefono %>
-</p>
-
-<p>
-  <b>Stato:</b>
-  <%= @appunto.stato %>
-</p>
-
-<p>
-  <b>Scadenza:</b>
-  <%= @appunto.scadenza %>
-</p>
-
-
-<%= link_to 'Edit', edit_appunto_path(@appunto) %> |
-<%= link_to 'Back', :back %>
+= link_to 'Edit Appunto', edit_appunto_path(@appunto)
+= link_to 'Appunti', appunti_path
+= link_to 'Scuole', scuole_path
+= link_to "Home", root_path
