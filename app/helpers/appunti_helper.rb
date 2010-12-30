@@ -1,2 +1,29 @@
 module AppuntiHelper
+  
+  def show_status_icon(status)
+    
+    if status == 'X'
+      return 's_completed18.png'
+    else
+      if status == "P"
+        return "s_waiting18.png"
+      # else  
+      #         return nil #'s_blank.gif'
+      end
+    end
+  end
+  
+  def get_posted_string(appunto)
+    
+    if appunto.stato == "X"
+      return "Completed " + time_ago_in_words(appunto.updated_at) + " ago."
+    else
+      if appunto.created_at == appunto.updated_at
+        return "Posted "  + time_ago_in_words(appunto.created_at) + " ago." 
+      else
+        return "Updated "  + time_ago_in_words(appunto.updated_at) + " ago."   
+      end
+    end
+  end
+        
 end

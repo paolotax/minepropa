@@ -1,13 +1,9 @@
 class AppuntiController < ApplicationController
   
   helper_method :sort_column, :sort_direction
-  # GET /appunti
-  # GET /appunti.xml
+  
   def index
-    
-    if params[:in_sospeso]
-      @appunti = Appunto.in_sospeso.search(params[:search]).order(sort_column + ' ' + sort_direction).paginate(:per_page => 8, :page => params[:page])
-    else
+    @title = "Tutti gli appunti"
     
     if params[:android]
       @appunti = Appunto.search(params[:search]).order(sort_column + ' ' + sort_direction)
@@ -15,24 +11,6 @@ class AppuntiController < ApplicationController
       @appunti = Appunto.search(params[:search]).order(sort_column + ' ' + sort_direction).paginate(:per_page => 8, :page => params[:page])
     end
     
-    end
-    # if params[:sort]
-    #    @appunti = Appunto.order(params[:sort] + ' ' + params[:direction])
-    # else
-    #    @appunti = Appunto.order("created_at desc")
-    # end
-    
-    # if params[:scuola]
-    #    @appunti = @appunti.where("scuola like ?", '%' + params[:scuola] + '%')
-    # end
-    # if params[:destinatario]
-    #    @appunti = @appunti.where("destinatario like ?", '%' + params[:destinatario] + '%')
-    # end
-    # if params[:cerca]
-    #    @appunti = @appunti.where("destinatario like ? OR  scuola like ?", 
-    #                               '%'+params[:cerca]+'%', '%'+params[:cerca]+'%')
-    # end
-
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @appunti }
@@ -40,25 +18,6 @@ class AppuntiController < ApplicationController
     end
   end
   
-  # def search
-  # 
-  #   #@products = Product.where("title like ?", '%' + params[:title] + '%')
-  # 
-  #   if params[:scuola]
-  #     @appunti = @appunti.where("scuola like ?", '%' + params[:scuola] + '%')
-  #   else
-  #     @appunti = Appunto.all
-  #   end
-  # 
-  #   respond_to do |format|
-  #     format.html # index.html.erb
-  #     format.xml  { render :xml => @appunti }
-  #     format.json  { render :json => @appunti }
-  #   end
-  # end
-
-  # GET /appunti/1
-  # GET /appunti/1.xml
   def show
     @appunto = Appunto.find(params[:id])
 
@@ -69,8 +28,6 @@ class AppuntiController < ApplicationController
     end
   end
 
-  # GET /appunti/new
-  # GET /appunti/new.xml
   def new
     @appunto = Appunto.new
 
@@ -81,13 +38,10 @@ class AppuntiController < ApplicationController
     end
   end
 
-  # GET /appunti/1/edit
   def edit
     @appunto = Appunto.find(params[:id])
   end
 
-  # POST /appunti
-  # POST /appunti.xml
   def create
     @appunto = Appunto.new(params[:appunto])
 
@@ -104,8 +58,6 @@ class AppuntiController < ApplicationController
     end
   end
 
-  # PUT /appunti/1
-  # PUT /appunti/1.xml
   def update
     @appunto = Appunto.find(params[:id])
 
@@ -122,8 +74,6 @@ class AppuntiController < ApplicationController
     end
   end
 
-  # DELETE /appunti/1
-  # DELETE /appunti/1.xml
   def destroy
     @appunto = Appunto.find(params[:id])
     @appunto.destroy
@@ -135,11 +85,13 @@ class AppuntiController < ApplicationController
   end
   
   private  
-  def sort_column  
-    Appunto.column_names.include?(params[:sort]) ? params[:sort] : "created_at"  
-  end  
+
+    def sort_column  
+      Appunto.column_names.include?(params[:sort]) ? params[:sort] : "created_at"  
+    end  
     
-  def sort_direction  
-    %w[asc desc].include?(params[:direction]) ?  params[:direction] : "desc" 
-  end  
+    def sort_direction  
+      %w[asc desc].include?(params[:direction]) ?  params[:direction] : "desc" 
+    end  
+
 end

@@ -1,7 +1,11 @@
 Minepropa::Application.routes.draw do
 
-  resources :appunti
+  get "pages/about"
+
+  resources :scuole
+  resources :appunti  
   
+  root :to => 'pages#home'
   
 
   # resources :appunti do

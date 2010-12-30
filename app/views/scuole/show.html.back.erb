@@ -1,0 +1,16 @@
+<div class="scuola" summary="Scuola information">
+
+			<h1>
+			  <%= @scuola.nome_scuola %> <%= @scuola.citta %> <%= @scuola.provincia %> 
+			</h1>
+			<% if @scuola.appunti.any? %>
+			  <div class="appunti" summary "Scuola appunti">
+			    <%= render @appunti %>	
+			  </div>
+			<% end %>
+
+</div>
+
+
+<%= link_to 'Edit', edit_scuola_path(@scuola) %> |
+<%= link_to 'Back', :back %>

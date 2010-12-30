@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :scuola %><br />
-    <%= f.text_field :scuola %>
+    <%= f.collection_select(:scuola_id, Scuola.all, :id, :nome_scuola, {:prompt => "Scegli la scuola"}, {:include_blank => true}) %>
   </div>
   <div class="field">
     <%= f.label :note %><br />

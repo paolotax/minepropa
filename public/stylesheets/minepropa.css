@@ -1,5 +1,116 @@
+/* Round corners */
+
+.round {
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
+}
 
 /* Styles for products/index */
+
+
+
+#appunto {
+	margin-left: 100px;
+	margin-right: 100px;
+	margin-top: 20px;
+	border: 1px solid #ccc;
+}
+
+#destinatario {
+	padding-top: 5px;
+	padding-left: 5px;
+}
+
+#scuola {
+	padding-left: 5px;
+}
+
+#titolo {
+    text-align: center;
+	margin-bottom: 40px;
+}
+
+#note {
+	padding-left: 5px;
+}
+
+
+#footer {
+	border-top: 1px solid #ccc;
+	padding-top: 5px;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+
+#status_image {
+	float: right;
+}
+
+#edit_buttons {
+	float: left;
+}
+
+#timestamp {
+	float: right;
+	padding-right: 5px;
+}
+
+#clear {
+	clear: both;
+}
+
+table.scuola {
+  	border: none;
+width: 100%;
+	border-collapse: collapse;
+	font-family: "Trebuchet MS", Arial, sans-serif;
+	color: #555;
+}
+
+.scuola tr td {
+	border: none;
+}
+
+table.appunti {
+ 	border: none;
+    width: 100%;
+	border-collapse: collapse;
+	font-family: "Trebuchet MS", Arial, sans-serif;
+	color: #555;
+}
+
+.appunto {
+  border-top: 1px solid #ccc; 	
+  padding: 10px;
+}
+
+.float_left {
+	float: left;
+}
+
+
+.status_image {
+  vertical-align: bottom;
+  width: 50px;
+  float: left;
+}
+
+
+.edit_buttons img {
+	width: 20;
+	height: 20;
+	padding: 5;
+}
+
+.timestamp {
+  display: block;
+  font-size: 80%;
+  float: right;
+  color: #666;
+  vertical-align: bottom;
+}
+
 
 #appunto_list table {
         border-collapse: collapse;
@@ -38,4 +149,7 @@
   text-align:   right;
   padding-left: 1em;
 }
+
+
+
 

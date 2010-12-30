@@ -10,15 +10,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101207203812) do
+ActiveRecord::Schema.define(:version => 20101227223834) do
 
   create_table "appunti", :force => true do |t|
     t.string   "destinatario"
-    t.string   "scuola"
     t.text     "note"
     t.string   "telefono"
     t.string   "stato"
     t.date     "scadenza"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "scuola_id"
+  end
+
+  create_table "scuole", :force => true do |t|
+    t.string   "nome_scuola"
+    t.string   "citta"
+    t.string   "provincia"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

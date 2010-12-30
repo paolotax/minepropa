@@ -1,0 +1,26 @@
+- will_paginate( @appunti, :page_links => false )
+
+%table.pretty.round
+	%tr	
+		%th= sortable "stato", ""
+		%th= sortable "destinatario"
+		%th= sortable "scuola.nome_scuola", "Scuola"
+		%th= sortable "note"
+		%th= sortable "telefono"
+		%th= sortable "updated_at", "modificato il"
+		%th 
+  
+	- @appunti.each do |appunto|
+		%tr{:class => cycle('list_line_odd', 'list_line_even')} 
+			%td= image_tag show_status_icon(appunto.stato) unless appunto.stato.blank?
+			%td= appunto.destinatario
+			%td= link_to "#{appunto.scuola.nome_scuola} #{appunto.scuola.citta}", scuola_path(appunto.scuola)
+			%td= appunto.note
+			%td= appunto.telefono
+			%td= get_posted_string(appunto)
+			%td
+				%img= link_to image_tag("s_edit18.jpeg"), edit_appunto_path(appunto)
+				%img= link_to image_tag("s_delete18.gif"), appunto, :method => :delete, :confirm => "You sure?", :title => appunto.destinatario
+
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
