@@ -2,18 +2,21 @@
 <html>
   <head>
     <title><%= title %></title>
-    <%= stylesheet_link_tag "application" %>
-	<%= stylesheet_link_tag "minepropa" %>
-    <%= javascript_include_tag :defaults %>
+	  <%= render 'layouts/stylesheets' %>
     <%= csrf_meta_tag %>
+    <%= javascript_include_tag :defaults %>
   </head>
   <body>
-    <div id="container" class="round">
+    <div class="container round">
+      <%= render 'layouts/header' %>
+      
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
       <% end %>
       <%= content_tag :h1, yield(:title) if show_title? %>
       <%= yield %>
+      <%= render 'layouts/footer' %>
+      <%= debug(params) if Rails.env.development? %>
     </div>
   </body>
 </html>
