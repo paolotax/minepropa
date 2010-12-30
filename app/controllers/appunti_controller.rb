@@ -29,6 +29,8 @@ class AppuntiController < ApplicationController
   end
 
   def new
+    @title = "Nuovo appunto"
+    
     @appunto = Appunto.new
 
     respond_to do |format|
