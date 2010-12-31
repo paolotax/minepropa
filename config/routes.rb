@@ -3,7 +3,13 @@ Minepropa::Application.routes.draw do
   get "pages/about"
 
   resources :scuole
-  resources :appunti  
+  
+  resources :appunti do
+    
+    collection do
+      put 'complete'
+    end
+  end  
   
   root :to => 'pages#home'
   

@@ -1,11 +1,250 @@
-1292860222
-AppuntiController	/home/user/Dropbox/progetti/minepropa/app/controllers/appunti_controller.rb	class AppuntiController 
-create	/home/user/Dropbox/progetti/minepropa/app/controllers/appunti_controller.rb	  def create
-destroy	/home/user/Dropbox/progetti/minepropa/app/controllers/appunti_controller.rb	  def destroy
-edit	/home/user/Dropbox/progetti/minepropa/app/controllers/appunti_controller.rb	  def edit
-index	/home/user/Dropbox/progetti/minepropa/app/controllers/appunti_controller.rb	  def index
-new	/home/user/Dropbox/progetti/minepropa/app/controllers/appunti_controller.rb	  def new
-show	/home/user/Dropbox/progetti/minepropa/app/controllers/appunti_controller.rb	  def show
-sort_column	/home/user/Dropbox/progetti/minepropa/app/controllers/appunti_controller.rb	  def sort_column  
-sort_direction	/home/user/Dropbox/progetti/minepropa/app/controllers/appunti_controller.rb	  def sort_direction  
-update	/home/user/Dropbox/progetti/minepropa/app/controllers/appunti_controller.rb	  def update
+1293824755
+AddScuolaIdToAppunti	/home/user/Aptana Studio 3 Workspace/minepropa/db/migrate/20101227221959_add_scuola_id_to_appunti.rb	class AddScuolaIdToAppunti 
+Application	/home/user/Aptana Studio 3 Workspace/minepropa/config/application.rb	  class Application 
+ApplicationController	/home/user/Aptana Studio 3 Workspace/minepropa/app/controllers/application_controller.rb	class ApplicationController 
+ApplicationHelper	/home/user/Aptana Studio 3 Workspace/minepropa/app/helpers/application_helper.rb	module ApplicationHelper
+AppuntiController	/home/user/Aptana Studio 3 Workspace/minepropa/app/controllers/appunti_controller.rb	class AppuntiController 
+AppuntiControllerTest	/home/user/Aptana Studio 3 Workspace/minepropa/test/functional/appunti_controller_test.rb	class AppuntiControllerTest 
+AppuntiHelper	/home/user/Aptana Studio 3 Workspace/minepropa/app/helpers/appunti_helper.rb	module AppuntiHelper
+AppuntiHelperTest	/home/user/Aptana Studio 3 Workspace/minepropa/test/unit/helpers/appunti_helper_test.rb	class AppuntiHelperTest 
+Appunto	/home/user/Aptana Studio 3 Workspace/minepropa/app/models/appunto.rb	class Appunto 
+AppuntoTest	/home/user/Aptana Studio 3 Workspace/minepropa/test/unit/appunto_test.rb	class AppuntoTest 
+BrowsingTest	/home/user/Aptana Studio 3 Workspace/minepropa/test/performance/browsing_test.rb	class BrowsingTest 
+CreateAppunti	/home/user/Aptana Studio 3 Workspace/minepropa/db/migrate/20101207203812_create_appunti.rb	class CreateAppunti 
+CreateScuole	/home/user/Aptana Studio 3 Workspace/minepropa/db/migrate/20101227215946_create_scuole.rb	class CreateScuole 
+LayoutHelper	/home/user/Aptana Studio 3 Workspace/minepropa/app/helpers/layout_helper.rb	module LayoutHelper
+Minepropa	/home/user/Aptana Studio 3 Workspace/minepropa/config/application.rb	module Minepropa
+PagesController	/home/user/Aptana Studio 3 Workspace/minepropa/app/controllers/pages_controller.rb	class PagesController 
+PagesHelper	/home/user/Aptana Studio 3 Workspace/minepropa/app/helpers/pages_helper.rb	module PagesHelper
+RenameColumnsScuole	/home/user/Aptana Studio 3 Workspace/minepropa/db/migrate/20101227223834_rename_columns_scuole.rb	class RenameColumnsScuole 
+Scuola	/home/user/Aptana Studio 3 Workspace/minepropa/app/models/scuola.rb	class Scuola 
+ScuolaTest	/home/user/Aptana Studio 3 Workspace/minepropa/test/unit/scuola_test.rb	class ScuolaTest 
+ScuoleController	/home/user/Aptana Studio 3 Workspace/minepropa/app/controllers/scuole_controller.rb	class ScuoleController 
+ScuoleControllerTest	/home/user/Aptana Studio 3 Workspace/minepropa/test/functional/scuole_controller_test.rb	class ScuoleControllerTest 
+ScuoleHelper	/home/user/Aptana Studio 3 Workspace/minepropa/app/helpers/scuole_helper.rb	module ScuoleHelper
+ScuoleHelperTest	/home/user/Aptana Studio 3 Workspace/minepropa/test/unit/helpers/scuole_helper_test.rb	class ScuoleHelperTest 
+Str	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function Str(key, holder, stack)
+TestCase	/home/user/Aptana Studio 3 Workspace/minepropa/test/test_helper.rb	class ActiveSupport::TestCase
+Type	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function Type(o)
+about	/home/user/Aptana Studio 3 Workspace/minepropa/app/controllers/pages_controller.rb	  def about
+abs	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function abs()
+absolutize	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function absolutize(element)
+addMethods	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function addMethods(source)
+addText	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/controls.js	function addText(mode, condition)
+all	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function all(iterator, context)
+any	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function any(iterator, context)
+argumentNames	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function argumentNames()
+bind	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function bind(context)
+bindAsEventListener	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function bindAsEventListener(context)
+blank	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function blank()
+camelize	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function camelize()
+capitalize	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function capitalize()
+ceil	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function ceil()
+checkDeficiency	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function checkDeficiency(tagName)
+checkReadyState	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function checkReadyState()
+clear	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function clear()
+clone	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function clone()
+clone	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function clone()
+clone	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function clone(object)
+collect	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function collect(iterator, context)
+compact	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function compact()
+complete	/home/user/Aptana Studio 3 Workspace/minepropa/app/controllers/appunti_controller.rb	  def complete
+concat	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function concat()
+copy	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function copy(methods, destination, onlyIfAbsent)
+create	/home/user/Aptana Studio 3 Workspace/minepropa/app/controllers/appunti_controller.rb	  def create
+create	/home/user/Aptana Studio 3 Workspace/minepropa/app/controllers/scuole_controller.rb	  def create
+create	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function create()
+cssNameFor	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function cssNameFor(key)
+cumulativeOffset	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function cumulativeOffset(element)
+cumulativeScrollOffset	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function cumulativeScrollOffset(element)
+curry	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function curry()
+dasherize	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function dasherize()
+defer	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function defer()
+define	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function define(D)
+delay	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function delay(timeout)
+destroy	/home/user/Aptana Studio 3 Workspace/minepropa/app/controllers/appunti_controller.rb	  def destroy
+destroy	/home/user/Aptana Studio 3 Workspace/minepropa/app/controllers/scuole_controller.rb	  def destroy
+detect	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function detect(iterator, context)
+dirCheck	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function dirCheck( dir, cur, doneName, checkSet, nodeCheck, isXML )
+dirNodeCheck	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function dirNodeCheck( dir, cur, doneName, checkSet, nodeCheck, isXML )
+dispatch	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/effects.js	function dispatch(effect, eventName)
+down	/home/user/Aptana Studio 3 Workspace/minepropa/db/migrate/20101207203812_create_appunti.rb	  def self.down
+down	/home/user/Aptana Studio 3 Workspace/minepropa/db/migrate/20101227215946_create_scuole.rb	  def self.down
+down	/home/user/Aptana Studio 3 Workspace/minepropa/db/migrate/20101227221959_add_scuola_id_to_appunti.rb	  def self.down
+down	/home/user/Aptana Studio 3 Workspace/minepropa/db/migrate/20101227223834_rename_columns_scuole.rb	  def self.down
+each	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function each(iterator)
+each	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function each(iterator, context)
+eachSlice	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function eachSlice(number, iterator, context)
+edit	/home/user/Aptana Studio 3 Workspace/minepropa/app/controllers/appunti_controller.rb	  def edit
+edit	/home/user/Aptana Studio 3 Workspace/minepropa/app/controllers/scuole_controller.rb	  def edit
+element	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function element(event)
+empty	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function empty()
+endsWith	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function endsWith(pattern)
+escapeHTML	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function escapeHTML()
+evalJSON	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function evalJSON(sanitize)
+evalScripts	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function evalScripts()
+extend	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function extend(destination, source)
+extend	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function extend(tagName)
+extendElementWith	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function extendElementWith(element, methods)
+extendElements	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function extendElements(elements)
+extractScripts	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function extractScripts()
+fallback	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/controls.js	function fallback(name, expr)
+find	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function find(elements, expression, index)
+findAll	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function findAll(iterator, context)
+findDOMClass	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function findDOMClass(tagName)
+findElement	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function findElement(event, expression)
+fire	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function fire(element, eventName, memo, bubble)
+fireContentLoadedEvent	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function fireContentLoadedEvent()
+first	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function first()
+flatten	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function flatten()
+floor	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function floor()
+get	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function get(key)
+getDimensions	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function getDimensions(element)
+getLayout	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function getLayout(element, preCompute)
+getOffsetParent	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function getOffsetParent(element)
+getPixelValue	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function getPixelValue(value, property)
+getRootElement	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function getRootElement()
+get_posted_string	/home/user/Aptana Studio 3 Workspace/minepropa/app/helpers/appunti_helper.rb	  def get_posted_string(appunto)
+grep	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function grep(filter, iterator, context)
+gsub	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function gsub(pattern, replacement)
+handleMethod	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/rails.js	function handleMethod(element)
+handleRemote	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/rails.js	function handleRemote(element)
+home	/home/user/Aptana Studio 3 Workspace/minepropa/app/controllers/pages_controller.rb	  def home
+inGroupsOf	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function inGroupsOf(number, fillWith)
+include	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function include(object)
+include	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function include(pattern)
+include	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function include(value)
+index	/home/user/Aptana Studio 3 Workspace/minepropa/app/controllers/appunti_controller.rb	  def index
+index	/home/user/Aptana Studio 3 Workspace/minepropa/app/controllers/scuole_controller.rb	  def index
+index	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function index(value)
+indexOf	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function indexOf(item, i)
+initialize	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function initialize(object)
+initialize	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function initialize(start, end, exclusive)
+inject	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function inject(memo, iterator, context)
+inspect	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function inspect()
+inspect	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function inspect()
+inspect	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function inspect()
+inspect	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function inspect(object)
+inspect	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function inspect(useDoubleQuotes)
+interpolate	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function interpolate(object, pattern)
+intersect	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function intersect(array)
+invoke	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function invoke(method)
+isArray	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function isArray(object)
+isBody	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function isBody(element)
+isDetached	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function isDetached(element)
+isDisplayed	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function isDisplayed(element)
+isElement	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function isElement(object)
+isEventSupported	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/rails.js	function isEventSupported(eventName)
+isForm	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/rails.js	function isForm(element)
+isFunction	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function isFunction(object)
+isHash	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function isHash(object)
+isInput	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/rails.js	function isInput(element)
+isJSON	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function isJSON()
+isLeftClick	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function isLeftClick(event)   { return _isButton(event, 0)
+isMiddleClick	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function isMiddleClick(event) { return _isButton(event, 1)
+isNumber	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function isNumber(object)
+isRightClick	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function isRightClick(event)  { return _isButton(event, 2)
+isString	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function isString(object)
+isUndefined	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function isUndefined(object)
+iter	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function iter(name)
+javascript	/home/user/Aptana Studio 3 Workspace/minepropa/app/helpers/layout_helper.rb	  def javascript(*args)
+keys	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function keys()
+keys	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function keys(object)
+klass	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function klass()
+last	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function last()
+lastIndexOf	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function lastIndexOf(item, i)
+match	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function match()
+match	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function match(element, selector)
+max	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function max(iterator, context)
+measure	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function measure(element, property)
+merge	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function merge(array, args)
+merge	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function merge(object)
+methodize	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function methodize()
+min	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function min(iterator, context)
+new	/home/user/Aptana Studio 3 Workspace/minepropa/app/controllers/appunti_controller.rb	  def new
+new	/home/user/Aptana Studio 3 Workspace/minepropa/app/controllers/scuole_controller.rb	  def new
+observe	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function observe(element, eventName, handler)
+on	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function on(element, eventName, selector, callback)
+parseColor	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/effects.js	function parseColor(color)
+parseJSON	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function parseJSON()
+partition	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function partition(iterator, context)
+pluck	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function pluck(property)
+pointer	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function pointer(event)
+pointerX	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function pointerX(event)
+pointerY	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function pointerY(event)
+pollDoScroll	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function pollDoScroll()
+positionedOffset	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function positionedOffset(element)
+prepareReplacement	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function prepareReplacement(replacement)
+purgeElement	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function purgeElement(element)
+reject	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function reject(iterator, context)
+relativize	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function relativize(element)
+reverse	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function reverse(inline)
+round	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function round()
+scan	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function scan(pattern, iterator)
+search	/home/user/Aptana Studio 3 Workspace/minepropa/app/models/appunto.rb	  def self.search(search)  
+select	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function select()
+select	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function select(selector, scope)
+set	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function set(key, value)
+show	/home/user/Aptana Studio 3 Workspace/minepropa/app/controllers/appunti_controller.rb	  def show
+show	/home/user/Aptana Studio 3 Workspace/minepropa/app/controllers/scuole_controller.rb	  def show
+show_status_icon	/home/user/Aptana Studio 3 Workspace/minepropa/app/helpers/appunti_helper.rb	  def show_status_icon(status)
+show_title?	/home/user/Aptana Studio 3 Workspace/minepropa/app/helpers/application_helper.rb	  def show_title?
+size	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function size()
+size	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function size()
+sortBy	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function sortBy(iterator, context)
+sort_column	/home/user/Aptana Studio 3 Workspace/minepropa/app/controllers/appunti_controller.rb	    def sort_column  
+sort_direction	/home/user/Aptana Studio 3 Workspace/minepropa/app/controllers/appunti_controller.rb	    def sort_direction  
+sortable	/home/user/Aptana Studio 3 Workspace/minepropa/app/helpers/application_helper.rb	  def sortable(column, title = nil)  
+startsWith	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function startsWith(pattern)
+stop	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function stop(event)
+stopObserving	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function stopObserving(element, eventName, handler)
+stringify	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function stringify(object)
+strip	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function strip()
+stripAlpha	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function stripAlpha(filter)
+stripScripts	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function stripScripts()
+stripTags	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function stripTags()
+stylesheet	/home/user/Aptana Studio 3 Workspace/minepropa/app/helpers/layout_helper.rb	  def stylesheet(*args)
+sub	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function sub(pattern, replacement, count)
+subclass	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function subclass()
+succ	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function succ()
+succ	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function succ()
+test_homepage	/home/user/Aptana Studio 3 Workspace/minepropa/test/performance/browsing_test.rb	  def test_homepage
+times	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function times(count)
+times	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function times(iterator, context)
+title	/home/user/Aptana Studio 3 Workspace/minepropa/app/helpers/application_helper.rb	  def title
+toArray	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function toArray()
+toArray	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function toArray()
+toCSSPixels	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function toCSSPixels(number)
+toColorPart	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function toColorPart()
+toDecimal	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function toDecimal(pctString)
+toHTML	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function toHTML(object)
+toISOString	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function toISOString()
+toJSON	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function toJSON()
+toJSON	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function toJSON(value)
+toObject	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function toObject()
+toPaddedString	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function toPaddedString(length, radix)
+toQueryPair	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function toQueryPair(key, value)
+toQueryParams	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function toQueryParams(separator)
+toQueryString	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function toQueryString()
+toQueryString	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function toQueryString(object)
+truncate	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function truncate(length, truncation)
+underscore	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function underscore()
+unescapeHTML	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function unescapeHTML()
+unfilterJSON	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function unfilterJSON(filter)
+uniq	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function uniq(sorted)
+unset	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function unset(key)
+up	/home/user/Aptana Studio 3 Workspace/minepropa/db/migrate/20101207203812_create_appunti.rb	  def self.up
+up	/home/user/Aptana Studio 3 Workspace/minepropa/db/migrate/20101227215946_create_scuole.rb	  def self.up
+up	/home/user/Aptana Studio 3 Workspace/minepropa/db/migrate/20101227221959_add_scuola_id_to_appunti.rb	  def self.up
+up	/home/user/Aptana Studio 3 Workspace/minepropa/db/migrate/20101227223834_rename_columns_scuole.rb	  def self.up
+update	/home/user/Aptana Studio 3 Workspace/minepropa/app/controllers/appunti_controller.rb	  def update
+update	/home/user/Aptana Studio 3 Workspace/minepropa/app/controllers/scuole_controller.rb	  def update
+update	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function update(array, args)
+update	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function update(element, content)
+update	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function update(object)
+values	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function values()
+values	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function values(object)
+viewportOffset	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function viewportOffset(forElement)
+without	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function without()
+wrap	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function wrap(wrapper)
+zip	/home/user/Aptana Studio 3 Workspace/minepropa/public/javascripts/prototype.js	function zip()

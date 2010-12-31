@@ -85,7 +85,11 @@ class AppuntiController < ApplicationController
       format.xml  { head :ok }
     end
   end
-  
+
+  def complete
+    #todo
+  end
+    
   private  
 
     def sort_column  
