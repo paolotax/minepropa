@@ -11,8 +11,9 @@ header {
 }
 
 header img {
-  padding: 1em;
-  background: #fff;
+    padding-top: 2em;
+    padding-left: -15px;
+  background: #cff;
 }
 
 section {
@@ -81,7 +82,7 @@ nav ul li a:hover {
 footer {
   text-align: center;
   margin-top: 10px;
-  width: 710px;
+
   margin-left: auto;
   margin-right: auto;
 }
@@ -168,8 +169,9 @@ a.signup_button {
 }
 
 #timestamp {
-	float: right;
+	float: none;
 	padding-right: 5px;
+	text-align: center;
 }
 
 #clear {
