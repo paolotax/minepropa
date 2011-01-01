@@ -87,7 +87,7 @@ class AppuntiController < ApplicationController
   end
 
   def complete
-    #todo
+    Appunto.update_all(["appunti.stato=?", "X"], :id => params[:appunti_ids])
   end
     
   private  
