@@ -3,9 +3,10 @@
   %h1= "#{@scuola.nome_scuola} #{@scuola.citta} #{@scuola.provincia}"
 - if @scuola.appunti.any?
   - form_tag complete_appunti_path, :method => :put do
-    = submit_tag "Segna come completati"
+    = render 'appunti/appunti_navbar'
     = render @appunti
-    = submit_tag "Segna come completati"
+    = render 'appunti/appunti_navbar'
+    
     	
 = link_to 'Edit', edit_scuola_path(@scuola)
 = link_to 'Back', :back
