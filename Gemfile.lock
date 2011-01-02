@@ -55,6 +55,16 @@ GEM
     mysql2 (0.2.6)
     nokogiri (1.4.4)
     polyglot (0.3.1)
+    prawn (0.8.4)
+      prawn-core (>= 0.8.4, < 0.9)
+      prawn-layout (>= 0.8.4, < 0.9)
+      prawn-security (>= 0.8.4, < 0.9)
+    prawn-core (0.8.4)
+    prawn-layout (0.8.4)
+    prawn-security (0.8.4)
+    prawn_rails (0.0.4)
+      prawn (>= 0.8.4)
+      rails (>= 3.0.0)
     rack (1.2.1)
     rack-mount (0.6.13)
       rack (>= 1.0.0)
@@ -109,6 +119,7 @@ DEPENDENCIES
   faker
   haml-rails
   mysql2
+  prawn_rails
   rails (= 3.0.3)
   rspec
   rspec-rails

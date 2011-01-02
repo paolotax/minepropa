@@ -6,6 +6,8 @@ gem 'mysql2'
 gem 'will_paginate', '3.0.pre2'
 gem "simple_form"
 gem "haml-rails"
+gem 'prawn_rails'
+
 
 group :development do
    gem 'rspec-rails'

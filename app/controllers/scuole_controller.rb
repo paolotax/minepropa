@@ -19,6 +19,7 @@ class ScuoleController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @scuola }
+      format.pdf { render :pdf => @scuola }
     end
   end
 

@@ -25,6 +25,7 @@ class AppuntiController < ApplicationController
       format.html # show.html.erb
       format.xml  { render :xml => @appunto }
       format.json  { render :json => @appunto }
+      format.pdf  { render :pdf => @appunto }
     end
   end
 
@@ -88,6 +89,7 @@ class AppuntiController < ApplicationController
 
   def complete
     Appunto.update_all(["appunti.stato=?", "X"], :id => params[:appunti_ids])
+    redirect_to :back
   end
     
   private  
