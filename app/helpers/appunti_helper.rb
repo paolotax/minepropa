@@ -7,8 +7,8 @@ module AppuntiHelper
     else
       if status == "P"
         return "s_waiting18.png"
-      # else  
-      #         return nil #'s_blank.gif'
+      else  
+        return 's_blank.gif'
       end
     end
   end

@@ -2,11 +2,4 @@
 #titolo
   %h1= "#{@scuola.nome_scuola} #{@scuola.citta} #{@scuola.provincia}"
 - if @scuola.appunti.any?
-  - form_tag complete_appunti_path, :method => :put do
-    = render 'appunti/appunti_navbar'
-    = render @appunti
-    = render 'appunti/appunti_navbar'
-    
-    	
-= link_to 'Edit', edit_scuola_path(@scuola)
-= link_to 'Back', :back
+  = render 'appunti/form_appunti'

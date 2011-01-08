@@ -1,16 +1,13 @@
 prawn_document() do |pdf|
-
   
   pdf.float do
     pdf.bounding_box [pdf.bounds.width / 2.0, pdf.bounds.top], :width => 100 do
-      pdf.text "Hello world. "
+      pdf.text current_user.email unless current_user.nil? 
     end
   end
 
-    pdf.text "Hello world again"
-  
-  
-    
+  pdf.text "Hello world again"
+
   pdf.font "Helvetica"
   
   pdf.float do

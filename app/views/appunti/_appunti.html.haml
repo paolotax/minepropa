@@ -4,7 +4,7 @@
 	%tr	
 		%th= sortable "stato", ""
 		%th= sortable "destinatario"
-		%th= sortable "scuola.nome_scuola", "Scuola"
+		%th= sortable  "scuola.nome_scuola", "Scuola"
 		%th= sortable "note"
 		%th= sortable "telefono"
 		%th= sortable "updated_at", "modificato il"
@@ -14,7 +14,7 @@
 		%tr{:class => cycle('list_line_odd', 'list_line_even')} 
 			%td= image_tag show_status_icon(appunto.stato) unless appunto.stato.blank?
 			%td= appunto.destinatario
-			%td= link_to "#{appunto.scuola.nome_scuola} #{appunto.scuola.citta}", scuola_path(appunto.scuola)
+			%td= link_to "#{appunto.scuola.nome_scuola} #{appunto.scuola.citta}", scuola_path(appunto.scuola) unless appunto.scuola.nil?
 			%td= appunto.note
 			%td= appunto.telefono
 			%td= get_posted_string(appunto)

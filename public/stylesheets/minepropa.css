@@ -115,18 +115,6 @@ a.signup_button {
 }
 
 
-/* Round corners */
-
-.round {
-  -moz-border-radius:    10px;
-  -webkit-border-radius: 10px;
-  border-radius:         10px;
-}
-
-/* Styles for products/index */
-
-
-
 #appunto {
 	margin-left: 100px;
 	margin-right: 100px;
@@ -191,6 +179,30 @@ a.signup_button {
 	height: 30px;
 	background-color: #885;
 }
+
+
+#appunti_navbar {
+	margin-top: 20px;
+}
+
+.float_right {
+	float: right;
+}
+
+.float_left {
+	float: left;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 table.scuola {
   	border: none;
@@ -282,6 +294,49 @@ table.appunti {
   padding-left: 1em;
 }
 
+#error_explanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
 
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#error_explanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+.field_with_errors {
+  margin-top: 10px;
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+.field_with_errors label {
+  color: #fff;
+}
+
+div.field, div.actions {
+  margin-bottom:10px;	
+}
 
 

@@ -1,19 +1,27 @@
 Minepropa::Application.routes.draw do
 
+  devise_for :users
+
   get "pages/about"
 
   resources :scuole
   
   resources :appunti do
     
+    member do 
+      get 'toggle_stato'
+    end
+    
     collection do
-      put 'complete'
+      post 'edit_or_print'
+      # post 'edit_multiple'
+      # post 'print_multiple', :format => 'pdf'
+      put 'update_multiple'
     end
   end  
   
   root :to => 'pages#home'
   
-
   # resources :appunti do
   #   collection do
   #     get 'search'

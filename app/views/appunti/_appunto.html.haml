@@ -2,14 +2,14 @@
   #destinatario
     %strong= appunto.destinatario
   #scuola
-    = appunto.scuola.nome_scuola
+    = link_to "#{appunto.scuola.nome_scuola} #{appunto.scuola.citta}", scuola_path(appunto.scuola) unless appunto.scuola.nil?
   #note
     %p=  appunto.note
   #footer
     #check
       = check_box_tag "appunti_ids[]", appunto.id
     #status_image
-      %img= image_tag(show_status_icon(appunto.stato)) unless appunto.stato.blank? 
+      %img= link_to image_tag(show_status_icon(appunto.stato)), toggle_stato_appunto_path(appunto) 
     #edit_buttons
       %img= link_to image_tag("s_edit18.jpeg"), edit_appunto_path(appunto)
       %img= link_to image_tag("s_delete18.gif"), appunto, :method => :delete, :confirm => "You sure?", :title => appunto.destinatario

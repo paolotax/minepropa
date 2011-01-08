@@ -1,22 +1,3 @@
 #notice
 
-%p
-  %b Destinatario:
-  = @appunto.destinatario
-%p
-  %b Scuola:
-  = @appunto.scuola.nome_scuola
-%p
-  %b Note:
-  = @appunto.note
-%p
-  %b Telefono:
-  = @appunto.telefono
-%p
-  %b Stato:
-  = @appunto.stato
-
-= link_to "Home", root_path
-= link_to 'Edit Appunto', edit_appunto_path(@appunto)
-= link_to 'Appunti', appunti_path
-= link_to 'Scuole', scuole_path
+= render @appunto

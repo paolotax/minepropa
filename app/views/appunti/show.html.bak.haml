@@ -1,0 +1,19 @@
+#notice
+
+#appunto.round
+  #destinatario
+    %strong= @appunto.destinatario
+  #scuola
+    = @appunto.scuola.nome_scuola
+  #note
+    %p=  @appunto.note
+  #footer
+    #status_image
+      %img= image_tag(show_status_icon(@appunto.stato)) unless @appunto.stato.blank? 
+    #edit_buttons
+      %img= link_to image_tag("s_edit18.jpeg"), edit_appunto_path(@appunto)
+      %img= link_to image_tag("s_delete18.gif"), @appunto, :method => :delete, :confirm => "You sure?", :title => @appunto.destinatario
+      %img= link_to image_tag("s_print18.png"), appunto_path(@appunto, :format => 'pdf')
+    #timestamp
+      %small= get_posted_string(@appunto)
+    #clear

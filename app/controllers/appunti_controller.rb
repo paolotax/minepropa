@@ -87,11 +87,56 @@ class AppuntiController < ApplicationController
     end
   end
 
-  def complete
-    Appunto.update_all(["appunti.stato=?", "X"], :id => params[:appunti_ids])
-    redirect_to :back
-  end
+  def toggle_stato
+    #raise params[:new_stato].inspect
+    appunto = Appunto.find(params[:id])
     
+    if appunto.stato == 'X'
+      appunto.stato = "P"
+    else
+      if appunto.stato == ''
+        appunto.stato = "X"
+      else
+        if appunto.stato == 'P'
+          appunto.stato = ""
+        end
+      end
+    end
+      
+    appunto.save
+    redirect_to appunti_path
+  end
+  
+  def edit_or_print
+    @appunti = Appunto.find(params[:appunti_ids])
+    
+    if params[:commit] == 'modifica selezionati'
+      render 'edit_multiple'
+    else
+      if params[:commit] == 'stampa selezionati'
+        render 'print_multiple.pdf'
+      end
+    end
+  end
+  
+  # def edit_multiple
+  #   #@appunti = Appunto.find(params[:appunti_ids])
+  # end
+  
+  def update_multiple
+    @appunti = Appunto.find(params[:appunti_ids])
+    @appunti.each do |a|
+      a.update_attributes!(params[:appunto].reject { |k,v| v.blank? unless k == 'stato'})
+    end
+    flash[:notice => "Updated"]
+    redirect_to appunti_path
+  end
+  
+  # def print_multiple
+  #   #raise params.inspect
+  #   #@appunti = Appunto.find(params[:appunti_ids])
+  # end    
+  
   private  
 
     def sort_column  

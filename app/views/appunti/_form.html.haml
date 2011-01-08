@@ -13,7 +13,7 @@
 	.field
 		= f.label :scuola
 		%br
-		= f.collection_select(:scuola_id, Scuola.all, :id, :nome_scuola, {:prompt => "Scegli la scuola"}, {:include_blank => true})
+		= f.collection_select(:scuola_id, Scuola.all, :id, :nome_scuola, {:prompt => "Scegli la Scuola", :include_blank => true})
 	.field
 		= f.label :note
 		%br
@@ -24,7 +24,6 @@
 		= f.text_field :telefono
 	.field
 		= f.label :stato
-		%br
-		= f.text_field :stato
+		= f.select(:stato, options_for_select([["", ""], ["in sospeso", "P"],["completato", "X"]], @appunto.stato))
 	.actions
 		= f.submit

@@ -8,5 +8,6 @@
 %h1= @title
 
 #appunti
-  = render 'appunti'
-  = link_to 'Nuovo Appunto', new_appunto_path
+  = render 'appunti/form_appunti'
+
+= link_to 'Nuovo Appunto', new_appunto_path
