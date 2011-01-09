@@ -6,24 +6,21 @@
 			%ul
 			= @appunto.errors.full_messages.each do |msg|
 				%li msg 
+	.actions.float_right
+		= f.submit
+	.field
+		= f.label :stato
+		= f.select(:stato, options_for_select([["in sospeso", "P"],["completato", "X"]], @appunto.stato), :include_blank => true)
 	.field
 		= f.label :destinatario
-		%br 
 		= f.text_field :destinatario
 	.field
 		= f.label :scuola
-		%br
 		= f.collection_select(:scuola_id, Scuola.all, :id, :nome_scuola, {:prompt => "Scegli la Scuola", :include_blank => true})
 	.field
 		= f.label :note
-		%br
-		= f.text_area :note, :rows => 3
+		= f.text_area :note, :rows => "3"
 	.field
 		= f.label :telefono
-		%br
 		= f.text_field :telefono
-	.field
-		= f.label :stato
-		= f.select(:stato, options_for_select([["", ""], ["in sospeso", "P"],["completato", "X"]], @appunto.stato))
-	.actions
-		= f.submit
+

@@ -4,7 +4,11 @@ Minepropa::Application.routes.draw do
 
   get "pages/about"
 
-  resources :scuole
+  resources :scuole do
+    collection do
+      post 'sort'
+    end
+  end
   
   resources :appunti do
     

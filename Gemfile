@@ -11,12 +11,13 @@ gem 'prawn_rails'
 gem 'devise'
 gem 'ruby_parser'
 gem 'with_action'
+gem "jquery-rails"
+gem "acts_as_list"
 
 group :development do
    gem 'rspec-rails'
    gem 'annotate-models'
    gem 'faker'	
-   
 end
 
 group :test do

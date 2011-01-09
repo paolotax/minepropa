@@ -175,7 +175,9 @@ a.signup_button {
 
 #search_appunti {
 	float: right;
-	padding: 10px;
+	padding: 5px;
+	margin-top: -10px;
+	margin-left: 5px;
 	height: 30px;
 	background-color: #885;
 }
@@ -193,28 +195,94 @@ a.signup_button {
 	float: left;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-table.scuola {
-  	border: none;
-width: 100%;
-	border-collapse: collapse;
-	font-family: "Trebuchet MS", Arial, sans-serif;
-	color: #555;
+.float_none {
+	float: none;
 }
 
-.scuola tr td {
-	border: none;
+
+
+
+#error_explanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
 }
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#error_explanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+.field_with_errors {
+  margin-top: 10px;
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+.field_with_errors label {
+  color: #fff;
+}
+
+div.field, div.actions {
+  margin-bottom:10px;	
+}
+
+div.field label {
+ 	display: block; 
+	float: left; 
+	width: 120px; 
+	margin: 0 0 5px 0;
+}
+
+.handle {
+	font-size: 12px;
+	cursor: move;
+	color: #777;
+}
+
+.handle:hover {
+	cursor: move;
+}
+
+#scuole li {
+  list-style-type: none;
+  padding: 0.2em 0;
+  margin-top: 3px;
+}
+
+#scuole div {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+
+
+
+
+
+
+
+
 
 table.appunti {
  	border: none;
@@ -227,10 +295,6 @@ table.appunti {
 .appunto {
   border-top: 1px solid #ccc; 	
   padding: 10px;
-}
-
-.float_left {
-	float: left;
 }
 
 
@@ -294,49 +358,6 @@ table.appunti {
   padding-left: 1em;
 }
 
-#error_explanation {
-  width: 400px;
-  border: 2px solid red;
-  padding: 7px;
-  padding-bottom: 12px;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
-}
 
-#error_explanation h2 {
-  text-align: left;
-  font-weight: bold;
-  padding: 5px 5px 5px 15px;
-  font-size: 12px;
-  margin: -7px;
-  background-color: #c00;
-  color: #fff;
-}
-
-#error_explanation p {
-  color: #333;
-  margin-bottom: 0;
-  padding: 5px;
-}
-
-#error_explanation ul li {
-  font-size: 12px;
-  list-style: square;
-}
-
-.field_with_errors {
-  margin-top: 10px;
-  padding: 2px;
-  background-color: red;
-  display: table;
-}
-
-.field_with_errors label {
-  color: #fff;
-}
-
-div.field, div.actions {
-  margin-bottom:10px;	
-}
 
 

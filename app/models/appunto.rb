@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20101227221959
+# Schema version: 20110109185008
 #
 # Table name: appunti
 #
@@ -12,9 +12,12 @@
 #  created_at   :datetime
 #  updated_at   :datetime
 #  scuola_id    :string(255)
+#  position     :integer(4)
 #
 
 class Appunto < ActiveRecord::Base
+  
+  acts_as_list
   
   belongs_to :scuola
   

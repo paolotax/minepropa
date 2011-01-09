@@ -1,27 +1,50 @@
-<h1>Listing scuole</h1>
+<% title "Lista scuole" %> 
 
-<table>
-  <tr>
-    <th>Nome</th>
-    <th>Citta</th>
-    <th>Provincia</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="float_right"><%= button_to "Nuova scuola", new_scuola_path, :method => 'get' %></div>
 
-<% @scuole.each do |scuola| %>
-  <tr>
-    <td><%= scuola.nome_scuola %></td>
-    <td><%= scuola.citta %></td>
-    <td><%= scuola.provincia %></td>
-    <td><%= link_to 'Show', scuola %></td>
-    <td><%= link_to 'Edit', edit_scuola_path(scuola) %></td>
-    <td><%= link_to 'Destroy', scuola, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+
+
+<div class="clear"></div>
+
+<ul id="scuole"> 
+  <% @scuole.each do |scuola| %>
+    <li id="scuola_<%= scuola.id %>">
+	   <span class="handle float_left">[drag]</span>
+	   <div id="nome_scuola"class="float_left" ><%= link_to "#{scuola.nome_scuola} #{ scuola.citta}", scuola_path(scuola) %></div>  
+       <div id="provincia" ><%= scuola.provincia %></div>   
+    
+	</li>
+  <% end %>
+</ul>
+
+
+
+
+<% content_for :javascript do %>
+	<%= javascript_tag do %>
+		// Sorting the list
+
+		$(document).ready(function(){
+			$('#scuole').sortable({
+				axis: 'y',
+				dropOnEmpty: false,
+				handle: '.handle',
+				cursor: 'crosshair',
+				items: 'li',
+				opacity: 0.4,
+				scroll: true,
+				update: function(){
+					$.ajax({
+						type: 'post',
+						data: $('#scuole').sortable('serialize'),
+						dataType: 'script',
+						complete: function(request){
+							$('#scuole').effect('highlight');
+						},
+						url: '/scuole/sort'})
+					}
+				});
+			});
+	<% end %>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Scuola', new_scuola_path %>
+      

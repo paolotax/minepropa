@@ -3,8 +3,7 @@ class AppuntiController < ApplicationController
   helper_method :sort_column, :sort_direction
   
   def index
-    @title = "Tutti gli appunti"
-    
+
     if params[:android]
       @appunti = Appunto.search(params[:search]).order(sort_column + ' ' + sort_direction)
     else  
@@ -30,8 +29,7 @@ class AppuntiController < ApplicationController
   end
 
   def new
-    @title = "Nuovo appunto"
-    
+
     @appunto = Appunto.new
 
     respond_to do |format|

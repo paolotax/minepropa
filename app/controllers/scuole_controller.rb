@@ -1,6 +1,5 @@
 class ScuoleController < ApplicationController
-  # GET /scuole
-  # GET /scuole.xml
+
   def index
     @scuole = Scuola.all
 
@@ -10,8 +9,6 @@ class ScuoleController < ApplicationController
     end
   end
 
-  # GET /scuole/1
-  # GET /scuole/1.xml
   def show
     @scuola = Scuola.find(params[:id])
     @appunti = @scuola.appunti.all
@@ -23,8 +20,6 @@ class ScuoleController < ApplicationController
     end
   end
 
-  # GET /scuole/new
-  # GET /scuole/new.xml
   def new
     @scuola = Scuola.new
 
@@ -34,13 +29,10 @@ class ScuoleController < ApplicationController
     end
   end
 
-  # GET /scuole/1/edit
   def edit
     @scuola = Scuola.find(params[:id])
   end
 
-  # POST /scuole
-  # POST /scuole.xml
   def create
     @scuola = Scuola.new(params[:scuola])
 
@@ -55,8 +47,6 @@ class ScuoleController < ApplicationController
     end
   end
 
-  # PUT /scuole/1
-  # PUT /scuole/1.xml
   def update
     @scuola = Scuola.find(params[:id])
 
@@ -71,8 +61,6 @@ class ScuoleController < ApplicationController
     end
   end
 
-  # DELETE /scuole/1
-  # DELETE /scuole/1.xml
   def destroy
     @scuola = Scuola.find(params[:id])
     @scuola.destroy
@@ -81,5 +69,15 @@ class ScuoleController < ApplicationController
       format.html { redirect_to(scuole_url) }
       format.xml  { head :ok }
     end
+  end
+
+  def sort
+    @scuole = Scuola.all
+    
+    @scuole.each do |scuola|
+      scuola.position = params['scuola'].index(scuola.id.to_s) + 1
+      scuola.save
+    end
+    render :nothing => true
   end
 end
