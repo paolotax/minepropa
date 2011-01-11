@@ -71,9 +71,9 @@ GEM
     prawn-core (0.8.4)
     prawn-layout (0.8.4)
     prawn-security (0.8.4)
-    prawn_rails (0.0.4)
-      prawn (>= 0.8.4)
-      rails (>= 3.0.0)
+    prawnto (0.0.4)
+      prawn
+      rails (>= 2.1)
     rack (1.2.1)
     rack-mount (0.6.13)
       rack (>= 1.0.0)
@@ -139,7 +139,7 @@ DEPENDENCIES
   hpricot
   jquery-rails
   mysql2
-  prawn_rails
+  prawnto
   rails (= 3.0.3)
   rspec
   rspec-rails

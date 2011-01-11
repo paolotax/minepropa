@@ -1,5 +1,7 @@
 class AppuntiController < ApplicationController
   
+  prawnto :prawn => { :page_size => 'A4', :top_margin => 10 }
+  
   helper_method :sort_column, :sort_direction
   
   def index
@@ -24,7 +26,7 @@ class AppuntiController < ApplicationController
       format.html # show.html.erb
       format.xml  { render :xml => @appunto }
       format.json  { render :json => @appunto }
-      format.pdf  { render :pdf => @appunto }
+      format.pdf  { render = false }
     end
   end
 

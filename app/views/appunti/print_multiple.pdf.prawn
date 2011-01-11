@@ -1,30 +1,36 @@
-prawn_document() do |pdf|
-  
-   pdf.text "Hello world again"
    
-  @appunti.each do |appunto|
+@appunti.each do |appunto|
   
-    pdf.float do
-      pdf.bounding_box [pdf.bounds.width / 2.0, pdf.bounds.top], :width => 100 do
-        pdf.text current_user.email unless current_user.nil? 
-      end
-    end
+  stef = "#{RAILS_ROOT}/public/images/giunti_scuola.jpg"
+  pdf.image stef, :at => [0, 790], :width => 200, :height => 45
+  
+  pdf.font_size = 10
+  pdf.line_width = 0.02
 
-    pdf.text "Hello world again"
+  pdf.move_down 10
+  pdf.text "Agente di Zona - PAOLO TASSINARI", :size => 13, :align => :right
+  pdf.text "Via Zanardi 376/2",  :align => :right
+  pdf.text "40131 Bologna BO",   :align => :right
+  pdf.move_down 10
+  pdf.text "tel 051 6342585  fax 051 6341521", :align => :right
+  pdf.text "cell 347 2371680", :align => :right
 
-    pdf.font "Helvetica"
-  
-    pdf.float do
-      pdf.bounding_box [pdf.bounds.width / 2.0, pdf.bounds.top], :width => 300 do
-        pdf.move_down(150)
-        pdf.text appunto.destinatario, :size => 16, :style => :bold, :spacing => 4
-        pdf.text appunto.scuola.nome_scuola, :spacing => 16
-        pdf.text appunto.scuola.citta + " " + appunto.scuola.provincia
-      end
+  pdf.text "email #{current_user.email}", :align => :right unless current_user.nil?
+  pdf.move_down 8
+
+  pdf.float do
+    pdf.bounding_box [pdf.bounds.width / 2.0, pdf.bounds.top], :width => 300 do
+      pdf.move_down(200)
+      pdf.text appunto.destinatario, :size => 16, :style => :bold, :spacing => 4
+      pdf.text appunto.scuola.nome_scuola, :size => 12, :spacing => 16
+      pdf.text appunto.scuola.citta + " " + appunto.scuola.provincia, :size => 12
     end
-  
-    pdf.move_down(350)
-    pdf.text appunto.note
-    pdf.move_down(350)
   end
+
+  pdf.move_down(350)
+  pdf.text appunto.note, :size => 12
+  pdf.move_down(350)
+  
+  pdf.start_new_page unless appunto == @appunti.last
 end
+

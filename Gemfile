@@ -7,7 +7,7 @@ gem 'will_paginate', '3.0.pre2'
 gem "simple_form"
 gem "haml-rails"
 gem "hpricot"
-gem 'prawn_rails'
+gem 'prawnto'
 gem 'devise'
 gem 'ruby_parser'
 gem 'with_action'
