@@ -14,6 +14,9 @@ gem 'with_action'
 gem "jquery-rails"
 gem "acts_as_list"
 
+gem 'rails3-jquery-autocomplete'
+#gem 'nifty-generators'
+
 group :development do
    gem 'rspec-rails'
    gem 'annotate-models'

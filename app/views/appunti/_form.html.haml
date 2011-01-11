@@ -16,7 +16,10 @@
 		= f.text_field :destinatario
 	.field
 		= f.label :scuola
-		= f.collection_select(:scuola_id, Scuola.all, :id, :nome_scuola, {:prompt => "Scegli la Scuola", :include_blank => true})
+		= f.autocomplete_field :scuola_nome_scuola_completo, autocomplete_scuola_nome_scuola_appunti_path
+	/ .field
+	/ 	= f.label :scuola
+	/ 	= f.collection_select(:scuola_id, Scuola.all, :id, :nome_scuola, {:prompt => "Scegli la Scuola", :include_blank => true})
 	.field
 		= f.label :note
 		= f.text_area :note, :rows => "3"

@@ -2,7 +2,7 @@
   #destinatario
     %strong= appunto.destinatario
   #scuola
-    = link_to "#{appunto.scuola.nome_scuola} #{appunto.scuola.citta}", scuola_path(appunto.scuola) unless appunto.scuola.nil?
+    = link_to appunto.scuola_nome_scuola_completo, scuola_path(appunto.scuola) unless appunto.scuola.nil?
   #note
     %p=  appunto.note
   #footer

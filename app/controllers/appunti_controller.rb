@@ -2,6 +2,8 @@ class AppuntiController < ApplicationController
   
   prawnto :prawn => { :page_size => 'A4', :top_margin => 10 }
   
+  autocomplete :scuola, :nome_scuola, :full => true
+  
   helper_method :sort_column, :sort_direction
   
   def index

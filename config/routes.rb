@@ -12,6 +12,8 @@ Minepropa::Application.routes.draw do
   
   resources :appunti do
     
+    get :autocomplete_scuola_nome_scuola, :on => :collection
+    
     member do 
       get 'toggle_stato'
     end

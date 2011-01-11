@@ -24,7 +24,7 @@ class Appunto < ActiveRecord::Base
   default_scope :order => "appunti.updated_at DESC"
   
   scope :in_sospeso, where("stato = ?", "P") 
-  scope :in_corso, where("stato != ?", "X")
+  scope :in_corso, where("stato != ? or stato is null", "X")
 
   def self.search(search)  
     if search  
@@ -33,5 +33,13 @@ class Appunto < ActiveRecord::Base
       scoped  
     end  
   end  
+  
+  def scuola_nome_scuola_completo
+    [scuola.nome_scuola, '('+scuola.citta.capitalize+')'].join(" ") if scuola
+  end
+  
+  def scuola_nome_scuola_completo=(nome)
+    self.scuola = Scuola.find_by_nome_scuola(nome)
+  end
   
 end

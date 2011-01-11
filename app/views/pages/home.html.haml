@@ -1,5 +1,6 @@
-%h1= @title
-%p Find me in app/views/pages/home.html.haml
+- title "What's up"
+
+= render "appunti/form_appunti"
 
 = link_to 'New Appunto', new_appunto_path
 = link_to 'Appunti', appunti_path
