@@ -25,10 +25,11 @@ class Appunto < ActiveRecord::Base
   
   scope :in_sospeso, where("stato = ?", "P") 
   scope :in_corso, where("stato != ? or stato is null", "X")
-
+  
   def self.search(search)  
-    if search  
-      where('destinatario LIKE ?', "%#{search}%")  
+    if search 
+      self.joins(:scuola)
+      .where('appunti.destinatario LIKE ? OR scuole.nome_scuola LIKE ?', "%#{search}%", "%#{search}%")
     else  
       scoped  
     end  

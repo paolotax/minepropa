@@ -1,5 +1,7 @@
 class ScuoleController < ApplicationController
 
+  before_filter :authenticate_user!
+  
   def index
     @scuole = Scuola.all
 

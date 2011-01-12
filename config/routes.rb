@@ -29,8 +29,8 @@ Minepropa::Application.routes.draw do
   root :to => 'pages#home'
   
   # resources :appunti do
-  #   collection do
   #     get 'search'
+  #   collection do
   #   end
   # end
 
@@ -51,7 +51,7 @@ Minepropa::Application.routes.draw do
   # Sample resource route with options:
   #   resources :products do
   #     member do
-  #       get 'short'
+  #       get 'short'  
   #       post 'toggle'
   #     end
   #
