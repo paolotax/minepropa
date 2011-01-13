@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   
   def home
     @title = "Home"
-    @appunti = Appunto.in_corso.paginate(:per_page => 8, :page => params[:page])
+    @appunti = Appunto.in_corso.where("user_id = ?", current_user).paginate(:per_page => 8, :page => params[:page])
   end
 
   def about

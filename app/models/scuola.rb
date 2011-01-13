@@ -16,6 +16,7 @@ class Scuola < ActiveRecord::Base
   
   acts_as_list
   
+  belongs_to :scuola
   has_many :appunti
   
   default_scope :order => "scuole.position ASC"

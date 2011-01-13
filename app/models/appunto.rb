@@ -20,16 +20,20 @@ class Appunto < ActiveRecord::Base
   acts_as_list
   
   belongs_to :scuola
+  belongs_to :user
   
-  default_scope :order => "appunti.updated_at DESC"
+  default_scope :order => "appunti.updated_at DESC" 
   
-  scope :in_sospeso, where("stato = ?", "P") 
+  scope :in_sospeso, where("stato = ?", "P")
   scope :in_corso, where("stato != ? or stato is null", "X")
+  scope :instance_appunti, lambda { |user| where("appunti.user_id = ?", user.id) }
   
-  def self.search(search)  
+  def self.search(search, user_id)  
     if search 
       self.joins(:scuola)
-      .where('appunti.destinatario LIKE ? OR scuole.nome_scuola LIKE ?', "%#{search}%", "%#{search}%")
+          .where('appunti.destinatario LIKE ? OR scuole.nome_scuola LIKE ?', "%#{search}%", "%#{search}%")
+          # .where("appunti.user_id = ?", "#{user_id}")
+          
     else  
       scoped  
     end  

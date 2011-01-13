@@ -11,9 +11,9 @@ class AppuntiController < ApplicationController
   def index
 
     if params[:android]
-      @appunti = Appunto.search(params[:search]).order(sort_column + ' ' + sort_direction)
+      @appunti = Appunto.where("appunti.user_id = ?", current_user).search(params[:search], params[:user_id]).order(sort_column + ' ' + sort_direction)
     else  
-      @appunti = Appunto.search(params[:search]).order(sort_column + ' ' + sort_direction).paginate(:per_page => 8, :page => params[:page])
+      @appunti = Appunto.where("appunti.user_id = ?", current_user).search(params[:search], params[:user_id]).order(sort_column + ' ' + sort_direction).paginate(:per_page => 8, :page => params[:page])
     end
     
     respond_to do |format|

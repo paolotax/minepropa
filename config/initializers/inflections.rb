@@ -8,5 +8,6 @@ ActiveSupport::Inflector.inflections do |inflect|
    inflect.irregular 'person', 'people'
    inflect.irregular 'appunto', 'appunti'
    inflect.irregular 'scuola', 'scuole'
+   inflect.irregular 'indirizzo', 'indirizzi'
    inflect.uncountable %w( fish sheep )
 end

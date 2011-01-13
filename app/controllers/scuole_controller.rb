@@ -3,7 +3,7 @@ class ScuoleController < ApplicationController
   before_filter :authenticate_user!
   
   def index
-    @scuole = Scuola.all
+    @scuole = Scuola.where("user_id = ?", current_user).all
 
     respond_to do |format|
       format.html # index.html.erb

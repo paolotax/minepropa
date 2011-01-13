@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110113193811) do
+ActiveRecord::Schema.define(:version => 20110113205851) do
 
   create_table "appunti", :force => true do |t|
     t.string   "destinatario"
@@ -20,9 +20,10 @@ ActiveRecord::Schema.define(:version => 20110113193811) do
     t.date     "scadenza"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "scuola_id"
+    t.integer  oad"scuola_id"
     t.integer  "position"
     t.string   "email"
+    t.integer  "user_id"
   end
 
   create_table "scuole", :force => true do |t|
@@ -32,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20110113193811) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "position"
+    t.integer  "user_id"
   end
 
   create_table "users", :force => true do |t|

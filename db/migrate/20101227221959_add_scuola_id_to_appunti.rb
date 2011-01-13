@@ -1,6 +1,6 @@
 class AddScuolaIdToAppunti < ActiveRecord::Migration
   def self.up
-    add_column :appunti, :scuola_id, :string
+    add_column :appunti, :scuola_id, :integer
     remove_column :appunti, :scuola
   end
 
