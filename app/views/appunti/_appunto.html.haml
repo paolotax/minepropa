@@ -2,9 +2,13 @@
   #destinatario
     %strong= appunto.destinatario
   #scuola
-    = link_to appunto.scuola_nome_scuola_completo, scuola_path(appunto.scuola) unless appunto.scuola.nil?
+    = link_to appunto.scuola_nome_scuola_completo, scuola_path(appunto.scuola) unless appunto.scuola.blank?
   #note
     %p=  appunto.note
+    %p= "tel #{ appunto.telefono}" unless appunto.telefono.blank?
+    %p  
+      = "email " unless appunto.email.blank?
+      =  mail_to appunto.email unless appunto.email.blank?
   #footer
     #check
       = check_box_tag "appunti_ids[]", appunto.id
