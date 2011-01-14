@@ -1,23 +1,23 @@
-- will_paginate( @appunti, :page_links => false )
+- unless @appunti.nil?
+  #search_appunti.round
+    - form_tag appunti_path, :method => 'get' do
+      - hidden_field_tag :direction, params[:direction]
+      - hidden_field_tag :sort, params[:sort]
+      - hidden_field_tag :user_id, current_user.id
+      %p
+        = text_field_tag :search, params[:search]
+        = submit_tag "Cerca", :name => nil
 
-%table.pretty.round
-	%tr	
-		%th= sortable "stato", ""
-		%th= sortable "destinatario"
-		%th= sortable  "scuola.nome_scuola", "Scuola"
-		%th= sortable "note"
-		%th= sortable "telefono"
-		%th= sortable "updated_at", "modificato il"
-		%th 
-  
-	- @appunti.each do |appunto|
-		%tr{:class => cycle('list_line_odd', 'list_line_even')} 
-			%td= image_tag show_status_icon(appunto.stato) unless appunto.stato.blank?
-			%td= appunto.destinatario
-			%td= link_to "#{appunto.scuola.nome_scuola} #{appunto.scuola.citta}", scuola_path(appunto.scuola) unless appunto.scuola.nil?
-			%td= appunto.note
-			%td= appunto.telefono
-			%td= get_posted_string(appunto)
-			%td
-				%img= link_to image_tag("s_edit18.jpeg"), edit_appunto_path(appunto)
-				%img= link_to image_tag("s_delete18.gif"), appunto, :method => :delete, :confirm => "You sure?", :title => appunto.destinatario
+.float_right
+  = button_to "Nuovo appunto", new_appunto_path, :method => 'get'
+
+- unless @appunti.nil?
+  #appunti
+  - form_tag edit_or_print_appunti_path do
+    = render 'appunti/appunti_navbar'
+    = will_paginate @appunti
+    = render @appunti
+    = will_paginate @appunti
+    .float_right
+      = button_to "Nuovo appunto", new_appunto_path, :method => 'get'
+    = render 'appunti/appunti_navbar'

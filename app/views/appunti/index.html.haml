@@ -1,19 +1,4 @@
 - title "Lista appunti"
 
-#search_appunti.round
-  - form_tag appunti_path, :method => 'get' do
-    - hidden_field_tag :direction, params[:direction]
-    - hidden_field_tag :sort, params[:sort]
-    - hidden_field_tag :user_id, current_user.id
-    %p
-      = text_field_tag :search, params[:search]
-      = submit_tag "Cerca", :name => nil
+= render :partial => 'appunti'
 
-.float_right
-  = button_to "Nuovo appunto", new_appunto_path, :method => 'get'
-
-
-#appunti
-  = render 'form_appunti'
-
-= link_to 'Nuovo Appunto', new_appunto_path

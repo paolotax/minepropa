@@ -1,16 +1,3 @@
 - title "What's up"
 
-#search_appunti.round
-  - form_tag appunti_path, :method => 'get' do
-    - hidden_field_tag :direction, params[:direction]
-    - hidden_field_tag :sort, params[:sort]
-    - hidden_field_tag :user_id, current_user.id
-    %p
-      = text_field_tag :search, params[:search]
-      = submit_tag "Cerca", :name => nil
-      
-.float_right
-  = button_to "Nuovo appunto", new_appunto_path, :method => 'get'
-
-#appunti        
-  = render "appunti/form_appunti"
+= render :partial => 'appunti/appunti'

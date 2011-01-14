@@ -9,11 +9,19 @@ class AppuntiController < ApplicationController
   helper_method :sort_column, :sort_direction
   
   def index
+    #raise params.inspect
+    # if params[:android]
+    #   @appunti = Appunto.where("appunti.user_id = ?", current_user).search(params[:search], params[:user_id]).order(sort_column + ' ' + sort_direction)
+    # else  
+    #   @appunti = Appunto.where("appunti.user_id = ?", current_user).search(params[:search], params[:user_id]).order(sort_column + ' ' + sort_direction).paginate(:per_page => 8, :page => params[:page])
+    # end
+    #params.merge(:user_id => current_user.id)
 
     if params[:android]
-      @appunti = Appunto.where("appunti.user_id = ?", current_user).search(params[:search], params[:user_id]).order(sort_column + ' ' + sort_direction)
+      @appunti = Appunto.search(params)
     else  
-      @appunti = Appunto.where("appunti.user_id = ?", current_user).search(params[:search], params[:user_id]).order(sort_column + ' ' + sort_direction).paginate(:per_page => 8, :page => params[:page])
+
+      @appunti = Appunto.search(params.merge(:user_id => current_user.id)).paginate(:per_page => 8, :page => params[:page])
     end
     
     respond_to do |format|

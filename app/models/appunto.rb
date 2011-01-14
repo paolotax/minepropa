@@ -28,15 +28,15 @@ class Appunto < ActiveRecord::Base
   scope :in_corso, where("stato != ? or stato is null", "X")
   scope :instance_appunti, lambda { |user| where("appunti.user_id = ?", user.id) }
   
-  def self.search(search, user_id)  
-    if search 
-      self.joins(:scuola)
-          .where('appunti.destinatario LIKE ? OR scuole.nome_scuola LIKE ?', "%#{search}%", "%#{search}%")
-          # .where("appunti.user_id = ?", "#{user_id}")
-          
-    else  
-      scoped  
-    end  
+  def self.search(params)  
+    
+    appunti = scoped
+    if params[:search] 
+      appunti = appunti.joins(:scuola)
+      appunti = appunti.where('appunti.destinatario LIKE ? OR scuole.nome_scuola LIKE ?', "%" + params[:search] + "%", "%" + params[:search] + "%")
+    end
+    appunti = appunti.where("appunti.user_id = ?", params[:user_id]) if params[:user_id]
+    appunti
   end  
   
   def scuola_nome_scuola_completo
