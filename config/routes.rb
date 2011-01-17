@@ -3,28 +3,34 @@ Minepropa::Application.routes.draw do
   devise_for :users
 
   get "pages/about"
-
+  
   resources :scuole do
     collection do
       post 'sort'
     end
+    
+    
   end
   
   resources :appunti do
-    
+
     get :autocomplete_scuola_nome_scuola, :on => :collection
-    
+    get :autocomplete_for_nome_scuola,    :on => :collection
+
     member do 
       get 'toggle_stato'
     end
-    
+
     collection do
       post 'edit_or_print'
       # post 'edit_multiple'
       # post 'print_multiple', :format => 'pdf'
       put 'update_multiple'
     end
-  end  
+  end
+  
+  
+
   
   root :to => 'pages#home'
   

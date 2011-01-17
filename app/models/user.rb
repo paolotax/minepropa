@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20110109185008
+# Schema version: 20110113205851
 #
 # Table name: users
 #
@@ -17,12 +17,16 @@
 #  last_sign_in_ip      :string(255)
 #  created_at           :datetime
 #  updated_at           :datetime
+#  username             :string(255)
+#  phone                :string(255)
+#  name                 :string(255)
 #
 
 class User < ActiveRecord::Base
   
-  has_many :scuole
-  has_many :appunti
+  has_many :scuole,  :dependent => :destroy
+  has_many :appunti, :dependent => :destroy
+  
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable and :timeoutable
   devise :database_authenticatable, :registerable,

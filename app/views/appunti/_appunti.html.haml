@@ -1,6 +1,6 @@
 - unless @appunti.nil?
   #search_appunti.round
-    - form_tag appunti_path, :method => 'get' do
+    = form_tag appunti_path, :method => 'get' do
       - hidden_field_tag :direction, params[:direction]
       - hidden_field_tag :sort, params[:sort]
       - hidden_field_tag :user_id, current_user.id
@@ -12,12 +12,11 @@
   = button_to "Nuovo appunto", new_appunto_path, :method => 'get'
 
 - unless @appunti.nil?
-  #appunti
-  - form_tag edit_or_print_appunti_path do
+  #appunti_items
+  = form_tag edit_or_print_appunti_path do
     = render 'appunti/appunti_navbar'
     = will_paginate @appunti
-    = render @appunti
+    #appunti
+      = render @appunti
     = will_paginate @appunti
-    .float_right
-      = button_to "Nuovo appunto", new_appunto_path, :method => 'get'
     = render 'appunti/appunti_navbar'

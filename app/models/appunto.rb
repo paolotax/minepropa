@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20110109185008
+# Schema version: 20110113205851
 #
 # Table name: appunti
 #
@@ -11,8 +11,10 @@
 #  scadenza     :date
 #  created_at   :datetime
 #  updated_at   :datetime
-#  scuola_id    :string(255)
+#  scuola_id    :integer(4)
 #  position     :integer(4)
+#  email        :string(255)
+#  user_id      :integer(4)
 #
 
 class Appunto < ActiveRecord::Base
@@ -22,10 +24,10 @@ class Appunto < ActiveRecord::Base
   belongs_to :scuola
   belongs_to :user
   
-  default_scope :order => "appunti.updated_at DESC" 
+  default_scope :order => "appunti.updated_at DESC, appunti.id DESC" 
   
-  scope :in_sospeso, where("stato = ?", "P")
-  scope :in_corso, where("stato != ? or stato is null", "X")
+  scope :in_sospeso, where("appunti.stato = ?", "P")
+  scope :in_corso, where("appunti.stato != ? or appunti.stato is null", "X")
   scope :instance_appunti, lambda { |user| where("appunti.user_id = ?", user.id) }
   
   def self.search(params)  
@@ -35,10 +37,11 @@ class Appunto < ActiveRecord::Base
       appunti = appunti.joins(:scuola)
       appunti = appunti.where('appunti.destinatario LIKE ? OR scuole.nome_scuola LIKE ?', "%" + params[:search] + "%", "%" + params[:search] + "%")
     end
-    appunti = appunti.where("appunti.user_id = ?", params[:user_id]) if params[:user_id]
+    #appunti = appunti.where("appunti.user_id = ?", params[:user_id]) if params[:user_id]
     appunti
   end  
   
+
   def scuola_nome_scuola_completo
     [scuola.nome_scuola, '('+scuola.citta.capitalize+')'].join(" ") if scuola
   end

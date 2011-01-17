@@ -2,31 +2,26 @@ class AppuntiController < ApplicationController
   
   prawnto :prawn => { :page_size => 'A4', :top_margin => 10 }
 
-  autocomplete :scuola, :nome_scuola, :full => true
+  autocomplete :scuola, :nome_scuola, :full => true, :display_value => :funky_method
   
   before_filter :authenticate_user!
     
   helper_method :sort_column, :sort_direction
   
+  def autocomplete_for_nome_scuola
+     @appunti = current_user.scuole.all
+  end
+  
   def index
-    #raise params.inspect
-    # if params[:android]
-    #   @appunti = Appunto.where("appunti.user_id = ?", current_user).search(params[:search], params[:user_id]).order(sort_column + ' ' + sort_direction)
-    # else  
-    #   @appunti = Appunto.where("appunti.user_id = ?", current_user).search(params[:search], params[:user_id]).order(sort_column + ' ' + sort_direction).paginate(:per_page => 8, :page => params[:page])
-    # end
-    #params.merge(:user_id => current_user.id)
 
     if params[:android]
-      @appunti = Appunto.search(params)
+      @appunti = current_user.appunti.search(params)
     else  
-
-      @appunti = Appunto.search(params.merge(:user_id => current_user.id)).paginate(:per_page => 8, :page => params[:page])
+      @appunti = current_user.appunti.search(params).paginate(:per_page => 8, :page => params[:page])
     end
     
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @appunti }
       format.json { render :json => @appunti }
     end
   end
@@ -36,7 +31,6 @@ class AppuntiController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @appunto }
       format.json  { render :json => @appunto }
       format.pdf  { render = false }
     end
@@ -45,7 +39,8 @@ class AppuntiController < ApplicationController
   def new
 
     @appunto = Appunto.new
-
+    @user = current_user
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @appunto }
@@ -58,7 +53,7 @@ class AppuntiController < ApplicationController
   end
 
   def create
-    @appunto = Appunto.new(params[:appunto])
+    @appunto = current_user.appunti.build(params[:appunto])
 
     respond_to do |format|
       if @appunto.save

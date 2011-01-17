@@ -3,7 +3,7 @@ class ScuoleController < ApplicationController
   before_filter :authenticate_user!
   
   def index
-    @scuole = Scuola.where("user_id = ?", current_user).all
+    @scuole = current_user.scuole
 
     respond_to do |format|
       format.html # index.html.erb
@@ -36,7 +36,7 @@ class ScuoleController < ApplicationController
   end
 
   def create
-    @scuola = Scuola.new(params[:scuola])
+    @scuola = current_user.scuole.build(params[:scuola])
 
     respond_to do |format|
       if @scuola.save

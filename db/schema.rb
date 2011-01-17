@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(:version => 20110113205851) do
     t.date     "scadenza"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  oad"scuola_id"
+    t.integer  "scuola_id"
     t.integer  "position"
     t.string   "email"
     t.integer  "user_id"

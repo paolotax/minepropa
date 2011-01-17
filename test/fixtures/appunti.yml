@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20110109185008
+# Schema version: 20110113205851
 #
 # Table name: appunti
 #
@@ -11,8 +11,10 @@
 #  scadenza     :date
 #  created_at   :datetime
 #  updated_at   :datetime
-#  scuola_id    :string(255)
+#  scuola_id    :integer(4)
 #  position     :integer(4)
+#  email        :string(255)
+#  user_id      :integer(4)
 #
 
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html

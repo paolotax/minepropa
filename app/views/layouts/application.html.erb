@@ -3,9 +3,11 @@
   <head>
     <title><%= yield(:title) || "Untitled" %></title>
 	  <%= render 'layouts/stylesheets' %>
-      <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js", "rails.js",
-"autocomplete-rails.js" %>
-	  <%= stylesheet_link_tag 'jquery-ui-1.8.2.custom.css' %>
+      <%= javascript_include_tag "jquery-1.4.4.min.js", %>
+      <%= javascript_include_tag "jquery-ui-1.8.8.custom.min.js" %>
+      <%= javascript_include_tag "rails.js", "autocomplete-rails.js", 'application.js' %>
+      <%= stylesheet_link_tag 'jquery-ui-1.8.8.custom.css' %>
+	  
       <%= csrf_meta_tag %>
 	  <%= yield(:head) %>
   </head>

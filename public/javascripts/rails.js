@@ -19,24 +19,27 @@
 			dataType = element.attr('data-type') || ($.ajaxSettings && $.ajaxSettings.dataType);
 
 		if (element.is('form')) {
-			method = element.attr('method') || 'POST';
+			method = element.attr('method');
 			url = element.attr('action');
 			data = element.serializeArray();
 			// memoized value from clicked submit button
 			var button = element.data('ujs:submit-button');
-			if (button) data.push(button);
+			if (button) {
+				data.push(button);
+				element.data('ujs:submit-button', null);
+			}
 		} else {
-			method = element.attr('data-method') || 'GET';
+			method = element.attr('data-method');
 			url = element.attr('href');
 			data = null;
 		}
 
 		$.ajax({
-			url: url, type: method, data: data, dataType: dataType,
+			url: url, type: method || 'GET', data: data, dataType: dataType,
 			// stopping the "ajax:beforeSend" event will cancel the ajax request
 			beforeSend: function(xhr, settings) {
-				if (settings.dataType == undefined) {
-					xhr.setRequestHeader("Accept", settings.accepts.script + ", */*; q=0.5");
+				if (settings.dataType === undefined) {
+					xhr.setRequestHeader('accept', '*/*;q=0.5, ' + settings.accepts.script);
 				}
 				return fire(element, 'ajax:beforeSend', [xhr, settings]);
 			},
@@ -70,6 +73,22 @@
 		form.submit();
 	}
 
+	function disableFormElements(form) {
+		form.find('input[data-disable-with]').each(function() {
+			var input = $(this);
+			input.data('ujs:enable-with', input.val())
+				.val(input.attr('data-disable-with'))
+				.attr('disabled', 'disabled');
+		});
+	}
+
+	function enableFormElements(form) {
+		form.find('input[data-disable-with]').each(function() {
+			var input = $(this);
+			input.val(input.data('ujs:enable-with')).removeAttr('disabled');
+		});
+	}
+
 	function allowAction(element) {
 		var message = element.attr('data-confirm');
 		return !message || (fire(element, 'confirm') && confirm(message));
@@ -95,40 +114,24 @@
 		if (form.attr('data-remote')) {
 			handleRemote(form);
 			return false;
+		} else {
+			disableFormElements(form);
 		}
 	});
 
-	$('form input[type=submit], form button[type=submit], form button:not([type])').live('click', function() {
+	$('form input[type=submit], form button[type=submit], form button:not([type])').live('click.rails', function() {
 		var button = $(this);
 		if (!allowAction(button)) return false;
 		// register the pressed submit button
 		var name = button.attr('name'), data = name ? {name:name, value:button.val()} : null;
 		button.closest('form').data('ujs:submit-button', data);
 	});
+	
+	$('form').live('ajax:beforeSend.rails', function(event) {
+		if (this == event.target) disableFormElements($(this));
+	});
 
-	/**
-	 * disable-with handlers
-	 */
-	var disable_with_input_selector = 'input[data-disable-with]',
-		disable_with_form_remote_selector = 'form[data-remote]:has(' + disable_with_input_selector + ')',
-		disable_with_form_not_remote_selector = 'form:not([data-remote]):has(' + disable_with_input_selector + ')';
-
-	var disable_with_input_function = function() {
-		$(this).find(disable_with_input_selector).each(function() {
-			var input = $(this);
-			input.data('enable-with', input.val())
-				.attr('value', input.attr('data-disable-with'))
-				.attr('disabled', 'disabled');
-		});
-	};
-
-	$(disable_with_form_remote_selector).live('ajax:before.rails', disable_with_input_function);
-	$(disable_with_form_not_remote_selector).live('submit.rails', disable_with_input_function);
-
-	$(disable_with_form_remote_selector).live('ajax:complete.rails', function() {
-		$(this).find(disable_with_input_selector).each(function() {
-			var input = $(this);
-			input.removeAttr('disabled').val(input.data('enable-with'));
-		});
+	$('form').live('ajax:complete.rails', function(event) {
+		if (this == event.target) enableFormElements($(this));
 	});
 })( jQuery );

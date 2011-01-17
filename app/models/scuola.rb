@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20110109185008
+# Schema version: 20110113205851
 #
 # Table name: scuole
 #
@@ -10,6 +10,7 @@
 #  created_at  :datetime
 #  updated_at  :datetime
 #  position    :integer(4)
+#  user_id     :integer(4)
 #
 
 class Scuola < ActiveRecord::Base
@@ -20,4 +21,8 @@ class Scuola < ActiveRecord::Base
   has_many :appunti
   
   default_scope :order => "scuole.position ASC"
+  
+  def funky_method
+    "#{self.nome_scuola}"
+  end
 end
