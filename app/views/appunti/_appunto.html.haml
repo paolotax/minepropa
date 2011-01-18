@@ -10,8 +10,9 @@
       = "email " unless appunto.email.blank?
       =  mail_to appunto.email unless appunto.email.blank?
   #footer
-    #check
-      = check_box_tag "appunti_ids[]", appunto.id
+    - unless @appunti.nil?
+      #check
+        = check_box_tag "appunti_ids[]", appunto.id
     #status_image
       %img= link_to image_tag(show_status_icon(appunto.stato)), toggle_stato_appunto_path(appunto) 
     #edit_buttons

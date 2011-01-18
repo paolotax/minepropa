@@ -8,8 +8,9 @@ class AppuntiController < ApplicationController
     
   helper_method :sort_column, :sort_direction
   
-  def autocomplete_for_nome_scuola
-     @appunti = current_user.scuole.all
+  def autocomplete_scuola_for_nome_scuola
+     @scuole = current_user.scuole
+     render :nothing
   end
   
   def index

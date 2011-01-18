@@ -11,7 +11,7 @@
 .float_right
   = button_to "Nuovo appunto", new_appunto_path, :method => 'get'
 
-- unless @appunti.nil?
+- unless @appunti.empty? 
   #appunti_items
   = form_tag edit_or_print_appunti_path do
     = render 'appunti/appunti_navbar'
