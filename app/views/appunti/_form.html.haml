@@ -7,18 +7,18 @@
         = @appunto.errors.full_messages.each do |msg|
           %li msg 
   .actions.float_right
-    = f.submit
+  = f.submit
   .field
     = f.label :stato
     = f.select(:stato, options_for_select([["in sospeso", "P"],["completato", "X"]], @appunto.stato), :include_blank => true)
   .field
     = f.label :destinatario
     = f.text_field :destinatario
-  .auto_search_complete
-    = f.text_field :scuola_nome_scuola
-  / .field
-  /   = f.label :scuola
-  /   = f.autocomplete_field :scuola_nome_scuola, autocomplete_scuola_nome_scuola_user_appunti_path
+  /.auto_search_complete
+  /  = f.text_field :scuola_nome_scuola
+  .field
+    = f.label :scuola
+    = f.autocomplete_field :scuola_nome_scuola, autocomplete_scuola_nome_scuola_user_appunti_path
   .field
     = f.label :scuola
     = f.collection_select(:scuola_id, Scuola.where(:user_id => current_user).order("nome_scuola"), :id, :nome_scuola_completo, {:prompt => "Scegli la Scuola", :include_blank => true})

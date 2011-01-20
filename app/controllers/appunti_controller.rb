@@ -2,7 +2,7 @@ class AppuntiController < ApplicationController
   
   prawnto :prawn => { :page_size => 'A4', :top_margin => 10 }
 
-  autocomplete :scuola, :nome_scuola, :full => true, :display_value => :funky_method
+  autocomplete :scuola, :nome_scuola, :full => true
   
   before_filter :authenticate_user!
     
