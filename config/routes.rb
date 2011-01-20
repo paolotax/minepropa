@@ -1,37 +1,41 @@
 Minepropa::Application.routes.draw do
 
-  devise_for :users
+  #get "autocomplete_searches/index"
+  resources :autocomplete_searches, :only => [:index], :as => 'autocomplete'
+  
+  devise_for :users, :path => 'utenti'
 
+
+  resources :users do
+    
+    resources :scuole do
+      collection do
+        post 'sort'
+      end
+    end
+    
+    resources :appunti do
+
+      get :autocomplete_scuola_nome_scuola, :on => :collection
+      get :autocomplete_scuola_for_nome_scuola,    :on => :collection
+
+      member do 
+        get 'toggle_stato'
+      end
+
+      collection do
+        post 'edit_or_print'
+        # post 'edit_multiple'
+        # post 'print_multiple', :format => 'pdf'
+        put 'update_multiple'
+      end
+    end
+  
+  end
+
+  
+  
   get "pages/about"
-  
-  resources :scuole do
-    collection do
-      post 'sort'
-    end
-    
-    
-  end
-  
-  resources :appunti do
-
-    get :autocomplete_scuola_nome_scuola, :on => :collection
-    get :autocomplete_scuola_for_nome_scuola,    :on => :collection
-
-    member do 
-      get 'toggle_stato'
-    end
-
-    collection do
-      post 'edit_or_print'
-      # post 'edit_multiple'
-      # post 'print_multiple', :format => 'pdf'
-      put 'update_multiple'
-    end
-  end
-  
-  
-
-  
   root :to => 'pages#home'
   
   # resources :appunti do

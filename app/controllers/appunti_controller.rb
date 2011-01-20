@@ -9,8 +9,9 @@ class AppuntiController < ApplicationController
   helper_method :sort_column, :sort_direction
   
   def autocomplete_scuola_for_nome_scuola
-     @scuole = current_user.scuole
-     render :nothing
+     current_user.scuole.select(:name)
+     # @scuole = current_user.scuole.where("nome_scuola like ?", "%"+params[:term]+"%").limit(10)
+     # render @scuole
   end
   
   def index
@@ -39,9 +40,8 @@ class AppuntiController < ApplicationController
 
   def new
 
-    @appunto = Appunto.new
     @user = current_user
-    
+    @appunto = @user.appunti.build
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @appunto }
@@ -50,15 +50,17 @@ class AppuntiController < ApplicationController
   end
 
   def edit
-    @appunto = Appunto.find(params[:id])
+    @user = current_user
+    @appunto = @user.appunti.find(params[:id])
   end
 
   def create
-    @appunto = current_user.appunti.build(params[:appunto])
+    @user = current_user
+    @appunto = @user.appunti.build(params[:appunto])
 
     respond_to do |format|
       if @appunto.save
-        format.html { redirect_to(@appunto, :notice => 'Appunto was successfully created.') }
+        format.html { redirect_to [current_user, @appunto], :flash => { :success => "L'appunto e' stato creato." } }
         format.xml  { render :xml => @appunto, :status => :created, :location => @appunto }
         format.json  { render :json => @appunto, :status => :created, :location => @appunto }
       else
@@ -70,11 +72,12 @@ class AppuntiController < ApplicationController
   end
 
   def update
-    @appunto = Appunto.find(params[:id])
+    @user = current_user
+    @appunto = @user.appunti.find(params[:id])
 
     respond_to do |format|
       if @appunto.update_attributes(params[:appunto])
-        format.html { redirect_to(@appunto, :notice => 'Appunto was successfully updated.') }
+        format.html { redirect_to [current_user, @appunto], :flash => { :success => "Le modifiche sono state salvate." } }
         format.xml  { head :ok }
         format.json  { head :json }
       else
@@ -86,7 +89,8 @@ class AppuntiController < ApplicationController
   end
 
   def destroy
-    @appunto = Appunto.find(params[:id])
+    @user = current_user
+    @appunto = @user.appunti.find(params[:id])
     @appunto.destroy
 
     respond_to do |format|
@@ -97,7 +101,8 @@ class AppuntiController < ApplicationController
 
   def toggle_stato
     #raise params[:new_stato].inspect
-    appunto = Appunto.find(params[:id])
+    @user = current_user
+    appunto = @user.appunti.find(params[:id])
     
     if appunto.stato == 'X'
       appunto.stato = "P"
@@ -116,7 +121,8 @@ class AppuntiController < ApplicationController
   end
   
   def edit_or_print
-    @appunti = Appunto.find(params[:appunti_ids])
+    @user = current_user
+    @appunto = @user.appunti.find(params[:appunti_ids])
     
     if params[:commit] == 'modifica selezionati'
       render 'edit_multiple'
@@ -132,7 +138,8 @@ class AppuntiController < ApplicationController
   # end
   
   def update_multiple
-    @appunti = Appunto.find(params[:appunti_ids])
+    @user = current_user
+    @appunto = @user.appunti.find(params[:appunti_ids])
     @appunti.each do |a|
       a.update_attributes!(params[:appunto].reject { |k,v| v.blank? unless k == 'stato'})
     end

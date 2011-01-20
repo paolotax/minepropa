@@ -20,9 +20,26 @@ class Scuola < ActiveRecord::Base
   belongs_to :scuola
   has_many :appunti
   
-  default_scope :order => "scuole.position ASC"
+  # default_scope :order => "scuole.position ASC"
   
   def funky_method
-    "#{self.nome_scuola}"
+    #if current_user_id = user.id then
+      "#{self.nome_scuola_completo}"
+    #else
+     # "---"
+    #3end
   end
+  
+  def nome_scuola_completo
+     [nome_scuola, citta].join(" ")
+  end  
+  
+  def self.search_for_nome(q)
+    [:nome_scuola, :citta].inject(scoped) do |combined_scope, attr|
+      combined_scope.where("scuole.#{attr} LIKE ?", "%#{q}%")
+    end
+  end
+
+  
+  
 end

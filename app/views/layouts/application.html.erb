@@ -15,8 +15,8 @@
     <div class="container round">
       <%= render 'layouts/header' %>
         <section class="round">
-        <% flash.each do |name, msg| %>
-          <%= content_tag :div, msg, :id => "flash_#{name}" %>
+        <% flash.each do |key, value| %>
+          <div class="flash <%= key %> "><%= value %></div>
         <% end %>
         <%= content_tag :h1, yield(:title) if show_title? %>
         <%= yield %>

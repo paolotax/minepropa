@@ -18,12 +18,12 @@
   pdf.float do
     pdf.bounding_box [pdf.bounds.width / 2.0, pdf.bounds.top], :width => 300 do
       pdf.move_down(200)
-      pdf.text appunto.destinatario, :size => 16, :style => :bold, :spacing => 4
-      pdf.text appunto.scuola.nome_scuola, :size => 12, :spacing => 16
-      pdf.text appunto.scuola.citta + " " + appunto.scuola.provincia, :size => 12
+      pdf.text @appunto.destinatario, :size => 16, :style => :bold, :spacing => 4
+      pdf.text @appunto.scuola.nome_scuola, :size => 12, :spacing => 16
+      pdf.text @appunto.scuola.citta + " " + @appunto.scuola.provincia, :size => 12
     end
   end
 
   pdf.move_down(350)
-  pdf.text appunto.note, :size => 12
+  pdf.text @appunto.note, :size => 12
   pdf.move_down(350)

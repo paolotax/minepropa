@@ -2,7 +2,7 @@
   #destinatario
     %strong= appunto.destinatario
   #scuola
-    = link_to appunto.scuola_nome_scuola_completo, scuola_path(appunto.scuola) unless appunto.scuola.blank?
+    = link_to appunto.scuola_nome_scuola_completo, user_scuola_path(current_user, appunto.scuola) unless appunto.scuola.blank?
   #note
     %p=  appunto.note
     %p= "tel #{ appunto.telefono}" unless appunto.telefono.blank?
@@ -14,11 +14,11 @@
       #check
         = check_box_tag "appunti_ids[]", appunto.id
     #status_image
-      %img= link_to image_tag(show_status_icon(appunto.stato)), toggle_stato_appunto_path(appunto) 
+      %img= link_to image_tag(show_status_icon(appunto.stato)), toggle_stato_user_appunto_path(current_user, appunto) 
     #edit_buttons
-      %img= link_to image_tag("s_edit18.jpeg"), edit_appunto_path(appunto)
-      %img= link_to image_tag("s_delete18.gif"), appunto, :method => :delete, :confirm => "You sure?", :title => appunto.destinatario
-      %img= link_to image_tag("s_print18.png"), appunto_path(appunto, :format => 'pdf')
+      %img= link_to image_tag("s_edit18.jpeg"), edit_user_appunto_path(current_user, appunto)
+      %img= link_to image_tag("s_delete18.gif"), user_appunto_path(current_user, appunto), :method => :delete, :confirm => "You sure?", :title => appunto.destinatario
+      %img= link_to image_tag("s_print18.png"), user_appunto_path(current_user, appunto, :format => 'pdf')
     #timestamp
       %small= get_posted_string(appunto)
     #clear

@@ -40,13 +40,16 @@ class Appunto < ActiveRecord::Base
     #appunti = appunti.where("appunti.user_id = ?", params[:user_id]) if params[:user_id]
     appunti
   end  
-  
 
   def scuola_nome_scuola_completo
     [scuola.nome_scuola, '('+scuola.citta.capitalize+')'].join(" ") if scuola
   end
+
+  def scuola_nome_scuola
+    scuola.nome_scuola if scuola
+  end  
   
-  def scuola_nome_scuola_completo=(nome)
+  def scuola_nome_scuola=(nome)
     self.scuola = Scuola.find_by_nome_scuola(nome)
   end
   
