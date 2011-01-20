@@ -1,3 +1,9 @@
+#titolo {
+	width: 450px;
+	float: left;
+	font-color: #069;
+}
+
 .container {
   width: 710px;
 }
@@ -25,6 +31,8 @@ section {
 
 section h1 {
   font-size: 200%;
+  text-align: left;
+  color: #069;
 }
 
 /* Links */
@@ -172,16 +180,12 @@ a.signup_button {
 	clear: both;
 }
 
-
 #search_appunti {
 	float: right;
 	padding: 5px;
-	margin-top: -50px;
-	margin-right 5px;
 	height: 30px;
 	background-color: #885;
 }
-
 
 #appunti_navbar {
 	margin-top: 20px;
@@ -248,7 +252,7 @@ div.field, div.actions {
 }
 
 div.field label {
- 	display: block; 
+ 	color: #069; 
 	float: left; 
 	width: 120px; 
 	margin: 0 0 5px 0;

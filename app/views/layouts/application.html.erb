@@ -18,7 +18,7 @@
         <% flash.each do |key, value| %>
           <div class="flash <%= key %> "><%= value %></div>
         <% end %>
-        <%= content_tag :h1, yield(:title) if show_title? %>
+        <%= content_tag(:div, content_tag(:h1, yield(:title)), :id => 'titolo') if show_title? %>
         <%= yield %>
       </section>
       <%= render 'layouts/footer' %>

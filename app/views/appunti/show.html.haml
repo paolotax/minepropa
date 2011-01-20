@@ -1,6 +1,10 @@
 - title "appunto"
 
+.clear
+
 .float_right
-  = button_to "Nuovo appunto", new_user_appunto_path(current_user), :method => 'get'
+  = button_to "Nuovo appunto", new_appunto_path, :method => 'get'
+
+.clear
 
 = render @appunto

@@ -1,9 +1,8 @@
 - title "#{@scuola.nome_scuola} #{@scuola.citta} #{@scuola.provincia}"
 
-#notice
-
-.float_right
-  = button_to "Nuovo appunto", new_appunto_path, :method => 'get'
-
 - if @scuola.appunti.any?
   = render 'appunti/appunti'
+- else
+  .clear
+  .float_right
+    = button_to "Nuovo appunto", new_appunto_path, :method => 'get'
