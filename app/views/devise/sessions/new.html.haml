@@ -3,11 +3,11 @@
   %p
     = f.label :username
     %br/
-    = f.text_field :username
+    = f.text_field :username, :class => 'title'
   %p
     = f.label :password
     %br/
-    = f.password_field :password
+    = f.password_field :password, :class => 'text'
   - if devise_mapping.rememberable?
     %p
       = f.check_box :remember_me

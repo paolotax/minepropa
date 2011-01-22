@@ -1,10 +1,5 @@
 - title "appunto"
-
 .clear
 
-.float_right
-  = button_to "Nuovo appunto", new_appunto_path, :method => 'get'
-
-.clear
-
-= render @appunto
+.content.span-15
+  = render @appunto

@@ -1,4 +1,5 @@
 = title "Modifica #{@appunti.count.to_s} appunti"
+.clear
 
 = form_for :appunto, :url => update_multiple_appunti_path, :html => {:method => :put} do |f|
   %ul

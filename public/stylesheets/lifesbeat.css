@@ -1,0 +1,1957 @@
+.node-unpublished {
+  background-color:#FFF4F4;
+}
+.preview .node {
+  background-color:#FFFFEA;
+}
+#node-admin-filter ul {
+  list-style-type:none;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+  width:100%;
+}
+#node-admin-buttons {
+  clear:right;
+  float:left;
+  margin-left:0.5em;
+}
+td.revision-current {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#FFFFCC;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+}
+.node-form .form-text {
+  display:block;
+  width:95%;
+}
+.node-form .container-inline .form-text {
+  display:inline;
+  width:auto;
+}
+.node-form .standard {
+  clear:both;
+}
+.node-form textarea {
+  display:block;
+  width:95%;
+}
+.node-form .attachments fieldset {
+  display:block;
+  float:none;
+}
+.terms-inline {
+  display:inline;
+}
+fieldset {
+  margin-bottom:1em;
+  padding-bottom:0.5em;
+  padding-left:0.5em;
+  padding-right:0.5em;
+  padding-top:0.5em;
+}
+form {
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+}
+hr {
+  border-bottom-color:gray;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-left-color:gray;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:gray;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:gray;
+  border-top-style:solid;
+  border-top-width:1px;
+  height:1px;
+}
+img {
+  border-bottom-width:0;
+  border-color:initial;
+  border-left-width:0;
+  border-right-width:0;
+  border-style:initial;
+  border-top-width:0;
+}
+table {
+  border-collapse:collapse;
+}
+th {
+  border-bottom-color:#CCCCCC;
+  border-bottom-style:solid;
+  border-bottom-width:3px;
+  padding-right:1em;
+  text-align:left;
+}
+.clear-block::after {
+  clear:both;
+  content:'.';
+  display:block;
+  height:0;
+  visibility:hidden;
+}
+.clear-block {
+  display:inline-block;
+}
+* html .clear-block {
+  height:1%;
+}
+.clear-block {
+  display:block;
+}
+body.drag {
+  cursor:move;
+}
+th.active img {
+  display:inline;
+}
+tr.even, tr.odd {
+  background-color:#EEEEEE;
+  border-bottom-color:#CCCCCC;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  padding-bottom:0.1em;
+  padding-left:0.6em;
+  padding-right:0.6em;
+  padding-top:0.1em;
+}
+tr.drag {
+  background-color:#FFFFF0;
+}
+tr.drag-previous {
+  background-color:#FFFFDD;
+}
+td.active {
+  background-color:#DDDDDD;
+}
+td.checkbox, th.checkbox {
+  text-align:center;
+}
+tbody {
+  border-top-color:#CCCCCC;
+  border-top-style:solid;
+  border-top-width:1px;
+}
+tbody th {
+  border-bottom-color:#CCCCCC;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+}
+thead th {
+  border-bottom-color:#CCCCCC;
+  border-bottom-style:solid;
+  border-bottom-width:3px;
+  padding-right:1em;
+  text-align:left;
+}
+.breadcrumb {
+  padding-bottom:0.5em;
+}
+div.indentation {
+  float:left;
+  height:1.7em;
+  margin-bottom:-0.4em;
+  margin-left:-0.4em;
+  margin-right:0.2em;
+  margin-top:-0.4em;
+  padding-bottom:0.42em;
+  padding-left:0.6em;
+  padding-right:0;
+  padding-top:0.42em;
+  width:20px;
+}
+div.tree-child {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://www.lifesbeat.org/misc/tree.png);
+  background-origin:initial;
+  background-position:11px 50%;
+  background-repeat:no-repeat no-repeat;
+}
+div.tree-child-last {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://www.lifesbeat.org/misc/tree-bottom.png);
+  background-origin:initial;
+  background-position:11px 50%;
+  background-repeat:no-repeat no-repeat;
+}
+div.tree-child-horizontal {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://www.lifesbeat.org/misc/tree.png);
+  background-origin:initial;
+  background-position:-11px 50%;
+  background-repeat:no-repeat no-repeat;
+}
+.error {
+  color:#EE5555;
+}
+div.error {
+  border-bottom-color:#DD7777;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-left-color:#DD7777;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#DD7777;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#DD7777;
+  border-top-style:solid;
+  border-top-width:1px;
+}
+div.error, tr.error {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#FFCCCC;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  color:#220000;
+  padding-bottom:2px;
+  padding-left:2px;
+  padding-right:2px;
+  padding-top:2px;
+}
+.warning {
+  color:#E09010;
+}
+div.warning {
+  border-bottom-color:#F0C020;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-left-color:#F0C020;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#F0C020;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#F0C020;
+  border-top-style:solid;
+  border-top-width:1px;
+}
+div.warning, tr.warning {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#FFFFDD;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  color:#222200;
+  padding-bottom:2px;
+  padding-left:2px;
+  padding-right:2px;
+  padding-top:2px;
+}
+.ok {
+  color:#008000;
+}
+div.ok {
+  border-bottom-color:#00AA00;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-left-color:#00AA00;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#00AA00;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#00AA00;
+  border-top-style:solid;
+  border-top-width:1px;
+}
+div.ok, tr.ok {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#DDFFDD;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  color:#002200;
+  padding-bottom:2px;
+  padding-left:2px;
+  padding-right:2px;
+  padding-top:2px;
+}
+.item-list .icon {
+  clear:right;
+  color:#555555;
+  float:right;
+  padding-left:0.25em;
+}
+.item-list .title {
+  font-weight:bold;
+}
+.item-list ul {
+  margin-bottom:0.75em;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+}
+.item-list ul li {
+  list-style-image:initial;
+  list-style-position:initial;
+  list-style-type:disc;
+  margin-bottom:0.25em;
+  margin-left:1.5em;
+  margin-right:0;
+  margin-top:0;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+}
+ol.task-list li.active {
+  font-weight:bold;
+}
+.form-item {
+  margin-bottom:1em;
+  margin-top:1em;
+}
+tr.odd .form-item, tr.even .form-item {
+  margin-bottom:0;
+  margin-top:0;
+  white-space:nowrap;
+}
+tr.merge-down, tr.merge-down td, tr.merge-down th {
+  border-bottom-width:0 !important;
+}
+tr.merge-up, tr.merge-up td, tr.merge-up th {
+  border-top-width:0 !important;
+}
+.form-item input.error, .form-item textarea.error, .form-item select.error {
+  border-bottom-color:red;
+  border-bottom-style:solid;
+  border-bottom-width:2px;
+  border-left-color:red;
+  border-left-style:solid;
+  border-left-width:2px;
+  border-right-color:red;
+  border-right-style:solid;
+  border-right-width:2px;
+  border-top-color:red;
+  border-top-style:solid;
+  border-top-width:2px;
+}
+.form-item .description {
+  font-size:0.85em;
+}
+.form-item label {
+  display:block;
+  font-weight:bold;
+}
+.form-item label.option {
+  display:inline;
+  font-weight:normal;
+}
+.form-checkboxes, .form-radios {
+  margin-bottom:1em;
+  margin-left:0;
+  margin-right:0;
+  margin-top:1em;
+}
+.form-checkboxes .form-item, .form-radios .form-item {
+  margin-bottom:0.4em;
+  margin-top:0.4em;
+}
+.marker, .form-required {
+  color:#FF0000;
+}
+.more-link {
+  text-align:right;
+}
+.more-help-link {
+  font-size:0.85em;
+  text-align:right;
+}
+.nowrap {
+  white-space:nowrap;
+}
+.item-list .pager {
+  clear:both;
+  text-align:center;
+}
+.item-list .pager li {
+  background-image:none;
+  display:inline;
+  list-style-type:none;
+  padding-bottom:0.5em;
+  padding-left:0.5em;
+  padding-right:0.5em;
+  padding-top:0.5em;
+}
+.pager-current {
+  font-weight:bold;
+}
+.tips {
+  font-size:0.9em;
+  margin-bottom:0;
+  margin-top:0;
+  padding-bottom:0;
+  padding-top:0;
+}
+dl.multiselect dd.b, dl.multiselect dd.b .form-item, dl.multiselect dd.b select {
+  font-family:inherit;
+  font-size:inherit;
+  width:14em;
+}
+dl.multiselect dd.a, dl.multiselect dd.a .form-item {
+  width:8em;
+}
+dl.multiselect dt, dl.multiselect dd {
+  float:left;
+  line-height:1.75em;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:1em;
+  margin-top:0;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+}
+dl.multiselect .form-item {
+  height:1.75em;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+}
+.container-inline div, .container-inline label {
+  display:inline;
+}
+ul.primary {
+  border-bottom-color:#BBBBBB;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-collapse:collapse;
+  height:auto;
+  line-height:normal;
+  list-style-image:initial;
+  list-style-position:initial;
+  list-style-type:none;
+  margin-bottom:5px;
+  margin-left:5px;
+  margin-right:5px;
+  margin-top:5px;
+  padding-bottom:0;
+  padding-left:1em;
+  padding-right:0;
+  padding-top:0;
+  white-space:nowrap;
+}
+ul.primary li {
+  display:inline;
+}
+ul.primary li a {
+  background-color:#DDDDDD;
+  border-bottom-color:#BBBBBB;
+  border-bottom-style:none;
+  border-bottom-width:1px;
+  border-left-color:#BBBBBB;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#BBBBBB;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#BBBBBB;
+  border-top-style:solid;
+  border-top-width:1px;
+  height:auto;
+  margin-right:0.5em;
+  padding-bottom:0;
+  padding-left:1em;
+  padding-right:1em;
+  padding-top:0;
+  text-decoration:none;
+}
+ul.primary li.active a {
+  background-color:#FFFFFF;
+  border-bottom-color:#FFFFFF;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-left-color:#BBBBBB;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#BBBBBB;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#BBBBBB;
+  border-top-style:solid;
+  border-top-width:1px;
+}
+ul.primary li a:hover {
+  background-color:#EEEEEE;
+  border-bottom-color:#EEEEEE;
+  border-left-color:#CCCCCC;
+  border-right-color:#CCCCCC;
+  border-top-color:#CCCCCC;
+}
+ul.secondary {
+  border-bottom-color:#BBBBBB;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  margin-bottom:5px;
+  margin-left:5px;
+  margin-right:5px;
+  margin-top:5px;
+  padding-bottom:0.5em;
+  padding-left:1em;
+  padding-right:1em;
+  padding-top:0.5em;
+}
+ul.secondary li {
+  border-right-color:#CCCCCC;
+  border-right-style:solid;
+  border-right-width:1px;
+  display:inline;
+  padding-bottom:0;
+  padding-left:1em;
+  padding-right:1em;
+  padding-top:0;
+}
+ul.secondary a {
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+  text-decoration:none;
+}
+ul.secondary a.active {
+  border-bottom-color:#999999;
+  border-bottom-style:solid;
+  border-bottom-width:4px;
+}
+#autocomplete {
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-color:initial;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-style:solid;
+  border-top-width:1px;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  position:absolute;
+  z-index:100;
+}
+#autocomplete ul {
+  list-style-image:initial;
+  list-style-position:initial;
+  list-style-type:none;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+}
+#autocomplete li {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#FFFFFF;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  color:#000000;
+  cursor:default;
+  white-space:pre;
+}
+#autocomplete li.selected {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#0072B9;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  color:#FFFFFF;
+}
+html.js input.form-autocomplete {
+  background-image:url(http://www.lifesbeat.org/misc/throbber.gif);
+  background-position:100% 2px;
+  background-repeat:no-repeat no-repeat;
+}
+html.js input.throbbing {
+  background-position:100% -18px;
+}
+html.js fieldset.collapsed {
+  border-bottom-width:0;
+  border-left-width:0;
+  border-right-width:0;
+  height:1em;
+  margin-bottom:0;
+}
+html.js fieldset.collapsed * {
+  display:none;
+}
+html.js fieldset.collapsed legend {
+  display:block;
+}
+html.js fieldset.collapsible legend a {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://www.lifesbeat.org/misc/menu-expanded.png);
+  background-origin:initial;
+  background-position:5px 75%;
+  background-repeat:no-repeat no-repeat;
+  padding-left:15px;
+}
+html.js fieldset.collapsed legend a {
+  background-image:url(http://www.lifesbeat.org/misc/menu-collapsed.png);
+  background-position:5px 50%;
+}
+* html.js fieldset.collapsed legend, * html.js fieldset.collapsed legend *, * html.js fieldset.collapsed table * {
+  display:inline;
+}
+html.js fieldset.collapsible {
+  position:relative;
+}
+html.js fieldset.collapsible legend a {
+  display:block;
+}
+html.js fieldset.collapsible .fieldset-wrapper {
+  overflow-x:auto;
+  overflow-y:auto;
+}
+.resizable-textarea {
+  width:95%;
+}
+.resizable-textarea .grippie {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#EEEEEE;
+  background-image:url(http://www.lifesbeat.org/misc/grippie.png);
+  background-origin:initial;
+  background-position:50% 2px;
+  background-repeat:no-repeat no-repeat;
+  border-bottom-color:#DDDDDD;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-left-color:#DDDDDD;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#DDDDDD;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#DDDDDD;
+  border-top-style:solid;
+  border-top-width:0;
+  cursor:s-resize;
+  height:9px;
+  overflow-x:hidden;
+  overflow-y:hidden;
+}
+html.js .resizable-textarea textarea {
+  display:block;
+  margin-bottom:0;
+  width:100%;
+}
+.draggable a.tabledrag-handle {
+  cursor:move;
+  float:left;
+  height:1.7em;
+  margin-bottom:-0.4em;
+  margin-left:-0.5em;
+  margin-right:0;
+  margin-top:-0.4em;
+  padding-bottom:0.42em;
+  padding-left:0.5em;
+  padding-right:1.5em;
+  padding-top:0.42em;
+  text-decoration:none;
+}
+a.tabledrag-handle:hover {
+  text-decoration:none;
+}
+a.tabledrag-handle .handle {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://www.lifesbeat.org/misc/draggable.png);
+  background-origin:initial;
+  background-position:0 0;
+  background-repeat:no-repeat no-repeat;
+  height:13px;
+  margin-top:4px;
+  width:13px;
+}
+a.tabledrag-handle-hover .handle {
+  background-position:0 -20px;
+}
+.joined + .grippie {
+  background-position:50% 1px;
+  height:5px;
+  margin-bottom:-2px;
+}
+.teaser-checkbox {
+  padding-top:1px;
+}
+div.teaser-button-wrapper {
+  float:right;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  padding-right:5%;
+}
+.teaser-checkbox div.form-item {
+  float:right;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:5%;
+  margin-top:0;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+}
+textarea.teaser {
+  display:none;
+}
+html.js .no-js {
+  display:none;
+}
+.progress {
+  font-weight:bold;
+}
+.progress .bar {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#FFFFFF;
+  background-image:url(http://www.lifesbeat.org/misc/progress.gif);
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  border-bottom-color:#00375A;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-left-color:#00375A;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#00375A;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#00375A;
+  border-top-style:solid;
+  border-top-width:1px;
+  height:1.5em;
+  margin-bottom:0;
+  margin-left:0.2em;
+  margin-right:0.2em;
+  margin-top:0;
+}
+.progress .filled {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#0072B9;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  border-bottom-color:#004A73;
+  border-bottom-style:solid;
+  border-bottom-width:0.5em;
+  height:1em;
+  width:0;
+}
+.progress .percentage {
+  float:right;
+}
+.progress-disabled {
+  float:left;
+}
+.ahah-progress {
+  float:left;
+}
+.ahah-progress .throbber {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(http://www.lifesbeat.org/misc/throbber.gif);
+  background-origin:initial;
+  background-position:0 -18px;
+  background-repeat:no-repeat no-repeat;
+  float:left;
+  height:15px;
+  margin-bottom:2px;
+  margin-left:2px;
+  margin-right:2px;
+  margin-top:2px;
+  width:15px;
+}
+tr .ahah-progress .throbber {
+  margin-bottom:0;
+  margin-left:2px;
+  margin-right:2px;
+  margin-top:0;
+}
+.ahah-progress-bar {
+  width:16em;
+}
+#first-time strong {
+  display:block;
+  padding-bottom:0.5em;
+  padding-left:0;
+  padding-right:0;
+  padding-top:1.5em;
+}
+tr.selected td {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#FFFFCC;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+}
+table.sticky-header {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#FFFFFF;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  margin-top:0;
+}
+#clean-url.install {
+  display:none;
+}
+html.js .js-hide {
+  display:none;
+}
+#system-modules div.incompatible {
+  font-weight:bold;
+}
+#system-themes-form div.incompatible {
+  font-weight:bold;
+}
+span.password-strength {
+  visibility:hidden;
+}
+input.password-field {
+  margin-right:10px;
+}
+div.password-description {
+  font-size:0.85em;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:4px;
+  max-width:500px;
+  padding-bottom:0;
+  padding-left:2px;
+  padding-right:2px;
+  padding-top:0;
+}
+div.password-description ul {
+  margin-bottom:0;
+}
+.password-parent {
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+}
+input.password-confirm {
+  margin-right:10px;
+}
+.confirm-parent {
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:5px;
+}
+span.password-confirm {
+  visibility:hidden;
+}
+span.password-confirm span {
+  font-weight:normal;
+}
+ul.menu {
+  border-bottom-style:none;
+  border-color:initial;
+  border-left-style:none;
+  border-right-style:none;
+  border-top-style:none;
+  border-width:initial;
+  list-style-image:initial;
+  list-style-position:initial;
+  list-style-type:none;
+  text-align:left;
+}
+ul.menu li {
+  margin-bottom:0;
+  margin-left:0.5em;
+  margin-right:0;
+  margin-top:0;
+}
+li.expanded {
+  list-style-image:url(http://www.lifesbeat.org/misc/menu-expanded.png);
+  list-style-type:circle;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0.5em;
+  padding-top:0.2em;
+}
+li.collapsed {
+  list-style-image:url(http://www.lifesbeat.org/misc/menu-collapsed.png);
+  list-style-type:disc;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0.5em;
+  padding-top:0.2em;
+}
+li.leaf {
+  list-style-image:url(http://www.lifesbeat.org/misc/menu-leaf.png);
+  list-style-type:square;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0.5em;
+  padding-top:0.2em;
+}
+li a.active {
+  color:#000000;
+}
+td.menu-disabled {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#CCCCCC;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+}
+ul.links {
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+}
+ul.links.inline {
+  display:inline;
+}
+ul.links li {
+  display:inline;
+  list-style-type:none;
+  padding-bottom:0;
+  padding-left:0.5em;
+  padding-right:0.5em;
+  padding-top:0;
+}
+.block ul {
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  padding-bottom:0.25em;
+  padding-left:1em;
+  padding-right:0;
+  padding-top:0;
+}
+#permissions td.module {
+  font-weight:bold;
+}
+#permissions td.permission {
+  padding-left:1.5em;
+}
+#access-rules .access-type, #access-rules .rule-type {
+  float:left;
+  margin-right:1em;
+}
+#access-rules .access-type .form-item, #access-rules .rule-type .form-item {
+  margin-top:0;
+}
+#access-rules .mask {
+  clear:both;
+}
+#user-login-form {
+  text-align:center;
+}
+#user-admin-filter ul {
+  list-style-type:none;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+  width:100%;
+}
+#user-admin-buttons {
+  clear:right;
+  float:left;
+  margin-left:0.5em;
+}
+#user-admin-settings fieldset .description {
+  font-size:0.85em;
+  padding-bottom:0.5em;
+}
+.profile {
+  clear:both;
+  margin-bottom:1em;
+  margin-left:0;
+  margin-right:0;
+  margin-top:1em;
+}
+.profile .picture {
+  float:right;
+  margin-bottom:1em;
+  margin-left:0;
+  margin-right:1em;
+  margin-top:0;
+}
+.profile h3 {
+  border-bottom-color:#CCCCCC;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+}
+.profile dl {
+  margin-bottom:1.5em;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+}
+.profile dt {
+  font-weight:bold;
+  margin-bottom:0.2em;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+}
+.profile dd {
+  margin-bottom:1em;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+}
+.field .field-label, .field .field-label-inline, .field .field-label-inline-first {
+  font-weight:bold;
+}
+.field .field-label-inline, .field .field-label-inline-first {
+  display:inline;
+}
+.field .field-label-inline {
+  visibility:hidden;
+}
+.node-form .content-multiple-table td.content-multiple-drag {
+  padding-right:0;
+  width:30px;
+}
+.node-form .content-multiple-table td.content-multiple-drag a.tabledrag-handle {
+  padding-right:0.5em;
+}
+.node-form .content-add-more .form-submit {
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+}
+.node-form .number {
+  display:inline;
+  width:auto;
+}
+.node-form .text {
+  width:auto;
+}
+.form-item #autocomplete .reference-autocomplete {
+  white-space:normal;
+}
+.form-item #autocomplete .reference-autocomplete label {
+  display:inline;
+  font-weight:normal;
+}
+#content-field-overview-form .advanced-help-link, #content-display-overview-form .advanced-help-link {
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:4px;
+  margin-top:4px;
+}
+#content-field-overview-form .label-group, #content-display-overview-form .label-group, #content-copy-export-form .label-group {
+  font-weight:bold;
+}
+table#content-field-overview .label-add-new-field, table#content-field-overview .label-add-existing-field, table#content-field-overview .label-add-new-group {
+  float:left;
+}
+table#content-field-overview tr.content-add-new .tabledrag-changed {
+  display:none;
+}
+table#content-field-overview tr.content-add-new .description {
+  margin-bottom:0;
+}
+table#content-field-overview .content-new {
+  font-weight:bold;
+  padding-bottom:0.5em;
+}
+.advanced-help-topic h3, .advanced-help-topic h4, .advanced-help-topic h5, .advanced-help-topic h6 {
+  margin-bottom:0.5em;
+  margin-left:0;
+  margin-right:0;
+  margin-top:1em;
+}
+.advanced-help-topic dd {
+  margin-bottom:0.5em;
+}
+.advanced-help-topic span.code {
+  background-color:#EDF1F3;
+  font-family:'Bitstream Vera Sans Mono', Monaco, 'Lucida Console', monospace;
+  font-size:0.9em;
+  padding-bottom:1px;
+  padding-left:1px;
+  padding-right:1px;
+  padding-top:1px;
+}
+.advanced-help-topic .content-border {
+  border-bottom-color:#AAAAAA;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-left-color:#AAAAAA;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#AAAAAA;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#AAAAAA;
+  border-top-style:solid;
+  border-top-width:1px;
+}
+.container-inline-date {
+  clear:both;
+  display:inline-block;
+  margin-right:0.5em;
+  vertical-align:top;
+  width:auto;
+}
+.container-inline-date .form-item {
+  float:none;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+}
+.container-inline-date .form-item .form-item {
+  float:left;
+}
+.container-inline-date .form-item, .container-inline-date .form-item input {
+  width:auto;
+}
+.container-inline-date .description {
+  clear:both;
+}
+.container-inline-date .form-item input, .container-inline-date .form-item select, .container-inline-date .form-item option {
+  margin-right:5px;
+}
+.container-inline-date .date-spacer {
+  margin-left:-5px;
+}
+.views-right-60 .container-inline-date div {
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+}
+.container-inline-date .date-timezone .form-item {
+  clear:both;
+  float:none;
+  width:auto;
+}
+#calendar_div, #calendar_div td, #calendar_div th {
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+}
+#calendar_div, .calendar_control, .calendar_links, .calendar_header, .calendar {
+  border-collapse:separate;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  width:185px;
+}
+.calendar td {
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+}
+span.date-display-single {
+}
+span.date-display-start {
+}
+span.date-display-end {
+}
+span.date-display-separator {
+}
+.date-repeat-input {
+  float:left;
+  margin-right:5px;
+  width:auto;
+}
+.date-repeat-input select {
+  min-width:7em;
+}
+.date-repeat fieldset {
+  clear:both;
+  float:none;
+}
+.date-views-filter-wrapper {
+  min-width:250px;
+}
+.date-views-filter input {
+  float:left !important;
+  margin-right:2px !important;
+  min-width:12em;
+  padding-bottom:0 !important;
+  padding-left:0 !important;
+  padding-right:0 !important;
+  padding-top:0 !important;
+  width:12em;
+}
+.date-nav {
+  width:100%;
+}
+.date-nav div.date-prev {
+  float:left;
+  text-align:left;
+  width:24%;
+}
+.date-nav div.date-next {
+  float:right;
+  text-align:right;
+  width:24%;
+}
+.date-nav div.date-heading {
+  float:left;
+  text-align:center;
+  width:50%;
+}
+.date-nav div.date-heading h3 {
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+}
+.date-clear {
+  clear:both;
+  display:block;
+  float:none;
+}
+.date-clear-block {
+  clear:both;
+  float:none;
+  width:auto;
+}
+.date-clear-block::after {
+  clear:both;
+  content:' ';
+  display:block;
+  height:0;
+  visibility:hidden;
+}
+.date-clear-block {
+  display:inline-block;
+}
+* html .date-clear-block {
+  height:1%;
+}
+.date-clear-block {
+  display:block;
+}
+.date-container .date-format-delete {
+  float:left;
+  margin-left:1.5em;
+  margin-top:1.8em;
+}
+.date-container .date-format-name {
+  float:left;
+}
+.date-container .date-format-type {
+  float:left;
+  padding-left:10px;
+}
+.date-container .select-container {
+  clear:left;
+  float:left;
+}
+div.date-calendar-day {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#F3F3F3;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  border-bottom-color:#BBBBBB;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-left-color:#EEEEEE;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#BBBBBB;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#EEEEEE;
+  border-top-style:solid;
+  border-top-width:1px;
+  color:#999999;
+  float:left;
+  font-family:Georgia, Arial, Verdana, sans;
+  line-height:1;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:10px;
+  margin-top:6px;
+  text-align:center;
+  width:40px;
+}
+div.date-calendar-day span {
+  display:block;
+  text-align:center;
+}
+div.date-calendar-day span.month {
+  background-color:#B5BEBE;
+  color:white;
+  font-size:0.9em;
+  padding-bottom:2px;
+  padding-left:2px;
+  padding-right:2px;
+  padding-top:2px;
+  text-transform:uppercase;
+}
+div.date-calendar-day span.day {
+  font-size:2em;
+  font-weight:bold;
+}
+div.date-calendar-day span.year {
+  font-size:0.9em;
+  padding-bottom:2px;
+  padding-left:2px;
+  padding-right:2px;
+  padding-top:2px;
+}
+#ui-datepicker-div table, #ui-datepicker-div td, #ui-datepicker-div th {
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+}
+#ui-datepicker-div, #ui-datepicker-div table, .ui-datepicker-div, .ui-datepicker-div table, .ui-datepicker-inline, .ui-datepicker-inline table {
+  font-size:12px !important;
+}
+.ui-datepicker-div, .ui-datepicker-inline, #ui-datepicker-div {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#FFFFFF;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  border-bottom-color:#D3D3D3;
+  border-bottom-style:solid;
+  border-bottom-width:2px;
+  border-color:initial;
+  border-left-color:#D3D3D3;
+  border-left-style:solid;
+  border-left-width:2px;
+  border-right-color:#D3D3D3;
+  border-right-style:solid;
+  border-right-width:2px;
+  border-style:initial;
+  border-top-color:#D3D3D3;
+  border-top-style:solid;
+  border-top-width:2px;
+  font-family:Verdana, Arial, sans-serif;
+  font-size:1.1em;
+  line-height:1.3;
+  list-style-image:initial;
+  list-style-position:initial;
+  list-style-type:none;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  outline-color:initial;
+  outline-style:initial;
+  outline-width:0;
+  padding-bottom:0.5em;
+  padding-left:0.5em;
+  padding-right:0.5em;
+  padding-top:2.5em;
+  position:relative;
+  text-decoration:none;
+  width:15.5em;
+}
+#ui-datepicker-div {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#FFFFFF;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  display:none;
+  z-index:9999;
+}
+.ui-datepicker-inline {
+  display:block;
+  float:left;
+}
+.ui-datepicker-control {
+  display:none;
+}
+.ui-datepicker-current {
+  display:none;
+}
+.ui-datepicker-next, .ui-datepicker-prev {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#E6E6E6;
+  background-image:url(http://www.lifesbeat.org/sites/all/modules/date/date_popup/themes/images/e6e6e6_40x100_textures_02_glass_75.png);
+  background-origin:initial;
+  background-position:0 50%;
+  background-repeat:repeat no-repeat;
+  left:0.5em;
+  position:absolute;
+  top:0.5em;
+}
+.ui-datepicker-next {
+  left:14.6em;
+}
+.ui-datepicker-next:hover, .ui-datepicker-prev:hover {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#DADADA;
+  background-image:url(http://www.lifesbeat.org/sites/all/modules/date/date_popup/themes/images/dadada_40x100_textures_02_glass_75.png);
+  background-origin:initial;
+  background-position:0 50%;
+  background-repeat:repeat no-repeat;
+}
+.ui-datepicker-next a, .ui-datepicker-prev a {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://www.lifesbeat.org/sites/all/modules/date/date_popup/themes/images/888888_7x7_arrow_left.gif);
+  background-origin:initial;
+  background-position:50% 50%;
+  background-repeat:no-repeat no-repeat;
+  border-bottom-color:#D3D3D3;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-left-color:#D3D3D3;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#D3D3D3;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#D3D3D3;
+  border-top-style:solid;
+  border-top-width:1px;
+  cursor:pointer;
+  display:block;
+  font-size:1em;
+  height:1.4em;
+  text-indent:-999999px;
+  width:1.3em;
+}
+.ui-datepicker-next a {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://www.lifesbeat.org/sites/all/modules/date/date_popup/themes/images/888888_7x7_arrow_right.gif);
+  background-origin:initial;
+  background-position:50% 50%;
+  background-repeat:no-repeat no-repeat;
+}
+.ui-datepicker-prev a:hover {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://www.lifesbeat.org/sites/all/modules/date/date_popup/themes/images/454545_7x7_arrow_left.gif);
+  background-origin:initial;
+  background-position:50% 50%;
+  background-repeat:no-repeat no-repeat;
+}
+.ui-datepicker-next a:hover {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://www.lifesbeat.org/sites/all/modules/date/date_popup/themes/images/454545_7x7_arrow_right.gif);
+  background-origin:initial;
+  background-position:50% 50%;
+  background-repeat:no-repeat no-repeat;
+}
+.ui-datepicker-prev a:active {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://www.lifesbeat.org/sites/all/modules/date/date_popup/themes/images/222222_7x7_arrow_left.gif);
+  background-origin:initial;
+  background-position:50% 50%;
+  background-repeat:no-repeat no-repeat;
+}
+.ui-datepicker-next a:active {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://www.lifesbeat.org/sites/all/modules/date/date_popup/themes/images/222222_7x7_arrow_right.gif);
+  background-origin:initial;
+  background-position:50% 50%;
+  background-repeat:no-repeat no-repeat;
+}
+.ui-datepicker-header select {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#E6E6E6;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  border-bottom-color:#D3D3D3;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-left-color:#D3D3D3;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#D3D3D3;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#D3D3D3;
+  border-top-style:solid;
+  border-top-width:1px;
+  color:#555555;
+  font-size:1em;
+  line-height:1.4em;
+  margin-bottom:0 !important;
+  margin-left:0 !important;
+  margin-right:0 !important;
+  margin-top:0 !important;
+  padding-bottom:0 !important;
+  padding-left:0 !important;
+  padding-right:0 !important;
+  padding-top:0 !important;
+  position:absolute;
+  top:0.5em;
+}
+.ui-datepicker-header select.ui-datepicker-new-month {
+  left:2.2em;
+  width:7em;
+}
+.ui-datepicker-header select.ui-datepicker-new-year {
+  left:9.4em;
+  width:5em;
+}
+table.ui-datepicker {
+  text-align:right;
+  width:15.5em;
+}
+table.ui-datepicker td a {
+  color:#555555;
+  display:block;
+  padding-bottom:0.1em;
+  padding-left:0;
+  padding-right:0.3em;
+  padding-top:0.1em;
+  text-decoration:none;
+}
+table.ui-datepicker tbody {
+  border-top-color:initial;
+  border-top-style:none;
+  border-top-width:initial;
+}
+table.ui-datepicker tbody td a {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#E6E6E6;
+  background-image:url(http://www.lifesbeat.org/sites/all/modules/date/date_popup/themes/images/e6e6e6_40x100_textures_02_glass_75.png);
+  background-origin:initial;
+  background-position:0 50%;
+  background-repeat:repeat no-repeat;
+  border-bottom-color:#FFFFFF;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-left-color:#FFFFFF;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#FFFFFF;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#FFFFFF;
+  border-top-style:solid;
+  border-top-width:1px;
+  cursor:pointer;
+}
+table.ui-datepicker tbody td a:hover {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#DADADA;
+  background-image:url(http://www.lifesbeat.org/sites/all/modules/date/date_popup/themes/images/dadada_40x100_textures_02_glass_75.png);
+  background-origin:initial;
+  background-position:0 50%;
+  background-repeat:repeat no-repeat;
+  border-bottom-color:#999999;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-left-color:#999999;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#999999;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#999999;
+  border-top-style:solid;
+  border-top-width:1px;
+  color:#212121;
+}
+table.ui-datepicker tbody td a:active {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#FFFFFF;
+  background-image:url(http://www.lifesbeat.org/sites/all/modules/date/date_popup/themes/images/ffffff_40x100_textures_02_glass_65.png);
+  background-origin:initial;
+  background-position:0 50%;
+  background-repeat:repeat no-repeat;
+  border-bottom-color:#DDDDDD;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-left-color:#DDDDDD;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#DDDDDD;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#DDDDDD;
+  border-top-style:solid;
+  border-top-width:1px;
+  color:#222222;
+}
+table.ui-datepicker .ui-datepicker-title-row td {
+  color:#222222;
+  font-size:0.9em;
+  padding-bottom:0.3em;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0.3em;
+  text-align:center;
+  text-transform:uppercase;
+}
+table.ui-datepicker .ui-datepicker-title-row td a {
+  color:#222222;
+}
+.timeEntry_control {
+  margin-left:2px;
+  vertical-align:middle;
+}
+* html .timeEntry_control {
+  margin-top:-4px;
+}
+.timeEntry {
+  background-color:transparent !important;
+}
+.timeEntry_control {
+  display:none;
+}
+.filefield-icon {
+  float:left;
+  margin-right:0.4em;
+}
+.filefield-element {
+  margin-bottom:1em;
+  margin-left:0;
+  margin-right:0;
+  margin-top:1em;
+  white-space:normal;
+}
+.filefield-element .widget-preview {
+  border-right-color:#CCCCCC;
+  border-right-style:solid;
+  border-right-width:1px;
+  float:left;
+  margin-right:10px;
+  max-width:30%;
+  padding-right:10px;
+}
+.filefield-element .widget-edit {
+  float:left;
+  max-width:70%;
+}
+.filefield-element .filefield-preview {
+  overflow-x:hidden;
+  overflow-y:hidden;
+  width:16em;
+}
+.filefield-element .widget-edit .form-item {
+  margin-bottom:1em;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+}
+.filefield-element input.form-submit, .filefield-element input.form-file {
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+}
+.filefield-element input.progress-disabled {
+  display:inline;
+  float:none;
+}
+.filefield-element div.ahah-progress, .filefield-element div.throbber {
+  display:inline;
+  float:none;
+  padding-bottom:2px;
+  padding-left:3px;
+  padding-right:13px;
+  padding-top:1px;
+}
+.filefield-element div.ahah-progress-bar {
+  display:none;
+  margin-top:4px;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+  width:28em;
+}
+.filefield-element div.ahah-progress-bar div.bar {
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+}
+.filefield-generic-edit .filefield-icon {
+  float:left;
+  margin-right:0.7em;
+  margin-top:0.3em;
+}
+.filefield-generic-edit-description {
+  margin-right:6em;
+}
+.filefield-generic-edit .form-text {
+  width:99%;
+}
+.filefield-generic-edit .description {
+  margin-bottom:0;
+  overflow-x:auto;
+  overflow-y:auto;
+  white-space:normal;
+}
+.views-exposed-form .views-exposed-widget {
+  float:left;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:1em;
+  padding-top:0.5em;
+}
+.views-exposed-form .views-exposed-widget .form-submit {
+  margin-top:1.6em;
+}
+.views-exposed-form .form-item, .views-exposed-form .form-submit {
+  margin-bottom:0;
+  margin-top:0;
+}
+.views-exposed-form label {
+  font-weight:bold;
+}
+.views-exposed-widgets {
+  margin-bottom:0.5em;
+}
+html.js a.views-throbbing, html.js span.views-throbbing {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://www.lifesbeat.org/sites/all/modules/views/images/status-active.gif);
+  background-origin:initial;
+  background-position:100% 50%;
+  background-repeat:no-repeat no-repeat;
+  padding-right:18px;
+}
+div.view div.views-admin-links {
+  font-size:xx-small;
+  margin-right:1em;
+  margin-top:1em;
+}
+.block div.view div.views-admin-links {
+  margin-top:0;
+}
+div.view div.views-admin-links ul {
+  padding-left:0;
+}
+div.view div.views-admin-links li a {
+  color:#CCCCCC;
+}
+div.view div.views-admin-links li {
+  padding-bottom:2px;
+  z-index:201;
+}
+div.view div.views-admin-links-hover a, div.view div.views-admin-links:hover a {
+  color:#000000;
+}
+div.view div.views-admin-links-hover, div.view div.views-admin-links:hover {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+}
+div.view div.views-admin-links a::before {
+  content:'[';
+}
+div.view div.views-admin-links a::after {
+  content:']';
+}
+div.view div.views-hide {
+  display:none;
+}
+div.view div.views-hide-hover, div.view:hover div.views-hide {
+  display:block;
+  position:absolute;
+  z-index:200;
+}
+div.view:hover div.views-hide {
+  margin-top:-1.5em;
+}
+.views-view-grid tbody {
+  border-top-color:initial;
+  border-top-style:none;
+  border-top-width:initial;
+}
+.jcarousel-container {
+  position:relative;
+}
+.jcarousel-clip {
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+  position:relative;
+  z-index:2;
+}
+.jcarousel-list {
+  left:0;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+  position:relative;
+  top:0;
+  z-index:1;
+}
+.jcarousel-list li, .jcarousel-item {
+  float:left;
+  height:75px;
+  list-style-image:initial;
+  list-style-position:initial;
+  list-style-type:none;
+  width:75px;
+}
+.jcarousel-next {
+  display:none;
+  z-index:3;
+}
+.jcarousel-prev {
+  display:none;
+  z-index:3;
+}
+.jcarousel-container ul li, .jcarousel-container ul.menu li, .jcarousel-container .item-list ul {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:none;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+}

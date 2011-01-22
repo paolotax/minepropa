@@ -1,0 +1,363 @@
+#titolo {
+	width: 450px;
+	float: left;
+	font-color: #069;
+}
+
+.container {
+  width: 710px;
+}
+
+body {
+  background: #cff;
+}
+
+header {
+  padding-top: 20px;
+}
+
+header img {
+    padding-top: 2em;
+    padding-left: -15px;
+  background: #cff;
+}
+
+section {
+  margin-top: 1em;
+  font-size: 120%;
+  padding: 20px;
+  background: #fff;
+}
+
+section h1 {
+  font-size: 200%;
+  text-align: left;
+  color: #069;
+}
+
+/* Links */
+
+a {
+  color: #09c;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #069;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #069;
+}
+
+/* Navigation */
+
+nav {
+  float: right;
+}
+
+nav {
+  background-color: white;
+  padding: 0 0.7em;
+  white-space: nowrap;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 0.2em 0;
+}
+
+nav ul li a {
+  padding: 0 5px;
+  font-weight: bold;
+}
+
+nav ul li a:visited {
+  color: #09c;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  text-align: center;
+  margin-top: 10px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer nav {
+  float: none;
+}
+
+/* Sign up button */
+
+a.signup_button {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center;
+  width: 190px;
+  color: #fff;
+  background: #006400;
+  font-size: 150%;
+  font-weight: bold;
+  padding: 20px;
+}
+
+/* Round corners */
+
+.round {
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
+}
+
+
+#appunto {
+	margin-left: 100px;
+	margin-right: 100px;
+	margin-top: 20px;
+	border: 1px solid #ccc;
+}
+
+#destinatario {
+	padding-top: 5px;
+	padding-left: 5px;
+}
+
+#scuola {
+	padding-left: 5px;
+}
+
+#titolo {
+    text-align: center;
+	margin-bottom: 40px;
+}
+
+#note {
+	padding-left: 5px;
+}
+
+
+#footer {
+	border-top: 1px solid #ccc;
+	padding-top: 5px;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+
+#status_image {
+	float: right;
+}
+
+#check {
+	float:right;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+#edit_buttons {
+	float: left;
+}
+
+#timestamp {
+	float: none;
+	padding-right: 5px;
+	text-align: center;
+}
+
+#clear {
+	clear: both;
+}
+
+#search_appunti {
+	float: right;
+	padding: 5px;
+	height: 30px;
+	background-color: #885;
+}
+
+#appunti_navbar {
+	margin-top: 20px;
+}
+
+.float_right {
+	float: right;
+}
+
+.float_left {
+	float: left;
+}
+
+.float_none {
+	float: none;
+}
+
+
+
+
+#error_explanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#error_explanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+.field_with_errors {
+  margin-top: 10px;
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+.field_with_errors label {
+  color: #fff;
+}
+
+div.field, div.actions {
+  margin-bottom:10px;	
+}
+
+div.field label {
+ 	color: #069; 
+	float: left; 
+	width: 120px; 
+	margin: 0 0 5px 0;
+}
+
+.handle {
+	font-size: 12px;
+	cursor: move;
+	color: #777;
+}
+
+.handle:hover {
+	cursor: move;
+}
+
+#scuole li {
+  list-style-type: none;
+  padding: 0.2em 0;
+  margin-top: 3px;
+}
+
+#scuole div {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+table.appunti {
+ 	border: none;
+    width: 100%;
+	border-collapse: collapse;
+	font-family: "Trebuchet MS", Arial, sans-serif;
+	color: #555;
+}
+
+.appunto {
+  border-top: 1px solid #ccc; 	
+  padding: 10px;
+}
+
+
+.status_image {
+  vertical-align: bottom;
+  width: 50px;
+  float: left;
+}
+
+
+.edit_buttons img {
+	width: 20;
+	height: 20;
+	padding: 5;
+}
+
+.timestamp {
+  display: block;
+  font-size: 80%;
+  float: right;
+  color: #666;
+  vertical-align: bottom;
+}
+
+
+#appunto_list table {
+        border-collapse: collapse;
+}
+
+#appunto_list table tr td {
+        padding: 5px;
+        vertical-align: top;
+}
+
+#appunto_list .list_image {
+  width:        60px;
+  height:       70px;
+}
+
+#appunto_list .list_description {
+  width:        60%;
+}
+
+#appunto_list .list_description dl {
+        margin: 0;
+}
+
+#appunto_list .list_description dt {
+	color:        #244;
+	font-weight:  bold;
+	font-size:    larger;
+}
+
+#appunto_list .list_description dd {
+        margin: 0;
+}
+
+#appunto_list .list_actions {
+  font-size:    x-small;
+  text-align:   right;
+  padding-left: 1em;
+}
