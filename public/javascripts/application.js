@@ -15,19 +15,33 @@ $('.auto_search_complete').autocomplete({
     }           
 });
 
-// $(function () {  
-//   // Sorting and pagination links.  
-//   
-//   
-// 
-// 
-//     
-//   // Search form.  
-// 	//   $('#search_appunti').submit(function () {  
-// 	//     console.log('searc')
-// 	// $.get(this.action, $(this).serialize(), null, 'script');  
-// 	// return false;  
-// 	//   });  
-// });
+if (history && history.pushState) {
+	$(function () {  
+ 	 	// Sorting and pagination links.  
+	 	$("#appunti .pagination a").live("click", function() {
+	   		$.getScript(this.href);
+	        history.pushState(null, document.title, this.href);
+	        //  e.preventDefault();
+			return false;
+	 	});
+	 	
+		$('#search_appunti').submit(function () {  
+			$.get(this.action, $("#search_appunti").serialize(), null, 'script');  
+			history.pushState(null, document.title, $("#search_appunti").attr("action") + "?" + $("#search_appunti").serialize()); 
+	 	    return false;
+		});
+	
+		$(window).bind("popstate", function() {
+			 $.getScript(location.href);
+		});
 
+	
+	 // ricerca con keyup
+	 // $("#search_appunti input").keyup(function() {
+	 //   $.get($("#search_appunti").attr("action"), $("#search").serialize(), null, "script");
+	 //   return false;
+	 // });
+
+	});
+}
 

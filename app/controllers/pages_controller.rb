@@ -3,11 +3,11 @@ class PagesController < ApplicationController
   before_filter :authenticate_user!
   
   def home
-    @title = "Home"
-    @appunti = Appunto.in_corso.where("user_id = ?", current_user).paginate(:per_page => 8, :page => params[:page])
+    @appunti = current_user.appunti.in_corso.search(params).paginate(:per_page => 8, :page => params[:page])
   end
 
   def about
+    @appunti = current_user.appunti.in_corso.paginate(:per_page => 8, :page => params[:page])
   end
 
 end

@@ -25,6 +25,7 @@ class AppuntiController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @appunti }
+      format.js 
     end
   end
   
@@ -121,8 +122,8 @@ class AppuntiController < ApplicationController
   end
   
   def edit_or_print
-    @user = current_user
-    @appunto = @user.appunti.find(params[:appunti_ids])
+    
+    @appunti = Appunto.find(params[:appunti_ids])
     
     if params[:commit] == 'modifica selezionati'
       render 'edit_multiple'
@@ -133,13 +134,12 @@ class AppuntiController < ApplicationController
     end
   end
   
-  # def edit_multiple
-  #   #@appunti = Appunto.find(params[:appunti_ids])
-  # end
+  def edit_multiple
+    @appunti = Appunto.find(params[:appunti_ids])
+  end
   
   def update_multiple
-    @user = current_user
-    @appunto = @user.appunti.find(params[:appunti_ids])
+    @appunti = Appunto.find(params[:appunti_ids])
     @appunti.each do |a|
       a.update_attributes!(params[:appunto].reject { |k,v| v.blank? unless k == 'stato'})
     end
@@ -147,10 +147,10 @@ class AppuntiController < ApplicationController
     redirect_to appunti_path
   end
   
-  # def print_multiple
-  #   #raise params.inspect
-  #   #@appunti = Appunto.find(params[:appunti_ids])
-  # end    
+  def print_multiple
+    #raise params.inspect
+    @appunti = Appunto.find(params[:appunti_ids])
+  end    
   
   private  
 

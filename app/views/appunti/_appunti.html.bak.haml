@@ -1,0 +1,13 @@
+- unless @appunti.empty? 
+  = form_tag edit_multiple_appunti_path do
+    = submit_tag "modifica selezionati"
+  = form_tag print_multiple_appunti_path do
+    = submit_tag "modifica selezionati"
+ 
+  = page_entries_info @appunti
+  = will_paginate @appunti, :class => 'pagination'
+  .clear
+  = render @appunti
+  .clear
+  = will_paginate @appunti, :class => 'pagination'
+  .clear
