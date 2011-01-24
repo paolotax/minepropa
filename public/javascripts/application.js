@@ -21,8 +21,8 @@ if (history && history.pushState) {
 	 	$("#appunti .pagination a").live("click", function() {
 	   		$.getScript(this.href);
 	        history.pushState(null, document.title, this.href);
-	        //  e.preventDefault();
-			return false;
+	        event.preventDefault();
+			// return false;
 	 	});
 	 	
 		$('#search_appunti').submit(function () {  

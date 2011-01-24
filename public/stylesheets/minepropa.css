@@ -194,6 +194,9 @@ ul li, ul.menu li, .item-list ul li, li.leaf {
 	padding-left: 5px;
 }
 
+#area_note {
+	height: 4.5em;
+}
 
 #footer {
 	border-top: 1px solid #F17419;

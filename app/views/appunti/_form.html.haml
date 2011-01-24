@@ -7,8 +7,6 @@
         %ul
           = @appunto.errors.full_messages.each do |msg|
             %li msg 
-    .actions.float_right
-      = f.submit
     .field
       = f.label :stato
       = f.select(:stato, options_for_select([["in sospeso", "P"],["completato", "X"]], @appunto.stato), :include_blank => true)
@@ -25,10 +23,13 @@
       = f.collection_select(:scuola_id, Scuola.where(:user_id => current_user).order("nome_scuola"), :id, :nome_scuola_completo, {:prompt => "Scegli la Scuola", :include_blank => true})
     .field
       = f.label :note
-      = f.text_area :note, :rows => "3"
+      = f.text_area :note, :id => 'area_note'
     .field
       = f.label :telefono
       = f.phone_field :telefono
     .field
       = f.label :email
       = f.email_field :email
+    .actions.last.center
+      = f.submit
+    
