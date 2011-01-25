@@ -1,5 +1,7 @@
 - title "Lista appunti"
 
+.clear
+
 - unless @appunti.nil?
   = form_tag appunti_path, :method => 'get', :id => "search_appunti" do
     - hidden_field_tag :direction, params[:direction]
@@ -11,4 +13,3 @@
     .clear
 #appunti
   = render :partial => 'appunti'
-

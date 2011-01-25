@@ -2,7 +2,10 @@
 
 <div class="clear"></div>
 
+<%= will_paginate @scuole %>
+<div class="clear"></div>
 <ul id="scuole_sort_list"> 
+
   <% @scuole.each do |scuola| %>
     <li id="scuola_<%= scuola.id %>">
 	   <span class="handle float_left">[drag]</span>
