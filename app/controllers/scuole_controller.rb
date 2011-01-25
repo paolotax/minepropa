@@ -74,7 +74,7 @@ class ScuoleController < ApplicationController
   end
 
   def sort
-    @scuole = Scuola.all
+    @scuole = current_user.scuole
     
     @scuole.each do |scuola|
       scuola.position = params['scuola'].index(scuola.id.to_s) + 1

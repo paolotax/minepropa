@@ -73,8 +73,7 @@ class AppuntiController < ApplicationController
   end
 
   def update
-    @user = current_user
-    @appunto = @user.appunti.find(params[:id])
+    @appunto = Appunto.find(params[:id])
 
     respond_to do |format|
       if @appunto.update_attributes(params[:appunto])

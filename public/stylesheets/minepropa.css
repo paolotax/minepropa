@@ -31,6 +31,11 @@ div.block {
 	background: #009EE6;
 }
 
+#bl_navigator {
+	padding-top: 0px;
+	padding-bottom: 0px;	
+}
+
 .col-left .block a {
   color:#FFFFFF;
   text-decoration:underline;
@@ -40,10 +45,10 @@ ul {
   list-style-type:disc;
 }
 
+
 ul#nav.links {
   margin-top:30px;
 }
-
 
 
 #nav.links li.last {
@@ -106,11 +111,14 @@ ul#nav.links {
   padding-left:5px;
   padding-right:5px;
   padding-top:5px;
-
+  
+  margin-top: 5px;
   text-align:center;
-
+  
 }
-
+#block_navigator li a {
+  text-decoration:none;
+}
 
 #nav li {
   display:inline;
