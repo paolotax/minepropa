@@ -25,5 +25,8 @@ module AppuntiHelper
       end
     end
   end
-        
+  
+  def get_provincie_appunti
+    @provincie = current_user.scuole.select('distinct provincia')
+  end      
 end

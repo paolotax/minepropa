@@ -35,8 +35,8 @@ class Scuola < ActiveRecord::Base
   end  
   
   def self.search_for_nome(q)
-    [:nome_scuola, :citta].inject(scoped) do |combined_scope, attr|
-      combined_scope.where("scuole.#{attr} LIKE ?", "%#{q}%")
+    [:nome_scuola].inject(scoped) do |combined_scope, attr|        #tolto :citta dall array per AND
+       combined_scope.where("scuole.#{attr} LIKE ?", "%#{q}%")
     end
   end
 

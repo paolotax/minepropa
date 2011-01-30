@@ -9,17 +9,17 @@ class AppuntiController < ApplicationController
   helper_method :sort_column, :sort_direction
   
   def autocomplete_scuola_for_nome_scuola
-     current_user.scuole.select(:name)
-     # @scuole = current_user.scuole.where("nome_scuola like ?", "%"+params[:term]+"%").limit(10)
+     #@scuole = current_user.scuole.select('distinct nome_scuola')
+     @scuole = current_user.scuole.where("nome_scuola like ?", "%"+params[:term]+"%").limit(10)
      # render @scuole
   end
   
   def index
 
     if params[:android]
-      @appunti = current_user.appunti.search(params)
+      @appunti = current_user.appunti.search(params).provincia(params)
     else  
-      @appunti = current_user.appunti.search(params).paginate(:per_page => 8, :page => params[:page])
+      @appunti = current_user.appunti.search(params).provincia(params).paginate(:per_page => 8, :page => params[:page])
     end
     
     respond_to do |format|

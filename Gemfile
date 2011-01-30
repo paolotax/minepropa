@@ -13,6 +13,8 @@ gem 'ruby_parser'
 gem 'with_action'
 gem "jquery-rails"
 gem "acts_as_list"
+gem 'meta_where'
+gem 'meta_search'
 
 gem 'rails3-jquery-autocomplete'
 #gem 'nifty-generators'

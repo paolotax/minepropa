@@ -1,3 +1,25 @@
+$(document).ready(function(){
+	$("#provincie li").hover(
+		function(){ $("ul", this).fadeIn("fast"); }, 
+		function() { } 
+	);
+	if (document.all) {
+		$("#provincie li").hoverClass ("sfHover");
+	}
+});
+
+$.fn.hoverClass = function(c) {
+	return this.each(function(){
+		$(this).hover( 
+			function() { $(this).addClass(c);  },
+			function() { $(this).removeClass(c); }
+		);
+	});
+};
+
+
+
+
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults
 $(document).ready(function(){
@@ -22,29 +44,38 @@ $(document).ready(function(){
 	});
 });
 
-
-$('.auto_search_complete').autocomplete({
-    minLength: 2,
-    delay: 600,
-    source: function(request, response) {
-        $.ajax({
-            url: "/autocomplete.js",
-            dataType: "json",
-            data: {term: request.term},
-            success: function( data ) {
-                response( data );
-            }
-        });
-    }           
+jQuery(function() {
+	$('.auto_search_complete').autocomplete({
+	    minLength: 2,
+	    delay: 600,
+	    source: function(request, response) {
+	        $.ajax({
+	            url: "/autocomplete_searches.js",
+	            dataType: "json",
+	            data: {term: request.term},
+	            success: function( data ) {
+	                response( data );
+	            }
+	        });
+	    }           
+	});
+	
+	$("#provincie li").hover(function(){$(this).effect("highlight", {}, 1000);});
+	
 });
 
 if (history && history.pushState) {
 	$(function () {  
  	 	// Sorting and pagination links.  
-	 	$("#appunti .pagination a").live("click", function() {
+	 	$("#appunti .pagination a,  #provincie a").live("click", function() {
 	   		$.getScript(this.href);
 	        history.pushState(null, document.title, this.href);
 	        // event.preventDefault();
+			return false;
+	 	});
+	    
+	    $("#status_image a").live("click", function() {
+	   		$.getScript(this.href);
 			return false;
 	 	});
 	 	
@@ -53,20 +84,9 @@ if (history && history.pushState) {
 			history.pushState(null, document.title, $("#search_appunti").attr("action") + "?" + $("#search_appunti").serialize()); 
 	 	    return false;
 		});
-	
-	
-		// 	    window.onpopstate = function(e) { 
-		//     if (!(typeof e.state == 'undefined')) { 
-		//        $.getScript(location.href);
-		//     } 
-		// }
 		
 		
-		// 	  	$(window).bind("popstate", function() {
-		// 	 $.getScript(location.href);
-		// });
-
-	
+		
 	 // ricerca con keyup
 	 // $("#search_appunti input").keyup(function() {
 	 //   $.get($("#search_appunti").attr("action"), $("#search").serialize(), null, "script");

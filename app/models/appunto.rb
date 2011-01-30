@@ -28,7 +28,9 @@ class Appunto < ActiveRecord::Base
   
   scope :in_sospeso, where("appunti.stato = ?", "P")
   scope :in_corso, where("appunti.stato != ? or appunti.stato is null", "X")
-  scope :instance_appunti, lambda { |user| where("appunti.user_id = ?", user.id) }
+  
+  #vecchio stile
+  #scope :instance_appunti, lambda { |user| where("appunti.user_id = ?", user.id) }
   
   def self.search(params)  
     
@@ -40,6 +42,17 @@ class Appunto < ActiveRecord::Base
     #appunti = appunti.where("appunti.user_id = ?", params[:user_id]) if params[:user_id]
     appunti
   end  
+  
+  def self.provincia(params)
+    
+    appunti = scoped
+    if params[:provincia]
+      appunti = appunti.joins(:scuola).where(:scuola => { :provincia => params[:provincia]})
+    end
+    
+    appunti
+  end
+
 
   def scuola_nome_scuola_completo
     [scuola.nome_scuola, '('+scuola.citta.capitalize+')'].join(" ") if scuola

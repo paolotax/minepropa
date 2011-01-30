@@ -1,0 +1,7 @@
+
+
+- data = []
+- @scuole.each do |p|
+  - data << {:label => "#{h(p.nome_scuola)}", :value => "#{h(p.id)}" }
+
+= data.to_json

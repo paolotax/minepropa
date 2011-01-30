@@ -1,0 +1,6 @@
+#provincie
+  %ul.links
+    - get_provincie_appunti.each do |p|
+      - unless p.nil?
+        %li.links= link_to p.provincia, params.merge(:provincia => p.provincia)
+  .clear

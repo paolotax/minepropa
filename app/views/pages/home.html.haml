@@ -1,13 +1,7 @@
 - title "What's up"
 
-- unless @appunti.nil?
-  = form_tag root_path, :method => 'get', :id => "search_appunti" do
-    - hidden_field_tag :direction, params[:direction]
-    - hidden_field_tag :sort, params[:sort]
-    / - hidden_field_tag :user_id, current_user.id
-    %p
-      = text_field_tag :search, params[:search]
-      = submit_tag "Cerca", :name => nil
-  .clear
+= render :partial => 'search_appunti'
+= render :partial => 'provincie'
+
 #appunti
   = render :partial => 'appunti/appunti'
