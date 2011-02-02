@@ -17,7 +17,7 @@
       = f.text_field :scuola_nome_scuola, :class => 'auto_search_complete'
     .field
       = f.label :scuola
-      = f.autocomplete_field :scuola_nome_scuola, autocomplete_scuola_for_nome_scuola_appunti_path
+      = f.autocomplete_field :scuola_nome_scuola, autocomplete_scuola_nome_scuola_appunti_path
     .field
       = f.label :scuola
       = f.collection_select(:scuola_id, Scuola.where(:user_id => current_user).order("nome_scuola"), :id, :nome_scuola_completo, {:prompt => "Scegli la Scuola", :include_blank => true})

@@ -23,25 +23,7 @@ $.fn.hoverClass = function(c) {
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults
 $(document).ready(function(){
-	$('#scuole_sort_list').sortable({
-		axis: 'y',
-		dropOnEmpty: false,
-		handle: '.handle',
-		cursor: 'crosshair',
-		items: 'li',
-		opacity: 0.4,
-		scroll: true,
-		update: function(){
-			$.ajax({
-				type: 'post',
-				data: $('#scuole_sort_list').sortable('serialize'),
-				dataType: 'script', 
-				complete: function(request){
-					$('#scuole_sort_list').effect('highlight');
-				},
-				url: '/scuole/sort'})
-		}
-	});
+	
 });
 
 jQuery(function() {
@@ -79,12 +61,37 @@ if (history && history.pushState) {
 			return false;
 	 	});
 	 	
-		$('#search_appunti').submit(function () {  
-			$.get(this.action, $("#search_appunti").serialize(), null, 'script');  
-			history.pushState(null, document.title, $("#search_appunti").attr("action") + "?" + $("#search_appunti").serialize()); 
+		$('#appunto_search').submit(function () {  
+			$.get(this.action, $("#appunto_search").serialize(), null, 'script');  
+			history.pushState(null, document.title, $("#appunto_search").attr("action") + "?" + $("#appunto_search").serialize()); 
 	 	    return false;
 		});
 		
+		$('#scuola_search').submit(function () {  
+			$.get(this.action, $("#scuola_search").serialize(), null, 'script');  
+			history.pushState(null, document.title, $("#scuola_search").attr("action") + "?" + $("#scuola_search").serialize()); 
+	 	    return false;
+		});
+		
+		$('#scuole_sort_list').sortable({
+  		axis: 'y',
+  		dropOnEmpty: false,
+  		handle: '.handle',
+  		cursor: 'crosshair',
+  		items: 'li',
+  		opacity: 0.4,
+  		scroll: true,
+  		update: function(){
+  			$.ajax({
+  				type: 'post',
+  				data: $('#scuole_sort_list').sortable('serialize'),
+  				dataType: 'script', 
+  				complete: function(request){
+  					$('#scuole_sort_list').effect('highlight');
+  				},
+  				url: '/scuole/sort'})
+  		}
+  	});
 		
 		
 	 // ricerca con keyup

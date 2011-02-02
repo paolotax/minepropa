@@ -1,18 +1,12 @@
+<% render 'pages/search_scuole' %>
+
+
 <% title "Lista scuole" %> 
 
 <div class="clear"></div>
 
-<%= will_paginate @scuole %>
-<div class="clear"></div>
-<ul id="scuole_sort_list"> 
 
-  <% @scuole.each do |scuola| %>
-    <li id="scuola_<%= scuola.id %>">
-	   <span class="handle float_left">[drag]</span>
-	   <div id="nome_scuola"class="float_left" ><%= link_to "#{scuola.nome_scuola} #{ scuola.citta}", scuola_path(scuola) %></div>  
-       <div id="provincia" ><%= scuola.provincia %></div>   
-    
-	</li>
-  <% end %>
-</ul>
+
+<%= render :partial => 'scuole' %>
+
    

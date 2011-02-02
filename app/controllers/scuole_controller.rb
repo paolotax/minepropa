@@ -3,8 +3,8 @@ class ScuoleController < ApplicationController
   before_filter :authenticate_user!
   
   def index
-    @scuole = current_user.scuole.paginate(:per_page => 20, :page => params[:page])
-
+    @search = current_user.scuole.search(params[:search])
+    @scuole = @search.paginate(:per_page => 20, :page => params[:page])
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @scuole }

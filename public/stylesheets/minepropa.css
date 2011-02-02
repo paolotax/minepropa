@@ -13,6 +13,12 @@ div.container {
   margin-top: 20px;
 }
 
+#field_cerca input {
+  width: 160px;
+}
+#select_citta select {
+  width: 165px;
+}
 .col-left .block {
   padding: 1em;
   background-color: #468BCA;
