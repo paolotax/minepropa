@@ -1,5 +1,8 @@
 - title "#{@scuola.nome_scuola} #{@scuola.citta} #{@scuola.provincia}"
 
+- content_for :search_nav do
+  = render :partial => 'pages/search_appunti'
+  
 - if @scuola.appunti.any?
   = render 'appunti/appunti'
 

@@ -24,9 +24,13 @@
           = f.select(:scuola_provincia_matches , get_provincie_appunti.collect {|p| [p.provincia]}, :include_blank => true)
         .clear
         = f.label :stato_matches, "Stato"
-        .right
-          = f.select(:stato_matches , options_for_select([["in sospeso", "P"],["completato", "X"]]), :include_blank => true)
+        %ul#list_stato.right
+          = f.checks :stato_in , [['da completare',''], ["in sospeso", "P"],["completato", "X"]], :class => 'checkboxy' do |c|
+            %li
+              = c.box
+              = c.label
         .clear
+        = link_to 'clear', appunti_path
         .right
           = f.submit "Cerca", :disable_with => 'sto cercando...'
         .clear

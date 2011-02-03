@@ -14,7 +14,11 @@ class ScuoleController < ApplicationController
 
   def show
     @scuola = Scuola.find(params[:id])
-    @appunti = @scuola.appunti.paginate(:per_page => 8, :page => params[:page])
+   
+    @search = @scuola.appunti.search(params[:search])
+    @appunti = @search.paginate(:per_page => 8, :page => params[:page])  
+
+    #@appunti = @scuola.appunti.paginate(:per_page => 8, :page => params[:page])
     
     respond_to do |format|
       format.html # show.html.erb

@@ -10,31 +10,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110113205851) do
+ActiveRecord::Schema.define(:version => 20110203070131) do
 
   create_table "appunti", :force => true do |t|
     t.string   "destinatario"
     t.text     "note"
     t.string   "telefono"
-    t.string   "stato"
+    t.string   "stato",        :default => "", :null => false
     t.date     "scadenza"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "scuola_id"
+    t.integer  "scuola_id"
     t.integer  "position"
     t.string   "email"
     t.integer  "user_id"
-  end
-
-  create_table "appunti_new", :force => true do |t|
-    t.string   "destinatario"
-    t.string   "scuola"
-    t.text     "note"
-    t.string   "telefono"
-    t.string   "stato"
-    t.date     "scadenza"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "scuole", :force => true do |t|

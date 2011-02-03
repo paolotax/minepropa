@@ -17,25 +17,11 @@ class AppuntiController < ApplicationController
   def index
     
     @search = current_user.appunti.search(params[:search])
-   
-    
     if params[:android]
       @appunti = @search.all
     else  
       @appunti = @search.paginate(:per_page => 8, :page => params[:page]) 
     end
-
-    # if params[:android]
-    #   @appunti = current_user.appunti.search(params).provincia(params)
-    # else  
-    #   @appunti = current_user.appunti.search(params).provincia(params).paginate(:per_page => 8, :page => params[:page])
-    # end
-    
-    # respond_to do |format|
-    #   format.html # index.html.erb
-    #   format.json { render :json => @appunti }
-    #   format.js 
-    # end
   end
   
   def show

@@ -19,6 +19,12 @@ div.container {
 #select_citta select {
   width: 165px;
 }
+
+#list_stato li {
+  list-style-image: none;
+  list-style-type:none;
+}
+
 .col-left .block {
   padding: 1em;
   background-color: #468BCA;
