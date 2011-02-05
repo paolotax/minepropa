@@ -13,14 +13,9 @@
     .field
       = f.label :destinatario
       = f.text_field :destinatario
-    / .field
-    /       = f.text_field :scuola_nome_scuola, :class => 'auto_search_complete'
-    /     .field
-    /       = f.label :scuola
-    /       = f.autocomplete_field :scuola_nome_scuola, autocomplete_scuola_nome_scuola_appunti_path
     .field
       = f.label :scuola
-      = f.collection_select(:scuola_id, current_user.scuole.order("nome_scuola"), :id, :nome_scuola_completo, {:prompt => "Scegli la Scuola", :include_blank => true})
+      = f.collection_select(:scuola_id, current_user.scuole.order("nome_scuola"), :id, :nome_scuola, {:prompt => "Scegli la Scuola", :include_blank => true})
     .field
       = f.label :note
       = f.text_area :note, :id => 'area_note'
@@ -32,4 +27,3 @@
       = f.email_field :email
     .actions.last.center
       = f.submit
-    

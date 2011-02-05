@@ -7,30 +7,41 @@
       <%= javascript_include_tag "jquery-ui-1.8.8.custom.min.js" %>
       <%= javascript_include_tag "rails.js", "autocomplete-rails.js", 'application.js' %>
       <%= stylesheet_link_tag 'jquery-ui-1.8.8.custom.css' %>
-	  
+	    
+	    <%= stylesheet_link_tag 'mobile' if mobile_device? %>
+	    
       <%= csrf_meta_tag %>
-	  <%= yield(:head) %>
+  	  <%= yield(:head) %>
   </head>
   <body>
     <div class="container">
+      
+      <p>
+        <% if mobile_device? %>
+          <%= link_to "Full Site", :mobile => 0 %>
+        <% else %>
+          <%= link_to "Mobile Site", :mobile => 1 %>
+        <% end %>
+      </p>
+      
       <%= render 'layouts/header' %>
 
-	  <div class="prepend-1 span-5 col-left">
+	    <div class="prepend-1 span-5 col-left">
 
-		<% if user_signed_in? %>
-	    	<%= render 'layouts/block_navigator' %>
-		<% end %>
+  		<% if user_signed_in? %>
+  	    	<%= render 'layouts/block_navigator' %>
+  		<% end %>
 
-		<div id="block-block-1" class="block round">
-      <%= yield(:search_bar) %>
-	  </div>
+  		<div id="block-block-1" class="block round">
+        <%= yield(:search_bar) %>
+  	  </div>
 	  
-		<div id="block-block-1" class="block round block-block region-odd odd region-count-1 count-1">
-		  <div class="content"><p><strong>Life's Beat</strong> makes available 15 programs produced for <a title="Hope Channel" href="http://www.hopetv.org/" target="_blank">HOPE CHANNEL</a>&nbsp;that relate to the second quarter <em>Adult Sabbath School Bible Study Guide</em> (April, May, and June 2010). These programs provide additional material and fresh perspectives to the lesson topics, but do not follow the specific format of each lesson.</p>
-	    	<p><strong>We recommend</strong> Hymn #642, "We Praise Thee With Our Minds."</p>
-    		<p><a href="/about">Read More</a></p>
-		  </div>
-	    </div>
+  		<div id="block-block-1" class="block round block-block region-odd odd region-count-1 count-1">
+  		  <div class="content"><p><strong>Life's Beat</strong> makes available 15 programs produced for <a title="Hope Channel" href="http://www.hopetv.org/" target="_blank">HOPE CHANNEL</a>&nbsp;that relate to the second quarter <em>Adult Sabbath School Bible Study Guide</em> (April, May, and June 2010). These programs provide additional material and fresh perspectives to the lesson topics, but do not follow the specific format of each lesson.</p>
+  	    	<p><strong>We recommend</strong> Hymn #642, "We Praise Thee With Our Minds."</p>
+      		<p><a href="/about">Read More</a></p>
+  		  </div>
+  	  </div>
 	  </div>
 	
 	  <div class="col-center span-15 prepend-1 last append-1 round">

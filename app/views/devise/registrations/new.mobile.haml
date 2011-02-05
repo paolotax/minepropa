@@ -1,0 +1,32 @@
+- title "Registration"
+
+%div{"data-role" => "content"}
+  = form_for(user, :as => user_name, :url => registration_path(user_name)) do |f|
+    = devise_error_messages!
+    %p
+      = f.label :name, 'Nome completo'
+      %br/
+      = f.text_field :name
+    %p
+      = f.label :username, 'Nome utente'
+      %br/
+      = f.text_field :username
+    %p
+      = f.label :email
+      %br/
+      = f.text_field :email
+    %p
+      = f.label :password
+      %br/
+      = f.password_field :password
+    %p
+      = f.label :password_confirmation
+      %br/
+      = f.password_field :password_confirmation
+    %p
+      = f.label :phone, 'Cellulare'
+      %br/
+      = f.phone_field :phone
+    %p= f.submit "Sign up"
+
+  = render :partial => "devise/shared/links"

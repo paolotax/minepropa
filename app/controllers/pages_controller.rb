@@ -6,7 +6,7 @@ class PagesController < ApplicationController
     @search = current_user.appunti.in_corso.search(params[:search])
     
     
-    if params[:android]
+    if mobile_device?
       @appunti = @search.all
     else  
       @appunti = @search.paginate(:per_page => 8, :page => params[:page])

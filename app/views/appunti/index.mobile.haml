@@ -1,0 +1,10 @@
+#header{'data-role' => "header"}
+  %h1 Lista appunti
+  = link_to 'Nuovo', new_appunto_path, "data-icon" => "plus", "class" => "ui-btn-right"
+
+#content{"data-role" => "content"}
+  %ul{"data-role" => "listview", "data-filter" => "true"}
+    - @appunti.each do |appunto|
+      %li
+        = link_to appunto.destinatario, appunto
+        = link_to 'edit appunto', edit_appunto_path(appunto), "data-icon" => "gear"
