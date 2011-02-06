@@ -7,22 +7,22 @@
         %ul
           = @appunto.errors.full_messages.each do |msg|
             %li msg 
-    .field
+    #field{"data-role" => "fieldcontain"}
       = f.label :stato
-      = f.select(:stato, options_for_select([["in sospeso", "P"],["completato", "X"]], @appunto.stato), :include_blank => true)
-    .field
+      = f.select(:stato, options_for_select([["...", ""],["in sospeso", "P"],["completato", "X"]], @appunto.stato))
+    #field{"data-role" => "fieldcontain"}
       = f.label :destinatario
       = f.text_field :destinatario
-    .field
+    #field{"data-role" => "fieldcontain"}
       = f.label :scuola
       = f.collection_select(:scuola_id, current_user.scuole.order("nome_scuola"), :id, :nome_scuola, {:prompt => "Scegli la Scuola", :include_blank => true})
-    .field
+    #field{"data-role" => "fieldcontain"}
       = f.label :note
       = f.text_area :note, :id => 'area_note'
-    .field
+    #field{"data-role" => "fieldcontain"}
       = f.label :telefono
       = f.phone_field :telefono
-    .field
+    #field{"data-role" => "fieldcontain"}
       = f.label :email
       = f.email_field :email
     .actions.last.center

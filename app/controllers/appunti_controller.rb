@@ -56,10 +56,12 @@ class AppuntiController < ApplicationController
 
     respond_to do |format|
       if @appunto.save
+        format.mobile { redirect_to root_path }
         format.html { redirect_to [@appunto], :flash => { :success => "L'appunto e' stato creato." } }
         format.xml  { render :xml => @appunto, :status => :created, :location => @appunto }
         format.json  { render :json => @appunto, :status => :created, :location => @appunto }
       else
+        format.mobile { render :action => 'new' }
         format.html { render :action => "new" }
         format.xml  { render :xml => @appunto.errors, :status => :unprocessable_entity }
         format.json  { render :json => @appunto.errors, :status => :unprocessable_entity }
@@ -72,10 +74,12 @@ class AppuntiController < ApplicationController
 
     respond_to do |format|
       if @appunto.update_attributes(params[:appunto])
+        format.mobile { redirect_to root_path }
         format.html { redirect_to [@appunto], :flash => { :success => "Le modifiche sono state salvate." } }
         format.xml  { head :ok }
         format.json  { head :json }
       else
+        format.mobile { render :action => 'edit' }
         format.html { render :action => "edit" }
         format.xml  { render :xml => @appunto.errors, :status => :unprocessable_entity }
         format.json  { render :json => @appunto.errors, :status => :unprocessable_entity }
@@ -89,6 +93,7 @@ class AppuntiController < ApplicationController
     @appunto.destroy
 
     respond_to do |format|
+      format.mobile { redirect_to root_path }
       format.html { redirect_to(appunti_url) }
       format.xml  { head :ok }
     end

@@ -14,7 +14,7 @@
 </head>
   <body>
     <div data-role="page">
-      <h1><%- title 'Mobile App' %></h1>
+      <!-- <h1><%- title 'Mobile App' %></h1>
         <div data-role="header">
           <h1><%= @title || 'Mobile App' %></h1>
           <% unless user_signed_in? %>
@@ -22,9 +22,12 @@
           <% else %>
             <%= link_to 'Sign Out', destroy_user_session_path, "class" => "ui-btn-right" %>
           <% end %>
-        </div>
+        </div> -->
       
       <%= yield %>
     </div>
   </body>
 </html>
+
+
+
