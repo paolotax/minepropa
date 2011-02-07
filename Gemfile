@@ -20,15 +20,15 @@ gem 'rails3-jquery-autocomplete'
 #gem 'nifty-generators'
 
 group :development do
-   gem 'rspec-rails'
-   gem 'annotate-models'
-   gem 'faker'	
+  gem 'rspec-rails'
+  gem 'annotate-models'
+  gem 'faker'	
 end
 
 group :test do
-   gem 'rspec'
-   gem 'webrat', '0.7.2'
+  gem 'rspec'
+  gem 'webrat', '0.7.2'
 
-   gem 'spork'
-   gem 'factory_girl_rails'	
+  gem 'spork'
+  gem 'factory_girl_rails'	
 end

@@ -14,6 +14,11 @@ class AppuntiController < ApplicationController
      # render @scuole
   end
   
+  def get_items(parameters)
+    Scuola.where(:user_id => current_user.id).where(['nome_scuola LIKE ?', "%#{parameters[:term]}%"])
+  end
+  
+  
   def index
     
     @search = current_user.appunti.search(params[:search])
