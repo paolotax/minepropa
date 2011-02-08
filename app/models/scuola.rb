@@ -20,15 +20,14 @@ class Scuola < ActiveRecord::Base
   belongs_to :scuola
   has_many :appunti
   
-  # default_scope :order => "scuole.position ASC"
+  attr_accessible :nome_scuola, :citta, :provincia, :position
   
-  def funky_method
-    #if current_user_id = user.id then
-      "#{self.nome_scuola_completo}"
-    #else
-     # "---"
-    #3end
-  end
+  validates :user_id,  :presence => true
+  validates :nome_scuola,  :presence => true
+  validates :citta,  :presence => true
+  validates :provincia,  :presence => true, :length => { :maximum => 2 }
+  
+  # default_scope :order => "scuole.position ASC"
   
   def nome_scuola_completo
      [nome_scuola, citta].join(" ")

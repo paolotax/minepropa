@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20110113205851
+# Schema version: 20110203070131
 #
 # Table name: appunti
 #
@@ -7,7 +7,7 @@
 #  destinatario :string(255)
 #  note         :text
 #  telefono     :string(255)
-#  stato        :string(255)
+#  stato        :string(255)     default(""), not null
 #  scadenza     :date
 #  created_at   :datetime
 #  updated_at   :datetime
@@ -23,6 +23,10 @@ class Appunto < ActiveRecord::Base
   
   belongs_to :scuola
   belongs_to :user
+  
+  validates :user_id,  :presence => true
+  
+  validates :scuola_nome_scuola,  :presence => true
   
   default_scope :order => "appunti.updated_at DESC, appunti.id DESC" 
   

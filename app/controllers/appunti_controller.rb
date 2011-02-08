@@ -2,7 +2,7 @@ class AppuntiController < ApplicationController
   
   prawnto :prawn => { :page_size => 'A4', :top_margin => 10 }
 
-  autocomplete :scuola, :nome_scuola, :full => true
+  autocomplete :scuola, :nome_scuola
   
   before_filter :authenticate_user!
     
@@ -15,7 +15,7 @@ class AppuntiController < ApplicationController
   end
   
   def get_items(parameters)
-    Scuola.where(:user_id => current_user.id).where(['nome_scuola LIKE ?', "%#{parameters[:term]}%"])
+    Scuola.where(:user_id => current_user.id).where(['nome_scuola LIKE ?', "%#{parameters[:term]}%"]).limit(10).order(:nome_scuola)
   end
   
   
