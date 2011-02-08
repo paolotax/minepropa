@@ -5,7 +5,10 @@ gem 'rails', '3.0.3'
 gem 'mysql2'
 gem 'will_paginate', '3.0.pre2'
 gem "simple_form"
+
 gem "haml-rails"
+gem 'compass'
+
 gem "hpricot"
 gem 'prawnto'
 gem 'devise'

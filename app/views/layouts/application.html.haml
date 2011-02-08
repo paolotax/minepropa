@@ -1,0 +1,34 @@
+!!!
+%html
+  %head
+    %title= yield(:title) || "Untitled"
+    = render 'layouts/stylesheets'
+    = javascript_include_tag "jquery-1.4.4.min.js"
+    = javascript_include_tag "jquery-ui-1.8.8.custom.min.js"
+    = javascript_include_tag "rails.js", "autocomplete-rails.js", 'application.js'
+    = stylesheet_link_tag 'jquery-ui-1.8.8.custom.css'
+    = stylesheet_link_tag 'mobile' if mobile_device?
+    = csrf_meta_tag
+    = yield(:head)
+  %body.bp.two-col
+    #container.container
+      %p
+        - if mobile_device?
+          = link_to "Full Site", :mobile => 0
+        - else
+          = link_to "Mobile Site", :mobile => 1
+      #header.header.append-1.prepend-1.span-24.last
+        = render 'layouts/header'
+      #sidebar.prepend-1.span-5.col-left
+        - if user_signed_in?
+          = render 'layouts/block_navigator'
+          .block.round
+            = yield(:search_bar)
+      #content.col-center.span-15.prepend-1.last.append-1.round
+        - flash.each do |key, value|
+          %div{ :class => ['flash', key] }= value
+        = content_tag(:div, content_tag(:h2, yield(:title))) if show_title?
+        = yield
+      #footer.append-2.prepend-7.clear
+        = render 'layouts/footer'
+      = debug(params) if Rails.env.development?

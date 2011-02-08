@@ -1,0 +1,39 @@
+/* line 6, ../../../app/stylesheets/application.scss */
+body {
+  background-color: #99d8f5;
+}
+
+/* line 10, ../../../app/stylesheets/application.scss */
+#container {
+  margin-bottom: 1.5em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5em;
+}
+
+/* line 19, ../../../app/stylesheets/application.scss */
+#header {
+  margin-top: 20px;
+}
+/* line 21, ../../../app/stylesheets/application.scss */
+#header #logo {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  width: 350px;
+}
+/* line 138, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #header #logo {
+  overflow-x: hidden;
+}
+/* line 24, ../../../app/stylesheets/application.scss */
+#header #main_menu {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  width: 550px;
+}
+/* line 138, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #header #main_menu {
+  overflow-x: hidden;
+}

@@ -1,118 +1,198 @@
-#titolo {
-	width: 450px;
-	float: left;
-	font-color: #069;
-}
-
-.container {
-  width: 710px;
-}
-
 body {
-  background: #cff;
+  background-color:#99D8F5;
 }
 
-header {
-  padding-top: 20px;
+div.container {
+  margin-bottom:1.5em;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:1.5em;
 }
 
-header img {
-    padding-top: 2em;
-    padding-left: -15px;
-  background: #cff;
+#header {
+  margin-top: 20px;
 }
 
-section {
-  margin-top: 1em;
-  font-size: 120%;
-  padding: 20px;
-  background: #fff;
+#field_cerca input {
+  width: 160px;
+}
+#select_citta select {
+  width: 165px;
 }
 
-section h1 {
-  font-size: 200%;
-  text-align: left;
-  color: #069;
+#list_stato li {
+  list-style-image: none;
+  list-style-type:none;
 }
 
-/* Links */
-
-a {
-  color: #09c;
-  text-decoration: none;
+.col-left .block {
+  padding: 1em;
+  background-color: #468BCA;
 }
 
-a:hover {
-  color: #069;
-  text-decoration: underline;
+div.block {
+  margin-bottom: 1.5em;
 }
 
-a:visited {
-  color: #069;
+.block {
+  color: white;
 }
 
-/* Navigation */
-
-nav {
-  float: right;
+#block_navigator {
+	background: #009EE6;
 }
 
-nav {
-  background-color: white;
-  padding: 0 0.7em;
-  white-space: nowrap;
+#bl_navigator {
+	padding-top: 0px;
+	padding-bottom: 0px;	
 }
 
-nav ul {
-  margin: 0;
-  padding: 0;
+.col-left .block a {
+  color:#FFFFFF;
+  text-decoration:underline;
 }
 
-nav ul li {
-  list-style-type: none;
-  display: inline-block;
-  padding: 0.2em 0;
+ul {
+  list-style-type:disc;
 }
 
-nav ul li a {
-  padding: 0 5px;
-  font-weight: bold;
+
+ul#nav.links {
+  margin-top:50px;
 }
 
-nav ul li a:visited {
-  color: #09c;
+
+#nav.links li.last {
+  margin-right:0;
 }
 
-nav ul li a:hover {
-  text-decoration: underline;
+#nav.links li {
+
+  margin-right:10px;
+
+  float:left;
+  height:19px;
+
+  padding-bottom:5px;
+  padding-left:5px;
+  padding-right:5px;
+  padding-top:5px;
+
+  text-align:center;
+  width:100px;
 }
 
-footer {
-  text-align: center;
-  margin-top: 10px;
+/*#nav.links li {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#009EE6;
+  background-image:url(http://www.lifesbeat.org/sites/www.lifesbeat.org/themes/lifesbeat/images/lbsprite.png);
+  background-origin:initial;
+  background-position:0 -100px;
+  background-repeat:no-repeat no-repeat;
 
-  margin-left: auto;
-  margin-right: auto;
+  height:19px;
+
+  padding-bottom:5px;
+  padding-left:5px;
+  padding-right:5px;
+  padding-top:5px;
+  text-align:center;
+  width:100px;
+  
+}*/
+
+.first {
+  margin-left:0;
+  padding-left:0;
 }
 
-footer nav {
-  float: none;
+#block_navigator ul {
+    list-style: none;}
+  #block_navigator li {
+	  list-style-image: none;
+  	  list-style-type:none;
+      height:19px;
+  	  padding-bottom:5px;
+  	  padding-left:5px;
+  	  padding-right:5px;
+  	  padding-top:5px;
+      margin-top: 5px;
+  	  text-align:center;}
+    #block_navigator li a {
+  		text-decoration:none;}
+
+#provincie {
+	margin-bottom: 10px;}
+  #provincie ul {
+	  list-style: none;
+	  margin-left:0;
+	  margin-right:0;
+	  margin-top:0;
+	  padding-left:0;}	  
+  #provincie li {
+      display:block;
+      background-color:#F6891F;
+      list-style-image: none;
+	  list-style-type:none;
+      float: left;
+	  height:19px;
+	  padding-bottom:5px;
+	  padding-left:5px;
+	  padding-right:5px;
+	  padding-top:5px;
+      margin-right: 5px; 
+      text-align:center;}
+	#provincie li:hover {
+	    background-color:#3876BE;}
+	
+
+
+#nav li {
+  display:inline;
+  list-style-type:none;
 }
 
-/* Sign up button */
-
-a.signup_button {
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  text-align: center;
-  width: 190px;
-  color: #fff;
-  background: #006400;
-  font-size: 150%;
-  font-weight: bold;
-  padding: 20px;
+ul.links li {
+	
+  -moz-border-radius:    7px;
+  -webkit-border-radius: 7px;
+  border-radius:         7px;
+	
+  padding-bottom:0;
+  padding-left:0.5em;
+  padding-right:0.5em;
+  padding-top:0;
 }
+
+ul li, ul.menu li, .item-list ul li, li.leaf {
+  list-style-image:url(http://www.lifesbeat.org/sites/all/themes/blueprint/blueprint/images/icons/menu-leaf.gif);
+}
+
+.links li a {
+  display: block; 
+  color:#FFFFFF;
+  font-size:14px;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+.menu-604 { background-color: #F6891F; }
+.menu-484 { background-color: #5BCAEB; }
+.menu-483 { background-color: #3876BE; }
+.menu-224 { background-color: #272973; }
+
+#nav.links li.menu-484 { margin-top:12px; }
+#nav.links li.menu-224 { margin-top:12px; }
+
+
+.col-center {
+  background-color :#F1CC38;
+  padding-bottom:10px;
+  padding-top:10px;
+}
+
+
 
 /* Round corners */
 
@@ -122,16 +202,18 @@ a.signup_button {
   border-radius:         10px;
 }
 
-
 #appunto {
-	margin-left: 100px;
-	margin-right: 100px;
-	margin-top: 20px;
-	border: 1px solid #ccc;
+	margin-top: 10px;
+	border: 1px solid #F17419;
+	background-color: #EDE565;
+}
+
+#search_appunti {
+	float: right;
+	padding-top: 5px;
 }
 
 #destinatario {
-	padding-top: 5px;
 	padding-left: 5px;
 }
 
@@ -148,9 +230,12 @@ a.signup_button {
 	padding-left: 5px;
 }
 
+#area_note {
+	height: 4.5em;
+}
 
 #footer {
-	border-top: 1px solid #ccc;
+	border-top: 1px solid #F17419;
 	padding-top: 5px;
 	padding-left: 3px;
 	padding-right: 3px;
@@ -175,35 +260,6 @@ a.signup_button {
 	padding-right: 5px;
 	text-align: center;
 }
-
-#clear {
-	clear: both;
-}
-
-#search_appunti {
-	float: right;
-	padding: 5px;
-	height: 30px;
-	background-color: #885;
-}
-
-#appunti_navbar {
-	margin-top: 20px;
-}
-
-.float_right {
-	float: right;
-}
-
-.float_left {
-	float: left;
-}
-
-.float_none {
-	float: none;
-}
-
-
 
 
 #error_explanation {
@@ -280,84 +336,58 @@ div.field label {
 }
 
 
-
-
-
-
-
-
-
-
-table.appunti {
- 	border: none;
-    width: 100%;
-	border-collapse: collapse;
-	font-family: "Trebuchet MS", Arial, sans-serif;
-	color: #555;
+.pagination {
+    font-size: 11px;
+    float: right;
+    margin: 0;
+    padding: 3px 0 4px;
 }
+    .pagination a,
+    .pagination span {
+        padding: 3px 3px 2px;
+    }
+    .pagination .disabled {
+        background:none repeat scroll 0 0 transparent;
+        border:medium none;
+        color:#999999;
+        cursor:default;
+    }
+    .pagination a {
+        color:#3B5998;
+        cursor:pointer;
+        text-decoration:none;
+    }
+    .pagination a:hover {
+        background-color:#3B5998;
+        border-bottom:1px solid #3B5998;
+        border-color:#D8DFEA #D8DFEA #3B5998;
+        color:#FFFFFF;
+        text-decoration:none;
+    }
+    .pagination .current {}
+        .pagination .current {
+            border-bottom:2px solid #3B5998;
+            border-color:#3B5998;
+            color:#3B5998;
+            font-weight:bold;
+            padding-left:2px;
+            padding-right:2px;
+        }
+        .pagination .current a:hover {
+            background-color:#3B5998;
+            color:#FFFFFF;
+        }
 
-.appunto {
-  border-top: 1px solid #ccc; 	
-  padding: 10px;
-}
+    .pagination .prev_page {
 
+    }
+    .pagination .next_page {
 
-.status_image {
-  vertical-align: bottom;
-  width: 50px;
-  float: left;
-}
+    }
 
-
-.edit_buttons img {
-	width: 20;
-	height: 20;
-	padding: 5;
-}
-
-.timestamp {
-  display: block;
-  font-size: 80%;
-  float: right;
-  color: #666;
-  vertical-align: bottom;
-}
-
-
-#appunto_list table {
-        border-collapse: collapse;
-}
-
-#appunto_list table tr td {
-        padding: 5px;
-        vertical-align: top;
-}
-
-#appunto_list .list_image {
-  width:        60px;
-  height:       70px;
-}
-
-#appunto_list .list_description {
-  width:        60%;
-}
-
-#appunto_list .list_description dl {
-        margin: 0;
-}
-
-#appunto_list .list_description dt {
-	color:        #244;
-	font-weight:  bold;
-	font-size:    larger;
-}
-
-#appunto_list .list_description dd {
-        margin: 0;
-}
-
-#appunto_list .list_actions {
-  font-size:    x-small;
-  text-align:   right;
-  padding-left: 1em;
-}
+/* pagination { padding: 3px; margin: 3px; } 
+.pagination a { padding: 2px 5px 2px 5px; margin: 2px; border: 1px solid #F6891F; text-decoration: none; color: #FFFFFF; background-color: #4DBEE5;} 
+.pagination a:hover, 
+.pagination a:active { border: 1px solid #000099; color: #4DBEE5; } 
+.pagination span.current { padding: 2px 5px 2px 5px; margin: 2px; border: 1px solid #000099; font-weight: bold; background-color: #000099; color: #FFFFFF; } 
+.pagination span.disabled { padding: 2px 5px 2px 5px; margin: 2px; border: 1px solid #eee; color: #ddd; } */

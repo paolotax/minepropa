@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    %title= h(yield(:title) || "Untitled")
+    = stylesheet_link_tag "http://code.jquery.com/mobile/1.0a3/jquery.mobile-1.0a3.min.css"
+    = javascript_include_tag "jquery-1.4.4.min.js"
+    = javascript_include_tag "rails.js"
+    = javascript_include_tag "http://code.jquery.com/mobile/1.0a3/jquery.mobile-1.0a3.min.js"
+
+    = yield(:head)
+
+  %body
+    %div{"data-role" => "page"}
+      / %div{"data-role" => "header"}
+      /   %h1
+      /     = @title || 'Mobile App'
+      /   - unless user_signed_in?
+      /     = link_to 'Sign In', new_user_session_path, "class" => "ui-btn-right"
+      /   - else
+      /     = link_to 'Sign Out', destroy_user_session_path, "class" => "ui-btn-right"
+      = yield
