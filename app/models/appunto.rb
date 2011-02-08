@@ -30,8 +30,8 @@ class Appunto < ActiveRecord::Base
   
   default_scope :order => "appunti.updated_at DESC, appunti.id DESC" 
   
-  scope :in_sospeso, where("appunti.stato = ?", "P")
-  scope :in_corso, where("appunti.stato != ? or appunti.stato is null", "X")
+  scope :in_sospeso, where(:stato.eq => "P")
+  scope :in_corso, where(:stato.ne => 'X')
   
   #vecchio stile
   #scope :instance_appunti, lambda { |user| where("appunti.user_id = ?", user.id) }
