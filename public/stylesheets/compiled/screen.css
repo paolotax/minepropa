@@ -505,7 +505,7 @@ form.bp textarea {
 
 /* line 25, ../../../app/stylesheets/partials/_two_col.scss */
 body.two-col #container {
-  width: 950px;
+  width: 870px;
   margin: 0 auto;
   overflow: hidden;
   *zoom: 1;
@@ -515,7 +515,7 @@ body.two-col #header, body.two-col #footer {
   display: inline;
   float: left;
   margin-right: 10px;
-  width: 950px;
+  width: 870px;
 }
 /* line 138, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html body.two-col #header, * html body.two-col #footer {
@@ -526,18 +526,18 @@ body.two-col #sidebar {
   display: inline;
   float: left;
   margin-right: 10px;
-  width: 230px;
+  width: 190px;
 }
 /* line 138, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html body.two-col #sidebar {
   overflow-x: hidden;
 }
-/* line 33, ../../../app/stylesheets/partials/_two_col.scss */
+/* line 34, ../../../app/stylesheets/partials/_two_col.scss */
 body.two-col #content {
   display: inline;
   float: left;
   margin-right: 0;
-  width: 710px;
+  width: 590px;
 }
 /* line 138, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html body.two-col #content {

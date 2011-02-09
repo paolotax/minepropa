@@ -1,25 +1,29 @@
 #appunto.round
-  %hr
-  #destinatario
-    %strong= appunto.destinatario
-  #scuola
-    = link_to appunto.scuola_nome_scuola_completo, scuola_path(appunto.scuola) unless appunto.scuola.blank?
-  #note
-    %p=  appunto.note
-    %p= "tel #{ appunto.telefono}" unless appunto.telefono.blank?
-    %p  
-      = "email " unless appunto.email.blank?
-      =  mail_to appunto.email unless appunto.email.blank?
-  #footer
+  #a_appunto
+    #a_intestazione
+      #a_destinatario
+        %strong= appunto.destinatario
+      #a_scuola
+        = link_to appunto.scuola_nome_scuola, scuola_path(appunto.scuola) unless appunto.scuola.blank?
+    #a_note
+      %p=  appunto.note
+      #a_recapiti
+        #a_telefono
+          = "tel #{ appunto.telefono}" unless appunto.telefono.blank?
+        #a_email
+          = "email " unless appunto.email.blank?
+          =  mail_to appunto.email unless appunto.email.blank?
+  #clear
+  #a_footer
     - unless @appunti.nil?
-      #check
+      #a_check
         = check_box_tag "appunti_ids[]", appunto.id
     #status_image
       %img= link_to image_tag(show_status_icon(appunto.stato)), toggle_stato_appunto_path(appunto), :id => 'stato_appunto'
-    #edit_buttons
+    #a_edit_buttons
       %img= link_to image_tag("s_edit18.jpeg"), edit_appunto_path(appunto), :id => 'edit_appunto'
       %img= link_to image_tag("s_delete18.gif"), appunto_path(appunto), :method => :delete, :confirm => "You sure?", :title => appunto.destinatario, :id => 'delete_appunto'
       %img= link_to image_tag("s_print18.png"), appunto_path(appunto, :format => 'pdf'), :id => 'print_appunto'
-    #timestamp
+    #a_timestamp
       %small= get_posted_string(appunto)
     #clear

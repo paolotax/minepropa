@@ -11,19 +11,20 @@
     = csrf_meta_tag
     = yield(:head)
   %body.bp.two-col
-    #container.container
+    #container
       %p
         - if mobile_device?
           = link_to "Full Site", :mobile => 0
         - else
           = link_to "Mobile Site", :mobile => 1
-      #header.header.append-1.prepend-1.span-24.last
+      #header
         = render 'layouts/header'
-      #sidebar.prepend-1.span-5.col-left
+      #sidebar.col-left
         - if user_signed_in?
           = render 'layouts/block_navigator'
           .block.round
             = yield(:search_bar)
+        = render 'layouts/links'
       #content.col-center.span-15.prepend-1.last.append-1.round
         - flash.each do |key, value|
           %div{ :class => ['flash', key] }= value

@@ -1,0 +1,224 @@
+/* line 1, ../../../app/stylesheets/mine.sass */
+#field_cerca input {
+  width: 160px;
+}
+
+/* line 4, ../../../app/stylesheets/mine.sass */
+#select_citta select {
+  width: 165px;
+}
+
+/* line 7, ../../../app/stylesheets/mine.sass */
+#list_stato li {
+  list-style-image: none;
+  list-style-type: none;
+}
+
+/* line 11, ../../../app/stylesheets/mine.sass */
+.col-left .block {
+  padding: 1em;
+  background-color: #468bca;
+}
+
+/* line 15, ../../../app/stylesheets/mine.sass */
+div.block {
+  margin-bottom: 1.5em;
+}
+
+/* line 18, ../../../app/stylesheets/mine.sass */
+.block {
+  color: white;
+}
+
+/* line 23, ../../../app/stylesheets/mine.sass */
+.col-left .block a {
+  color: white;
+  text-decoration: underline;
+}
+
+/* line 27, ../../../app/stylesheets/mine.sass */
+.first {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* line 33, ../../../app/stylesheets/mine.sass */
+#provincie {
+  margin-bottom: 10px;
+}
+
+/* line 36, ../../../app/stylesheets/mine.sass */
+#provincie ul {
+  list-style: none;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-left: 0;
+}
+
+/* line 43, ../../../app/stylesheets/mine.sass */
+#provincie li {
+  display: block;
+  background-color: #f6891f;
+  list-style-image: none;
+  list-style-type: none;
+  float: left;
+  height: 19px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  margin-right: 5px;
+  text-align: center;
+}
+
+/* line 57, ../../../app/stylesheets/mine.sass */
+#provincie li:hover {
+  background-color: #3876be;
+}
+
+/* line 65, ../../../app/stylesheets/mine.sass */
+#error_explanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+/* line 73, ../../../app/stylesheets/mine.sass */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #cc0000;
+  color: white;
+}
+
+/* line 82, ../../../app/stylesheets/mine.sass */
+#error_explanation p {
+  color: #333333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+/* line 87, ../../../app/stylesheets/mine.sass */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+/* line 91, ../../../app/stylesheets/mine.sass */
+.field_with_errors {
+  margin-top: 10px;
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 97, ../../../app/stylesheets/mine.sass */
+.field_with_errors label {
+  color: white;
+}
+
+/* line 100, ../../../app/stylesheets/mine.sass */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 103, ../../../app/stylesheets/mine.sass */
+div.field label {
+  color: #006699;
+  float: left;
+  width: 120px;
+  margin: 0 0 5px 0;
+}
+
+/* line 109, ../../../app/stylesheets/mine.sass */
+.handle {
+  font-size: 12px;
+  cursor: move;
+  color: #777777;
+}
+
+/* line 114, ../../../app/stylesheets/mine.sass */
+.handle:hover {
+  cursor: move;
+}
+
+/* line 117, ../../../app/stylesheets/mine.sass */
+#scuole li {
+  list-style-type: none;
+  padding: 0.2em 0;
+  margin-top: 3px;
+}
+
+/* line 122, ../../../app/stylesheets/mine.sass */
+#scuole div {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+/* line 126, ../../../app/stylesheets/mine.sass */
+.pagination {
+  font-size: 11px;
+  float: right;
+  margin: 0;
+  padding: 3px 0 4px;
+}
+
+/* line 132, ../../../app/stylesheets/mine.sass */
+.pagination a,
+.pagination span {
+  padding: 3px 3px 2px;
+}
+
+/* line 136, ../../../app/stylesheets/mine.sass */
+.pagination .disabled {
+  background: none repeat scroll 0 0 transparent;
+  border: medium none;
+  color: #999999;
+  cursor: default;
+}
+
+/* line 142, ../../../app/stylesheets/mine.sass */
+.pagination a {
+  color: #3b5998;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* line 147, ../../../app/stylesheets/mine.sass */
+.pagination a:hover {
+  background-color: #3b5998;
+  border-bottom: 1px solid #3b5998;
+  border-color: #d8dfea #d8dfea #3b5998;
+  color: white;
+  text-decoration: none;
+}
+
+/* line 156, ../../../app/stylesheets/mine.sass */
+.pagination .current {
+  border-bottom: 2px solid #3b5998;
+  border-color: #3b5998;
+  color: #3b5998;
+  font-weight: bold;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+/* line 164, ../../../app/stylesheets/mine.sass */
+.pagination .current a:hover {
+  background-color: #3b5998;
+  color: white;
+}
+
+/* pagination { padding: 3px; margin: 3px; }
+ *.pagination a { padding: 2px 5px 2px 5px; margin: 2px; border: 1px solid #F6891F; text-decoration: none; color: #FFFFFF; background-color: #4DBEE5;} 
+ *.pagination a:hover, 
+ *.pagination a:active { border: 1px solid #000099; color: #4DBEE5; } 
+ *.pagination span.current { padding: 2px 5px 2px 5px; margin: 2px; border: 1px solid #000099; font-weight: bold; background-color: #000099; color: #FFFFFF; } 
+ *.pagination span.disabled { padding: 2px 5px 2px 5px; margin: 2px; border: 1px solid #eee; color: #ddd; } */

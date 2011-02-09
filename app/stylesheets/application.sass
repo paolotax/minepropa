@@ -1,0 +1,156 @@
+@import partials/base
+@import compass/utilities/general/float
+@import compass/css3/border-radius
+@import compass/utilities/lists/inline-block-list
+@import compass/css3/box-shadow
+
+$blue-background: #99D8F5
+$padding: 20px
+$blue-link: #3876BE 
+
+body
+  background-color: $blue-background
+
+#container
+  margin-bottom: 1.5em
+  margin-left: auto
+  margin-right: auto
+  margin-top: 1.5em
+
+#header
+  margin-top: 20px
+  margin-bottom: 10px
+  #logo
+    +column(8)
+  #main_menu
+    +column(13)
+
+#content
+  +border-radius(10px)
+  background-color: #F1CC38
+  
+  padding-left: 20px
+  padding-right: 20px
+  padding-bottom: 10px
+  padding-top: 10px
+  
+  
+
+
+
+.block,
+.round
+  +border-radius(10px)
+  
+.menu-604
+  background-color: #F6891F
+
+.menu-484
+  background-color: #5BCAEB
+
+.menu-483
+  background-color: #3876BE
+
+.menu-224
+  background-color: #272973
+  
+  
+#navig ul
+  +inline-block-list-container
+  margin-top: 50px
+  li.menu-484, 
+  li.menu-224
+    margin-top: 15px
+  li
+    +inline-block-list-item
+    +border-radius(7px)
+    margin-right: 10px
+    height: 19px
+    padding: 5px
+    text-align: center
+    width: 100px
+    a
+      display: block
+      color: #FFFFFF
+      font-size: 14px
+      font-weight: bold
+      text-decoration: none    
+
+#block_navigator
+  background: #009EE6
+  ul
+    +no-bullets
+    margin: 10%
+    padding: 0px
+    li
+      +border-radius(7px)
+      height: 19px
+      padding: 5px
+      margin-top: 5px
+      text-align: center
+      a
+        display: block
+        color: #FFFFFF
+        font-size: 14px
+        font-weight: bold
+        text-decoration: none
+
+#usefull_links
+  margin-top: 30px
+  ul
+    +no-bullets
+    li a
+      font-size: 14px
+      font-weight: bold
+      text-decoration: none
+
+#clear
+  clear: both
+
+#appunto
+  +border-radius(10px)
+  +box-shadow(#F6891F, 2px, 2px, 10px)
+  margin-top: 10px
+  padding-bottom: 5px
+  // border: 1px solid #F17419
+  background-color: #EDE565
+  padding-left: 20px
+  padding-right: 20px
+  padding-top: 20px
+  a
+    color: $blue-link
+    font-size: 14px
+    font-weight: bold
+    text-decoration: none
+
+  #a_intestazione
+    +column(5)
+
+  #a_note
+    // background: #FFFFFF
+    +column(9, true)
+    +border-right-radius(7px)
+    #a_recapiti
+      text-align: right
+      
+#a_footer
+  // border-top: 1px solid #F17419
+  margin-top: 10px
+  padding-top: 5px
+
+#status_image
+  +float-right
+
+#a_check
+  +float-right
+  padding-left: 10px
+
+#a_edit_buttons
+  +float-left
+
+#a_timestamp
+  float: none
+  margin-right: 10px
+  text-align: right
+
+  

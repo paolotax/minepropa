@@ -1,0 +1,9 @@
+#usefull_links
+  %ul
+    - if !current_user.nil? && current_user.username == 'paolotax'
+      %li= link_to "TAX SERVER",  "http://paolotax.dyndns-server.com", :target => "_blank"
+      %li= link_to "gmail", "http://mail.google.com"      
+    %li= link_to "GiuntiMail", "https://mail.giunti.it/exchange", :target => "_blank"
+    %li= link_to "Portale", "https://portaleagenti.giunti.it", :target => "_blank"
+    %li= link_to "Catalogo", "http://catalogo.giunti.it", :target => "_blank"
+    %li= link_to "Giunti Scuola", "http://www.giuntiscuola.it", :target => "_blank"
