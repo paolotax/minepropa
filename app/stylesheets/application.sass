@@ -2,6 +2,7 @@
 @import compass/utilities/general/float
 @import compass/css3/border-radius
 @import compass/utilities/lists/inline-block-list
+@import compass/css3/text-shadow
 @import compass/css3/box-shadow
 @import blueprint/form
 
@@ -34,7 +35,8 @@ body
   padding-right: 20px
   padding-bottom: 10px
   padding-top: 10px
-  
+  h2
+    +text-shadow
  
 .block,
 .round
@@ -42,16 +44,19 @@ body
   
 .menu-604
   background-color: #F6891F
+  +box-shadow
 
 .menu-484
   background-color: #5BCAEB
-
+  +box-shadow
+  
 .menu-483
   background-color: #3876BE
-
+  +box-shadow
+  
 .menu-224
   background-color: #272973
-  
+  +box-shadow
   
 #navig ul
   +inline-block-list-container
