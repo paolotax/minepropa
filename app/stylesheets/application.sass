@@ -3,6 +3,7 @@
 @import compass/css3/border-radius
 @import compass/utilities/lists/inline-block-list
 @import compass/css3/box-shadow
+@import blueprint/form
 
 $blue-background: #99D8F5
 $padding: 20px
@@ -34,10 +35,7 @@ body
   padding-bottom: 10px
   padding-top: 10px
   
-  
-
-
-
+ 
 .block,
 .round
   +border-radius(10px)
@@ -153,4 +151,15 @@ body
   margin-right: 10px
   text-align: right
 
-  
+#form_appunto
+  +blueprint-form-layout
+  label
+    color: #ffffff 
+
+div.field, div.actions
+  margin-bottom: 10px
+
+div.field label
+  float: left
+  width: 120px
+  margin: 0 0 5px 0

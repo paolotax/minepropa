@@ -46,8 +46,7 @@ div.block {
 #provincie {
   margin-bottom: 10px;
 }
-
-/* line 36, ../../../app/stylesheets/mine.sass */
+/* line 35, ../../../app/stylesheets/mine.sass */
 #provincie ul {
   list-style: none;
   margin-left: 0;
@@ -55,8 +54,7 @@ div.block {
   margin-top: 0;
   padding-left: 0;
 }
-
-/* line 43, ../../../app/stylesheets/mine.sass */
+/* line 42, ../../../app/stylesheets/mine.sass */
 #provincie li {
   display: block;
   background-color: #f6891f;
@@ -71,13 +69,12 @@ div.block {
   margin-right: 5px;
   text-align: center;
 }
-
-/* line 57, ../../../app/stylesheets/mine.sass */
+/* line 55, ../../../app/stylesheets/mine.sass */
 #provincie li:hover {
   background-color: #3876be;
 }
 
-/* line 65, ../../../app/stylesheets/mine.sass */
+/* line 59, ../../../app/stylesheets/mine.sass */
 #error_explanation {
   width: 400px;
   border: 2px solid red;
@@ -87,7 +84,7 @@ div.block {
   background-color: #f0f0f0;
 }
 
-/* line 73, ../../../app/stylesheets/mine.sass */
+/* line 67, ../../../app/stylesheets/mine.sass */
 #error_explanation h2 {
   text-align: left;
   font-weight: bold;
@@ -98,20 +95,20 @@ div.block {
   color: white;
 }
 
-/* line 82, ../../../app/stylesheets/mine.sass */
+/* line 76, ../../../app/stylesheets/mine.sass */
 #error_explanation p {
   color: #333333;
   margin-bottom: 0;
   padding: 5px;
 }
 
-/* line 87, ../../../app/stylesheets/mine.sass */
+/* line 81, ../../../app/stylesheets/mine.sass */
 #error_explanation ul li {
   font-size: 12px;
   list-style: square;
 }
 
-/* line 91, ../../../app/stylesheets/mine.sass */
+/* line 85, ../../../app/stylesheets/mine.sass */
 .field_with_errors {
   margin-top: 10px;
   padding: 2px;
@@ -119,50 +116,37 @@ div.block {
   display: table;
 }
 
-/* line 97, ../../../app/stylesheets/mine.sass */
+/* line 91, ../../../app/stylesheets/mine.sass */
 .field_with_errors label {
   color: white;
 }
 
-/* line 100, ../../../app/stylesheets/mine.sass */
-div.field, div.actions {
-  margin-bottom: 10px;
-}
-
-/* line 103, ../../../app/stylesheets/mine.sass */
-div.field label {
-  color: #006699;
-  float: left;
-  width: 120px;
-  margin: 0 0 5px 0;
-}
-
-/* line 109, ../../../app/stylesheets/mine.sass */
+/* line 94, ../../../app/stylesheets/mine.sass */
 .handle {
   font-size: 12px;
   cursor: move;
   color: #777777;
 }
 
-/* line 114, ../../../app/stylesheets/mine.sass */
+/* line 99, ../../../app/stylesheets/mine.sass */
 .handle:hover {
   cursor: move;
 }
 
-/* line 117, ../../../app/stylesheets/mine.sass */
+/* line 102, ../../../app/stylesheets/mine.sass */
 #scuole li {
   list-style-type: none;
   padding: 0.2em 0;
   margin-top: 3px;
 }
 
-/* line 122, ../../../app/stylesheets/mine.sass */
+/* line 107, ../../../app/stylesheets/mine.sass */
 #scuole div {
   padding-left: 5px;
   padding-right: 5px;
 }
 
-/* line 126, ../../../app/stylesheets/mine.sass */
+/* line 111, ../../../app/stylesheets/mine.sass */
 .pagination {
   font-size: 11px;
   float: right;
@@ -170,13 +154,13 @@ div.field label {
   padding: 3px 0 4px;
 }
 
-/* line 132, ../../../app/stylesheets/mine.sass */
+/* line 117, ../../../app/stylesheets/mine.sass */
 .pagination a,
 .pagination span {
   padding: 3px 3px 2px;
 }
 
-/* line 136, ../../../app/stylesheets/mine.sass */
+/* line 121, ../../../app/stylesheets/mine.sass */
 .pagination .disabled {
   background: none repeat scroll 0 0 transparent;
   border: medium none;
@@ -184,14 +168,14 @@ div.field label {
   cursor: default;
 }
 
-/* line 142, ../../../app/stylesheets/mine.sass */
+/* line 127, ../../../app/stylesheets/mine.sass */
 .pagination a {
   color: #3b5998;
   cursor: pointer;
   text-decoration: none;
 }
 
-/* line 147, ../../../app/stylesheets/mine.sass */
+/* line 132, ../../../app/stylesheets/mine.sass */
 .pagination a:hover {
   background-color: #3b5998;
   border-bottom: 1px solid #3b5998;
@@ -200,7 +184,7 @@ div.field label {
   text-decoration: none;
 }
 
-/* line 156, ../../../app/stylesheets/mine.sass */
+/* line 141, ../../../app/stylesheets/mine.sass */
 .pagination .current {
   border-bottom: 2px solid #3b5998;
   border-color: #3b5998;
@@ -210,7 +194,7 @@ div.field label {
   padding-right: 2px;
 }
 
-/* line 164, ../../../app/stylesheets/mine.sass */
+/* line 149, ../../../app/stylesheets/mine.sass */
 .pagination .current a:hover {
   background-color: #3b5998;
   color: white;
