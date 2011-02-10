@@ -61,6 +61,7 @@ body
 #navig ul
   +inline-block-list-container
   margin-top: 50px
+  padding: 5px
   li.menu-484, 
   li.menu-224
     margin-top: 15px
@@ -125,37 +126,36 @@ body
     font-size: 14px
     font-weight: bold
     text-decoration: none
-
   #a_intestazione
     +column(5)
-
   #a_note
     // background: #FFFFFF
     +column(9, true)
     +border-right-radius(7px)
     #a_recapiti
       text-align: right
-      
-#a_footer
-  // border-top: 1px solid #F17419
-  margin-top: 10px
-  padding-top: 5px
+  #a_footer
+    // border-top: 1px solid #F17419
+    margin-top: 10px
+    padding-top: 5px
+  #status_image
+    +float-right
+    margin-right: -5px
+  #a_check
+    +float-left
+    margin-right: 10px
+    margin-top: 8px
+    margin-left: -3px
+  #a_edit_buttons
+    +float-left
+    margin-top: 8px
+  #a_timestamp
+    float: none
+    margin-right: 10px
+    text-align: right
+    margin-top: 8px
 
-#status_image
-  +float-right
-
-#a_check
-  +float-right
-  padding-left: 10px
-
-#a_edit_buttons
-  +float-left
-
-#a_timestamp
-  float: none
-  margin-right: 10px
-  text-align: right
-
+    
 #form_appunto
   +blueprint-form-layout
   label

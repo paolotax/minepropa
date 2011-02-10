@@ -3,12 +3,12 @@ module AppuntiHelper
   def show_status_icon(status)
     
     if status == 'X'
-      return 's_completed18.png'
+      return 's_comp_short.png'
     else
       if status == "P"
-        return "s_waiting18.png"
+        return "s_sosp_short.png"
       else  
-        return 's_blank.gif'
+        return 's_blank_short.png'
       end
     end
   end

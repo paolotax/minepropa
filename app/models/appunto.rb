@@ -28,7 +28,7 @@ class Appunto < ActiveRecord::Base
   
   validates :scuola_nome_scuola,  :presence => true
   
-  default_scope :order => "appunti.updated_at DESC, appunti.id DESC" 
+  default_scope :order => "appunti.id DESC" 
   
   scope :in_sospeso, where(:stato.eq => "P")
   scope :in_corso, where(:stato.ne => 'X')

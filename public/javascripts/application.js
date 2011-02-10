@@ -56,10 +56,10 @@ if (history && history.pushState) {
 			return false;
 	 	});
 	    
-	    $("#status_image a").live("click", function() {
-	   		$.getScript(this.href);
-			return false;
-	 	});
+    $("#status_image a").live("click", function() {
+         $.getScript(this.href);
+         return false;
+       });
 	 	
 		$('#appunto_search').submit(function () {  
 			$.get(this.action, $("#appunto_search").serialize(), null, 'script');  

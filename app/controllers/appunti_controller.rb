@@ -106,23 +106,33 @@ class AppuntiController < ApplicationController
 
   def toggle_stato
     #raise params[:new_stato].inspect
-    @user = current_user
-    appunto = @user.appunti.find(params[:id])
+    @appunto = Appunto.find(params[:id])
     
-    if appunto.stato == 'X'
-      appunto.stato = "P"
+    if @appunto.stato == 'X'
+      @appunto.stato = "P"
     else
-      if appunto.stato == ''
-        appunto.stato = "X"
+      if @appunto.stato == ''
+        @appunto.stato = "X"
       else
-        if appunto.stato == 'P'
-          appunto.stato = ""
+        if @appunto.stato == 'P'
+          @appunto.stato = ""
         end
       end
     end
       
-    appunto.save
-    redirect_to appunti_path
+    respond_to do |format|
+      if @appunto.save
+        format.mobile { redirect_to root_path }
+        format.html { redirect_to @appunto, :flash => { :success => "Le modifiche sono state salvate." } }
+        format.xml  { head :ok }
+        format.js
+      else
+        format.mobile { render :action => 'edit' }
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @appunto.errors, :status => :unprocessable_entity }
+        format.json  { render :json => @appunto.errors, :status => :unprocessable_entity }
+      end
+    end
   end
   
   def edit_or_print
