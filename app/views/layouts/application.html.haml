@@ -12,11 +12,11 @@
     = yield(:head)
   %body.bp.two-col
     #container
-      %p
-        - if mobile_device?
-          = link_to "Full Site", :mobile => 0
-        - else
-          = link_to "Mobile Site", :mobile => 1
+      / %p
+      /   - if mobile_device?
+      /     = link_to "Full Site", :mobile => 0
+      /   - else
+      /     = link_to "Mobile Site", :mobile => 1
       #header
         = render 'layouts/header'
       #sidebar.col-left
