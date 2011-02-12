@@ -23,16 +23,26 @@ class Appunto < ActiveRecord::Base
   
   belongs_to :scuola
   belongs_to :user
+  has_many :visite, :as => :visitable, :dependent => :destroy 
   
   validates :user_id,  :presence => true
-  
   validates :scuola_nome_scuola,  :presence => true
   
-  default_scope :order => "appunti.id DESC" 
+  before_save :cleanup
   
-  scope :in_sospeso, where(:stato.eq => "P")
-  scope :in_corso, where(:stato.ne => 'X')
+  scope :per_id, :order => "appunti.id DESC" 
+  scope :per_destinatario, :order => 'appunti.destinatario asc'
+    
+  scope :in_sospeso,  where(:stato.eq => "P").per_id
+  scope :in_corso,    where(:stato.ne => 'X').per_id
   
+  scope :da_correggere, where("scuola_id is null")
+  scope :con_recapito,  where("telefono <> '' or email <> ''")
+
+  scope :non_assegnato, where("not exists (select visite.visitable_id from visite 
+                                            where visite.visitable_type = 'Appunto' 
+                                            and visite.visitable_id = appunti.id)")
+  scope :assegnato, joins(:visite)
   #vecchio stile
   #scope :instance_appunti, lambda { |user| where("appunti.user_id = ?", user.id) }
   
@@ -68,6 +78,10 @@ class Appunto < ActiveRecord::Base
   
   def scuola_nome_scuola=(nome)
     self.scuola = Scuola.find_by_nome_scuola(nome)
+  end
+  
+  def cleanup
+    self[:destinatario] = self[:destinatario].titleize
   end
   
 end

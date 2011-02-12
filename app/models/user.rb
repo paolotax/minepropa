@@ -26,6 +26,7 @@ class User < ActiveRecord::Base
   
   has_many :scuole,  :dependent => :destroy
   has_many :appunti, :dependent => :destroy
+  has_many :visite,  :dependent => :destroy
   
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable and :timeoutable

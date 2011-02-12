@@ -1,5 +1,11 @@
 Minepropa::Application.routes.draw do
 
+  get "visite/index"
+
+  get "visite/create"
+
+  get "visite/destroy"
+
   #get "autocomplete_searches/index"
   resources :autocomplete_searches, :only => [:index], :as => 'autocomplete'
   
@@ -28,8 +34,9 @@ Minepropa::Application.routes.draw do
     end
   end
 
-  get "pages/about"
+  
   root :to => 'pages#home'
+  match '/about',   :to => 'pages#about'
   
   # resources :appunti do
   #     get 'search'

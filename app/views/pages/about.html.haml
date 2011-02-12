@@ -1,2 +1,6 @@
-%h1 Pages#about
-%p Find me in app/views/pages/about.html.haml
+- title "About"
+
+= @appunti.size
+
+#appunti
+  = render :partial => 'appunti/appunto', :collection => @appunti

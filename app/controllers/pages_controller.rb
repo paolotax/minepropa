@@ -14,7 +14,7 @@ class PagesController < ApplicationController
   end
 
   def about
-    @appunti = current_user.appunti.in_corso.paginate(:per_page => 8, :page => params[:page])
+    @appunti = current_user.appunti.con_recapito.per_destinatario
   end
 
 end

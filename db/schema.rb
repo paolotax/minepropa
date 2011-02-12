@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110203070131) do
+ActiveRecord::Schema.define(:version => 20110211140828) do
 
   create_table "appunti", :force => true do |t|
     t.string   "destinatario"
@@ -20,21 +20,10 @@ ActiveRecord::Schema.define(:version => 20110203070131) do
     t.date     "scadenza"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "scuola_id"
+    t.integer  "scuola_id"
     t.integer  "position"
     t.string   "email"
     t.integer  "user_id"
-  end
-
-  create_table "appunti_new", :force => true do |t|
-    t.string   "destinatario"
-    t.string   "scuola"
-    t.text     "note"
-    t.string   "telefono"
-    t.string   "stato"
-    t.date     "scadenza"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "scuole", :force => true do |t|
@@ -68,5 +57,20 @@ ActiveRecord::Schema.define(:version => 20110203070131) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "visite", :force => true do |t|
+    t.date     "data"
+    t.time     "ora_inizio"
+    t.time     "ora_fine"
+    t.string   "note"
+    t.integer  "visitable_id"
+    t.string   "visitable_type"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "visite", ["user_id"], :name => "index_visite_on_user_id"
+  add_index "visite", ["visitable_id", "visitable_type"], :name => "index_visite_on_visitable_id_and_visitable_type"
 
 end

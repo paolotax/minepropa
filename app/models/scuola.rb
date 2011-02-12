@@ -19,13 +19,16 @@ class Scuola < ActiveRecord::Base
   
   belongs_to :scuola
   has_many :appunti
+  has_many :visite, :as => :visitable,  :dependent => :destroy 
   
   attr_accessible :nome_scuola, :citta, :provincia, :position
   
-  validates :user_id,  :presence => true
+  validates :user_id,      :presence => true
   validates :nome_scuola,  :presence => true
-  validates :citta,  :presence => true
-  validates :provincia,  :presence => true, :length => { :maximum => 2 }
+  validates :citta,        :presence => true
+  validates :provincia,    :presence => true, :length => { :maximum => 2 }
+  
+  before_save :clean_up
   
   # default_scope :order => "scuole.position ASC"
   
@@ -38,7 +41,16 @@ class Scuola < ActiveRecord::Base
        combined_scope.where("scuole.#{attr} LIKE ?", "%#{q}%")
     end
   end
-
   
+  private
+  
+    def clean_up
+      self[:nome_scuola] = self[:nome_scuola].upcase
+      self[:provincia]   = self[:provincia].upcase
+      self[:citta] = self[:citta].titleize
+      
+      # x = self[:citta].split.each {|v| v.capitalize! } 
+      # self[:citta] = x.join(" ")
+    end
   
 end
