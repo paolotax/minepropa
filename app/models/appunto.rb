@@ -26,7 +26,7 @@ class Appunto < ActiveRecord::Base
   has_many :visite, :as => :visitable, :dependent => :destroy 
   
   validates :user_id,  :presence => true
-  validates :scuola_nome_scuola,  :presence => true
+  validates :nome_scuola,  :presence => true
   
   before_save :cleanup
   
@@ -72,16 +72,16 @@ class Appunto < ActiveRecord::Base
     [scuola.nome_scuola, '('+scuola.citta.capitalize+')'].join(" ") if scuola
   end
 
-  def scuola_nome_scuola
+  def nome_scuola
     scuola.nome_scuola if scuola
   end  
   
-  def scuola_nome_scuola=(nome)
+  def nome_scuola=(nome)
     self.scuola = Scuola.find_by_nome_scuola(nome)
   end
   
   def cleanup
-    self[:destinatario] = self[:destinatario].titleize
+    self[:destinatario] = self[:destinatario].titleize unless self[:destinatario].nil?
   end
   
 end

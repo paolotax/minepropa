@@ -4,7 +4,7 @@
       #a_destinatario
         %strong= appunto.destinatario
       #a_scuola
-        = link_to appunto.scuola_nome_scuola, scuola_path(appunto.scuola) unless appunto.scuola.blank?
+        = link_to appunto.nome_scuola, scuola_path(appunto.scuola) unless appunto.scuola.blank?
     #a_note
       %p=  appunto.note
       #a_recapiti

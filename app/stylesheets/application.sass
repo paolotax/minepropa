@@ -32,13 +32,19 @@ body
   background-color: #F1CC38
   
   padding-left: 40px
-  padding-right: 40px
   
   padding-bottom: 10px
   padding-top: 10px
   h2
     +text-shadow
- 
+
+#appunti_in_corso
+  +column(8)
+
+#giro
+  +column(8)
+  margin-right: 0px
+       
 .block,
 .round
   +border-radius(10px)
@@ -112,12 +118,8 @@ body
 #clear
   clear: both
 
-#appunti_in_corso
-  +column(7)
 
-#giro
-  +column(7)
-
+  
 #appunto
   +border-radius(10px)
   +box-shadow(#F6891F, 2px, 2px, 10px)
