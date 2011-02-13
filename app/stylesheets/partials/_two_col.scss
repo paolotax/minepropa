@@ -35,6 +35,6 @@ body.two-col {
     // Two thirds of the grid columns, rounding up.
     // With 24 cols, this is 16.
     //$content-columns: ceil(3 * $blueprint-grid-columns / 4);
-    $content-columns: 17;
+    $content-columns: 16;
     // true means it's the last column in the row
     @include column($content-columns, true); } }
