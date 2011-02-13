@@ -272,23 +272,8 @@ body {
   font-weight: bold;
   text-decoration: none;
 }
-/* line 139, ../../../app/stylesheets/application.sass */
-#appunto #a_intestazione {
-  display: inline;
-  float: left;
-  margin-right: 10px;
-  width: 190px;
-}
-/* line 138, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html #appunto #a_intestazione {
-  overflow-x: hidden;
-}
 /* line 141, ../../../app/stylesheets/application.sass */
 #appunto #a_note {
-  display: inline;
-  float: left;
-  margin-right: 0;
-  width: 350px;
   -moz-border-radius-topright: 7px;
   -webkit-border-top-right-radius: 7px;
   -o-border-top-right-radius: 7px;
@@ -301,10 +286,6 @@ body {
   -ms-border-bottom-right-radius: 7px;
   -khtml-border-bottom-right-radius: 7px;
   border-bottom-right-radius: 7px;
-}
-/* line 138, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html #appunto #a_note {
-  overflow-x: hidden;
 }
 /* line 145, ../../../app/stylesheets/application.sass */
 #appunto #a_note #a_recapiti {
@@ -336,6 +317,14 @@ body {
   margin-top: 8px;
 }
 /* line 162, ../../../app/stylesheets/application.sass */
+#appunto #a_edit_buttons a.icon {
+  opacity: 0.4;
+}
+/* line 164, ../../../app/stylesheets/application.sass */
+#appunto #a_edit_buttons a.icon:hover {
+  opacity: 1;
+}
+/* line 166, ../../../app/stylesheets/application.sass */
 #appunto #a_timestamp {
   float: none;
   margin-right: 10px;
@@ -381,17 +370,17 @@ body {
 #form_appunto select {
   margin: 0.5em 0;
 }
-/* line 171, ../../../app/stylesheets/application.sass */
+/* line 175, ../../../app/stylesheets/application.sass */
 #form_appunto label {
   color: white;
 }
 
-/* line 174, ../../../app/stylesheets/application.sass */
+/* line 178, ../../../app/stylesheets/application.sass */
 div.field, div.actions {
   margin-bottom: 10px;
 }
 
-/* line 177, ../../../app/stylesheets/application.sass */
+/* line 181, ../../../app/stylesheets/application.sass */
 div.field label {
   float: left;
   width: 120px;

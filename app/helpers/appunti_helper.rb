@@ -13,6 +13,18 @@ module AppuntiHelper
     end
   end
   
+  def appunto_edit_links(appunto)
+    content_tag :div, :id => 'a_edit_buttons' do
+      [ link_to_icon('show', appunto),
+        link_to_icon('edit', edit_appunto_path(appunto)),
+        link_to_icon('destroy', appunto, {
+          :confirm => 'Sei sicuro?',
+          :method => :delete
+        })
+      ].join(' ').html_safe
+    end
+  end
+  
   def get_posted_string(appunto)
     
     if appunto.stato == "X"

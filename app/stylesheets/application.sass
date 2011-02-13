@@ -137,10 +137,10 @@ body
     font-weight: bold
     text-decoration: none
   #a_intestazione
-    +column(5)
+    // +column(5)
   #a_note
     // background: #FFFFFF
-    +column(9, true)
+    // +column(9, true)
     +border-right-radius(7px)
     #a_recapiti
       text-align: right
@@ -159,6 +159,10 @@ body
   #a_edit_buttons
     +float-left
     margin-top: 8px
+    a.icon
+      opacity: 0.4
+    a.icon:hover
+      opacity: 1.0
   #a_timestamp
     float: none
     margin-right: 10px

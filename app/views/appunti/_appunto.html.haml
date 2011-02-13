@@ -20,10 +20,11 @@
         = check_box_tag "appunti_ids[]", appunto.id
     #status_image{ :class => 'img_appunto_' + h(appunto.id) }
       = link_to image_tag(show_status_icon(appunto.stato)), toggle_stato_appunto_path(appunto), :class => "img_appunto_" + h(appunto.id)
-    #a_edit_buttons
-      = link_to image_tag("s_edit18.jpeg"), edit_appunto_path(appunto), :id => 'edit_appunto'
-      = link_to image_tag("s_delete18.gif"), appunto_path(appunto), :method => :delete, :confirm => "You sure?", :title => appunto.destinatario, :id => 'delete_appunto'
-      = link_to image_tag("s_print18.png"), appunto_path(appunto, :format => 'pdf'), :id => 'print_appunto'
+    = appunto_edit_links(appunto)
+    / #a_edit_buttons
+    /   = link_to image_tag("s_edit18.jpeg"), edit_appunto_path(appunto), :id => 'edit_appunto', :class => 'icon'
+    /   = link_to image_tag("s_delete18.gif"), appunto_path(appunto), :method => :delete, :confirm => "You sure?", :title => appunto.destinatario, :id => 'delete_appunto', :class => 'icon'
+    /   = link_to image_tag("s_print18.png"), appunto_path(appunto, :format => 'pdf'), :id => 'print_appunto', :class => 'icon'
     #a_timestamp{ :class => 'ts_appunto_' + h(appunto.id) }
       %small= get_posted_string(appunto)
     #clear
