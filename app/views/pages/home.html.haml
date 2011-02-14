@@ -3,10 +3,9 @@
 = render :partial => 'search_appunti'
 / = render :partial => 'provincie'
 
-#appunti_in_corso
-  = render :partial => 'appunti/appunti'
+= render :partial => 'appunti/appunti'
 
-#giro
-  = Appunto.con_recapito.per_destinatario.size
-  = render Appunto.con_recapito.per_destinatario
+/ #giro
+/   = current_user.appunti.con_recapito.per_destinatario.size
+/   = render current_user.appunti.con_recapito.per_destinatario
   

@@ -1,6 +1,17 @@
 - title "About"
 
+%ul{:class => "lista_scuole"}
+  - @scuole.each do |s|
+    %li
+      |
+      = s.nr_appunti
+      |
+      = link_to s.nome_scuola, scuola_path(s)
+  
+
+
 = @appunti.size
 
 #appunti
   = render :partial => 'appunti/appunto', :collection => @appunti
+

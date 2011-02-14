@@ -33,8 +33,8 @@ class Appunto < ActiveRecord::Base
   scope :per_id, :order => "appunti.id DESC" 
   scope :per_destinatario, :order => 'appunti.destinatario asc'
     
-  scope :in_sospeso,  where(:stato.eq => "P").per_id
-  scope :in_corso,    where(:stato.ne => 'X').per_id
+  scope :in_sospeso,  where(:stato.eq => "P")
+  scope :in_corso,    where(:stato.ne => 'X')
   
   scope :da_correggere, where("scuola_id is null")
   scope :con_recapito,  where("telefono <> '' or email <> ''")
