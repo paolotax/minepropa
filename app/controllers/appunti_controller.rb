@@ -21,7 +21,7 @@ class AppuntiController < ApplicationController
   
   def index
     
-    @search = current_user.appunti.search(params[:search])
+    @search = current_user.appunti.per_id.search(params[:search])
     if mobile_device?
       @appunti = @search.all
     else  
