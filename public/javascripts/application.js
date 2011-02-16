@@ -59,9 +59,9 @@ if (history && history.pushState) {
     $("#status_image a").live("click", function() {
          $.getScript(this.href);
          return false;
-       });
+       });appunti_path
 	 	
-		$('#appunto_search').submit(function () {  
+		$('_#appunto_search').submit(function () {  
 			$.get(this.action, $("#appunto_search").serialize(), null, 'script');  
 			history.pushState(null, document.title, $("#appunto_search").attr("action") + "?" + $("#appunto_search").serialize()); 
 	 	    return false;
