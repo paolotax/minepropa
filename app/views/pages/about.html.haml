@@ -1,20 +1,12 @@
 - title "About"
 
-%ul{:class => "lista_scuole"}
-  - @scuole.each do |s|
-    %li
-      |
-      = s.nr_appunti
-      |
-      = link_to s.nome_scuola, scuola_path(s)
-
-%ul{:class => "lista_visite"}
-  - @visite.each do |s|
-    %li
-      |
-      = s.visitable_id
-
-
+/ %ul{:class => "lista_scuole"}
+/   - @scuole.each do |s|
+/     %li
+/       |
+/       = s.nr_appunti
+/       |
+/       = link_to s.nome_scuola, scuola_path(s)
 
 #appunti.left_appunti
   = render :partial => 'appunti/appunto', :collection => @appunti
