@@ -7,11 +7,19 @@
       = s.nr_appunti
       |
       = link_to s.nome_scuola, scuola_path(s)
-  
+
+%ul{:class => "lista_visite"}
+  - @visite.each do |s|
+    %li
+      |
+      = s.visitable_id
 
 
-= @appunti.size
 
-#appunti
+#appunti.left_appunti
   = render :partial => 'appunti/appunto', :collection => @appunti
+
+#appunti.right_appunti
+  = render :partial => 'appunti/appunto', :collection => Appunto.assegnato
+  
 

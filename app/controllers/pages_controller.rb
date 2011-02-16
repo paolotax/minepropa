@@ -15,8 +15,9 @@ class PagesController < ApplicationController
   end
 
   def about
-    @appunti = current_user.appunti.in_corso.per_id
+    @appunti = current_user.appunti.in_corso.per_id.non_assegnato
     @scuole = Scuola.con_appunti_in_corso(current_user)
+    @visite = Visita.all
   end
 
 end

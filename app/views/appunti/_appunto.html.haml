@@ -1,5 +1,12 @@
 #appunto.round
   #a_appunto
+    #a_visita
+      - unless appunto.visite.any?
+        = form_for [appunto, Visita.new] do |f|
+          = image_submit_tag 'icons/car.png'
+      - if appunto.visite.any?
+        = form_for [appunto, appunto.visite.first], :html => { :method => :delete } do |f|
+          = image_submit_tag 'icons/car.png'
     #a_intestazione
       #a_destinatario
         %strong= appunto.destinatario
@@ -27,4 +34,5 @@
     /   = link_to image_tag("s_print18.png"), appunto_path(appunto, :format => 'pdf'), :id => 'print_appunto', :class => 'icon'
     #a_timestamp{ :class => 'ts_appunto_' + h(appunto.id) }
       %small= get_posted_string(appunto)
+
     #clear

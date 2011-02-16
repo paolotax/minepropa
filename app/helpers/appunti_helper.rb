@@ -20,8 +20,7 @@ module AppuntiHelper
         link_to_icon('destroy', appunto, {
           :confirm => 'Sei sicuro?',
           :method => :delete, :alt => 'elimina' }),
-        link_to_icon('print', appunto_path(appunto, :format => 'pdf'), :alt => 'elimina'),
-        link_to_icon('car', appunto, :alt => 'elimina')
+        link_to_icon('print', appunto_path(appunto, :format => 'pdf'), :alt => 'elimina')
       ].join(' ').html_safe
     end
   end

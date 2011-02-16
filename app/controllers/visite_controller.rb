@@ -21,7 +21,7 @@ class VisiteController < ApplicationController
     @visita = @visitable.visite.build(params[:visita])
     if @visita.save
       flash[:notice] = "Successfully created visita."
-      redirect_to :id => nil
+      redirect_to about_url
     else
       render :action => 'new'
     end
@@ -42,21 +42,22 @@ class VisiteController < ApplicationController
   end
 
   def destroy
+    # raise params.inspect
     @visita = Visita.find(params[:id])
     @visita.destroy
     flash[:notice] = "Successfully destroyed comment."
-    redirect_to visite_url
+    redirect_to about_url
   end
   
   private
 
     def find_visitable
-      # params.each do |name, value|
-      #   if name =~ /(.+)_id$/
-      #     return $1.classify.constantize.find(value)
-      #   end
-      # end
-      # nil
+      params.each do |name, value|
+        if name =~ /(.+)_id$/
+          return $1.classify.constantize.find(value)
+        end
+      end
+      nil
     end
 
 end
