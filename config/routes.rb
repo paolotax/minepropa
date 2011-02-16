@@ -1,11 +1,5 @@
 Minepropa::Application.routes.draw do
 
-  get "visite/index"
-
-  get "visite/create"
-
-  get "visite/destroy"
-
   #get "autocomplete_searches/index"
   resources :autocomplete_searches, :only => [:index], :as => 'autocomplete'
   
@@ -17,7 +11,12 @@ Minepropa::Application.routes.draw do
     end
   end
   
+  resources :visite
+  
+  
   resources :appunti do
+    
+    
 
     get :autocomplete_scuola_nome_scuola, :on => :collection
     get :autocomplete_scuola_for_nome_scuola,    :on => :collection

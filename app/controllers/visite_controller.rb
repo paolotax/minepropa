@@ -15,7 +15,9 @@ class VisiteController < ApplicationController
   end
 
   def create
-    @visitable = find_commentable
+    #raise params.inspect
+    
+    @visitable = find_visitable
     @visita = @visitable.visite.build(params[:visita])
     if @visita.save
       flash[:notice] = "Successfully created visita."
@@ -49,12 +51,12 @@ class VisiteController < ApplicationController
   private
 
     def find_visitable
-      params.each do |name, value|
-        if name =~ /(.+)_id$/
-          return $1.classify.constantize.find(value)
-        end
-      end
-      nil
+      # params.each do |name, value|
+      #   if name =~ /(.+)_id$/
+      #     return $1.classify.constantize.find(value)
+      #   end
+      # end
+      # nil
     end
 
 end

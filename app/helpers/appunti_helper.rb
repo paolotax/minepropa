@@ -15,12 +15,13 @@ module AppuntiHelper
   
   def appunto_edit_links(appunto)
     content_tag :div, :id => 'a_edit_buttons' do
-      [ link_to_icon('show', appunto),
-        link_to_icon('edit', edit_appunto_path(appunto)),
+      [ link_to_icon('show', appunto, :alt => 'elimina'),
+        link_to_icon('edit', edit_appunto_path(appunto), :alt => 'elimina'),
         link_to_icon('destroy', appunto, {
           :confirm => 'Sei sicuro?',
-          :method => :delete
-        })
+          :method => :delete, :alt => 'elimina' }),
+        link_to_icon('print', appunto_path(appunto, :format => 'pdf'), :alt => 'elimina'),
+        link_to_icon('car', appunto, :alt => 'elimina')
       ].join(' ').html_safe
     end
   end

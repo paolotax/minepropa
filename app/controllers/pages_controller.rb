@@ -7,7 +7,8 @@ class PagesController < ApplicationController
 
     if mobile_device?
       @appunti = @search.all
-    else  
+    else
+      @visita = Visita.new 
       @appunti = @search.paginate(:per_page => 8, :page => params[:page])
     end
 

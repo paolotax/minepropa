@@ -31,7 +31,8 @@ class AppuntiController < ApplicationController
   
   def show
     @appunto = Appunto.find(params[:id])
-
+    @visita = Visita.new
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json  { render :json => @appunto }
