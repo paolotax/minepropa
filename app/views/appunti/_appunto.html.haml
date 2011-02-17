@@ -2,10 +2,10 @@
   #a_appunto
     #a_visita
       - unless appunto.visite.any?
-        = form_for [appunto, Visita.new] do |f|
+        = form_for [appunto, Visita.new], :remote => true do |f|
           = image_submit_tag 'icons/car.png'
       - if appunto.visite.any?
-        = form_for [appunto, appunto.visite.first], :html => { :method => :delete } do |f|
+        = form_for [appunto, appunto.visite.first], :html => { :method => :delete, :remote => true } do |f|
           = image_submit_tag 'icons/car.png'
     #a_intestazione
       #a_destinatario
