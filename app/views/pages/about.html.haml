@@ -15,11 +15,6 @@
         = f.select(:scuola_provincia_matches , get_provincie_appunti.collect {|p| [p.provincia]}, :include_blank => true)
       .clear
       = f.label :stato_matches, "Stato"
-      %ul#list_stato.right
-        = f.checks :stato_in , [['da completare',''], ["in sospeso", "P"],["completato", "X"]], :class => 'checkboxy' do |c|
-          %li
-            = c.box
-            = c.label
       .clear
       = link_to 'clear', about_path
       .right
@@ -35,6 +30,8 @@
 /       = link_to s.nome_scuola, scuola_path(s)
 
 #appunti.left_appunti
+  #da_assegnare
+    = @appunti.size
   = render :partial => 'appunti/appunto', :collection => @appunti
 
 #appunti.right_appunti

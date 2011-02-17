@@ -1,4 +1,4 @@
-#appunto.round
+#appunto.round{ :class => 'appunto_' + h(appunto.id) }
   #a_appunto
     #a_visita
       - unless appunto.visite.any?

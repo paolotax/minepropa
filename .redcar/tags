@@ -1,4 +1,4 @@
-1297707956
+1297951429
 AddAttributesToUsers	/home/user/work/minepropa/db/migrate/20110112114443_add_attributes_to_users.rb	class AddAttributesToUsers 
 AddEmailToAppunti	/home/user/work/minepropa/db/migrate/20110113193811_add_email_to_appunti.rb	class AddEmailToAppunti 
 AddPositionToAppunti	/home/user/work/minepropa/db/migrate/20110109184907_add_position_to_appunti.rb	class AddPositionToAppunti 
@@ -55,6 +55,7 @@ autocomplete_scuola_for_nome_scuola	/home/user/work/minepropa/app/controllers/ap
 b	/home/user/work/minepropa/public/javascripts/jquery-ui-1.8.8.custom.min.js	function b(f)
 clean_up	/home/user/work/minepropa/app/models/scuola.rb	    def clean_up
 cleanup	/home/user/work/minepropa/app/models/appunto.rb	  def cleanup
+con_appunti_in_corso	/home/user/work/minepropa/app/models/scuola.rb	  def self.con_appunti_in_corso(user_id)
 create	/home/user/work/minepropa/app/controllers/appunti_controller.rb	  def create
 create	/home/user/work/minepropa/app/controllers/scuole_controller.rb	  def create
 create	/home/user/work/minepropa/app/controllers/visite_controller.rb	  def create

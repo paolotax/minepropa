@@ -20,8 +20,12 @@ class VisiteController < ApplicationController
     @visitable = find_visitable
     @visita = @visitable.visite.build(params[:visita])
     if @visita.save
-      flash[:notice] = "Successfully created visita."
-      redirect_to about_url
+      
+      respond_to do |format|
+        format.html { redirect_to [about_url], :flash => { :success => "L'appunto e' stato creato." } }
+        format.js
+      end
+            
     else
       render :action => 'new'
     end
@@ -43,10 +47,14 @@ class VisiteController < ApplicationController
 
   def destroy
     # raise params.inspect
+    @visitable = find_visitable
     @visita = Visita.find(params[:id])
     @visita.destroy
-    flash[:notice] = "Successfully destroyed comment."
-    redirect_to about_url
+    #flash[:notice] = "Successfully destroyed comment."
+    respond_to do |format|
+      format.html { redirect_to [about_url], :flash => { :success => "L'appunto e' stato creato." } }
+      format.js
+    end
   end
   
   private
