@@ -1,35 +1,19 @@
+- content_for :head do
+  = formtastic_stylesheet_link_tag
+
 .form_appunto
-  = form_for @appunto do |f|
+  = semantic_form_for @appunto do |f|
     - if @appunto.errors.any?
       #error_explanation
         %h2= pluralize(@appunto.errors.count, "error") 
-        / prohibited this appunto from being saved:
         %ul
           = @appunto.errors.full_messages.each do |msg|
-            %li msg 
-    .field
-      = f.label :stato
-      = f.select(:stato, options_for_select([["in sospeso", "P"],["completato", "X"]], @appunto.stato), :include_blank => true)
-    .field
-      = f.label :destinatario
-      = f.text_field :destinatario
-    / .field
-    /       = f.text_field :scuola_nome_scuola, :class => 'auto_search_complete'
-    .field
-      = f.label :scuola
-      = f.autocomplete_field :nome_scuola, autocomplete_scuola_nome_scuola_appunti_path
-    / .field
-    /   = f.label :scuola
-    /   = f.collection_select(:scuola_id, current_user.scuole.order("nome_scuola"), :id, :nome_scuola_completo, {:prompt => "Scegli la Scuola", :include_blank => true})
-    .field
-      = f.label :note
-      = f.text_area :note, :id => 'area_note'
-    .field
-      = f.label :telefono
-      = f.phone_field :telefono
-    .field
-      = f.label :email
-      = f.email_field :email
-    .actions.last.center
-      = f.submit
-    
+            %li msg
+    = f.buttons
+    = f.inputs do
+      = f.input :stato, :as => :radio, :collection => {"da consegnare" => "", "in sospeso" => "P", "consegnato" => "X" }
+      = f.input :destinatario, :input_html => { :size => 40  }, :wrapper_html => { :class => "important" } 
+      = f.autocompleted_input :nome_scuola, :url => autocomplete_scuola_nome_scuola_appunti_path, :size => 40
+      = f.input :note,         :input_html => { :rows => 5, :cols => 40  }
+      = f.input :telefono,     :input_html => { :size => 40  }
+      = f.input :email,        :input_html => { :size => 40  }
