@@ -13,4 +13,17 @@ form.formtastic fieldset ol li fieldset legend { margin-left: -6px;}
 
 --------------------------------------------------------------------------------------------------*/
 
-form.formtastic fieldset > ol > li p.inline-hints { color:#333; }
+/* RADIO OVERRIDES - display radio buttons in line
+--------------------------------------------------------------------------------------------------*/
+form.formtastic fieldset > ol > li.radio fieldset ol li {
+    margin:0.1em 0.5em 0.5em 0;
+    display: inline-block;
+}
+
+form.formtastic fieldset > ol > li.radio fieldset ol {
+    margin:0.1em 0.5em 0.5em 0;
+}
+
+form.formtastic fieldset > ol > li.commit {
+    float: right;
+}

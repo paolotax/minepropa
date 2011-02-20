@@ -59,9 +59,9 @@ if (history && history.pushState) {
     $("#status_image a").live("click", function() {
          $.getScript(this.href);
          return false;
-       });appunti_path
+       });
 	 	
-		$('_#appunto_search').submit(function () {  
+		$('#appunto_search').submit(function () {  
 			$.get(this.action, $("#appunto_search").serialize(), null, 'script');  
 			history.pushState(null, document.title, $("#appunto_search").attr("action") + "?" + $("#appunto_search").serialize()); 
 	 	    return false;
@@ -93,6 +93,17 @@ if (history && history.pushState) {
   		}
   	});
 		
+		$("#appunti").sortable();
+    
+		$(".drag").draggable();
+    // $(function() {
+    //      $(".block").draggable();
+    //      $("#droppable").droppable({
+    //        drop: function(event, ui) {
+    //          $(this).addClass('ui-state-highlight').find('p').html('Rilasciato!');
+    //        }
+    //      });
+    //     });
 		
 	 // ricerca con keyup
 	 // $("#search_appunti input").keyup(function() {

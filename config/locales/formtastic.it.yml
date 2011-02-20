@@ -1,0 +1,7 @@
+it:
+  formtastic:
+    :yes: 'Si'
+    :no: 'No'
+    :create: 'Crea %{model}'
+    :update: 'Aggiorna %{model}'
+    :required: 'richiesto'

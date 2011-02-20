@@ -28,12 +28,12 @@ module AppuntiHelper
   def get_posted_string(appunto)
     
     if appunto.stato == "X"
-      return "Completed " + time_ago_in_words(appunto.updated_at) + " ago."
+      return "Completato " + time_ago_in_words(appunto.updated_at) + " fa."
     else
       if appunto.created_at == appunto.updated_at
-        return "Posted "  + time_ago_in_words(appunto.created_at) + " ago." 
+        return "Inserito "  + time_ago_in_words(appunto.created_at) + " fa." 
       else
-        return "Updated "  + time_ago_in_words(appunto.updated_at) + " ago."   
+        return "Aggiornato "  + time_ago_in_words(appunto.updated_at) + " fa."   
       end
     end
   end

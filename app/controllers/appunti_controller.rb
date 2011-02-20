@@ -8,16 +8,10 @@ class AppuntiController < ApplicationController
     
   helper_method :sort_column, :sort_direction
   
-  def autocomplete_scuola_for_nome_scuola
-     #@scuole = current_user.scuole.select('distinct nome_scuola')
-     @scuole = current_user.scuole.where("nome_scuola like ?", "%"+params[:term]+"%").limit(10)
-     # render @scuole
-  end
-  
+
   def get_items(parameters)
     Scuola.where(:user_id => current_user.id).where(['nome_scuola LIKE ?', "%#{parameters[:term]}%"]).limit(10).order(:nome_scuola)
   end
-  
   
   def index
     

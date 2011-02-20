@@ -1,20 +1,10 @@
-= form_for(@scuola) do |f|
-	- if @scuola.errors.any?
-		#error_explanation
-			%h2= pluralize(@scuola.errors.count, "error") 
-			/ prohibited this scuola from being saved:
-			%ul
-			= @scuola.errors.full_messages.each do |msg|
-				%li msg 
-	.actions.float_right
-		= f.submit
-	.field
-		= f.label :nome_scuola
-		= f.text_field :nome_scuola
-	.field
-		= f.label :citta
-		= f.text_field :citta
-	.field
-		= f.label :provincia
-		= f.text_field :provincia
-	
+- content_for :head do
+  = formtastic_stylesheet_link_tag
+
+= semantic_form_for(@scuola) do |f|
+  - render 'shared/error_messages', :object => f.object
+  = f.buttons
+  = f.inputs do
+    = f.input :nome_scuola,  :input_html => { :cols => 40  }
+    = f.input :citta,        :input_html => { :size => 40  }
+    = f.input :provincia,    :input_html => { :size => 5  }
