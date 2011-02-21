@@ -3,8 +3,8 @@ class ScuoleController < ApplicationController
   before_filter :authenticate_user!
   
   def index
-    @search = current_user.scuole.search(params[:search])
-    @scuole = @search.paginate(:per_page => 20, :page => params[:page])
+    @search = current_user.scuole.order('scuole.position asc').search(params[:search])
+    @scuole = @search#.paginate(:per_page => 20, :page => params[:page])
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @scuole }
@@ -80,9 +80,9 @@ class ScuoleController < ApplicationController
 
   def sort
     @scuole = current_user.scuole
-    
+
     @scuole.each do |scuola|
-      scuola.position = params['scuola'].index(scuola.id.to_s) + 1
+      scuola.position = params[:scuola].index(scuola.id.to_s) + 1
       scuola.save
     end
     render :nothing => true

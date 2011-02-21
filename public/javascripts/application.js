@@ -93,9 +93,27 @@ if (history && history.pushState) {
   		}
   	});
 		
-		$("#appunti").sortable();
-    
-		$(".drag").draggable();
+    // $("#appunti").sortable();
+    //     
+    // $(".drag").draggable();
+		
+		
+		
+		$( "#da_assegnare, #assegnati" ).sortable({
+  			connectWith: ".connectedSortable",
+  			opacity: 0.7,
+    		scroll: true,
+    		remove: function(event, ui) {
+          console.log(ui.item.attr('id'));
+          $.ajax({
+            type: 'post',
+            // data: 'id=' + ui.item.attr('id') + '&db=' + ui.item.attr('offsetParent').id,
+            url: '/appunti/2048/visite'
+          })
+        }
+		}).disableSelection();
+
+		
     // $(function() {
     //      $(".block").draggable();
     //      $("#droppable").droppable({
