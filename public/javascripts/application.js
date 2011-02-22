@@ -48,13 +48,14 @@ jQuery(function() {
 
 if (history && history.pushState) {
 	$(function () {  
+ 	 	
  	 	// Sorting and pagination links.  
-	 	$("#appunti .pagination a,  #provincie a").live("click", function() {
-	   		$.getScript(this.href);
-	        history.pushState(null, document.title, this.href);
-	        // event.preventDefault();
-			return false;
-	 	});
+    // $("#appunti .pagination a,  #provincie a").live("click", function() {
+    //        $.getScript(this.href);
+    //          history.pushState(null, document.title, this.href);
+    //          // event.preventDefault();
+    //      return false;
+    // });
 	    
     $("#status_image a").live("click", function() {
          $.getScript(this.href);
@@ -126,7 +127,7 @@ if (history && history.pushState) {
           $.ajax({
             type: 'delete',
             // data: 'id=' + ui.item.attr('id') + '&db=' + ui.item.attr('offsetParent').id,
-            url: '/appunti/' + x[1] + '/visite'
+            url: '/appunti/' + x[1] + '/visite/' + x[3]
           })
         }
 		}).disableSelection();

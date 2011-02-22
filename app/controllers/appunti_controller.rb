@@ -14,12 +14,12 @@ class AppuntiController < ApplicationController
   end
   
   def index
-    
-    @search = current_user.appunti.per_id.search(params[:search])
     if mobile_device?
+      @search = current_user.appunti.per_id.search(params[:search])  
       @appunti = @search.all
-    else  
-      @appunti = @search.paginate(:per_page => 8, :page => params[:page]) 
+    else
+      @search = current_user.appunti.per_id.page(params[:page]).per(8).search(params[:search])  
+      @appunti = @search.relation
     end
   end
   

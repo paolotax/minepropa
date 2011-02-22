@@ -3,13 +3,13 @@ class PagesController < ApplicationController
   before_filter :authenticate_user!
   
   def home
-    @search = current_user.appunti.in_corso.per_id.search(params[:search])
 
     if mobile_device?
+      @search = current_user.appunti.in_corso.per_id.search(params[:search])
       @appunti = @search.all
     else
-     # @visita = Visita.new 
-      @appunti = @search.paginate(:per_page => 8, :page => params[:page])
+      @search = current_user.appunti.in_corso.per_id.page(params[:page]).per(8).search(params[:search])
+      @appunti = @search.relation
     end
 
   end

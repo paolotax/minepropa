@@ -13,6 +13,16 @@ module AppuntiHelper
     end
   end
   
+  def find_first_visita(id)
+    appunto = Appunto.find(id)
+    visita = appunto.visite.first
+    if !visita.nil?
+      h(visita.id) 
+    else
+     ''
+   end
+  end
+  
   def appunto_edit_links(appunto)
     content_tag :div, :id => 'a_edit_buttons' do
       [ link_to_icon('show', appunto, :alt => 'elimina'),

@@ -22,7 +22,7 @@ class VisiteController < ApplicationController
     if @visita.save
       
       respond_to do |format|
-        format.html { redirect_to [about_url], :flash => { :success => "L'appunto e' stato creato." } }
+        format.html { redirect_to ['\about'], :flash => { :success => "L'appunto e' stato creato." } }
         format.js
       end
             
@@ -52,7 +52,7 @@ class VisiteController < ApplicationController
     @visita.destroy
     #flash[:notice] = "Successfully destroyed comment."
     respond_to do |format|
-      format.html { redirect_to [about_url], :flash => { :success => "L'appunto e' stato creato." } }
+      format.html { redirect_to ['\about'], :flash => { :success => "L'appunto e' stato creato." } }
       format.js
     end
   end
