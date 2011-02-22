@@ -99,19 +99,38 @@ if (history && history.pushState) {
 		
 		
 		
-		$( "#da_assegnare, #assegnati" ).sortable({
+		$( "#da_assegnare" ).sortable({
   			connectWith: ".connectedSortable",
   			opacity: 0.7,
     		scroll: true,
     		remove: function(event, ui) {
           console.log(ui.item.attr('id'));
+          var x = ui.item.attr('id').split('_');
+          console.log(x[1]);
           $.ajax({
             type: 'post',
             // data: 'id=' + ui.item.attr('id') + '&db=' + ui.item.attr('offsetParent').id,
-            url: '/appunti/2048/visite'
+            url: '/appunti/' + x[1] + '/visite'
           })
         }
 		}).disableSelection();
+		
+		$( "#assegnati" ).sortable({
+  			connectWith: ".connectedSortable",
+  			opacity: 0.0,
+    		scroll: true,
+        remove: function(event, ui) {
+          console.log(ui.item.attr('id'));
+          var x = ui.item.attr('id').split('_');
+          console.log(x[1]);
+          $.ajax({
+            type: 'delete',
+            // data: 'id=' + ui.item.attr('id') + '&db=' + ui.item.attr('offsetParent').id,
+            url: '/appunti/' + x[1] + '/visite'
+          })
+        }
+		}).disableSelection();
+
 
 		
     // $(function() {
