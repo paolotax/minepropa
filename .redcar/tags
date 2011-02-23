@@ -1,4 +1,4 @@
-1297951429
+1298482325
 AddAttributesToUsers	/home/user/work/minepropa/db/migrate/20110112114443_add_attributes_to_users.rb	class AddAttributesToUsers 
 AddEmailToAppunti	/home/user/work/minepropa/db/migrate/20110113193811_add_email_to_appunti.rb	class AddEmailToAppunti 
 AddPositionToAppunti	/home/user/work/minepropa/db/migrate/20110109184907_add_position_to_appunti.rb	class AddPositionToAppunti 
@@ -16,8 +16,6 @@ AppuntiHelper	/home/user/work/minepropa/app/helpers/appunti_helper.rb	module App
 AppuntiHelperTest	/home/user/work/minepropa/test/unit/helpers/appunti_helper_test.rb	class AppuntiHelperTest 
 Appunto	/home/user/work/minepropa/app/models/appunto.rb	class Appunto 
 AppuntoTest	/home/user/work/minepropa/test/unit/appunto_test.rb	class AppuntoTest 
-AutocompleteSearchesController	/home/user/work/minepropa/app/controllers/autocomplete_searches_controller.rb	class AutocompleteSearchesController 
-AutocompleteSearchesHelper	/home/user/work/minepropa/app/helpers/autocomplete_searches_helper.rb	module AutocompleteSearchesHelper
 BrowsingTest	/home/user/work/minepropa/test/performance/browsing_test.rb	class BrowsingTest 
 ChangeStatoInScuole	/home/user/work/minepropa/db/migrate/20110203070131_change_stato_in_scuole.rb	class ChangeStatoInScuole 
 CreateAppunti	/home/user/work/minepropa/db/migrate/20101207203812_create_appunti.rb	class CreateAppunti 
@@ -51,7 +49,6 @@ a	/home/user/work/minepropa/public/javascripts/jquery-1.4.4.min.js	function a(g,
 a	/home/user/work/minepropa/public/javascripts/jquery-ui-1.8.8.custom.min.js	function a(f){return{position:f.position,offset:f.offset}}var b=this,d=b.options,e=c(document),g;b.uiDialog.draggable({cancel:".ui-dialog-content, .ui-dialog-titlebar-close",handle:".ui-dialog-titlebar",containment:"document",start:function(f,h)
 about	/home/user/work/minepropa/app/controllers/pages_controller.rb	  def about
 appunto_edit_links	/home/user/work/minepropa/app/helpers/appunti_helper.rb	  def appunto_edit_links(appunto)
-autocomplete_scuola_for_nome_scuola	/home/user/work/minepropa/app/controllers/appunti_controller.rb	  def autocomplete_scuola_for_nome_scuola
 b	/home/user/work/minepropa/public/javascripts/jquery-ui-1.8.8.custom.min.js	function b(f)
 clean_up	/home/user/work/minepropa/app/models/scuola.rb	    def clean_up
 cleanup	/home/user/work/minepropa/app/models/appunto.rb	  def cleanup
@@ -89,6 +86,7 @@ edit_or_print	/home/user/work/minepropa/app/controllers/appunti_controller.rb	  
 extractLast	/home/user/work/minepropa/public/javascripts/autocomplete-rails.js	function extractLast( term )
 extractLast	/home/user/work/minepropa/public/javascripts/autocomplete-rails.js	function extractLast(term) { return split(term).pop()
 fa	/home/user/work/minepropa/public/javascripts/jquery-1.4.4.min.js	function fa(a){return c.isWindow(a)?a:a.nodeType===9?a.defaultView||a.parentWindow:false}var t=E.document,c=function(){function a(){if(!b.isReady){try{t.documentElement.doScroll("left")}catch(j){setTimeout(a,1);return}b.ready()}}var b=function(j,s){return new b.fn.init(j,s)},d=E.jQuery,e=E.$,f,h=/^(?:[^<]*(<[\w\W]+>)[^>]*$|#([\w\-]+)$)/,l=/\S/,k=/^\s+/,o=/\s+$/,x=/\W/,r=/\d/,A=/^<(\w+)\s*\/?>(?:<\/\1>)
+find_first_visita	/home/user/work/minepropa/app/helpers/appunti_helper.rb	  def find_first_visita(id)
 find_visitable	/home/user/work/minepropa/app/controllers/visite_controller.rb	    def find_visitable
 getState	/home/user/work/minepropa/public/javascripts/application.js	function getState(el)
 get_citta_appunti	/home/user/work/minepropa/app/helpers/appunti_helper.rb	  def get_citta_appunti
@@ -98,7 +96,6 @@ get_provincie_appunti	/home/user/work/minepropa/app/helpers/appunti_helper.rb	  
 historySupport	/home/user/work/minepropa/public/javascripts/application.js	function historySupport()
 home	/home/user/work/minepropa/app/controllers/pages_controller.rb	  def home
 index	/home/user/work/minepropa/app/controllers/appunti_controller.rb	  def index
-index	/home/user/work/minepropa/app/controllers/autocomplete_searches_controller.rb	  def index
 index	/home/user/work/minepropa/app/controllers/scuole_controller.rb	  def index
 index	/home/user/work/minepropa/app/controllers/visite_controller.rb	  def index
 javascript	/home/user/work/minepropa/app/helpers/layout_helper.rb	  def javascript(*args)

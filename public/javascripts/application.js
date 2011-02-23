@@ -19,13 +19,6 @@ $.fn.hoverClass = function(c) {
 
 
 
-
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
-$(document).ready(function(){
-	
-});
-
 jQuery(function() {
 	$('.auto_search_complete').autocomplete({
 	    minLength: 2,
@@ -47,7 +40,8 @@ jQuery(function() {
 });
 
 if (history && history.pushState) {
-	$(function () {  
+	
+  $(function () {  
  	 	
  	 	// Sorting and pagination links.  
     // $("#appunti .pagination a,  #provincie a").live("click", function() {
@@ -90,44 +84,44 @@ if (history && history.pushState) {
   				complete: function(request){
   					$('#scuole_sort_list').effect('highlight');
   				},
-  				url: '/scuole/sort'})
+          url: '/scuole/sort'
+        })
   		}
-  	});
-		
-    // $("#appunti").sortable();
-    //     
-    // $(".drag").draggable();
-		
+    });    
 		
 		
 		$( "#da_assegnare" ).sortable({
   			connectWith: ".connectedSortable",
   			opacity: 0.7,
     		scroll: true,
-    		remove: function(event, ui) {
-          console.log(ui.item.attr('id'));
-          var x = ui.item.attr('id').split('_');
-          console.log(x[1]);
+        remove: function(event, ui) {          
+          var x = ui.item.attr('id').split('_');          
           $.ajax({
             type: 'post',
             // data: 'id=' + ui.item.attr('id') + '&db=' + ui.item.attr('offsetParent').id,
-            url: '/appunti/' + x[1] + '/visite'
+            url: '/appunti/' + x[1] + '/visite',
+            success: function() {
+	            $("#assegnati_size").html(parseInt($("#assegnati_size").html()) +1);
+              $("#da_assegnare_size").html(parseInt($("#da_assegnare_size").html()) - 1);
+            }
           })
         }
 		}).disableSelection();
 		
 		$( "#assegnati" ).sortable({
   			connectWith: ".connectedSortable",
-  			opacity: 0.0,
+  			opacity: 0.7,
     		scroll: true,
-        remove: function(event, ui) {
-          console.log(ui.item.attr('id'));
+        remove: function(event, ui) {          
           var x = ui.item.attr('id').split('_');
-          console.log(x[1]);
           $.ajax({
             type: 'delete',
             // data: 'id=' + ui.item.attr('id') + '&db=' + ui.item.attr('offsetParent').id,
-            url: '/appunti/' + x[1] + '/visite/' + x[3]
+            url: '/appunti/' + x[1] + '/visite/' + x[3],
+            success: function() {
+	            $("#assegnati_size").html(parseInt($("#assegnati_size").html()) -1);
+              $("#da_assegnare_size").html(parseInt($("#da_assegnare_size").html()) + 1);
+            }
           })
         }
 		}).disableSelection();
