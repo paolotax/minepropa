@@ -18,7 +18,7 @@ class PagesController < ApplicationController
     @search = current_user.appunti.in_corso.per_id.non_assegnato.search(params[:search])
     @appunti = @search.all
     
-    #@appunti = current_user.appunti.in_corso.per_id.non_assegnato
+    @appunti_assegnati = current_user.appunti.assegnato.all
     
     #@scuole = Scuola.con_appunti_in_corso(current_user)
     #@visite = Visita.all

@@ -30,12 +30,15 @@
 /       = link_to s.nome_scuola, scuola_path(s)
 
 #appunti.left_appunti
-  = @appunti.size
+  #da_assegnare_size
+    = @appunti.size
   #da_assegnare.connectedSortable
     = render :partial => 'appunti/appunto', :collection => @appunti
 
 #appunti.right_appunti
+  #assegnati_size
+    = @appunti_assegnati.size
   #assegnati.connectedSortable
-    = render :partial => 'appunti/appunto', :collection => Appunto.assegnato
+    = render :partial => 'appunti/appunto', :collection => @appunti_assegnati
   
 
