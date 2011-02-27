@@ -1,0 +1,20 @@
+LOG:  database system was shut down at 2011-02-27 16:24:37 CET
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+FATAL:  role "test" does not exist
+LOG:  received smart shutdown request
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2011-02-27 16:47:47 CET
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+FATAL:  role "postgres" does not exist
+ERROR:  encoding LATIN10 does not match locale it_IT.utf-8
+DETAIL:  The chosen LC_CTYPE setting requires encoding UTF8.
+STATEMENT:  CREATE DATABASE "gino"  WITH OWNER "ptax" ENCODING 'LATIN10';
+	
+LOG:  autovacuum launcher shutting down
+LOG:  received smart shutdown request
+LOG:  shutting down
+LOG:  database system is shut down

@@ -182,11 +182,16 @@ body {
   text-decoration: none;
 }
 
-/* line 91, ../../../app/stylesheets/application.sass */
+/* line 92, ../../../app/stylesheets/application.sass */
+#sidebar {
+  position: relative;
+}
+
+/* line 95, ../../../app/stylesheets/application.sass */
 #block_navigator {
   background: #009ee6;
 }
-/* line 93, ../../../app/stylesheets/application.sass */
+/* line 97, ../../../app/stylesheets/application.sass */
 #block_navigator ul {
   list-style: none;
   margin: 10%;
@@ -198,7 +203,7 @@ body {
   list-style-type: none;
   margin-left: 0px;
 }
-/* line 97, ../../../app/stylesheets/application.sass */
+/* line 101, ../../../app/stylesheets/application.sass */
 #block_navigator ul li {
   -moz-border-radius: 7px;
   -webkit-border-radius: 7px;
@@ -211,7 +216,7 @@ body {
   margin-top: 5px;
   text-align: center;
 }
-/* line 103, ../../../app/stylesheets/application.sass */
+/* line 107, ../../../app/stylesheets/application.sass */
 #block_navigator ul li a {
   display: block;
   color: white;
@@ -220,11 +225,11 @@ body {
   text-decoration: none;
 }
 
-/* line 110, ../../../app/stylesheets/application.sass */
+/* line 114, ../../../app/stylesheets/application.sass */
 #usefull_links {
   margin-top: 30px;
 }
-/* line 112, ../../../app/stylesheets/application.sass */
+/* line 116, ../../../app/stylesheets/application.sass */
 #usefull_links ul {
   list-style: none;
 }
@@ -234,19 +239,19 @@ body {
   list-style-type: none;
   margin-left: 0px;
 }
-/* line 114, ../../../app/stylesheets/application.sass */
+/* line 118, ../../../app/stylesheets/application.sass */
 #usefull_links ul li a {
   font-size: 14px;
   font-weight: bold;
   text-decoration: none;
 }
 
-/* line 119, ../../../app/stylesheets/application.sass */
+/* line 123, ../../../app/stylesheets/application.sass */
 #clear {
   clear: both;
 }
 
-/* line 124, ../../../app/stylesheets/application.sass */
+/* line 128, ../../../app/stylesheets/application.sass */
 .appunto {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -265,7 +270,7 @@ body {
   padding-right: 20px;
   padding-top: 20px;
 }
-/* line 134, ../../../app/stylesheets/application.sass */
+/* line 138, ../../../app/stylesheets/application.sass */
 .appunto #a_scuola a,
 .appunto #a_email a {
   color: #3876be;
@@ -273,11 +278,11 @@ body {
   font-weight: bold;
   text-decoration: none;
 }
-/* line 140, ../../../app/stylesheets/application.sass */
+/* line 144, ../../../app/stylesheets/application.sass */
 .appunto #a_visita {
   float: right;
 }
-/* line 144, ../../../app/stylesheets/application.sass */
+/* line 148, ../../../app/stylesheets/application.sass */
 .appunto #a_note {
   -moz-border-radius-topright: 7px;
   -webkit-border-top-right-radius: 7px;
@@ -292,22 +297,22 @@ body {
   -khtml-border-bottom-right-radius: 7px;
   border-bottom-right-radius: 7px;
 }
-/* line 148, ../../../app/stylesheets/application.sass */
+/* line 152, ../../../app/stylesheets/application.sass */
 .appunto #a_note #a_recapiti {
   text-align: right;
 }
-/* line 150, ../../../app/stylesheets/application.sass */
+/* line 154, ../../../app/stylesheets/application.sass */
 .appunto #a_footer {
   margin-top: 10px;
   padding-top: 5px;
 }
-/* line 154, ../../../app/stylesheets/application.sass */
+/* line 158, ../../../app/stylesheets/application.sass */
 .appunto #status_image {
   display: inline;
   float: right;
   margin-right: -5px;
 }
-/* line 157, ../../../app/stylesheets/application.sass */
+/* line 161, ../../../app/stylesheets/application.sass */
 .appunto #a_check {
   display: inline;
   float: left;
@@ -315,21 +320,21 @@ body {
   margin-top: 8px;
   margin-left: -3px;
 }
-/* line 162, ../../../app/stylesheets/application.sass */
+/* line 166, ../../../app/stylesheets/application.sass */
 .appunto #a_edit_buttons {
   display: inline;
   float: left;
   margin-top: 8px;
 }
-/* line 165, ../../../app/stylesheets/application.sass */
+/* line 169, ../../../app/stylesheets/application.sass */
 .appunto #a_edit_buttons a.icon {
   opacity: 0.4;
 }
-/* line 167, ../../../app/stylesheets/application.sass */
+/* line 171, ../../../app/stylesheets/application.sass */
 .appunto #a_edit_buttons a.icon:hover {
   opacity: 1;
 }
-/* line 169, ../../../app/stylesheets/application.sass */
+/* line 173, ../../../app/stylesheets/application.sass */
 .appunto #a_timestamp {
   float: none;
   margin-right: 10px;
@@ -375,17 +380,17 @@ body {
 #form_appunto select {
   margin: 0.5em 0;
 }
-/* line 178, ../../../app/stylesheets/application.sass */
+/* line 182, ../../../app/stylesheets/application.sass */
 #form_appunto label {
   color: white;
 }
 
-/* line 181, ../../../app/stylesheets/application.sass */
+/* line 185, ../../../app/stylesheets/application.sass */
 div.field, div.actions {
   margin-bottom: 10px;
 }
 
-/* line 184, ../../../app/stylesheets/application.sass */
+/* line 188, ../../../app/stylesheets/application.sass */
 div.field label {
   float: left;
   width: 120px;

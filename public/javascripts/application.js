@@ -1,47 +1,58 @@
 $(document).ready(function(){
-	$("#provincie li").hover(
-		function(){ $("ul", this).fadeIn("fast"); }, 
-		function() { } 
-	);
-	if (document.all) {
-		$("#provincie li").hoverClass ("sfHover");
-	}
+ $("#provincie li").hover(
+   function(){ $("ul", this).fadeIn("fast"); }, 
+   function() { } 
+ );
+ if (document.all) {
+   $("#provincie li").hoverClass ("sfHover");
+ }
 });
 
+$(document).ready(function(){
+
+});
+
+
 $.fn.hoverClass = function(c) {
-	return this.each(function(){
-		$(this).hover( 
-			function() { $(this).addClass(c);  },
-			function() { $(this).removeClass(c); }
-		);
-	});
+ return this.each(function(){
+   $(this).hover( 
+     function() { $(this).addClass(c);  },
+     function() { $(this).removeClass(c); }
+   );
+ });
 };
 
 
 
 jQuery(function() {
-	$('.auto_search_complete').autocomplete({
-	    minLength: 2,
-	    delay: 600,
-	    source: function(request, response) {
-	        $.ajax({
-	            url: "/autocomplete_searches.js",
-	            dataType: "json",
-	            data: {term: request.term},
-	            success: function( data ) {
-	                response( data );
-	            }
-	        });
-	    }           
-	});
-	
-	$("#provincie li").hover(function(){$(this).effect("highlight", {}, 1000);});
-	
+ $('.auto_search_complete').autocomplete({
+     minLength: 2,
+     delay: 600,
+     source: function(request, response) {
+         $.ajax({
+             url: "/autocomplete_searches.js",
+             dataType: "json",
+             data: {term: request.term},
+             success: function( data ) {
+                 response( data );
+             }
+         });
+     }           
+ });
+ 
+ $("#provincie li").hover(function(){$(this).effect("highlight", {}, 1000);});
+ 
 });
 
 if (history && history.pushState) {
 	
-  $(function () {  
+  $(document).ready(function () {  
+    
+    $(window).scroll(function() {
+    $('#sidebar')
+        .stop()
+        .animate({top: $(document).scrollTop()},'slow','easeOutBack');
+    });
  	 	
  	 	// Sorting and pagination links.  
     // $("#appunti .pagination a,  #provincie a").live("click", function() {
@@ -52,9 +63,10 @@ if (history && history.pushState) {
     // });
 	    
     $("#status_image a").live("click", function() {
+         alert('ciao');
          $.getScript(this.href);
          return false;
-       });
+    });
 	 	
 		$('#appunto_search').submit(function () {  
 			$.get(this.action, $("#appunto_search").serialize(), null, 'script');  
