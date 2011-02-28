@@ -75,7 +75,7 @@ class AppuntiController < ApplicationController
     respond_to do |format|
       if @appunto.update_attributes(params[:appunto])
         format.mobile { redirect_to root_path }
-        format.html { redirect_to [@appunto], :flash => { :success => "Le modifiche sono state salvate." } }
+        format.html { redirect_to [@appunto], :flash => { :success => "Le modifiche sono state salvate. #{undo_link}" } }
         format.xml  { head :ok }
         format.json  { head :json }
       else
@@ -169,6 +169,10 @@ class AppuntiController < ApplicationController
     
     def sort_direction  
       %w[asc desc].include?(params[:direction]) ?  params[:direction] : "desc" 
-    end  
+    end 
+    
+    def undo_link
+      view_context.link_to("annulla", revert_version_path(@appunto.versions.scoped.last), :method => :post)
+    end 
 
 end

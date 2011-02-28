@@ -20,6 +20,7 @@
 class Appunto < ActiveRecord::Base
   
   acts_as_list
+  has_paper_trail
   
   belongs_to :scuola
   belongs_to :user
