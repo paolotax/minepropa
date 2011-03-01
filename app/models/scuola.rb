@@ -42,23 +42,23 @@ class Scuola < ActiveRecord::Base
     end
   end
   
-  def self.con_appunti_in_corso(user_id)
-    # Scuola
-    #   .where(:user_id.eq => user_id)
-    #   .joins(:appunti)
-    #   .where(:appunti => {:stato.ne => 'X'})
-    #   .select("scuole.id, scuole.nome_scuola, scuole.citta, scuole.provincia, scuole.position")
-    #   .select("count(appunti.id) as nr_appunti")
-    #   .group("appunti.scuola_id")
-    #   .order("scuole.provincia, scuole.position")
-  end
+  # def self.con_appunti_in_corso(user_id)
+  #   Scuola
+  #         .where(:user_id.eq => user_id)
+  #         .joins(:appunti)
+  #         .where(:appunti => {:stato.ne => 'X'})
+  #         .select("scuole.id, scuole.nome_scuola, scuole.citta, scuole.provincia, scuole.position")
+  #         .select("count(appunti.id) as nr_appunti")
+  #         .group("appunti.scuola_id")
+  #         .order("scuole.provincia, scuole.position")
+  # end
   
   private
   
     def clean_up
       self[:nome_scuola] = self[:nome_scuola].upcase
       self[:provincia]   = self[:provincia].upcase
-      self[:citta] = self[:citta].titleize
+      self[:citta]       = self[:citta].titleize
       
       # x = self[:citta].split.each {|v| v.capitalize! } 
       # self[:citta] = x.join(" ")
