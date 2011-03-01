@@ -25,7 +25,7 @@ gem 'formtastic', '~> 1.1.0'
 
 gem 'rails3-jquery-autocomplete'
 #gem 'nifty-generators'
-gem 'hassle', 'git://github.com/jasoncodes/hassle.git'
+gem 'hassle', :git => 'git://github.com/jasoncodes/hassle.git'
 
 group :development do
   gem 'rspec-rails'
