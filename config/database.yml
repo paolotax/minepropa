@@ -34,5 +34,5 @@ production:
   reconnect: false
   database: minepropa_production
   pool: 5
-  username: paolotax
-  password: sisboccia
+  username: ptax
+  password: ptax

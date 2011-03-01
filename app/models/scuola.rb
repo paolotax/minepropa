@@ -43,14 +43,14 @@ class Scuola < ActiveRecord::Base
   end
   
   def self.con_appunti_in_corso(user_id)
-    Scuola
-      .where(:user_id.eq => user_id)
-      .joins(:appunti)
-      .where(:appunti => {:stato.ne => 'X'})
-      .select("scuole.id, scuole.nome_scuola, scuole.citta, scuole.provincia, scuole.position")
-      .select("count(appunti.id) as nr_appunti")
-      .group("appunti.scuola_id")
-      .order("scuole.provincia, scuole.position")
+    # Scuola
+    #   .where(:user_id.eq => user_id)
+    #   .joins(:appunti)
+    #   .where(:appunti => {:stato.ne => 'X'})
+    #   .select("scuole.id, scuole.nome_scuola, scuole.citta, scuole.provincia, scuole.position")
+    #   .select("count(appunti.id) as nr_appunti")
+    #   .group("appunti.scuola_id")
+    #   .order("scuole.provincia, scuole.position")
   end
   
   private
