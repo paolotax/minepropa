@@ -27,9 +27,7 @@ module AppuntiHelper
     content_tag :div, :id => 'a_edit_buttons' do
       [ link_to_icon('show', appunto, :alt => 'elimina'),
         link_to_icon('edit', edit_appunto_path(appunto), :alt => 'elimina'),
-        link_to_icon('destroy', appunto, {
-          :confirm => 'Sei sicuro?',
-          :method => :delete, :alt => 'elimina' }),
+        link_to_icon('destroy', appunto, { :method => :delete, :alt => 'elimina' } ),
         link_to_icon('print', appunto_path(appunto, :format => 'pdf'), :alt => 'elimina')
       ].join(' ').html_safe
     end

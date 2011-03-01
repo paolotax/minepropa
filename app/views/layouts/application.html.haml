@@ -12,24 +12,19 @@
     = yield(:head)
   %body.bp.two-col
     #container
-      / %p
-      /   - if mobile_device?
-      /     = link_to "Full Site", :mobile => 0
-      /   - else
-      /     = link_to "Mobile Site", :mobile => 1
       #header
         = render 'layouts/header'
-      #sidebar.col-left
+      #sidebar
         - if user_signed_in?
           = render 'layouts/block_navigator'
-          .block.round
+          .block
             = yield(:search_bar)
         = render 'layouts/links'
-      #content.col-center.span-15.prepend-1.last.append-1.round
+      #content
         - flash.each do |key, value|
-          = content_tag :div, raw(value), :id => "flash_#{key}"
+          = content_tag :div, raw(value), :id => "flash", :class => "#{key}"
         = content_tag(:div, content_tag(:h2, yield(:title))) if show_title?
         = yield
-      #footer.append-2.prepend-7.clear
+      #footer
         = render 'layouts/footer'
       = debug(params) if Rails.env.development?

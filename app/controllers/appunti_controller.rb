@@ -57,7 +57,7 @@ class AppuntiController < ApplicationController
     respond_to do |format|
       if @appunto.save
         format.mobile { redirect_to root_path }
-        format.html { redirect_to [@appunto], :flash => { :success => "L'appunto e' stato creato." } }
+        format.html { redirect_to [@appunto], :flash => { :success => "L'appunto e' stato creato.  #{undo_link}" } }
         format.xml  { render :xml => @appunto, :status => :created, :location => @appunto }
         format.json  { render :json => @appunto, :status => :created, :location => @appunto }
       else
@@ -75,7 +75,7 @@ class AppuntiController < ApplicationController
     respond_to do |format|
       if @appunto.update_attributes(params[:appunto])
         format.mobile { redirect_to root_path }
-        format.html { redirect_to [@appunto], :flash => { :success => "Le modifiche sono state salvate. #{undo_link}" } }
+        format.html { redirect_to [@appunto], :flash => { :success => "Le modifiche sono state salvate.   #{undo_link}" } }
         format.xml  { head :ok }
         format.json  { head :json }
       else
@@ -94,7 +94,7 @@ class AppuntiController < ApplicationController
 
     respond_to do |format|
       format.mobile { redirect_to root_path }
-      format.html { redirect_to(appunti_url) }
+      format.html { redirect_to( appunti_url, :notice => "Appunto eliminato!  #{undo_link}") }
       format.xml  { head :ok }
     end
   end
