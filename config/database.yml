@@ -29,11 +29,10 @@ test:
 
 
 production:
-  adapter: mysql2
+  adapter: postgresql
   encoding: utf8
   reconnect: false
   database: minepropa_production
   pool: 5
-  username: root
-  password: amplfelt
-
+  username: paolotax
+  password: sisboccia
