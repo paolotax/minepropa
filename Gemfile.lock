@@ -78,7 +78,6 @@ GEM
       activesupport (~> 3.0.2)
       arel (~> 2.0.2)
     mime-types (1.16)
-    mysql2 (0.2.6)
     nokogiri (1.4.4)
     paper_trail (2.0.1)
       rails (~> 3)
@@ -142,7 +141,6 @@ GEM
       nokogiri (>= 1.2.0)
       rack (>= 1.0)
       rack-test (>= 0.5.3)
-    will_paginate (3.0.pre2)
     with_action (1.0.0)
       actionpack
 
@@ -163,7 +161,6 @@ DEPENDENCIES
   kaminari
   meta_search
   meta_where
-  mysql2
   paper_trail
   pg
   prawnto
@@ -174,5 +171,4 @@ DEPENDENCIES
   ruby_parser
   spork
   webrat (= 0.7.2)
-  will_paginate (= 3.0.pre2)
   with_action

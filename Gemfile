@@ -2,11 +2,11 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.3'
 
-gem 'mysql2'
+#gem 'mysql2'
 gem 'pg'
 gem 'paper_trail'
 
-gem 'will_paginate', '3.0.pre2'
+#gem 'will_paginate', '3.0.pre2'
 gem 'kaminari'
 
 gem "haml-rails"
