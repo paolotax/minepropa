@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/jasoncodes/hassle.git
+  revision: a61495da1957d8db509ef72fa8c5f99c562d7f42
+  specs:
+    hassle (0.0.1)
+      haml
+      rack
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -156,6 +164,7 @@ DEPENDENCIES
   faker
   formtastic (~> 1.1.0)
   haml-rails
+  hassle!
   hpricot
   jquery-rails
   kaminari
