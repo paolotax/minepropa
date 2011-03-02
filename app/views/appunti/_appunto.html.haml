@@ -13,7 +13,7 @@
       #a_scuola
         = link_to appunto.nome_scuola, scuola_path(appunto.scuola) unless appunto.scuola.blank?
     #a_note
-      %p=  appunto.note
+      %text_area= simple_format(appunto.note)
       #a_recapiti
         #a_telefono
           = "tel #{ appunto.telefono}" unless appunto.telefono.blank?
