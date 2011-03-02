@@ -8,8 +8,7 @@
     = f.inputs do
       = f.input :stato, :as => :radio, :collection => {"da consegnare" => "", "in sospeso" => "P", "consegnato" => "X" }
       = f.input :destinatario, :input_html => { :size => 40  }, :wrapper_html => { :class => "important" } 
-      #auto_scuola
-        = f.autocompleted_input :nome_scuola, :url => autocomplete_scuola_nome_scuola_appunti_path, :size => 40
+      = f.autocompleted_input :nome_scuola, :url => autocomplete_scuola_nome_scuola_appunti_path, :size => 40
       = f.input :note,         :input_html => { :rows => 5, :cols => 40  }
       = f.input :telefono,     :input_html => { :size => 40  }
       = f.input :email,        :input_html => { :size => 40  }
