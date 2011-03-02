@@ -1,13 +1,7 @@
 #appunti
-  = form_tag edit_or_print_appunti_path do
-    = render 'appunti/appunti_navbar'
-    = paginate @appunti, :remote => true
-    / = page_entries_info @appunti
-    / = will_paginate @appunti, :class => 'pagination', :next_label => "Succ.", :previous_label => "Prec.", :page_links => false
-    .clear
-    = render @appunti
-    .clear
-    / = will_paginate @appunti, :class => 'pagination', :next_label => "Succ.", :previous_label => "Prec.", :page_links => false
-    = render 'appunti/appunti_navbar'
-    .clear
+	= form_tag edit_or_print_appunti_path do
+		= submit_tag "modifica selezionati"
+		= submit_tag "stampa selezionati"
+		= paginate @appunti, :remote => true
+		= render @appunti
 
