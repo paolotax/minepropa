@@ -53,6 +53,8 @@ if (history && history.pushState) {
         .stop()
         .animate({top: $(document).scrollTop()},'slow','easeOutBack');
     });
+
+		$('#auto_scuola')..bestupper(); 
  	 	
  	 	// Sorting and pagination links.  
     // $("#appunti .pagination a,  #provincie a").live("click", function() {
