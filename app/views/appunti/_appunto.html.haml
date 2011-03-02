@@ -1,4 +1,4 @@
-.appunto.drag.round{ :id => 'appunto_' + h(appunto.id) + '_visita_' + find_first_visita(appunto.id), :class => 'appunto_' + h(appunto.id) }
+.appunto_big.drag{ :id => 'appunto_' + h(appunto.id) + '_visita_' + find_first_visita(appunto.id), :class => 'appunto_' + h(appunto.id) }
   #a_appunto
     #a_visita
       - unless appunto.visite.any?
