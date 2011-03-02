@@ -42,6 +42,7 @@ class Scuola < ActiveRecord::Base
     end
   end
   
+  
   # def self.con_appunti_in_corso(user_id)
   #   Scuola
   #         .where(:user_id.eq => user_id)
