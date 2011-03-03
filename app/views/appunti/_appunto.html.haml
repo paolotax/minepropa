@@ -1,12 +1,12 @@
 .appunto_big.drag.round{ :id => 'appunto_' + h(appunto.id) + '_visita_' + find_first_visita(appunto.id), :class => 'appunto_' + h(appunto.id) }
   #a_appunto
-    #a_visita
-      - unless appunto.visite.any?
-        = form_for [appunto, Visita.new], :remote => true do |f|
-          = image_submit_tag 'icons/car.png'
-      - if appunto.visite.any?
-        = form_for [appunto, appunto.visite.first], :html => { :method => :delete, :remote => true } do |f|
-          = image_submit_tag 'icons/car.png'
+    / #a_visita
+    /   - unless appunto.visite.any?
+    /     = form_for [appunto, Visita.new], :remote => true do |f|
+    /       = image_submit_tag 'icons/car.png'
+    /   - if appunto.visite.any?
+    /     = form_for [appunto, appunto.visite.first], :html => { :method => :delete, :remote => true } do |f|
+    /       = image_submit_tag 'icons/car.png'
     #a_intestazione
       #a_destinatario
         %strong= appunto.destinatario
