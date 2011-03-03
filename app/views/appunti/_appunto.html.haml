@@ -25,10 +25,10 @@
     - unless @appunti.nil?
       #a_check
         = check_box_tag "appunti_ids[]", appunto.id
-    #status_image{ :class => 'img_appunto_' + h(appunto.id) }
-      = link_to image_tag(show_status_icon(appunto.stato)), toggle_stato_appunto_path(appunto), :class => "img_appunto_" + h(appunto.id)
-    = appunto_edit_links(appunto)
-    #a_timestamp{ :class => 'ts_appunto_' + h(appunto.id) }
-      %small= get_posted_string(appunto)
-
+    / #status_image{ :class => 'img_appunto_' + h(appunto.id) }
+    /   = link_to image_tag(show_status_icon(appunto.stato)), toggle_stato_appunto_path(appunto), :class => "img_appunto_" + h(appunto.id)
+    / = appunto_edit_links(appunto)
+    / #a_timestamp{ :class => 'ts_appunto_' + h(appunto.id) }
+    /   %small= get_posted_string(appunto)
+  
     #clear

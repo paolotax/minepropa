@@ -1,7 +1,9 @@
 #appunti
-	= form_tag edit_or_print_appunti_path do
+	= paginate @appunti, :remote => true
+	= form_tag edit_or_print_appunti_path, :html => {:method => :post} do
 		= submit_tag "modifica selezionati"
 		= submit_tag "stampa selezionati"
-		= paginate @appunti, :remote => true
-		= render @appunti
-
+		#app
+			= render @appunti
+		
+		
