@@ -135,7 +135,7 @@ if (history && history.pushState) {
 		$( "#assegnati" ).sortable({
   			connectWith: ".connectedSortable",
   			opacity: 0.7,
-  			placeholder: 'ui-state-highlight',
+  			placeholder: 'appunto_placeholder',
     		scroll: true,
         remove: function(event, ui) {          
           var x = ui.item.attr('id').split('_');
