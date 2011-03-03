@@ -116,6 +116,7 @@ if (history && history.pushState) {
 		$( "#da_assegnare" ).sortable({
   			connectWith: ".connectedSortable",
   			opacity: 0.7,
+  			placeholder: 'appunto_placeholder',
     		scroll: true,
         remove: function(event, ui) {          
           var x = ui.item.attr('id').split('_');          
@@ -134,6 +135,7 @@ if (history && history.pushState) {
 		$( "#assegnati" ).sortable({
   			connectWith: ".connectedSortable",
   			opacity: 0.7,
+  			placeholder: 'ui-state-highlight',
     		scroll: true,
         remove: function(event, ui) {          
           var x = ui.item.attr('id').split('_');
