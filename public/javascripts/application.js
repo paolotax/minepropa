@@ -117,7 +117,7 @@ if (history && history.pushState) {
   			connectWith: ".connectedSortable",
   			opacity: 0.7,
   			placeholder: 'appunto_placeholder',
-    		scroll: true,
+    		revert: true,
         remove: function(event, ui) {          
           var x = ui.item.attr('id').split('_');          
           $.ajax({
@@ -136,7 +136,7 @@ if (history && history.pushState) {
   			connectWith: ".connectedSortable",
   			opacity: 0.7,
   			placeholder: 'appunto_placeholder',
-    		scroll: true,
+    		revert: true,
         remove: function(event, ui) {          
           var x = ui.item.attr('id').split('_');
           $.ajax({
