@@ -74,9 +74,8 @@ if (history && history.pushState) {
     // });
 	    
     $("#status_image a").live("click", function() {
-         alert('ciao');
-         $.getScript(this.href);
-         return false;
+       $.getScript(this.href);
+       return false;
     });
 	 	
 		$('#appunto_search').submit(function () {  
