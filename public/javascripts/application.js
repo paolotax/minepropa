@@ -74,6 +74,8 @@ $(document).ready(function() {
        
 		firstDay: 1,
 		
+		slotMinutes: 15,
+		
 		buttonText: {
         prev:     '&nbsp;&#9668;&nbsp;',  // left triangle
         next:     '&nbsp;&#9658;&nbsp;',  // right triangle
