@@ -15,7 +15,7 @@ class ScuoleController < ApplicationController
     @scuola = Scuola.find(params[:id])
    
     @search = @scuola.appunti.search(params[:search])
-    @appunti = @search.paginate(:per_page => 8, :page => params[:page])  
+    @appunti = @search.page(params[:page]).per(8)
 
     #@appunti = @scuola.appunti.paginate(:per_page => 8, :page => params[:page])
     

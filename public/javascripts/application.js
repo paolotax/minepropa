@@ -11,11 +11,8 @@ $(document).ready(function() {
 		// it doesn't need to have a start or end
 		var eventObject = {
 			
-			title: $.trim($("#a_destinatario", this).text() + $("#a_scuola", this).text())
-			
-			//title: $.trim($(this).attr('id')) // use the element's text as the event title
-      // var x = originalEventObject.attr('id').split('_');          
-      //       console.log(x[0]);
+			title: $.trim($("#a_destinatario", this).text()) +' '+ $.trim($("#a_scuola", this).text()),
+			id: $(this).attr('id')
       
 		};
 
@@ -48,7 +45,7 @@ $(document).ready(function() {
 		defaultView: 'agendaWeek',
 		
 		allDayText: '',
-		
+		axisFormat: 'H:mm',
 		firstHour: 6,
 		
 		columnFormat: {
@@ -101,17 +98,20 @@ $(document).ready(function() {
     				// assign it the date that was reported
     				copiedEventObject.start = date;
     				copiedEventObject.allDay = allDay;
-
-          
-            // $.ajax({
-            //   type: 'post',
-            //   // data: 'id=' + ui.item.attr('id') + '&db=' + ui.item.attr('offsetParent').id,
-            //   url: '/appunti/' + x[1] + '/visite',
-            //   success: function() {
-            //    $("#assegnati_size").html(parseInt($("#assegnati_size").html()) +1);
-            //     $("#da_assegnare_size").html(parseInt($("#da_assegnare_size").html()) - 1);
-            //   }
-            // });
+						
+				    var x = copiedEventObject.id.split('_');
+            console.log(x[1]);
+						console.log(copiedEventObject.start);
+            
+            $.ajax({
+              type: 'post',
+              // data: 'id=' + ui.item.attr('id') + '&db=' + ui.item.attr('offsetParent').id,
+              url: '/appunti/' + x[1] + '/visite',
+              success: function() {
+                     $("#assegnati_size").html(parseInt($("#assegnati_size").html()) +1);
+                      $("#da_assegnare_size").html(parseInt($("#da_assegnare_size").html()) - 1);
+                    }
+            });
             
 
     				// render the event on the calendar
