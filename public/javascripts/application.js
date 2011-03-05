@@ -1,3 +1,101 @@
+$(document).ready(function() {
+
+	var date = new Date();
+	var d = date.getDate();
+	var m = date.getMonth();
+	var y = date.getFullYear();
+	
+	$('#calendar').fullCalendar({
+		
+		header: {
+			left: 'prev,next today',
+			center: 'title',
+			right: 'month,agendaWeek,agendaDay'
+		},
+		
+		timeFormat: { agenda: 'H(:mm)',  '': 'H(:mm)' },
+		
+		editable: true,
+		
+		defaultView: 'agendaWeek',
+		
+		monthNames: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio',
+     'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
+    
+    monthNamesShort:  ['Gen', 'Feb', 'Mar', 'Apr', 'Mag', 'Giu',
+      'Lug', 'Ago', 'Set', 'Ott', 'Nov', 'Dic'],
+    
+    dayNames: ['Domenica', 'Lunedi', 'Martedi', 'Mercoledi', 'Giovedi',
+       'Venerdi', 'Sabato'],
+
+    dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mer', 'Gio',
+          'Ven', 'Sab'],
+       
+		firstDay: 1,
+		
+		buttonText: {
+        prev:     '&nbsp;&#9668;&nbsp;',  // left triangle
+        next:     '&nbsp;&#9658;&nbsp;',  // right triangle
+        prevYear: '&nbsp;&lt;&lt;&nbsp;', // <<
+        nextYear: '&nbsp;&gt;&gt;&nbsp;', // >>
+        today:    'oggi',
+        month:    'mese',
+        week:     'settimana',
+        day:      'giorno'
+    },
+		
+		events: [
+			{
+				title: 'All Day Event',
+				start: new Date(y, m, 1)
+			},
+			{
+				title: 'Long Event',
+				start: new Date(y, m, d-5),
+				end: new Date(y, m, d-2)
+			},
+			{
+				id: 999,
+				title: 'Repeating Event',
+				start: new Date(y, m, d-3, 16, 0),
+				allDay: false
+			},
+			{
+				id: 999,
+				title: 'Repeating Event',
+				start: new Date(y, m, d+4, 16, 0),
+				allDay: false
+			},
+			{
+				title: 'Meeting',
+				start: new Date(y, m, d, 10, 30),
+				allDay: false
+			},
+			{
+				title: 'Lunch',
+				start: new Date(y, m, d, 12, 0),
+				end: new Date(y, m, d, 14, 0),
+				allDay: false
+			},
+			{
+				title: 'Birthday Party',
+				start: new Date(y, m, d+1, 19, 0),
+				end: new Date(y, m, d+1, 22, 30),
+				allDay: false
+			},
+			{
+				title: 'Click for Google',
+				start: new Date(y, m, 28),
+				end: new Date(y, m, 29),
+				url: 'http://google.com/'
+			}
+		]
+	});
+	
+});
+
+
+
 /* Copyright (c) 2009 Mustafa OZCAN (http://www.mustafaozcan.net)
 * Dual licensed under the MIT (http://www.opensource.org/licenses/mit-license.php)
 * and GPL (http://www.opensource.org/licenses/gpl-license.php) licenses.
@@ -86,7 +184,7 @@ if (history && history.pushState) {
 		
 		$('#scuola_search').submit(function () {  
 			$.get(this.action, $("#scuola_search").serialize(), null, 'script');  
-			history.pushState(null, document.title, $("#scuola_search").attr("action") + "?" + $("#scuola_search").serialize()); 
+			history.pushState(null, document.title, $("#scuola_search").attr("action") + "?" +  $("#scuola_search").serialize()); 
 	 	    return false;
 		});
 		
