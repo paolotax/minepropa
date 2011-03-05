@@ -5,6 +5,34 @@ $(document).ready(function() {
 	var m = date.getMonth();
 	var y = date.getFullYear();
 	
+	$('#da_assegnare div.appunto_big').each(function() {
+
+		// create an Event Object (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/)
+		// it doesn't need to have a start or end
+		var eventObject = {
+			
+			title: $.trim($("#a_destinatario", this).text() + $("#a_scuola", this).text())
+			
+			//title: $.trim($(this).attr('id')) // use the element's text as the event title
+      // var x = originalEventObject.attr('id').split('_');          
+      //       console.log(x[0]);
+      
+		};
+
+		// store the Event Object in the DOM element so we can get to it later
+		$(this).data('eventObject', eventObject);
+
+		// make the event draggable using jQuery UI
+		$(this).draggable({
+			zIndex: 999,
+			revert: true,      // will cause the event to go back to its
+			revertDuration: 0  //  original position after the drag
+		});
+
+	});
+
+	
+	
 	$('#calendar').fullCalendar({
 		
 		header: {
@@ -18,6 +46,22 @@ $(document).ready(function() {
 		editable: true,
 		
 		defaultView: 'agendaWeek',
+		
+		allDayText: '',
+		
+		firstHour: 6,
+		
+		columnFormat: {
+        month: 'ddd',    // Mon
+        week: 'ddd d/M', // Mon 9/7
+        day: 'dddd d/M'  // Monday 9/7
+    },
+    
+    titleFormat: {
+        month: 'MMMM yyyy',                             // September 2009
+        week: "d MMM[ yyyy]{ '-'[ d] MMM yyyy}", // Sep 7 - 13 2009    &#8212;
+        day: 'dddd, d MMM yyyy'                  // Tuesday, Sep 8, 2009
+    },
 		
 		monthNames: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio',
      'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
@@ -43,54 +87,58 @@ $(document).ready(function() {
         week:     'settimana',
         day:      'giorno'
     },
+    
+    droppable: true,
+    
+    drop: function(date, allDay) { // this function is called when something is dropped
+
+    				// retrieve the dropped element's stored Event Object
+    				var originalEventObject = $(this).data('eventObject');
+
+    				// we need to copy it, so that multiple events don't have a reference to the same object
+    				var copiedEventObject = $.extend({}, originalEventObject);
+
+    				// assign it the date that was reported
+    				copiedEventObject.start = date;
+    				copiedEventObject.allDay = allDay;
+
+          
+            // $.ajax({
+            //   type: 'post',
+            //   // data: 'id=' + ui.item.attr('id') + '&db=' + ui.item.attr('offsetParent').id,
+            //   url: '/appunti/' + x[1] + '/visite',
+            //   success: function() {
+            //    $("#assegnati_size").html(parseInt($("#assegnati_size").html()) +1);
+            //     $("#da_assegnare_size").html(parseInt($("#da_assegnare_size").html()) - 1);
+            //   }
+            // });
+            
+
+    				// render the event on the calendar
+    				// the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
+    				$('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
+            
+            $(this).remove();
+            
+
+            
+            
+    				// is the "remove after drop" checkbox checked?
+    				if ($('#drop-remove').is(':checked')) {
+    					// if so, remove the element from the "Draggable Events" list
+    					$(this).remove();
+    				}
+
+    			}
+    
 		
-		events: [
-			{
-				title: 'All Day Event',
-				start: new Date(y, m, 1)
-			},
-			{
-				title: 'Long Event',
-				start: new Date(y, m, d-5),
-				end: new Date(y, m, d-2)
-			},
-			{
-				id: 999,
-				title: 'Repeating Event',
-				start: new Date(y, m, d-3, 16, 0),
-				allDay: false
-			},
-			{
-				id: 999,
-				title: 'Repeating Event',
-				start: new Date(y, m, d+4, 16, 0),
-				allDay: false
-			},
-			{
-				title: 'Meeting',
-				start: new Date(y, m, d, 10, 30),
-				allDay: false
-			},
-			{
-				title: 'Lunch',
-				start: new Date(y, m, d, 12, 0),
-				end: new Date(y, m, d, 14, 0),
-				allDay: false
-			},
-			{
-				title: 'Birthday Party',
-				start: new Date(y, m, d+1, 19, 0),
-				end: new Date(y, m, d+1, 22, 30),
-				allDay: false
-			},
-			{
-				title: 'Click for Google',
-				start: new Date(y, m, 28),
-				end: new Date(y, m, 29),
-				url: 'http://google.com/'
-			}
-		]
+		
 	});
+	
+  // $('.a-drag').draggable({
+  //   revert: true,
+  //   revertDuration: 0
+  // });
 	
 });
 
@@ -210,43 +258,43 @@ if (history && history.pushState) {
     });    
 		
 		
-		$( "#da_assegnare" ).sortable({
-  			connectWith: ".connectedSortable",
-  			opacity: 0.7,
-  			placeholder: 'appunto_placeholder',
-    		revert: true,
-        remove: function(event, ui) {          
-          var x = ui.item.attr('id').split('_');          
-          $.ajax({
-            type: 'post',
-            // data: 'id=' + ui.item.attr('id') + '&db=' + ui.item.attr('offsetParent').id,
-            url: '/appunti/' + x[1] + '/visite',
-            success: function() {
-	            $("#assegnati_size").html(parseInt($("#assegnati_size").html()) +1);
-              $("#da_assegnare_size").html(parseInt($("#da_assegnare_size").html()) - 1);
-            }
-          })
-        }
-		}).disableSelection();
-		
-		$( "#assegnati" ).sortable({
-  			connectWith: ".connectedSortable",
-  			opacity: 0.7,
-  			placeholder: 'appunto_placeholder',
-    		revert: true,
-        remove: function(event, ui) {          
-          var x = ui.item.attr('id').split('_');
-          $.ajax({
-            type: 'delete',
-            // data: 'id=' + ui.item.attr('id') + '&db=' + ui.item.attr('offsetParent').id,
-            url: '/appunti/' + x[1] + '/visite/' + x[3],
-            success: function() {
-	            $("#assegnati_size").html(parseInt($("#assegnati_size").html()) -1);
-              $("#da_assegnare_size").html(parseInt($("#da_assegnare_size").html()) + 1);
-            }
-          })
-        }
-		}).disableSelection();
+    // $( "#da_assegnare" ).sortable({
+    //        connectWith: ".connectedSortable",
+    //        opacity: 0.7,
+    //        placeholder: 'appunto_placeholder',
+    //        revert: true,
+    //         remove: function(event, ui) {          
+    //           var x = ui.item.attr('id').split('_');          
+    //           $.ajax({
+    //             type: 'post',
+    //             // data: 'id=' + ui.item.attr('id') + '&db=' + ui.item.attr('offsetParent').id,
+    //             url: '/appunti/' + x[1] + '/visite',
+    //             success: function() {
+    //              $("#assegnati_size").html(parseInt($("#assegnati_size").html()) +1);
+    //               $("#da_assegnare_size").html(parseInt($("#da_assegnare_size").html()) - 1);
+    //             }
+    //           })
+    //         }
+    //    }).disableSelection();
+    //    
+    //    $( "#assegnati" ).sortable({
+    //        connectWith: ".connectedSortable",
+    //        opacity: 0.7,
+    //        placeholder: 'appunto_placeholder',
+    //        revert: true,
+    //         remove: function(event, ui) {          
+    //           var x = ui.item.attr('id').split('_');
+    //           $.ajax({
+    //             type: 'delete',
+    //             // data: 'id=' + ui.item.attr('id') + '&db=' + ui.item.attr('offsetParent').id,
+    //             url: '/appunti/' + x[1] + '/visite/' + x[3],
+    //             success: function() {
+    //              $("#assegnati_size").html(parseInt($("#assegnati_size").html()) -1);
+    //               $("#da_assegnare_size").html(parseInt($("#da_assegnare_size").html()) + 1);
+    //             }
+    //           })
+    //         }
+    //    }).disableSelection();
 
 
 		
