@@ -2,11 +2,14 @@
 %html
   %head
     %title= yield(:title) || "Untitled"
-    = render 'layouts/stylesheets'
+
+    
     = javascript_include_tag "jquery-1.4.4.min.js"
     = javascript_include_tag "jquery-ui-1.8.8.custom.min.js"
     = javascript_include_tag "rails.js", "autocomplete-rails.js", 'fullcalendar/fullcalendar.min.js',  'application.js'
-    = stylesheet_link_tag 'jquery-ui-1.8.8.custom.css', 'fullcalendar.css'
+
+    = render 'layouts/stylesheets'
+
     = stylesheet_link_tag 'mobile' if mobile_device?
     = csrf_meta_tag
     = yield(:head)

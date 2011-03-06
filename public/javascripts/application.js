@@ -42,11 +42,13 @@ $(document).ready(function() {
 		
 		editable: true,
 		
-		defaultView: 'agendaWeek',
+		defaultView: 'agendaDay',
 		
 		allDayText: '',
 		axisFormat: 'H:mm',
-		firstHour: 6,
+		firstHour: 8,
+		minTime: 8,
+		maxTime: 18,
 		
 		columnFormat: {
         month: 'ddd',    // Mon

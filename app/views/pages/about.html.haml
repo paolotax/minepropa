@@ -22,7 +22,6 @@
 /       .clear
 
 
-#calendar
 
 #appunti.left_appunti
   #da_assegnare_size
@@ -33,8 +32,10 @@
 #appunti.right_appunti
   #assegnati_size
     = @appunti_assegnati.size
-  #assegnati.connectedSortable
-    = render :partial => 'appunti/appunto', :collection => @appunti_assegnati
-       
+  #calendar
+  
+  / #assegnati.connectedSortable
+  /     = render :partial => 'appunti/appunto', :collection => @appunti_assegnati
+  /        
 			
 
