@@ -23,5 +23,15 @@ class PagesController < ApplicationController
     #@scuole = Scuola.con_appunti_in_corso(current_user)
     #@visite = Visita.all
   end
+  
+  def calendar
+    @search = current_user.appunti.in_corso.per_id.non_assegnato.search(params[:search])
+    @appunti = @search.all
+    
+    @appunti_assegnati = current_user.appunti.assegnato.all
+    
+    #@scuole = Scuola.con_appunti_in_corso(current_user)
+    #@visite = Visita.all
+  end
 
 end

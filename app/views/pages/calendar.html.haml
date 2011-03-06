@@ -1,0 +1,15 @@
+!!!
+%html
+  %head
+    = javascript_include_tag "jquery-1.4.4.min.js"
+    = javascript_include_tag "jquery-ui-1.8.8.custom.min.js"
+    = javascript_include_tag "rails.js",'fullcalendar/fullcalendar.min.js',  'application.js'
+    = render 'layouts/stylesheets'
+    = csrf_meta_tag
+  %body
+    %h1
+      GINO
+    #calendar
+    = link_to "#{ @current_controller }#about"
+    = @current_controller
+      

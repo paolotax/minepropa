@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   helper :all
   
   before_filter :prepare_for_mobile
+  before_filter :instantiate_controller_and_action_names
 
   private
 
@@ -20,4 +21,10 @@ class ApplicationController < ActionController::Base
     session[:mobile_param] = params[:mobile] if params[:mobile]
     request.format = :mobile if mobile_device?
   end
+
+  def instantiate_controller_and_action_names
+    @current_action = action_name
+    @current_controller = controller_name
+  end
+
 end

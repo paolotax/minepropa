@@ -5,7 +5,7 @@ $(document).ready(function() {
 	var m = date.getMonth();
 	var y = date.getFullYear();
 	
-	$('#da_assegnare div.appunto_big').each(function() {
+	$('#da_assegnarea div.appunto_big').each(function() {
 
 		// create an Event Object (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/)
 		// it doesn't need to have a start or end
@@ -262,43 +262,43 @@ if (history && history.pushState) {
     });    
 		
 		
-    // $( "#da_assegnare" ).sortable({
-    //        connectWith: ".connectedSortable",
-    //        opacity: 0.7,
-    //        placeholder: 'appunto_placeholder',
-    //        revert: true,
-    //         remove: function(event, ui) {          
-    //           var x = ui.item.attr('id').split('_');          
-    //           $.ajax({
-    //             type: 'post',
-    //             // data: 'id=' + ui.item.attr('id') + '&db=' + ui.item.attr('offsetParent').id,
-    //             url: '/appunti/' + x[1] + '/visite',
-    //             success: function() {
-    //              $("#assegnati_size").html(parseInt($("#assegnati_size").html()) +1);
-    //               $("#da_assegnare_size").html(parseInt($("#da_assegnare_size").html()) - 1);
-    //             }
-    //           })
-    //         }
-    //    }).disableSelection();
-    //    
-    //    $( "#assegnati" ).sortable({
-    //        connectWith: ".connectedSortable",
-    //        opacity: 0.7,
-    //        placeholder: 'appunto_placeholder',
-    //        revert: true,
-    //         remove: function(event, ui) {          
-    //           var x = ui.item.attr('id').split('_');
-    //           $.ajax({
-    //             type: 'delete',
-    //             // data: 'id=' + ui.item.attr('id') + '&db=' + ui.item.attr('offsetParent').id,
-    //             url: '/appunti/' + x[1] + '/visite/' + x[3],
-    //             success: function() {
-    //              $("#assegnati_size").html(parseInt($("#assegnati_size").html()) -1);
-    //               $("#da_assegnare_size").html(parseInt($("#da_assegnare_size").html()) + 1);
-    //             }
-    //           })
-    //         }
-    //    }).disableSelection();
+    $( "#da_assegnare" ).sortable({
+       connectWith: ".connectedSortable",
+       opacity: 0.7,
+       placeholder: 'appunto_placeholder',
+       revert: true,
+        remove: function(event, ui) {          
+          var x = ui.item.attr('id').split('_');          
+          $.ajax({
+            type: 'post',
+            // data: 'id=' + ui.item.attr('id') + '&db=' + ui.item.attr('offsetParent').id,
+            url: '/appunti/' + x[1] + '/visite',
+            success: function() {
+             $("#assegnati_size").html(parseInt($("#assegnati_size").html()) +1);
+              $("#da_assegnare_size").html(parseInt($("#da_assegnare_size").html()) - 1);
+            }
+          })
+        }
+     }).disableSelection();
+   
+     $( "#assegnati" ).sortable({
+       connectWith: ".connectedSortable",
+       opacity: 0.7,
+       placeholder: 'appunto_placeholder',
+       revert: true,
+        remove: function(event, ui) {          
+          var x = ui.item.attr('id').split('_');
+          $.ajax({
+            type: 'delete',
+            // data: 'id=' + ui.item.attr('id') + '&db=' + ui.item.attr('offsetParent').id,
+            url: '/appunti/' + x[1] + '/visite/' + x[3],
+            success: function() {
+             $("#assegnati_size").html(parseInt($("#assegnati_size").html()) -1);
+              $("#da_assegnare_size").html(parseInt($("#da_assegnare_size").html()) + 1);
+            }
+          })
+        }
+     }).disableSelection();
 
 
 		

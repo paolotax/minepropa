@@ -15,4 +15,17 @@ module ApplicationHelper
                       options)
   end
   
+  def search_url(controller)
+  
+    if controller == 'pages'
+      if @current_action = 'home'
+        return root_url
+      else
+        return about_url
+      end
+    else
+      return appunti_url
+    end
+  end
+  
 end
