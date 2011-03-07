@@ -9,6 +9,7 @@ Minepropa::Application.routes.draw do
     collection do
       post 'sort'
     end
+    resource :indirizzi
   end
   
   
@@ -17,6 +18,7 @@ Minepropa::Application.routes.draw do
   resources :appunti do
     
     resources :visite
+    resources :indirizzi
 
     get :autocomplete_scuola_nome_scuola, :on => :collection
     get :autocomplete_scuola_for_nome_scuola,    :on => :collection

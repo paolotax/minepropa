@@ -38,6 +38,7 @@ class AppuntiController < ApplicationController
 
     @user = current_user
     @appunto = @user.appunti.build
+    @indirizzo = @appunto.indirizzi.build
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @appunto }

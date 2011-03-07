@@ -19,7 +19,9 @@ class Scuola < ActiveRecord::Base
   
   belongs_to :scuola
   has_many :appunti
+  
   has_many :visite, :as => :visitable,  :dependent => :destroy 
+  has_many :indirizzi, :as => :indirizzable, :dependent => :destroy
   
   attr_accessible :nome_scuola, :citta, :provincia, :position
   

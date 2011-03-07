@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110228203907) do
+ActiveRecord::Schema.define(:version => 20110307080220) do
 
   create_table "appunti", :force => true do |t|
     t.string   "destinatario"
@@ -24,6 +24,21 @@ ActiveRecord::Schema.define(:version => 20110228203907) do
     t.integer  "position"
     t.string   "email"
     t.integer  "user_id"
+  end
+
+  create_table "indirizzi", :force => true do |t|
+    t.string   "destinatario"
+    t.string   "indirizzo"
+    t.string   "cap"
+    t.string   "citta"
+    t.string   "provincia"
+    t.float    "latitudine"
+    t.float    "longitudine"
+    t.string   "tipo"
+    t.integer  "indirizzable_id"
+    t.string   "indirizzable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "scuole", :force => true do |t|
