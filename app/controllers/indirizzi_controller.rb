@@ -43,7 +43,7 @@ class IndirizziController < ApplicationController
       render :action => 'edit'
     end
   end
-a
+
   def destroy
     # raise params.inspect
     @indirizzable = find_indirizzable
