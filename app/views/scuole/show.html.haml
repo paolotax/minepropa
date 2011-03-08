@@ -1,5 +1,13 @@
 - title "#{@scuola.nome_scuola} #{@scuola.citta} #{@scuola.provincia}"
 
+= link_to "edit", edit_scuola_path(@scuola)
+
+- unless @json.nil?
+  #scuola_map
+    = gmaps4rails(@json, { "auto_adjust" => true })
+    / = gmaps4rails(@json, { "map_zoom" => 10 })
+    = @json.to_s
+
 / - content_for :search_nav do
 /   = render :partial => 'pages/search_appunti'
   

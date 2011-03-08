@@ -1,10 +1,18 @@
 - content_for :head do
   = formtastic_stylesheet_link_tag
 
-= semantic_form_for(@scuola) do |f|
+= semantic_form_for(@scuola, :namespace => 'cat_form') do |f|
   - render 'shared/error_messages', :object => f.object
   = f.buttons
   = f.inputs do
     = f.input :nome_scuola,  :input_html => { :cols => 40  }
     = f.input :citta,        :input_html => { :size => 40  }
     = f.input :provincia,    :input_html => { :size => 5  }
+  
+  = f.semantic_fields_for :indirizzi do |indirizzo|
+    = indirizzo.inputs do
+      = indirizzo.input :destinatario
+      = indirizzo.input :indirizzo
+      = indirizzo.input :citta
+      = indirizzo.input :cap
+      = indirizzo.input :provincia

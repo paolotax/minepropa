@@ -23,6 +23,8 @@ gem 'meta_where'
 gem 'meta_search'
 gem 'formtastic', '~> 1.1.0'
 
+gem 'gmaps4rails'
+
 gem 'rails3-jquery-autocomplete'
 #gem 'nifty-generators'
 gem 'hassle', :git => 'git://github.com/jasoncodes/hassle.git'

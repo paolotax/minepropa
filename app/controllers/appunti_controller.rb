@@ -28,29 +28,25 @@ class AppuntiController < ApplicationController
     @visita = Visita.new
     
     respond_to do |format|
-      format.html # show.html.erb
+      format.html  # show.html.erb
       format.json  { render :json => @appunto }
-      format.pdf  { render = false }
+      format.pdf   { render = false }
     end
   end
 
   def new
-
-    @user = current_user
-    @appunto = @user.appunti.build
+    @appunto   = current_user.appunti.build
     @indirizzo = @appunto.indirizzi.build
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @appunto }
-      format.json  { render :json => @appunto }
-    end
   end
 
   def edit
-    @user = current_user
-    @appunto = @user.appunti.find(params[:id])
+    @appunto = current_user.appunti.find(params[:id])
+    @indirizzo = @appunto.indirizzi.first
+    if @indirizzo == nil
+      @indirizzo = @appunto.indirizzi.build
+    end
   end
-
+  
   def create
     @user = current_user
     @appunto = @user.appunti.build(params[:appunto])
@@ -58,14 +54,12 @@ class AppuntiController < ApplicationController
     respond_to do |format|
       if @appunto.save
         format.mobile { redirect_to root_path }
-        format.html { redirect_to [@appunto], :flash => { :success => "L'appunto e' stato creato.  #{undo_link}" } }
-        format.xml  { render :xml => @appunto, :status => :created, :location => @appunto }
-        format.json  { render :json => @appunto, :status => :created, :location => @appunto }
+        format.html   { redirect_to [@appunto], :flash => { :success => "L'appunto e' stato creato.  #{undo_link}" } }
+        format.json   { render :json => @appunto, :status => :created, :location => @appunto }
       else
         format.mobile { render :action => 'new' }
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @appunto.errors, :status => :unprocessable_entity }
-        format.json  { render :json => @appunto.errors, :status => :unprocessable_entity }
+        format.html   { render :action => "new" }
+        format.json   { render :json => @appunto.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -76,14 +70,12 @@ class AppuntiController < ApplicationController
     respond_to do |format|
       if @appunto.update_attributes(params[:appunto])
         format.mobile { redirect_to root_path }
-        format.html { redirect_to [@appunto], :flash => { :success => "Le modifiche sono state salvate.   #{undo_link}" } }
-        format.xml  { head :ok }
-        format.json  { head :json }
+        format.html   { redirect_to [@appunto], :flash => { :success => "L'appunto e' stato aggiornato.  #{undo_link}" } }
+        format.json   { head :ok }
       else
         format.mobile { render :action => 'edit' }
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @appunto.errors, :status => :unprocessable_entity }
-        format.json  { render :json => @appunto.errors, :status => :unprocessable_entity }
+        format.html   { render :action => "edit" }
+        format.json   { render :json => @appunto.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -95,8 +87,8 @@ class AppuntiController < ApplicationController
 
     respond_to do |format|
       format.mobile { redirect_to root_path }
-      format.html { redirect_to( appunti_url, :notice => "Appunto eliminato!  #{undo_link}") }
-      format.xml  { head :ok }
+      format.html   { redirect_to( appunti_url, :notice => "Appunto eliminato!  #{undo_link}") }
+      format.json   { head :ok }
     end
   end
 

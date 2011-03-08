@@ -9,7 +9,7 @@ Minepropa::Application.routes.draw do
     collection do
       post 'sort'
     end
-    resource :indirizzi
+    resources :indirizzi
   end
   
   

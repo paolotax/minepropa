@@ -17,13 +17,15 @@ class Scuola < ActiveRecord::Base
   
   acts_as_list
   
-  belongs_to :scuola
+  belongs_to :user
   has_many :appunti
   
-  has_many :visite, :as => :visitable,  :dependent => :destroy 
+  has_many :visite,    :as => :visitable,    :dependent => :destroy 
   has_many :indirizzi, :as => :indirizzable, :dependent => :destroy
   
-  attr_accessible :nome_scuola, :citta, :provincia, :position
+  #attr_accessible :nome_scuola, :citta, :provincia, :position
+  
+  accepts_nested_attributes_for :indirizzi, :allow_destroy => true 
   
   validates :user_id,      :presence => true
   validates :nome_scuola,  :presence => true

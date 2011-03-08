@@ -13,9 +13,14 @@ class ScuoleController < ApplicationController
 
   def show
     @scuola = Scuola.find(params[:id])
-   
-    @search = @scuola.appunti.search(params[:search])
-    @appunti = @search.page(params[:page]).per(8)
+    @indirizzo = @scuola.indirizzi.first
+    
+    unless @indirizzo.nil?
+      @json = @indirizzo.to_gmaps4rails
+    end
+    
+    @search = @scuola.appunti.page(params[:page]).per(8).search(params[:search])
+    @appunti = @search.relation
 
     #@appunti = @scuola.appunti.paginate(:per_page => 8, :page => params[:page])
     
@@ -27,16 +32,16 @@ class ScuoleController < ApplicationController
   end
 
   def new
-    @scuola = Scuola.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @scuola }
-    end
+    @scuola    = Scuola.new
+    @indirizzo = @scuola.indirizzi.build
   end
 
   def edit
-    @scuola = Scuola.find(params[:id])
+    @scuola    = Scuola.find(params[:id])
+    @indirizzo = @scuola.indirizzi.first
+    if @indirizzo == nil
+      @indirizzo  = @scuola.indirizzi.build
+    end
   end
 
   def create
@@ -45,10 +50,8 @@ class ScuoleController < ApplicationController
     respond_to do |format|
       if @scuola.save
         format.html { redirect_to(@scuola, :notice => 'Scuola was successfully created.') }
-        format.xml  { render :xml => @scuola, :status => :created, :location => @scuola }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @scuola.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -59,10 +62,8 @@ class ScuoleController < ApplicationController
     respond_to do |format|
       if @scuola.update_attributes(params[:scuola])
         format.html { redirect_to(@scuola, :notice => 'Scuola was successfully updated.') }
-        format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @scuola.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -73,7 +74,6 @@ class ScuoleController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to(scuole_url) }
-      format.xml  { head :ok }
     end
   end
 
