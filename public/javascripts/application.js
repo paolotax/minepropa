@@ -5,7 +5,7 @@ $(document).ready(function() {
 	var m = date.getMonth();
 	var y = date.getFullYear();
 	
-	$('#da_assegnarea div.appunto_big').each(function() {
+	$('#da_draggare div.appunto_big').each(function() {
 
 		// create an Event Object (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/)
 		// it doesn't need to have a start or end
@@ -32,10 +32,12 @@ $(document).ready(function() {
 	
 	$('#calendar').fullCalendar({
 		
+		contentHeight: 600,
 		header: {
-			left: 'prev,next today',
-			center: 'title',
-			right: 'month,agendaWeek,agendaDay'
+			left: 'prev,next',
+      // center: 'title',
+			// right: 'month,agendaWeek,agendaDay'
+			right: 'today'
 		},
 		
 		timeFormat: { agenda: 'H(:mm)',  '': 'H(:mm)' },
@@ -49,6 +51,7 @@ $(document).ready(function() {
 		firstHour: 8,
 		minTime: 8,
 		maxTime: 18,
+		defaultEventMinutes: 30,
 		
 		columnFormat: {
         month: 'ddd',    // Mon
@@ -76,7 +79,7 @@ $(document).ready(function() {
        
 		firstDay: 1,
 		
-		slotMinutes: 15,
+    // slotMinutes: 15,
 		
 		buttonText: {
         prev:     '&nbsp;&#9668;&nbsp;',  // left triangle
