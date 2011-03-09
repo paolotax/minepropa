@@ -24,6 +24,8 @@ gem 'meta_search'
 gem 'formtastic', '~> 1.1.0'
 
 gem 'gmaps4rails'
+gem 'crack'
+gem 'geokit'
 
 gem 'rails3-jquery-autocomplete'
 #gem 'nifty-generators'
