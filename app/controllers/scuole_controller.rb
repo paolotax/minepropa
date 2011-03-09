@@ -14,20 +14,20 @@ class ScuoleController < ApplicationController
   def show
     @scuola = Scuola.find(params[:id])
     @indirizzo = @scuola.indirizzi.first
-    
+  
     unless @indirizzo.nil?
-      @json = @indirizzo.to_gmaps4rails
+      @json  = @indirizzo.to_gmaps4rails
+      @coord = @indirizzo.to_gomap_marker
     end
     
     @search = @scuola.appunti.page(params[:page]).per(8).search(params[:search])
     @appunti = @search.relation
 
-    #@appunti = @scuola.appunti.paginate(:per_page => 8, :page => params[:page])
-    
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @scuola }
-      format.pdf { render :pdf => @scuola }
+      format.js    { render :json => @indirizzo }
+      format.json  { render :json => @coord }
+      format.pdf   { render :pdf  => @scuola }
     end
   end
 

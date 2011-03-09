@@ -38,4 +38,8 @@ class Indirizzo < ActiveRecord::Base
     "<em>" + self.citta + "</em>"
   end
   
+  def to_gomap_marker
+    data = []
+    data << { :latitude => self.latitude.to_f, :longitude => self.longitude.to_f, :title => self.citta }    
+  end
 end

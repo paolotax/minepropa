@@ -1,7 +1,10 @@
 $(document).ready(function() {
-  $(function (){
-    $("#map").goMap();
-  });
+  var mark = $.getJSON('152.json', function(myMarkers){
+     $("#map").goMap({
+         markers: myMarkers,
+         zoom: 13
+     });
+  });  
 });
 
 $(document).ready(function() {
