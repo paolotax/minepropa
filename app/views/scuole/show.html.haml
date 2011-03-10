@@ -4,7 +4,9 @@
   = @scuola.id
   
 - unless @indirizzo.nil?
-  .s_indirizzo
+  .scuola_descrizione
+    = @indirizzo.destinatario
+  .scuola_indirizzo
     %span
       = @indirizzo.indirizzo
     %br  
@@ -19,11 +21,11 @@
 
 #map
 
-- unless @json.nil?
-  #scuola_map
-    / = gmaps4rails(@json, { "auto_adjust" => true })
-    / = gmaps4rails(@json, { "map_zoom" => 10 })
-    = @json.to_s
+/ - unless @json.nil?
+/   #scuola_map
+/     = gmaps4rails(@json, { "auto_adjust" => true })
+/     = gmaps4rails(@json, { "map_zoom" => 10 })
+/     = @json.to_s
 
 / - content_for :search_nav do
 /   = render :partial => 'pages/search_appunti'
