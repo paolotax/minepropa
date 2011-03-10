@@ -1,8 +1,14 @@
 $(document).ready(function() {
-  var mark = $.getJSON('152.json', function(myMarkers){
+  
+  var scu_id  =$('.scuola_id').text();
+  console.log(scu_id);
+  var url = scu_id + ".json";
+  var mark = $.getJSON(url, function(myMarkers){
      $("#map").goMap({
          markers: myMarkers,
-         zoom: 13
+         zoom: 15,
+         maptype:	'ROADMAP',
+         streetViewControl: true
      });
   });  
 });

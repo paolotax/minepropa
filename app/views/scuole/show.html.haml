@@ -1,4 +1,16 @@
 - title "#{@scuola.nome_scuola} #{@scuola.citta} #{@scuola.provincia}"
+  
+.scuola_id
+  = @scuola.id
+  
+- unless @indirizzo.nil?
+  .s_indirizzo
+    %span
+      = @indirizzo.indirizzo
+    %br  
+      = @indirizzo.cap    
+      = @indirizzo.citta
+      = @indirizzo.provincia
 
 / - content_for :go_map do
 /   = javascript_include_tag 'jquery.gomap-1.3.0.js'
