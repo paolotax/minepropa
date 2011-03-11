@@ -31,6 +31,9 @@ gem 'rails3-jquery-autocomplete'
 #gem 'nifty-generators'
 gem 'hassle', :git => 'git://github.com/jasoncodes/hassle.git'
 
+gem 'feedzirra', :git => 'https://github.com/bananastalktome/feedzirra.git'
+
+
 group :development do
   gem 'rspec-rails'
   gem 'annotate-models'

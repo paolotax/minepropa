@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110308194101) do
+ActiveRecord::Schema.define(:version => 20110311150026) do
 
   create_table "appunti", :force => true do |t|
     t.string   "destinatario"
@@ -24,6 +24,16 @@ ActiveRecord::Schema.define(:version => 20110308194101) do
     t.integer  "position"
     t.string   "email"
     t.integer  "user_id"
+  end
+
+  create_table "feed_entries", :force => true do |t|
+    t.string   "name"
+    t.text     "summary"
+    t.string   "url"
+    t.datetime "published_at"
+    t.string   "guid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "indirizzi", :force => true do |t|
