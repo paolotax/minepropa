@@ -1,16 +1,40 @@
 $(document).ready(function() {
   
-  var scu_id  =$('.scuola_id').text();
+  var scu_id  = $.trim($('.scuola_id').text());
+  var ind_id  = $.trim($('.scuola_indirizzo_id').text());
   console.log(scu_id);
   var url = scu_id + ".json";
+  
   var mark = $.getJSON(url, function(myMarkers){
+     
      $("#map").goMap({
          markers: myMarkers,
          zoom: 15,
          maptype:	'ROADMAP',
          streetViewControl: true
      });
-  });  
+     
+     $.goMap.createListener({type:'marker', marker:'baseMarker'}, 'dragend', function() { 
+       console.log('fired');
+       var lat = this.getPosition().lat();
+       var lng = this.getPosition().lng();
+       console.log(lng);
+       
+       $('.scuola_latlong').html(lat + ' ' + lng);
+       $.ajax({
+         type: 'put',
+         data: 'id=' + ind_id +'&longitude=' + lng + '&latitude=' + lat + '&gmaps=false', 
+         url: '/scuole/' + scu_id + '/indirizzi/' + ind_id 
+       });
+       
+       // setInfoPosition();
+     });
+  });
+  
+  function setInfoPosition() {
+		var baseMarkerPosition = $("#map").data("baseMarker").getPosition();
+    console.log('fired');
+	}  
 });
 
 $(document).ready(function() {

@@ -16,7 +16,7 @@ class ScuoleController < ApplicationController
     @indirizzo = @scuola.indirizzi.first
   
     unless @indirizzo.nil?
-      @json  = @indirizzo.to_gmaps4rails
+      #@json  = @indirizzo.to_gmaps4rails
       @coord = @indirizzo.to_gomap_marker
     end
     

@@ -38,7 +38,7 @@ class IndirizziController < ApplicationController
     @indirizzo = Indirizzo.find(params[:id])
     if @indirizzo.update_attributes(params[:indirizzo])
       flash[:notice] = "Successfully updated indirizzo."
-      redirect_to @indirizzo
+      #redirect_to @indirizzo
     else
       render :action => 'edit'
     end
