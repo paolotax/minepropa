@@ -62,6 +62,26 @@ ActiveRecord::Schema.define(:version => 20110311150026) do
     t.integer  "user_id"
   end
 
+  create_table "scuole_to_export", :id => false, :force => true do |t|
+    t.string  "Tipo",         :limit => 20
+    t.string  "Nome",         :limit => 60
+    t.string  "Citta",        :limit => 50
+    t.string  "Indirizzo",    :limit => 80
+    t.string  "CAP",          :limit => 5
+    t.string  "Provincia",    :limit => 2
+    t.string  "Scuola",       :limit => 30
+    t.float   "longitude"
+    t.float   "latitude"
+    t.string  "Telefono",     :limit => 40
+    t.string  "Fax",          :limit => 40
+    t.string  "E_mail",       :limit => 50
+    t.string  "IdTipo",       :limit => 2
+    t.string  "ScuolaOrdine", :limit => 45
+    t.string  "IdDirezione",  :limit => 12
+    t.string  "IdScuola",     :limit => 12
+    t.integer "id"
+  end
+
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "", :null => false
     t.string   "encrypted_password",   :limit => 128, :default => "", :null => false

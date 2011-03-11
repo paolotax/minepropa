@@ -1,3 +1,18 @@
+# == Schema Information
+# Schema version: 20110311150026
+#
+# Table name: feed_entries
+#
+#  id           :integer         not null, primary key
+#  name         :string(255)
+#  summary      :text
+#  url          :string(255)
+#  published_at :datetime
+#  guid         :string(255)
+#  created_at   :datetime
+#  updated_at   :datetime
+#
+
 class FeedEntry < ActiveRecord::Base
   
   def self.update_from_feed(feed_url)
