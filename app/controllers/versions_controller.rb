@@ -1,4 +1,5 @@
 class VersionsController < ApplicationController
+  
   def revert
     @version = Version.find(params[:id])
     if @version.reify

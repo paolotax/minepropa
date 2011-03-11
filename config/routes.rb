@@ -10,6 +10,7 @@ Minepropa::Application.routes.draw do
       post 'sort'
     end
     resources :indirizzi
+
   end
   
   
@@ -31,7 +32,7 @@ Minepropa::Application.routes.draw do
       post 'edit_or_print'
       post 'edit_multiple'
       post 'print_multiple', :format => 'pdf'
-      put 'update_multiple'
+      put  'update_multiple'
     end
   end
 
@@ -40,7 +41,7 @@ Minepropa::Application.routes.draw do
   match '/about',   :to => 'pages#about'
   match '/calendar',   :to => 'pages#calendar'
   post "versions/:id/revert" => "versions#revert", :as => "revert_version"
-    
+  put  "maps/:id/update_latlong" => "maps#update_latlong", :as => "update_latlong_maps"  
   # resources :appunti do
   #     get 'search'
   #   collection do

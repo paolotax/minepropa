@@ -23,8 +23,8 @@ $(document).ready(function() {
        $('.scuola_latlong').html(lat + ' ' + lng);
        $.ajax({
          type: 'put',
-         data: 'id=' + ind_id +'&longitude=' + lng + '&latitude=' + lat + '&gmaps=false', 
-         url: '/scuole/' + scu_id + '/indirizzi/' + ind_id 
+         data: '&longitude=' + lng + '&latitude=' + lat, 
+         url: '/maps/' + ind_id + '/update_latlong/' 
        });
        
        // setInfoPosition();
