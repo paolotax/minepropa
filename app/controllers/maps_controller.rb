@@ -14,14 +14,14 @@ class MapsController < ApplicationController
   def get_appunti_markers
 
   # @data = []
-  #   @appunti = Appunto.assegnato
-  # 
-  #   @appunti.each do |appunto|
-  #     indirizzo = Indirizzo.where("indirizzable_id = ?", appunto.scuola_id ).first
-  #     
-  #     @data << { :latitude => indirizzo.latitude.to_f, :longitude => indirizzo.longitude.to_f, :title => indirizzo.citta, :draggable => false, :id => 'm_' +  indirizzo.id.to_s}
-  #   end
-  #   
-  #   respond_with(@data)
+    @appunti = Appunto.assegnato
+  
+    @appunti.each do |appunto|
+      indirizzo = Indirizzo.where("indirizzable_id = ?", appunto.scuola_id ).first
+      
+      @data << { :latitude => indirizzo.latitude.to_f, :longitude => indirizzo.longitude.to_f, :title => indirizzo.citta, :draggable => false, :id => 'm_' +  indirizzo.id.to_s}
+    end
+    
+    respond_with(@data)
   end
 end
