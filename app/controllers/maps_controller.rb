@@ -13,7 +13,7 @@ class MapsController < ApplicationController
   
   def get_appunti_markers
 
-  # @data = []
+    @data = []
     @appunti = Appunto.assegnato
   
     @appunti.each do |appunto|
