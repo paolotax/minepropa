@@ -2,6 +2,14 @@
 
 = render :partial => 'shared/search_appunti'
 
+#map
+
+
+#markers_add
+  = submit_tag "Mostra markers appunti", :action => 'get_appunti_markers', :method => 'get', :remote => true
+#markers_fit
+  = submit_tag "Fit Bounds"
+
 #appunti.left_appunti
   #da_assegnare_size
     = @appunti.size

@@ -41,7 +41,9 @@ Minepropa::Application.routes.draw do
   match '/about',   :to => 'pages#about'
   match '/calendar',   :to => 'pages#calendar'
   post "versions/:id/revert" => "versions#revert", :as => "revert_version"
-  put  "maps/:id/update_latlong" => "maps#update_latlong", :as => "update_latlong_maps"  
+  
+  put  "maps/:id/update_latlong" => "maps#update_latlong", :as => "update_latlong_maps"
+  get  "maps/get_appunti_markers" => 'maps#get_appunti_markers', :as => 'get_appunti_markers_maps'  
   # resources :appunti do
   #     get 'search'
   #   collection do
