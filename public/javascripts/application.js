@@ -1,5 +1,8 @@
 $(document).ready(function() {
   
+  $('#map').hide();
+  $('#map_appunti').hide();
+  
   var scu_id  = $.trim($('.scuola_id').text());
   var ind_id  = $.trim($('.scuola_indirizzo_id').text());
   console.log(scu_id);
@@ -13,7 +16,9 @@ $(document).ready(function() {
            maptype:  'ROADMAP',
            streetViewControl: true
        });
-     
+ 
+       $('#map').show();
+           
        $.goMap.createListener({type:'marker', marker:'baseMarker'}, 'dragend', function() { 
          var lat = this.getPosition().lat();
          var lng = this.getPosition().lng();
@@ -24,17 +29,22 @@ $(document).ready(function() {
            url: '/maps/' + ind_id + '/update_latlong/' 
          });
        });
+       
+ 
     });
   });
   
-  var mark = $.getJSON('/maps/get_appunti_markers.json', function(myMarkers){
   
-     $("#map").goMap({
-          markers: myMarkers,
-          maptype: 'ROADMAP',
-          streetViewControl: true
-     });
-     $.goMap.fitBounds(); 
+  $('#map_show_appunti').click(function(){
+    var mark = $.getJSON('/maps/get_appunti_markers.json', function(myMarkers){
+       $("#map_appunti").goMap({
+            markers: myMarkers,
+            maptype: 'ROADMAP',
+            streetViewControl: true
+       });
+       $.goMap.fitBounds(); 
+       $('#map_appunti').show();
+    });    
   });
   
   
@@ -347,8 +357,19 @@ if (history && history.pushState) {
             // data: 'id=' + ui.item.attr('id') + '&db=' + ui.item.attr('offsetParent').id,
             url: '/appunti/' + x[1] + '/visite',
             success: function() {
-             $("#assegnati_size").html(parseInt($("#assegnati_size").html()) +1);
+              
+              var mark = $.getJSON('/maps/get_appunto_marker/'+x[1]+'.json', function(myMarkers){
+                   $("#map_appunti").goMap();
+                   console.log(myMarkers[0].latitude);
+                   $.goMap.createMarker(myMarkers[0]);
+                   
+                   $.goMap.fitBounds(); 
+              });
+              
+              $("#assegnati_size").html(parseInt($("#assegnati_size").html()) +1);
               $("#da_assegnare_size").html(parseInt($("#da_assegnare_size").html()) - 1);
+              
+            
             }
           })
         }

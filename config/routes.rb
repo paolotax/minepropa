@@ -1,8 +1,5 @@
 Minepropa::Application.routes.draw do
 
-  #get "autocomplete_searches/index"
-  resources :autocomplete_searches, :only => [:index], :as => 'autocomplete'
-  
   devise_for :users
   
   resources :scuole do
@@ -13,16 +10,12 @@ Minepropa::Application.routes.draw do
 
   end
   
-  
-  
-  
   resources :appunti do
     
     resources :visite
     resources :indirizzi
 
     get :autocomplete_scuola_nome_scuola, :on => :collection
-    get :autocomplete_scuola_for_nome_scuola,    :on => :collection
 
     member do 
       get 'toggle_stato'
@@ -38,18 +31,18 @@ Minepropa::Application.routes.draw do
 
   
   root :to => 'pages#home'
-  match '/about',   :to => 'pages#about'
+  
+  match '/about',      :to => 'pages#about'
   match '/calendar',   :to => 'pages#calendar'
+  
   post "versions/:id/revert" => "versions#revert", :as => "revert_version"
   
-  put  "maps/:id/update_latlong" => "maps#update_latlong", :as => "update_latlong_maps"
+  put  "maps/:id/update_latlong"  => "maps#update_latlong",      :as => "update_latlong_maps"
   get  "maps/get_appunti_markers" => 'maps#get_appunti_markers', :as => 'get_appunti_markers_maps'  
-  # resources :appunti do
-  #     get 'search'
-  #   collection do
-  #   end
-  # end
-
+  #get  "maps/get_appunto_marker"  => 'maps#get_appunto_marker',  :as => 'get_appunto_marker_maps'  
+  
+  match 'maps/get_appunto_marker/:id' => 'maps#get_appunto_marker', :as => 'get_appunto_marker_maps'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

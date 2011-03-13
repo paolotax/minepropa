@@ -24,4 +24,15 @@ class MapsController < ApplicationController
     
     respond_with(@data)
   end
+  
+  def get_appunto_marker
+
+    @data = []
+    appunto = Appunto.find(params[:id])
+    indirizzo = Indirizzo.where("indirizzable_id = ?", appunto.scuola_id ).first
+      
+    @data << { :latitude => indirizzo.latitude.to_f, :longitude => indirizzo.longitude.to_f, :title => indirizzo.citta, :draggable => false, :id => 'm_' +  indirizzo.id.to_s}
+    
+    respond_with(@data)
+  end
 end
