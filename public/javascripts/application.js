@@ -9,42 +9,58 @@ $(document).ready(function() {
   var url = scu_id + ".json";
   
   $('#map_show').click(function(){
-    var mark = $.getJSON(url, function(myMarkers){
-       $("#map").goMap({
-           markers: myMarkers,
-           zoom: 15,
-           maptype:  'ROADMAP',
-           streetViewControl: true
-       });
- 
-       $('#map').show();
-           
-       $.goMap.createListener({type:'marker', marker:'baseMarker'}, 'dragend', function() { 
-         var lat = this.getPosition().lat();
-         var lng = this.getPosition().lng();
-         $('.scuola_latlong').html(lat + ' ' + lng);
-         $.ajax({
-           type: 'put',
-           data: '&longitude=' + lng + '&latitude=' + lat, 
-           url: '/maps/' + ind_id + '/update_latlong/' 
+    
+    $("#map").toggle();
+    
+    if ($('#map').is(':visible')) {
+      $('#map_show').find(":submit").attr('value', 'Nascondi Mappa');
+      var mark = $.getJSON(url, function(myMarkers){
+         $("#map").goMap({
+             markers: myMarkers,
+             zoom: 15,
+             maptype:  'ROADMAP',
+             streetViewControl: true
          });
-       });
-       
- 
-    });
+
+         $('#map').show();
+
+         $.goMap.createListener({type:'marker', marker:'baseMarker'}, 'dragend', function() { 
+           var lat = this.getPosition().lat();
+           var lng = this.getPosition().lng();
+           $('.scuola_latlong').html(lat + ' ' + lng);
+           $.ajax({
+             type: 'put',
+             data: '&longitude=' + lng + '&latitude=' + lat, 
+             url: '/maps/' + ind_id + '/update_latlong/' 
+           });
+         });
+      });
+    } else {
+      $('#map_show').find(":submit").attr('value', 'Mostra Mappa');
+    }
+    
+    
   });
   
   
   $('#map_show_appunti').click(function(){
-    var mark = $.getJSON('/maps/get_appunti_markers.json', function(myMarkers){
-       $("#map_appunti").goMap({
-            markers: myMarkers,
-            maptype: 'ROADMAP',
-            streetViewControl: true
-       });
-       $.goMap.fitBounds(); 
-       $('#map_appunti').show();
-    });    
+    
+    $('#map_appunti').toggle('puff', {}, 'fast');
+      
+    if ($('#map_appunti').is(':visible')) {
+      var mark = $.getJSON('/maps/get_appunti_markers.json', function(myMarkers){
+         $("#map_appunti").goMap({
+              markers: myMarkers,
+              maptype: 'ROADMAP',
+              streetViewControl: true
+         });
+         $.goMap.fitBounds(); 
+      });
+      $('#map_show_appunti').find(":submit").attr('value', 'Nascondi Mappa');
+    } else {
+      $('#map_show_appunti').find(":submit").attr('value', 'Mostra Mappa');
+    }
+    
   });
   
   
