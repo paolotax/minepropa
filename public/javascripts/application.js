@@ -5,7 +5,6 @@ $(document).ready(function() {
   
   var scu_id  = $.trim($('.scuola_id').text());
   var ind_id  = $.trim($('.scuola_indirizzo_id').text());
-  console.log(scu_id);
   var url = scu_id + ".json";
   
   $('#map_show').click(function(){
