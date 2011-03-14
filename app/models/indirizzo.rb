@@ -21,25 +21,31 @@
 
 class Indirizzo < ActiveRecord::Base
   
-  #acts_as_gmappable :process_geocoding => "before_save"
+  acts_as_gmappable :process_geocoding => "before_save"
   
   belongs_to :indirizzable, :polymorphic => true
   
-  # def gmaps4rails_address
-  #   [self.indirizzo, self.citta, self.provincia].join(', ')
-  # end
-  # 
-  # def self.gmaps4rails_trusted_scopes
-  #   ["find", 'max_qi', 'first']
-  # end
-  # 
-  # def gmaps4rails_infowindow
-  #   name = self.citta.nil? ? "default" : self.citta
-  #   "<em>" + self.citta + "</em>"
-  # end
+  def label_indirizzo
+    self.destinatario + '</br>' +
+    self.indirizzo + '</br>' +
+    self.cap + ' ' + self.citta + ' ' + self.provincia
+  end
+  
+  def gmaps4rails_address
+    [self.indirizzo, self.citta, self.provincia].join(', ')
+  end
+  
+  def self.gmaps4rails_trusted_scopes
+    ["find", 'max_qi', 'first']
+  end
+  
+  def gmaps4rails_infowindow
+    name = self.citta.nil? ? "default" : self.citta
+    "<em>" + self.citta + "</em>"
+  end
   
   def to_gomap_marker
     data = []
-    data << { :latitude => self.latitude.to_f, :longitude => self.longitude.to_f, :title => self.citta, :draggable => true, :id => 'baseMarker' }    
+    data << { :latitude => self.latitude.to_f, :longitude => self.longitude.to_f, :title => self.citta, :draggable => true, :id => 'baseMarker', :html => { :content => self.label_indirizzo, :popup => true  } }    
   end
 end

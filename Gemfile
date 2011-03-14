@@ -2,11 +2,9 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.3'
 
-#gem 'mysql2'
 gem 'pg'
 gem 'paper_trail'
 
-#gem 'will_paginate', '3.0.pre2'
 gem 'kaminari'
 
 gem "haml-rails"
@@ -28,7 +26,7 @@ gem 'crack'
 gem 'geokit'
 
 gem 'rails3-jquery-autocomplete'
-#gem 'nifty-generators'
+
 gem 'hassle', :git => 'git://github.com/jasoncodes/hassle.git'
 
 #ßgem 'feedzirra', :git => 'https://github.com/bananastalktome/feedzirra.git'
