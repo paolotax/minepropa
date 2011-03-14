@@ -44,7 +44,7 @@ $(document).ready(function() {
   
   $('#map_show_appunti').click(function(){
     
-    $('#map_appunti').toggle('puff', {}, 'fast');
+    $('#map_appunti').toggle();
       
     if ($('#map_appunti').is(':visible')) {
       var mark = $.getJSON('/maps/get_appunti_markers.json', function(myMarkers){
