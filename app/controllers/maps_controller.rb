@@ -31,7 +31,7 @@ class MapsController < ApplicationController
     appunto = Appunto.find(params[:id])
     indirizzo = Indirizzo.where("indirizzable_id = ?", appunto.scuola_id ).first
       
-    @data << { :latitude => indirizzo.latitude.to_f, :longitude => indirizzo.longitude.to_f, :title => indirizzo.citta, :draggable => false, :id => 'm_' +  indirizzo.id.to_s, :html => { :content => indirizzo.label_indirizzo, :popup => true } }
+    @data << { :latitude => indirizzo.latitude.to_f, :longitude => indirizzo.longitude.to_f, :title => indirizzo.citta, :draggable => false, :id => 'm_' +  indirizzo.id.to_s, :html => { :content => indirizzo.label_indirizzo } }
     
     respond_with(@data)
   end
