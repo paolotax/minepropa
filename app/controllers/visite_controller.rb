@@ -4,6 +4,9 @@ class VisiteController < ApplicationController
   def index
     @visitable = find_visitable
     @visite = @visitable.visite
+    respond_to do |format|  
+      format.json { render :json => @visite }
+    end
   end
   
   def show

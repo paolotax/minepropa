@@ -365,7 +365,7 @@ if (history && history.pushState) {
        opacity: 0.7,
        placeholder: 'appunto_placeholder',
        revert: true,
-        remove: function(event, ui) {          
+       remove: function(event, ui) {          
           var x = ui.item.attr('id').split('_');          
           $.ajax({
             type: 'post',
@@ -373,6 +373,18 @@ if (history && history.pushState) {
             url: '/appunti/' + x[1] + '/visite',
             success: function() {
               
+              $.getJSON('/appunti/'+x[1]+'/visite.json', function(mydata){
+                 
+                 
+                 
+                 // var id_visita = mydata.visita[0].id;
+                 console.log(mydata[0].created_at);
+                 
+                 var obj = ui.item.attr('id');
+                 $("#"+obj).attr('id', ui.item.attr('id')+id_visita);
+              });
+              
+               
               var mark = $.getJSON('/maps/get_appunto_marker/'+x[1]+'.json', function(myMarkers){
                    $("#map_appunti").goMap();
                    console.log(myMarkers[0].latitude);
@@ -384,7 +396,8 @@ if (history && history.pushState) {
               $("#assegnati_size").html(parseInt($("#assegnati_size").html()) +1);
               $("#da_assegnare_size").html(parseInt($("#da_assegnare_size").html()) - 1);
               
-            
+              
+              
             }
           })
         }
