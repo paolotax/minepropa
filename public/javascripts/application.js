@@ -377,8 +377,8 @@ if (history && history.pushState) {
                  
                  
                  
-                 // var id_visita = mydata.visita[0].id;
-                 console.log(mydata[0].created_at);
+                 var id_visita = mydata[0].visita.id;
+                 console.log(mydata[0].visita.id);
                  
                  var obj = ui.item.attr('id');
                  $("#"+obj).attr('id', ui.item.attr('id')+id_visita);
@@ -415,7 +415,13 @@ if (history && history.pushState) {
             // data: 'id=' + ui.item.attr('id') + '&db=' + ui.item.attr('offsetParent').id,
             url: '/appunti/' + x[1] + '/visite/' + x[3],
             success: function() {
-             $("#assegnati_size").html(parseInt($("#assegnati_size").html()) -1);
+              $.getJSON('/maps/get_appunto_marker/'+x[1]+".json", function(data){
+                $("#map_appunti").goMap();
+                console.log(data[0].id);
+                $.goMap.removeMarker(data[0].id);
+                $.goMap.fitBounds(); 
+              });
+              $("#assegnati_size").html(parseInt($("#assegnati_size").html()) -1);
               $("#da_assegnare_size").html(parseInt($("#da_assegnare_size").html()) + 1);
             }
           })
