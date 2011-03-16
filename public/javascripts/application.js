@@ -374,12 +374,8 @@ if (history && history.pushState) {
             success: function() {
               
               $.getJSON('/appunti/'+x[1]+'/visite.json', function(mydata){
-                 
-                 
-                 
                  var id_visita = mydata[0].visita.id;
                  console.log(mydata[0].visita.id);
-                 
                  var obj = ui.item.attr('id');
                  $("#"+obj).attr('id', ui.item.attr('id')+id_visita);
               });
@@ -415,6 +411,8 @@ if (history && history.pushState) {
             // data: 'id=' + ui.item.attr('id') + '&db=' + ui.item.attr('offsetParent').id,
             url: '/appunti/' + x[1] + '/visite/' + x[3],
             success: function() {
+              var obj = ui.item.attr('id');
+              $("#"+obj).attr('id', 'appunto_' + x[1] + '_visita_');
               $.getJSON('/maps/get_appunto_marker/'+x[1]+".json", function(data){
                 $("#map_appunti").goMap();
                 console.log(data[0].id);
