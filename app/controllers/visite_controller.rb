@@ -19,19 +19,17 @@ class VisiteController < ApplicationController
 
   def create
     #raise params.inspect
-    
     @visitable = find_visitable
     @visita = @visitable.visite.build(params[:visita])
     if @visita.save
-      
       respond_to do |format|
         format.html { redirect_to about_url, :flash => { :success => "L'appunto e' stato creato." } }
         format.json { render :json => @visita }
         format.js
       end
-            
     else
-      render :action => 'new'
+      format.html { render :action => 'new' }
+      format.json {}
     end
   end
 
@@ -51,14 +49,13 @@ class VisiteController < ApplicationController
 
   def destroy
     # raise params.inspect
-    @visitable = find_visitable
     @visita = Visita.find(params[:id])
     @visita.destroy
     #flash[:notice] = "Successfully destroyed comment."
     respond_to do |format|
-      format.html { redirect_to about_url, :flash => { :success => "L'appunto e' stato creato." } }
+      format.html { redirect_to about_url, :flash => { :success => "La visita e' stata eliminata" } }
+      format.json { render :json => @visita }
       format.js
-      format.json { render :json => @visita}
     end
   end
   
