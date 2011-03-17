@@ -265,10 +265,6 @@ $(document).ready(function(){
  }
 });
 
-$(document).ready(function(){
-
-});
-
 
 $.fn.hoverClass = function(c) {
  return this.each(function(){
@@ -298,6 +294,9 @@ jQuery(function() {
  });
  
  $("#provincie li").hover(function(){$(this).effect("highlight", {}, 1000);});
+ 
+ $(".appunto_big").hover(function(){$(this).effect("highlight", {}, 1000);});
+ 
  
 });
 
@@ -366,20 +365,19 @@ if (history && history.pushState) {
        placeholder: 'appunto_placeholder',
        revert: true,
        remove: function(event, ui) {          
-          var x = ui.item.attr('id').split('_');          
+          var x = ui.item.attr('id').split('_');     
+          
+          // $('#a_footer', ui.item).hide(); //{'background-color': 'blue'});
+               
           $.ajax({
             type: 'post',
             // data: 'id=' + ui.item.attr('id') + '&db=' + ui.item.attr('offsetParent').id,
-            url: '/appunti/' + x[1] + '/visite',
-            success: function() {
+            url: '/appunti/' + x[1] + '/visite.json',
+            success: function(data) {
               
-              $.getJSON('/appunti/'+x[1]+'/visite.json', function(mydata){
-                 var id_visita = mydata[0].visita.id;
-                 console.log(mydata[0].visita.id);
-                 var obj = ui.item.attr('id');
-                 $("#"+obj).attr('id', ui.item.attr('id')+id_visita);
-              });
-              
+              // cambio id appunto
+              $(ui.item).attr('id', ui.item.attr('id')+data.visita.id);              
+              console.log(ui.item.attr('id'));
                
               var mark = $.getJSON('/maps/get_appunto_marker/'+x[1]+'.json', function(myMarkers){
                    $("#map_appunti").goMap();
@@ -390,10 +388,7 @@ if (history && history.pushState) {
               });
               
               $("#assegnati_size").html(parseInt($("#assegnati_size").html()) +1);
-              $("#da_assegnare_size").html(parseInt($("#da_assegnare_size").html()) - 1);
-              
-              
-              
+              $("#da_assegnare_size").html(parseInt($("#da_assegnare_size").html()) - 1);  
             }
           })
         }
@@ -409,10 +404,10 @@ if (history && history.pushState) {
           $.ajax({
             type: 'delete',
             // data: 'id=' + ui.item.attr('id') + '&db=' + ui.item.attr('offsetParent').id,
-            url: '/appunti/' + x[1] + '/visite/' + x[3],
+            url: '/appunti/' + x[1] + '/visite/' + x[3] +'.json',
             success: function() {
-              var obj = ui.item.attr('id');
-              $("#"+obj).attr('id', 'appunto_' + x[1] + '_visita_');
+              
+              $(ui.item).attr('id', 'appunto_' + x[1] + '_visita_');
               $.getJSON('/maps/get_appunto_marker/'+x[1]+".json", function(data){
                 $("#map_appunti").goMap();
                 console.log(data[0].id);

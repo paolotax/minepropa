@@ -26,6 +26,7 @@ class VisiteController < ApplicationController
       
       respond_to do |format|
         format.html { redirect_to about_url, :flash => { :success => "L'appunto e' stato creato." } }
+        format.json { render :json => @visita }
         format.js
       end
             
@@ -57,6 +58,7 @@ class VisiteController < ApplicationController
     respond_to do |format|
       format.html { redirect_to about_url, :flash => { :success => "L'appunto e' stato creato." } }
       format.js
+      format.json { render :json => @visita}
     end
   end
   
