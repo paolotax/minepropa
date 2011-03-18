@@ -358,7 +358,6 @@ if (history && history.pushState) {
   		}
     });    
 		
-		
     $( "#da_assegnare" ).sortable({
        connectWith: ".connectedSortable",
        opacity: 0.7,
@@ -366,19 +365,17 @@ if (history && history.pushState) {
        revert: true,
        remove: function(event, ui) {          
           var x = ui.item.attr('id').split('_');     
-          
           // $('#a_footer', ui.item).hide(); //{'background-color': 'blue'});
-               
+          var today = new Date();
+          console.log(today)
           $.ajax({
             type: 'post',
-            // data: 'id=' + ui.item.attr('id') + '&db=' + ui.item.attr('offsetParent').id,
+            data: { 'visita': {'note': 'ciao tax', 'data': today.toString() } },
             url: '/appunti/' + x[1] + '/visite.json',
             success: function(data) {
-              
               // cambio id appunto
               $(ui.item).attr('id', ui.item.attr('id')+data.visita.id);              
               console.log(ui.item.attr('id'));
-               
               var mark = $.getJSON('/maps/get_appunto_marker/'+x[1]+'.json', function(myMarkers){
                    $("#map_appunti").goMap();
                    console.log(myMarkers[0].latitude);
@@ -386,7 +383,6 @@ if (history && history.pushState) {
                    
                    $.goMap.fitBounds(); 
               });
-              
               $("#assegnati_size").html(parseInt($("#assegnati_size").html()) +1);
               $("#da_assegnare_size").html(parseInt($("#da_assegnare_size").html()) - 1);  
             }

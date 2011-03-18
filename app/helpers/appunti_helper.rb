@@ -20,7 +20,7 @@ module AppuntiHelper
       h(visita.id) 
     else
      ''
-   end
+    end
   end
   
   def appunto_edit_links(appunto)
