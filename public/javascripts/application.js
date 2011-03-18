@@ -187,6 +187,8 @@ $(document).ready(function() {
 
     				// assign it the date that was reported
     				copiedEventObject.start = date;
+            copiedEventObject.end   = new Date(date.getTime() + 30*60000);
+            
     				copiedEventObject.allDay = allDay;
 						
 				    var x = copiedEventObject.id.split('_');
@@ -195,24 +197,20 @@ $(document).ready(function() {
             
             $.ajax({
               type: 'post',
-              data: { 'visita': { 'data' : date.toString() }  },
+              data: { 'visita': { 'data': date.toString(), 'ora_inizio': copiedEventObject.start.toString(), 'ora_fine': copiedEventObject.end.toString() }  },
               url: '/appunti/' + x[1] + '/visite.json',
               success: function() {
                       $("#assegnati_size").html(parseInt($("#assegnati_size").html()) +1);
                       $("#da_assegnare_size").html(parseInt($("#da_assegnare_size").html()) - 1);
                     }
             });
-            
 
     				// render the event on the calendar
     				// the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
     				$('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
             
             $(this).remove();
-            
 
-            
-            
     				// is the "remove after drop" checkbox checked?
     				if ($('#drop-remove').is(':checked')) {
     					// if so, remove the element from the "Draggable Events" list
