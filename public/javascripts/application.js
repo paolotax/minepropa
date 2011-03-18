@@ -75,17 +75,7 @@ $(document).ready(function() {
   
   $("#markers_fit").live("click", function() {
      $.goMap.fitBounds();
-  });
-  
-  
-  
-  // $('#markers_add').click(function(){
-  //   
-  //  
-  //   return false; 
-  //   
-  // });
-  
+  });  
   
   function setInfoPosition() {
 		var baseMarkerPosition = $("#map").data("baseMarker").getPosition();
@@ -123,8 +113,6 @@ $(document).ready(function() {
 
 	});
 
-	
-	
 	$('#calendar').fullCalendar({
 		
 		contentHeight: 600,
@@ -207,10 +195,10 @@ $(document).ready(function() {
             
             $.ajax({
               type: 'post',
-              // data: 'id=' + ui.item.attr('id') + '&db=' + ui.item.attr('offsetParent').id,
-              url: '/appunti/' + x[1] + '/visite',
+              data: { 'visita': { 'data' : date.toString() }  },
+              url: '/appunti/' + x[1] + '/visite.json',
               success: function() {
-                     $("#assegnati_size").html(parseInt($("#assegnati_size").html()) +1);
+                      $("#assegnati_size").html(parseInt($("#assegnati_size").html()) +1);
                       $("#da_assegnare_size").html(parseInt($("#da_assegnare_size").html()) - 1);
                     }
             });
