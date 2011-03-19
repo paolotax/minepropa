@@ -177,6 +177,11 @@ $(document).ready(function() {
     
     droppable: true,
     
+    // startParam: 'ora_inizio',
+    // endParam:   'ora_fine',
+    
+    events: 'visite.json',
+    
     drop: function(date, allDay) { // this function is called when something is dropped
 
     				// retrieve the dropped element's stored Event Object
@@ -197,7 +202,7 @@ $(document).ready(function() {
             
             $.ajax({
               type: 'post',
-              data: { 'visita': { 'data': date.toString(), 'ora_inizio': copiedEventObject.start.toString(), 'ora_fine': copiedEventObject.end.toString() }  },
+              data: { 'visita': { 'title': 'ginissimo', 'start': date.toString(), 'ora_inizio': copiedEventObject.start.toString(), 'ora_fine': copiedEventObject.end.toString() }  },
               url: '/appunti/' + x[1] + '/visite.json',
               success: function() {
                       $("#assegnati_size").html(parseInt($("#assegnati_size").html()) +1);

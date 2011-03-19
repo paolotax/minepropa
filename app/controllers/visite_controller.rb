@@ -2,11 +2,20 @@ class VisiteController < ApplicationController
   
   
   def index
-    @visitable = find_visitable
-    @visite = @visitable.visite
-    respond_to do |format|  
+    # @visitable = find_visitable
+    #     @visite = @visitable.visite
+    #     respond_to do |format|  
+    #       format.json { render :json => @visite }
+    #     end
+    
+    @visite = Visita.all
+                # .where('ora_inizio >= ?', DateTime.parse(params[:ora_inizio]))
+                #                 .where('ora_fine   <= ?', DateTime.parse(params[:ora_fine]))
+                
+    respond_to do |format|
       format.json { render :json => @visite }
     end
+                
   end
   
   def show
