@@ -175,7 +175,7 @@ $(document).ready(function() {
         day:      'giorno'
     },
     
-    // ignoreTimezone: false,
+    ignoreTimezone: false,
     
     droppable: true,
     
