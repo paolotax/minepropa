@@ -175,6 +175,8 @@ $(document).ready(function() {
         day:      'giorno'
     },
     
+    // ignoreTimezone: false,
+    
     droppable: true,
     
     // startParam: 'ora_inizio',
