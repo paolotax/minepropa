@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110319081703) do
+ActiveRecord::Schema.define(:version => 20110319091451) do
 
   create_table "appunti", :force => true do |t|
     t.string   "destinatario"
@@ -24,16 +24,6 @@ ActiveRecord::Schema.define(:version => 20110319081703) do
     t.integer  "position"
     t.string   "email"
     t.integer  "user_id"
-  end
-
-  create_table "feed_entries", :force => true do |t|
-    t.string   "name"
-    t.text     "summary"
-    t.string   "url"
-    t.datetime "published_at"
-    t.string   "guid"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "indirizzi", :force => true do |t|
@@ -116,10 +106,6 @@ ActiveRecord::Schema.define(:version => 20110319081703) do
   add_index "versions", ["item_type", "item_id"], :name => "index_versions_on_item_type_and_item_id"
 
   create_table "visite", :force => true do |t|
-    t.date     "data"
-    t.time     "ora_inizio"
-    t.time     "ora_fine"
-    t.string   "note"
     t.integer  "visitable_id"
     t.string   "visitable_type"
     t.integer  "user_id"
@@ -127,6 +113,7 @@ ActiveRecord::Schema.define(:version => 20110319081703) do
     t.datetime "updated_at"
     t.datetime "start"
     t.string   "title"
+    t.datetime "end"
   end
 
   add_index "visite", ["user_id"], :name => "index_visite_on_user_id"

@@ -202,7 +202,7 @@ $(document).ready(function() {
             
             $.ajax({
               type: 'post',
-              data: { 'visita': { 'title': 'ginissimo', 'start': date.toString(), 'ora_inizio': copiedEventObject.start.toString(), 'ora_fine': copiedEventObject.end.toString() }  },
+              data: { 'visita': { 'title': copiedEventObject.title,  'start': copiedEventObject.start.toString(), 'end': copiedEventObject.end.toString() }  },
               url: '/appunti/' + x[1] + '/visite.json',
               success: function() {
                       $("#assegnati_size").html(parseInt($("#assegnati_size").html()) +1);
@@ -222,10 +222,33 @@ $(document).ready(function() {
     					$(this).remove();
     				}
 
-    			}
+    },
     
-		
-		
+    eventResize: function(event,dayDelta,minuteDelta,revertFunc) {
+
+            if (!confirm(
+                      "The end date of " + event.title + " has been moved " +
+                      dayDelta + " days and " +
+                      minuteDelta + " minutes.")) {
+                revertFunc();
+            } else {
+              
+            }
+
+    },
+    
+    eventDrop: function(event,dayDelta,minuteDelta,revertFunc) {
+
+            if (!confirm(
+                      "The end date of " + event.title + " has been moved " +
+                      dayDelta + " days and " +
+                      minuteDelta + " minutes.")) {
+                revertFunc();
+            } else {
+              
+            }
+
+    }
 	});
 	
   // $('.a-drag').draggable({
