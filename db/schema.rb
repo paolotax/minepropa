@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110319091451) do
+ActiveRecord::Schema.define(:version => 20110319153740) do
 
   create_table "appunti", :force => true do |t|
     t.string   "destinatario"
@@ -121,9 +121,10 @@ ActiveRecord::Schema.define(:version => 20110319091451) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.datetime "start"
     t.string   "title"
+    t.datetime "start"
     t.datetime "end"
+    t.boolean  "all_day"
   end
 
   add_index "visite", ["user_id"], :name => "index_visite_on_user_id"
