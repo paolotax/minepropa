@@ -8,19 +8,14 @@
         = f.label :scuola_citta_matches, "Citta"
         #select_citta
           = f.select(:scuola_citta_matches , get_citta_appunti.collect {|p| [p.citta]}, :include_blank => true)
-        .clear
         = f.label :scuola_provincia_matches, "Provincia"
-        .right
+        #select_provincia
           = f.select(:scuola_provincia_matches , get_provincie_appunti.collect {|p| [p.provincia]}, :include_blank => true)
-        .clear
         = f.label :stato_matches, "Stato"
-        %ul#list_stato.right
+        %ul#list_stato
           = f.checks :stato_in , [['da completare',''], ["in sospeso", "P"],["completato", "X"]], :class => 'checkboxy' do |c|
             %li
               = c.box
               = c.label
-        .clear
         = link_to 'clear', appunti_path
-        .right
-          = f.submit "Cerca", :disable_with => 'sto cercando...'
-        .clear
+        = f.submit "Cerca", :disable_with => 'sto cercando...'

@@ -6,7 +6,8 @@
         = f.text_field :nome_scuola_contains
         = f.label :citta_contains, "Città"
         = f.text_field :citta_contains
-        = f.label :scuola_provincia_matches, "Provincia"
+        .left
+          = f.label :scuola_provincia_matches, "Provincia"
         .right
           = f.select(:provincia_matches , get_provincie_appunti.collect {|p| [p.provincia]}, :include_blank => true)
         .clear
