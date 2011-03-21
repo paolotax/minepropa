@@ -1,5 +1,37 @@
 $(document).ready(function() {
   
+  $("#print_calendar").click(function(){
+      $("#calendar").printArea();
+  });
+  
+  $("#print_map").click(function(){
+       $("#altra_mappa").printArea();
+      // console.log('contents');
+      // var contents = window.opener.document.getElementById("map_appunti");
+      // document.getElementById('googleprint').appendChild(contents);
+      // window.print();
+  });
+  
+  $("#altra_mappa").goMap({ 
+          markers: [{  
+              latitude: 56.948813, 
+              longitude: 24.704004, 
+              html: { 
+                  content: 'Hello InfoWindow #1!', 
+                  popup: false 
+              } 
+          },{  
+              latitude: 50.948813, 
+              longitude: 7.704004, 
+              html: { 
+                  content: 'Hello InfoWindow #2!', 
+                  popup: false 
+              } 
+          }], 
+          hideByClick:   false, 
+          oneInfoWindow: false 
+      });
+  
   $('#map').hide();
   $('#map_appunti').hide();
   
