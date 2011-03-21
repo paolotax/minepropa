@@ -321,9 +321,13 @@ if (history && history.pushState) {
   $(document).ready(function () {  
     
     $(window).scroll(function() {
-    $('#sidebar')
-        .stop()
-        .animate({top: $(document).scrollTop()},'slow','easeOutBack');
+      $('#sidebar')
+          .stop()
+          .animate({top: $(document).scrollTop()},'slow','easeOutBack');
+      $('#calendar')
+          .stop()
+          .animate({top: $(document).scrollTop()},'slow','easeOutBack');
+      
     });
 
 		$('#appunto_nome_scuola').bestupper(); 
