@@ -4,33 +4,40 @@ $(document).ready(function() {
       $("#calendar").printArea();
   });
   
-  $("#print_map").click(function(){
-       $("#altra_mappa").printArea();
-      // console.log('contents');
-      // var contents = window.opener.document.getElementById("map_appunti");
-      // document.getElementById('googleprint').appendChild(contents);
-      // window.print();
-  });
   
-  $("#altra_mappa").goMap({ 
-          markers: [{  
-              latitude: 56.948813, 
-              longitude: 24.704004, 
-              html: { 
-                  content: 'Hello InfoWindow #1!', 
-                  popup: false 
-              } 
-          },{  
-              latitude: 50.948813, 
-              longitude: 7.704004, 
-              html: { 
-                  content: 'Hello InfoWindow #2!', 
-                  popup: false 
-              } 
-          }], 
-          hideByClick:   false, 
-          oneInfoWindow: false 
-      });
+  $('#altra_mappa').imGoogleMaps({
+     
+     address: 'Cheyenne Mountain Colorado Springs, CO'
+  
+   });
+  	
+  // $("#print_map").click(function(){
+  //      $("#altra_mappa").printArea();
+  //     // console.log('contents');
+  //     // var contents = window.opener.document.getElementById("map_appunti");
+  //     // document.getElementById('googleprint').appendChild(contents);
+  //     // window.print();
+  // });
+  
+  // $("#altra_mappa").goMap({ 
+  //         markers: [{  
+  //             latitude: 56.948813, 
+  //             longitude: 24.704004, 
+  //             html: { 
+  //                 content: 'Hello InfoWindow #1!', 
+  //                 popup: false 
+  //             } 
+  //         },{  
+  //             latitude: 50.948813, 
+  //             longitude: 7.704004, 
+  //             html: { 
+  //                 content: 'Hello InfoWindow #2!', 
+  //                 popup: false 
+  //             } 
+  //         }], 
+  //         hideByClick:   false, 
+  //         oneInfoWindow: false 
+  //     });
   
   $('#map').hide();
   $('#map_appunti').hide();
@@ -344,8 +351,7 @@ jQuery(function() {
  $("#provincie li").hover(function(){$(this).effect("highlight", {}, 1000);});
  
  $(".appunto_big").hover(function(){$(this).effect("highlight", {}, 1000);});
- 
- 
+
 });
 
 if (history && history.pushState) {
@@ -399,13 +405,13 @@ if (history && history.pushState) {
   		scroll: true,
   		update: function(){
   			$.ajax({
+  			  url: '/scuole/sort',
   				type: 'post',
   				data: $('#scuole_sort_list').sortable('serialize'),
   				dataType: 'script', 
   				complete: function(request){
   					$('#scuole_sort_list').effect('highlight');
-  				},
-          url: '/scuole/sort'
+  				}
         })
   		}
     });    
