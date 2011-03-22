@@ -8,12 +8,10 @@ class VisiteController < ApplicationController
     #       format.json { render :json => @visite }
     #     end
     
-    @visite = Visita.all
-                # .where('ora_inizio >= ?', DateTime.parse(params[:ora_inizio]))
-                #                 .where('ora_fine   <= ?', DateTime.parse(params[:ora_fine]))
+    @visite = Visita.where('visite.start >= ?', Time.at(params[:start].to_i))
+                    .where('visite.end   <= ?', Time.at(params[:end].to_i))
     
     @data = []
-    
     @visite.each do |e|
       @data << { :start => e.start, :end => e.end, :title => e.visitable.destinatario + " " + e.visitable.scuola.nome_scuola, :url => appunto_path(e.visitable_id), :allDay => false }
     end
@@ -21,7 +19,6 @@ class VisiteController < ApplicationController
     respond_to do |format|
       format.json { render :json => @data }
     end
-                
   end
   
   def show
