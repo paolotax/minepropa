@@ -2,19 +2,13 @@
 
 = render :partial => 'shared/search_appunti'
 
-
-  
-= link_to_function("Print this Page", "javascript:print()")
-
-#map_show_appunti.float_left
+#map_show_appunti
   = submit_tag "Mostra Mappa"
-#markers_fit.float_left
+#markers_fit
   = submit_tag "Fit Bounds"
-#print_map
-  = link_to "Stampa Mappa"
+
 #map_appunti
 
-#altra_mappa
 
 / #markers_add
 /   = submit_tag "Mostra markers appunti", :action => 'get_appunti_markers', :method => 'get', :remote => true

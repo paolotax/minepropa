@@ -8,6 +8,11 @@
 
 
 = stylesheet_link_tag 'sunny/jquery-ui-1.8.10.custom.css', :media => 'screen'
-= stylesheet_link_tag 'fullcalendar.css', :media => 'screen'
 
-= stylesheet_link_tag 'compiled/application.css', :media => 'screen'
+= stylesheet_link_tag 'fullcalendar.css', :media => 'screen, print'
+
+
+= stylesheet_link_tag 'compiled/application.css', :media => 'screen, print'
+= stylesheet_link_tag 'compiled/mine_print.css',  :media => 'print'
+
+= stylesheet_link_tag 'fullcalendar.print.css', :media => 'print'
