@@ -8,8 +8,7 @@ class VisiteController < ApplicationController
     #       format.json { render :json => @visite }
     #     end
     
-    @visite = Visita.where('visite.start >= ?', Time.at(params[:start].to_i))
-                    .where('visite.end   <= ?', Time.at(params[:end].to_i))
+    @visite = Visita.where('visite.start >= ?', Time.at(params[:start].to_i)).where('visite.end <= ?', Time.at(params[:end].to_i))
     
     @data = []
     @visite.each do |e|
