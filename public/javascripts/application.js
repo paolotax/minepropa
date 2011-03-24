@@ -26,10 +26,62 @@ $(document).ready(function() {
              markers: myMarkers,
              zoom: 15,
              maptype:  'ROADMAP',
+             directions: true,
+             getDirections: true,
              streetViewControl: true
          });
-
+         
+         
+         
          $('#map').show();
+         
+         
+         console.log('m');
+         var m = $.goMap.getMap();
+         
+         var haight = new google.maps.LatLng(37.7699298, -122.4469157);
+         var oceanBeach = new google.maps.LatLng(37.7683909618184, -122.51089453697205);
+         
+         var directionsService = new google.maps.DirectionsService();
+         
+         var directionsDisplay = new google.maps.DirectionsRenderer();
+         directionsDisplay.setMap(m);
+         
+         
+         function calcRoute() {
+
+           var request = {
+             origin: haight,
+             destination: oceanBeach,
+             // Note that Javascript allows us to access the constant
+             // using square brackets and a string value as its
+             // "property."
+             travelMode: google.maps.DirectionsTravelMode['DRIVING']
+           };
+           
+           console.log('calc');
+           
+           directionsService.route(request, function(response, status) {
+             if (status == google.maps.DirectionsStatus.OK) {
+               
+               // Display the distance:
+                        // document.getElementById('distance').innerHTML += 
+                   var dist =   response.routes[0].legs[0].distance.value + " meters";
+
+                        // Display the duration:
+                        // document.getElementById('duration').innerHTML += 
+                    var dur =    response.routes[0].legs[0].duration.value + " seconds";
+               
+               console.log(dist);
+               console.log(dur);
+               directionsDisplay.setDirections(response);
+             }
+           });
+         }
+         
+         console.log(directionsDisplay);
+         
+         calcRoute();
 
          $.goMap.createListener({type:'marker', marker:'baseMarker'}, 'dragend', function() { 
            var lat = this.getPosition().lat();
