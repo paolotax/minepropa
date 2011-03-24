@@ -22,6 +22,7 @@ $(document).ready(function() {
     if ($('#map').is(':visible')) {
       $('#map_show').find(":submit").attr('value', 'Nascondi Mappa');
       var mark = $.getJSON(url, function(myMarkers){
+         
          $("#map").goMap({
              markers: myMarkers,
              zoom: 15,
@@ -31,58 +32,8 @@ $(document).ready(function() {
              streetViewControl: true
          });
          
-         
-         
          $('#map').show();
-         
-         
-         console.log('m');
-         var m = $.goMap.getMap();
-         
-         var haight = new google.maps.LatLng(37.7699298, -122.4469157);
-         var oceanBeach = new google.maps.LatLng(37.7683909618184, -122.51089453697205);
-         
-         var directionsService = new google.maps.DirectionsService();
-         
-         var directionsDisplay = new google.maps.DirectionsRenderer();
-         directionsDisplay.setMap(m);
-         
-         
-         function calcRoute() {
-
-           var request = {
-             origin: haight,
-             destination: oceanBeach,
-             // Note that Javascript allows us to access the constant
-             // using square brackets and a string value as its
-             // "property."
-             travelMode: google.maps.DirectionsTravelMode['DRIVING']
-           };
-           
-           console.log('calc');
-           
-           directionsService.route(request, function(response, status) {
-             if (status == google.maps.DirectionsStatus.OK) {
-               
-               // Display the distance:
-                        // document.getElementById('distance').innerHTML += 
-                   var dist =   response.routes[0].legs[0].distance.value + " meters";
-
-                        // Display the duration:
-                        // document.getElementById('duration').innerHTML += 
-                    var dur =    response.routes[0].legs[0].duration.value + " seconds";
-               
-               console.log(dist);
-               console.log(dur);
-               directionsDisplay.setDirections(response);
-             }
-           });
-         }
-         
-         console.log(directionsDisplay);
-         
-         calcRoute();
-
+       
          $.goMap.createListener({type:'marker', marker:'baseMarker'}, 'dragend', function() { 
            var lat = this.getPosition().lat();
            var lng = this.getPosition().lng();
@@ -106,12 +57,92 @@ $(document).ready(function() {
       
     if ($('#map_appunti').is(':visible')) {
       var mark = $.getJSON('/maps/get_appunti_markers.json', function(myMarkers){
+         
          $("#map_appunti").goMap({
               markers: myMarkers,
               maptype: 'ROADMAP',
               streetViewControl: true
          });
-         $.goMap.fitBounds(); 
+        
+          var m = $.goMap.getMap();
+
+          var directionsService = new google.maps.DirectionsService();
+                    
+          var directionsDisplay = new google.maps.DirectionsRenderer();
+          directionsDisplay.setMap(m);
+          
+          function secondsToTime(secs)
+          {
+          	var hours = Math.floor(secs / (60 * 60));
+
+          	var divisor_for_minutes = secs % (60 * 60);
+          	var minutes = Math.floor(divisor_for_minutes / 60);
+
+          	var divisor_for_seconds = divisor_for_minutes % 60;
+          	var seconds = Math.ceil(divisor_for_seconds);
+
+          	var obj = {
+          		"h": hours,
+          		"m": minutes,
+          		"s": seconds
+          	};
+          	return obj;
+          };
+          
+          function calcRoute(my) {
+              var start = 'Via Vestri 4, Bologna, it';
+              var end =   'Via Zanardi 376/2, BOLOGNA, it';
+              var waypts = [];
+              
+              for (var i = 0; i < my.length; i++) {
+                  waypts.push({
+                      location:my[i].latitude+','+my[i].longitude,
+                      stopover:true});
+              }
+                        
+              var request = {
+                  origin: start, 
+                  destination: end,
+                  waypoints: waypts,
+                  optimizeWaypoints: true,
+                  travelMode: google.maps.DirectionsTravelMode.DRIVING
+              };
+              
+              
+              
+              directionsService.route(request, function(response, status) {
+                if (status == google.maps.DirectionsStatus.OK) {
+                  directionsDisplay.setDirections(response);
+                  var route = response.routes[0];
+                  var summaryPanel = document.getElementById("directions_panel");
+                  
+                  summaryPanel.innerHTML = "";
+                  var distance = 0;
+                  var duration = 0;
+                  // For each route, display summary information.
+                  for (var i = 0; i < route.legs.length; i++) {
+                    var routeSegment = i + 1;
+                    summaryPanel.innerHTML += "<b>Tappa: " + routeSegment + "</b><br />";
+                    summaryPanel.innerHTML += route.legs[i].start_address + " a ";
+                    summaryPanel.innerHTML += route.legs[i].end_address + "<br />";
+                    summaryPanel.innerHTML += route.legs[i].distance.text + " " + route.legs[i].duration.text + "<br /><br />";
+                    distance = distance + route.legs[i].distance.value;
+                    duration = duration + route.legs[i].duration.value;
+                    console.log(route.legs[i].distance.text);
+                  }
+                  console.log(distance);
+                  summaryPanel.innerHTML += 'distanza da percorrere: ' + (distance / 1000) + ' km circa. <br />';
+                  var tempo = secondsToTime(duration);
+                  console.log(tempo)
+                  summaryPanel.innerHTML += 'tempo stimato: ' + tempo.h + 'h ' + tempo.m + 'min ' + tempo.s + 'sec. circa'  
+                }
+              });
+            }
+          
+            
+            calcRoute(myMarkers);
+          
+            $.goMap.fitBounds(); 
       });
       $('#map_show_appunti').find(":submit").attr('value', 'Nascondi Mappa');
     } else {
