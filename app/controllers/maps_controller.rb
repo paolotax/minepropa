@@ -14,7 +14,7 @@ class MapsController < ApplicationController
   def get_appunti_markers
 
     @data = []
-    @appunti = Appunto.assegnato
+    @appunti = Appunto.in_corso.assegnato
   
     @appunti.each do |appunto|
       indirizzo = Indirizzo.where("indirizzable_id = ?", appunto.scuola_id ).first
