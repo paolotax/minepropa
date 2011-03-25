@@ -15,8 +15,8 @@ class PagesController < ApplicationController
   end
 
   def about
-    @search = current_user.appunti.in_corso.per_id.non_assegnato.search(params[:search])
-    @appunti = @search.all
+    @search = current_user.appunti.in_corso.per_id.non_assegnato.page(params[:page]).per(8).search(params[:search])
+    @appunti = @search.relation
     
     @appunti_assegnati = current_user.appunti.in_corso.assegnato.all
     
