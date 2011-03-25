@@ -1,9 +1,19 @@
-#appunti
-	= paginate @appunti, :remote => true
-	= form_tag edit_or_print_appunti_path, :html => {:method => :post} do
-		= submit_tag "modifica selezionati"
-		= submit_tag "stampa selezionati"
-		#app
-			= render @appunti
-		
+/ #appunti
+/   = paginate @appunti, :remote => true
+/   = form_tag edit_or_print_appunti_path, :html => {:method => :post} do
+/     = submit_tag "modifica selezionati"
+/     = submit_tag "stampa selezionati"
+/     #app
+/       = render @appunti
+
+= paginate @appunti, :remote => true
+= form_tag edit_or_print_appunti_path, :html => {:method => :post} do
+  = submit_tag "modifica selezionati"
+  = submit_tag "stampa selezionati"
+  .autopagerize_page_element
+    #appunti
+      - @appunti.each do |appunto|  
+        = render appunto
+      
+
 		
