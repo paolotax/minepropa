@@ -354,9 +354,9 @@ $(document).ready(function() {
               data: { 'visita': { 'title': copiedEventObject.title,  'start': copiedEventObject.start.toString(), 'end': copiedEventObject.end.toString() }  },
               url: '/appunti/' + x[1] + '/visite.json',
               success: function() {
-                      $("#assegnati_size").html(parseInt($("#assegnati_size").html()) +1);
-                      $("#da_assegnare_size").html(parseInt($("#da_assegnare_size").html()) - 1);
-                    }
+                $("#assegnati_size").html(parseInt($("#assegnati_size").html()) +1);
+                $("#da_assegnare_size").html(parseInt($("#da_assegnare_size").html()) - 1);
+              }
             });
 
     				// render the event on the calendar
