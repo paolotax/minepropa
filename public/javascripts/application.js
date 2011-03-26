@@ -45,8 +45,6 @@ $(document).ready(function() {
      $('#form_appunti').attr({'action': '/appunti/edit_multiple', 'method': 'post'});
      $('#form_appunti').submit();
   });
-
-
 });
 
 
@@ -239,8 +237,11 @@ $(document).ready(function() {
 	var m = date.getMonth();
 	var y = date.getFullYear();
 	
+	//non funziona dopo ajax live()??
 	$('#da_draggare div.appunto_big').addTouch();
+	
 	$('#da_draggare div.appunto_big').live('mouseover',function(){
+      
       var eventObject = {
 			
   			title: $.trim($("#a_destinatario", this).text()) +' '+ $.trim($("#a_scuola", this).text()),
@@ -537,6 +538,9 @@ if (history && history.pushState) {
   		}
     });    
 		
+		$('#da_assegnare').addTouch();
+    $( "#assegnati" ).addTouch();
+    
     $( "#da_assegnare" ).sortable({
        connectWith: ".connectedSortable",
        opacity: 0.7,
