@@ -18,11 +18,20 @@ module ApplicationHelper
   def search_url(controller)
   
     if controller == 'pages'
+      
+      # need a refactoring
       if @current_action == 'home'
         return root_url
       else
-        return about_url
+        if @current_action == 'about'  
+          return about_url
+        else
+          if @current_action == 'calendar'
+            return calendar_url
+          end
+        end  
       end
+      
     else
       return appunti_url
     end

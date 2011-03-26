@@ -2,6 +2,19 @@
 
 = render :partial => 'shared/search_appunti'
 
+
+.controlli
+  %span
+    %input{ 'type' => "checkbox", 'class' => 'checkAll' }
+    %b
+      Seleziona tutti
+  oppure
+  %span
+    %a.invertSelection
+      Inverti Selezione
+
+
+
 #map_show_appunti
   = submit_tag "Mostra Mappa"
 #markers_fit
@@ -10,11 +23,6 @@
 #map_appunti
 
 #directions_panel
-
-
-/ #markers_add
-/   = submit_tag "Mostra markers appunti", :action => 'get_appunti_markers', :method => 'get', :remote => true
-
 
 #appunti.left_appunti
   #da_assegnare_size

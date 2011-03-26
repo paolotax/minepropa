@@ -24,7 +24,8 @@
   #a_footer
     - unless @appunti.nil?
       #a_check
-        = check_box_tag "appunti_ids[]", appunto.id
+        / = check_box_tag "appunti_ids[]", appunto.id, :class => '.cb-element'
+        = check_box_tag "appunti_ids[]", appunto.id, false, {:class => 'cb-element'}
     #status_image{ :class => 'img_appunto_' + h(appunto.id) }
       = link_to image_tag(show_status_icon(appunto.stato)), toggle_stato_appunto_path(appunto), :class => "img_appunto_" + h(appunto.id)
     = appunto_edit_links(appunto)

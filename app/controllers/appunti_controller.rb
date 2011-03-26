@@ -126,18 +126,20 @@ class AppuntiController < ApplicationController
   def edit_or_print
     
     @appunti = Appunto.find(params[:appunti_ids])
+    render 'print_multiple.pdf'
     
-    if params[:commit] == 'modifica selezionati'
-      render 'edit_multiple'
-    else
-      if params[:commit] == 'stampa selezionati'
-        render 'print_multiple.pdf'
-      end
-    end
+    # if params[:commit] == 'modifica selezionati'
+    #   render 'edit_multiple'
+    # else
+    #   if params[:commit] == 'stampa selezionati'
+    #     render 'print_multiple.pdf'
+    #   end
+    # end
   end
   
   def edit_multiple
     @appunti = Appunto.find(params[:appunti_ids])
+    render 'edit_multiple'
   end
   
   def update_multiple
@@ -152,6 +154,7 @@ class AppuntiController < ApplicationController
   def print_multiple
     #raise params.inspect
     @appunti = Appunto.find(params[:appunti_ids])
+    render 'print_multiple.pdf'
   end    
   
   private  

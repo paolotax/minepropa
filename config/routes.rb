@@ -24,7 +24,7 @@ Minepropa::Application.routes.draw do
     collection do
       post 'edit_or_print'
       post 'edit_multiple'
-      post 'print_multiple', :format => 'pdf'
+      get  'print_multiple', :format => 'pdf'
       put  'update_multiple'
     end
   end

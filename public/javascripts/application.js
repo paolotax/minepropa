@@ -1,3 +1,59 @@
+/* -----------------------
+    select all checkbox 
+------------------------*/
+
+$(document).ready( function() {
+  $( '.checkAll' ).live( 'change', function() {
+      $( '.cb-element' ).attr( 'checked', $( this ).is( ':checked' ) ? 'checked' : '' );
+      $( this ).next().text( $( this ).is( ':checked' ) ? 'Deseleziona Tutti' : 'Seleziona Tutti' );
+  });
+  $( '.invertSelection' ).live( 'click', function() {
+      $( '.cb-element' ).each( function() {
+          $( this ).attr( 'checked', $( this ).is( ':checked' ) ? '' : 'checked' );
+      }).trigger( 'change' );
+
+  });
+  $( '.cb-element' ).live( 'change', function() {
+      $( '.cb-element' ).length == $( '.cb-element:checked' ).length ? $( '.checkAll' ).attr( 'checked', 'checked' ).next().text( 'Deseleziona Tutti' ) : $( '.checkAll' ).attr( 'checked', '' ).next().text( 'Seleziona Tutti' );
+
+  });
+});
+
+
+/* -----------------------
+    edit multiple - pdf 
+------------------------*/
+
+$(document).ready(function() {
+
+  $('#btn_pdf').live('click', function () {
+    var params = $('#form_appunti').serialize();
+    // console.log(params);
+    $('#form_appunti').attr({'action': '/appunti/print_multiple', 'method': 'get'});
+    $('#form_appunti').submit();
+    // non funziona
+    //     $('form').submit(function () {
+    //       console.log(params);  
+    //       $.get(this.action, params, null, 'script');  
+    //       return false;
+    // });
+  });
+  
+  $('#btn_edit').live('click', function () {
+     var params = $('#form_appunti').serialize();
+     // console.log(params);
+     $('#form_appunti').attr({'action': '/appunti/edit_multiple', 'method': 'post'});
+     $('#form_appunti').submit();
+  });
+
+
+});
+
+
+/* ---------------
+    google maps 
+----------------*/
+
 $(document).ready(function() {
   
   $("#print_calendar").click(function(){
@@ -147,6 +203,7 @@ $(document).ready(function() {
       $('#map_show_appunti').find(":submit").attr('value', 'Nascondi Mappa');
     } else {
       $('#map_show_appunti').find(":submit").attr('value', 'Mostra Mappa');
+      $('#directions_panel').html("");
     }
     
   });
@@ -172,6 +229,11 @@ $(document).ready(function() {
 	}  
 });
 
+
+/* -----------------
+    fullcalendar 
+------------------*/
+
 $(document).ready(function() {
 
 	var date = new Date();
@@ -179,28 +241,24 @@ $(document).ready(function() {
 	var m = date.getMonth();
 	var y = date.getFullYear();
 	
-	$('#da_draggare div.appunto_big').each(function() {
-
-		// create an Event Object (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/)
-		// it doesn't need to have a start or end
-		var eventObject = {
+	$('#da_draggare div.appunto_big').live('mouseover',function(){
+      var eventObject = {
 			
-			title: $.trim($("#a_destinatario", this).text()) +' '+ $.trim($("#a_scuola", this).text()),
-			id: $(this).attr('id')
+  			title: $.trim($("#a_destinatario", this).text()) +' '+ $.trim($("#a_scuola", this).text()),
+  			id: $(this).attr('id')
       
-		};
+  		};
 
-		// store the Event Object in the DOM element so we can get to it later
-		$(this).data('eventObject', eventObject);
+  		// store the Event Object in the DOM element so we can get to it later
+  		$(this).data('eventObject', eventObject);
 
-		// make the event draggable using jQuery UI
-		$(this).draggable({
-			zIndex: 999,
-			revert: true,      // will cause the event to go back to its
-			revertDuration: 0  //  original position after the drag
-		});
-
-	});
+  		// make the event draggable using jQuery UI
+  		$(this).draggable({
+  			zIndex: 999,
+  			revert: true,      // will cause the event to go back to its
+  			revertDuration: 0  //  original position after the drag
+  		});
+  });
 
 	$('#calendar').fullCalendar({
 		
@@ -340,15 +398,39 @@ $(document).ready(function() {
             }
 
     }
-	});
-	
-  // $('.a-drag').draggable({
-  //   revert: true,
-  //   revertDuration: 0
-  // });
-	
+	});		
 });
 
+
+/* -----------------
+    scroll Menu 
+------------------*/
+
+$(document).ready(function () {  
+  
+  // sbaglia i conti di 4 o 6 pixel mah?
+  // var headerOfset = $('#header').outerHeight() + 6;
+  // console.log(headerOfset);
+  
+  $(window).scroll(function() {
+    
+    var topmenu = $(document).scrollTop();
+    // console.log(topmenu);
+    if ((topmenu - 100) <= 132) {
+      topmenu = $(document).scrollTop() ;
+    } else {
+      topmenu = topmenu - 100;
+    };
+    // console.log(topmenu);
+    $('#sidebar')
+        .stop()
+        .animate({top: topmenu},'slow','easeOutBack');
+    $('#calendar')
+        .stop()
+        .animate({top: topmenu},'slow','easeOutBack');
+    
+  });
+});
 
 
 /* Copyright (c) 2009 Mustafa OZCAN (http://www.mustafaozcan.net)
@@ -408,17 +490,7 @@ if (history && history.pushState) {
 	
   $(document).ready(function () {  
     
-    $(window).scroll(function() {
-      $('#sidebar')
-          .stop()
-          .animate({top: $(document).scrollTop()},'slow','easeOutBack');
-      $('#calendar')
-          .stop()
-          .animate({top: $(document).scrollTop()},'slow','easeOutBack');
-      
-    });
-
-		$('#appunto_nome_scuola').bestupper(); 
+    $('#appunto_nome_scuola').bestupper(); 
  	 	
  	 	// Sorting and pagination links.  
     // $("#appunti .pagination a,  #provincie a").live("click", function() {
@@ -435,8 +507,8 @@ if (history && history.pushState) {
 	 	
 		$('#appunto_search').submit(function () {  
 			$.get(this.action, $("#appunto_search").serialize(), null, 'script');  
-			history.pushState(null, document.title, $("#appunto_search").attr("action") + "?" + $("#appunto_search").serialize()); 
-	 	    return false;
+			history.pushState(null, document.title, $("#appunto_search").attr("action") + "?" + $("#appunto_search").serialize());
+			return false;
 		});
 		
 		$('#scuola_search').submit(function () {  
