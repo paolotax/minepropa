@@ -153,7 +153,7 @@ $(document).ready(function() {
               for (var i = 0; i < my.length; i++) {
                   waypts.push({
                       location:my[i].latitude+','+my[i].longitude,
-                      stopover:true});
+                      stopover:false});
               }
                         
               var request = {
@@ -163,8 +163,6 @@ $(document).ready(function() {
                   optimizeWaypoints: true,
                   travelMode: google.maps.DirectionsTravelMode.DRIVING
               };
-              
-              
               
               directionsService.route(request, function(response, status) {
                 if (status == google.maps.DirectionsStatus.OK) {
@@ -241,6 +239,7 @@ $(document).ready(function() {
 	var m = date.getMonth();
 	var y = date.getFullYear();
 	
+	$('#da_draggare div.appunto_big').addTouch();
 	$('#da_draggare div.appunto_big').live('mouseover',function(){
       var eventObject = {
 			
