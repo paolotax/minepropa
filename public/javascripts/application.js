@@ -353,19 +353,13 @@ $(document).ready(function() {
               type: 'post',
               data: { 'visita': { 'title': copiedEventObject.title,  'start': copiedEventObject.start.toString(), 'end': copiedEventObject.end.toString() }  },
               url: '/appunti/' + x[1] + '/visite.json',
-<<<<<<< HEAD
+
               success: function(data, textStatus, jqXHR) {
                       copiedEventObject.id = copiedEventObject.id + data.visita.id; 
                       console.log(copiedEventObject.id);
                       $("#assegnati_size").html(parseInt($("#assegnati_size").html()) +1);
                       $("#da_assegnare_size").html(parseInt($("#da_assegnare_size").html()) - 1);
-                    }
-=======
-              success: function() {
-                $("#assegnati_size").html(parseInt($("#assegnati_size").html()) +1);
-                $("#da_assegnare_size").html(parseInt($("#da_assegnare_size").html()) - 1);
               }
->>>>>>> 96f869822e6ed042dc863cdadfb405db91c89241
             });
 
     				// render the event on the calendar
