@@ -12,7 +12,7 @@ class VisiteController < ApplicationController
     
     @data = []
     @visite.each do |e|
-      @data << { :start => e.start, :end => e.end, :title => e.visitable.destinatario + " " + e.visitable.scuola.nome_scuola, :url => appunto_path(e.visitable_id), :allDay => false }
+      @data << { :start => e.start, :end => e.end, :title => e.visitable.destinatario + " " + e.visitable.scuola.nome_scuola, :url => appunto_path(e.visitable_id), :allDay => false, :id => 'appunto_' + e.visitable_id.to_s + '_visita_' + e.id.to_s }
     end
     
     respond_to do |format|
@@ -51,8 +51,11 @@ class VisiteController < ApplicationController
   def update
     @visita = Visita.find(params[:id])
     if @visita.update_attributes(params[:visita])
-      flash[:notice] = "Successfully updated visita."
-      redirect_to @visita
+      respond_to do |format|
+        format.html { redirect_to about_url, :flash => { :success => "L'appunto e' stato aggiornato." } }
+        format.json { render :json => @visita }
+        format.js
+      end
     else
       render :action => 'edit'
     end

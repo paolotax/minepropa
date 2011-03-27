@@ -6,6 +6,6 @@
       #appunti
         - @appunti.each do |appunto|  
           = render appunto
-      = paginate @appunti #, :remote => true
+        = paginate @appunti #, :remote => true
       / = submit_tag "modifica selezionati"
       / = submit_tag "stampa selezionati"

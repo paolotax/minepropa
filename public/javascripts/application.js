@@ -353,7 +353,9 @@ $(document).ready(function() {
               type: 'post',
               data: { 'visita': { 'title': copiedEventObject.title,  'start': copiedEventObject.start.toString(), 'end': copiedEventObject.end.toString() }  },
               url: '/appunti/' + x[1] + '/visite.json',
-              success: function() {
+              success: function(data, textStatus, jqXHR) {
+                      copiedEventObject.id = copiedEventObject.id + data.visita.id; 
+                      console.log(copiedEventObject.id);
                       $("#assegnati_size").html(parseInt($("#assegnati_size").html()) +1);
                       $("#da_assegnare_size").html(parseInt($("#da_assegnare_size").html()) - 1);
                     }
@@ -375,27 +377,46 @@ $(document).ready(function() {
     
     eventResize: function(event,dayDelta,minuteDelta,revertFunc) {
 
-            if (!confirm(
-                      "The end date of " + event.title + " has been moved " +
-                      dayDelta + " days and " +
-                      minuteDelta + " minutes.")) {
-                revertFunc();
-            } else {
-              
-            }
+            var x = (event.id).split('_');
+            
+            $.ajax({
+              type: 'put',
+              data: { 'visita': { 'start': event.start.toString(), 'end': event.end.toString() }  },
+              url: '/appunti/' + x[1] + '/visite/'+x[3]+'.json',
+              success: function(data, textStatus, jqXHR) {
+                      // copiedEventObject.id = copiedEventObject.id + data.visita.id; 
+                      // console.log(copiedEventObject.id);
+                      // $("#assegnati_size").html(parseInt($("#assegnati_size").html()) +1);
+                      // $("#da_assegnare_size").html(parseInt($("#da_assegnare_size").html()) - 1);
+                    }
+            });
+            
+            // if (!confirm(
+            //           "The end date of " + event.title + " has been moved " +
+            //           dayDelta + " days and " +
+            //           minuteDelta + " minutes.")) {
+            //     revertFunc();
+            // } else {
+            //   
+            // }
 
     },
     
     eventDrop: function(event,dayDelta,minuteDelta,revertFunc) {
-
-            if (!confirm(
-                      "The end date of " + event.title + " has been moved " +
-                      dayDelta + " days and " +
-                      minuteDelta + " minutes.")) {
-                revertFunc();
-            } else {
-              
-            }
+            
+            var x = (event.id).split('_');
+            
+            $.ajax({
+              type: 'put',
+              data: { 'visita': { 'start': event.start.toString(), 'end': event.end.toString() }  },
+              url: '/appunti/' + x[1] + '/visite/'+x[3]+'.json',
+              success: function(data, textStatus, jqXHR) {
+                      // copiedEventObject.id = copiedEventObject.id + data.visita.id; 
+                      // console.log(copiedEventObject.id);
+                      // $("#assegnati_size").html(parseInt($("#assegnati_size").html()) +1);
+                      // $("#da_assegnare_size").html(parseInt($("#da_assegnare_size").html()) - 1);
+                    }
+            });
 
     }
 	});		
