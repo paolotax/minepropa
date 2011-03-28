@@ -2,17 +2,18 @@
 
 = render :partial => 'shared/search_appunti'
 
-#dialog-modal
-
+  
 #map_show_appunti
   = submit_tag "Mostra Mappa"
-#markers_fit
-  = submit_tag "Fit Bounds"
 
-#map_appunti
 
-#directions_panel
-
+#dialog-modal
+  #map_appunti.left
+  #map_directions
+    #markers_fit
+      = submit_tag "Fit Bounds"
+    #directions_panel
+    
 %input#giorno_giro
 
 #appunti.left_appunti

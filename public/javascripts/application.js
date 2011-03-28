@@ -1,6 +1,26 @@
-/* Italian initialisation for the jQuery UI date picker plugin. */
-/* Written by Antonello Pasella (antonello.pasella@gmail.com). */
-jQuery(function($){
+$(document).ready( function() {
+  
+
+  
+  //   $( "#dialog-modal" ).dialog({
+  //  height: 500,
+  //  width: 700,
+  //  modal: true
+  // });
+	
+	
+});
+
+
+/* ----------------
+    datepicker 
+-----------------*/
+
+$(document).ready(function($){
+  
+  /* Italian initialisation for the jQuery UI date picker plugin. */
+  /* Written by Antonello Pasella (antonello.pasella@gmail.com). */
+  
 	$.datepicker.regional['it'] = {
 		closeText: 'Chiudi',
 		prevText: '&#x3c;Prec',
@@ -20,24 +40,13 @@ jQuery(function($){
 		showMonthAfterYear: false,
 		yearSuffix: ''};
 	$.datepicker.setDefaults($.datepicker.regional['it']);
-});
 
-
-$(document).ready( function() {
-  
   $( "#giorno_giro" ).datepicker({
     'dateFormat': "D, d MM yy"
   });
-  
-  
-  $( "#dialog-modal" ).dialog({
-		height: 500,
-		width: 700,
-		modal: true
-	});
-	
-	
+
 });
+
 
 /* -----------------------
     select all checkbox 
@@ -109,7 +118,13 @@ $(document).ready(function() {
   var scu_id  = $.trim($('.scuola_id').text());
   var ind_id  = $.trim($('.scuola_indirizzo_id').text());
   var url = scu_id + ".json";
-  
+ 
+ 
+  /* 
+   *   mappa scuola
+   *
+   */
+    
   $('#map_show').click(function(){
     
     $("#map").toggle();
@@ -145,11 +160,20 @@ $(document).ready(function() {
     }
   });
   
-  
+
+  /* 
+   *   mappa appunti
+   *
+   */
   $('#map_show_appunti').click(function(){
     
-    $('#map_appunti').toggle();
-      
+    $( "#dialog-modal" ).dialog({
+  		height: 600,
+  		width:  800
+  	});
+  	
+  	$('#map_appunti').show();
+    
     if ($('#map_appunti').is(':visible')) {
       var mark = $.getJSON('/maps/get_appunti_markers.json', function(myMarkers){
          
@@ -168,20 +192,20 @@ $(document).ready(function() {
           
           function secondsToTime(secs)
           {
-          	var hours = Math.floor(secs / (60 * 60));
+           var hours = Math.floor(secs / (60 * 60));
 
-          	var divisor_for_minutes = secs % (60 * 60);
-          	var minutes = Math.floor(divisor_for_minutes / 60);
+           var divisor_for_minutes = secs % (60 * 60);
+           var minutes = Math.floor(divisor_for_minutes / 60);
 
-          	var divisor_for_seconds = divisor_for_minutes % 60;
-          	var seconds = Math.ceil(divisor_for_seconds);
+           var divisor_for_seconds = divisor_for_minutes % 60;
+           var seconds = Math.ceil(divisor_for_seconds);
 
-          	var obj = {
-          		"h": hours,
-          		"m": minutes,
-          		"s": seconds
-          	};
-          	return obj;
+           var obj = {
+             "h": hours,
+             "m": minutes,
+             "s": seconds
+           };
+           return obj;
           };
           
           function calcRoute(my) {
@@ -215,19 +239,17 @@ $(document).ready(function() {
                   // For each route, display summary information.
                   for (var i = 0; i < route.legs.length; i++) {
                     var routeSegment = i + 1;
-                    summaryPanel.innerHTML += "<b>Tappa: " + routeSegment + "</b><br />";
-                    summaryPanel.innerHTML += route.legs[i].start_address + " a ";
-                    summaryPanel.innerHTML += route.legs[i].end_address + "<br />";
-                    summaryPanel.innerHTML += route.legs[i].distance.text + " " + route.legs[i].duration.text + "<br /><br />";
+                    summaryPanel.innerHTML += "<b>Tappa: " + routeSegment + "</b>  ..." +  route.legs[i].distance.text + " " + route.legs[i].duration.text + "<br />";
+                    // summaryPanel.innerHTML += route.legs[i].start_address + " a ";
+                    summaryPanel.innerHTML += route.legs[i].end_address + "<br /><br />";
                     distance = distance + route.legs[i].distance.value;
                     duration = duration + route.legs[i].duration.value;
                     console.log(route.legs[i].distance.text);
                   }
                   console.log(distance);
-                  summaryPanel.innerHTML += 'distanza da percorrere: ' + (distance / 1000) + ' km circa. <br />';
                   var tempo = secondsToTime(duration);
                   console.log(tempo)
-                  summaryPanel.innerHTML += 'tempo stimato: ' + tempo.h + 'h ' + tempo.m + 'min ' + tempo.s + 'sec. circa'  
+                  $('#directions_panel').prepend('<div>distanza da percorrere: ' + (distance / 1000) + ' km circa. <br />tempo stimato: ' + tempo.h + 'h ' + tempo.m + 'min ' + tempo.s + 'sec. circa</div><br/>');  
                 }
               });
             }
@@ -237,11 +259,104 @@ $(document).ready(function() {
           
             $.goMap.fitBounds(); 
       });
-      $('#map_show_appunti').find(":submit").attr('value', 'Nascondi Mappa');
-    } else {
-      $('#map_show_appunti').find(":submit").attr('value', 'Mostra Mappa');
-      $('#directions_panel').html("");
     }
+    
+    
+    
+    // $('#map_appunti').toggle();
+    //       
+    //     if ($('#map_appunti').is(':visible')) {
+    //       var mark = $.getJSON('/maps/get_appunti_markers.json', function(myMarkers){
+    //          
+    //          $("#map_appunti").goMap({
+    //               markers: myMarkers,
+    //               maptype: 'ROADMAP',
+    //               streetViewControl: true
+    //          });
+    //         
+    //           var m = $.goMap.getMap();
+    // 
+    //           var directionsService = new google.maps.DirectionsService();
+    //                     
+    //           var directionsDisplay = new google.maps.DirectionsRenderer();
+    //           directionsDisplay.setMap(m);
+    //           
+    //           function secondsToTime(secs)
+    //           {
+    //            var hours = Math.floor(secs / (60 * 60));
+    // 
+    //            var divisor_for_minutes = secs % (60 * 60);
+    //            var minutes = Math.floor(divisor_for_minutes / 60);
+    // 
+    //            var divisor_for_seconds = divisor_for_minutes % 60;
+    //            var seconds = Math.ceil(divisor_for_seconds);
+    // 
+    //            var obj = {
+    //              "h": hours,
+    //              "m": minutes,
+    //              "s": seconds
+    //            };
+    //            return obj;
+    //           };
+    //           
+    //           function calcRoute(my) {
+    //               var start = 'Via Vestri 4, Bologna, it';
+    //               var end =   'Via Zanardi 376/2, BOLOGNA, it';
+    //               var waypts = [];
+    //               
+    //               for (var i = 0; i < my.length; i++) {
+    //                   waypts.push({
+    //                       location:my[i].latitude+','+my[i].longitude,
+    //                       stopover:true});
+    //               }
+    //                         
+    //               var request = {
+    //                   origin: start, 
+    //                   destination: end,
+    //                   waypoints: waypts,
+    //                   optimizeWaypoints: true,
+    //                   travelMode: google.maps.DirectionsTravelMode.DRIVING
+    //               };
+    //               
+    //               directionsService.route(request, function(response, status) {
+    //                 if (status == google.maps.DirectionsStatus.OK) {
+    //                   directionsDisplay.setDirections(response);
+    //                   var route = response.routes[0];
+    //                   var summaryPanel = document.getElementById("directions_panel");
+    //                   
+    //                   summaryPanel.innerHTML = "";
+    //                   var distance = 0;
+    //                   var duration = 0;
+    //                   // For each route, display summary information.
+    //                   for (var i = 0; i < route.legs.length; i++) {
+    //                     var routeSegment = i + 1;
+    //                     summaryPanel.innerHTML += "<b>Tappa: " + routeSegment + "</b><br />";
+    //                     summaryPanel.innerHTML += route.legs[i].start_address + " a ";
+    //                     summaryPanel.innerHTML += route.legs[i].end_address + "<br />";
+    //                     summaryPanel.innerHTML += route.legs[i].distance.text + " " + route.legs[i].duration.text + "<br /><br />";
+    //                     distance = distance + route.legs[i].distance.value;
+    //                     duration = duration + route.legs[i].duration.value;
+    //                     console.log(route.legs[i].distance.text);
+    //                   }
+    //                   console.log(distance);
+    //                   summaryPanel.innerHTML += 'distanza da percorrere: ' + (distance / 1000) + ' km circa. <br />';
+    //                   var tempo = secondsToTime(duration);
+    //                   console.log(tempo)
+    //                   summaryPanel.innerHTML += 'tempo stimato: ' + tempo.h + 'h ' + tempo.m + 'min ' + tempo.s + 'sec. circa'  
+    //                 }
+    //               });
+    //             }
+    //           
+    //             
+    //             calcRoute(myMarkers);
+    //           
+    //             $.goMap.fitBounds(); 
+    //       });
+    //       $('#map_show_appunti').find(":submit").attr('value', 'Nascondi Mappa');
+    //     } else {
+    //       $('#map_show_appunti').find(":submit").attr('value', 'Mostra Mappa');
+    //       $('#directions_panel').html("");
+    //     }
     
   });
   
