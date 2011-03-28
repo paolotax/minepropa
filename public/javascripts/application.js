@@ -1,3 +1,7 @@
+$(document).ready( function() {
+  $(window).unload( function () {} )
+});
+
 /* -----------------------
     select all checkbox 
 ------------------------*/
