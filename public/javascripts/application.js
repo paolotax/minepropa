@@ -155,7 +155,7 @@ $(document).ready(function() {
               for (var i = 0; i < my.length; i++) {
                   waypts.push({
                       location:my[i].latitude+','+my[i].longitude,
-                      stopover:false});
+                      stopover:true});
               }
                         
               var request = {
