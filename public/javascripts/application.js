@@ -240,7 +240,6 @@ $(document).ready(function() {
                   for (var i = 0; i < route.legs.length; i++) {
                     var routeSegment = i + 1;
                     summaryPanel.innerHTML += "<b>Tappa: " + routeSegment + "</b>  ..." +  route.legs[i].distance.text + " " + route.legs[i].duration.text + "<br />";
-                    // summaryPanel.innerHTML += route.legs[i].start_address + " a ";
                     summaryPanel.innerHTML += route.legs[i].end_address + "<br /><br />";
                     distance = distance + route.legs[i].distance.value;
                     duration = duration + route.legs[i].duration.value;
