@@ -1,6 +1,5 @@
 class VisiteController < ApplicationController
   
-  
   def index
     # @visitable = find_visitable
     #     @visite = @visitable.visite

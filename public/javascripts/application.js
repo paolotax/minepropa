@@ -28,6 +28,15 @@ $(document).ready( function() {
   $( "#giorno_giro" ).datepicker({
     'dateFormat': "D, d MM yy"
   });
+  
+  
+  $( "#dialog-modal" ).dialog({
+		height: 500,
+		width: 700,
+		modal: true
+	});
+	
+	
 });
 
 /* -----------------------
