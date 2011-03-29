@@ -1,8 +1,6 @@
 $(document).ready( function() {
   
-
-  
-  //   $( "#dialog-modal" ).dialog({
+  // $( "#dialog-modal" ).dialog({
   //  height: 500,
   //  width: 700,
   //  modal: true
@@ -15,7 +13,6 @@ $(document).ready( function() {
 /* ----------------
     datepicker 
 -----------------*/
-
 $(document).ready(function($){
   
   /* Italian initialisation for the jQuery UI date picker plugin. */
@@ -51,7 +48,6 @@ $(document).ready(function($){
 /* -----------------------
     select all checkbox 
 ------------------------*/
-
 $(document).ready( function() {
   $( '.checkAll' ).live( 'change', function() {
       $( '.cb-element' ).attr( 'checked', $( this ).is( ':checked' ) ? 'checked' : '' );
@@ -73,7 +69,6 @@ $(document).ready( function() {
 /* -----------------------
     edit multiple - pdf 
 ------------------------*/
-
 $(document).ready(function() {
 
   $('#btn_pdf').live('click', function () {
@@ -101,8 +96,71 @@ $(document).ready(function() {
 /* ---------------
     google maps 
 ----------------*/
-
 $(document).ready(function() {
+  
+  function secondsToTime(secs)
+  {
+   var hours = Math.floor(secs / (60 * 60));
+
+   var divisor_for_minutes = secs % (60 * 60);
+   var minutes = Math.floor(divisor_for_minutes / 60);
+
+   var divisor_for_seconds = divisor_for_minutes % 60;
+   var seconds = Math.ceil(divisor_for_seconds);
+
+   var obj = {
+     "h": hours,
+     "m": minutes,
+     "s": seconds
+   };
+   return obj;
+  };
+  
+  function calcRoute(ds, dd, my) {
+    var start = 'Via Vestri 4, Bologna, it';
+    var end =   'Via Zanardi 376/2, BOLOGNA, it';
+    var waypts = [];
+    
+    console.log(start);
+    for (var i = 0; i < my.length; i++) {
+        waypts.push({
+            location:my[i].latitude+','+my[i].longitude,
+            stopover:true});
+    }
+              
+    var request = {
+        origin: start, 
+        destination: end,
+        waypoints: waypts,
+        optimizeWaypoints: true,
+        travelMode: google.maps.DirectionsTravelMode.DRIVING
+    };
+    
+    ds.route(request, function(response, status) {
+      if (status == google.maps.DirectionsStatus.OK) {
+        dd.setDirections(response);
+        var route = response.routes[0];
+        var summaryPanel = document.getElementById("directions_panel");
+        
+        summaryPanel.innerHTML = "";
+        var distance = 0;
+        var duration = 0;
+        // For each route, display summary information.
+        for (var i = 0; i < route.legs.length; i++) {
+          var routeSegment = i + 1;
+          summaryPanel.innerHTML += "<b>Tappa: " + routeSegment + "</b>  ..." +  route.legs[i].distance.text + " " + route.legs[i].duration.text + "<br />";
+          summaryPanel.innerHTML += route.legs[i].end_address + "<br /><br />";
+          distance = distance + route.legs[i].distance.value;
+          duration = duration + route.legs[i].duration.value;
+          console.log(route.legs[i].distance.text);
+        }
+        console.log(distance);
+        var tempo = secondsToTime(duration);
+        console.log(tempo)
+        $('#directions_panel').prepend('<div>distanza da percorrere: ' + (distance / 1000) + ' km circa. <br />tempo stimato: ' + tempo.h + 'h ' + tempo.m + 'min ' + tempo.s + 'sec. circa</div><br/>');  
+      }
+    });
+  }
   
   $("#print_calendar").click(function(){
       $("#calendar").printArea();
@@ -119,12 +177,11 @@ $(document).ready(function() {
   var ind_id  = $.trim($('.scuola_indirizzo_id').text());
   var url = scu_id + ".json";
  
- 
+
   /* 
    *   mappa scuola
    *
    */
-    
   $('#map_show').click(function(){
     
     $("#map").toggle();
@@ -159,7 +216,7 @@ $(document).ready(function() {
       $('#map_show').find(":submit").attr('value', 'Mostra Mappa');
     }
   });
-  
+
 
   /* 
    *   mappa appunti
@@ -169,186 +226,38 @@ $(document).ready(function() {
     
     $( "#dialog-modal" ).dialog({
   		height: 600,
-  		width:  800
+  		width:  800,
+  		modal: true
   	});
   	
   	$('#map_appunti').show();
+    var calendar = $('#calendar').fullCalendar();
+    console.log(calendar);
     
-    if ($('#map_appunti').is(':visible')) {
-      var mark = $.getJSON('/maps/get_appunti_markers.json', function(myMarkers){
-         
-         $("#map_appunti").goMap({
-              markers: myMarkers,
-              maptype: 'ROADMAP',
-              streetViewControl: true
-         });
-        
-          var m = $.goMap.getMap();
-
-          var directionsService = new google.maps.DirectionsService();
-                    
-          var directionsDisplay = new google.maps.DirectionsRenderer();
-          directionsDisplay.setMap(m);
-          
-          function secondsToTime(secs)
-          {
-           var hours = Math.floor(secs / (60 * 60));
-
-           var divisor_for_minutes = secs % (60 * 60);
-           var minutes = Math.floor(divisor_for_minutes / 60);
-
-           var divisor_for_seconds = divisor_for_minutes % 60;
-           var seconds = Math.ceil(divisor_for_seconds);
-
-           var obj = {
-             "h": hours,
-             "m": minutes,
-             "s": seconds
-           };
-           return obj;
-          };
-          
-          function calcRoute(my) {
-              var start = 'Via Vestri 4, Bologna, it';
-              var end =   'Via Zanardi 376/2, BOLOGNA, it';
-              var waypts = [];
-              
-              for (var i = 0; i < my.length; i++) {
-                  waypts.push({
-                      location:my[i].latitude+','+my[i].longitude,
-                      stopover:true});
-              }
-                        
-              var request = {
-                  origin: start, 
-                  destination: end,
-                  waypoints: waypts,
-                  optimizeWaypoints: true,
-                  travelMode: google.maps.DirectionsTravelMode.DRIVING
-              };
-              
-              directionsService.route(request, function(response, status) {
-                if (status == google.maps.DirectionsStatus.OK) {
-                  directionsDisplay.setDirections(response);
-                  var route = response.routes[0];
-                  var summaryPanel = document.getElementById("directions_panel");
-                  
-                  summaryPanel.innerHTML = "";
-                  var distance = 0;
-                  var duration = 0;
-                  // For each route, display summary information.
-                  for (var i = 0; i < route.legs.length; i++) {
-                    var routeSegment = i + 1;
-                    summaryPanel.innerHTML += "<b>Tappa: " + routeSegment + "</b>  ..." +  route.legs[i].distance.text + " " + route.legs[i].duration.text + "<br />";
-                    summaryPanel.innerHTML += route.legs[i].end_address + "<br /><br />";
-                    distance = distance + route.legs[i].distance.value;
-                    duration = duration + route.legs[i].duration.value;
-                    console.log(route.legs[i].distance.text);
-                  }
-                  console.log(distance);
-                  var tempo = secondsToTime(duration);
-                  console.log(tempo)
-                  $('#directions_panel').prepend('<div>distanza da percorrere: ' + (distance / 1000) + ' km circa. <br />tempo stimato: ' + tempo.h + 'h ' + tempo.m + 'min ' + tempo.s + 'sec. circa</div><br/>');  
-                }
-              });
-            }
-          
-            
-            calcRoute(myMarkers);
-          
-            $.goMap.fitBounds(); 
+    var mark = $.getJSON('/maps/get_appunti_markers.json', function(myMarkers){
+       
+      $("#map_appunti").goMap({
+        markers: myMarkers,
+        maptype: 'ROADMAP',
+        streetViewControl: true
       });
-    }
-    
-    
-    
+      
+      var m = $.goMap.getMap();
+      var directionsService = new google.maps.DirectionsService();
+      var directionsDisplay = new google.maps.DirectionsRenderer();
+      directionsDisplay.setMap(m);
+
+      calcRoute(directionsService, directionsDisplay, myMarkers);
+      $.goMap.fitBounds(); 
+    });
+
     // $('#map_appunti').toggle();
     //       
     //     if ($('#map_appunti').is(':visible')) {
     //       var mark = $.getJSON('/maps/get_appunti_markers.json', function(myMarkers){
     //          
-    //          $("#map_appunti").goMap({
-    //               markers: myMarkers,
-    //               maptype: 'ROADMAP',
-    //               streetViewControl: true
-    //          });
-    //         
-    //           var m = $.goMap.getMap();
-    // 
-    //           var directionsService = new google.maps.DirectionsService();
-    //                     
-    //           var directionsDisplay = new google.maps.DirectionsRenderer();
-    //           directionsDisplay.setMap(m);
-    //           
-    //           function secondsToTime(secs)
-    //           {
-    //            var hours = Math.floor(secs / (60 * 60));
-    // 
-    //            var divisor_for_minutes = secs % (60 * 60);
-    //            var minutes = Math.floor(divisor_for_minutes / 60);
-    // 
-    //            var divisor_for_seconds = divisor_for_minutes % 60;
-    //            var seconds = Math.ceil(divisor_for_seconds);
-    // 
-    //            var obj = {
-    //              "h": hours,
-    //              "m": minutes,
-    //              "s": seconds
-    //            };
-    //            return obj;
-    //           };
-    //           
-    //           function calcRoute(my) {
-    //               var start = 'Via Vestri 4, Bologna, it';
-    //               var end =   'Via Zanardi 376/2, BOLOGNA, it';
-    //               var waypts = [];
-    //               
-    //               for (var i = 0; i < my.length; i++) {
-    //                   waypts.push({
-    //                       location:my[i].latitude+','+my[i].longitude,
-    //                       stopover:true});
-    //               }
-    //                         
-    //               var request = {
-    //                   origin: start, 
-    //                   destination: end,
-    //                   waypoints: waypts,
-    //                   optimizeWaypoints: true,
-    //                   travelMode: google.maps.DirectionsTravelMode.DRIVING
-    //               };
-    //               
-    //               directionsService.route(request, function(response, status) {
-    //                 if (status == google.maps.DirectionsStatus.OK) {
-    //                   directionsDisplay.setDirections(response);
-    //                   var route = response.routes[0];
-    //                   var summaryPanel = document.getElementById("directions_panel");
-    //                   
-    //                   summaryPanel.innerHTML = "";
-    //                   var distance = 0;
-    //                   var duration = 0;
-    //                   // For each route, display summary information.
-    //                   for (var i = 0; i < route.legs.length; i++) {
-    //                     var routeSegment = i + 1;
-    //                     summaryPanel.innerHTML += "<b>Tappa: " + routeSegment + "</b><br />";
-    //                     summaryPanel.innerHTML += route.legs[i].start_address + " a ";
-    //                     summaryPanel.innerHTML += route.legs[i].end_address + "<br />";
-    //                     summaryPanel.innerHTML += route.legs[i].distance.text + " " + route.legs[i].duration.text + "<br /><br />";
-    //                     distance = distance + route.legs[i].distance.value;
-    //                     duration = duration + route.legs[i].duration.value;
-    //                     console.log(route.legs[i].distance.text);
-    //                   }
-    //                   console.log(distance);
-    //                   summaryPanel.innerHTML += 'distanza da percorrere: ' + (distance / 1000) + ' km circa. <br />';
-    //                   var tempo = secondsToTime(duration);
-    //                   console.log(tempo)
-    //                   summaryPanel.innerHTML += 'tempo stimato: ' + tempo.h + 'h ' + tempo.m + 'min ' + tempo.s + 'sec. circa'  
-    //                 }
-    //               });
-    //             }
-    //           
-    //             
+    //      ...       
     //             calcRoute(myMarkers);
-    //           
     //             $.goMap.fitBounds(); 
     //       });
     //       $('#map_show_appunti').find(":submit").attr('value', 'Nascondi Mappa');
@@ -384,7 +293,6 @@ $(document).ready(function() {
 /* -----------------
     fullcalendar 
 ------------------*/
-
 $(document).ready(function() {
 
 	var date = new Date();
@@ -520,15 +428,7 @@ $(document).ready(function() {
     				// render the event on the calendar
     				// the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
     				$('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
-            
             $(this).remove();
-
-    				// is the "remove after drop" checkbox checked?
-    				if ($('#drop-remove').is(':checked')) {
-    					// if so, remove the element from the "Draggable Events" list
-    					$(this).remove();
-    				}
-
     },
     
     eventResize: function(event,dayDelta,minuteDelta,revertFunc) {
@@ -582,7 +482,6 @@ $(document).ready(function() {
 /* -----------------
     scroll Menu 
 ------------------*/
-
 $(document).ready(function () {  
   
   // sbaglia i conti di 4 o 6 pixel mah?
