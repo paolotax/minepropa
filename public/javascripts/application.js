@@ -401,13 +401,15 @@ $(document).ready(function() {
     // endParam:   'ora_fine',
     
     events: function(start, end, callback) {
+              
+              console.log(Math.round(start.getTime() / 1000));
               $.ajax({
                 url: 'visite.json',
                 dataType: 'json',
                 data: {
                   // our hypothetical feed requires UNIX timestamps
                   start: Math.round(start.getTime() / 1000),
-                  end: Math.round(end.getTime() / 1000)
+                  end:   Math.round(end.getTime() / 1000)
                 },
                 success: function(doc) {
                   
