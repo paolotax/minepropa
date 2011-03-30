@@ -462,7 +462,10 @@ $(document).ready(function() {
     //             }
     //           });
     // },
-    events: 'visite.json',
+    events: {
+      url: '/visite.json',
+      cache: true 
+    },
     
     drop: function(date, allDay) { // this function is called when something is dropped
 
