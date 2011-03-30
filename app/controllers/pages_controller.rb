@@ -4,6 +4,8 @@ class PagesController < ApplicationController
   
   def home
 
+    @visite = Visita.where('visite.start >= ?', Time.at(1301346000)).where('visite.end <= ?', Time.at(1301522400))
+
     if mobile_device?
       @search = current_user.appunti.in_corso.per_id.search(params[:search])
       @appunti = @search.all

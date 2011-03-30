@@ -1,6 +1,11 @@
 - title "What's up"
 
-= Visita.where('visite.start >= ?', Time.at(1301346000)).where('visite.end <= ?', Time.at(1301522400)).to_sql
+- @visite.each do |v|
+  = v.title
+  = v.start
+  = v.end
+  %br
+
 = render :partial => 'shared/search_appunti'
 
 / = render :partial => 'provincie'
