@@ -400,69 +400,69 @@ $(document).ready(function() {
     // startParam: 'ora_inizio',
     // endParam:   'ora_fine',
     
-    events: function(start, end, callback) {
-              
-              console.log(Math.round(start.getTime() / 1000));
-              $.ajax({
-                url: 'visite.json',
-                dataType: 'json',
-                data: {
-                  // our hypothetical feed requires UNIX timestamps
-                  start: Math.round(start.getTime() / 1000),
-                  end:   Math.round(end.getTime() / 1000)
-                },
-                success: function(doc) {
-                  
-                  var events = [];
-                  var markers = [];
-                  $(doc).each(function() {
-                      events.push({
-                          title:  $(this).attr('title'),
-                          start:  $(this).attr('start'),
-                          end:    $(this).attr('end'),
-                          allDay: $(this).attr('allDay'),
-                          id:     $(this).attr('id')  
-                      });
-                      markers.push({
-                          title:     $(this).attr('title'),
-                          longitude: $(this).attr('longitude'),
-                          latitude:  $(this).attr('latitude')  // will be parsed
-                      });
-                  });
- 
-                  console.log(markers);
-                  callback(events);
-                  if (markers.length > 0) {
-                    
-                     // $( "#dialog-modal" ).dialog({
-                     //                         height: 600,
-                     //                         width:  800,
-                     //                         modal: true
-                     //                       });
-
-                      // $('#map_appunti').show();
-                      //                       $('#map_directions').show();
-                    
-                      $("#map_appunti").goMap({
-                        markers: markers,
-                        maptype: 'ROADMAP',
-                        streetViewControl: true
-                      });
-
-                      var m = $.goMap.getMap();
-                      var directionsService = new google.maps.DirectionsService();
-                      var directionsDisplay = new google.maps.DirectionsRenderer();
-                      // directionsDisplay.suppressMarkers = true;
-                      directionsDisplay.setMap(m);
-
-                      calcRoute(directionsService, directionsDisplay, markers);
-                      $.goMap.fitBounds(); 
-                    }
-
-                }
-              });
-    },
-    // events: 'visite.json',
+    // events: function(start, end, callback) {
+    //           
+    //           console.log(Math.round(start.getTime() / 1000));
+    //           $.ajax({
+    //             url: 'visite.json',
+    //             dataType: 'json',
+    //             data: {
+    //               // our hypothetical feed requires UNIX timestamps
+    //               start: Math.round(start.getTime() / 1000),
+    //               end:   Math.round(end.getTime() / 1000)
+    //             },
+    //             success: function(doc) {
+    //               
+    //               var events = [];
+    //               var markers = [];
+    //               $(doc).each(function() {
+    //                   events.push({
+    //                       title:  $(this).attr('title'),
+    //                       start:  $(this).attr('start'),
+    //                       end:    $(this).attr('end'),
+    //                       allDay: $(this).attr('allDay'),
+    //                       id:     $(this).attr('id')  
+    //                   });
+    //                   markers.push({
+    //                       title:     $(this).attr('title'),
+    //                       longitude: $(this).attr('longitude'),
+    //                       latitude:  $(this).attr('latitude')  // will be parsed
+    //                   });
+    //               });
+    //  
+    //               console.log(markers);
+    //               callback(events);
+    //               if (markers.length > 0) {
+    //                 
+    //                  // $( "#dialog-modal" ).dialog({
+    //                  //                         height: 600,
+    //                  //                         width:  800,
+    //                  //                         modal: true
+    //                  //                       });
+    // 
+    //                   // $('#map_appunti').show();
+    //                   //                       $('#map_directions').show();
+    //                 
+    //                   $("#map_appunti").goMap({
+    //                     markers: markers,
+    //                     maptype: 'ROADMAP',
+    //                     streetViewControl: true
+    //                   });
+    // 
+    //                   var m = $.goMap.getMap();
+    //                   var directionsService = new google.maps.DirectionsService();
+    //                   var directionsDisplay = new google.maps.DirectionsRenderer();
+    //                   // directionsDisplay.suppressMarkers = true;
+    //                   directionsDisplay.setMap(m);
+    // 
+    //                   calcRoute(directionsService, directionsDisplay, markers);
+    //                   $.goMap.fitBounds(); 
+    //                 }
+    // 
+    //             }
+    //           });
+    // },
+    events: 'visite.json',
     
     drop: function(date, allDay) { // this function is called when something is dropped
 
