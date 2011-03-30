@@ -3,7 +3,7 @@ class VisiteController < ApplicationController
   
   def index
     
-    @visite = Visita.where('visite.start >= ?', Time.at(1301436000)).where('visite.end <= ?', Time.at(1301522400))
+    @visite = Visita.where('visite.start >= ?', Time.at(params[:start].to_f)).where('visite.end <= ?', Time.at(params[:end].to_f))
     
     @data = []
     @visite.each do |e|
@@ -24,6 +24,7 @@ class VisiteController < ApplicationController
     end
     
     respond_to do |format|
+      format.html 
       format.json { render :json => @data }
     end
   end
