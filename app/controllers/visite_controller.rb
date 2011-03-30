@@ -3,7 +3,7 @@ class VisiteController < ApplicationController
   
   def index
     
-    @visite = Visita.where('visite.start >= ?', Time.at(params[:start].to_i)).where('visite.end <= ?', Time.at(params[:end].to_i))
+    @visite = Visita.where('visite.start >= ?', Time.at(params[:start].to_f)).where('visite.end <= ?', Time.at(params[:end].to_f))
     
     @data = []
     @visite.each do |e|
