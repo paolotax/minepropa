@@ -24,7 +24,6 @@ class VisiteController < ApplicationController
     end
     
     respond_to do |format|
-      format.html 
       format.json { render :json => @data }
     end
   end
