@@ -1,8 +1,10 @@
+%p
+  ciao tax
 / = Visita.where('visite.start >= ?', Time.at(params[:start].to_f)).where('visite.end <= ?', Time.at(params[:end].to_f)).to_sql
-%br
-- @data.each do |d|
-  = d[:title]
-  = d[:start]
-  = d[:end]
-  %br
-  %br
+/ %br
+/ - @data.each do |d|
+/   = d[:title]
+/   = d[:start]
+/   = d[:end]
+/   %br
+/   %br
