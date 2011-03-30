@@ -12,7 +12,7 @@ Minepropa::Application.routes.draw do
   
   resources :appunti do
     
-    resources :visite
+    resources :visite, :only 
     resources :indirizzi
 
     get :autocomplete_scuola_nome_scuola, :on => :collection
