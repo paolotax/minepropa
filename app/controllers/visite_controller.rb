@@ -16,8 +16,8 @@ class VisiteController < ApplicationController
                 :url      => appunto_path(e.visitable_id), 
                 :allDay   => false, 
                 :id       => 'appunto_' + e.visitable_id.to_s + '_visita_' + e.id.to_s,
-                :latitude  => indirizzo.latitude,
-                :longitude => indirizzo.longitude,
+                :latitude  => indirizzo.latitude.to_f,
+                :longitude => indirizzo.longitude.to_f,
                 :indirizzo => indirizzo.indirizzo,
                 :indirizzo_completo => indirizzo.label_indirizzo
                }
