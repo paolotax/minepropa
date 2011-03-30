@@ -231,7 +231,7 @@ $(document).ready(function() {
   	});
   	
   	$('#map_appunti').show();
-    var calendar = $('#calendar').fullCalendar();
+    var calendar = $('#calendar').fullCalendar('getDate');
     console.log(calendar);
     
     var mark = $.getJSON('/maps/get_appunti_markers.json', function(myMarkers){

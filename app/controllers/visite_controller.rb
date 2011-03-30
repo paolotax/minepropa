@@ -2,17 +2,25 @@ class VisiteController < ApplicationController
   
   
   def index
-    # @visitable = find_visitable
-    #     @visite = @visitable.visite
-    #     respond_to do |format|  
-    #       format.json { render :json => @visite }
-    #     end
     
     @visite = Visita.where('visite.start >= ?', Time.at(params[:start].to_i)).where('visite.end <= ?', Time.at(params[:end].to_i))
     
     @data = []
     @visite.each do |e|
-      @data << { :start => e.start, :end => e.end, :title => e.visitable.destinatario + " " + e.visitable.scuola.nome_scuola, :url => appunto_path(e.visitable_id), :allDay => false, :id => 'appunto_' + e.visitable_id.to_s + '_visita_' + e.id.to_s }
+      
+      indirizzo =  e.visitable.scuola.indirizzi.first
+      @data << { 
+                :start    => e.start, 
+                :end      => e.end, 
+                :title    => e.visitable.destinatario + " " + e.visitable.scuola.nome_scuola, 
+                :url      => appunto_path(e.visitable_id), 
+                :allDay   => false, 
+                :id       => 'appunto_' + e.visitable_id.to_s + '_visita_' + e.id.to_s,
+                :latitude  => indirizzo.latitude,
+                :longitude => indirizzo.longitude,
+                :indirizzo => indirizzo.indirizzo,
+                :indirizzo_completo => indirizzo.label_indirizzo
+               }
     end
     
     respond_to do |format|
