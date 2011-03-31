@@ -41,5 +41,7 @@ Minepropa::Application.routes.draw do
   get  "maps/get_appunti_markers" => 'maps#get_appunti_markers', :as => 'get_appunti_markers_maps'  
   
   match 'maps/get_appunto_marker/:id' => 'maps#get_appunto_marker', :as => 'get_appunto_marker_maps'
+  
   get 'visite' => 'visite#index'
+  resources :indirizzi, :only => [:show, :update]
 end

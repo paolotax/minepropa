@@ -1,3 +1,9 @@
+/* Activating Best In Place */
+$(document).ready(function() {
+  jQuery(".best_in_place").best_in_place();
+});
+
+
 $(document).ready( function() {
   
   // $( "#dialog-modal" ).dialog({

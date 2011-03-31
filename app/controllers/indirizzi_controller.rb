@@ -36,11 +36,16 @@ class IndirizziController < ApplicationController
 
   def update
     @indirizzo = Indirizzo.find(params[:id])
-    if @indirizzo.update_attributes(params[:indirizzo])
-      flash[:notice] = "Successfully updated indirizzo."
-      #redirect_to @indirizzo
-    else
-      render :action => 'edit'
+
+    respond_to do |format|
+      if @indirizzo.update_attributes(params[:indirizzo])
+        #flash[:notice] = "Successfully updated indirizzo."
+        format.json { head :ok }
+        #redirect_to @indirizzo
+      else
+        format.html render :action => 'edit'
+        format.json { render :json => @indirizzo.errors.full_messages, :status => :unprocessable_entity }
+      end
     end
   end
   
