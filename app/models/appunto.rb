@@ -68,7 +68,7 @@ class Appunto < ActiveRecord::Base
     
     appunti = scoped
     if params[:provincia]
-      appunti = appunti.joins(:scuola).where(:scuola => { :provincia => params[:provincia]})
+      appunti = appunti.joins(:scuola).where(:scuola => { :provincia => params[:provincia] })
     end
     
     appunti
@@ -85,6 +85,14 @@ class Appunto < ActiveRecord::Base
   
   def nome_scuola=(nome)
     self.scuola = Scuola.find_by_nome_scuola(nome)
+  end
+  
+  def note_formatted
+    simple_format(self.note)
+  end
+  
+  def note_formatted=(note)
+    self.note = note
   end
   
   def cleanup

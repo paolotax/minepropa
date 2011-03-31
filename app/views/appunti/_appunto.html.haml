@@ -9,15 +9,17 @@
     /       = image_submit_tag 'icons/car.png'
     #a_intestazione
       #a_destinatario
-        %strong= appunto.destinatario
-        = best_in_place appunto, :destinatario, :type => :input
+        / %strong= appunto.destinatario
+        %strong= best_in_place appunto, :destinatario, :type => :input
       #a_scuola
         = link_to appunto.nome_scuola, scuola_path(appunto.scuola) unless appunto.scuola.blank?
     #a_note
-      = simple_format(appunto.note)
+      / = simple_format(appunto.note)
+      = best_in_place appunto, :note, :type => :textarea, :sanitize => false
       #a_recapiti
         #a_telefono
-          = "tel #{appunto.telefono}" unless appunto.telefono.blank?
+          = "tel " unless appunto.telefono.blank?
+          = best_in_place appunto, :telefono, :type => :input, :nil => '...'
         #a_email
           = "email " unless appunto.email.blank?
           = mail_to appunto.email unless appunto.email.blank?
