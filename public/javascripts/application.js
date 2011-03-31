@@ -235,16 +235,6 @@ $(document).ready(function() {
   	$('#map_appunti').show();
     $('#map_directions').show();
     
-    var m = $.goMap.getMap();
-    var directionsService = new google.maps.DirectionsService();
-    var directionsDisplay = new google.maps.DirectionsRenderer();
-    // directionsDisplay.suppressMarkers = true;
-    directionsDisplay.setMap(m);
-
-    calcRoute(directionsService, directionsDisplay, markers);
-    $.goMap.fitBounds();
-    
-    
     // var calendar = $('#calendar').fullCalendar('getDate');
     // console.log(calendar);
     // 
@@ -436,24 +426,29 @@ $(document).ready(function() {
                   callback(events);
                   if (markers.length > 0) {
                     
-                     // $( "#dialog-modal" ).dialog({
-                     //                         height: 600,
-                     //                         width:  800,
-                     //                         modal: true
-                     //                       });
+                     $( "#dialog-modal" ).dialog({
+                                             height: 600,
+                                             width:  800,
+                                             modal: true
+                                           });
     
-                      // $('#map_appunti').show();
-                      //                       $('#map_directions').show();
+                      $('#map_appunti').show();
+                      $('#map_directions').show();
                     
                       $("#map_appunti").goMap({
                         markers: markers,
                         maptype: 'ROADMAP',
                         streetViewControl: true
                       });
-    
-                       
+                      var m = $.goMap.getMap();
+                      var directionsService = new google.maps.DirectionsService();
+                      var directionsDisplay = new google.maps.DirectionsRenderer();
+                      // directionsDisplay.suppressMarkers = true;
+                      directionsDisplay.setMap(m);
+
+                      calcRoute(directionsService, directionsDisplay, markers);
+                      $.goMap.fitBounds();
                     }
-    
                 }
               });
     },
@@ -569,9 +564,9 @@ $(document).ready(function () {
     $('#sidebar')
         .stop()
         .animate({top: topmenu},'slow','easeOutBack');
-    // $('#calendar')
-    //         .stop()
-    //         .animate({top: topmenu},'slow','easeOutBack');
+    $('#calendar')
+        .stop()
+        .animate({top: topmenu},'slow','easeOutBack');
     
   });
 });

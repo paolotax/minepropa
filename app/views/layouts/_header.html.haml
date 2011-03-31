@@ -5,7 +5,7 @@
   #navig
     %ul#nav.links
       %li.links.menu-604= link_to "Home", root_path
-      %li.links.menu-484= link_to "About", about_path
+      %li.links.menu-484= link_to "Calendario", calendar_path
       - if user_signed_in?
         %li.links.menu-483= link_to current_user.username, edit_user_registration_path 
         %li.links.menu-224.last= link_to "Sign out", destroy_user_session_path
