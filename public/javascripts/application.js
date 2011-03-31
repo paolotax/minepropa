@@ -235,6 +235,15 @@ $(document).ready(function() {
   	$('#map_appunti').show();
     $('#map_directions').show();
     
+    var m = $.goMap.getMap();
+    var directionsService = new google.maps.DirectionsService();
+    var directionsDisplay = new google.maps.DirectionsRenderer();
+    // directionsDisplay.suppressMarkers = true;
+    directionsDisplay.setMap(m);
+
+    calcRoute(directionsService, directionsDisplay, markers);
+    $.goMap.fitBounds();
+    
     
     // var calendar = $('#calendar').fullCalendar('getDate');
     // console.log(calendar);
@@ -306,11 +315,9 @@ $(document).ready(function() {
 	var d = date.getDate();
 	var m = date.getMonth();
 	var y = date.getFullYear();	
-
 	
 	//non funziona dopo ajax live()??
 	$('#da_draggare div.appunto_big').addTouch();
-	
 	$('#da_draggare div.appunto_big').live('mouseover',function(){
       
       var eventObject = {
@@ -399,12 +406,10 @@ $(document).ready(function() {
     
     events: function(start, end, callback) {
               
-              console.log(Math.round(start.getTime() / 1000));
               $.ajax({
                 url: 'visite.json',
                 dataType: 'json',
                 data: {
-                  // our hypothetical feed requires UNIX timestamps
                   start: Math.round(start.getTime() / 1000),
                   end:   Math.round(end.getTime() / 1000)
                 },
@@ -446,14 +451,7 @@ $(document).ready(function() {
                         streetViewControl: true
                       });
     
-                      var m = $.goMap.getMap();
-                      var directionsService = new google.maps.DirectionsService();
-                      var directionsDisplay = new google.maps.DirectionsRenderer();
-                      // directionsDisplay.suppressMarkers = true;
-                      directionsDisplay.setMap(m);
-    
-                      calcRoute(directionsService, directionsDisplay, markers);
-                      $.goMap.fitBounds(); 
+                       
                     }
     
                 }
