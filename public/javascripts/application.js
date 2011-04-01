@@ -185,6 +185,7 @@ $(document).ready(function() {
   var ind_id  = $.trim($('.scuola_indirizzo_id').text());
   var url = scu_id + ".json";
  
+  var mymarkers = []
 
   /* 
    *   mappa scuola
@@ -232,14 +233,31 @@ $(document).ready(function() {
    */
   $('#map_show_appunti').click(function(){
     
-    $( "#dialog-modal" ).dialog({
-  		height: 600,
-  		width:  800,
-  		modal: true
-  	});
-  	
-  	$('#map_appunti').show();
-    $('#map_directions').show();
+
+      
+       $( "#dialog-modal" ).dialog({
+                               height: 600,
+                               width:  800,
+                               modal: true
+                             });
+
+        $('#map_appunti').show();
+        $('#map_directions').show();
+      
+        $("#map_appunti").goMap({
+          markers: mymarkers,
+          maptype: 'ROADMAP',
+          streetViewControl: true
+        });
+        var m = $.goMap.getMap();
+        var directionsService = new google.maps.DirectionsService();
+        var directionsDisplay = new google.maps.DirectionsRenderer();
+        // directionsDisplay.suppressMarkers = true;
+        directionsDisplay.setMap(m);
+
+        calcRoute(directionsService, directionsDisplay, mymarkers);
+        $.goMap.fitBounds();
+
     
     // var calendar = $('#calendar').fullCalendar('getDate');
     // console.log(calendar);
@@ -298,14 +316,14 @@ $(document).ready(function() {
 		var baseMarkerPosition = $("#map").data("baseMarker").getPosition();
     console.log('fired');
 	}  
-});
 
 
 
-/* -----------------
-    fullcalendar 
-------------------*/
-$(document).ready(function() {
+
+  /* -----------------
+      fullcalendar 
+  ------------------*/
+
 
 	var date = new Date();
 	var d = date.getDate();
@@ -419,42 +437,19 @@ $(document).ready(function() {
                           start:  $(this).attr('start'),
                           end:    $(this).attr('end'),
                           allDay: $(this).attr('allDay'),
+                          url:    $(this).attr('url'),
                           id:     $(this).attr('id')  
                       });
-                      markers.push({
+                      mymarkers.push({
                           title:     $(this).attr('title'),
                           longitude: $(this).attr('longitude'),
                           latitude:  $(this).attr('latitude')  // will be parsed
                       });
                   });
      
-                  console.log(markers);
+                  console.log(mymarkers);
                   callback(events);
-                  if (markers.length > 0) {
-                    
-                     $( "#dialog-modal" ).dialog({
-                                             height: 600,
-                                             width:  800,
-                                             modal: true
-                                           });
-    
-                      $('#map_appunti').show();
-                      $('#map_directions').show();
-                    
-                      $("#map_appunti").goMap({
-                        markers: markers,
-                        maptype: 'ROADMAP',
-                        streetViewControl: true
-                      });
-                      var m = $.goMap.getMap();
-                      var directionsService = new google.maps.DirectionsService();
-                      var directionsDisplay = new google.maps.DirectionsRenderer();
-                      // directionsDisplay.suppressMarkers = true;
-                      directionsDisplay.setMap(m);
 
-                      calcRoute(directionsService, directionsDisplay, markers);
-                      $.goMap.fitBounds();
-                    }
                 }
               });
     },
