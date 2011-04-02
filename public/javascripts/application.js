@@ -438,6 +438,7 @@ $(document).ready(function() {
                           end:    $(this).attr('end'),
                           allDay: $(this).attr('allDay'),
                           url:    $(this).attr('url'),
+                          longitude: $(this).attr('longitude'),
                           id:     $(this).attr('id')  
                       });
                       mymarkers.push({
@@ -448,6 +449,7 @@ $(document).ready(function() {
                   });
      
                   console.log(mymarkers);
+                  console.log(events);
                   callback(events);
 
                 }
