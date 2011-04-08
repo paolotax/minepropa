@@ -1,8 +1,7 @@
 %li
   %h2
     / # = link_to appunto.destinatario, edit_appunto_path(appunto)
-    / = link_to appunto.destinatario,  "http://maps.google.it/maps?um=1&ie=UTF-8&cid=0,0,7212548095159254789&fb=1&hq=liceo+minghetti&hnear=Bologna&gl=it&daddr=Via+Nazario+Sauro,+18,+40121+Bologna&geocode=1692704479441708968,44.496872,11.339373&ei=njGfTeaoBNHLswaVpu3uAQ&sa=X&oi=local_result&ct=directions-to&resnum=2&ved=0CCkQngIwAQ"
-    = link_to appunto.destinatario,  "http://maps.google.it/maps?q=44.496872,11.339373"
+    = link_to appunto.destinatario,  "http://maps.google.it/maps?q=" + get_scuola_latlng(appunto.scuola_id)
   %p
     = appunto.nome_scuola
   .ui-li-aside
