@@ -1,12 +1,8 @@
 %li
-  %h2
-    / # = link_to appunto.destinatario, edit_appunto_path(appunto)
-    = link_to appunto.destinatario,  "http://maps.google.it/maps?q=" + get_scuola_latlng(appunto.scuola_id)
-  %p
-    = appunto.nome_scuola
-  .ui-li-aside
-    %h2
-      = appunto.telefono
-    %p
-      = appunto.note
-  / = link_to 'edit appunto', edit_appunto_path(appunto), "data-icon" => "gear"
+  %a{'href' => edit_appunto_path(appunto) }
+    %h2= appunto.destinatario
+    %p=  appunto.nome_scuola
+    .ui-li-aside
+      %h2= appunto.telefono
+      %p=  appunto.note
+  %a{'href' => "http://maps.google.it/maps?q=" + get_scuola_latlng(appunto.scuola_id), 'data-rel' => "dialog", 'data-transition' => "slideup"}

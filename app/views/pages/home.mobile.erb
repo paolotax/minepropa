@@ -1,13 +1,11 @@
 <div data-role="header">
-  <h1>Appunti in corso</h1>
+  <h1>Home</h1>
   <%= link_to 'Add', new_appunto_path, "data-icon" => "plus", "class" => "ui-btn-right" %>
 </div>
 
 <div data-role="content">
   <ul data-role="listview", data-filter="true">
-
     <%= render @appunti %>
-
   </ul>
 </div>
 
