@@ -7,10 +7,10 @@
           = f.text_field :destinatario_or_note_or_scuola_nome_scuola_or_scuola_citta_contains
         = f.label :scuola_citta_matches, "Citta"
         #select_citta
-          = f.select(:scuola_citta_matches , get_citta_appunti.collect {|p| [p.citta]}, :include_blank => true)
+          = f.select(:scuola_citta_matches , get_citta_user.collect {|p| [p.citta]}, :include_blank => true)
         = f.label :scuola_provincia_matches, "Provincia"
         #select_provincia
-          = f.select(:scuola_provincia_matches , get_provincie_appunti.collect {|p| [p.provincia]}, :include_blank => true)
+          = f.select(:scuola_provincia_matches , get_provincie_user.collect {|p| [p.provincia]}, :include_blank => true)
         = f.label :stato_matches, "Stato"
         %ul#list_stato
           = f.checks :stato_in , [['da completare',''], ["in sospeso", "P"],["completato", "X"]], :class => 'checkboxy' do |c|

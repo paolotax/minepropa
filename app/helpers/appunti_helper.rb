@@ -45,20 +45,5 @@ module AppuntiHelper
       end
     end
   end
-  
-  def get_provincie_appunti
-    @provincie = current_user.scuole.select('distinct provincia')
-    # @provincie.each do |p|
-    #   provincie << p
-    # end
-    # provincie
-  end    
-  
-  def get_citta_appunti
-    @citta = current_user.scuole.select('distinct citta')
-    # @provincie.each do |p|
-    #   provincie << p
-    # end
-    # provincie
-  end  
+
 end

@@ -37,4 +37,20 @@ module ApplicationHelper
     end
   end
   
+  def get_provincie_user
+    @provincie = current_user.scuole.select('distinct provincia')
+    # @provincie.each do |p|
+    #   provincie << p
+    # end
+    # provincie
+  end    
+  
+  def get_citta_user
+    @citta = current_user.scuole.select('distinct citta')
+    # @provincie.each do |p|
+    #   provincie << p
+    # end
+    # provincie
+  end
+  
 end

@@ -3,7 +3,7 @@ class ScuoleController < ApplicationController
   before_filter :authenticate_user!
   
   def index
-    @search = current_user.scuole.order('scuole.position asc').page(params[:page]).per(30).search(params[:search])
+    @search = current_user.scuole.order('scuole.position asc').search(params[:search])
     @scuole = @search.relation
     respond_to do |format|
       format.html # index.html.erb
