@@ -420,6 +420,8 @@ $(document).ready(function() {
     
     events: function(start, end, callback) {
               
+              mymarkers = [];
+              
               $.ajax({
                 url: 'visite.json',
                 dataType: 'json',
@@ -430,7 +432,7 @@ $(document).ready(function() {
                 success: function(doc) {
                   
                   var events = [];
-                  var markers = [];
+
                   $(doc).each(function() {
                       events.push({
                           title:  $(this).attr('title'),
