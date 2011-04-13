@@ -382,7 +382,7 @@ $(document).ready(function() {
     },
     
     titleFormat: {
-        month: 'MMMM yyyy',                             // September 2009
+        month: 'MMMM yyyy',                      // September 2009
         week: "d MMM[ yyyy]{ '-'[ d] MMM yyyy}", // Sep 7 - 13 2009    &#8212;
         day: 'dddd, d MMM yyyy'                  // Tuesday, Sep 8, 2009
     },
@@ -457,10 +457,6 @@ $(document).ready(function() {
                 }
               });
     },
-    // events: {
-    //   url: '/visite.json',
-    //   cache: true 
-    // },
     
     drop: function(date, allDay) { // this function is called when something is dropped
 
@@ -661,7 +657,7 @@ if (history && history.pushState) {
 	 	    return false;
 		});
 		
-		$('#scuole_sort_list').sortable({
+		$('.scuole_sort_list').sortable({
   		axis: 'y',
   		dropOnEmpty: false,
   		handle: '.handle',
