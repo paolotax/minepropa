@@ -1,3 +1,40 @@
+
+$(document).ready(function() {
+  
+
+  $('#popin_show').live('click', function() {
+    var popin = $('#popin_bulk');
+    // 
+    popin.css({
+        'position':'absolute',
+        'top':100+'px',
+        'left':100+'px'
+    }).show();
+    
+    var ids = [];
+    
+    $("#s_check :checked").each(function(index) {
+      
+      clonedObj = $('#scuola_' + $(this).val()).clone();
+      
+      $("#s_check", clonedObj).hide();
+      
+      clonedObj.appendTo($('#scuole.right_scuole'));
+      
+      ids[index] = $(this).val();
+      console.log(ids);
+      
+      
+    });
+
+  });
+  
+
+});
+
+
+
+
 /* Activating Best In Place */
 $(document).ready(function() {
   jQuery(".best_in_place").best_in_place();
