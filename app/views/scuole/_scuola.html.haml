@@ -1,7 +1,10 @@
 %li.scuola_item{'id' => "scuola_#{scuola.id}" }
-  %span.handle
-    = image_tag "sort_down.gif"
+  / %span.handle
+  /   = image_tag "sort_down.gif"
   #s_check
     = check_box_tag "scuole_ids[]", scuola.id, false, {:class => 'cb-element'}
   #s_nome_scuola
-    = link_to "#{scuola.nome_scuola} #{ scuola.citta}", scuola_path(scuola) 
+    = link_to scuola.nome_scuola , scuola_path(scuola)
+    %br
+    =scuola.citta
+  #clear

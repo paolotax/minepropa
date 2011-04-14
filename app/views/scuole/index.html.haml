@@ -1,7 +1,35 @@
-= render 'shared/search_scuole'
+= render :partial => 'shared/search_scuole'
 
 - title "Lista scuole"
 
 = render :partial => 'shared/provincie'
 
-= render :partial => 'scuole'
+#map_show_scuole
+  = submit_tag "Mostra Mappa"
+#markers_fit
+  = submit_tag "Fit Bounds"
+
+#map_scuola
+
+#directions_panel
+
+
+.controlli
+  %span
+    %input.checkAll{ 'type' => "checkbox" }
+    %b
+      Seleziona tutti
+  oppure
+  %span
+    %a.invertSelection
+      Inverti Selezione
+
+
+
+
+#scuole.left_scuole
+  = render :partial => 'scuole'
+
+#scuole.right_scuole
+         
+			

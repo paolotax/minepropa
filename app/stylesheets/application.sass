@@ -39,10 +39,12 @@ body
   h2
     +text-shadow
 
-.left_appunti
+.left_appunti,
+.left_scuole
   +column(8)
   
-.right_appunti
+.right_appunti,
+.right_scuole
   +column(8)
   margin-right: 0px
        
@@ -284,23 +286,32 @@ ul.scuole_sort_list
   border-bottom-width: 1px
   border-left-color: #E6E6E6
   border-left-style: solid
-  border-left-width: 0
+  border-left-width: 1px
   border-right-color: #E6E6E6
   border-right-style: solid
-  border-right-width: 0
+  border-right-width: 1px
   border-top-color: #E6E6E6
   border-top-style: solid
   border-top-width: 0
-  height: 33px
-  line-height: 33px
   .handle
     float: left
-    width: 24px
+    width: 33px
+    text-align: center
+    display: block
   #s_check
     float: left
-    width: 24px
+    width: 33px
+    text-align: center
+    display: block
+    margin-top: 10px
   #s_nome_scuola
     float: left
+    a
+      color: $blue-link
+      font-size: 14px
+      font-weight: bold
+      text-decoration: none
+      
 
   
 
