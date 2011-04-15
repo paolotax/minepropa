@@ -16,8 +16,10 @@ $(document).ready(function() {
     $("#s_check :checked").each(function(index) {
       
       clonedObj = $('#scuola_' + $(this).val()).clone();
+      clonedObj.attr('id', 'cloned__'+ clonedObj.attr('id'));
+      clonedObj.addClass('cloned_scuola');
       
-      $("#s_check", clonedObj).hide();
+      $("#s_check", clonedObj).remove();
       
       clonedObj.appendTo($('#scuole.right_scuole'));
       
