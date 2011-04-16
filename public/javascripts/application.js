@@ -28,11 +28,23 @@ $(document).ready(function() {
   
   $("#s_check input").live( 'change', function() {
     
-    clonedObj = $('#scuola_' + $(this).val()).clone();
-    clonedObj.attr('id', 'cloned__'+ clonedObj.attr('id'));
-    clonedObj.addClass('cloned_scuola');
-    $("#s_check", clonedObj).remove();
-    clonedObj.appendTo($('#scuole.right_scuole'));
+    obj = $('#scuola_' + $(this).val())
+
+    if ($(this).is(':checked')) {
+    
+      clonedObj = obj.clone();
+      clonedObj.attr('id', 'cloned__'+ clonedObj.attr('id'));
+      clonedObj.addClass('cloned_scuola');
+      $("#s_check", clonedObj).remove();  
+      clonedObj.appendTo($('#scuole.right_scuole')).hide().slideDown();
+
+    } else {
+
+      $('#cloned__'+ obj.attr('id')).slideUp( function() {
+        $(this).remove();
+      });
+    }
+
   });
   
 
