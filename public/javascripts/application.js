@@ -23,12 +23,16 @@ $(document).ready(function() {
       
       clonedObj.appendTo($('#scuole.right_scuole'));
       
-      ids[index] = $(this).val();
-      console.log(ids);
-      
-      
     });
-
+  });
+  
+  $("#s_check input").live( 'change', function() {
+    
+    clonedObj = $('#scuola_' + $(this).val()).clone();
+    clonedObj.attr('id', 'cloned__'+ clonedObj.attr('id'));
+    clonedObj.addClass('cloned_scuola');
+    $("#s_check", clonedObj).remove();
+    clonedObj.appendTo($('#scuole.right_scuole'));
   });
   
 
