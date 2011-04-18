@@ -31,6 +31,7 @@ gem 'hassle', :git => 'git://github.com/jasoncodes/hassle.git'
 
 gem "best_in_place"
 
+gem 'ancestry'
 
 #ßgem 'feedzirra', :git => 'https://github.com/bananastalktome/feedzirra.git'
 

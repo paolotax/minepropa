@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110319153740) do
+ActiveRecord::Schema.define(:version => 20110418171757) do
 
   create_table "appunti", :force => true do |t|
     t.string   "destinatario"
@@ -50,7 +50,10 @@ ActiveRecord::Schema.define(:version => 20110319153740) do
     t.datetime "updated_at"
     t.integer  "position"
     t.integer  "user_id"
+    t.string   "ancestry"
   end
+
+  add_index "scuole", ["ancestry"], :name => "index_scuole_on_ancestry"
 
   create_table "scuole_to_export", :id => false, :force => true do |t|
     t.string  "Tipo",         :limit => 20

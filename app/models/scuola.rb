@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20110228203907
+# Schema version: 20110418171757
 #
 # Table name: scuole
 #
@@ -11,11 +11,13 @@
 #  updated_at  :datetime
 #  position    :integer
 #  user_id     :integer
+#  ancestry    :string(255)
 #
 
 class Scuola < ActiveRecord::Base
   
   acts_as_list
+  has_ancestry
   
   belongs_to :user
   has_many :appunti
@@ -33,6 +35,8 @@ class Scuola < ActiveRecord::Base
   validates :provincia,    :presence => true, :length => { :maximum => 2 }
   
   before_save :clean_up
+  
+  scope :direzioni,  where(:nome_scuola.matches % "IC %" | :nome_scuola.matches % "D %")
   
   # default_scope :order => "scuole.position ASC"
   

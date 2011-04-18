@@ -6,8 +6,12 @@
   = f.buttons
   = f.inputs do
     = f.input :nome_scuola,  :input_html => { :cols => 40  }
-    = f.input :citta,        :input_html => { :size => 40  }
+    = f.input :citta,        :input_html => { :cols => 40  }
     = f.input :provincia,    :input_html => { :size => 5  }
+    / = f.input :parent_id, :as => :select, :collection => Scuola.direzioni.order(:nome_scuola)
+    %li
+      %label{:for => "parent_id"} Direzione
+      = f.collection_select :parent_id, Scuola.direzioni.order(:provincia, :nome_scuola), :id, :nome_scuola, {:include_blank => true}, { :class => 'select_direzione'}
   
   = f.semantic_fields_for :indirizzi do |indirizzo|
     = indirizzo.inputs do

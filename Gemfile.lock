@@ -37,6 +37,8 @@ GEM
       activesupport (= 3.0.3)
     activesupport (3.0.3)
     acts_as_list (0.1.2)
+    ancestry (1.2.3)
+      activerecord (>= 2.2.2)
     annotate-models (1.0.4)
     arel (2.0.6)
     bcrypt-ruby (2.1.3)
@@ -163,6 +165,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_list
+  ancestry
   annotate-models
   best_in_place
   compass

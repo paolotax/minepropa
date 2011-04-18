@@ -1,7 +1,12 @@
-- scuole_per_provincia = @scuole.group_by{|elem| elem[:provincia]}
 
-- scuole_per_provincia.each do |provincia, scuole|
-  %p= provincia
-  %ul.scuole_sort_list
-    - scuole.each do |scuola|
-      = render scuola
+// miracolo
+= nested_scuole @scuole.arrange
+
+
+/ - scuole_per_provincia = @scuole.group_by{|elem| elem[:provincia]}
+/ 
+/ - scuole_per_provincia.each do |provincia, scuole|
+/   %p= provincia
+/   %ul.scuole_sort_list
+/     - scuole.each do |scuola|
+/       = render scuola

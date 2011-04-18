@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20110228203907
+# Schema version: 20110418171757
 #
 # Table name: scuole
 #
@@ -11,6 +11,7 @@
 #  updated_at  :datetime
 #  position    :integer
 #  user_id     :integer
+#  ancestry    :string(255)
 #
 
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
