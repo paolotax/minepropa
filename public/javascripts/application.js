@@ -1,7 +1,12 @@
 
 $(document).ready(function() {
   
-  $("#tags_input").tokenInput("tags.json");
+  $("#tags_input").tokenInput("/tags.json", {
+        crossDomain: false,
+        prePopulate: $("#tags_input").data("pre"),
+        theme: 'facebook',
+        preventDuplicates: true
+  });
 
   $('#popin_show').live('click', function() {
     var popin = $('#popin_bulk');

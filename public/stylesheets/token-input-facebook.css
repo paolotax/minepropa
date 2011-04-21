@@ -30,8 +30,8 @@ li.token-input-token-facebook {
     overflow: hidden; 
     height: auto !important; 
     height: 15px;
-    margin: 3px;
-    padding: 1px 3px;
+    margin: 3px !important;
+    padding: 1px 3px !important;
     background-color: #eff2f7;
     color: #000;
     cursor: default;
