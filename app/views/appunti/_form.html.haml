@@ -10,6 +10,7 @@
       = f.input :destinatario, :input_html => { :size => 40  }, :wrapper_html => { :class => "important" } 
       = f.autocompleted_input	 :nome_scuola, :url => autocomplete_scuola_nome_scuola_appunti_path, :size => 40
       = f.input :note,         :input_html => { :rows => 5, :cols => 40  }
+      = f.input :tag_list,     :label => 'Tag', :input_html => { :size => 40  }
       = f.input :telefono,     :input_html => { :size => 40  }
       = f.input :email,        :input_html => { :size => 40  }
 

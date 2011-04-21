@@ -10,6 +10,7 @@ class PagesController < ApplicationController
     else
       @search = current_user.appunti.in_corso.per_id.page(params[:page]).per(8).search(params[:search])
       @appunti = @search.relation
+      @tags = current_user.appunti.in_corso.tag_counts_on(:tags)
     end
 
   end

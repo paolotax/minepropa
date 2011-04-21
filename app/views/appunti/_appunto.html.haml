@@ -23,6 +23,8 @@
         #a_email
           = "email " unless appunto.email.blank?
           = mail_to appunto.email unless appunto.email.blank?
+        #a_tags
+          = best_in_place appunto, :tag_list, :type => :input
   #clear
   #a_footer
     - unless @appunti.nil?

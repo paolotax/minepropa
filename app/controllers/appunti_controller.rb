@@ -8,7 +8,6 @@ class AppuntiController < ApplicationController
     
   helper_method :sort_column, :sort_direction
   
-
   def get_items(parameters)
     Scuola.where(:user_id => current_user.id).where(['nome_scuola LIKE ?', "%#{parameters[:term]}%"]).limit(10).order(:nome_scuola)
   end

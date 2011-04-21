@@ -1,5 +1,7 @@
 module AppuntiHelper
   
+  include ActsAsTaggableOn::TagsHelper
+  
   def show_status_icon(status)
     
     if status == 'X'

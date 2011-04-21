@@ -32,8 +32,9 @@ gem 'hassle', :git => 'git://github.com/jasoncodes/hassle.git'
 gem "best_in_place"
 
 gem 'ancestry'
+gem 'acts-as-taggable-on'
 
-#ßgem 'feedzirra', :git => 'https://github.com/bananastalktome/feedzirra.git'
+#gem 'feedzirra', :git => 'https://github.com/bananastalktome/feedzirra.git'
 
 
 group :development do

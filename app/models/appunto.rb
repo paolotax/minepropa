@@ -20,6 +20,10 @@
 class Appunto < ActiveRecord::Base
   
   acts_as_list
+  
+  acts_as_taggable
+  acts_as_taggable_on :locations, :status
+  
   has_paper_trail
   
   belongs_to :scuola

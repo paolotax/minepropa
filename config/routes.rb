@@ -44,4 +44,13 @@ Minepropa::Application.routes.draw do
   
   get 'visite' => 'visite#index'
   resources :indirizzi, :only => [:show, :update]
+  
+  resources :tags do
+    collection do
+      get 'appunti_cloud'
+    end
+  end
+    
+    
+  
 end
