@@ -66,7 +66,8 @@ class Appunto < ActiveRecord::Base
   #   end
   # 
   #   appunti
-  # end  
+  # end 
+  
   
   def self.provincia(params)
     
@@ -77,7 +78,6 @@ class Appunto < ActiveRecord::Base
     
     appunti
   end
-
 
   def scuola_nome_scuola_completo
     [scuola.nome_scuola, '('+scuola.citta.capitalize+')'].join(" ") if scuola

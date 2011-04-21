@@ -1,6 +1,7 @@
 
 $(document).ready(function() {
   
+  $("#tags_input").tokenInput("tags.json");
 
   $('#popin_show').live('click', function() {
     var popin = $('#popin_bulk');
