@@ -11,20 +11,19 @@
       = f.autocompleted_input	 :nome_scuola, :url => autocomplete_scuola_nome_scuola_appunti_path, :size => 40
       = f.input :note,         :input_html => { :rows => 5, :cols => 40  }
       %li
-        %label{:for => "tag_list"} Tags
-        #tags_input
-
-          / = f.input :tag_list,     :label => 'Tag', :input_html => { :size => 40  }
+        = f.label :tag_tokens, "Tags"
+        = f.text_field :tag_tokens, "data-pre" => @appunto.tags.map(&:attributes).to_json
+        = f.hidden_field :context
       = f.input :telefono,     :input_html => { :size => 40  }
       = f.input :email,        :input_html => { :size => 40  }
 
-    = f.semantic_fields_for :indirizzi do |indirizzo|
-      = indirizzo.inputs do
-        = indirizzo.input :destinatario
-        = indirizzo.input :indirizzo
-        = indirizzo.input :citta
-        = indirizzo.input :cap
-        = indirizzo.input :provincia
-        / = indirizzo.input :latitude
-        / = indirizzo.input :longitude
+    / = f.semantic_fields_for :indirizzi do |indirizzo|
+    /   = indirizzo.inputs do
+    /     = indirizzo.input :destinatario
+    /     = indirizzo.input :indirizzo
+    /     = indirizzo.input :citta
+    /     = indirizzo.input :cap
+    /     = indirizzo.input :provincia
+    /     / = indirizzo.input :latitude
+    /     / = indirizzo.input :longitude
       

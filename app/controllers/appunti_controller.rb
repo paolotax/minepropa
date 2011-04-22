@@ -64,8 +64,9 @@ class AppuntiController < ApplicationController
   end
 
   def update
+    #raise params.inspect
     @appunto = Appunto.find(params[:id])
-
+    
     respond_to do |format|
       if @appunto.update_attributes(params[:appunto])
         format.mobile { redirect_to root_path }

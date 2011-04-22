@@ -68,14 +68,12 @@ class Appunto < ActiveRecord::Base
   #   appunti
   # end 
   
-  has_many :taggings  
-  has_many :tags, :through => :taggings
   
   attr_reader :tag_tokens
 
-    def tag_tokens=(ids)
-      self.tag_list = ids.split(",") 
-    end
+  def tag_tokens=(ids)
+    self.tag_ids = ids.split(",") 
+  end
   
   def self.provincia(params)
     
