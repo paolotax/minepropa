@@ -29,9 +29,7 @@ class Appunto < ActiveRecord::Base
   belongs_to :scuola
   belongs_to :user
   
-  has_many :visite,    :as => :visitable,     :dependent => :destroy 
-  #has_one :visita,     :as => :visitable,     :dependent => :destroy 
-  
+  has_many :visite,    :as => :visitable,     :dependent => :destroy
   has_many :indirizzi, :as => :indirizzable,  :dependent => :destroy
   
   accepts_nested_attributes_for :indirizzi, :reject_if => lambda { |a| a[:citta].blank? }, :allow_destroy => true 
@@ -54,6 +52,7 @@ class Appunto < ActiveRecord::Base
                                             where visite.visitable_type = 'Appunto' 
                                             and visite.visitable_id = appunti.id)")
   scope :assegnato, joins(:visite)
+  
   #vecchio stile
   #scope :instance_appunti, lambda { |user| where("appunti.user_id = ?", user.id) }
   
@@ -72,16 +71,12 @@ class Appunto < ActiveRecord::Base
   attr_reader :tag_tokens
 
   def tag_tokens=(ids)
-    #self.tag_ids = ids.split(",") 
     tag_array = []
-    
     ids.split(",").each do |t|
       tag_name =  Tag.find(t)
       tag_array <<  tag_name.name
     end
-    
     self.tag_list = tag_array.join(',')
-    
   end
   
   def self.provincia(params)
