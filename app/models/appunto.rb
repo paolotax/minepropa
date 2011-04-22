@@ -72,7 +72,16 @@ class Appunto < ActiveRecord::Base
   attr_reader :tag_tokens
 
   def tag_tokens=(ids)
-    self.tag_ids = ids.split(",") 
+    #self.tag_ids = ids.split(",") 
+    tag_array = []
+    
+    ids.split(",").each do |t|
+      tag_name =  Tag.find(t)
+      tag_array <<  tag_name.name
+    end
+    
+    self.tag_list = tag_array.join(',')
+    
   end
   
   def self.provincia(params)
