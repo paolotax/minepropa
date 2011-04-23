@@ -27,3 +27,8 @@ form.formtastic fieldset > ol > li.radio fieldset ol {
 form.formtastic fieldset > ol > li.commit {
     float: right;
 }
+
+form.formtastic fieldset > ol > li > ul {
+    width: 74%;
+    clear: none;
+}

@@ -10,7 +10,7 @@
       = f.input :destinatario, :input_html => { :size => 40  }, :wrapper_html => { :class => "important" } 
       = f.autocompleted_input	 :nome_scuola, :url => autocomplete_scuola_nome_scuola_appunti_path, :size => 40
       = f.input :note,         :input_html => { :rows => 5, :cols => 40  }
-      %li
+      %li.text.optional
         = f.label :tag_tokens, "Tags"
         = f.text_field :tag_tokens, "data-pre" => @appunto.tags.map(&:attributes).to_json
         / = f.hidden_field :context
