@@ -1,10 +1,22 @@
 class TagsController < ApplicationController
   
   def index
+    
+    @data = []
+    
+    @create_tag = Tag.where("name = ?", "#{params[:q]}")
+    @data << { :id => "CREATE_#{params[:q]}_END", :name => "nuovo tag: #{params[:q]}" } if @create_tag.empty?
+    
     @tags = Tag.where("name like ?", "%#{params[:q]}%")
+    
+    @matched_tags = @tags.map(&:attributes)
+    for m in @matched_tags do
+      @data << m
+    end
+    
     respond_to do |format|
       format.html
-      format.json { render :json => @tags.map(&:attributes) }
+      format.json { render :json => @data }
     end
   end
   

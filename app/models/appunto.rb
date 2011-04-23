@@ -71,6 +71,11 @@ class Appunto < ActiveRecord::Base
   attr_reader :tag_tokens
 
   def tag_tokens=(ids)
+    
+    ids.gsub!(/CREATE_(.+?)_END/) do
+      Tag.create!(:name => $1).id
+    end
+    
     tag_array = []
     ids.split(",").each do |t|
       tag_name =  Tag.find(t)
