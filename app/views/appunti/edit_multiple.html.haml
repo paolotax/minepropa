@@ -1,4 +1,4 @@
-= title "Modifica #{@appunti.count.to_s} appunti"
+- title "Modifica #{@appunti.count.to_s} appunti"
 .clear
 
 = form_for :appunto, :url => update_multiple_appunti_path, :html => {:method => :put} do |f|
@@ -9,8 +9,8 @@
         = appunto.destinatario
         = appunto.scuola.nome_scuola unless appunto.scuola.nil?
         = appunto.note
-  .actions.float_right
-    = f.submit
+  .actions.right
+    = f.submit :value => "Salva modifiche"
   .field
     = f.label :stato
     = f.select(:stato, options_for_select([["in sospeso", "P"],["completato", "X"]]), :include_blank => true)
@@ -27,9 +27,6 @@
     = f.label :telefono
     = f.phone_field :telefono
   .field
-    = f.label :tag_list
-    = f.text_field :tag_list
-  %li.text.optional
     = f.label :tag_add, "Aggiungi Tag"
     = f.text_field :tag_add
   
