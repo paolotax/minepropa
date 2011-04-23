@@ -69,7 +69,8 @@ class Appunto < ActiveRecord::Base
   
   
   attr_reader :tag_tokens
-
+  attr_reader :tag_add
+  
   def tag_tokens=(ids)
     
     ids.gsub!(/CREATE_(.+?)_END/) do
@@ -82,6 +83,20 @@ class Appunto < ActiveRecord::Base
       tag_array <<  tag_name.name
     end
     self.tag_list = tag_array.join(',')
+  end
+  
+  def tag_add=(ids)
+    
+    ids.gsub!(/CREATE_(.+?)_END/) do
+      Tag.create!(:name => $1).id
+    end
+    
+    tag_array = []
+    ids.split(",").each do |t|
+      tag_name =  Tag.find(t)
+      tag_array <<  tag_name.name
+    end
+    self.tag_list = self.tag_list.to_s + ', ' + tag_array.join(',')
   end
   
   def self.provincia(params)

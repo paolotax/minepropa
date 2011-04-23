@@ -13,7 +13,6 @@
       %li.text.optional
         = f.label :tag_tokens, "Tags"
         = f.text_field :tag_tokens, "data-pre" => @appunto.tags.map(&:attributes).to_json
-        / = f.hidden_field :context
       = f.input :telefono,     :input_html => { :size => 40  }
       = f.input :email,        :input_html => { :size => 40  }
 

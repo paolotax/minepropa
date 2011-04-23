@@ -1,9 +1,9 @@
 
 $(document).ready(function() {
   
-  $("#appunto_tag_tokens").tokenInput("/tags.json", {
+  $("#appunto_tag_tokens, #appunto_tag_add").tokenInput("/tags.json", {
         crossDomain: false,
-        prePopulate: $("#appunto_tag_tokens").data("pre"),
+        prePopulate: $("#appunto_tag_tokens, , #appunto_tag_add").data("pre"),
         theme: 'facebook',
         preventDuplicates: true
   });
