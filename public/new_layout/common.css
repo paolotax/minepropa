@@ -1,0 +1,2136 @@
+body {
+  font-family:Arial;
+  font-size:12px;
+}
+html, body, #container {
+  height:100%;
+}
+body > #container {
+  height:auto;
+  min-height:100%;
+}
+#main {
+  border-top-color:#FFFFFF;
+  border-top-style:solid;
+  border-top-width:0;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  padding-bottom:41px;
+}
+#container {
+  -webkit-box-shadow:#135991 0 0 3px;
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:white;
+
+  background-origin:initial;
+  background-position:0 0;
+  background-repeat:no-repeat repeat;
+  box-shadow:#135991 0 0 3px;
+  margin-bottom:0;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:0;
+  position:relative;
+  width:962px;
+}
+/*#content {
+  margin-bottom:410px;
+}
+#header {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:none;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  margin-left:auto;
+  margin-right:auto;
+  position:relative;
+  width:965px;
+  z-index:8;
+}
+#header .logo {
+  display:block;
+  left:1px;
+  min-height:53px;
+  outline-color:initial;
+  outline-style:none;
+  outline-width:initial;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  padding-top:0;
+  top:0;
+  width:365px;
+  z-index:1;
+}
+#sidebar ul {
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+}
+#sidebar li {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/sidebar-separator.png);
+  background-origin:initial;
+  background-position:100% 100%;
+  background-repeat:no-repeat no-repeat;
+  cursor:pointer;
+  list-style-image:initial;
+  list-style-position:initial;
+  list-style-type:none;
+  padding-bottom:2px;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+}
+#tabs {
+  text-transform:uppercase;
+  z-index:10;
+}
+#tabs .icon-new-hidden {
+  cursor:pointer;
+  left:150px;
+  position:absolute;
+  top:-10px;
+}
+#tabs .current-overview a {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(https://www.producteev.com/static/images/icon_overview.png);
+  background-origin:initial;
+  background-position:0 10px;
+  background-repeat:no-repeat no-repeat;
+  padding-left:20px;
+}
+#tabs .current-workspace {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/ws_corner.png);
+  background-origin:initial;
+  background-position:0 0;
+  background-repeat:no-repeat no-repeat;
+  border-bottom-color:#2D6C9A;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  cursor:pointer;
+  font-size:12px;
+  height:39px;
+  line-height:40px;
+  width:200px;
+}
+#tabs .current-workspace a {
+  color:#FFFFFF;
+  font-weight:700;
+  max-width:170px;
+  overflow-x:hidden;
+  overflow-y:hidden;
+}
+#tabs .current-workspace img {
+  float:left;
+  height:3px;
+  margin-bottom:0;
+  margin-left:5px;
+  margin-right:0;
+  margin-top:18px;
+  width:5px;
+}
+#tabs .ws-title-container {
+  font-size:12px;
+  text-align:center;
+}
+#tabs .overview {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#3E7FAE;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  border-top-color:#5594C2;
+  border-top-style:solid;
+  border-top-width:1px;
+  font-size:12px;
+  height:30px;
+  line-height:30px;
+  width:200px;
+}
+#tabs .overview a {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(https://www.producteev.com/static/images/icon_overview.png);
+  background-origin:initial;
+  background-position:0 5px;
+  background-repeat:no-repeat no-repeat;
+  color:#FFFFFF;
+  display:block;
+  font-weight:700;
+  line-height:28px;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  padding-left:20px;
+  position:relative;
+}
+.icon-new-hidden .bubble-left {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(https://www.producteev.com/static/images/bubble_count_left.png);
+  background-origin:initial;
+  background-position:0 0;
+  background-repeat:no-repeat no-repeat;
+  float:left;
+  height:14px;
+  width:2px;
+}
+.icon-new-hidden .bubble-center {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(https://www.producteev.com/static/images/bubble_count_center.png);
+  background-origin:initial;
+  background-position:0 0;
+  background-repeat:repeat no-repeat;
+  color:#FFFFFF;
+  float:left;
+  font-size:10px;
+  height:14px;
+  line-height:14px;
+  padding-bottom:0;
+  padding-left:3px;
+  padding-right:3px;
+  padding-top:0;
+  text-transform:none;
+}
+.icon-new-hidden .bubble-right {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(https://www.producteev.com/static/images/bubble_count_right.png);
+  background-origin:initial;
+  background-position:0 0;
+  background-repeat:no-repeat no-repeat;
+  float:left;
+  height:14px;
+  width:2px;
+}
+.new-ws .ws-bubble-left {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(https://www.producteev.com/static/images/bubble-new-left.png);
+  background-origin:initial;
+  background-position:0 0;
+  background-repeat:no-repeat no-repeat;
+  height:19px;
+  width:5px;
+}
+.new-ws .ws-bubble-center {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(https://www.producteev.com/static/images/bubble-new-center.png);
+  background-origin:initial;
+  background-position:0 0;
+  background-repeat:repeat no-repeat;
+  color:#FFFFFF;
+  font-size:10px;
+  height:19px;
+  line-height:14px;
+  padding-bottom:0;
+  padding-left:3px;
+  padding-right:3px;
+  padding-top:0;
+  text-transform:none;
+}
+.new-ws .ws-bubble-right {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(https://www.producteev.com/static/images/bubble-new-right.png);
+  background-origin:initial;
+  background-position:0 0;
+  background-repeat:no-repeat no-repeat;
+  height:19px;
+  width:5px;
+}
+#tabs #add-ws-container {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#3E7FAE;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  border-top-color:#5594C2;
+  border-top-style:solid;
+  border-top-width:1px;
+  height:60px;
+  width:200px;
+}
+#tabs #add-ws-container .subctnr {
+  margin-left:7px;
+  margin-top:25px;
+}
+#tabs #add-ws-container input {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(https://www.producteev.com/static/images/bg_add_ws.png);
+  background-origin:initial;
+  background-position:0 0;
+  background-repeat:repeat no-repeat;
+  border-bottom-left-radius:5px 5px;
+  border-bottom-right-radius:5px 5px;
+  border-bottom-style:none;
+  border-color:initial;
+  border-left-style:none;
+  border-right-style:none;
+  border-top-left-radius:5px 5px;
+  border-top-right-radius:5px 5px;
+  border-top-style:none;
+  border-width:initial;
+  color:#7695AE;
+  font-size:11px;
+  font-style:italic;
+  height:18px;
+  line-height:18px;
+  padding-left:5px;
+  padding-right:20px;
+  width:162px;
+}
+#tabs #add-ws-container img {
+  cursor:pointer;
+  margin-left:174px;
+  margin-top:5px;
+  position:absolute;
+}
+#tabs .footer {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/shadow_ws_list.png);
+  background-origin:initial;
+  background-position:0 0;
+  background-repeat:repeat no-repeat;
+  height:4px;
+}
+#tabs-workspaces {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#3E7FAE;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  border-bottom-color:#2D6C9A;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  font-size:12px;
+  font-weight:700;
+  margin-left:-1px;
+}
+#tabs-workspaces .separator {
+  border-bottom-color:#5594C2;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-top-color:#2D6C9A;
+  border-top-style:solid;
+  border-top-width:1px;
+  height:0;
+  margin-left:8px;
+}
+#tabs-workspaces li:hover .separator {
+  border-bottom-style:none;
+  border-color:initial;
+  border-left-style:none;
+  border-right-style:none;
+  border-top-style:none;
+  border-width:initial;
+  height:2px;
+  margin-left:8px;
+}
+#tabs-workspaces li.dragged .separator {
+  border-bottom-style:none;
+  border-color:initial;
+  border-left-style:none;
+  border-right-style:none;
+  border-top-style:none;
+  border-width:initial;
+  height:2px;
+  margin-left:8px;
+}
+#tabs-workspaces .handler {
+  float:left;
+  height:22px;
+  margin-left:4px;
+}
+#tabs-workspaces .handler a {
+  background-attachment:scroll;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/ws_handler.png);
+  background-origin:initial;
+  background-position:4px 6px;
+  background-repeat:no-repeat no-repeat;
+  cursor:move;
+  display:block;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+  width:16px;
+}
+#tabs-workspaces li {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#3E7FAE;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  color:#FFFFFF;
+  display:block;
+  height:26px;
+  line-height:28px;
+  list-style-image:initial;
+  list-style-position:initial;
+  list-style-type:none;
+}
+#tabs-workspaces li.dragged {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:white;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  border-bottom-color:#5594C2;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-top-color:#2D6C9A;
+  border-top-style:solid;
+  border-top-width:1px;
+  color:#3E7FAE;
+}
+#tabs-workspaces li:hover {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#5993C6;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+}
+#tabs-workspaces li.dragged:hover {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:white;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  color:#3E7FAE;
+}
+#tabs-workspaces li a {
+  color:#FFFFFF;
+  display:block;
+  font-weight:700;
+  padding-bottom:0;
+  padding-left:1px;
+  padding-right:1px;
+  padding-top:0;
+}
+#tabs-workspaces li.active a {
+  color:#08396C;
+}
+#tabs-workspaces li .main-ws {
+  text-decoration:underline;
+}
+#tabs-workspaces li .bubble-left {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/bubble_count_left.png);
+  background-origin:initial;
+  background-position:0 7px;
+  background-repeat:no-repeat no-repeat;
+  float:right;
+  font-weight:lighter;
+  margin-right:-2px;
+}
+#tabs-workspaces li .bubble-right {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/bubble_count_right.png);
+  background-origin:initial;
+  background-position:0 7px;
+  background-repeat:no-repeat no-repeat;
+  float:right;
+  margin-right:5px;
+}
+#tabs-workspaces li .bubble {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/bubble_count_center.png);
+  background-origin:initial;
+  background-position:0 7px;
+  background-repeat:repeat no-repeat;
+  float:right;
+  font-weight:normal;
+  padding-bottom:0;
+  padding-left:2px;
+  padding-right:2px;
+  padding-top:0;
+}
+#tabs-workspaces li.dragged .bubble, #tabs-workspaces li.dragged .bubble-left, #tabs-workspaces li.dragged .bubble-right {
+  display:none;
+}
+#tabs-workspaces li.active span {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/active-tab-bg.png);
+  background-origin:initial;
+  background-position:0 0;
+  background-repeat:repeat no-repeat;
+  margin-top:3px;
+}
+#tabs-workspaces li.default span {
+  text-decoration:underline;
+}
+#tabs-workspaces li em {
+  font-style:normal;
+  font-weight:700;
+}
+#tabs-workspaces li.active .corner-left {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/active-tab-left.png);
+  background-origin:initial;
+  background-position:0 0;
+  background-repeat:no-repeat no-repeat;
+  display:block;
+  float:left;
+  height:37px;
+  margin-top:3px;
+  width:7px;
+}
+#tabs-workspaces li.active .corner-right {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/active-tab-right.png);
+  background-origin:initial;
+  background-position:0 0;
+  background-repeat:no-repeat no-repeat;
+  display:block;
+  height:37px;
+  position:absolute;
+  right:0;
+  top:3px;
+  width:7px;
+}
+#tab_slide_menu .separator-high {
+  border-bottom-color:#5594C2;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  height:0;
+}
+#sidebar {
+  float:left;
+  font-size:14px;
+  width:200px;
+}
+#sidebar .search-container {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#FFFFFF;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  border-bottom-color:#F3F1F1;
+  border-bottom-left-radius:5px 5px;
+  border-bottom-right-radius:5px 5px;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-left-color:#F3F1F1;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#F3F1F1;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#F3F1F1;
+  border-top-left-radius:5px 5px;
+  border-top-right-radius:5px 5px;
+  border-top-style:solid;
+  border-top-width:1px;
+  height:22px;
+  margin-bottom:0;
+  margin-left:8px;
+  margin-right:0;
+  margin-top:10px;
+  width:180px;
+}
+.search-container .magni-glass {
+  border-right-color:initial;
+  border-right-style:none;
+  border-right-width:initial;
+  float:left;
+  height:22px;
+  width:20px;
+}
+.magni-glass .magni-glass-icon {
+  float:left;
+  margin-left:4px;
+  margin-top:5px;
+}
+.magni-glass #search_loader {
+  float:left;
+  margin-left:4px;
+  margin-top:3px;
+}
+.search-container input {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:none;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  border-bottom-style:none;
+  border-color:initial;
+  border-left-color:initial;
+  border-left-style:none;
+  border-left-width:initial;
+  border-right-style:none;
+  border-top-style:none;
+  border-width:initial;
+  color:#999999;
+  display:block;
+  float:left;
+  font-size:12px;
+  height:14px;
+  outline-color:initial;
+  outline-style:none;
+  outline-width:initial;
+  padding-bottom:4px;
+  padding-left:4px;
+  padding-right:4px;
+  padding-top:4px;
+  width:132px;
+}
+.search-container .typing {
+  color:#545454;
+}
+.search-container .search-back {
+  cursor:pointer;
+  float:right;
+  height:20px;
+  margin-top:1px;
+}
+#search_notes_ctnr {
+  color:#777777;
+  float:left;
+  font-size:11px;
+  margin-bottom:20px;
+  margin-left:0;
+  margin-right:0;
+  margin-top:5px;
+  padding-bottom:5px;
+  padding-left:5px;
+  padding-right:5px;
+  padding-top:5px;
+  width:170px;
+}
+#search_notes_ctnr label {
+  cursor:pointer;
+}
+#checkbox_search_notes {
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:5px;
+  margin-top:1px;
+  width:10px;
+}
+#sidebar h2 {
+  color:#8C7537;
+  font-family:Georgia;
+  font-style:italic;
+  font-weight:normal;
+  padding-bottom:9px;
+  padding-left:15px;
+  padding-right:0;
+  padding-top:16px;
+}
+#sidebar h2 a {
+  color:#8C7537;
+}
+#sidebar h2 div {
+  height:14px;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  width:160px;
+}
+#sidebar .gear {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(https://www.producteev.com/static/images/icons.png);
+  background-origin:initial;
+  background-position:-679px -442px;
+  background-repeat:no-repeat no-repeat;
+  float:right;
+  height:15px;
+  margin-right:5px;
+  width:15px;
+}
+#sidebar .gear:hover {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(https://www.producteev.com/static/images/icons.png);
+  background-origin:initial;
+  background-position:-2px -442px;
+  background-repeat:no-repeat no-repeat;
+  float:right;
+  height:15px;
+  margin-right:5px;
+  width:15px;
+}
+#sidebar li.active {
+  background-color:#FFFFFF;
+  background-image:none;
+  border-bottom-color:#CBCBCB;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-left-color:#CBCBCB;
+  border-left-style:solid;
+  border-left-width:0;
+  border-right-color:#CBCBCB;
+  border-right-style:solid;
+  border-right-width:0;
+  border-top-color:#CBCBCB;
+  border-top-style:solid;
+  border-top-width:1px;
+  font-weight:bold;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:-2px;
+  padding-bottom:1px;
+  padding-left:0;
+  padding-right:0;
+  padding-top:1px;
+}
+#sidebar .filters li:hover, #sidebar .labels li:hover, #sidebar .collaborators li:hover {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:white;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  cursor:pointer;
+}
+#sidebar .ppn-more li:hover {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#ECF4FA;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  border-bottom-style:none;
+  border-color:initial;
+  border-left-style:none;
+  border-right-style:none;
+  border-top-style:none;
+  border-width:initial;
+}
+#sidebar .filters li.add:hover, #sidebar .labels li.add:hover, #sidebar .collaborators li.add:hover {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:none;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  border-bottom-style:none;
+  border-color:initial;
+  border-left-style:none;
+  border-right-style:none;
+  border-top-style:none;
+  border-width:initial;
+  text-decoration:underline;
+}
+#sidebar .filters li .navigation-loader {
+  display:block;
+  float:left;
+  margin-left:-21px;
+  margin-top:4px;
+}
+#sidebar .labels li .navigation-loader {
+  display:block;
+  float:left;
+  position:absolute;
+  top:0;
+}
+#sidebar li a {
+  color:#545454;
+  display:block;
+  height:24px;
+  line-height:24px;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  padding-bottom:0;
+  padding-left:37px;
+  padding-right:0;
+  padding-top:0;
+  position:relative;
+}
+#sidebar li.active a {
+  color:#165586;
+}
+#sidebar li a .counter {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/sidebar-counter.png);
+  background-origin:initial;
+  background-position:0 0;
+  background-repeat:no-repeat no-repeat;
+  color:#768395;
+  display:none;
+  font-size:11px;
+  font-weight:bold;
+  height:16px;
+  line-height:16px;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:8px;
+  margin-top:4px;
+  position:absolute;
+  right:0;
+  text-align:center;
+  top:0;
+  width:25px;
+}
+#sidebar li.active a .counter {
+  display:block;
+}
+#sidebar ul.collaborators li a {
+  padding-left:38px;
+}
+#sidebar li a .admin {
+  color:#8C7537;
+  font-size:7pt;
+}
+#sidebar .hot-tasks {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/icons.png);
+  background-origin:initial;
+  background-position:-663px -39px;
+  background-repeat:no-repeat no-repeat;
+}
+#sidebar .starred {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/icons.png);
+  background-origin:initial;
+  background-position:-663px -78px;
+  background-repeat:no-repeat no-repeat;
+}
+#sidebar .late {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/icons.png);
+  background-origin:initial;
+  background-position:-663px -118px;
+  background-repeat:no-repeat no-repeat;
+}
+#sidebar .today {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/icons.png);
+  background-origin:initial;
+  background-position:-663px -678px;
+  background-repeat:no-repeat no-repeat;
+}
+#sidebar .custom {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/icons.png);
+  background-origin:initial;
+  background-position:-663px -719px;
+  background-repeat:no-repeat no-repeat;
+}
+#sidebar .recipient {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/icons.png);
+  background-origin:initial;
+  background-position:-663px -757px;
+  background-repeat:no-repeat no-repeat;
+}
+#sidebar .responsible {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/icons.png);
+  background-origin:initial;
+  background-position:-663px -797px;
+  background-repeat:no-repeat no-repeat;
+}
+#sidebar .delegated {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/icons.png);
+  background-origin:initial;
+  background-position:-663px -837px;
+  background-repeat:no-repeat no-repeat;
+}
+#sidebar .newtasks {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/newtasks_inactive.png);
+  background-origin:initial;
+  background-position:16px 5px;
+  background-repeat:no-repeat no-repeat;
+}
+#sidebar .mytasks {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/icons.png);
+  background-origin:initial;
+  background-position:-663px -877px;
+  background-repeat:no-repeat no-repeat;
+}
+#sidebar .teamtasks {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/icons.png);
+  background-origin:initial;
+  background-position:-663px -917px;
+  background-repeat:no-repeat no-repeat;
+}
+#sidebar .archived {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/icons.png);
+  background-origin:initial;
+  background-position:-663px -957px;
+  background-repeat:no-repeat no-repeat;
+}
+#sidebar .active .hot-tasks {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/icons.png);
+  background-origin:initial;
+  background-position:14px -39px;
+  background-repeat:no-repeat no-repeat;
+}
+#sidebar .active .starred {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/icons.png);
+  background-origin:initial;
+  background-position:14px -78px;
+  background-repeat:no-repeat no-repeat;
+}
+#sidebar .active .late {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/icons.png);
+  background-origin:initial;
+  background-position:14px -118px;
+  background-repeat:no-repeat no-repeat;
+}
+#sidebar .active .recipient {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/icons.png);
+  background-origin:initial;
+  background-position:14px -757px;
+  background-repeat:no-repeat no-repeat;
+}
+#sidebar .active .today {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/icons.png);
+  background-origin:initial;
+  background-position:14px -678px;
+  background-repeat:no-repeat no-repeat;
+}
+#sidebar .active .responsible {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/icons.png);
+  background-origin:initial;
+  background-position:14px -797px;
+  background-repeat:no-repeat no-repeat;
+}
+#sidebar .active .custom {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/icons.png);
+  background-origin:initial;
+  background-position:14px -719px;
+  background-repeat:no-repeat no-repeat;
+}
+#sidebar .active .delegated {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/icons.png);
+  background-origin:initial;
+  background-position:14px -837px;
+  background-repeat:no-repeat no-repeat;
+}
+#sidebar .active .newtasks {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/newtasks_active.png);
+  background-origin:initial;
+  background-position:16px 5px;
+  background-repeat:no-repeat no-repeat;
+}
+#sidebar .active .mytasks {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/icons.png);
+  background-origin:initial;
+  background-position:14px -877px;
+  background-repeat:no-repeat no-repeat;
+}
+#sidebar .active .teamtasks {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/icons.png);
+  background-origin:initial;
+  background-position:14px -917px;
+  background-repeat:no-repeat no-repeat;
+}
+#sidebar .active .archived {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/icons.png);
+  background-origin:initial;
+  background-position:14px -957px;
+  background-repeat:no-repeat no-repeat;
+}
+#sidebar li.active a {
+  background-position-y:0;
+}
+#sidebar li.add {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:none;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+}
+#sidebar li.add a {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/icons.png);
+  background-origin:initial;
+  background-position:16px -158px;
+  background-repeat:no-repeat no-repeat;
+  color:#718D9E;
+  font-family:Georgia;
+  font-size:11px;
+  font-style:italic;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  width:152px;
+}
+#sidebar li.cancel a {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:none;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  color:#718D9E;
+  font-family:Georgia;
+  font-size:11px;
+  font-style:italic;
+  padding-left:36px;
+}
+#sidebar .labels a, #sidebar .collaborators a {
+  padding-bottom:0;
+  padding-left:16px;
+  padding-right:0;
+  padding-top:0;
+}
+#sidebar .labels .more a, #sidebar .labels .add a, #sidebar .collaborators .more a, #sidebar .collaborators .add a {
+  overflow-x:hidden;
+  overflow-y:hidden;
+  padding-bottom:0;
+  padding-left:37px;
+  padding-right:0;
+  padding-top:0;
+  width:152px;
+}
+#sidebar .labels .label-color {
+  float:left;
+  height:15px;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:6px;
+  margin-top:4px;
+  position:relative;
+  width:15px;
+}
+#sidebar .ws-settings-btn {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(https://www.producteev.com/static/images/admin_btn.png);
+  background-origin:initial;
+  background-position:0 0;
+  background-repeat:no-repeat no-repeat;
+  bottom:0;
+  height:36px;
+  margin-left:-8px;
+  position:fixed;
+  width:207px;
+  z-index:10;
+}
+#sidebar .ws-settings-btn:hover {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(https://www.producteev.com/static/images/admin_btn.png);
+  background-origin:initial;
+  background-position:0 -36px;
+  background-repeat:no-repeat no-repeat;
+}
+.ws-settings-btn a {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(https://www.producteev.com/static/images/settings-icon.png);
+  background-origin:initial;
+  background-position:0 2px;
+  background-repeat:no-repeat no-repeat;
+  color:#FFFFFF;
+  float:left;
+  font-size:13px;
+  font-weight:bold;
+  line-height:20px;
+  margin-top:12px;
+  padding-left:20px;
+  text-shadow:#333333 0 1px 0;
+}
+a.label-line.admin .label-color:hover .label-hover {
+  display:block;
+}
+a.label-line.admin .label-color:hover img {
+  display:none;
+}
+#activity_notifications_bubble {
+  margin-left:-6px;
+}
+.notifications-btn {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(https://www.producteev.com/static/images/notifications-icon.png);
+  background-origin:initial;
+  background-position:0 0;
+  background-repeat:no-repeat no-repeat;
+  bottom:0;
+  cursor:pointer;
+  height:36px;
+  margin-left:929px;
+  position:fixed;
+  width:40px;
+  z-index:10;
+}
+.notifications-btn .bubble {
+  -webkit-box-shadow:#073870 0 1px 0;
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#ED4419;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  color:white;
+  display:block;
+  float:left;
+  font-family:arial;
+  font-weight:bold;
+  height:13px;
+  line-height:13px;
+  margin-right:-4px;
+  padding-bottom:0;
+  padding-left:2px;
+  padding-right:2px;
+  padding-top:0;
+}
+.label-hover {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/labelhover.png);
+  background-origin:initial;
+  background-position:0 0;
+  background-repeat:no-repeat no-repeat;
+  display:none;
+  height:16px;
+  position:absolute;
+  width:16px;
+  z-index:20;
+}
+#sidebar .labels .label-title {
+  display:block;
+  float:left;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  width:123px;
+}
+#add_label_input {
+  background-color:#F8F4E8;
+  border-bottom-style:none;
+  border-bottom-width:medium;
+  border-color:initial;
+  border-left-style:none;
+  border-left-width:medium;
+  border-right-style:none;
+  border-right-width:medium;
+  border-top-style:none;
+  border-top-width:medium;
+  color:#545454;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:14px;
+}
+#sidebar .labels .add_label_input {
+  background-color:#F8F4E8;
+  border-bottom-style:none;
+  border-bottom-width:medium;
+  border-color:initial;
+  border-left-style:none;
+  border-left-width:medium;
+  border-right-style:none;
+  border-right-width:medium;
+  border-top-style:none;
+  border-top-width:medium;
+  color:#545454;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:14px;
+}
+#sidebar .collaborators img {
+  float:left;
+  height:16px;
+  left:16px;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:5px;
+  margin-top:4px;
+  position:absolute;
+  top:0;
+  width:16px;
+  z-index:1;
+}
+#sidebar .collaborators img.navigation-loader {
+  left:16px;
+  position:absolute;
+  top:0;
+  z-index:2;
+}
+#sidebar .collaborators .status {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(https://www.producteev.com/static/images/online-square.png);
+  background-origin:initial;
+  background-position:50% 50%;
+  background-repeat:no-repeat no-repeat;
+  display:block;
+  float:right;
+  height:3px;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:17px;
+  margin-top:6px;
+  padding-bottom:4px;
+  padding-left:4px;
+  padding-right:4px;
+  padding-top:4px;
+  width:3px;
+}
+#sidebar .workspace-sets {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/sidebar-separator.png);
+  background-origin:initial;
+  background-position:100% 0;
+  background-repeat:no-repeat no-repeat;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:30px;
+}
+#sidebar .workspace-sets a {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/icons.png);
+  background-origin:initial;
+  background-position:16px -426px;
+  background-repeat:no-repeat no-repeat;
+  color:#718D9E;
+  display:block;
+  font-family:Georgia;
+  font-size:11px;
+  font-style:italic;
+  height:45px;
+  line-height:45px;
+  padding-bottom:0;
+  padding-left:37px;
+  padding-right:0;
+  padding-top:0;
+}
+.col-2 #content {
+  float:right;
+  padding-bottom:180px;
+  padding-left:0;
+  padding-right:15px;
+  padding-top:8px;
+  width:733px;
+}
+#navigation {
+  margin-bottom:6px;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+}
+#navigation .sortby {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/navigation-sortby.png);
+  background-origin:initial;
+  background-position:0 0;
+  background-repeat:no-repeat no-repeat;
+  color:#6C8197;
+  float:right;
+  font-size:11px;
+  font-weight:bold;
+  height:22px;
+  line-height:22px;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:3px;
+  padding-bottom:0;
+  padding-left:10px;
+  padding-right:0;
+  padding-top:0;
+  width:180px;
+}
+.label {
+  border-bottom-left-radius:2px 2px;
+  border-bottom-right-radius:2px 2px;
+  border-top-left-radius:2px 2px;
+  border-top-right-radius:2px 2px;
+  color:#FFFFFF;
+  cursor:pointer;
+  float:right;
+  font-size:10px;
+  font-weight:bold;
+  height:15px;
+  line-height:14px;
+  margin-bottom:0;
+  margin-left:3px;
+  margin-right:3px;
+  margin-top:0;
+  padding-bottom:0;
+  padding-left:7px;
+  padding-right:7px;
+  padding-top:0;
+}
+.add-label-plus {
+  background-color:#C9CED3;
+  color:#FFFFFF;
+  float:right;
+  font-size:10px;
+  font-weight:bold;
+  height:15px;
+  line-height:15px;
+  padding-bottom:0;
+  padding-left:7px;
+  padding-right:7px;
+  padding-top:0;
+}
+.add-label {
+  background-color:#C9CED3;
+  color:#FFFFFF;
+  float:right;
+  font-size:10px;
+  font-weight:bold;
+  height:15px;
+  line-height:15px;
+  padding-bottom:0;
+  padding-left:7px;
+  padding-right:7px;
+  padding-top:0;
+}
+.add-label-text {
+  color:#135A8D;
+  display:inline-block;
+  font-size:10px;
+  font-weight:bold;
+  height:34px;
+  line-height:34px;
+  padding-bottom:0;
+  padding-left:10px;
+  padding-right:10px;
+  padding-top:0;
+  text-transform:uppercase;
+}
+.display-options {
+  float:right;
+  font-size:11px;
+  font-weight:bold;
+  height:20px;
+  margin-bottom:0;
+  margin-left:5px;
+  margin-right:0;
+  margin-top:2px;
+  padding-bottom:0;
+  padding-left:13px;
+  padding-right:0;
+  padding-top:5px;
+  width:auto;
+}
+.display-options li {
+  color:#70808E;
+  float:left;
+  list-style-image:initial;
+  list-style-position:initial;
+  list-style-type:none;
+  margin-bottom:0;
+  margin-left:5px;
+  margin-right:5px;
+  margin-top:0;
+}
+.display-options .term {
+  color:#545454;
+  font-size:11px;
+  font-weight:bold;
+  margin-bottom:0;
+  margin-left:10px;
+  margin-right:5px;
+  margin-top:0;
+  text-shadow:#FFFFFF 0 1px 0;
+  text-transform:uppercase;
+}
+.display-options .selected {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/display-options.png);
+  background-origin:initial;
+  background-position:0 0;
+  background-repeat:repeat no-repeat;
+}
+.display-options .selected a {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/display-options.png);
+  background-origin:initial;
+  background-position:0 -20px;
+  background-repeat:no-repeat no-repeat;
+  color:#FFFFFF;
+  display:block;
+  padding-bottom:0;
+  padding-left:13px;
+  padding-right:0;
+  padding-top:0;
+}
+.display-options .selected a span {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/display-options.png);
+  background-origin:initial;
+  background-position:100% -40px;
+  background-repeat:no-repeat no-repeat;
+  display:block;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:13px;
+  padding-top:0;
+}
+input {
+  outline-width:0;
+}
+.activity-feed-container {
+  -webkit-box-shadow:#CCCCCC 0 -1px 2px;
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#FFFFFF;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  border-left-color:#BBBBBB;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#BBBBBB;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#BBBBBB;
+  border-top-style:solid;
+  border-top-width:1px;
+  bottom:0;
+  height:205px;
+  margin-left:200px;
+  position:fixed;
+  width:759px;
+  z-index:9;
+}
+.activity-feed-container .body-header {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(https://www.producteev.com/static/images/header-notifications-bg.png);
+  background-origin:initial;
+  background-position:0 0;
+  background-repeat:repeat no-repeat;
+  height:5px;
+  width:100%;
+}
+.activity-feed-container .bottom-bar {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(https://www.producteev.com/static/images/bar-notifications.png);
+  background-origin:initial;
+  background-position:0 0;
+  background-repeat:repeat no-repeat;
+  bottom:0;
+  height:40px;
+  position:absolute;
+  width:100%;
+}
+.activity-feed-container .bottom-bar #activity_feed_loader {
+  float:right;
+  margin-right:30px;
+  margin-top:12px;
+}
+.activity-feed-container .bottom-bar ul {
+  line-height:12px;
+  margin-bottom:0;
+  margin-left:10px;
+  margin-right:0;
+  margin-top:0;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+}
+.activity-feed-container .bottom-bar li {
+  float:left;
+  list-style-image:initial;
+  list-style-position:initial;
+  list-style-type:none;
+  margin-left:10px;
+}
+.activity-feed-container .bottom-bar li #activity_feed_loader {
+  margin-top:17px;
+}
+.activity-feed-container .bottom-bar li a {
+  color:#66615D;
+  cursor:pointer;
+  display:inline-block;
+  font-size:12px;
+  font-weight:bold;
+  margin-top:15px;
+  padding-bottom:5px;
+  padding-left:5px;
+  padding-right:5px;
+  padding-top:5px;
+  text-shadow:#FFFFFF 0 1px 0;
+  text-transform:uppercase;
+}
+.activity-feed-container .bottom-bar li.active a {
+  color:#165586;
+  text-decoration:underline;
+}
+.activity-feed-container .body-af {
+  height:169px;
+  overflow-y:auto;
+  width:100%;
+}
+.activity-feed-container .activity-feed {
+  margin-bottom:30px;
+  margin-top:10px;
+  padding-bottom:10px;
+  padding-left:10px;
+  padding-right:10px;
+  padding-top:10px;
+  position:relative;
+  width:708px;
+  z-index:0;
+}
+.activity-feed-container .activity-feed ul {
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+}
+.activity-feed ul li {
+  border-bottom-color:#E1E1E1;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-top-color:#FFFFFF;
+  border-top-style:solid;
+  border-top-width:1px;
+  font-size:12px;
+  list-style-image:initial;
+  list-style-position:initial;
+  list-style-type:none;
+  margin-bottom:1px;
+  margin-left:0;
+  margin-right:0;
+  margin-top:1px;
+  padding-bottom:3px;
+  padding-left:25px;
+  padding-right:0;
+  padding-top:3px;
+}
+.activity-feed ul li.task-responsible {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(https://www.producteev.com/static/images/responsible-icon.png);
+  background-origin:initial;
+  background-position:2px 50%;
+  background-repeat:no-repeat no-repeat;
+}
+.activity-feed ul li.user-join {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(https://www.producteev.com/static/images/join-icon.png);
+  background-origin:initial;
+  background-position:2px 50%;
+  background-repeat:no-repeat no-repeat;
+}
+.activity-feed ul li.user-leave {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(https://www.producteev.com/static/images/leave-icon.png);
+  background-origin:initial;
+  background-position:2px 50%;
+  background-repeat:no-repeat no-repeat;
+}
+.activity-feed ul li.task-create {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(https://www.producteev.com/static/images/create-icon.png);
+  background-origin:initial;
+  background-position:2px 50%;
+  background-repeat:no-repeat no-repeat;
+}
+.activity-feed ul li.task-note {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(https://www.producteev.com/static/images/note-icon.png);
+  background-origin:initial;
+  background-position:2px 50%;
+  background-repeat:no-repeat no-repeat;
+}
+.activity-feed ul li.task-complete {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(https://www.producteev.com/static/images/complete-icon.png);
+  background-origin:initial;
+  background-position:2px 50%;
+  background-repeat:no-repeat no-repeat;
+}
+.activity-feed ul li.task-hot {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(https://www.producteev.com/static/images/hot-icon.png);
+  background-origin:initial;
+  background-position:2px 50%;
+  background-repeat:no-repeat no-repeat;
+}
+.activity-feed ul li.task-star {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(https://www.producteev.com/static/images/star-icon.png);
+  background-origin:initial;
+  background-position:2px 50%;
+  background-repeat:no-repeat no-repeat;
+}
+.activity-feed ul li .date {
+  color:#666666;
+  margin-left:5px;
+}
+.activity-feed ul li .message-activity {
+  margin-left:0;
+}
+.activity-feed a.activity-feed-more {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(https://www.producteev.com/static/images/expand.png);
+  background-origin:initial;
+  background-position:0 -25px;
+  background-repeat:no-repeat no-repeat;
+  float:right;
+  font-size:14px;
+  font-variant:small-caps;
+  font-weight:bold;
+  margin-top:5px;
+  padding-left:16px;
+}
+.activity-feed a.activity-feed-more:hover {
+  text-decoration:underline;
+}
+.activity-feed ul li.group ul.feed-sub li {
+  border-bottom-style:none;
+  border-color:initial;
+  border-left-style:none;
+  border-right-style:none;
+  border-top-style:none;
+  border-width:initial;
+  font-size:11px;
+  list-style-image:initial;
+  list-style-position:inside;
+  list-style-type:circle;
+  margin-bottom:2px;
+  margin-left:35px;
+  margin-right:0;
+  margin-top:2px;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+}
+#header_settings {
+  float:right;
+  height:48px;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:7px;
+  margin-top:3px;
+}
+#header_settings .avatar {
+  -webkit-box-shadow:#CCCCCC 0 0 2px;
+  border-bottom-color:#012348;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-left-color:#012348;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#012348;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#012348;
+  border-top-style:solid;
+  border-top-width:1px;
+  box-shadow:#CCCCCC 0 0 2px;
+  float:right;
+  height:38px;
+  margin-top:4px;
+  width:38px;
+}
+#header_settings ul {
+  float:right;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:15px;
+  margin-top:0;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+}
+#header_settings ul li {
+  list-style-image:initial;
+  list-style-position:initial;
+  list-style-type:none;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+}
+#header_settings ul li.user-name {
+  border-bottom-color:#455B8D;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  color:#EEEEEE;
+  font-size:13px;
+  font-weight:bold;
+  height:18px;
+  line-height:18px;
+  padding-bottom:2px;
+  padding-left:0;
+  padding-right:0;
+  padding-top:1px;
+  text-align:right;
+  width:100%;
+}
+#header_settings ul li.user-name span {
+  color:#DDDDDD;
+  font-size:11px;
+  font-style:italic;
+  font-weight:normal;
+}
+#header_settings ul li.account {
+  color:#EEEEEE;
+  font-size:12px;
+  height:18px;
+  margin-top:2px;
+  text-align:right;
+}
+#header_settings ul li.account .tab {
+  color:#C0DEF5;
+  display:inline-block;
+}
+#header_settings ul li.account .lang-label {
+  color:#C0DEF5;
+  display:inline-block;
+  text-decoration:none;
+}
+#header_settings ul li.account .lang-cancel {
+  color:#C0DEF5;
+  display:inline-block;
+  margin-left:10px;
+  text-decoration:none;
+}
+#header_settings ul li.account .lang-cancel:hover {
+  text-decoration:underline;
+}
+#header_settings ul li.account .wheel, #header_settings ul li.account .logout, #header_settings ul li.account .support {
+  display:inline-block;
+  margin-right:1px;
+  vertical-align:middle;
+}
+#header_settings ul li.account .separator {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#EEEEEE;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  display:inline-block;
+  height:10px;
+  margin-bottom:0;
+  margin-left:5px;
+  margin-right:5px;
+  margin-top:0;
+  width:1px;
+}
+#header_settings ul li.account .tab:hover {
+  text-decoration:underline;
+}
+#header_settings ul li.account .langs_container {
+  display:inline-block;
+}
+#header_settings ul li.account .flags {
+  display:inline-block;
+  margin-left:12px;
+  margin-top:1px;
+  vertical-align:middle;
+}
+#header_settings ul li.account .flags:hover {
+  border-bottom-color:#FFFFFF;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+}
+#header_settings ul li.account .flags img {
+  -webkit-box-shadow:#333333 0 0 2px;
+  box-shadow:#333333 0 0 2px;
+}
+#header_settings .colleagues {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(https://www.producteev.com/static/images/collaborator_request_icon.png);
+  background-origin:initial;
+  background-position:0 0;
+  background-repeat:no-repeat no-repeat;
+  height:18px;
+  vertical-align:middle;
+  width:22px;
+}
+#header_settings .colleagues .notifications {
+  -webkit-box-shadow:#073870 0 1px 0;
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#ED4419;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  color:#FFFFFF;
+  display:block;
+  float:left;
+  font-family:arial;
+  font-size:10px;
+  font-weight:bold;
+  height:13px;
+  line-height:13px;
+  margin-bottom:0;
+  margin-left:15px;
+  margin-right:0;
+  margin-top:-10px;
+  padding-bottom:0;
+  padding-left:2px;
+  padding-right:2px;
+  padding-top:0;
+  text-decoration:none;
+}
+#header_settings .links .logout {
+  color:#8F8F8F;
+}
+#header_settings .avatar img {
+  height:30px;
+  width:30px;
+}
+#header_settings div.spearator {
+  color:#A9C4D6;
+  line-height:30px;
+  margin-left:7px;
+  margin-right:7px;
+}
+#header_settings span.spearator {
+  color:#A9C4D6;
+  line-height:30px;
+  margin-bottom:0;
+  margin-left:7px;
+  margin-right:7px;
+  margin-top:0;
+}
+#ctnr_lang_flag span {
+  padding-top:4px;
+}
+#gcal_sync_switch {
+  display:inline-block;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:7px;
+  width:100%;
+}
+#gcal_sync_switch .main-label {
+  width:0;
+}
+#gcal_sync_switch .channel-gcal {
+  background-position:0 -544px;
+  border-top-color:initial;
+  border-top-style:none;
+  border-top-width:initial;
+}
+#gcal_sync_switch .channel {
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+}
+h3 {
+  color:#8C7537;
+  font-family:Georgia;
+  font-size:18px;
+  font-style:italic;
+  font-weight:normal;
+  padding-bottom:5px;
+  padding-left:0;
+  padding-right:0;
+  padding-top:20px;
+}
+.notice {
+  color:#999999 !important;
+  font-family:arial;
+  font-size:12px !important;
+  font-style:italic;
+  margin-bottom:10px;
+  margin-left:0;
+  margin-right:0;
+  margin-top:2px;
+}
+#gcal_sync_switch a {
+  float:left;
+  font-size:12px;
+  font-weight:normal;
+  text-shadow:#FFFFFF 0 1px 0;
+}
+#gcal_sync_switch a img {
+  float:left;
+  margin-right:5px;
+}
+#gcal_sync_switch .calendar-synced {
+  color:#A5A5A5;
+  float:left;
+  line-height:22px;
+  margin-right:5px;
+}
+#gcal_sync_switch .calendar-unsync {
+  color:#CC3333;
+}
+#gcal_sync_switch .calendar-unsync:hover {
+  text-decoration:underline;
+}
+.tasks-header {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(https://www.producteev.com/static/images/tasks-header-bg.png);
+  background-origin:initial;
+  background-position:0 0;
+  background-repeat:repeat no-repeat;
+  border-bottom-color:#E6E6E6;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-top-color:#E6E6E6;
+  border-top-style:solid;
+  border-top-width:1px;
+  height:34px;
+  position:relative;
+  width:100%;
+  z-index:2;
+}
+.tasks-header .views-switcher {
+  float:left;
+  height:27px;
+  margin-left:5px;
+  margin-top:6px;
+  width:65px;
+}
+.views-switcher .list {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(https://www.producteev.com/static/images/switch_list.png);
+  background-origin:initial;
+  background-position:0 0;
+  background-repeat:no-repeat no-repeat;
+  cursor:pointer;
+  float:left;
+  height:22px;
+  width:27px;
+}
+.views-switcher .cal {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(https://www.producteev.com/static/images/switch_calendar.png);
+  background-origin:initial;
+  background-position:0 0;
+  background-repeat:no-repeat no-repeat;
+  cursor:pointer;
+  float:left;
+  height:22px;
+  width:32px;
+}
+.views-switcher .active {
+  background-position:0 -22px;
+}
+.tasks-header .sort-by {
+  float:left;
+  font-size:11px;
+  font-weight:bold;
+  height:27px;
+  line-height:27px;
+  margin-left:5px;
+  margin-top:4px;
+  text-shadow:#FFFFFF 0 1px 0;
+}
+.sort-by .sortby-label {
+  color:#545454;
+  float:left;
+}
+.sort-by .criteria {
+  color:#4B728F;
+  cursor:pointer;
+  float:left;
+  margin-left:5px;
+}
+.sort-by .criteria:hover {
+  text-decoration:underline;
+}
+.sort-by .arrow {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(https://www.producteev.com/static/images/sort-by-arrow.png);
+  background-origin:initial;
+  background-position:0 0;
+  background-repeat:no-repeat no-repeat;
+  float:left;
+  height:3px;
+  margin-bottom:0;
+  margin-left:5px;
+  margin-right:0;
+  margin-top:13px;
+  width:5px;
+}*/
