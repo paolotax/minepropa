@@ -1,0 +1,44 @@
+!!!
+%html
+  %head
+    %title= yield :title || "Untitled"
+    = javascript_include_tag "http://maps.google.com/maps/api/js?sensor=false"
+    = javascript_include_tag "jquery-1.4.4.min.js"
+    = javascript_include_tag "jquery-ui-1.8.8.custom.min.js"
+    = javascript_include_tag "rails.js", "autocomplete-rails.js", 'fullcalendar/fullcalendar.min.js'  
+    = javascript_include_tag 'jquery.gomap-1.3.0.js'
+    = javascript_include_tag 'printarea.js'
+    = javascript_include_tag 'jquery.ui.ipad.altfix.js'
+    = javascript_include_tag 'jquery.purr.js'
+    = javascript_include_tag 'best_in_place.js'
+    
+    = stylesheet_link_tag    "token-input-facebook"
+    = javascript_include_tag "jquery.tokeninput"
+    
+    = javascript_include_tag 'application.js'
+    
+    = stylesheet_link_tag 'new_layout/reset.css'
+    = stylesheet_link_tag 'compiled/new_layout.css', :media => 'screen, print'
+
+    = stylesheet_link_tag 'mobile' if mobile_device?
+    = csrf_meta_tag
+    = yield :head
+  %body.bp.two-col
+    #container
+      #header
+        = render 'layouts/header'
+      #sidebar
+        - if user_signed_in?
+          = render 'layouts/block_navigator'
+          .block
+            = yield(:search_bar)
+        = render 'layouts/links'
+      #content
+        - flash.each do |key, value|
+          = content_tag :div, raw(value), :id => "flash", :class => "#{key}"
+        = content_tag(:div, content_tag(:h2, yield(:title))) if show_title?
+        = yield
+      #footer
+        = render 'layouts/footer'
+        = debug(params) if Rails.env.development?
+  = yield :scripts

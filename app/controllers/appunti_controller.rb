@@ -139,13 +139,13 @@ class AppuntiController < ApplicationController
   
   def edit_multiple
     @appunti = Appunto.find(params[:appunti_ids])
-    render 'edit_multiple'
+    render 'edit_multiple', :layout => false
   end
   
   def update_multiple
     @appunti = Appunto.find(params[:appunti_ids])
     @appunti.each do |a|
-      a.update_attributes!(params[:appunto].reject { |k,v| v.blank?})  #  unless k == 'stato'
+      a.update_attributes!(params[:appunto].reject { |k,v| v.blank? })  #  unless k == 'stato'
     end
     flash[:notice => "Updated"]
     redirect_to appunti_path

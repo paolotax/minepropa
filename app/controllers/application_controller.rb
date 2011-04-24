@@ -1,10 +1,12 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   helper :all
+  layout 'new_layout'
   
   before_filter :prepare_for_mobile
   before_filter :instantiate_controller_and_action_names
 
+  
   private
 
   def mobile_device?
