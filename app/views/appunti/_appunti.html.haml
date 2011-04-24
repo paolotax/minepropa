@@ -3,7 +3,7 @@
     / = submit_tag "modifica selezionati"
     / = submit_tag "stampa selezionati"
     .autopagerize_page_element_gino
-      #appunti
+      %ul#appunti.tasks
         - @appunti.each do |appunto|  
           = render appunto
         = paginate @appunti #, :remote => true

@@ -1,4 +1,4 @@
-.appunto_big.drag.a-drag{ :id => 'appunto_' + h(appunto.id) + '_visita_' + find_first_visita(appunto.id), :class => 'appunto_' + h(appunto.id) }
+%li.task.appunto_big.drag.a-drag{ :id => 'appunto_' + h(appunto.id) + '_visita_' + find_first_visita(appunto.id), :class => 'appunto_' + h(appunto.id) }
   #a_appunto
     / #a_visita
     /   - unless appunto.visite.any?

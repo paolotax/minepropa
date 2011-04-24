@@ -24,22 +24,23 @@
     = stylesheet_link_tag 'mobile' if mobile_device?
     = csrf_meta_tag
     = yield :head
-  %body.bp.two-col
-    #container
-      #header
-        = render 'layouts/header'
-      #sidebar
-        - if user_signed_in?
-          = render 'layouts/block_navigator'
-          .block
-            = yield(:search_bar)
-        = render 'layouts/links'
-      #content
-        - flash.each do |key, value|
-          = content_tag :div, raw(value), :id => "flash", :class => "#{key}"
-        = content_tag(:div, content_tag(:h2, yield(:title))) if show_title?
-        = yield
-      #footer
-        = render 'layouts/footer'
-        = debug(params) if Rails.env.development?
+  %body
+    #header
+      = render 'layouts/header'
+    #container.col-2.radius-8
+      #main.sc
+        #sidebar
+          - if user_signed_in?
+            = render 'layouts/block_navigator'
+            .block
+              = yield(:search_bar)
+          = render 'layouts/links'
+        #content
+          - flash.each do |key, value|
+            = content_tag :div, raw(value), :id => "flash", :class => "#{key}"
+          = content_tag(:div, content_tag(:h2, yield(:title))) if show_title?
+          = yield
+    #footer
+      = render 'layouts/footer'
+      = debug(params) if Rails.env.development?
   = yield :scripts
