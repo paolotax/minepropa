@@ -8,7 +8,7 @@ class PagesController < ApplicationController
       @search = current_user.appunti.in_corso.per_id.search(params[:search])
       @appunti = @search.all
     else
-      @search = current_user.appunti.in_corso.per_id.page(params[:page]).per(8).search(params[:search])
+      @search = current_user.appunti.in_corso.per_id.page(params[:page]).per(30).search(params[:search])
       @appunti = @search.relation
       @tags = current_user.appunti.in_corso.tag_counts_on(:tags)
     end
@@ -16,7 +16,7 @@ class PagesController < ApplicationController
   end
 
   def about
-    @search = current_user.appunti.in_corso.per_id.non_assegnato.page(params[:page]).per(8).search(params[:search])
+    @search = current_user.appunti.in_corso.per_id.non_assegnato.page(params[:page]).per(30).search(params[:search])
     @appunti = @search.relation
     
     @appunti_assegnati = current_user.appunti.in_corso.assegnato.all
@@ -26,7 +26,7 @@ class PagesController < ApplicationController
   end
   
   def calendar
-    @search = current_user.appunti.in_corso.per_id.non_assegnato.page(params[:page]).per(8).search(params[:search])
+    @search = current_user.appunti.in_corso.per_id.non_assegnato.page(params[:page]).per(30).search(params[:search])
     @appunti = @search.relation
     
     @appunti_assegnati = current_user.appunti.assegnato.all

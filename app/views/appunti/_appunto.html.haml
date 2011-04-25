@@ -1,40 +1,10 @@
-%li.task.appunto_big.drag.a-drag{ :id => 'appunto_' + h(appunto.id) + '_visita_' + find_first_visita(appunto.id), :class => 'appunto_' + h(appunto.id) }
-  #a_appunto
-    / #a_visita
-    /   - unless appunto.visite.any?
-    /     = form_for [appunto, Visita.new], :remote => true do |f|
-    /       = image_submit_tag 'icons/car.png'
-    /   - if appunto.visite.any?
-    /     = form_for [appunto, appunto.visite.first], :html => { :method => :delete, :remote => true } do |f|
-    /       = image_submit_tag 'icons/car.png'
-    #a_intestazione
-      #a_destinatario
-        / %strong= appunto.destinatario
-        %strong= best_in_place appunto, :destinatario, :type => :input
-      #a_scuola
-        = link_to appunto.nome_scuola, scuola_path(appunto.scuola) unless appunto.scuola.blank?
-    #a_note
-      / = simple_format(appunto.note)
-      = best_in_place appunto, :note, :type => :textarea, :sanitize => false
-      #a_recapiti
-        #a_telefono
-          = "tel " unless appunto.telefono.blank?
-          = best_in_place appunto, :telefono, :type => :input, :nil => '...'
-        #a_email
-          = "email " unless appunto.email.blank?
-          = mail_to appunto.email unless appunto.email.blank?
-        #a_tags
-          = best_in_place appunto, :tag_list, :type => :input
-  #clear
-  #a_footer
-    - unless @appunti.nil?
-      #a_check
-        / = check_box_tag "appunti_ids[]", appunto.id, :class => '.cb-element'
-        = check_box_tag "appunti_ids[]", appunto.id, false, {:class => 'cb-element'}
-    #status_image{ :class => 'img_appunto_' + h(appunto.id) }
-      = link_to image_tag(show_status_icon(appunto.stato)), toggle_stato_appunto_path(appunto), :class => "img_appunto_" + h(appunto.id)
-    = appunto_edit_links(appunto)
-    #a_timestamp{ :class => 'ts_appunto_' + h(appunto.id) }
-      %small= get_posted_string(appunto)
-  
-    #clear
+%li.task{ :id => 'appunto_' + h(appunto.id) + '_visita_' + find_first_visita(appunto.id), :class => 'appunto_' + h(appunto.id) }
+  .task-elt.bulk
+    = check_box_tag "appunti_ids[]", appunto.id, false, {:class => 'cb-element'}
+  #status_image.task-elt.status{ :class => 'img_appunto_' + h(appunto.id) }
+    = link_to image_tag(show_status_icon(appunto.stato)), toggle_stato_appunto_path(appunto), :class => "img_appunto_" + h(appunto.id)
+  .task-elt.details
+    .task-title= best_in_place appunto, :destinatario, :type => :input
+    .labels= link_to appunto.nome_scuola, scuola_path(appunto.scuola) unless appunto.scuola.blank?
+    .task-title= best_in_place appunto, :note, :type => :input
+    

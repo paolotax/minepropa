@@ -17,7 +17,7 @@ class AppuntiController < ApplicationController
       @search = current_user.appunti.per_id.search(params[:search])  
       @appunti = @search.all
     else
-      @search = current_user.appunti.per_id.page(params[:page]).per(8).search(params[:search])  
+      @search = current_user.appunti.per_id.page(params[:page]).per(30).search(params[:search])  
       @appunti = @search.relation
     end
   end
