@@ -35,6 +35,15 @@ module AppuntiHelper
     end
   end
   
+  def appunto_tags(appunto)
+    tags = appunto.tag_list.split(',')
+    ab = []
+      tags.each do |t|
+        ab << content_tag(:li, t)
+      end
+    ab.join(' ').html_safe
+  end
+  
   def get_posted_string(appunto)
     
     if appunto.stato == "X"

@@ -139,7 +139,7 @@ class AppuntiController < ApplicationController
   
   def edit_multiple
     @appunti = Appunto.find(params[:appunti_ids])
-    render 'edit_multiple', :layout => false
+    render 'edit_multiple'
   end
   
   def update_multiple

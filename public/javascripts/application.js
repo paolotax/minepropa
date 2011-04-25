@@ -140,9 +140,10 @@ $(document).ready(function() {
 
   $('#btn_pdf').live('click', function () {
     var params = $('#form_appunti').serialize();
-    // console.log(params);
+    console.log(params);
     $('#form_appunti').attr({'action': '/appunti/print_multiple', 'method': 'get'});
     $('#form_appunti').submit();
+    return false;
     // non funziona
     //     $('form').submit(function () {
     //       console.log(params);  
@@ -156,6 +157,7 @@ $(document).ready(function() {
      // console.log(params);
      $('#form_appunti').attr({'action': '/appunti/edit_multiple', 'method': 'post'});
      $('#form_appunti').submit();
+     return false;
   });
 });
 
