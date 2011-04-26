@@ -6,6 +6,7 @@
   .task-elt.details
     .task-title= best_in_place appunto, :destinatario, :type => :input
     .task-title= link_to appunto.nome_scuola, scuola_path(appunto.scuola) unless appunto.scuola.blank?
-    .task-title= best_in_place appunto, :note, :type => :input
     .labels= appunto_tags(appunto)
+    / .task-title= best_in_place appunto, :note, :type => :input
+
     

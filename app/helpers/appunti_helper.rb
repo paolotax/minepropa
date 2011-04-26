@@ -36,12 +36,11 @@ module AppuntiHelper
   end
   
   def appunto_tags(appunto)
-    tags = appunto.tag_list.split(',')
-    ab = []
-      tags.each do |t|
-        ab << content_tag(:li, t)
-      end
-    ab.join(' ').html_safe
+    
+    content_tag :ul do
+      appunto.tag_list.collect {|item| concat(content_tag(:li, item))}
+    end
+
   end
   
   def get_posted_string(appunto)

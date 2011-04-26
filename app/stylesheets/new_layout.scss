@@ -120,4 +120,37 @@
     background: #a33f3a;
 }
 
+.tasks .labels {
+  float: right; 
+}
 
+.tasks .labels ul {
+  float: right; 
+  margin: 0;
+}
+ 
+.tasks .labels ul li {
+  color:#FFFFFF;
+  cursor:pointer;
+  display:inline-block;
+  font-family:Arial;
+  font-size:11px;
+  letter-spacing:0.5px;
+  line-height:12px;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:5px;
+  margin-top:0;
+  padding-bottom:2px;
+  padding-left:5px;
+  padding-right:5px;
+  padding-top:2px;
+  
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#75BA1D;
+  background-image:-webkit-gradient(linear, 0 0%, 0 100%, from(#8CDC27), to(#75BA1D));
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+}   
