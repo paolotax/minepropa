@@ -1,7 +1,5 @@
 #appunti_div
   = form_tag edit_or_print_appunti_path, :method => :post, :id => "form_appunti" do
-    / = submit_tag "modifica selezionati"
-    / = submit_tag "stampa selezionati"
     .autopagerize_page_element_gino
       %ul#appunti.tasks
         - @appunti.each do |appunto|  
