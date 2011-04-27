@@ -1,0 +1,216 @@
+.label {
+  color:#FFFFFF;
+  cursor:pointer;
+  display:inline-block;
+  font-family:Arial;
+  font-size:11px;
+  letter-spacing:0.5px;
+  line-height:12px;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:5px;
+  margin-top:0;
+  padding-bottom:2px;
+  padding-left:5px;
+  padding-right:5px;
+  padding-top:2px;
+}
+.label_sidebar {
+  cursor:pointer;
+  height:16px;
+  width:16px;
+}
+.label_popin {
+  display:inline-block;
+  float:left;
+  height:16px;
+  line-height:16px;
+  margin-bottom:0;
+  margin-left:4px;
+  margin-right:2px;
+  margin-top:5px;
+  vertical-align:middle;
+  width:16px;
+}
+.label-add-label {
+  cursor:pointer;
+  float:left;
+  height:16px;
+  margin-bottom:0;
+  margin-left:16px;
+  margin-right:10px;
+  margin-top:5px;
+  width:16px;
+}
+.label-settings {
+  cursor:pointer;
+  float:left;
+  height:16px;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:10px;
+  margin-top:8px;
+  width:16px;
+}
+.add-label-plus, .add-label {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#C9CED3;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  color:#FFFFFF;
+  cursor:pointer;
+  display:inline-block;
+  font-family:Arial;
+  font-size:11px;
+  letter-spacing:0.5px;
+  line-height:12px;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:5px;
+  margin-top:0;
+  padding-bottom:2px;
+  padding-left:5px;
+  padding-right:5px;
+  padding-top:2px;
+}
+.label:hover, .add-label-plus:hover, .add-label:hover, .add-label-text:hover {
+  -webkit-box-shadow:#333333 0 1px 2px;
+}
+.label-red {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#EF0436;
+  background-image:-webkit-gradient(linear, 0 0%, 0 100%, from(#FE496F), to(#EF0436));
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+}
+.label-yellow {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#FFA301;
+  background-image:-webkit-gradient(linear, 0 0%, 0 100%, from(#FAB53D), to(#FFA301));
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+}
+.label-grey {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#4D4D4D;
+  background-image:-webkit-gradient(linear, 0 0%, 0 100%, from(#6F6E6E), to(#4D4D4D));
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+}
+.label-black {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#040404;
+  background-image:-webkit-gradient(linear, 0 0%, 0 100%, from(#555555), to(#040404));
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+}
+.label-burgundy {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#A61634;
+  background-image:-webkit-gradient(linear, 0 0%, 0 100%, from(#D12347), to(#A61634));
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+}
+.label-pink {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#C9349E;
+  background-image:-webkit-gradient(linear, 0 0%, 0 100%, from(#EB4CBD), to(#C9349E));
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+}
+.label-purple {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#9E34C9;
+  background-image:-webkit-gradient(linear, 0 0%, 0 100%, from(#C05AE9), to(#9E34C9));
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+}
+.label-lightpurple {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#755D95;
+  background-image:-webkit-gradient(linear, 0 0%, 0 100%, from(#9177B5), to(#755D95));
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+}
+.label-bluegrey {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#495778;
+  background-image:-webkit-gradient(linear, 0 0%, 0 100%, from(#6476A0), to(#495778));
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+}
+.label-blue {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#1F3AC9;
+  background-image:-webkit-gradient(linear, 0 0%, 0 100%, from(#4962E5), to(#1F3AC9));
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+}
+.label-bluegreen {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#2B8981;
+  background-image:-webkit-gradient(linear, 0 0%, 0 100%, from(#37A99F), to(#2B8981));
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+}
+.label-turquoise {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#0D6A91;
+  background-image:-webkit-gradient(linear, 0 0%, 0 100%, from(#1D8EBD), to(#0D6A91));
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+}
+.label-darkgreen {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#6D763E;
+  background-image:-webkit-gradient(linear, 0 0%, 0 100%, from(#ADBC61), to(#6D763E));
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+}
+.label-green {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#75BA1D;
+  background-image:-webkit-gradient(linear, 0 0%, 0 100%, from(#8CDC27), to(#75BA1D));
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+}
+.label-lime {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#A2BA1D;
+  background-image:-webkit-gradient(linear, 0 0%, 0 100%, from(#BFDB25), to(#A2BA1D));
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+}

@@ -78,7 +78,7 @@
   float:left;
   margin:0;
   padding-left:8px;
-  width:150px;
+  width:120px;
   overflow:hidden;
   text-overflow:ellipsis;
   white-space:nowrap;
@@ -91,7 +91,7 @@
   padding-bottom:0;
   padding-left:0;
   padding-right:0;
-  padding-top:10px;
+  padding-top:8px;
 }
 
 .button1 {
@@ -127,6 +127,7 @@
 .tasks .labels ul {
   float: right; 
   margin: 0;
+  line-height:14px;
 }
  
 .tasks .labels ul li {
