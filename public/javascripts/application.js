@@ -8,30 +8,6 @@ $(document).ready(function() {
         preventDuplicates: true
   });
 
-  $('#popin_show').live('click', function() {
-    var popin = $('#popin_bulk');
-    // 
-    popin.css({
-        'position':'absolute',
-        'top':100+'px',
-        'left':100+'px'
-    }).show();
-    
-    var ids = [];
-    
-    $("#s_check :checked").each(function(index) {
-      
-      clonedObj = $('#scuola_' + $(this).val()).clone();
-      clonedObj.attr('id', 'cloned__'+ clonedObj.attr('id'));
-      clonedObj.addClass('cloned_scuola');
-      
-      $("#s_check", clonedObj).remove();
-      
-      clonedObj.appendTo($('#scuole.right_scuole'));
-      
-    });
-  });
-  
   $("#s_check input").live( 'change', function() {
     
     obj = $('#scuola_' + $(this).val())
@@ -114,22 +90,26 @@ $(document).ready(function($){
 
 /* -----------------------
     select all checkbox 
+    e popin showhide
 ------------------------*/
 $(document).ready( function() {
   
+  
+  //
+  // popin
+  //
+  $('#popin_bulk').hide();
+  
   $( '.notnone' ).live( 'click', function() {
-      
       $( '.cb-element' ).attr( 'checked', true );
-      
   });
-  
   $( '.none' ).live( 'click', function() {
-      
       $( '.cb-element' ).attr( 'checked', false );
-
+      $('#popin_bulk').hide();
   });
   
   
+
   $( '.checkAll' ).live( 'change', function() {
       $( '.cb-element' ).attr( 'checked', $( this ).is( ':checked' ) ? 'checked' : '' );
       $( this ).next().text( $( this ).is( ':checked' ) ? 'Deseleziona Tutti' : 'Seleziona Tutti' );
@@ -138,12 +118,23 @@ $(document).ready( function() {
       $( '.cb-element' ).each( function() {
           $( this ).attr( 'checked', $( this ).is( ':checked' ) ? '' : 'checked' );
       }).trigger( 'change' );
-
   });
+  
   $( '.cb-element' ).live( 'change', function() {
       $( '.cb-element' ).length == $( '.cb-element:checked' ).length ? $( '.checkAll' ).attr( 'checked', 'checked' ).next().text( 'Deseleziona Tutti' ) : $( '.checkAll' ).attr( 'checked', '' ).next().text( 'Seleziona Tutti' );
-
+      //
+      // popin
+      //
+      $( '.cb-element:checked' ).length > 0 ? $('#popin_bulk').show() : $('#popin_bulk').hide();
+      
+      var position = $( this ).offset();
+      
+      
+      $('#popin_bulk')
+          .stop()
+          .animate({top: position.top - 250},'slow','easeOutBack');
   });
+
 });
 
 
@@ -154,7 +145,7 @@ $(document).ready(function() {
 
   $('#btn_pdf').live('click', function () {
     var params = $('#form_appunti').serialize();
-    console.log(params);
+    // console.log(params);
     $('#form_appunti').attr({'action': '/appunti/print_multiple', 'method': 'get'});
     $('#form_appunti').submit();
     return false;

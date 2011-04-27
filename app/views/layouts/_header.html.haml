@@ -6,13 +6,15 @@
     %ul#nav.links
       %li.links.menu-604= link_to "Home", root_path
       %li.links.menu-484= link_to "Calendario", calendar_path
+      %li.links.menu-483= link_to "Nuovo appunto", new_appunto_path
+      %li.links.menu-224= link_to "Nuova scuola", new_scuola_path
       - if user_signed_in?
         %li.links.menu-483= link_to current_user.username, edit_user_registration_path 
         %li.links.menu-224.last= link_to "Sign out", destroy_user_session_path
       - else
         %li.links.menu-483= link_to "Sign up", new_user_registration_path 
         %li.links.menu-224.last= link_to "Sign in", new_user_session_path
-      #clear
+      .clear
 		
       
        

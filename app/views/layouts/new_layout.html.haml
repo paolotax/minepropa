@@ -32,11 +32,12 @@
       = render 'layouts/header'
     #container.col-2.radius-8
       #main.sc
+        = render 'shared/popin_bulk'
         #sidebar
           - if user_signed_in?
-            = render 'layouts/block_navigator'
             .block
               = yield(:search_bar)
+            = render 'layouts/block_navigator'
           = render 'layouts/links'
         #content
           - flash.each do |key, value|

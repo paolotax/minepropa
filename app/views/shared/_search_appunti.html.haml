@@ -1,21 +1,28 @@
 - unless @appunti.nil?
   - content_for :search_bar do
-    #search_bar
-      - form_for @search, :url => search_url(@current_controller) do |f|
-        = f.label :destinatario_or_note_or_scuola_nome_scuola_or_scuola_citta_contains, "Cerca appunti..."
-        #field_cerca
-          = f.text_field :destinatario_or_note_or_scuola_nome_scuola_or_scuola_citta_contains
-        = f.label :scuola_citta_matches, "Citta"
-        #select_citta
-          = f.select(:scuola_citta_matches , get_citta_user.collect {|p| [p.citta]}, :include_blank => true)
-        = f.label :scuola_provincia_matches, "Provincia"
-        #select_provincia
-          = f.select(:scuola_provincia_matches , get_provincie_user.collect {|p| [p.provincia]}, :include_blank => true)
-        = f.label :stato_matches, "Stato"
-        %ul#list_stato
-          = f.checks :stato_in , [['da completare',''], ["in sospeso", "P"],["completato", "X"]], :class => 'checkboxy' do |c|
-            %li
-              = c.box
-              = c.label
-        = link_to 'clear', appunti_path
-        = f.submit "Cerca", :disable_with => 'sto cercando...'
+    #search-container.search-container.radius-3
+      .magni-glass
+        / = image_tag 'magni-glass.png', :alt => 'magni-glass'
+        %img#search-icon{  :src => "images/magni-glass.png",          :class => 'magni-glass-icon',  :alt => "magni-glass"}
+        %img#search_loader{:src => "images/ajax-loader-bg-white.gif", :class => "navigation-loader", :alt => "loader", :style => "display: none; "}
+      %input#dashboard_search_input{ :type => "text", :value => "Cerca" }
+    / #search_bar
+    /   - form_for @search, :url => search_url(@current_controller) do |f|
+    /     = f.label :destinatario_or_note_or_scuola_nome_scuola_or_scuola_citta_contains, "Cerca appunti..."
+    /     #field_cerca
+    /       = f.text_field :destinatario_or_note_or_scuola_nome_scuola_or_scuola_citta_contains
+    /     = f.label :scuola_citta_matches, "Citta"
+    /     #select_citta
+    /       = f.select(:scuola_citta_matches , get_citta_user.collect {|p| [p.citta]}, :include_blank => true)
+    /     = f.label :scuola_provincia_matches, "Provincia"
+    /     #select_provincia
+    /       = f.select(:scuola_provincia_matches , get_provincie_user.collect {|p| [p.provincia]}, :include_blank => true)
+    /     = f.label :stato_matches, "Stato"
+    /     %ul#list_stato
+    /       = f.checks :stato_in , [['da completare',''], ["in sospeso", "P"],["completato", "X"]], :class => 'checkboxy' do |c|
+    /         %li
+    /           = c.box
+    /           = c.label
+    /     = link_to 'clear', appunti_path
+    /     = f.submit "Cerca", :disable_with => 'sto cercando...'
+    

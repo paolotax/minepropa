@@ -1,11 +1,8 @@
-= render 'shared/popin_label_colors'
-= render 'shared/popin_bulk'
-
 #appunti_div
   = form_tag edit_or_print_appunti_path, :method => :post, :id => "form_appunti" do
-    .autopagerize_page_element_gino
+    .autopagerize_page_element
       %ul#appunti.tasks
         - @appunti.each do |appunto|  
           = render appunto
-        = paginate @appunti #, :remote => true
+        = paginate @appunti, :remote => true
 
