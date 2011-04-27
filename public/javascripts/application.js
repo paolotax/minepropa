@@ -116,6 +116,20 @@ $(document).ready(function($){
     select all checkbox 
 ------------------------*/
 $(document).ready( function() {
+  
+  $( '.notnone' ).live( 'click', function() {
+      
+      $( '.cb-element' ).attr( 'checked', true );
+      
+  });
+  
+  $( '.none' ).live( 'click', function() {
+      
+      $( '.cb-element' ).attr( 'checked', false );
+
+  });
+  
+  
   $( '.checkAll' ).live( 'change', function() {
       $( '.cb-element' ).attr( 'checked', $( this ).is( ':checked' ) ? 'checked' : '' );
       $( this ).next().text( $( this ).is( ':checked' ) ? 'Deseleziona Tutti' : 'Seleziona Tutti' );
