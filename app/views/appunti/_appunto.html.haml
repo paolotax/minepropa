@@ -4,7 +4,8 @@
   #status_image.task-elt.status{ :class => 'img_appunto_' + h(appunto.id) }
     = link_to image_tag(show_status_icon(appunto.stato)), toggle_stato_appunto_path(appunto), :class => "img_appunto_" + h(appunto.id)
   .task-elt.details
-    .task-title= best_in_place appunto, :destinatario, :type => :input
+    / .task-title= best_in_place appunto, :destinatario, :type => :input
+    .task-title= link_to appunto.destinatario, edit_appunto_path(appunto)
     .task-title= link_to appunto.nome_scuola, scuola_path(appunto.scuola) unless appunto.scuola.blank?
     .task-title= best_in_place appunto, :note, :type => :input
     .labels= appunto_tags(appunto)
