@@ -6,7 +6,7 @@
 / = render :partial => 'provincie'
 
 - tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class|
-  = link_to tag.name, {:controller => :tags, :action => :appunti_cloud, :id => tag.name}, {:class => css_class}
+  = link_to tag.name, {:controller => :tags, :action => :appunti_cloud, :id => tag.name}, {:class => css_class}, :remote => true
   
 = render :partial => 'appunti/appunti'
 

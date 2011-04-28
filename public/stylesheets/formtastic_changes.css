@@ -32,3 +32,13 @@ form.formtastic fieldset > ol > li > ul {
     width: 74%;
     clear: none;
 }
+
+form.formtastic fieldset > ol > li {
+  list-style-type:none;
+}
+
+form.formtastic fieldset legend {
+  font-weight: normal;
+  font-size: 12px;
+  padding-bottom: 10px;
+}

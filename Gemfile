@@ -19,7 +19,7 @@ gem "jquery-rails"
 gem "acts_as_list"
 gem 'meta_where'
 gem 'meta_search'
-gem 'formtastic', '~> 1.1.0'
+gem 'formtastic', '~> 1.2.3'
 
 gem 'gmaps4rails'
 gem 'crack'

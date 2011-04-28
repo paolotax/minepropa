@@ -43,11 +43,11 @@ $(document).ready(function() {
 
 $(document).ready( function() {
   
-  // $( "#dialog-modal" ).dialog({
-  //  height: 500,
-  //  width: 700,
-  //  modal: true
-  // });
+  $("#sidebar li a").click(function(){
+    console.log('ja');
+    $(this).parent().addClass('active').
+      siblings().removeClass('active');
+  });
 	
 	
 });

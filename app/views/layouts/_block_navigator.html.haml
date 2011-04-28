@@ -1,5 +1,8 @@
 #block_navigator.block.round
   %ul#bl_navigator.links
-    %li.links.menu-604= link_to "Scuole", scuole_path
-    %li.links.menu-484= link_to "Appunti", appunti_path
+    %li.navigation-btn= link_to "Scuole", scuole_path, :class => 'scuole', :remote => true
+    %li.navigation-btn= link_to "Appunti", appunti_path, :class => 'appunti', :remote => true
+    %li.links.menu-604= link_to "Home", root_path
+    %li.links.menu-484= link_to "Calendario", calendar_path
+    
 
