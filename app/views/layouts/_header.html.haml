@@ -1,18 +1,43 @@
-#logo.span-7.append-2
-  - logo  = image_tag("TodoPropa3.png", :alt => "Todo Propa - application")
-  = link_to logo, root_path
-#main_menu.span-13.append-1.last
-  #navig
-    %ul#nav.links
-      %li.links.menu-483= link_to "Nuovo appunto", new_appunto_path
-      %li.links.menu-224= link_to "Nuova scuola", new_scuola_path
-      - if user_signed_in?
-        %li.links.menu-483= link_to current_user.username, edit_user_registration_path 
-        %li.links.menu-224.last= link_to "Sign out", destroy_user_session_path
-      - else
-        %li.links.menu-483= link_to "Sign up", new_user_registration_path 
-        %li.links.menu-224.last= link_to "Sign in", new_user_session_path
-      .clear
+#header_settings
+  = image_tag("default-avatar.jpg", :alt => "avatar", :class => 'avatar', :title => 'avatar')
+  %ul
+    - if user_signed_in?
+      %li.user-name= current_user.username
+      %li#account-links.account
+        .support
+          = image_tag 'header_support.png'
+        %a.tab 
+          Supporto
+        .separator
+        .wheel
+          = image_tag 'header_preferences.png'
+        = link_to 'Preferenze', edit_user_registration_path, :class => 'tab' 
+        .separator
+        = link_to "Logout",     destroy_user_session_path,   :class => 'tab' 
+        
+- logo  = image_tag("logo-todopropa-small.png", :alt => "Todo Propa app", :class => 'logo', :title => 'Todo propa')
+= link_to logo, root_path
+
+
+
+
+
+
+/ #logo.span-7.append-2
+/   - logo  = image_tag("TodoPropa3.png", :alt => "Todo Propa - application")
+/   = link_to logo, root_path
+/ #main_menu.span-13.append-1.last
+/   #navig
+/     %ul#nav.links
+/       %li.links.menu-483= link_to "Nuovo appunto", new_appunto_path
+/       %li.links.menu-224= link_to "Nuova scuola", new_scuola_path
+/       - if user_signed_in?
+/         %li.links.menu-483= link_to current_user.username, edit_user_registration_path 
+/         %li.links.menu-224.last= link_to "Sign out", destroy_user_session_path
+/       - else
+/         %li.links.menu-483= link_to "Sign up", new_user_registration_path 
+/         %li.links.menu-224.last= link_to "Sign in", new_user_session_path
+/       .clear
 		
       
        

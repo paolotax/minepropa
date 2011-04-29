@@ -40,7 +40,9 @@ $(document).ready(function() {
   jQuery(".best_in_place").best_in_place();
 });
 
-
+/* ----------------
+    sidebar menu 
+-----------------*/
 $(document).ready( function() {
   
   $("#sidebar li a").click(function(){

@@ -1,4 +1,7 @@
 body {
+  background-color:#BFDFF3;
+  background-image:url('/images/defaut_background.png');
+  background-repeat:no-repeat no-repeat;
   font-family:Arial;
   font-size:12px;
 }
@@ -55,16 +58,17 @@ body > #container {
 }
 #header .logo {
   display:block;
-  left:1px;
-  min-height:53px;
+  left:3px;
+  
   outline-color:initial;
   outline-style:none;
   outline-width:initial;
   overflow-x:hidden;
   overflow-y:hidden;
-  padding-top:0;
+  padding-top:5px;
+  padding-bottom:5px;
   top:0;
-  width:365px;
+  
   z-index:1;
 }
 #sidebar ul {
