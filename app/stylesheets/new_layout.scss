@@ -1,78 +1,12 @@
-.tasks {
-  margin-bottom: 15px;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-}
-.tasks li {
-  list-style-image: initial;
-  list-style-position: initial;
+.ui-menu-item {
   list-style-type: none;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  position: relative;
 }
 
-.tasks .task {
-  border-bottom-color:#E6E6E6;
-  border-bottom-style:solid;
-  border-bottom-width:1px;
-  border-left-color:#E6E6E6;
-  border-left-style:solid;
-  border-left-width:0;
-  border-right-color:#E6E6E6;
-  border-right-style:solid;
-  border-right-width:0;
-  border-top-color:#E6E6E6;
-  border-top-style:solid;
-  border-top-width:0;
-  height:33px;
-  line-height:33px;
+#create-task-input .itext {
+  width:285px;
 }
-.tasks .first {
-  border-top-color:#E6E6E6;
-  border-top-style:solid;
-  border-top-width:1px;
-}
-.tasks .task-elt {
-  border-bottom-color:#E6E6E6;
-  border-bottom-style:solid;
-  border-bottom-width:0;
-  border-left-color:#E6E6E6;
-  border-left-style:solid;
-  border-left-width:0;
-  border-right-color:#E6E6E6;
-  border-right-style:solid;
-  border-right-width:1px;
-  border-top-color:#E6E6E6;
-  border-top-style:solid;
-  border-top-width:0;
-  float:left;
-  height:33px;
-}
-.tasks .bulk {
-  text-align:center;
-  width:32px;
-}
-.tasks .details {
-  border-bottom-style:none;
-  border-color:initial;
-  border-left-style:none;
-  border-right-style:none;
-  border-top-style:none;
-  border-width:initial;
-  font-size:14px;
-  height:33px;
-  overflow-x:hidden;
-  overflow-y:hidden;
-  padding-bottom:0;
-  padding-left:0;
-  padding-right:0;
-  padding-top:0;
-  width:650px;
-}
+
+
 .tasks .details .task-title {
   color:#224165;
   float:left;

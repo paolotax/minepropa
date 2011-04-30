@@ -1,0 +1,27 @@
+#create-task.sc.radius-7
+  = form_for Appunto.new, { :method => 'post',  :action => appunti_path } do |f|
+    #create-task-input
+      .inner
+        .input
+          %img#task_create_loader.class{ :src => "/static/images/ajax-loader.gif",  :alt => "loader", :style => "display:none;" }
+          %a#task_create_btn_add.add.btn_green Aggiungi 
+          %input#task_create_input.itext{ :name => "title", :placeholder => "digita qui un appunto..."}
+          = f.autocomplete_field :nome_scuola, autocomplete_scuola_nome_scuola_appunti_path, {:size => 40, :placeholder => "e scegli la scuola...", :class => 'itext'}
+    #create-task-input
+      .inner
+        .input
+          = f.text_field :destinatario, {:class => 'itext', :placeholder => "destinatario"}
+      .input
+        = f.label 'tags'
+        = f.text_field :tag_tokens, :class => 'itext'
+    %ul#task_create_actions.actions 
+      %li.create_task_action_assign.action.assign
+        %a
+          %span
+            %span.assign-avatar
+              %img#task_create_assign_avatar{ :src => "images/default-avatar.jpg" } 
+              %span.task_create_assign_name Assign it
+      %li#create_task_action_reset.action.reset 
+        %a
+          %span#task_create_reset
+            Reset

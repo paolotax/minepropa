@@ -45,8 +45,19 @@ $(document).ready(function() {
 -----------------*/
 $(document).ready( function() {
   
+  
+  
+  // var search = "#task_create_input";
+  // var chars = $(search).attr('placeholder').split('');
+  // $.each(chars, function(i, v){
+  //   setTimeout(function() {
+  //     $(search).val((chars.slice(0, i+1).join('')));
+  //   }, 100*i);
+  // });
+  
+  
+  
   $("#sidebar li a").click(function(){
-    console.log('ja');
     $(this).parent().addClass('active').
       siblings().removeClass('active');
   });
@@ -130,11 +141,18 @@ $(document).ready( function() {
       $( '.cb-element:checked' ).length > 0 ? $('#popin_bulk').show() : $('#popin_bulk').hide();
       
       var position = $( this ).offset();
-      
+      console.log(position)
       
       $('#popin_bulk')
           .stop()
-          .animate({top: position.top - 250},'slow','easeOutBack');
+          .animate({top: position.top - 150},'slow','easeOutBack');
+      
+      if($(this).is(':checked')) {
+        $(this).parent().parent().addClass('active_task')
+      } else {
+        $(this).parent().parent().removeClass('active_task')
+      }
+      
   });
 
 });
@@ -632,10 +650,10 @@ $(document).ready(function () {
       topmenu = topmenu - 100;
     };
     // console.log(topmenu);
-    $('#sidebar')
+    $('#sidebar_old')
         .stop()
         .animate({top: topmenu},'slow','easeOutBack');
-    $('#calendar')
+    $('#calendar_oldß')
         .stop()
         .animate({top: topmenu},'slow','easeOutBack');
     
