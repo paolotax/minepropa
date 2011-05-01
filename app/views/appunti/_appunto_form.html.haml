@@ -11,16 +11,9 @@
       .inner
         .input
           = f.text_field :destinatario, {:class => 'itext', :placeholder => "destinatario"}
-      .input
-        = f.label 'tags'
-        = f.text_field :tag_tokens, :class => 'itext'
+    = f.label 'tags'
+    = f.text_field :tag_tokens, :class => 'itext'
     %ul#task_create_actions.actions 
-      %li.create_task_action_assign.action.assign
-        %a
-          %span
-            %span.assign-avatar
-              %img#task_create_assign_avatar{ :src => "images/default-avatar.jpg" } 
-              %span.task_create_assign_name Assign it
       %li#create_task_action_reset.action.reset 
         %a
           %span#task_create_reset
