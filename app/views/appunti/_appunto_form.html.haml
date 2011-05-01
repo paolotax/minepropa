@@ -1,5 +1,5 @@
 #create-task.sc.radius-7
-  = form_for Appunto.new, { :method => 'post',  :action => appunti_path } do |f|
+  = form_for Appunto.new, { :method => 'post',  :action => appunti_path, :remote => true } do |f|
     #create-task-input.first
       .inner
         .input
@@ -20,6 +20,8 @@
             %input#task_create_input.itext.small{ :name => "title", :placeholder => "... tagga"}
             = f.text_field :tag_tokens, {:class => 'itext', :style => "display: none;"}
       %ul#task_create_actions.actions 
+        %li
+          = f.submit
         %li#create_task_action_reset.action.reset 
           %a
             %span#task_create_reset
