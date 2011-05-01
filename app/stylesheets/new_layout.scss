@@ -2,10 +2,29 @@
   list-style-type: none;
 }
 
-#create-task-input .itext {
+#create-task-input .small {
   width:285px;
 }
 
+#create-task-input.small {
+  width:295px;
+}
+
+#create-task-input.first {
+  width:590px;
+  float:left;
+}
+
+#task_create_btn_add {
+  float:left;
+  margin-left:22px;
+  margin-top:6px;
+}
+
+.create_task_more {
+  margin-top:10px;
+  display:none;
+}
 
 .tasks .details .task-title {
   color:#224165;

@@ -55,6 +55,17 @@ $(document).ready( function() {
   //   }, 100*i);
   // });
   
+  $('#appunto_nome_scuola').live('focus', function() {
+      $('.create_task_more').slideDown();
+      $('.token-input-list-facebook').hide();
+  });
+  
+  $('.token-input-list-facebook').hide();
+  
+  $('#task_create_input').live('focus', function() {
+      $(this).hide();
+      $('.token-input-list-facebook').show();
+  });
   
   
   $("#sidebar li a").click(function(){
