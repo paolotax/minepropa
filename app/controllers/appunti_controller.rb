@@ -55,6 +55,7 @@ class AppuntiController < ApplicationController
         format.mobile { redirect_to root_path }
         format.html   { redirect_to [@appunto], :flash => { :success => "L'appunto e' stato creato.  #{undo_link}" } }
         format.json   { render :json => @appunto, :status => :created, :location => @appunto }
+        format.js
       else
         format.mobile { render :action => 'new' }
         format.html   { render :action => "new" }

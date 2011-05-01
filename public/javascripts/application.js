@@ -57,7 +57,7 @@ $(document).ready( function() {
   
   $('#appunto_nome_scuola').live('focus', function() {
       $('.create_task_more').slideDown();
-      $('.token-input-list-facebook').hide();
+      // $('.token-input-list-facebook').hide();
   });
   
   $('.token-input-list-facebook').hide();
@@ -65,6 +65,7 @@ $(document).ready( function() {
   $('#task_create_input').live('focus', function() {
       $(this).hide();
       $('.token-input-list-facebook').show();
+      $('.token-input-list-facebook')[0].focus();
   });
   
   

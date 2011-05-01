@@ -1,0 +1,15 @@
+$("#comment-notice").html('<div class="flash notice"><%= escape_javascript(flash.delete(:notice)) %></div>');
+
+
+/* Add the new comment to the bottom of the comments list */
+$("<%= escape_javascript(render(@appunto)) %>").insertBefore("#appunti li:first");
+
+/* Highlight the new comment */
+$("#appunto_<%= @appunto.id %>_visita_").effect("highlight", {}, 3000);
+
+/* Reset the comment form */
+$("#new_appunto")[0].reset();
+$(".token-input-token-facebook").remove();
+$('.token-input-list-facebook').hide();
+$('#task_create_input').show();
+$('.create_task_more').hide();

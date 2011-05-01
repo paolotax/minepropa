@@ -1,3 +1,9 @@
+#appunto_submit {
+  float:left;
+  margin-left:22px;
+  margin-top:6px;
+}
+
 .ui-menu-item {
   list-style-type: none;
 }
@@ -15,10 +21,12 @@
   float:left;
 }
 
+#create-task-input.tags {
+  margin-top: 10px;
+}
+
 #task_create_btn_add {
-  float:left;
-  margin-left:22px;
-  margin-top:6px;
+
 }
 
 .create_task_more {

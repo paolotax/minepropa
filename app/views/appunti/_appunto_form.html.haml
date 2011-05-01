@@ -6,22 +6,20 @@
           %img#task_create_loader.class{ :src => "/static/images/ajax-loader.gif",  :alt => "loader", :style => "display:none;" }
           = f.text_field :destinatario, {:class => 'itext small', :placeholder => "... chi?"}
           = f.autocomplete_field :nome_scuola, autocomplete_scuola_nome_scuola_appunti_path, {:size => 40, :placeholder => "... dove?", :class => 'itext small'}
-    %a#task_create_btn_add.add.btn_green Aggiungi
+    = f.submit "Aggiungi", :class => "btn_green"
+    / %a#task_create_btn_add.add.btn_green Aggiungi
     .clear
     .create_task_more
       #create-task-input
         .inner
           .input
             = f.text_field :note, { :class => 'itext', :placeholder => "... che cosa?"}
-    .create_task_more
-      #create-task-input
+      #create-task-input.tags
         .inner
           .input
             %input#task_create_input.itext.small{ :name => "title", :placeholder => "... tagga"}
             = f.text_field :tag_tokens, {:class => 'itext', :style => "display: none;"}
       %ul#task_create_actions.actions 
-        %li
-          = f.submit
         %li#create_task_action_reset.action.reset 
           %a
             %span#task_create_reset
