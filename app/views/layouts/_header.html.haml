@@ -15,8 +15,8 @@
         .separator
         = link_to "Logout",     destroy_user_session_path,   :class => 'tab' 
         
-- logo  = image_tag("logo-todopropa-small.png", :alt => "Todo Propa app", :class => 'logo', :title => 'Todo propa')
-= link_to logo, root_path
+- logo  = image_tag("logo-todopropa-small.png", :alt => "Todo Propa app", :title => 'Todo propa')
+= link_to logo, root_path, {:class => 'logo'}
 
 
 

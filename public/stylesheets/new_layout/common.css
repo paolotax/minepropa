@@ -27,7 +27,7 @@ body > #container {
   background-attachment:initial;
   background-clip:initial;
   background-color:white;
-  background-image:url(https://www.producteev.com/static/images/main-sidebar.png);
+  background-image:url('../../images/main-sidebar.png');
   background-origin:initial;
   background-position:0 0;
   background-repeat:no-repeat repeat;
@@ -59,7 +59,7 @@ body > #container {
 #header .logo {
   display:block;
   left:3px;
-  
+  width:360px;
   outline-color:initial;
   outline-style:none;
   outline-width:initial;
@@ -85,7 +85,7 @@ body > #container {
   background-attachment:initial;
   background-clip:initial;
   background-color:transparent;
-  background-image:url(https://www.producteev.com/static/images/sidebar-separator.png);
+  background-image:url('../../images/sidebar-separator.png');
   background-origin:initial;
   background-position:100% 100%;
   background-repeat:no-repeat no-repeat;
@@ -112,7 +112,7 @@ body > #container {
   background-attachment:initial;
   background-clip:initial;
   background-color:initial;
-  background-image:url(https://www.producteev.com/static/images/icon_overview.png);
+  background-image:url('../../images/icon_overview.png');
   background-origin:initial;
   background-position:0 10px;
   background-repeat:no-repeat no-repeat;
@@ -122,7 +122,7 @@ body > #container {
   background-attachment:initial;
   background-clip:initial;
   background-color:transparent;
-  background-image:url(https://www.producteev.com/static/images/ws_corner.png);
+  background-image:url('../../images/ws_corner.png');
   background-origin:initial;
   background-position:0 0;
   background-repeat:no-repeat no-repeat;
@@ -175,7 +175,7 @@ body > #container {
   background-attachment:initial;
   background-clip:initial;
   background-color:initial;
-  background-image:url(https://www.producteev.com/static/images/icon_overview.png);
+  background-image:url('../../images/icon_overview.png');
   background-origin:initial;
   background-position:0 5px;
   background-repeat:no-repeat no-repeat;
@@ -192,7 +192,7 @@ body > #container {
   background-attachment:initial;
   background-clip:initial;
   background-color:initial;
-  background-image:url(https://www.producteev.com/static/images/bubble_count_left.png);
+  background-image:url('../../images/bubble_count_left.png');
   background-origin:initial;
   background-position:0 0;
   background-repeat:no-repeat no-repeat;
@@ -204,7 +204,7 @@ body > #container {
   background-attachment:initial;
   background-clip:initial;
   background-color:initial;
-  background-image:url(https://www.producteev.com/static/images/bubble_count_center.png);
+  background-image:url('../../images/bubble_count_center.png');
   background-origin:initial;
   background-position:0 0;
   background-repeat:repeat no-repeat;
@@ -223,7 +223,7 @@ body > #container {
   background-attachment:initial;
   background-clip:initial;
   background-color:initial;
-  background-image:url(https://www.producteev.com/static/images/bubble_count_right.png);
+  background-image:url('../../images/bubble_count_right.png');
   background-origin:initial;
   background-position:0 0;
   background-repeat:no-repeat no-repeat;
@@ -235,7 +235,7 @@ body > #container {
   background-attachment:initial;
   background-clip:initial;
   background-color:initial;
-  background-image:url(https://www.producteev.com/static/images/bubble-new-left.png);
+  background-image:url(header);
   background-origin:initial;
   background-position:0 0;
   background-repeat:no-repeat no-repeat;
