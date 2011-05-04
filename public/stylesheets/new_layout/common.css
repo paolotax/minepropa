@@ -246,7 +246,7 @@ body > #container {
   background-attachment:initial;
   background-clip:initial;
   background-color:initial;
-  background-image:url(https://www.producteev.com/static/images/bubble-new-center.png);
+  background-image:url('../../images/bubble-new-center.png');
   background-origin:initial;
   background-position:0 0;
   background-repeat:repeat no-repeat;
@@ -264,7 +264,7 @@ body > #container {
   background-attachment:initial;
   background-clip:initial;
   background-color:initial;
-  background-image:url(https://www.producteev.com/static/images/bubble-new-right.png);
+  background-image:url('../../images/bubble-new-right.png');
   background-origin:initial;
   background-position:0 0;
   background-repeat:no-repeat no-repeat;
@@ -1780,7 +1780,7 @@ input {
   margin-bottom:0;
   margin-left:0;
   margin-right:7px;
-  margin-top:3px;
+  margin-top:10px;
 }
 #header_settings .avatar {
   -webkit-box-shadow:#CCCCCC 0 0 2px;
@@ -2074,7 +2074,7 @@ h3 {
   background-attachment:initial;
   background-clip:initial;
   background-color:initial;
-  background-image:url(https://www.producteev.com/static/images/switch_list.png);
+  background-image:url('../../images/switch_list.png');
   background-origin:initial;
   background-position:0 0;
   background-repeat:no-repeat no-repeat;
@@ -2087,7 +2087,7 @@ h3 {
   background-attachment:initial;
   background-clip:initial;
   background-color:initial;
-  background-image:url(https://www.producteev.com/static/images/switch_calendar.png);
+  background-image:url("../../images/switch_calendar.png");
   background-origin:initial;
   background-position:0 0;
   background-repeat:no-repeat no-repeat;
