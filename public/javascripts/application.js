@@ -208,7 +208,7 @@ $(document).ready(function() {
   $('#btn_elimina').live('click', function () {
      var params = $('#form_appunti').serialize();
      // console.log(params);
-     $('#form_appunti').attr({'action': '/appunti/delete_multiple', 'method': 'get'});
+     $('#form_appunti').attr({'action': '/appunti/delete_multiple', 'method': 'post'});
      $('#form_appunti').submit();
      return false;
   });

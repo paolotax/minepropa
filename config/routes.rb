@@ -12,7 +12,7 @@ Minepropa::Application.routes.draw do
   
   resources :appunti do
     
-    resources :visite, :only 
+    resources :visite
     resources :indirizzi
 
     get :autocomplete_scuola_nome_scuola, :on => :collection
@@ -26,7 +26,7 @@ Minepropa::Application.routes.draw do
       post 'edit_multiple'
       get  'print_multiple', :format => 'pdf'
       put  'update_multiple'
-      get  'delete_multiple'
+      post  'delete_multiple'
     end
   end
 
