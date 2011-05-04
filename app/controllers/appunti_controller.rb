@@ -156,7 +156,14 @@ class AppuntiController < ApplicationController
     #raise params.inspect
     @appunti = Appunto.find(params[:appunti_ids])
     render 'print_multiple.pdf'
-  end    
+  end 
+  
+  def delete_multiple
+    @appunti = Appunto.delete(params[:appunti_ids])
+    redirect_to :back
+    # flash[:notice =>" appunti eliminati"]
+    # :head ok
+  end   
   
   private  
 

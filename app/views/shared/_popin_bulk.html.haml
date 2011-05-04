@@ -1,23 +1,23 @@
 #popin_bulk.radius-5
-  %span.title-bulk Bulk actions
+  %span.title-bulk Azioni
   %ul
     %li.all
-      %a.bulk-select 
+      %span.bulk-select 
         Seleziona
         .cntr_all_none
           %a.notnone tutti
           %a.none nessuno
     %li.star
       %a
-        .ctnr_label Starring
+        .ctnr_label In sospeso
         .clear
     %li.done
       %a
-        .ctnr_label Complete
+        .ctnr_label Completato
         .clear
     %li.undone
       %a
-        .ctnr_label Activate
+        .ctnr_label Attivo
         .clear
     %li.assign
       %a
@@ -29,12 +29,10 @@
         .clear
     %li.delete
       %a
-        .ctnr_label Delete
+        #btn_elimina.ctnr_label Elimina
         .clear
     %li.workspace
       %a
         #btn_edit.ctnr_label Modifica
         .clear
   .bottom   
-
-/ { :style => "display: none; "}

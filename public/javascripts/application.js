@@ -7,6 +7,14 @@ $(document).ready(function() {
         theme: 'facebook',
         preventDuplicates: true
   });
+  
+  $('#task_create_reset').live('click', function() {
+      $("#new_appunto")[0].reset();
+      $(".token-input-token-facebook").remove();
+      $('.token-input-list-facebook').hide();
+      $('#task_create_input').show();
+      $('.create_task_more').hide();
+  });
 
   $("#s_check input").live( 'change', function() {
     
@@ -196,6 +204,15 @@ $(document).ready(function() {
      $('#form_appunti').submit();
      return false;
   });
+  
+  $('#btn_elimina').live('click', function () {
+     var params = $('#form_appunti').serialize();
+     // console.log(params);
+     $('#form_appunti').attr({'action': '/appunti/delete_multiple', 'method': 'get'});
+     $('#form_appunti').submit();
+     return false;
+  });
+  
 });
 
 
