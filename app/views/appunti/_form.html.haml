@@ -1,14 +1,15 @@
 - content_for :head do
   = formtastic_stylesheet_link_tag
 
+
+
+
 .form_appunto
   = semantic_form_for @appunto do |f|
     - render 'shared/error_messages', :object => f.object
     
-    = link_to "salva", {}, :class => 'button1'
-    = f.submit "Salva Modifiche", :class => 'button1'
     = f.buttons do
-      = f.commit_button "Salva Modifiche", :html_options => { :class => 'btn_blue' }
+      = f.commit_button "Salva Modifiche", :button_html => { :class => 'btn_blue' }
     = f.inputs do
       = f.input :stato, :as => :radio, :collection => {"da consegnare" => "", "in sospeso" => "P", "consegnato" => "X" }
       = f.input :destinatario, :input_html => { :size => 40  }, :wrapper_html => { :class => "important" } 

@@ -1,0 +1,1954 @@
+#content_task_details {
+  margin-left:-13px;
+  margin-top:-8px;
+  width:761px;
+}
+.td_btn {
+  background-image:-webkit-gradient(linear, 0 0%, 0 100%, from(#FFFFFF), to(#EEEEEE));
+}
+.td_btn:hover {
+  background-image:-webkit-gradient(linear, 0 0%, 0 100%, from(#EEEEEE), to(#FFFFFF));
+}
+.btn_gray {
+  font-weight:normal;
+}
+#task_details .header {
+  background-color:#F8F8F8;
+  border-bottom-color:#F7F6F6;
+  border-bottom-left-radius:8px 8px;
+  border-bottom-right-radius:0 0;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-top-left-radius:0 0;
+  border-top-right-radius:0 0;
+  height:25px;
+  padding-bottom:0;
+  padding-left:10px;
+  padding-right:10px;
+  padding-top:0;
+}
+#task_details .header .back a, #task_details .header .delete a {
+  color:inherit;
+  font-weight:bold;
+  padding-left:15px;
+  text-transform:uppercase;
+}
+#task_details .header .back {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/task_details/td-back.png);
+  background-origin:initial;
+  background-position:0 0;
+  background-repeat:no-repeat no-repeat;
+  color:#666666;
+  float:left;
+  height:12px;
+  margin-top:8px;
+}
+#task_details .header .back:hover {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/task_details/td-back.png);
+  background-origin:initial;
+  background-position:0 -12px;
+  background-repeat:no-repeat no-repeat;
+  color:#4888B6;
+}
+#task_details .header .delete {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/task_details/td-delete.png);
+  background-origin:initial;
+  background-position:0 1px;
+  background-repeat:no-repeat no-repeat;
+  color:#666666;
+  float:right;
+  height:10px;
+  margin-top:8px;
+}
+#task_details .is-admin .header .delete:hover {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/task_details/td-delete.png);
+  background-origin:initial;
+  background-position:0 -12px;
+  background-repeat:no-repeat no-repeat;
+  color:#FD5C5C;
+  cursor:pointer;
+}
+#td_task_info {
+  background-image:-webkit-gradient(linear, 0 0%, 0 100%, from(#FEFEFE), to(#F9F9F9));
+  border-bottom-color:#F0F0F0;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-top-color:#EEEDED;
+  border-top-style:solid;
+  border-top-width:1px;
+  padding-bottom:20px;
+  padding-top:20px;
+}
+#td_short_url {
+  line-height:16px;
+}
+#td_short_url img {
+  margin-top:-2px;
+  vertical-align:middle;
+}
+#td_short_url input {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:none;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  border-bottom-style:none;
+  border-color:initial;
+  border-left-style:none;
+  border-right-style:none;
+  border-top-style:none;
+  border-width:initial;
+  color:#777777;
+  height:20px;
+  width:200px;
+}
+#td_task_info .status-container {
+  margin-left:20px;
+}
+#td_task_info .status-container, #td_task_info .star-container {
+  float:left;
+}
+#td_task_info .info-container {
+  float:left;
+  width:638px;
+}
+#task_details .is-admin .title-container:hover {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/task_details/contact-edit.png);
+  background-origin:initial;
+  background-position:615px 10px;
+  background-repeat:no-repeat no-repeat;
+}
+#td_task_title_input {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:none;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  border-bottom-style:none;
+  border-color:initial;
+  border-left-style:none;
+  border-right-style:none;
+  border-top-style:none;
+  border-width:initial;
+  color:#224165;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:24px;
+  line-height:24px;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:3px;
+  min-height:33px;
+  outline-color:initial;
+  outline-style:none;
+  outline-width:initial;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+  resize:none;
+  width:605px;
+}
+#task_details .is-admin #td_task_title_input {
+  cursor:pointer;
+}
+#task_details .is-admin #td_task_title_input:focus {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#FFFAF3;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  cursor:text;
+}
+#star_span {
+  height:32px;
+  margin-right:18px;
+  width:32px;
+}
+#task_details .is-admin #star_span:hover {
+  cursor:pointer;
+  opacity:0.7;
+}
+#td_task_info .star-container #star_span {
+  background-image:url(https://www.producteev.com/static/images/taskslist/stars/stars-big.png);
+}
+#status_span {
+  height:32px;
+  width:50px;
+}
+#task_details .is-admin #status_span:hover {
+  cursor:pointer;
+  opacity:0.7;
+}
+#td_task_info .status-container .done {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/task-details-status.png);
+  background-origin:initial;
+  background-position:5px -6px;
+  background-repeat:no-repeat no-repeat;
+}
+#td_task_info .status-container .active {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/task_details/task-details-active.png);
+  background-origin:initial;
+  background-position:9px 1px;
+  background-repeat:no-repeat no-repeat;
+}
+#td_task_info .labels-container, #td_task_info .add-labels-container {
+  margin-bottom:3px;
+  margin-left:0;
+  margin-right:0;
+  margin-top:5px;
+}
+#td_task_info .labels-container .clear, #task_details .add-labels-container .clear {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:none;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  height:auto;
+}
+#task_details .add-labels-container .label {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#C9CED3;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+}
+#td_task_info .files-container {
+  color:#777777;
+  font-size:12px;
+  line-height:12px;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  padding-bottom:5px;
+  padding-left:0;
+  padding-right:0;
+  padding-top:5px;
+}
+#td_task_info .files-container span {
+  cursor:pointer;
+  font-weight:bold;
+  text-transform:uppercase;
+}
+#td_task_info .files-container span:hover {
+  text-decoration:underline;
+}
+#td_task_info .files-container img {
+  cursor:pointer;
+  margin-bottom:1px;
+  margin-left:3px;
+}
+#td_task_info .files-box {
+  line-height:14px;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:10px;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+  width:610px;
+}
+#td_task_info .files-box .file-line {
+  border-bottom-color:#F1F1F1;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  cursor:default;
+  list-style-image:initial;
+  list-style-position:initial;
+  list-style-type:circle;
+  margin-bottom:0;
+  margin-left:15px;
+  margin-right:0;
+  margin-top:0;
+  padding-bottom:5px;
+  padding-left:0;
+  padding-right:0;
+  padding-top:5px;
+}
+#td_task_info .files-box .file-line .file-name {
+  font-weight:bold;
+}
+#td_task_info .files-box .file-line p {
+  display:none;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:1px;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+}
+#td_task_info .files-box .file-line:hover p {
+  display:block;
+}
+#td_task_info .files-box .file-line .file-preview, #td_task_info .files-box .file-line .file-download {
+  color:#9E8007;
+  cursor:pointer;
+  font-size:12px;
+  margin-right:10px;
+  outline-color:initial;
+  outline-style:none;
+  outline-width:initial;
+}
+#td_task_info .files-box .file-line .file-preview:hover, #td_task_info .files-box .file-line .file-download:hover {
+  text-decoration:underline;
+}
+#td_task_more_info {
+  background-color:#F8F8F8;
+  border-bottom-color:#E9E6E6;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-top-color:#FFFFFF;
+  border-top-style:solid;
+  border-top-width:1px;
+  padding-bottom:0;
+}
+#td_task_more_info .timing-container, #td_task_more_info .scheduling-container {
+  color:#545454;
+  float:left;
+  line-height:18px;
+  margin-bottom:0;
+  margin-left:120px;
+  margin-right:0;
+  margin-top:10px;
+  padding-top:10px;
+  width:300px;
+}
+#td_task_more_info .scheduling-container {
+  color:#545454;
+  font-size:12px;
+}
+#td_task_more_info .scheduling-container span.important-text {
+  color:#1E62A0;
+  font-weight:bold;
+}
+#td_task_more_info .timing-container-btn {
+  color:#333333;
+  cursor:pointer;
+  float:left;
+  margin-bottom:0;
+  margin-left:120px;
+  margin-right:0;
+  margin-top:10px;
+  width:300px;
+}
+#td_task_more_info .timing-container-btn .action, #td_task_more_info .assign-container-btn .action {
+  border-bottom-color:#DDDDDD;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-left-color:#DDDDDD;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#DDDDDD;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#DDDDDD;
+  border-top-style:solid;
+  border-top-width:1px;
+  color:#8B7631;
+  display:inline;
+  float:left;
+  font-size:12px;
+  line-height:12px;
+  margin-top:20px;
+  padding-bottom:8px;
+  padding-left:8px;
+  padding-right:8px;
+  padding-top:8px;
+  text-shadow:#FFFFFF 0 1px 0;
+  text-transform:uppercase;
+}
+#td_task_more_info .assign-container-btn .action {
+  margin-left:100px;
+}
+#td_task_more_info .timing-container-btn .action img, #td_task_more_info .assign-container-btn .action img {
+  border-bottom-style:none;
+  border-color:initial;
+  border-left-style:none;
+  border-right-style:none;
+  border-top-style:none;
+  border-width:initial;
+  float:left;
+  line-height:12px;
+  margin-right:5px;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+}
+#td_task_more_info .assign-container-btn {
+  color:#333333;
+  cursor:pointer;
+  float:left;
+  margin-bottom:0;
+  margin-left:20px;
+  margin-right:0;
+  margin-top:10px;
+  width:300px;
+}
+#task_details .is-admin #td_task_more_info .timing-container:hover .deadline-container, #task_details .is-admin #td_task_more_info .timing-container:hover .reminder-container, #task_details .is-admin #td_task_more_info .timing-container:hover .repetition-container, #task_details .is-admin #td_task_more_info .timing-container:hover .sync-container, #task_details .is-admin #td_task_more_info .scheduling-container:hover {
+  cursor:pointer;
+  text-decoration:underline;
+}
+#td_task_more_info .timing-container .deadline-container {
+  font-size:18px;
+  line-height:18px;
+  margin-bottom:10px;
+  margin-left:0;
+  margin-right:0;
+  margin-top:10px;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  padding-bottom:5px;
+  padding-left:5px;
+  padding-right:5px;
+  padding-top:5px;
+}
+#td_task_more_info .timing-container .reminder-container, #td_task_more_info .timing-container .repetition-container, #td_task_more_info .timing-container .sync-container {
+  color:#545454;
+  font-size:14px;
+  padding-bottom:5px;
+  padding-left:30px;
+  padding-right:5px;
+  padding-top:5px;
+}
+#td_task_more_info .timing-container .reminder-container {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/task_details/td-reminder.png);
+  background-origin:initial;
+  background-position:4px 4px;
+  background-repeat:no-repeat no-repeat;
+}
+#td_task_more_info .timing-container .repetition-container {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/task_details/td-repetition.png);
+  background-origin:initial;
+  background-position:3px 7px;
+  background-repeat:no-repeat no-repeat;
+}
+#td_task_more_info .timing-container .sync-container {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/task_details/td-sync.png);
+  background-origin:initial;
+  background-position:4px 4px;
+  background-repeat:no-repeat no-repeat;
+  color:#263F8C;
+  font-style:italic;
+}
+#td_task_more_info .resp-container {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/task_details/td-resp.png);
+  background-origin:initial;
+  background-position:115px 73px;
+  background-repeat:no-repeat no-repeat;
+  float:right;
+  margin-right:30px;
+  width:261px;
+}
+#td_task_more_info .resp-container .assigner-container {
+  float:left;
+  margin-top:30px;
+  width:130px;
+}
+#td_task_more_info .resp-container .responsible-container {
+  float:right;
+  margin-top:30px;
+  width:130px;
+}
+#task_details .is-admin .resp-container .responsible-container:hover .resp-img-container {
+  -webkit-box-shadow:rgba(139, 118, 49, 0.398438) 0 0 6px;
+  border-bottom-color:rgba(139, 118, 49, 0.597656) !important;
+  border-left-color:rgba(139, 118, 49, 0.597656) !important;
+  border-right-color:rgba(139, 118, 49, 0.597656) !important;
+  border-top-color:rgba(139, 118, 49, 0.597656) !important;
+  cursor:pointer;
+}
+#td_task_more_info .resp-container .name, #td_task_more_info .resp-container .title {
+  overflow-x:hidden;
+  overflow-y:hidden;
+  text-align:center;
+}
+#td_task_more_info .resp-container .title {
+  color:#999999;
+  font-size:12px;
+  height:13px;
+  line-height:12px;
+}
+#td_task_more_info .resp-container .name {
+  color:#333333;
+  font-size:14px;
+  height:15px;
+  line-height:14px;
+}
+#td_task_more_info .resp-container .resp-img-container {
+  background-color:#FFFFFF;
+  border-bottom-color:#E2E2E2;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-left-color:#E2E2E2;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#E2E2E2;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#E2E2E2;
+  border-top-style:solid;
+  border-top-width:1px;
+  height:40px;
+  margin-bottom:10px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:10px;
+  padding-bottom:3px;
+  padding-left:3px;
+  padding-right:3px;
+  padding-top:3px;
+  width:40px;
+}
+#td_task_more_info .resp-container .resp-img-container img {
+  height:40px;
+  width:40px;
+}
+#td_task_more_info .access-container {
+  color:#999999;
+  display:block;
+  font-size:11px;
+  margin-bottom:5px;
+  margin-left:0;
+  margin-right:0;
+  margin-top:25px;
+  text-align:center;
+}
+#td_task_more_info .access-container span {
+  cursor:default;
+  font-weight:bold;
+}
+#td_task_more_info .access-container span.info {
+  font-weight:bold;
+  text-transform:none;
+}
+#task_details .is-admin #td_task_more_info .access-container span:hover {
+  cursor:pointer;
+  text-decoration:underline;
+}
+#task_details .is-admin #td_task_more_info .access-container span.info:hover {
+  cursor:default;
+  text-decoration:none;
+}
+#td_task_more_info .access-container img {
+  margin-bottom:1px;
+  margin-left:3px;
+}
+#td_notes_activities {
+  border-top-color:#FFFFFF;
+  border-top-style:solid;
+  border-top-width:1px;
+}
+#td_notes_activities .td_add_note {
+  padding-left:20px;
+}
+#td_notes_activities .add-note-avatar-div {
+  float:left;
+  width:90px;
+}
+#td_notes_activities .add-note-avatar-container {
+  background-color:#FFFFFF;
+  border-bottom-color:#E2E2E2;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-left-color:#E2E2E2;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#E2E2E2;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#E2E2E2;
+  border-top-style:solid;
+  border-top-width:1px;
+  height:73px;
+  margin-bottom:20px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:20px;
+  padding-bottom:4px;
+  padding-left:4px;
+  padding-right:4px;
+  padding-top:4px;
+  width:73px;
+}
+#td_notes_activities .add-note-avatar-container img {
+  height:73px;
+  width:73px;
+}
+#td_notes_activities .td-create-note {
+  float:left;
+  width:630px;
+}
+#td_notes_activities .td-create-note .add-note-input-container {
+  margin-bottom:5px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:20px;
+}
+#td_notes_activities .td-create-note .add-note-input-container textarea {
+  -webkit-box-shadow:#DDDDDD 0 1px;
+  border-bottom-color:#E2E2E2;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-color:initial;
+  border-left-color:#E2E2E2;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#E2E2E2;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#E2E2E2;
+  border-top-style:solid;
+  border-top-width:1px;
+  border-width:initial;
+  box-shadow:#DDDDDD 0 1px;
+  color:#AAAAAA;
+  font-family:'Helvetica Neue', Arial, sans-serif;
+  font-size:14px;
+  height:68px;
+  line-height:16px;
+  margin-bottom:0;
+  margin-left:10px;
+  margin-right:0;
+  margin-top:0;
+  outline-width:0;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  padding-bottom:8px;
+  padding-left:8px;
+  padding-right:8px;
+  padding-top:8px;
+  white-space:pre-wrap;
+  width:595px;
+  word-wrap:break-word;
+}
+#td_notes_activities .td-create-note .add-note-input-container textarea:hover {
+  -webkit-box-shadow:#CCCCCC 0 1px;
+  border-bottom-color:#DDDDDD !important;
+  border-left-color:#DDDDDD !important;
+  border-right-color:#DDDDDD !important;
+  border-top-color:#DDDDDD !important;
+  box-shadow:#CCCCCC 0 1px;
+}
+#td_notes_activities .td-create-note .add-note-input-container textarea:focus {
+  -webkit-box-shadow:rgba(139, 118, 49, 0.398438) 0 0 6px;
+  border-bottom-color:rgba(139, 118, 49, 0.597656) !important;
+  border-left-color:rgba(139, 118, 49, 0.597656) !important;
+  border-right-color:rgba(139, 118, 49, 0.597656) !important;
+  border-top-color:rgba(139, 118, 49, 0.597656) !important;
+  color:#545454;
+}
+#td_notes_activities .td-create-note .actions {
+  float:right;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:8px;
+  margin-top:5px;
+}
+#td_notes_activities .td-create-note .actions li {
+  float:left;
+  list-style-image:initial;
+  list-style-position:initial;
+  list-style-type:none;
+}
+#td_notes_activities .td-create-note .actions li.attach {
+  height:32px;
+  margin-top:0;
+  width:200px;
+}
+#td_notes_activities .td-create-note .actions li.attach embed {
+  float:right;
+  margin-top:4px;
+}
+#td_notes_activities .td-create-note .actions li.submit {
+  border-left-color:#E7EDF0;
+  border-left-style:solid;
+  border-left-width:1px;
+  cursor:pointer;
+  margin-bottom:0;
+  margin-left:10px;
+  margin-right:0;
+  margin-top:0;
+  padding-bottom:0;
+  padding-left:10px;
+  padding-right:0;
+  padding-top:0;
+}
+#td_notes_activities .td-create-note .actions li.submit input {
+  border-bottom-color:#CCCCCC;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-color:initial;
+  border-left-color:#CCCCCC;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#CCCCCC;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#CCCCCC;
+  border-top-style:solid;
+  border-top-width:1px;
+  border-width:initial;
+  color:#8B7631;
+  cursor:pointer;
+  float:left;
+  font-family:Arial;
+  font-size:12px;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  padding-bottom:8px;
+  padding-left:8px;
+  padding-right:8px;
+  padding-top:8px;
+  text-transform:uppercase;
+}
+#td_notes_activities .notes-activities-container {
+  margin-top:20px;
+}
+#td_notes_activities .notes-activities-container ul {
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+}
+#td_notes_activities .notes-activities-container li {
+  list-style-image:initial;
+  list-style-position:initial;
+  list-style-type:none;
+  margin-bottom:20px;
+  margin-left:0;
+  margin-right:0;
+  margin-top:20px;
+  padding-left:20px;
+}
+#td_notes_activities .notes-activities-container .note-avatar-div {
+  float:left;
+  height:45px;
+  width:90px;
+}
+#td_notes_activities .notes-activities-container .note-avatar-div .note-avatar-container {
+  background-color:#FFFFFF;
+  border-bottom-color:#E2E2E2;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-left-color:#E2E2E2;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#E2E2E2;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#E2E2E2;
+  border-top-style:solid;
+  border-top-width:1px;
+  float:right;
+  height:40px;
+  padding-bottom:3px;
+  padding-left:3px;
+  padding-right:3px;
+  padding-top:3px;
+  width:40px;
+}
+#td_notes_activities .notes-activities-container .note-avatar-div .note-avatar-container img {
+  height:40px;
+  width:40px;
+}
+#td_notes_activities .notes-activities-container .note-container, #td_notes_activities .notes-activities-container .activity-container {
+  float:left;
+}
+#td_notes_activities .notes-activities-container .note-container .note {
+  margin-left:5px;
+}
+#td_notes_activities .notes-activities-container .note-container .note .note-top {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/task_details/note-top.png);
+  background-origin:initial;
+  background-position:0 0;
+  background-repeat:no-repeat no-repeat;
+  height:11px;
+  width:621px;
+}
+#td_notes_activities .notes-activities-container .note-container .note .note-center {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/task_details/note-center.png);
+  background-origin:initial;
+  background-position:0 0;
+  background-repeat:no-repeat repeat;
+  margin-left:5px;
+  width:621px;
+}
+#td_notes_activities .notes-activities-container .note-container .note .note-center .note-header {
+  padding-bottom:0;
+  padding-left:10px;
+  padding-right:10px;
+  padding-top:0;
+}
+#td_notes_activities .notes-activities-container .note-container .note .note-center .note-header .delete {
+  float:right;
+  height:10px;
+  margin-right:2px;
+  margin-top:-4px;
+  width:10px;
+}
+#td_notes_activities .notes-activities-container .author .note-container .note:hover .note-center .note-header .delete {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/task_details/td-delete.png);
+  background-origin:initial;
+  background-position:0 0;
+  background-repeat:no-repeat no-repeat;
+}
+#td_notes_activities .notes-activities-container .author .note-container .note .note-center .note-header .delete:hover {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/task_details/td-delete.png);
+  background-origin:initial;
+  background-position:0 -13px;
+  background-repeat:no-repeat no-repeat;
+  cursor:pointer;
+}
+#td_notes_activities .notes-activities-container .note-container .note .note-center .note-header .date {
+  color:#545454;
+  float:right;
+  font-size:11px;
+  margin-right:15px;
+  margin-top:-6px;
+}
+#td_notes_activities .notes-activities-container .note-container .note .note-center .note-header .creator {
+  color:#545454;
+  display:block;
+  font-weight:bold;
+  margin-top:-6px;
+  position:absolute;
+}
+#td_notes_activities .notes-activities-container .note-container .note .note-center .note-header .icon-letter {
+  margin-left:5px;
+}
+#td_notes_activities .notes-activities-container .note-container .note .note-center .note-header .correspondance {
+  color:#888888;
+  display:block;
+  margin-top:-6px;
+  position:absolute;
+}
+#td_notes_activities .notes-activities-container .note-container .note .note-center .note-header .correspondance .bold {
+  color:#545454;
+  font-weight:bold;
+}
+#td_notes_activities .notes-activities-container .note-container .note .note-center .note-content {
+  padding-bottom:5px;
+  padding-left:10px;
+  padding-right:30px;
+  padding-top:15px;
+}
+#td_notes_activities .notes-activities-container .note-container .note .note-center .note-footer {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/task_details/note-file.png);
+  background-origin:initial;
+  background-position:11px 7px;
+  background-repeat:no-repeat no-repeat;
+  line-height:16px;
+  padding-left:35px;
+}
+.note-container .note .note-center .note-footer .separator {
+  background-color:#EEEEEE;
+  height:1px;
+  margin-bottom:5px;
+  margin-left:0;
+  margin-right:0;
+  margin-top:5px;
+  width:200px;
+}
+#td_notes_activities .notes-activities-container .note-container .note .note-center .note-footer .file-name {
+  font-weight:bold;
+}
+#td_notes_activities .notes-activities-container .note-container .note .note-center .note-footer p {
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+}
+#td_notes_activities .notes-activities-container .note-container .note .note-center .note-footer .file-preview, #td_notes_activities .notes-activities-container .note-container .note .note-center .note-footer .file-download {
+  color:#9E8007;
+  cursor:pointer;
+  margin-right:10px;
+}
+#td_notes_activities .notes-activities-container .note-container .note .note-center .note-footer .file-preview:hover, #td_notes_activities .notes-activities-container .note-container .note .note-center .note-footer .file-download:hover {
+  text-decoration:underline;
+}
+#td_notes_activities .notes-activities-container .note-container .note .note-bottom {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/task_details/note-bottom.png);
+  background-origin:initial;
+  background-position:0 0;
+  background-repeat:no-repeat no-repeat;
+  height:6px;
+  margin-left:5px;
+  width:616px;
+}
+#td_notes_activities .notes-activities-container .activity-number-div {
+  float:left;
+  height:30px;
+  width:90px;
+}
+#td_notes_activities .notes-activities-container .activity-number-div .activity-number-container {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#FEFBF7;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  border-bottom-color:#EBE8D3;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-left-color:#EBE8D3;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#EBE8D3;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#EBE8D3;
+  border-top-style:solid;
+  border-top-width:1px;
+  color:#9E8007;
+  cursor:pointer;
+  float:right;
+  font-weight:bold;
+  height:28px;
+  line-height:28px;
+  margin-right:7px;
+  margin-top:1px;
+  text-align:center;
+  width:28px;
+}
+#td_notes_activities .notes-activities-container .activity-number-div .activity-number-container:hover {
+  -webkit-box-shadow:rgba(139, 118, 49, 0.398438) 0 0 6px;
+  border-bottom-color:rgba(139, 118, 49, 0.597656) !important;
+  border-left-color:rgba(139, 118, 49, 0.597656) !important;
+  border-right-color:rgba(139, 118, 49, 0.597656) !important;
+  border-top-color:rgba(139, 118, 49, 0.597656) !important;
+}
+#td_notes_activities .notes-activities-container .activity-container .activity {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#FEFBF7;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  border-bottom-color:#EBE8D3;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-left-color:#EBE8D3;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#EBE8D3;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#EBE8D3;
+  border-top-style:solid;
+  border-top-width:1px;
+  margin-bottom:0;
+  margin-left:10px;
+  margin-right:0;
+  margin-top:1px;
+  padding-bottom:2px;
+  padding-left:2px;
+  padding-right:2px;
+  padding-top:2px;
+  width:600px;
+}
+#td_notes_activities .notes-activities-container .activity-container .activity .activity-center .activity-content {
+  line-height:12px;
+  margin-bottom:2px;
+  margin-left:4px;
+  margin-right:0;
+  margin-top:2px;
+  padding-bottom:3px;
+  padding-left:10px;
+  padding-right:10px;
+  padding-top:3px;
+}
+#td_notes_activities .notes-activities-container .activity-container .activity .activity-bottom {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/task_details/activity-bottom.png);
+  background-origin:initial;
+  background-position:0 0;
+  background-repeat:no-repeat no-repeat;
+  height:6px;
+  margin-left:5px;
+  width:616px;
+}
+#td_notes_activities .notes-activities-container .activity-container .activity .activity-center .activity-content {
+  color:#545454;
+  padding-left:25px;
+}
+.activity-container .activity-content.activity-type-1 {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(https://www.producteev.com/static/images/task_details/ta_create.png);
+  background-origin:initial;
+  background-position:4px 3px;
+  background-repeat:no-repeat no-repeat;
+}
+.activity-container .activity-content.activity-type-2 {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(https://www.producteev.com/static/images/task_details/ta_assign.png);
+  background-origin:initial;
+  background-position:4px 3px;
+  background-repeat:no-repeat no-repeat;
+}
+.activity-container .activity-content.activity-type-3 {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(https://www.producteev.com/static/images/task_details/ta_deadline.png);
+  background-origin:initial;
+  background-position:4px 4px;
+  background-repeat:no-repeat no-repeat;
+}
+.activity-container .activity-content.activity-type-4 {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(https://www.producteev.com/static/images/task_details/ta_workspace.png);
+  background-origin:initial;
+  background-position:3px 2px;
+  background-repeat:no-repeat no-repeat;
+}
+.activity-container .activity-content.activity-type-5 {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(https://www.producteev.com/static/images/task_details/ta_label.png);
+  background-origin:initial;
+  background-position:4px 3px;
+  background-repeat:no-repeat no-repeat;
+}
+.activity-container .activity-content.activity-type-6 {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(https://www.producteev.com/static/images/task_details/ta_remove_label.png);
+  background-origin:initial;
+  background-position:4px 3px;
+  background-repeat:no-repeat no-repeat;
+}
+.activity-container .activity-content.activity-type-7 {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(https://www.producteev.com/static/images/task_details/ta_done.png);
+  background-origin:initial;
+  background-position:4px 3px;
+  background-repeat:no-repeat no-repeat;
+}
+.activity-container .activity-content.activity-type-8 {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(https://www.producteev.com/static/images/task_details/ta_hot.png);
+  background-origin:initial;
+  background-position:3px 2px;
+  background-repeat:no-repeat no-repeat;
+}
+.activity-container .activity-content.activity-type-9 {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(https://www.producteev.com/static/images/task_details/ta_late.png);
+  background-origin:initial;
+  background-position:3px 2px;
+  background-repeat:no-repeat no-repeat;
+}
+.activity-container .activity-content.activity-type-10 {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(https://www.producteev.com/static/images/task_details/ta_title.png);
+  background-origin:initial;
+  background-position:4px 4px;
+  background-repeat:no-repeat no-repeat;
+}
+.activity-container .activity-content.activity-type-11 {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(https://www.producteev.com/static/images/task_details/ta_star.png);
+  background-origin:initial;
+  background-position:2px 2px;
+  background-repeat:no-repeat no-repeat;
+}
+#td_notes_activities .notes-activities-container .activity-container .activity .activity-center .activity-content .date {
+  color:#D4C588;
+  font-size:11px;
+  font-weight:normal;
+  padding-right:5px;
+}
+#td_notes_activities .notes-activities-container .activity-container .activity .activity-center .activity-content .message {
+  color:#888888;
+  line-height:14px;
+}
+#td_notes_activities .notes-activities-container .activity-container .activity .activity-center .activity-content .message span, #td_notes_activities .notes-activities-container .activity-container .activity .activity-center .activity-content .message strong {
+  color:#545454;
+}
+#td_notes_activities .notes-activities-container .activity-container .activity .activity-center .activity-content .message .interactive {
+  cursor:pointer;
+}
+#td_notes_activities .notes-activities-container .activity-container .activity .activity-center .activity-content .other {
+  cursor:pointer;
+  padding-left:30px;
+}
+#td_notes_activities .notes-activities-container .activity-container .activity .activity-center .activity-content .other:hover {
+  text-decoration:underline;
+}
+#td_contacts {
+  background-color:#F8F8F8;
+  border-bottom-color:#E9E6E6;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-top-color:white;
+  border-top-style:solid;
+  border-top-width:1px;
+}
+#td_contacts .contacts-footer {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#F8F8F8;
+  background-image:url(https://www.producteev.com/static/images/task_details/contact-shadow.png);
+  background-origin:initial;
+  background-position:-3px -2px;
+  background-repeat:no-repeat no-repeat;
+  height:3px;
+}
+#td_contacts .contacts-title {
+  color:#666666;
+  float:left;
+  font-family:Helvetica;
+  font-size:14px;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  padding-bottom:20px;
+  padding-left:20px;
+  padding-right:20px;
+  padding-top:20px;
+  text-transform:uppercase;
+  width:80px;
+}
+#td_contacts .contacts-container {
+  float:left;
+}
+#td_contacts .contacts-container {
+  margin-top:25px;
+}
+#td_contacts .contacts-container .contact-line {
+  width:614px;
+}
+#td_contacts .contacts-container .contact-line input, #td_contacts .contacts-container .contact-line textarea {
+  border-bottom-style:none;
+  border-color:initial;
+  border-left-style:none;
+  border-right-style:none;
+  border-top-style:none;
+  border-width:initial;
+  outline-color:initial;
+  outline-style:none;
+  outline-width:initial;
+  resize:none;
+  width:400px;
+}
+#td_contacts .contacts-container .contact-line .contact-top {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/task_details/contact-top.png);
+  background-origin:initial;
+  background-position:0 0;
+  background-repeat:no-repeat no-repeat;
+  height:6px;
+  margin-top:-5px;
+}
+#td_contacts .contacts-container .contact-line .contact-center {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/task_details/contact-center.png);
+  background-origin:initial;
+  background-position:0 0;
+  background-repeat:no-repeat repeat;
+  cursor:pointer;
+  line-height:14px;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  padding-bottom:10px;
+  padding-left:6px;
+  padding-right:6px;
+  padding-top:4px;
+}
+#td_contacts .contacts-container .contact-line .contact-center .contact-name {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/task_details/contact-name.png);
+  background-origin:initial;
+  background-position:0 1px;
+  background-repeat:no-repeat no-repeat;
+  color:#224165;
+  cursor:pointer;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:12px;
+  font-style:normal;
+  font-variant:normal;
+  font-weight:bold;
+  margin-left:5px;
+  padding-left:15px;
+  padding-right:15px;
+}
+#td_contacts .contacts-container .editing .contact-center .contact-name {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#FFFAF3;
+  background-image:url(https://www.producteev.com/static/images/task_details/contact-name.png);
+  background-origin:initial;
+  background-position:0 1px;
+  background-repeat:no-repeat no-repeat;
+}
+#td_contacts .contacts-container .contact-line .contact-center .add {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/task_details/contact-add.png);
+  background-origin:initial;
+  background-position:0 1px;
+  background-repeat:no-repeat no-repeat;
+}
+#td_contacts .contacts-container .contact-line .contact-center .contact-email {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/task_details/contact-email.png);
+  background-origin:initial;
+  background-position:0 3px;
+  background-repeat:no-repeat no-repeat;
+  margin-left:5px;
+  padding-left:15px;
+  padding-right:15px;
+}
+#td_contacts .contacts-container .contact-line .contact-center .contact-phone {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/task_details/contact-phone.png);
+  background-origin:initial;
+  background-position:0 1px;
+  background-repeat:no-repeat no-repeat;
+  margin-left:5px;
+  padding-left:15px;
+  padding-right:15px;
+}
+#td_contacts .contacts-container .contact-line .contact-expension {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/task_details/contact-center.png);
+  background-origin:initial;
+  background-position:0 0;
+  background-repeat:no-repeat repeat;
+  padding-bottom:10px;
+  padding-left:10px;
+  padding-right:10px;
+  padding-top:10px;
+}
+#td_contacts .contacts-container .contact-line .contact-expension .contact-email {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/task_details/contact-email.png);
+  background-origin:initial;
+  background-position:0 5px;
+  background-repeat:no-repeat no-repeat;
+  margin-bottom:3px;
+  margin-left:0;
+  margin-right:0;
+  margin-top:3px;
+  min-height:12px;
+  padding-bottom:2px;
+  padding-left:15px;
+  padding-right:15px;
+  padding-top:2px;
+}
+#td_contacts .contacts-container .editing .contact-expension .contact-email {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#FFFAF3;
+  background-image:url(https://www.producteev.com/static/images/task_details/contact-email.png);
+  background-origin:initial;
+  background-position:0 5px;
+  background-repeat:no-repeat no-repeat;
+}
+#td_contacts .contacts-container .contact-line .contact-expension .contact-phone {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/task_details/contact-phone.png);
+  background-origin:initial;
+  background-position:0 4px;
+  background-repeat:no-repeat no-repeat;
+  margin-bottom:3px;
+  margin-left:0;
+  margin-right:0;
+  margin-top:3px;
+  min-height:12px;
+  padding-bottom:2px;
+  padding-left:15px;
+  padding-right:15px;
+  padding-top:2px;
+}
+#td_contacts .contacts-container .editing .contact-expension .contact-phone {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#FFFAF3;
+  background-image:url(https://www.producteev.com/static/images/task_details/contact-phone.png);
+  background-origin:initial;
+  background-position:0 4px;
+  background-repeat:no-repeat no-repeat;
+}
+#td_contacts .contacts-container .contact-line .contact-expension .contact-url {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/task_details/contact-url.png);
+  background-origin:initial;
+  background-position:0 5px;
+  background-repeat:no-repeat no-repeat;
+  margin-bottom:3px;
+  margin-left:0;
+  margin-right:0;
+  margin-top:3px;
+  min-height:12px;
+  padding-bottom:2px;
+  padding-left:15px;
+  padding-right:15px;
+  padding-top:2px;
+}
+#td_contacts .contacts-container .editing .contact-expension .contact-url {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#FFFAF3;
+  background-image:url(https://www.producteev.com/static/images/task_details/contact-url.png);
+  background-origin:initial;
+  background-position:0 5px;
+  background-repeat:no-repeat no-repeat;
+}
+#td_contacts .contacts-container .contact-line .contact-expension .contact-note {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/task_details/contact-note.png);
+  background-origin:initial;
+  background-position:0 4px;
+  background-repeat:no-repeat no-repeat;
+  margin-bottom:3px;
+  margin-left:0;
+  margin-right:0;
+  margin-top:3px;
+  min-height:60px;
+  padding-bottom:2px;
+  padding-left:15px;
+  padding-right:15px;
+  padding-top:2px;
+}
+#td_contacts .contacts-container .editing .contact-expension .contact-note {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#FFFAF3;
+  background-image:url(https://www.producteev.com/static/images/task_details/contact-note.png);
+  background-origin:initial;
+  background-position:0 4px;
+  background-repeat:no-repeat no-repeat;
+  outline-width:0;
+  white-space:pre-wrap;
+  word-wrap:break-word;
+}
+#td_contacts .contacts-container .contact-line .contact-expension .contact-confirmation span {
+  border-bottom-color:#DDDDDD;
+  border-bottom-left-radius:4px 4px;
+  border-bottom-right-radius:4px 4px;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-left-color:#DDDDDD;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#DDDDDD;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#DDDDDD;
+  border-top-left-radius:4px 4px;
+  border-top-right-radius:4px 4px;
+  border-top-style:solid;
+  border-top-width:1px;
+  color:#8B7631;
+  cursor:pointer;
+  display:inline-block;
+  margin-bottom:5px;
+  margin-left:0;
+  margin-right:6px;
+  margin-top:2px;
+  padding-bottom:5px;
+  padding-left:5px;
+  padding-right:5px;
+  padding-top:5px;
+}
+#td_contacts .contacts-container .contact-line .contact-expension .contact-email input, #td_contacts .contacts-container .contact-line .contact-expension .contact-phone input, #td_contacts .contacts-container .contact-line .contact-expension .contact-url input, #td_contacts .contacts-container .contact-line .contact-expension .contact-note textarea {
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:12px;
+  font-style:normal;
+  font-variant:normal;
+  font-weight:normal;
+}
+#td_contacts .contacts-container .contact-line .contact-expension .contact-panel {
+  float:right;
+  margin-right:-8px;
+  margin-top:-43px;
+}
+#td_contacts .contacts-container .contact-line .contact-expension .contact-panel .contact-send, #td_contacts .contacts-container .contact-line .contact-expension .contact-panel .contact-preview, #td_contacts .contacts-container .contact-line .contact-expension .contact-panel .contact-edit, #td_contacts .contacts-container .contact-line .contact-expension .contact-panel .contact-delete {
+  border-bottom-color:#BCBCBC;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-left-color:#BCBCBC;
+  border-left-style:solid;
+  border-left-width:1px;
+  color:#9D763F;
+  cursor:pointer;
+  float:right;
+  font-family:Arial;
+  font-size:12px;
+  height:20px;
+  width:30px;
+}
+#td_contacts .contacts-container .contact-line .contact-expension .contact-panel .contact-delete {
+  border-bottom-left-radius:0 0;
+  border-bottom-right-radius:0 0;
+  border-top-left-radius:0 0;
+  border-top-right-radius:5px 5px;
+}
+#td_contacts .contacts-container .contact-line .contact-expension .contact-panel .contact-send {
+  border-bottom-left-radius:5px 5px;
+  border-bottom-right-radius:0 0;
+  border-top-left-radius:0 0;
+  border-top-right-radius:0 0;
+}
+#td_contacts .contacts-container .contact-line .contact-expension .contact-panel .contact-send img {
+  margin-bottom:5px;
+  margin-left:9px;
+  margin-right:9px;
+  margin-top:5px;
+}
+#td_contacts .contacts-container .contact-line .contact-expension .contact-panel .contact-preview img {
+  margin-bottom:4px;
+  margin-left:10px;
+  margin-right:10px;
+  margin-top:4px;
+}
+#td_contacts .contacts-container .contact-line .contact-expension .contact-panel .contact-edit img {
+  margin-bottom:4px;
+  margin-left:8px;
+  margin-right:8px;
+  margin-top:4px;
+  width:12px;
+}
+#td_contacts .contacts-container .contact-line .contact-expension .contact-panel .contact-delete img {
+  margin-bottom:6px;
+  margin-left:11px;
+  margin-right:11px;
+  margin-top:6px;
+}
+#task-notes {
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:20px;
+  width:731px;
+}
+#user-note .avatar {
+  float:left;
+}
+#user-note img.avatar {
+  height:32px;
+  width:32px;
+}
+#create-note {
+  border-bottom-color:#A9C6D7;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-left-color:#A9C6D7;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#A9C6D7;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#A9C6D7;
+  border-top-style:solid;
+  border-top-width:1px;
+  float:left;
+  margin-left:4px;
+  padding-bottom:0;
+  padding-left:4px;
+  padding-right:4px;
+  padding-top:4px;
+  width:685px;
+}
+#create-note-input {
+  border-bottom-color:#2F7BAA;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-left-color:#2F7BAA;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#2F7BAA;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#2F7BAA;
+  border-top-style:solid;
+  border-top-width:1px;
+  padding-bottom:2px;
+  padding-left:2px;
+  padding-right:2px;
+  padding-top:2px;
+}
+#create-note-input .inner {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/pop-in.png);
+  background-origin:initial;
+  background-position:0 0;
+  background-repeat:repeat no-repeat;
+}
+#create-note .actions {
+  float:right;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+}
+#create-note .actions li {
+  float:left;
+  list-style-image:initial;
+  list-style-position:initial;
+  list-style-type:none;
+}
+#create-note .actions li.term {
+  color:#718D9E;
+  font:normal normal normal 14px/normal Georgia;
+  font-style:italic;
+  height:34px;
+  line-height:31px;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:10px;
+  padding-top:0;
+}
+#create-note .actions li.action a {
+  border-left-color:#E7EDF0;
+  border-left-style:solid;
+  border-left-width:1px;
+  color:#135A8D;
+  display:inline-block;
+  font-size:11px;
+  font-weight:bold;
+  height:34px;
+  line-height:34px;
+  padding-bottom:0;
+  padding-left:10px;
+  padding-right:10px;
+  padding-top:0;
+  text-transform:uppercase;
+}
+#create-note .actions li.action span {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/icons.png);
+  background-origin:initial;
+  background-position:0 0;
+  background-repeat:no-repeat no-repeat;
+  display:inline-block;
+  padding-bottom:0;
+  padding-left:24px;
+  padding-right:0;
+  padding-top:0;
+}
+#create-note .actions li.attach span {
+  background-position:0 -312px;
+}
+#create-note .actions li.submit {
+  border-left-color:#E7EDF0;
+  border-left-style:solid;
+  border-left-width:1px;
+  height:34px;
+  line-height:34px;
+  margin-bottom:0;
+  margin-left:5px;
+  margin-right:0;
+  margin-top:0;
+  padding-bottom:0;
+  padding-left:17px;
+  padding-right:0;
+  padding-top:0;
+}
+#create-note .actions li.submit input {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/leave-a-note.png);
+  background-origin:initial;
+  background-position:0 0;
+  background-repeat:no-repeat no-repeat;
+  border-bottom-style:none;
+  border-color:initial;
+  border-left-style:none;
+  border-right-style:none;
+  border-top-style:none;
+  border-width:initial;
+  color:#FFFFFF;
+  font-family:Arial;
+  font-size:14px;
+  font-weight:bold;
+  height:26px;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:4px;
+  width:153px;
+}
+#task-notes .notes {
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:5px;
+}
+#task-notes .notes li {
+  border-top-color:#E6E6E6;
+  border-top-style:solid;
+  border-top-width:1px;
+  list-style-image:initial;
+  list-style-position:initial;
+  list-style-type:none;
+  padding-bottom:3px;
+  padding-left:0;
+  padding-right:0;
+  padding-top:3px;
+}
+#task-notes .notes .counter {
+  color:#545454;
+  font-family:Georgia;
+  font-size:16px;
+  font-style:italic;
+  padding-bottom:3px;
+  padding-left:7px;
+  padding-right:7px;
+  padding-top:3px;
+}
+#task-notes .notes .note {
+  padding-bottom:15px;
+  padding-left:0;
+  padding-right:0;
+  padding-top:10px;
+}
+#task-notes .notes .note .avatar {
+  float:left;
+  height:32px;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:5px;
+  width:32px;
+}
+#task-notes .notes .note .note-content {
+  float:left;
+  margin-left:5px;
+  width:670px;
+}
+#task-notes .notes .note .note-infos .collaborator {
+  color:#545454;
+  font-size:12px;
+}
+#task-notes .notes .note .note-infos .collaborator:hover {
+  text-decoration:underline;
+}
+#task-notes .notes .note .note-infos .date {
+  color:#8B8B8B;
+  font-size:12px;
+  font-style:italic;
+}
+#task-notes .notes .note .note-content p {
+  color:#224165;
+  font-size:14px;
+  margin-bottom:-4px;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+}
+#task-notes .notes .note .delete {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/icons.png);
+  background-origin:initial;
+  background-position:2px -519px;
+  background-repeat:no-repeat no-repeat;
+  float:right;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  text-indent:-10000px;
+  width:20px;
+}
+#task-notes .notes .feed {
+  color:#7D8F9B;
+  margin-bottom:0;
+  margin-left:30px;
+  margin-right:0;
+  margin-top:0;
+  padding-bottom:10px;
+  padding-left:10px;
+  padding-right:10px;
+  padding-top:10px;
+  position:relative;
+  z-index:0;
+}
+#task-notes .notes .feed ul {
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+}
+#task-notes .notes .feed li {
+  border-bottom-style:none;
+  border-color:initial;
+  border-left-style:none;
+  border-right-style:none;
+  border-top-style:none;
+  border-width:initial;
+  color:#7D8F9B;
+  list-style-image:initial;
+  list-style-position:initial;
+  list-style-type:none;
+  margin-bottom:3px;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+}
+#task-notes .notes .feed .date {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#E5EAEE;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  color:#8FA6B5;
+  display:inline-block;
+  float:left;
+  font-size:10px;
+  height:15px;
+  line-height:15px;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:3px;
+  margin-top:3px;
+  text-align:center;
+  width:64px;
+}
+#task-notes .notes .feed .message-activity {
+  float:left;
+  margin-bottom:0;
+  margin-left:4px;
+  margin-right:0;
+  margin-top:0;
+  width:550px;
+}
+#task-notes .notes .feed li a {
+  color:#445661;
+}
+#task-notes .notes .feed li a:hover {
+  text-decoration:underline;
+}
+#task-notes .notes .feed li a.elt {
+  font-weight:bold;
+}
+#task-notes .notes .note .attached-file {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url(https://www.producteev.com/static/images/icons.png);
+  background-origin:initial;
+  background-position:0 -312px;
+  background-repeat:no-repeat no-repeat;
+  font-size:14px;
+  padding-bottom:5px;
+  padding-left:22px;
+  padding-right:0;
+  padding-top:8px;
+}
+#task-notes .notes .note .attached-file .attach {
+  color:#7F7F7F;
+  font-family:Georgia;
+  font-style:italic;
+}
+#task-notes .notes .note .attached-file a {
+  color:#8B753B;
+}
+#task-notes .notes .note .attached-file a:hover {
+  text-decoration:underline;
+}
+#task_details_set_responsible {
+  position:relative;
+}
+#tasks_details_delete {
+  display:block;
+  float:right;
+  position:relative;
+}
+#task_details_deadline_popin_container {
+  position:relative;
+}
+#popin_set_private {
+  font-size:12px;
+}
+#task_details_workspace_link {
+  font:normal normal normal 14px/1em Arial, Helvetica, sans-serif;
+  font-style:normal;
+}
+#task_detail_creator {
+  cursor:text;
+}
+a.task_details_preview {
+  float:right;
+}
+a.scribd_preview {
+  float:right;
+}
+a.task_details_download {
+  float:right;
+}
+a.scribd_close {
+  color:#EF0436;
+  float:right;
+}
+a.separator_file_details {
+  color:#7F7F7F;
+  float:right;
+  margin-left:4px;
+  margin-right:4px;
+}
+#star_image {
+  cursor:pointer;
+}
+.td_task_unaccessible {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#FEFBF7;
+  background-image:url(https://www.producteev.com/static/images/task_details/task_unaccessible.png);
+  background-origin:initial;
+  background-position:10px 10px;
+  background-repeat:no-repeat no-repeat;
+  border-bottom-color:#EBE8D3;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-left-color:#EBE8D3;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#EBE8D3;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#EBE8D3;
+  border-top-style:solid;
+  border-top-width:1px;
+  color:#FF6666;
+  font-family:'Helvetica Neue', Arial, sans-serif;
+  font-size:18px;
+  font-weight:bold;
+  line-height:24px;
+  margin-bottom:0;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:100px;
+  min-height:40px;
+  padding-bottom:10px;
+  padding-left:70px;
+  padding-right:20px;
+  padding-top:10px;
+  width:300px;
+}

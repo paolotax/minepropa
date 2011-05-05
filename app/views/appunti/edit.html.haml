@@ -1,4 +1,13 @@
-- title "Modifica appunto"
+#content_task_details
+  #task_details
+    .is_admin
+      .header
+        .back
+          = link_to "Indietro", "javascript:history.back()"
+        .delete
+          = link_to "Elimina", @appunto, :method => :delete, :confirm => 'Sei sicuro?'  
+
+/ - title "Modifica appunto"
 
 = render 'form'
 
