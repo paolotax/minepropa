@@ -179,7 +179,7 @@ $(document).ready( function() {
 
 
 /* -----------------------
-    edit multiple - pdf 
+    popin_bulk actions
 ------------------------*/
 $(document).ready(function() {
 
@@ -207,8 +207,6 @@ $(document).ready(function() {
   
   $('#btn_elimina').live('click', function () {
      var params = $('#form_appunti').serialize();
-     console.log(params);
-     
      $.ajax({
         url: '/appunti/delete_multiple.json',
         data: params,
@@ -218,10 +216,6 @@ $(document).ready(function() {
           $('#popin_bulk').hide();
         } 
      });
-     
-     // $('#form_appunti').attr({'action': '/appunti/delete_multiple', 'method': 'post'});
-     // $('#form_appunti').submit();
-     // return false;
   });
   
 });

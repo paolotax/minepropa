@@ -42,9 +42,9 @@ group :development do
   gem 'annotate-models'
   gem 'faker'	
   
-  gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
+  #gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
   #gem 'guard-rspec'
-  gem 'guard-livereload'
+  #gem 'guard-livereload'
 end
 
 group :test do
