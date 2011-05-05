@@ -207,10 +207,21 @@ $(document).ready(function() {
   
   $('#btn_elimina').live('click', function () {
      var params = $('#form_appunti').serialize();
-     // console.log(params);
-     $('#form_appunti').attr({'action': '/appunti/delete_multiple', 'method': 'post'});
-     $('#form_appunti').submit();
-     return false;
+     console.log(params);
+     
+     $.ajax({
+        url: '/appunti/delete_multiple.json',
+        data: params,
+        type: 'POST',
+        success: function() {
+          $('.cb-element:checked' ).parent().parent().remove();
+          $('#popin_bulk').hide();
+        } 
+     });
+     
+     // $('#form_appunti').attr({'action': '/appunti/delete_multiple', 'method': 'post'});
+     // $('#form_appunti').submit();
+     // return false;
   });
   
 });

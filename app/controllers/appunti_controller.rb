@@ -125,17 +125,14 @@ class AppuntiController < ApplicationController
   end
   
   def edit_or_print
-    
     @appunti = Appunto.find(params[:appunti_ids])
-    render 'print_multiple.pdf'
-    
-    # if params[:commit] == 'modifica selezionati'
-    #   render 'edit_multiple'
-    # else
-    #   if params[:commit] == 'stampa selezionati'
-    #     render 'print_multiple.pdf'
-    #   end
-    # end
+    if params[:commit] == 'modifica selezionati'
+      render 'edit_multiple'
+    else
+      if params[:commit] == 'stampa selezionati'
+        render 'print_multiple.pdf'
+      end
+    end
   end
   
   def edit_multiple
@@ -160,9 +157,10 @@ class AppuntiController < ApplicationController
   
   def delete_multiple
     @appunti = Appunto.delete(params[:appunti_ids])
-    redirect_to :back
-    # flash[:notice =>" appunti eliminati"]
-    # :head ok
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.json { render :json => @appunti }
+    end
   end   
   
   private  
