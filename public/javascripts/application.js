@@ -73,7 +73,7 @@ $(document).ready( function() {
   $('#task_create_input').live('focus', function() {
       $(this).hide();
       $('.token-input-list-facebook').show();
-      $('.token-input-list-facebook')[0].focus();
+      $('.token-input-list-facebook input').focus();
   });
   
   

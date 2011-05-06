@@ -15,6 +15,19 @@ module AppuntiHelper
     end
   end
   
+  def show_status_css(stato)
+    if stato == 'X'
+      content_tag :div, "", { :id => 'status_span', :class => 'done'}
+    else
+      if stato == "P"
+        content_tag :div, "", { :id => 'status_span', :class => 'sosp'}
+      else  
+        content_tag :div, "", { :id => 'status_span', :class => 'active'}
+      end
+    end
+  end
+    
+  
   def find_first_visita(id)
     appunto = Appunto.find(id)
     visita = appunto.visite.first
@@ -55,5 +68,7 @@ module AppuntiHelper
       end
     end
   end
+  
+  
 
 end

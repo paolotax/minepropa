@@ -24,6 +24,7 @@ class AppuntiController < ApplicationController
   
   def show
     @appunto = Appunto.find(params[:id])
+    # @scuole = current_user.scuole
     @visita = Visita.new
     
     respond_to do |format|

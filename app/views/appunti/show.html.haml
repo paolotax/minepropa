@@ -8,14 +8,15 @@
           = link_to "Elimina", @appunto, :method => :delete, :confirm => 'Sei sicuro?', :title => 'Elimina      appunto'
       #td_task_info
         .status-container
-          #status_span.active
+          = show_status_css(@appunto.stato)
         .star-container
           #star_span.star_3-0
         .info-container
           #td_task_title_input.title-container
             = best_in_place @appunto, :destinatario, :type => :input
           #td_task_title_input.title-container
-            = best_in_place @appunto, :nome_scuola, :type => :input
+            = best_in_place @appunto, :nome_scuola
+            / = best_in_place @appunto, :nome_scuola, :type => :select, :collection => [["IC ALFONSINE", 2],["E MATTEOTTI ALF", 3]]
           #td_task_title_input.title-container
             = best_in_place @appunto, :note, :type => :textarea
         .clear
@@ -25,6 +26,7 @@
         #td_task_assign_it.assign-container-btn
         #access-container
       #td_notes_activities
+
 
 
 / - title "appunto"

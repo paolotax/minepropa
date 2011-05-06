@@ -17,10 +17,10 @@
       #create-task-input.tags
         .inner
           .input
-            %input#task_create_input.itext.small{ :name => "title", :placeholder => "... tagga"}
+            %input#task_create_input.itext{ :name => "title", :placeholder => "... tagga"}
             = f.text_field :tag_tokens, {:class => 'itext', :style => "display: none;"}
       %ul#task_create_actions.actions 
         %li#create_task_action_reset.action.reset 
           %a
             %span#task_create_reset
-              Reset
+              Resetta
