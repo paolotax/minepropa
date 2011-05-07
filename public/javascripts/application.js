@@ -1,21 +1,6 @@
 
 $(document).ready(function() {
   
-  $("#appunto_tag_tokens, #appunto_tag_add").tokenInput("/tags.json", {
-        crossDomain: false,
-        prePopulate: $("#appunto_tag_tokens, , #appunto_tag_add").data("pre"),
-        theme: 'facebook',
-        preventDuplicates: true
-  });
-  
-  $('#task_create_reset').live('click', function() {
-      $("#new_appunto")[0].reset();
-      $(".token-input-token-facebook").remove();
-      $('.token-input-list-facebook').hide();
-      $('#task_create_input').show();
-      $('.create_task_more').hide();
-  });
-
   $("#s_check input").live( 'change', function() {
     
     obj = $('#scuola_' + $(this).val())
@@ -63,12 +48,30 @@ $(document).ready( function() {
   //   }, 100*i);
   // });
   
-  $('#appunto_nome_scuola').live('focus', function() {
-      $('.create_task_more').slideDown();
-      // $('.token-input-list-facebook').hide();
+  $("#appunto_tag_tokens, #appunto_tag_add").tokenInput("/tags.json", {
+        crossDomain: false,
+        prePopulate: $("#appunto_tag_tokens, , #appunto_tag_add").data("pre"),
+        theme: 'facebook',
+        preventDuplicates: true,
+        hintText: "tagga questo appunto...",
+        noResultsText: "nessun tag...",
+        searchingText: "attendi..."
   });
   
-  $('.token-input-list-facebook').hide();
+  $('#task_create_reset').live('click', function() {
+      $("#new_appunto")[0].reset();
+      $(".token-input-token-facebook").remove();
+      $('.token-input-list-facebook').hide();
+      $('#task_create_input').show();
+      $('.create_task_more').hide();
+  });
+  
+  $('#appunto_nome_scuola').live('focus', function() {
+      $('.token-input-list-facebook').hide();
+      $('.create_task_more').slideDown();
+  });
+  
+  // $('.token-input-list-facebook').hide();
   
   $('#task_create_input').live('focus', function() {
       $(this).hide();
