@@ -5,9 +5,11 @@ class PagesController < ApplicationController
   def home
 
     if mobile_device?
+
       @search = current_user.appunti.in_corso.per_id.search(params[:search])
       @appunti = @search.all
     else
+      @term = params[:search]
       @search = current_user.appunti.in_corso.per_id.page(params[:page]).per(30).search(params[:search])
       @appunti = @search.relation
       @tags = current_user.appunti.in_corso.tag_counts_on(:tags)

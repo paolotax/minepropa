@@ -770,9 +770,18 @@ if (history && history.pushState) {
        return false;
     });
 	 	
-		$('#appunto_search').submit(function () {  
-			$.get(this.action, $("#appunto_search").serialize(), null, 'script');  
-			history.pushState(null, document.title, $("#appunto_search").attr("action") + "?" + $("#appunto_search").serialize());
+		$('#appunto_search').submit(function () {
+		  
+		  $("#search-icon").hide();
+		  $("#search_loader").show();
+		    
+			$.get(this.action, $("#appunto_search").serialize(), function (data) {
+			    
+			   $("#search-icon").show();
+   		   $("#search_loader").hide();
+			    
+			}, 'script');  
+      // history.pushState(null, document.title, $("#appunto_search").attr("action") + "?" + $("#appunto_search").serialize());
 			return false;
 		});
 		
