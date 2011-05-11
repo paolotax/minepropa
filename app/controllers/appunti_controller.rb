@@ -40,6 +40,8 @@ class AppuntiController < ApplicationController
   end
 
   def edit
+    @prev_url = request.referer
+    
     @appunto = current_user.appunti.find(params[:id])
     @indirizzo = @appunto.indirizzi.first
     if @indirizzo == nil
@@ -72,7 +74,7 @@ class AppuntiController < ApplicationController
     respond_to do |format|
       if @appunto.update_attributes(params[:appunto])
         format.mobile { redirect_to root_path }
-        format.html   { redirect_to [@appunto], :flash => { :success => "L'appunto e' stato aggiornato.  #{undo_link}" } }
+        format.html   { redirect_to params[:prev_url] || @appunto, :flash => { :success => "L'appunto e' stato aggiornato.  #{undo_link}" } }
         format.json   { head :ok }
       else
         format.mobile { render :action => 'edit' }

@@ -8,9 +8,6 @@
           = @appunto.errors.full_messages.each do |msg|
             %li msg 
     #field{"data-role" => "fieldcontain"}
-      = f.label :stato
-      = f.select(:stato, options_for_select([["...", ""],["in sospeso", "P"],["completato", "X"]], @appunto.stato))
-    #field{"data-role" => "fieldcontain"}
       = f.label :destinatario
       = f.text_field :destinatario
     #field{"data-role" => "fieldcontain"}
@@ -25,5 +22,8 @@
     #field{"data-role" => "fieldcontain"}
       = f.label :email
       = f.email_field :email
+      #field{"data-role" => "fieldcontain"}
+        = f.label :stato
+        = f.select(:stato, options_for_select([["...", ""],["in sospeso", "P"],["completato", "X"]], @appunto.stato))
     .actions.last.center
       = f.submit
