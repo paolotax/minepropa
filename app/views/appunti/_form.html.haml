@@ -20,7 +20,6 @@
         = f.text_field :tag_tokens, "data-pre" => @appunto.tags.map(&:attributes).to_json
       = f.input :telefono,     :input_html => { :size => 40  }
       = f.input :email,        :input_html => { :size => 40  }
-      = f.hidden_field :prev_url, :value => @prev_url
     / = f.semantic_fields_for :indirizzi do |indirizzo|
     /   = indirizzo.inputs do
     /     = indirizzo.input :destinatario

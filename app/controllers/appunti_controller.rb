@@ -26,6 +26,7 @@ class AppuntiController < ApplicationController
     @appunto = Appunto.find(params[:id])
     # @scuole = current_user.scuole
     @visita = Visita.new
+    session[:return_to] ||= request.referer
     
     respond_to do |format|
       format.html  # show.html.erb
@@ -40,7 +41,7 @@ class AppuntiController < ApplicationController
   end
 
   def edit
-    @prev_url = request.referer
+    session[:return_to] ||= request.referer
     
     @appunto = current_user.appunti.find(params[:id])
     @indirizzo = @appunto.indirizzi.first
@@ -74,7 +75,7 @@ class AppuntiController < ApplicationController
     respond_to do |format|
       if @appunto.update_attributes(params[:appunto])
         format.mobile { redirect_to root_path }
-        format.html   { redirect_to params[:prev_url] || @appunto, :flash => { :success => "L'appunto e' stato aggiornato.  #{undo_link}" } }
+        format.html   { redirect_to session[:return_to], :flash => { :success => "L'appunto e' stato aggiornato.  #{undo_link}" } }
         format.json   { head :ok }
       else
         format.mobile { render :action => 'edit' }

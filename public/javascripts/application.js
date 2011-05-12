@@ -690,7 +690,7 @@ $(document).ready(function () {
     $('#sidebar_old')
         .stop()
         .animate({top: topmenu},'slow','easeOutBack');
-    $('#calendar_oldß')
+    $('#calendar_old')
         .stop()
         .animate({top: topmenu},'slow','easeOutBack');
     
@@ -779,10 +779,10 @@ if (history && history.pushState) {
 			    
 			   $("#search-icon").show();
    		   $("#search_loader").hide();
-			    
+			   history.pushState(null, document.title, $("#appunto_search").attr("action") + "?" + $("#appunto_search").serialize()); 
 			}, 'script');  
-      // history.pushState(null, document.title, $("#appunto_search").attr("action") + "?" + $("#appunto_search").serialize());
-			return false;
+      
+      // return false;
 		});
 		
 		$('#scuola_search').submit(function () {  
