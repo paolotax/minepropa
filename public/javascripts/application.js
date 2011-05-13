@@ -1,4 +1,6 @@
-
+/* ------------------------------
+    Lista scuole check clone 
+-------------------------------*/
 $(document).ready(function() {
   
   $("#s_check input").live( 'change', function() {
@@ -26,11 +28,18 @@ $(document).ready(function() {
 });
 
 
-
-
-/* Activating Best In Place */
+/* ------------------------------
+    Activating Best In Place 
+-------------------------------*/
 $(document).ready(function() {
   jQuery(".best_in_place").best_in_place();
+});
+
+/* ------------------------------
+    new_layout
+-------------------------------*/
+$(document).ready(function() {
+  // $('#appunto_nome_scuola').bestupper();
 });
 
 /* ----------------
@@ -755,7 +764,6 @@ if (history && history.pushState) {
 	
   $(document).ready(function () {  
     
-    $('#appunto_nome_scuola').bestupper(); 
  	 	
  	 	// Sorting and pagination links.  
     // $("#appunti .pagination a,  #provincie a").live("click", function() {
