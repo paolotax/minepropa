@@ -23,8 +23,20 @@
       #td_task_more_info
         #td_task_timing.timing-container
         #td_task_schedule_it.timing-container-btn
+          .btn_gray.action
+            tel
+            = best_in_place @appunto, :telefono
         #td_task_assign_it.assign-container-btn
-        #access-container
+          .btn_gray.action
+            email
+            = best_in_place @appunto, :email
+        .clear
+        .access-container
+          Creator:
+          %span.info= current_user.name
+          Creato il:
+          %span= @appunto.created_at.to_s
+        
       #td_notes_activities
 
 
