@@ -4,5 +4,6 @@
       %ul#appunti.tasks
         - @appunti.each do |appunto|  
           = render appunto
-        = paginate @appunti, :remote => true
-
+          / - if current_controller = :appunti
+          /             = paginate @appunti, :remote => true
+          
