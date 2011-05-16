@@ -7,6 +7,11 @@
     %li.navigation-btn= link_to "Appunti in corso", root_path
     %li.navigation-btn= link_to "Tutti i miei appunti", appunti_path, :class => 'appunti', :remote => true
     %li.navigation-btn= link_to "Scuole", scuole_path, :class => 'scuole', :remote => true
-    %li.navigation-btn= link_to "Vacanze", {:controller => :tags, :action => :appunti_cloud, :id => 'vacanze'}
-    %li.navigation-btn= link_to "Calendario", calendar_path
     
+%h2
+  %a.gear
+  %div Tags:    
+#block_navigator.block.round
+%ul#bl_navigator.links
+  %li.navigation-btn= link_to "Vacanze", {:controller => :tags, :action => :appunti_cloud, :id => 'vacanze'}
+  %li.navigation-btn= link_to "Calendario", calendar_path
