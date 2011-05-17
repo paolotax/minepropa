@@ -1,5 +1,9 @@
 Minepropa::Application.routes.draw do
 
+  resources :appunto_righe
+
+  resources :libri
+
   devise_for :users
   
   resources :scuole do

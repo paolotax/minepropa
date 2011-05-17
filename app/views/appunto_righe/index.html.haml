@@ -1,0 +1,29 @@
+%h1 Listing appunto_righe
+
+%table
+  %tr
+    %th Libro
+    %th Quantita
+    %th Prezzo
+    %th Sconto
+    %th Consegnato
+    %th Pagato
+    %th
+    %th
+    %th
+
+  - @appunto_righe.each do |appunto_riga|
+    %tr
+      %td= appunto_riga.libro_id
+      %td= appunto_riga.quantita
+      %td= appunto_riga.prezzo
+      %td= appunto_riga.sconto
+      %td= appunto_riga.consegnato
+      %td= appunto_riga.pagato
+      %td= link_to 'Show', appunto_riga
+      %td= link_to 'Edit', edit_appunto_riga_path(appunto_riga)
+      %td= link_to 'Destroy', appunto_riga, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Appunto riga', new_appunto_riga_path

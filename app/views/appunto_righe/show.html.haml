@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Libro:
+  = @appunto_riga.libro_id
+%p
+  %b Quantita:
+  = @appunto_riga.quantita
+%p
+  %b Prezzo:
+  = @appunto_riga.prezzo
+%p
+  %b Sconto:
+  = @appunto_riga.sconto
+%p
+  %b Consegnato:
+  = @appunto_riga.consegnato
+%p
+  %b Pagato:
+  = @appunto_riga.pagato
+
+= link_to 'Edit', edit_appunto_riga_path(@appunto_riga)
+\|
+= link_to 'Back', appunto_righe_path

@@ -1,0 +1,19 @@
+= form_for @libro do |f|
+  -if @libro.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@libro.errors.count, "error")} prohibited this libro from being saved:"
+      %ul
+        - @libro.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :titolo
+    = f.text_field :titolo
+  .field
+    = f.label :copertina
+    = f.text_field :copertina
+  .field
+    = f.label :categoria_id
+    = f.text_field :categoria_id
+  .actions
+    = f.submit 'Save'

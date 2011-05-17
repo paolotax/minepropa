@@ -1,5 +1,6 @@
 #create-task.sc.radius-7
-  = form_for Appunto.new, { :method => 'post',  :action => appunti_path, :remote => true } do |f|
+  - @appunto = Appunto.new
+  = form_for @appunto, { :method => 'post',  :action => appunti_path, :remote => true } do |f|
     #create-task-input.first
       .inner
         .input
@@ -24,3 +25,24 @@
           %a
             %span#task_create_reset
               Resetta
+      - @appunto.appunto_righe.build(:libro_id => 1)
+      - @appunto.appunto_righe.build(:libro_id => 2)
+      - @appunto.appunto_righe.build(:libro_id => 3)
+      - @appunto.appunto_righe.build(:libro_id => 4)
+      - @appunto.appunto_righe.build(:libro_id => 5)
+      
+      - @appunto.appunto_righe.build(:libro_id => 6)
+      - @appunto.appunto_righe.build(:libro_id => 8)
+      - @appunto.appunto_righe.build(:libro_id => 10)
+      - @appunto.appunto_righe.build(:libro_id => 12)
+      
+      - @appunto.appunto_righe.build(:libro_id => 7)
+      - @appunto.appunto_righe.build(:libro_id => 9)
+      - @appunto.appunto_righe.build(:libro_id => 11)
+      - @appunto.appunto_righe.build(:libro_id => 13)      
+      
+      - @appunto.appunto_righe.build(:libro_id => 14)
+      
+      = f.fields_for :appunto_righe do |a|     
+        = a.text_field :quantita, :size => 5
+        = a.hidden_field :libro_id

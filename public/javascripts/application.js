@@ -35,6 +35,7 @@ $(document).ready(function() {
   $(".best_in_place").best_in_place();
 });
 
+
 /* ------------------------------
     new_layout
 -------------------------------*/
@@ -43,6 +44,7 @@ $(document).ready(function() {
   
   
 });
+
 
 /* ----------------
     sidebar menu 
@@ -709,7 +711,6 @@ $(document).ready(function () {
 });
 
 
-
 $(document).ready(function(){
  $("#provincie li").hover(
    function(){ $("ul", this).fadeIn("fast"); }, 
@@ -749,7 +750,6 @@ $(document).ready(function() {
 });
 
 
-
 jQuery(function() {
  $('.auto_search_complete').autocomplete({
      minLength: 2,
@@ -774,7 +774,7 @@ jQuery(function() {
 
 if (history && history.pushState) {
 	
-  $(document).ready(function () {  
+$(document).ready(function () {  
     
  	 	
  	 	// Sorting and pagination links.  

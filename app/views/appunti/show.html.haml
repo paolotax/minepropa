@@ -38,6 +38,11 @@
           %span= @appunto.created_at.to_s
         
       #td_notes_activities
+        %ul
+          - for a in @appunto.appunto_righe
+            %li
+              = a.libro.titolo
+              = a.quantita
 
 
 

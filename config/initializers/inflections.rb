@@ -10,5 +10,7 @@ ActiveSupport::Inflector.inflections do |inflect|
    inflect.irregular 'scuola', 'scuole'
    inflect.irregular 'visita', 'visite'   
    inflect.irregular 'indirizzo', 'indirizzi'
+   inflect.irregular 'libro', 'libri'
+   inflect.irregular 'riga', 'righe'
    inflect.uncountable %w( fish sheep )
 end
