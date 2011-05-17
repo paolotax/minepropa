@@ -1,3 +1,18 @@
+.vac_title   {
+  float: left;
+  width: 150px;
+}
+
+.vac_inputs {
+  float: left;
+  input {
+    text-align: right;
+    padding-right: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
 #appunto_destinatario,
 #best_in_place_appunto_destinatario form input {
   text-transform:capitalize;

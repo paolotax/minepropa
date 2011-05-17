@@ -42,7 +42,7 @@
           - for a in @appunto.appunto_righe
             %li
               = a.libro.titolo
-              = a.quantita
+              = best_in_place a, :quantita
 
 
 

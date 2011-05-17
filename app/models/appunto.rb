@@ -31,7 +31,7 @@ class Appunto < ActiveRecord::Base
   
   has_many :visite,    :as => :visitable,     :dependent => :destroy
   has_many :indirizzi, :as => :indirizzable,  :dependent => :destroy
-  has_many :appunto_righe
+  has_many :appunto_righe,  :dependent => :destroy
   
   accepts_nested_attributes_for :indirizzi,     :reject_if => lambda { |a| a[:citta].blank? }, :allow_destroy => true
   accepts_nested_attributes_for :appunto_righe, :reject_if => lambda { |a| a[:quantita].blank? }, :allow_destroy => true

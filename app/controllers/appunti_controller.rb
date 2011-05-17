@@ -160,7 +160,7 @@ class AppuntiController < ApplicationController
   end 
   
   def delete_multiple
-    @appunti = Appunto.delete(params[:appunti_ids])
+    @appunti = Appunto.destroy(params[:appunti_ids])
     respond_to do |format|
       format.html { redirect_to :back }
       format.json { render :json => @appunti }

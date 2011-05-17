@@ -1,0 +1,90 @@
+
+.vac_title
+  Castelli di sabbia
+.vac_inputs 
+  %input.vac_castelli{ :name => "appunto[appunto_righe_attributes][0][quantita]", :size => 5, :type => 'text'}
+  %input.vac_castelli{ :name => "appunto[appunto_righe_attributes][0][libro_id]", :type => 'hidden', :value => 1}
+
+  %input.vac_castelli{ :name => "appunto[appunto_righe_attributes][1][quantita]", :size => 5, :type => 'text'}
+  %input.vac_castelli{ :name => "appunto[appunto_righe_attributes][1][libro_id]", :type => 'hidden', :value => 2}
+
+  %input.vac_castelli{ :name => "appunto[appunto_righe_attributes][2][quantita]", :size => 5, :type => 'text'}
+  %input.vac_castelli{ :name => "appunto[appunto_righe_attributes][2][libro_id]", :type => 'hidden', :value => 3}
+
+  %input.vac_castelli{ :name => "appunto[appunto_righe_attributes][3][quantita]", :size => 5, :type => 'text'}
+  %input.vac_castelli{ :name => "appunto[appunto_righe_attributes][3][libro_id]", :type => 'hidden', :value => 4}
+
+  %input.vac_castelli{ :name => "appunto[appunto_righe_attributes][4][quantita]", :size => 5, :type => 'text'}
+  %input.vac_castelli{ :name => "appunto[appunto_righe_attributes][4][libro_id]", :type => 'hidden', :value => 5}
+
+.clear
+
+.vac_title
+  Tutto Vacanze Italiano
+.vac_inputs 
+  %input.vac_tv_ita{ :name => "appunto[appunto_righe_attributes][5][quantita]", :size => 5, :type => 'text'}
+  %input.vac_tv_ita{ :name => "appunto[appunto_righe_attributes][5][libro_id]", :type => 'hidden', :value => 6}
+
+  %input.vac_tv_ita{ :name => "appunto[appunto_righe_attributes][6][quantita]", :size => 5, :type => 'text'}
+  %input.vac_tv_ita{ :name => "appunto[appunto_righe_attributes][6][libro_id]", :type => 'hidden', :value => 8}
+
+  %input.vac_tv_ita{ :name => "appunto[appunto_righe_attributes][7][quantita]", :size => 5, :type => 'text'}
+  %input.vac_tv_ita{ :name => "appunto[appunto_righe_attributes][7][libro_id]", :type => 'hidden', :value => 10}
+
+  %input.vac_tv_ita{ :name => "appunto[appunto_righe_attributes][8][quantita]", :size => 5, :type => 'text'}
+  %input.vac_tv_ita{ :name => "appunto[appunto_righe_attributes][8][libro_id]", :type => 'hidden', :value => 12}
+
+
+.clear
+
+.vac_title
+  Tutto Vacanze Matematica
+.vac_inputs 
+  %input.vac_tv_mat{ :name => "appunto[appunto_righe_attributes][9][quantita]", :size => 5, :type => 'text'}
+  %input.vac_tv_mat{ :name => "appunto[appunto_righe_attributes][9][libro_id]", :type => 'hidden', :value => 7}
+
+  %input.vac_tv_mat{ :name => "appunto[appunto_righe_attributes][10][quantita]", :size => 5, :type => 'text'}
+  %input.vac_tv_mat{ :name => "appunto[appunto_righe_attributes][10][libro_id]", :type => 'hidden', :value => 9}
+
+  %input.vac_tv_mat{ :name => "appunto[appunto_righe_attributes][11][quantita]", :size => 5, :type => 'text'}
+  %input.vac_tv_mat{ :name => "appunto[appunto_righe_attributes][11][libro_id]", :type => 'hidden', :value => 11}
+
+  %input.vac_tv_mat{ :name => "appunto[appunto_righe_attributes][12][quantita]", :size => 5, :type => 'text'}
+  %input.vac_tv_mat{ :name => "appunto[appunto_righe_attributes][12][libro_id]", :type => 'hidden', :value => 13}
+
+.clear
+
+.vac_title
+  Tutto nello zaino 5
+.vac_inputs 
+  %input.vac_zaino{ :name => "appunto[appunto_righe_attributes][13][quantita]", :size => 5, :type => 'text'}
+  %input.vac_zaino{ :name => "appunto[appunto_righe_attributes][13][libro_id]", :type => 'hidden', :value => 14}
+
+
+
+
+
+
+
+
+/ - @appunto.appunto_righe.build(:libro_id => 1)
+/       - @appunto.appunto_righe.build(:libro_id => 2)
+/       - @appunto.appunto_righe.build(:libro_id => 3)
+/       - @appunto.appunto_righe.build(:libro_id => 4)
+/       - @appunto.appunto_righe.build(:libro_id => 5)
+/       
+/       - @appunto.appunto_righe.build(:libro_id => 6)
+/       - @appunto.appunto_righe.build(:libro_id => 8)
+/       - @appunto.appunto_righe.build(:libro_id => 10)
+/       - @appunto.appunto_righe.build(:libro_id => 12)
+/       
+/       - @appunto.appunto_righe.build(:libro_id => 7)
+/       - @appunto.appunto_righe.build(:libro_id => 9)
+/       - @appunto.appunto_righe.build(:libro_id => 11)
+/       - @appunto.appunto_righe.build(:libro_id => 13)      
+/       
+/       - @appunto.appunto_righe.build(:libro_id => 14)
+/       
+/       = f.fields_for :appunto_righe do |a|     
+/         = a.text_field :quantita, :size => 5
+/         = a.hidden_field :libro_id
