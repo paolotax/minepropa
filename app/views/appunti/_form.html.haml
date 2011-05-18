@@ -3,23 +3,44 @@
 
 
 
+.form_appunto
+  = nested_form_for @appunto do |f|
+    = f.submit "Salva Modifiche", {:class => "btn_blue", :id => 'appunto_submit'}
+    #destinatario.field
+      = f.label      :destinatario
+      = f.text_field :destinatario
+    #nome_scuola.field
+      = f.label :nome_scuola
+      = f.autocomplete_field :nome_scuola, :url => autocomplete_scuola_nome_scuola_appunti_path, :size => 40   
+    #note
+        
+    = f.fields_for :appunto_righe do |a, i|
+      = a.text_field :libro_id
+      = a.text_field :quantita
+      = a.link_to_remove "Remove this riga"
+      %br
+
+    = f.link_to_add "Add a task", :appunto_righe    
+    
 
 .form_appunto
   = semantic_form_for @appunto do |f|
     - render 'shared/error_messages', :object => f.object
-    
+  
     = f.buttons do
       = f.commit_button "Salva Modifiche", :button_html => { :class => 'btn_blue' }
     = f.inputs do
       = f.input :stato, :as => :radio, :collection => {"da consegnare" => "", "in sospeso" => "P", "consegnato" => "X" }
       = f.input :destinatario, :input_html => { :size => 40  }, :wrapper_html => { :class => "important" } 
-      = f.autocompleted_input	 :nome_scuola, :url => autocomplete_scuola_nome_scuola_appunti_path, :size => 40
+      = f.autocompleted_input  :nome_scuola, :url => autocomplete_scuola_nome_scuola_appunti_path, :size => 40
       = f.input :note,         :input_html => { :rows => 5, :cols => 40  }
       %li.text.optional
         = f.label :tag_tokens, "Tags"
         = f.text_field :tag_tokens, "data-pre" => @appunto.tags.map(&:attributes).to_json
       = f.input :telefono,     :input_html => { :size => 40  }
       = f.input :email,        :input_html => { :size => 40  }
+
+
     / = f.semantic_fields_for :indirizzi do |indirizzo|
     /   = indirizzo.inputs do
     /     = indirizzo.input :destinatario

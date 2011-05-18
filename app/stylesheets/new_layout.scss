@@ -1,3 +1,18 @@
+.field {
+  margin-bottom:1em;
+  margin-top:-0.5em;
+  padding-bottom:0.5em;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0.5em;
+  label {
+    display:block;
+    float:left;
+    padding-top:0.2em;
+    width:25%;
+  }
+}
+
 .vac_box {
   padding: 10px;
   border: green 2px solid;
@@ -30,7 +45,7 @@
 }
 
 #appunto_submit {
-  float:left;
+  float:right;
   margin-left:22px;
   margin-top:6px;
 }
