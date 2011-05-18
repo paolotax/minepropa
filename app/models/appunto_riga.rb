@@ -18,4 +18,14 @@
 class AppuntoRiga < ActiveRecord::Base
   belongs_to :libro
   belongs_to :appunto
+  
+  scope :da_consegnare, where("appunto_righe.consegnato = false OR appunto_righe.consegnato IS NULL")
+  scope :consegnati,    where("appunto_righe.consegnato = true")
+  scope :pagati,        where("appunto_righe.pagato = true")
+  scope :da_pagare,     where("appunto_righe.pagato = false OR appunto_righe.pagato IS NULL")
+    
+  def valore
+    quantita * libro.copertina
+  end
+
 end
