@@ -33,6 +33,7 @@ gem "best_in_place"
 
 gem 'ancestry'
 gem 'acts-as-taggable-on'
+gem "nested_form"
 
 #gem 'feedzirra', :git => 'https://github.com/bananastalktome/feedzirra.git'
 
