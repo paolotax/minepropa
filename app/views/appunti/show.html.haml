@@ -38,12 +38,15 @@
           %span= @appunto.created_at.to_s
         
       #td_notes_activities
-        - @appunto_riga = @appunto.appunto_righe.build
-        = render 'appunto_righe/form'
-        %ul#appunto_righe
-          - for a in @appunto.appunto_righe
-            - unless a.libro.nil? 
-              = render a
+        .td_create_appunto_riga
+          - @appunto_riga = @appunto.appunto_righe.build
+          = render 'appunto_righe/form'
+        .clear
+        .notes-activities-container
+          %ul#td_notes_activities_list
+            - for a in @appunto.appunto_righe
+              - unless a.libro.nil? 
+                = render a
 
 
 

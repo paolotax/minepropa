@@ -1,12 +1,17 @@
-#appunto_riga_submit {
-  float:right
+.td_create_appunto_riga {
+  float:right;
+  width:638px;
+  #appunto_riga_submit {
+     float:right
+  }
+  .field_inline {
+    float:left;
+    margin-top: 1em;
+  }
 }
-  
 
-.field_inline {
-  float:left;
-  margin-top: 1em;
-}
+
+
 input.qta {
   text-align: right;
   padding-right: 5px;
@@ -17,6 +22,7 @@ input.qta {
   margin-left:10px;
   margin-right:10px;
 }
+
 .titolo {
   width: 30%;
 }

@@ -1,4 +1,20 @@
 %li{ :id => "appunto_riga_#{appunto_riga.id}" }
-  = appunto_riga.libro.titolo unless appunto_riga.libro.nil?
-  = best_in_place appunto_riga, :quantita
-  = link_to "Elimina", appunto_riga, {:method => :delete, :remote => true}
+  .note-avatar-div
+    .note-avatar-container.radius-5
+      %img{:src => 'default-avatar.jpg'}
+  .note-container
+    .note
+      .note-top
+      .note-center
+        .note-header
+          %span.creator= current_user.username
+          %span.date.radius-3= appunto_riga.created_at
+        .note-content        
+          = appunto_riga.libro.titolo unless appunto_riga.libro.nil?
+          = best_in_place appunto_riga, :quantita
+          = link_to "Elimina", appunto_riga, {:method => :delete, :remote => true}
+        .note-bottom
+        .clear
+      .clear
+    .clear
+  .clear
