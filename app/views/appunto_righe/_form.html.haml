@@ -5,24 +5,28 @@
       %ul
         - @appunto_riga.errors.full_messages.each do |msg|
           %li= msg
-
-  .field
-    = f.label :libro_id
-    = f.text_field :libro_id
-  .field
+  = f.hidden_field :appunto_id
+  .field_inline.titolo
+    = f.label "Libro"
+    = collection_select(:appunto_riga, :libro_id, Libro.all, :id, :titolo, :prompt => true)
+  .field_inline
     = f.label :quantita
-    = f.text_field :quantita
-  .field
+    = f.text_field :quantita, {:class => 'qta'}
+  .field_inline
     = f.label :prezzo
-    = f.text_field :prezzo
-  .field
+    = f.text_field :prezzo, {:class => 'qta'}
+  .field_inline
     = f.label :sconto
-    = f.text_field :sconto
-  .field
+    = f.text_field :sconto, {:class => 'qta'}
+  = f.submit 'OK', { :class => 'btn_blue' }
+  .clear
+  .field_inline
+    = @appunto_riga.valore
+  .field_inline
     = f.label :consegnato
     = f.check_box :consegnato
-  .field
+  .field_inline
     = f.label :pagato
     = f.check_box :pagato
-  .actions
-    = f.submit 'Save'
+.clear
+  

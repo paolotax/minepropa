@@ -29,6 +29,8 @@
     = stylesheet_link_tag 'redmond/jquery-ui-1.8.12.custom'
     = stylesheet_link_tag 'compiled/new_layout.css', :media => 'screen, print'
 
+    / = stylesheet_link_tag 'scaffold.css'
+    
     = stylesheet_link_tag 'mobile' if mobile_device?
     = csrf_meta_tag
     = yield :head
