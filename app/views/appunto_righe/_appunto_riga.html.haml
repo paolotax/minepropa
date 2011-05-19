@@ -1,0 +1,4 @@
+%li{ :id => "appunto_riga_#{appunto_riga.id}" }
+  = appunto_riga.libro.titolo unless appunto_riga.libro.nil?
+  = best_in_place appunto_riga, :quantita
+  = link_to "Elimina", appunto_riga, {:method => :delete, :remote => true}

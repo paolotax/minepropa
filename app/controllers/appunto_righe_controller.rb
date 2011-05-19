@@ -45,6 +45,7 @@ class AppuntoRigheController < ApplicationController
     respond_to do |format|
       if @appunto_riga.save
         format.html { redirect_to :back, :notice => 'Appunto riga was successfully created.' }
+        format.js
         format.xml  { render :xml => @appunto_riga, :status => :created, :location => @appunto_riga }
       else
         format.html { render :action => "new" }
@@ -77,6 +78,7 @@ class AppuntoRigheController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to(appunto_righe_url) }
+      format.js
       format.xml  { head :ok }
     end
   end

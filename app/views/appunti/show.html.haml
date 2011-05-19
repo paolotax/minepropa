@@ -40,12 +40,11 @@
       #td_notes_activities
         - @appunto_riga = @appunto.appunto_righe.build
         = render 'appunto_righe/form'
-        %ul
+        %ul#appunto_righe
           - for a in @appunto.appunto_righe
             - unless a.libro.nil? 
-              %li
-                = a.libro.titolo
-                = best_in_place a, :quantita
+              = render a
+
 
 
 
