@@ -13,3 +13,7 @@
 = link_to 'Edit', edit_libro_path(@libro)
 \|
 = link_to 'Back', libri_path
+
+- @appunto_righe = @libro.appunto_righe
+- for a in @appunto_righe
+  = render a

@@ -7,19 +7,15 @@
     %th Copertina
     %th Categoria
     %th
-    %th
-    %th
-    %th
+    %th Qta
 
   - @libri.each do |libro|
     %tr
       %td= libro.id
-      %td= libro.titolo
+      %td= link_to libro.titolo, libro
       %td= libro.copertina
       %td= libro.categoria_id
-      %td= link_to 'Show', libro
       %td= link_to 'Edit', edit_libro_path(libro)
-      %td= link_to 'Destroy', libro, :confirm => 'Are you sure?', :method => :delete
       %td= libro.appunto_righe.sum(:quantita).to_s
 
 %br
