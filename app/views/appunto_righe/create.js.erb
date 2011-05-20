@@ -5,7 +5,7 @@ $("#comment-notice").html('<div class="flash notice"><%= escape_javascript(flash
 $("<%= escape_javascript(render(@appunto_riga)) %>").insertBefore("#td_notes_activities_list li:first");
 
 /* Highlight the new comment */
-$("#appunto_riga_<%= @appunto_riga.id %>").effect("highlight", {}, 3000);
+$("#appunto_riga_<%= @appunto_riga.id %> .note-container .note .note-center, #appunto_riga_<%= @appunto_riga.id %> .note-container .note .note-top, #appunto_riga_<%= @appunto_riga.id %> .note-container .note .note-bottom ").effect("highlight", {}, 3000);
 $("#appunto_riga_<%= @appunto_riga.id %> .best_in_place").best_in_place();
 
 /* Reset the comment form */

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110517131235) do
+ActiveRecord::Schema.define(:version => 20110520193001) do
 
   create_table "appunti", :force => true do |t|
     t.string   "destinatario"
@@ -60,6 +60,8 @@ ActiveRecord::Schema.define(:version => 20110517131235) do
     t.integer  "categoria_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "sigla"
+    t.decimal  "consigliato",  :precision => 8, :scale => 2
   end
 
   create_table "scuole", :force => true do |t|
