@@ -1,23 +1,21 @@
-%h1 Listing libri
+%h1 Listino libri
 
 %table
   %tr
-    %th Id
     %th Titolo
-    %th Copertina
-    %th Categoria
-    %th
-    %th Qta
+    %th Sigla
+    %th Prezzo di copertina
+    %th Prezzo consigliato
+    %th Sum
 
   - @libri.each do |libro|
     %tr
-      %td= libro.id
       %td= link_to libro.titolo, libro
-      %td= libro.copertina
-      %td= libro.categoria_id
-      %td= link_to 'Edit', edit_libro_path(libro)
+      %td= best_in_place libro, :sigla
+      %td= best_in_place libro, :copertina
+      %td= best_in_place libro, :consigliato
       %td= libro.appunto_righe.sum(:quantita).to_s
 
 %br
 
-= link_to 'New Libro', new_libro_path
+= link_to 'Nuovo Libro', new_libro_path
