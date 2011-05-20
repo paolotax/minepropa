@@ -845,7 +845,7 @@
   margin-top:-4px;
   width:10px;
 }
-#td_notes_activities .notes-activities-container .author .note-container .note:hover .note-center .note-header .delete {
+#td_notes_activities .notes-activities-container .note-container .note:hover .note-center .note-header .delete {
   background-attachment:initial;
   background-clip:initial;
   background-color:transparent;
@@ -854,7 +854,7 @@
   background-position:0 0;
   background-repeat:no-repeat no-repeat;
 }
-#td_notes_activities .notes-activities-container .author .note-container .note .note-center .note-header .delete:hover {
+#td_notes_activities .notes-activities-container .note-container .note .note-center .note-header .delete:hover {
   background-attachment:initial;
   background-clip:initial;
   background-color:transparent;

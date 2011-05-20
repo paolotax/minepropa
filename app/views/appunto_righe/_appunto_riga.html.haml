@@ -8,13 +8,16 @@
       .note-center
         .note-header
           %span.creator= current_user.username
+          .delete
+            
+            
           %span.date.radius-3= appunto_riga.created_at
         .note-content        
           = appunto_riga.libro.titolo unless appunto_riga.libro.nil?
           = best_in_place appunto_riga, :quantita
           = link_to "Elimina", appunto_riga, {:method => :delete, :remote => true}
-        .note-bottom
-        .clear
+          
+      .note-bottom
       .clear
-    .clear
   .clear
+

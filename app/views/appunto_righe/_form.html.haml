@@ -8,15 +8,19 @@
   = f.hidden_field :appunto_id
   .field_inline.titolo
     = f.label "Libro"
+    %br
     = collection_select(:appunto_riga, :libro_id, Libro.all, :id, :titolo, :prompt => true)
   .field_inline
     = f.label :quantita
+    %br
     = f.text_field :quantita, {:class => 'qta'}
   .field_inline
     = f.label :prezzo
+    %br
     = f.text_field :prezzo, {:class => 'qta'}
   .field_inline
     = f.label :sconto
+    %br
     = f.text_field :sconto, {:class => 'qta'}
   = f.submit 'OK', { :class => 'btn_green' }
   .clear

@@ -6,11 +6,7 @@ $("<%= escape_javascript(render(@appunto_riga)) %>").insertBefore("#td_notes_act
 
 /* Highlight the new comment */
 $("#appunto_riga_<%= @appunto_riga.id %>").effect("highlight", {}, 3000);
-$(".best_in_place").best_in_place();
+$("#appunto_riga_<%= @appunto_riga.id %> .best_in_place").best_in_place();
 
 /* Reset the comment form */
 // $("#new_appunto")[0].reset();
-// $(".token-input-token-facebook").remove();
-// $('.token-input-list-facebook').hide();
-// $('#task_create_input').show();
-// $('.create_task_more').hide();
