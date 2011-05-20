@@ -1,6 +1,5 @@
 class LibriController < ApplicationController
-  # GET /libri
-  # GET /libri.xml
+
   def index
     @libri = Libro.all
 
@@ -60,7 +59,7 @@ class LibriController < ApplicationController
 
     respond_to do |format|
       if @libro.update_attributes(params[:libro])
-        format.html { redirect_to(@libro, :notice => 'Libro was successfully updated.') }
+        format.html { redirect_to(libri_path, :notice => 'Libro was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
