@@ -3,24 +3,24 @@
 
 
 
-.form_appunto
-  = nested_form_for @appunto do |f|
-    = f.submit "Salva Modifiche", {:class => "btn_blue", :id => 'appunto_submit'}
-    #destinatario.field
-      = f.label      :destinatario
-      = f.text_field :destinatario
-    #nome_scuola.field
-      = f.label :nome_scuola
-      = f.autocomplete_field :nome_scuola, :url => autocomplete_scuola_nome_scuola_appunti_path, :size => 40   
-    #note
-        
-    = f.fields_for :appunto_righe do |a, i|
-      = a.text_field :libro_id
-      = a.text_field :quantita
-      = a.link_to_remove "Remove this riga"
-      %br
-
-    = f.link_to_add "Add a task", :appunto_righe    
+/ .form_appunto
+/   = nested_form_for @appunto do |f|
+/     = f.submit "Salva Modifiche", {:class => "btn_blue", :id => 'appunto_submit'}
+/     #destinatario.field
+/       = f.label      :destinatario
+/       = f.text_field :destinatario
+/     #nome_scuola.field
+/       = f.label :nome_scuola
+/       = f.autocomplete_field :nome_scuola, :url => autocomplete_scuola_nome_scuola_appunti_path, :size => 40   
+/     #note
+/         
+/     = f.fields_for :appunto_righe do |a, i|
+/       = a.text_field :libro_id
+/       = a.text_field :quantita
+/       = a.link_to_remove "Remove this riga"
+/       %br
+/ 
+/     = f.link_to_add "Add a task", :appunto_righe    
     
 
 .form_appunto
