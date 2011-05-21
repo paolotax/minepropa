@@ -1,5 +1,6 @@
 %p#notice= notice
 
+= image_tag "libri/#{@libro.sigla}.jpg"
 %p
   %b Titolo:
   = @libro.titolo
@@ -14,6 +15,10 @@
 \|
 = link_to 'Back', libri_path
 
-- @appunto_righe = @libro.appunto_righe
-- for a in @appunto_righe
-  = render a
+= render @libro.appunto_righe
+
+/ - unless @libro.appunto_righe.nil?
+= render 'appunto_righe/appunto_riga_full', :collection => @libro.appunto_righe
+/ - @appunto_righe = @libro.appunto_righe
+/ - @appunto_righe.each do |appunto_riga|
+/   = render appunto_riga #:partial => 'appunto_righe/appunto_riga_full', :object => appunto_riga
