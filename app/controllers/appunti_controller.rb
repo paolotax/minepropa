@@ -24,7 +24,7 @@ class AppuntiController < ApplicationController
   
   def show
     @appunto = Appunto.find(params[:id])
-    # @scuole = current_user.scuole
+  
     @visita = Visita.new
     session[:return_to] ||= request.referer
     
@@ -71,7 +71,7 @@ class AppuntiController < ApplicationController
   def update
     #raise params.inspect
     @appunto = Appunto.find(params[:id])
-    
+
     respond_to do |format|
       if @appunto.update_attributes(params[:appunto])
         format.mobile { redirect_to root_path }

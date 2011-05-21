@@ -45,8 +45,7 @@
         .notes-activities-container
           %ul#td_notes_activities_list
             - for a in @appunto.appunto_righe
-              - unless a.libro.nil? 
-                = render a
+              = render a unless a.libro.nil?
 
 
 
