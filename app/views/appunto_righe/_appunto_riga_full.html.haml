@@ -1,16 +1,19 @@
-%li{ :id => "appunto_riga_#{appunto_riga_full.id}" }  
+%li{ :id => "appunto_riga_#{appunto_riga.id}" }  
   .note-container
     .note
       .note-top
       .note-center
         .note-header
-          %span.creator= "#{appunto_riga_full.appunto.destinatario} #{appunto_riga_full.appunto.nome_scuola}" unless appunto_riga_full.appunto.nil?
+          %span.creator= "#{appunto_riga.appunto.destinatario} #{appunto_riga.appunto.nome_scuola}" unless appunto_riga.appunto.nil?
           .delete
-          %span.date.radius-3= appunto_riga_full.created_at
+          %span.date.radius-3= appunto_riga.created_at
         .note-content        
-          = appunto_riga_full.libro.titolo unless appunto_riga_full.libro.nil?
-          = best_in_place appunto_riga_full, :quantita
-          = link_to "Elimina", appunto_riga_full, {:method => :delete, :remote => true}
+          = appunto_riga.libro.titolo unless appunto_riga.libro.nil?
+          = best_in_place appunto_riga, :quantita
+          = best_in_place appunto_riga, :prezzo
+          = best_in_place appunto_riga, :consegnato,  :type => :checkbox, :collection => ["no", "si"] 
+          = best_in_place appunto_riga, :pagato,      :type => :checkbox, :collection => ["no", "si"]
+          = link_to "Elimina", appunto_riga, {:method => :delete, :remote => true}
           
       .note-bottom
       .clear

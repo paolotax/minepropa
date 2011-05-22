@@ -15,6 +15,9 @@
         .note-content        
           = link_to(appunto_riga.libro.titolo, libro_url(appunto_riga.libro)) unless appunto_riga.libro.nil?
           = best_in_place appunto_riga, :quantita
+          = best_in_place appunto_riga, :prezzo
+          = best_in_place appunto_riga, :consegnato,  :type => :checkbox, :collection => ["no", "si"] 
+          = best_in_place appunto_riga, :pagato,      :type => :checkbox, :collection => ["no", "si"] 
           = link_to "Elimina", appunto_riga, {:method => :delete, :remote => true}
           
       .note-bottom

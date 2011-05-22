@@ -2,7 +2,7 @@ $("#comment-notice").html('<div class="flash notice"><%= escape_javascript(flash
 
 
 /* Add the new comment to the bottom of the comments list */
-$("<%= escape_javascript(render(@appunto_riga)) %>").insertBefore("#td_notes_activities_list li:first");
+$("<%= escape_javascript(render(@appunto_riga)) %>").prependTo("#td_notes_activities_list");
 
 /* Highlight the new comment */
 $("#appunto_riga_<%= @appunto_riga.id %> .note-container .note .note-center, #appunto_riga_<%= @appunto_riga.id %> .note-container .note .note-top, #appunto_riga_<%= @appunto_riga.id %> .note-container .note .note-bottom ").effect("highlight", {}, 3000);
