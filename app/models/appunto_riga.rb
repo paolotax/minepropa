@@ -32,23 +32,27 @@ class AppuntoRiga < ActiveRecord::Base
     "#{libro.titolo}" unless libro.nil?
   end
   
+  def price(string)
+    re = /(e\s[\d,]+)|([\d,]+\s%)/
+    m = re.match string
+    
+    
+    m[0]
+  end
+  
   def copertina
     libro.copertina unless libro.nil?
   end
   
   def importo
-    
     if prezzo.blank?
-      
       if sconto.blank?
         libro.copertina * quantita
       else
         (libro.copertina - ( libro.copertina / 100 * sconto )) * quantita
       end
-    
     else
       prezzo * quantita
-    
     end  
   end
 
