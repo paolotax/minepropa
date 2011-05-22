@@ -845,20 +845,27 @@
   margin-top:-4px;
   width:10px;
 }
-#td_notes_activities .notes-activities-container .note-container .note:hover .note-center .note-header .delete {
-  background-attachment:initial;
+
+#td_notes_activities .notes-activities-container .note-container .note .note-center .note-header .delete img {
+  
+  display: none;
+}
+
+#td_notes_activities .notes-activities-container .note-container .note:hover .note-center .note-header .delete img{
+  display: block;
+/*  background-attachment:initial;
   background-clip:initial;
   background-color:transparent;
-  background-image:url(https://www.producteev.com/static/images/task_details/td-delete.png);
+  background-image:url('../../images/td-delete.png');
   background-origin:initial;
   background-position:0 0;
-  background-repeat:no-repeat no-repeat;
+  background-repeat:no-repeat no-repeat;*/
 }
 #td_notes_activities .notes-activities-container .note-container .note .note-center .note-header .delete:hover {
   background-attachment:initial;
   background-clip:initial;
   background-color:transparent;
-  background-image:url(https://www.producteev.com/static/images/task_details/td-delete.png);
+  background-image:url('../../images/td-delete.png');
   background-origin:initial;
   background-position:0 -13px;
   background-repeat:no-repeat no-repeat;

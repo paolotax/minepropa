@@ -9,6 +9,7 @@
         .note-header
           %span.creator= current_user.username
           .delete
+            = link_to image_tag("td-delete.png"), appunto_riga, {:method => :delete, :remote => true}
             
             
           %span.date.radius-3= appunto_riga.created_at
@@ -20,7 +21,7 @@
           = best_in_place appunto_riga, :pagato,      :type => :checkbox, :collection => ["no", "si"]
           = appunto_riga.importo 
           = appunto_riga.valore.format(:symbol)
-          = link_to "Elimina", appunto_riga, {:method => :delete, :remote => true}
+          / = link_to "Elimina", appunto_riga, {:method => :delete, :remote => true}
           
       .note-bottom
       .clear
