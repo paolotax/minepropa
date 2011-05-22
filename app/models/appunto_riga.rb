@@ -25,7 +25,7 @@ class AppuntoRiga < ActiveRecord::Base
   scope :da_pagare,     where("appunto_righe.pagato = false OR appunto_righe.pagato IS NULL")
     
   def valore
-    quantita * libro.copertina  unless libro.nil?
+    libro.copertina * quantita unless libro.nil?
   end
   
   def titolo
@@ -33,7 +33,23 @@ class AppuntoRiga < ActiveRecord::Base
   end
   
   def copertina
-    # libro.copertina
+    libro.copertina unless libro.nil?
   end
   
+  def importo
+    
+    if prezzo.blank?
+      
+      if sconto.blank?
+        libro.copertina * quantita
+      else
+        (libro.copertina - ( libro.copertina / 100 * sconto )) * quantita
+      end
+    
+    else
+      prezzo * quantita
+    
+    end  
+  end
+
 end

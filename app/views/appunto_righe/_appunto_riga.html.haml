@@ -17,7 +17,9 @@
           = best_in_place appunto_riga, :quantita
           = best_in_place appunto_riga, :prezzo
           = best_in_place appunto_riga, :consegnato,  :type => :checkbox, :collection => ["no", "si"] 
-          = best_in_place appunto_riga, :pagato,      :type => :checkbox, :collection => ["no", "si"] 
+          = best_in_place appunto_riga, :pagato,      :type => :checkbox, :collection => ["no", "si"]
+          = appunto_riga.importo 
+          = appunto_riga.valore.format(:symbol)
           = link_to "Elimina", appunto_riga, {:method => :delete, :remote => true}
           
       .note-bottom

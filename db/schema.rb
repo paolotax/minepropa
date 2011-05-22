@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110520193001) do
+ActiveRecord::Schema.define(:version => 20110522081726) do
 
   create_table "appunti", :force => true do |t|
     t.string   "destinatario"
@@ -38,16 +38,6 @@ ActiveRecord::Schema.define(:version => 20110520193001) do
     t.datetime "updated_at"
   end
 
-  create_table "feed_entries", :force => true do |t|
-    t.string   "name"
-    t.text     "summary"
-    t.string   "url"
-    t.datetime "published_at"
-    t.string   "guid"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "indirizzi", :force => true do |t|
     t.string   "destinatario"
     t.string   "indirizzo"
@@ -66,12 +56,13 @@ ActiveRecord::Schema.define(:version => 20110520193001) do
 
   create_table "libri", :force => true do |t|
     t.string   "titolo"
-    t.decimal  "copertina",    :precision => 8, :scale => 2
     t.integer  "categoria_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "sigla"
-    t.decimal  "consigliato",  :precision => 8, :scale => 2
+    t.integer  "prezzo_copertina"
+    t.integer  "prezzo_consigliato"
+    t.string   "currency"
   end
 
   create_table "scuole", :force => true do |t|

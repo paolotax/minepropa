@@ -8,6 +8,9 @@
   %b Copertina:
   = @libro.copertina
 %p
+  %b Consigliato:
+  = @libro.consigliato
+%p
   %b Categoria:
   = @libro.categoria_id
 
@@ -19,4 +22,4 @@
 #td_notes_activities
   .notes-activities-container
     - for a in @libro.appunto_righe
-      = render 'appunto_righe/appunto_riga_full', :appunto_riga_full => a
+      = render 'appunto_righe/appunto_riga_full', :appunto_riga => a
