@@ -18,6 +18,8 @@
 class Libro < ActiveRecord::Base
   has_many :appunto_righe
   
+  default_scope order("libri.id")
+  
   composed_of :copertina,
       :class_name  => "Money",
       :mapping     => [%w(prezzo_copertina cents), %w(currency currency_as_string)],

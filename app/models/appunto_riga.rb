@@ -19,6 +19,8 @@ class AppuntoRiga < ActiveRecord::Base
   belongs_to :libro
   belongs_to :appunto
   
+  default_scope order("appunto_righe.id desc")
+  
   scope :da_consegnare, where("appunto_righe.consegnato = false OR appunto_righe.consegnato IS NULL")
   scope :consegnati,    where("appunto_righe.consegnato = true")
   scope :pagati,        where("appunto_righe.pagato = true")
