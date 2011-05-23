@@ -29,12 +29,27 @@
 
   pdf.move_down(350)
   pdf.text appunto.note, :size => 12
-  # @appunto_righe = AppuntoRiga.find(appunto.id)
-  appunto.appunto_righe.each do |riga|
-    pdf.text riga.titolo
-    pdf.text riga.quantita.to_s
-    pdf.text riga.importo.format(:symbol)
+  pdf.move_down(20)
+  pdf.text appunto.telefono unless appunto.telefono.nil?
+  
+  pdf.move_down(20)
+  righe = appunto.appunto_righe.map do |riga|
+    [
+      riga.libro.titolo,
+      riga.quantita,
+      number_to_currency(riga.prezzo),
+      number_to_currency(riga.importo)
+    ]
   end
+
+  pdf.table righe, :border_style => :grid,
+    :row_colors => ["FFFFFF","DDDDDD"],
+    :headers => ["Titolo", "Qtà", "Prezzo Uni", "Importo"],
+    :align => { 0 => :left, 1 => :right, 2 => :right, 3 => :right }
+
+  pdf.move_down(10)
+
+  pdf.text "Totale: #{number_to_currency(appunto.appunto_righe.sum('appunto_righe.quantita * appunto_righe.prezzo'))}", :size => 16, :style => :bold
   
   pdf.move_down(350)
   
