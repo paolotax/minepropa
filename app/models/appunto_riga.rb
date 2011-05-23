@@ -48,7 +48,8 @@ class AppuntoRiga < ActiveRecord::Base
     re = /([c|o])|([\d,]+)|(-[\d,]+)/
     m = re.match pr
     if m[1] == 'c'
-      self.prezzo_unitario = self.prezzo_consigliato
+      l = Libro.find(self.libro_id)
+      self.prezzo_unitario = l.prezzo_consigliato
     else
       if m[1] == 'o'
         self.unitario = "0"
@@ -71,7 +72,7 @@ class AppuntoRiga < ActiveRecord::Base
   end
   
   def prezzo_consigliato
-    libro.prezzo_consigliato unless libro.nil?
+    self.libro.prezzo_consigliato unless libro.nil?
   end
   
   def importo
