@@ -15,13 +15,9 @@
     %br
     = f.text_field :quantita, {:class => 'qta'}
   .field_inline
-    = f.label :prezzo
+    = f.label "Prezzo o Sconto"
     %br
-    = f.text_field :prezzo, {:class => 'qta'}
-  .field_inline
-    = f.label :sconto
-    %br
-    = f.text_field :sconto, {:class => 'qta'}
+    = f.text_field :price, {:class => 'qta'}
   = f.submit 'Aggiungi', { :class => 'btn_green' }
   .clear
   .field_inline

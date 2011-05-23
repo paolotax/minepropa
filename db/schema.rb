@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110522081726) do
+ActiveRecord::Schema.define(:version => 20110523180743) do
 
   create_table "appunti", :force => true do |t|
     t.string   "destinatario"
@@ -30,22 +30,14 @@ ActiveRecord::Schema.define(:version => 20110522081726) do
     t.integer  "libro_id"
     t.integer  "appunto_id"
     t.integer  "quantita"
-    t.decimal  "prezzo",     :precision => 8, :scale => 2
-    t.decimal  "sconto",     :precision => 3, :scale => 2
+    t.decimal  "prezzo",          :precision => 8, :scale => 2
     t.boolean  "consegnato"
     t.boolean  "pagato"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "feed_entries", :force => true do |t|
-    t.string   "name"
-    t.text     "summary"
-    t.string   "url"
-    t.datetime "published_at"
-    t.string   "guid"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer  "prezzo_unitario"
+    t.string   "currency"
+    t.decimal  "sconto",          :precision => 8, :scale => 2
   end
 
   create_table "indirizzi", :force => true do |t|

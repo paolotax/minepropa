@@ -22,11 +22,11 @@
           .riga_operazione
             = " x "
           .riga_prezzo
-            = best_in_place appunto_riga, :prezzo
+            = best_in_place appunto_riga, :unitario
           .riga_operazione
             = " = "
           .riga_importo
-            = number_to_currency(appunto_riga.importo)
+            = appunto_riga.importo.format(:symbol)
           .riga_consegnato
             = best_in_place appunto_riga, :consegnato,  :type => :checkbox, :collection => ["no", "si"] 
           .riga_pagato
