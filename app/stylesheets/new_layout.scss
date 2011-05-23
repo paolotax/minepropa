@@ -3,7 +3,7 @@
     float:left;
   }
   .riga_titolo {
-    width: 200px;
+    width: 150px;
   }
   .riga_quantita,
   .riga_prezzo {
@@ -17,17 +17,26 @@
   .riga_prezzo {
     text-align:left;
     font-size: 18px;
-    width: 60px;
+    width: 45px;
     .best_in_place form input {
-      width: 60px;
+      width: 45px;
     }
   }
   .riga_operazione {
     padding-left: 10px;
     padding-right: 10px;
     text-align:center;
+    font-size: 16px;
   }
-  
+  .riga_importo {
+    text-align:right;
+    font-size: 18px;
+    width: 80px;
+  }
+  .riga_consegnato,
+  .riga_pagato {
+    padding-left: 10px;
+  }
 }
 
 
