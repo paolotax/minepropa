@@ -48,7 +48,7 @@ class AppuntoRiga < ActiveRecord::Base
     re = /([c|o])|([\d,]+)|(-[\d,]+)/
     m = re.match pr
     if m[1] == 'c'
-      self.unitario = self.consigliato
+      self.unitario = "15,00"
     else
       if m[1] == 'o'
         self.unitario = "0"
