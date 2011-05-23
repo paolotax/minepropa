@@ -12,7 +12,7 @@
             = link_to image_tag("td-delete.png"), appunto_riga, {:method => :delete, :remote => true}
             
             
-          %span.date.radius-3= appunto_riga.created_at
+          %span.date.radius-3= l appunto_riga.created_at, :format => :short
         .note-content        
           = link_to(appunto_riga.libro.titolo, libro_url(appunto_riga.libro)) unless appunto_riga.libro.nil?
           = best_in_place appunto_riga, :quantita
