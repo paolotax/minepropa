@@ -7,21 +7,31 @@
       .note-top
       .note-center
         .note-header
-          %span.creator= current_user.username
+          %span.creator 
+            / = current_user.username
           .delete
             = link_to image_tag("td-delete.png"), appunto_riga, {:method => :delete, :remote => true}
             
             
           %span.date.radius-3= l appunto_riga.created_at, :format => :short
         .note-content        
-          = link_to(appunto_riga.libro.titolo, libro_url(appunto_riga.libro)) unless appunto_riga.libro.nil?
-          = best_in_place appunto_riga, :quantita
-          = best_in_place appunto_riga, :prezzo
-          = best_in_place appunto_riga, :consegnato,  :type => :checkbox, :collection => ["no", "si"] 
-          = best_in_place appunto_riga, :pagato,      :type => :checkbox, :collection => ["no", "si"]
-          = appunto_riga.importo 
-          = appunto_riga.valore.format(:symbol)
-          / = link_to "Elimina", appunto_riga, {:method => :delete, :remote => true}
+          .riga_titolo
+            = link_to(appunto_riga.libro.titolo, libro_url(appunto_riga.libro)) unless appunto_riga.libro.nil?
+          .riga_quantita
+            = best_in_place appunto_riga, :quantita
+          .riga_operazione
+            = " X "
+          .riga_prezzo
+            = best_in_place appunto_riga, :prezzo
+          .riga_operazione
+            = " = "
+          .riga_importo
+            = number_to_currency(appunto_riga.importo)
+          .riga_consegnato
+            = best_in_place appunto_riga, :consegnato,  :type => :checkbox, :collection => ["no", "si"] 
+          .riga_pagato
+            = best_in_place appunto_riga, :pagato,      :type => :checkbox, :collection => ["no", "si"]
+        .clear
           
       .note-bottom
       .clear

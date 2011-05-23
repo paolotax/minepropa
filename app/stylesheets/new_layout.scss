@@ -1,14 +1,38 @@
-.bubblewrap{
-list-style-type:none;
-margin:0;
-padding:0;
+.note-content { 
+  div {
+    float:left;
+  }
+  .riga_titolo {
+    width: 200px;
+  }
+  .riga_quantita,
+  .riga_prezzo {
+    text-align:right;
+    font-size: 18px;
+    width: 60px;
+    .best_in_place form input {
+      width: 60px;
+    }
+  }
+  .riga_prezzo {
+    text-align:left;
+    font-size: 18px;
+    width: 60px;
+    .best_in_place form input {
+      width: 60px;
+    }
+  }
+  .riga_operazione {
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align:center;
+  }
+  
 }
 
-.bubblewrap li{
-display:inline;
-width: 65px;
-height:60px;
-}
+
+  
+
 
 .delete img{
   // width: 55px; /* width of each image.*/
