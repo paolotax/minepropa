@@ -48,7 +48,7 @@ class AppuntoRiga < ActiveRecord::Base
     re = /([c|o])|([\d,]+)|(-[\d,]+)/
     m = re.match pr
     if m[1] == 'c'
-      self.unitario = self.libro.consigliato
+      self.unitario = self.consigliato
     else
       if m[1] == 'o'
         self.unitario = "0"
@@ -57,7 +57,7 @@ class AppuntoRiga < ActiveRecord::Base
           self.unitario = pr
         else
           if m[3] == pr
-            self.unitario = (self.libro.copertina - (self.libro.copertina * pr.split('-').last.to_f / 100))
+            self.unitario = (self.copertina - (self.copertina * pr.split('-').last.to_f / 100))
           else
             m
           end
@@ -68,6 +68,10 @@ class AppuntoRiga < ActiveRecord::Base
   
   def copertina
     libro.copertina unless libro.nil?
+  end
+  
+  def consigliato
+    libro.consigliato unless libro.nil?
   end
   
   def importo
