@@ -29,6 +29,13 @@
 
   pdf.move_down(350)
   pdf.text appunto.note, :size => 12
+  # @appunto_righe = AppuntoRiga.find(appunto.id)
+  appunto.appunto_righe.each do |riga|
+    pdf.text riga.titolo
+    pdf.text riga.quantita.to_s
+    pdf.text riga.importo.format(:symbol)
+  end
+  
   pdf.move_down(350)
   
   pdf.start_new_page unless appunto == @appunti.last

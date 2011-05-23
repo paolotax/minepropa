@@ -38,6 +38,16 @@ ActiveRecord::Schema.define(:version => 20110522081726) do
     t.datetime "updated_at"
   end
 
+  create_table "feed_entries", :force => true do |t|
+    t.string   "name"
+    t.text     "summary"
+    t.string   "url"
+    t.datetime "published_at"
+    t.string   "guid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "indirizzi", :force => true do |t|
     t.string   "destinatario"
     t.string   "indirizzo"

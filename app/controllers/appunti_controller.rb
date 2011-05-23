@@ -155,7 +155,7 @@ class AppuntiController < ApplicationController
   
   def print_multiple
     #raise params.inspect
-    @appunti = Appunto.find(params[:appunti_ids])
+    @appunti = Appunto.includes(:appunto_righe).find(params[:appunti_ids])
     render 'print_multiple.pdf'
   end 
   

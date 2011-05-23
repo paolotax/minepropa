@@ -9,14 +9,12 @@ class LibriController < ApplicationController
     end
   end
 
-  # GET /libri/1
-  # GET /libri/1.xml
   def show
     @libro = Libro.find(params[:id])
-
+    @presenter = Libri::ShowPresenter.new(@libro)
+    
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @libro }
     end
   end
 

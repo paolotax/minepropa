@@ -1,18 +1,43 @@
+#content_task_details
+  #task_details
+    .is_admin
+      #td_header.header
+        .back
+          = link_to "Indietro", "javascript:history.back()"
+        .delete
+          = link_to "Elimina", @libro, :method => :delete, :confirm => 'Sei sicuro?', :title => 'Elimina libro'
+
+
 %p#notice= notice
 
-= image_tag "libri/#{@libro.sigla}.jpg"
-%p
-  %b Titolo:
-  = @libro.titolo
-%p
-  %b Copertina:
-  = @libro.copertina
-%p
-  %b Consigliato:
-  = @libro.consigliato
-%p
-  %b Categoria:
-  = @libro.categoria_id
+
+
+#libro_copertina
+  = image_tag "libri/#{@libro.sigla}.jpg"
+
+#libro_dettagli
+  %p
+    %b Titolo:
+    = @libro.titolo
+  %p
+    %b Sigla:
+    = @libro.sigla
+  %p
+    %b Prezzo di copertina:
+    = @libro.copertina.format(:symbol)
+  %p
+    %b Prezzo consigliato:
+    = @libro.consigliato.format(:symbol)
+  %p
+    %b Categoria:
+    = @libro.categoria_id
+  %p
+    %b Da Consegnare:
+    = @presenter.da_consegnare.sum(:quantita)
+  %p
+    %b Consegnati:
+    = @presenter.consegnati.sum(:quantita)
+
 
 = link_to 'Edit', edit_libro_path(@libro)
 \|
