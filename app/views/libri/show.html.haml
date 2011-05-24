@@ -44,7 +44,24 @@
 = link_to 'Back', libri_path
 
 
+#ta_da_consegnare
+  %h2 Da Consegnare:
 #td_notes_activities
   .notes-activities-container
-    - for a in @libro.appunto_righe
+    - for a in @presenter.da_consegnare
       = render 'appunto_righe/appunto_riga_full', :appunto_riga => a
+
+#ta_da_consegnare
+  %h2 Da Pagare:
+#td_notes_activities
+  .notes-activities-container
+    - for a in @presenter.consegnati_da_pagare
+      = render 'appunto_righe/appunto_riga_full', :appunto_riga => a
+
+#ta_da_consegnare
+  %h2 Pagati
+#td_notes_activities
+  .notes-activities-container
+    - for a in @presenter.consegnati_pagati
+      = render 'appunto_righe/appunto_riga_full', :appunto_riga => a
+

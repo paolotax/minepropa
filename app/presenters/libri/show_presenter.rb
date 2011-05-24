@@ -18,5 +18,13 @@ class Libri::ShowPresenter
     @libro.appunto_righe.consegnati
   end
   
-  memoize :da_consegnare, :da_pagare, :consegnati
+  def consegnati_da_pagare
+    @libro.appunto_righe.consegnati.da_pagare
+  end
+  
+  def consegnati_pagati
+    @libro.appunto_righe.consegnati.pagati
+  end
+  
+  memoize :da_consegnare, :da_pagare, :consegnati, :consegnati_da_pagare, :consegnati_pagati
 end
