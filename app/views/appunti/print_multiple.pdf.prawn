@@ -49,7 +49,7 @@
 
   pdf.move_down(10)
 
-  pdf.text "Totale: #{number_to_currency(appunto.appunto_righe.sum('appunto_righe.quantita * appunto_righe.prezzo_unitario / 100'))}", :size => 16, :style => :bold
+  pdf.text "Totale: #{number_to_currency(appunto.appunto_righe.sum('appunto_righe.prezzo_unitario / 100 * appunto_righe.quantita'))}", :size => 16, :style => :bold
   
   pdf.move_down(350)
   
