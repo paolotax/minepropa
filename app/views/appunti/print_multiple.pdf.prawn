@@ -37,7 +37,7 @@
     [
       riga.libro.titolo,
       riga.quantita,
-      number_to_currency(riga.prezzo),
+      riga.prezzo_unitari,
       number_to_currency(riga.importo)
     ]
   end
@@ -49,7 +49,7 @@
 
   pdf.move_down(10)
 
-  pdf.text "Totale: #{number_to_currency(appunto.appunto_righe.sum('appunto_righe.quantita * appunto_righe.prezzo'))}", :size => 16, :style => :bold
+  pdf.text "Totale: #{number_to_currency(appunto.appunto_righe.sum('appunto_righe.quantita * appunto_righe.prezzo_unitario / 100'))}", :size => 16, :style => :bold
   
   pdf.move_down(350)
   
