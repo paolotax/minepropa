@@ -92,7 +92,7 @@ class AppuntiController < ApplicationController
 
     respond_to do |format|
       format.mobile { redirect_to root_path }
-      format.html   { redirect_to( appunti_url, :notice => "Appunto eliminato!  #{undo_link}") }
+      format.html   { redirect_to( root_path, :notice => "Appunto eliminato!  #{undo_link}") }
       format.json   { head :ok }
     end
   end

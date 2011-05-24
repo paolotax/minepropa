@@ -12,14 +12,18 @@ class ScuoleController < ApplicationController
   end
 
   def show
-    @scuola = Scuola.find(params[:id])
+
+    @scuola = Scuola.find(params[:id])    
+    @presenter = Scuole::ShowPresenter.new(@scuola)
+
+    # da eliminare ?
     @indirizzo = @scuola.indirizzi.first
-  
     unless @indirizzo.nil?
       #@json  = @indirizzo.to_gmaps4rails
       @coord = @indirizzo.to_gomap_marker
     end
     
+    #da eliminare ?
     @search = @scuola.appunti.page(params[:page]).per(8).search(params[:search])
     @appunti = @search.relation
 

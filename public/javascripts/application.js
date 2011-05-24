@@ -1,3 +1,17 @@
+$(document).ready(function() {
+  
+  $("#input_price").change(function() {
+    
+    var val = $(this).val();
+    console.log(val);
+    $(".vac_price").attr('value', val);
+    
+  });
+  
+});
+
+
+
 /* ------------------------------
     Lista scuole check clone 
 -------------------------------*/

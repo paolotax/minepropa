@@ -5,19 +5,19 @@
   
 - unless @indirizzo.nil?
   .scuola_descrizione
-    = best_in_place @indirizzo, :destinatario, :type => :input
+    = best_in_place @indirizzo, :destinatario
   .scuola_indirizzo
     %span
-      = best_in_place @indirizzo, :indirizzo, :type => :input
+      = best_in_place @indirizzo, :indirizzo
     %br  
-      = best_in_place @indirizzo, :cap, :type => :input
-      = best_in_place @indirizzo, :citta, :type => :input
-      = best_in_place @indirizzo, :provincia, :type => :input
+      = best_in_place @indirizzo, :cap
+      = best_in_place @indirizzo, :citta
+      = best_in_place @indirizzo, :provincia
   .scuola_indirizzo_id
     = @indirizzo.id
   .scuola_latlong
-    = best_in_place @indirizzo, :latitude, :type => :input
-    = best_in_place @indirizzo, :longitude, :type => :input
+    = best_in_place @indirizzo, :latitude
+    = best_in_place @indirizzo, :longitude
 
 / - content_for :go_map do
 /   = javascript_include_tag 'jquery.gomap-1.3.0.js'
@@ -40,4 +40,4 @@
 /   = render :partial => 'pages/search_appunti'
 
 - if @scuola.appunti.any?
-  = render :partial => 'appunti/appunto', :collection => @scuola.appunti.per_id
+  = render :partial => 'appunti/appunto', :collection => @presenter.appunti_in_corso
