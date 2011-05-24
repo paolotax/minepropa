@@ -34,7 +34,7 @@
     [
       riga.libro.titolo,
       riga.quantita,
-      number_to_currency(riga.prezzo),
+      riga.unitario,
       number_to_currency(riga.importo)
     ]
   end
