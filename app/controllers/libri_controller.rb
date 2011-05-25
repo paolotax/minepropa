@@ -1,11 +1,11 @@
 class LibriController < ApplicationController
 
   def index
-    @libri = Libro.all
+    @libri = Libro.includes(:appunto_righe).all
 
     respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @libri }
+      format.html
+      format.json  { render :json => @libri }
     end
   end
 

@@ -6,12 +6,12 @@ class PagesController < ApplicationController
 
     if mobile_device?
 
-      @search = current_user.appunti.in_corso.per_id.search(params[:search])
+      @search = current_user.appunti.includes([:appunti_righe, :scuola]).in_corso.per_id.search(params[:search])
       @appunti = @search.all
     else
       @term = params[:search]
       # @search = current_user.appunti.in_corso.per_id.page(params[:page]).per(30).search(params[:search])
-      @search = current_user.appunti.in_corso.per_id.search(params[:search])
+      @search = current_user.appunti.includes([:appunto_righe, :scuola, :tags, :visite]).in_corso.per_id.search(params[:search])
       @appunti = @search.relation
       @tags = current_user.appunti.in_corso.tag_counts_on(:tags)
     end

@@ -6,7 +6,8 @@
     %th Sigla
     %th Prezzo di copertina
     %th Prezzo consigliato
-    %th Sum
+    %th Da Consegnare
+    %th Venduti
 
   - @libri.each do |libro|
     %tr
@@ -14,6 +15,7 @@
       %td= best_in_place libro, :sigla
       %td= best_in_place libro, :copertina
       %td= best_in_place libro, :consigliato
+      %td= libro.appunto_righe.da_consegnare.sum(:quantita).to_s
       %td= libro.appunto_righe.sum(:quantita).to_s
 
 %br
