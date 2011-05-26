@@ -2,7 +2,7 @@ class AppuntoRigheController < ApplicationController
   # GET /appunto_righe
   # GET /appunto_righe.xml
   def index
-    @appunto_righe = AppuntoRiga.all
+    @appunto_righe = AppuntoRiga.includes(:appunto, :libro).all
 
     respond_to do |format|
       format.html # index.html.erb

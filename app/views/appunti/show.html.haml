@@ -32,6 +32,9 @@
             = best_in_place @appunto, :email
         .clear
         = link_to 'print', appunto_path(@appunto, :format => 'pdf' )
+        |
+        = link_to 'edit', edit_appunto_path(@appunto)
+        
         .access-container
           Creator:
           %span.info= current_user.name

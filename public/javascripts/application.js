@@ -804,20 +804,48 @@ $(document).ready(function () {
        return false;
     });
 	 	
-		$('#appunto_search').submit(function () {
-		  
-		  $("#search-icon").hide();
-		  $("#search_loader").show();
+    // $('#appunto_search').submit(function () {
+    //   
+    //   $("#search-icon").hide();
+    //   $("#search_loader").show();
+    //     
+    //  $.get(this.action, $("#appunto_search").serialize(), function (data) {
+    //      
+    //     $("#search-icon").show();
+    //           $("#search_loader").hide();
+    //     history.pushState(null, document.title, $("#appunto_search").attr("action") + "?" + $("#appunto_search").serialize()); 
+    //  }, 'script');  
+    //       
+    //       return false;
+    // });
+		
+		$("#dashboard_search_input").keyup(function () {
 		    
-			$.get(this.action, $("#appunto_search").serialize(), function (data) {
-			    
-			   $("#search-icon").show();
-   		   $("#search_loader").hide();
-			   history.pushState(null, document.title, $("#appunto_search").attr("action") + "?" + $("#appunto_search").serialize()); 
-			}, 'script');  
-      
-      return false;
-		});
+        var filter = $(this).val(), count = 0;
+        
+        $("#appunti li").each(function () {
+            // console.log($(this).find('a').text());
+            if ($(this).find('a, .best_in_place, li').text().search(new RegExp(filter, "i")) < 0) {
+                $(this).addClass("hidden");
+            } else {
+                $(this).removeClass("hidden");
+                count++;
+            }
+        });
+        
+        if (count == 0) {
+           $("#visible_taskslist_title").text("Non ho trovato nessun appunto");
+        } else if (count == 1) {
+           $("#visible_taskslist_title").text("Trovato " + count + " appunto");
+        } else {
+           $("#visible_taskslist_title").text("Trovato".pluralize() + " " + count + " " + "appunto".pluralize());
+        }; 
+        console.log(count);
+    });
+    
+    
+    
+    
 		
 		$('#scuola_search').submit(function () {  
 			$.get(this.action, $("#scuola_search").serialize(), null, 'script');  
