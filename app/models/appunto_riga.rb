@@ -25,7 +25,7 @@ class AppuntoRiga < ActiveRecord::Base
   scope :consegnati,    where("appunto_righe.consegnato = true")
   scope :pagati,        where("appunto_righe.pagato = true")
   scope :da_pagare,     where("appunto_righe.pagato = false OR appunto_righe.pagato IS NULL")
-  scope :per_id,        order(:libro_id)
+  scope :per_libro_id,        order(:libro_id)
   
   composed_of :unitario,
       :class_name  => "Money",
