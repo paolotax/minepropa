@@ -34,7 +34,7 @@
   
   unless appunto.appunto_righe.empty?
     pdf.move_down(20)
-    righe = appunto.appunto_righe.map do |riga|
+    righe = appunto.appunto_righe.per_libro_id.map do |riga|
       [
         riga.libro.titolo,
         riga.quantita,

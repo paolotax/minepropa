@@ -33,7 +33,7 @@
  
   unless @appunto.appunto_righe.empty?
   
-    righe = @appunto.appunto_righe.map do |riga|
+    righe = @appunto.appunto_righe.per_libro_id.map do |riga|
       [
         riga.libro.titolo,
         riga.quantita,
