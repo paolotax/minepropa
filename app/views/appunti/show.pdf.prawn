@@ -30,11 +30,11 @@
   pdf.text @appunto.telefono unless @appunto.telefono.nil?
   
   pdf.move_down(20)
- 
-  unless @appunto.appunto_righe.empty?
   
+  unless @appunto.appunto_righe.empty?
+    pdf.move_down(20)
     righe = @appunto.appunto_righe.per_libro_id.map do |riga|
-      [
+     [
         riga.libro.titolo,
         riga.quantita,
         riga.unitario,
@@ -48,8 +48,9 @@
       :align => { 0 => :left, 1 => :right, 2 => :right, 3 => :right }
 
     pdf.move_down(10)
-
-    pdf.text "Totale: #{number_to_currency(@appunto.appunto_righe.sum('appunto_righe.quantita * appunto_righe.prezzo_unitario / 100'))}", :size => 16, :style => :bold
+    
+     pdf.text "Totale: #{number_to_currency((@appunto.appunto_righe.sum('appunto_righe.prezzo_unitario * appunto_righe.quantita').to_f / 100))}", :size => 16, :style => :bold
+     
   end
   
   pdf.move_down(350)

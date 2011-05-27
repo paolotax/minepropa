@@ -19,13 +19,15 @@ class AppuntoRiga < ActiveRecord::Base
   belongs_to :libro
   belongs_to :appunto
   
-  default_scope order("appunto_righe.id desc")
+  #default_scope order("appunto_righe.id desc")
   
   scope :da_consegnare, where("appunto_righe.consegnato = false OR appunto_righe.consegnato IS NULL")
   scope :consegnati,    where("appunto_righe.consegnato = true")
   scope :pagati,        where("appunto_righe.pagato = true")
   scope :da_pagare,     where("appunto_righe.pagato = false OR appunto_righe.pagato IS NULL")
-  scope :per_libro_id,        order(:libro_id)
+  
+  scope :per_id,       order("appunto_righe.id desc")
+  scope :per_libro_id, order("appunto_righe.libro_id")
   
   composed_of :unitario,
       :class_name  => "Money",
