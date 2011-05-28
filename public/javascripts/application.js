@@ -1,12 +1,65 @@
+//+ Jonas Raoni Soares Silva
+//@ http://jsfromhell.com/number/fmt-money [v1.1]
+
+Number.prototype.formatMoney = function(c, d, t){
+	var n = this, c = isNaN(c = Math.abs(c)) ? 2 : c, d = d == undefined ? "," : d, t = t == undefined ? "." : t, s = n < 0 ? "-" : "", i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "", j = (j = i.length) > 3 ? j % 3 : 0;
+	return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+};
+
+
 $(document).ready(function() {
   
   $("#input_price").change(function() {
-    
+  
     var val = $(this).val();
     console.log(val);
     $(".vac_price").attr('value', val);
-    
+  
   });
+
+
+  $("#dashboard_search_input").keyup(function () {
+    
+      var filter = $(this).val(), count = 0;
+    
+      $("#appunti li").each(function () {
+          // console.log($(this).find('a').text());
+          if ($(this).find('a, .best_in_place, li').text().search(new RegExp(filter, "i")) < 0) {
+              $(this).addClass("hidden");
+          } else {
+              $(this).removeClass("hidden");
+              count++;
+          }
+      });
+    
+      if (count == 0) {
+         $("#visible_taskslist_title").text("Non ho trovato nessun appunto");
+      } else if (count == 1) {
+         $("#visible_taskslist_title").text("Trovato " + count + " appunto");
+      } else {
+         $("#visible_taskslist_title").text("Trovato".pluralize() + " " + count + " " + "appunto".pluralize());
+      }; 
+      console.log(count);
+  });
+
+
+  $(".riga_quantita span").change(function() {
+    var qta = $('form input', $(this)).val();
+    var prezzo = $('.riga_prezzo span', $(this).parent().parent()).html().replace(",", ".");
+    $('.riga_importo', $(this).parent().parent()).text((parseFloat(prezzo) * qta).formatMoney(2, ',', '.') + "  €");
+  });
+
+  $(".riga_prezzo span").change(function() {
+    origin = $(this);
+    var prezzo = $('form input', $(this)).val().replace(",", ".");
+    var qta = $('.riga_quantita span', $(this).parent().parent()).html();
+    var importo = (parseFloat(prezzo) * qta).formatMoney(2, ',', '.');
+    $('.riga_importo', $(this).parent().parent()).text(importo + "  €");
+  
+    origin.text(prezzo.formatMoney(2, ',', '.'));
+    $(this).addClass("hidden");
+  });
+  
   
 });
 
@@ -819,33 +872,7 @@ $(document).ready(function () {
     //       return false;
     // });
 		
-		$("#dashboard_search_input").keyup(function () {
-		    
-        var filter = $(this).val(), count = 0;
-        
-        $("#appunti li").each(function () {
-            // console.log($(this).find('a').text());
-            if ($(this).find('a, .best_in_place, li').text().search(new RegExp(filter, "i")) < 0) {
-                $(this).addClass("hidden");
-            } else {
-                $(this).removeClass("hidden");
-                count++;
-            }
-        });
-        
-        if (count == 0) {
-           $("#visible_taskslist_title").text("Non ho trovato nessun appunto");
-        } else if (count == 1) {
-           $("#visible_taskslist_title").text("Trovato " + count + " appunto");
-        } else {
-           $("#visible_taskslist_title").text("Trovato".pluralize() + " " + count + " " + "appunto".pluralize());
-        }; 
-        console.log(count);
-    });
-    
-    
-    
-    
+
 		
 		$('#scuola_search').submit(function () {  
 			$.get(this.action, $("#scuola_search").serialize(), null, 'script');  

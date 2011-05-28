@@ -34,7 +34,7 @@ class Appunto < ActiveRecord::Base
   has_many :appunto_righe,  :dependent => :destroy
   
   accepts_nested_attributes_for :indirizzi,     :reject_if => lambda { |a| a[:citta].blank? }, :allow_destroy => true
-  accepts_nested_attributes_for :appunto_righe, :reject_if => lambda { |a| a[:quantita].blank? }, :allow_destroy => true
+  accepts_nested_attributes_for :appunto_righe, :reject_if => lambda { |a| (a[:quantita].blank? || a[:libro_id].blank?)}, :allow_destroy => true
   
   
   validates :user_id,  :presence => true
@@ -55,6 +55,8 @@ class Appunto < ActiveRecord::Base
                                             where visite.visitable_type = 'Appunto' 
                                             and visite.visitable_id = appunti.id)")
   scope :assegnato, joins(:visite)
+  
+  scope :modificato_dal, lambda{ |ago| where("appunti.created_at >= ?", ago)} 
   
   #vecchio stile
   #scope :instance_appunti, lambda { |user| where("appunti.user_id = ?", user.id) }

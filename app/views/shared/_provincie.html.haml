@@ -2,5 +2,5 @@
   %ul.links
     - get_provincie_user.each do |p|
       - unless p.nil?
-        %li.links= link_to p.provincia, params.merge(:provincia => p.provincia)
+        %li.links= link_to p.provincia, params.merge(:provincia => p.provincia), :remote => true
   .clear
