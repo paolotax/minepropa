@@ -16,7 +16,7 @@
           %span.date.radius-3= l appunto_riga.created_at, :format => :short
         .note-content        
           .riga_titolo
-            = link_to(appunto_riga.libro.titolo, libro_url(appunto_riga.libro)) unless appunto_riga.libro.nil?
+            = link_to(appunto_riga.titolo, libro_url(appunto_riga.libro)) # unless appunto_riga.libro.nil?
           .riga_quantita
             = best_in_place appunto_riga, :quantita
           .riga_operazione

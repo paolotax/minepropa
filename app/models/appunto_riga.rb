@@ -16,8 +16,12 @@
 #
 
 class AppuntoRiga < ActiveRecord::Base
+  
   belongs_to :libro
   belongs_to :appunto
+  
+  delegate :titolo, :copertina, :consigliato, :to => :libro
+  
   
   #default_scope order("appunto_righe.id desc")
   
@@ -29,6 +33,8 @@ class AppuntoRiga < ActiveRecord::Base
   scope :per_id,       order("appunto_righe.id desc")
   scope :per_libro_id, order("appunto_righe.libro_id")
   
+  
+  
   composed_of :unitario,
       :class_name  => "Money",
       :mapping     => [%w(prezzo_unitario cents), %w(currency currency_as_string)],
@@ -39,9 +45,9 @@ class AppuntoRiga < ActiveRecord::Base
     libro.copertina * quantita unless libro.nil?
   end
   
-  def titolo
-    "#{libro.titolo}" unless libro.nil?
-  end
+  # def titolo
+  #   "#{libro.titolo}" unless libro.nil?
+  # end
   
   def price
     unitario.to_s
