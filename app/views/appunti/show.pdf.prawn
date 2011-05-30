@@ -27,9 +27,11 @@
   pdf.move_down(200)
   pdf.text @appunto.note, :size => 12
   pdf.move_down(20)
-  pdf.text @appunto.telefono unless @appunto.telefono.nil?
-  
+  pdf.text "tel. " + @appunto.telefono unless @appunto.telefono.nil?
   pdf.move_down(20)
+  pdf.text "Consegna del " + l(Time.now, :format => :only_date)
+  pdf.move_down(20)
+  
   
   unless @appunto.appunto_righe.empty?
     pdf.move_down(20)
