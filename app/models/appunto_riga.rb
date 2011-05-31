@@ -20,7 +20,7 @@ class AppuntoRiga < ActiveRecord::Base
   belongs_to :libro
   belongs_to :appunto
   
-  delegate :titolo, :copertina, :consigliato, :to => :libro
+  delegate :titolo, :copertina, :consigliato, :prezzo_copertina, :prezzo_consigliato, :to => :libro
   
   
   #default_scope order("appunto_righe.id desc")
@@ -57,8 +57,7 @@ class AppuntoRiga < ActiveRecord::Base
     re = /([c|o])|([\d,]+)|(-[\d,]+)/
     m = re.match pr
     if m[1] == 'c'
-      l = Libro.find(self.libro_id)
-      self.prezzo_unitario = l.prezzo_consigliato
+      self.prezzo_unitario = self.prezzo_consigliato
     else
       if m[1] == 'o'
         self.unitario = "0"
@@ -67,7 +66,7 @@ class AppuntoRiga < ActiveRecord::Base
           self.unitario = pr
         else
           if m[3] == pr
-            self.unitario = (self.copertina - (self.copertina * pr.split('-').last.to_f / 100))
+            self.unitario = (self.prezzo_copertina - (self.prezzo_copertina * pr.split('-').last.to_f / 100)) / 100
           else
             m
           end
