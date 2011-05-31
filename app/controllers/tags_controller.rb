@@ -24,11 +24,11 @@ class TagsController < ApplicationController
     @title      = params[:id]
     @appunti    = current_user.appunti.in_corso.order('id desc').tagged_with(params[:id])
     
-    @fabbisogno = AppuntoRiga
-                    .where("appunto_righe.appunto_id in (?) and appunto_righe.consegnato = false", @appunti.collect(&:id))
-                    .group(:libro_id)
-                    .order(:libro_id)
-                    .sum(:quantita)
+    @fabbisogno = AppuntoRiga.
+                        where("appunto_righe.appunto_id in (?) and appunto_righe.consegnato = false", @appunti.collect(&:id)).
+                        group(:libro_id).
+                        order(:libro_id).
+                        sum(:quantita)
 
     
     
