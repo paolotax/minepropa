@@ -37,5 +37,5 @@ class TagsController < ApplicationController
 end
 
 
-AppuntoRiga.where("appunto_righe.appunto_id in (?)", Appunto.in_corso.collect(&:id)).group(:libro_id).order(:libro_id).sum(:quantita)
+
 
