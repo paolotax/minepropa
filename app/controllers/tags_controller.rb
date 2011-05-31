@@ -25,17 +25,16 @@ class TagsController < ApplicationController
     @appunti    = current_user.appunti.in_corso.order('id desc').tagged_with(params[:id])
     
     @fabbisogno = AppuntoRiga.
+                        joins(:libro).
                         where("appunto_righe.appunto_id in (?) and (appunto_righe.consegnato = false or appunto_righe.consegnato is null)", @appunti.collect(&:id)).
-                        group(:libro_id).
-                        order(:libro_id).
-                        sum(:quantita)
+                        group("appunto_righe.libro_id, libri.titolo").
+                        select("appunto_righe.libro_id, libri.titolo, sum(quantita) as quantita").
+                        order(:libro_id).collect{|fabb|[fabb.libro_id, fabb.titolo, fabb.quantita]}
 
     
     
     @tags       = current_user.appunti.in_corso.order('id desc').tag_counts_on(:tags)
   end
 end
-
-
 
 

@@ -4,12 +4,17 @@
   = link_to tag.name, {:controller => :tags, :action => :appunti_cloud, :id => tag.name}, {:class => css_class}
 %br
 
-- @fabbisogno.each do |key,value|
-  = key
-  |
-  = value
-  %br
-  
+
+
+#table_fabbisogno
+  %table
+    %tr
+      %th Titolo
+      %th Quantità
+    - @fabbisogno.each do |codice, titolo, quantita|
+      %tr
+        %td= link_to titolo, libro_url(codice)
+        %td= quantita
 
 
 = render 'appunti/appunti'
