@@ -21,8 +21,21 @@ class TagsController < ApplicationController
   end
   
   def appunti_cloud
-    @title  = params[:id]
-    @appunti = current_user.appunti.in_corso.order('id desc').tagged_with(params[:id])
-    @tags    = current_user.appunti.in_corso.order('id desc').tag_counts_on(:tags)
+    @title      = params[:id]
+    @appunti    = current_user.appunti.in_corso.order('id desc').tagged_with(params[:id])
+    
+    @fabbisogno = AppuntoRiga
+                    .where("appunto_righe.appunto_id in (?) and appunto_righe.consegnato = false", @appunti.collect(&:id))
+                    .group(:libro_id)
+                    .order(:libro_id)
+                    .sum(:quantita)
+
+    
+    
+    @tags       = current_user.appunti.in_corso.order('id desc').tag_counts_on(:tags)
   end
 end
+
+
+AppuntoRiga.where("appunto_righe.appunto_id in (?)", Appunto.in_corso.collect(&:id)).group(:libro_id).order(:libro_id).sum(:quantita)
+
