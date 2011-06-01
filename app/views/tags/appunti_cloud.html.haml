@@ -19,3 +19,7 @@
 
 = render 'appunti/appunti'
 
+#td_notes_activities
+  .notes-activities-container
+    - @appunto_righe.each do |a|
+      = render 'appunto_righe/appunto_riga_full', :appunto_riga => a

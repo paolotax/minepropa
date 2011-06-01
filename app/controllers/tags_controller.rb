@@ -22,8 +22,9 @@ class TagsController < ApplicationController
   
   def appunti_cloud
     @title      = params[:id]
-    @appunti    = current_user.appunti.in_corso.order('id desc').tagged_with(params[:id])
+    @appunti    = current_user.appunti.order('id desc').tagged_with(params[:id])
     
+    @appunto_righe = AppuntoRiga.where("appunto_righe.appunto_id in (?) ", @appunti.collect(&:id))
     @fabbisogno = AppuntoRiga.
                         joins(:libro).
                         where("appunto_righe.appunto_id in (?) and (appunto_righe.consegnato = false or appunto_righe.consegnato is null)", @appunti.collect(&:id)).
