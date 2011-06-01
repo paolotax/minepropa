@@ -1,0 +1,22 @@
+%tr{ :id => "appunto_riga_#{appunto_riga.id}" }
+  %td.riga_titolo
+    = link_to(appunto_riga.titolo, libro_url(appunto_riga.libro)) # unless appunto_riga.libro.nil?
+  %td.riga_quantita
+    = best_in_place appunto_riga, :quantita
+  %td.riga_operazione
+    = " x "
+  %td.riga_prezzo
+    = best_in_place appunto_riga, :unitario
+  %td.riga_operazione
+    = " = "
+  %td.riga_importo
+    = appunto_riga.importo.format(:symbol)
+  %td.riga_consegnato
+    = best_in_place appunto_riga, :consegnato,  :type => :checkbox, :collection => ["no", "si"] 
+  %td.riga_pagato
+    = best_in_place appunto_riga, :pagato,      :type => :checkbox, :collection => ["no", "si"]
+  %td.delete
+    = link_to image_tag("td-delete.png"), appunto_riga, {:method => :delete, :remote => true}
+
+  
+

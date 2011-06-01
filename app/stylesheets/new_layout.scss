@@ -1,3 +1,44 @@
+#righe_small_list {
+  li {
+    
+  }
+  .riga_titolo {
+    width: 150px;
+  }
+  .riga_quantita,
+  .riga_prezzo {
+    text-align:right;
+    font-size: 18px;
+    width: 60px;
+    .best_in_place form input {
+      width: 60px;
+    }
+  }
+  .riga_prezzo {
+    text-align:left;
+    font-size: 18px;
+    width: 45px;
+    .best_in_place form input {
+      width: 45px;
+    }
+  }
+  .riga_operazione {
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align:center;
+    font-size: 16px;
+  }
+  .riga_importo {
+    text-align:right;
+    font-size: 18px;
+    width: 80px;
+  }
+  .riga_consegnato,
+  .riga_pagato {
+    padding-left: 10px;
+  }
+}
+
 #table_fabbisogno {
   margin-top: 20px;
   margin-bottom: 20px;

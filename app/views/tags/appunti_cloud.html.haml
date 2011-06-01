@@ -16,10 +16,13 @@
         %td= link_to titolo, libro_url(codice)
         %td= quantita
 
+#appunti_div
+  = form_tag edit_or_print_appunti_path, :method => :post, :id => "form_appunti" do
+    .autopagerize_page_element
+      %ul#appunti.tasks
+        - @appunti.each do |appunto|  
+          = render appunto
+          %table#righe_small_list
+            - for a in appunto.appunto_righe.per_libro_id
+              = render 'appunto_righe/appunto_riga_small', :appunto_riga => a unless a.libro.nil?
 
-= render 'appunti/appunti'
-
-#td_notes_activities
-  .notes-activities-container
-    - @appunto_righe.each do |a|
-      = render 'appunto_righe/appunto_riga_full', :appunto_riga => a
