@@ -8,15 +8,17 @@
     %th Prezzo consigliato
     %th Da Consegnare
     %th Venduti
-
+    %th Consegnati
+  - totals = [0, 0]
   - @libri.each do |libro|
     %tr
       %td= link_to libro.titolo, libro
       %td= best_in_place libro, :sigla
       %td= best_in_place libro, :copertina
       %td= best_in_place libro, :consigliato
-      %td= libro.appunto_righe.da_consegnare.sum(:quantita).to_s
-      %td= libro.appunto_righe.sum(:quantita).to_s
+      %td= libro.copie_da_consegnare
+      %td= libro.copie_vendute
+      %td= libro.copie_consegnate
 
 %br
 
