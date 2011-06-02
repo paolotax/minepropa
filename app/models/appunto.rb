@@ -58,6 +58,8 @@ class Appunto < ActiveRecord::Base
   
   scope :modificato_dal, lambda{ |ago| where("appunti.created_at >= ?", ago)} 
   
+  scope :con_righe, joins(:visite)
+  
   #vecchio stile
   #scope :instance_appunti, lambda { |user| where("appunti.user_id = ?", user.id) }
   
@@ -134,8 +136,18 @@ class Appunto < ActiveRecord::Base
     self.note = note
   end
   
-  def cleanup
-    self[:destinatario] = self[:destinatario].titleize unless self[:destinatario].nil?
+  def totale_copie
+    self.appunto_righe.sum("appunto_righe.quantita")
   end
+  
+  def totale_importo
+    self.appunto_righe.sum("appunto_righe.quantita * appunto_righe.prezzo_unitario").to_f / 100
+  end
+  
+  private
+  
+    def cleanup
+      self[:destinatario] = self[:destinatario].titleize unless self[:destinatario].nil?
+    end
   
 end
