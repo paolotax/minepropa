@@ -23,6 +23,10 @@
         - @appunti.each do |appunto|  
           = render appunto
           %table#righe_small_list
+            - totale = [0, 0]
             - for a in appunto.appunto_righe.per_libro_id
-              = render 'appunto_righe/appunto_riga_small', :appunto_riga => a unless a.libro.nil?
-
+              - totale[0] = totale[0] + a.quantita
+              - totale[1] = totale[1] + a.importo.to_f
+              = render 'appunto_righe/appunto_riga_small', :appunto_riga => a
+          = totale[0]
+          = totale[1]              
