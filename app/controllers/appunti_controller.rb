@@ -38,6 +38,7 @@ class AppuntiController < ApplicationController
   def new
     @appunto   = current_user.appunti.build
     @indirizzo = @appunto.indirizzi.build
+    @recent    = Appunto.modificato_dal(1.day.ago, 1.day.ago).per_id
   end
 
   def edit

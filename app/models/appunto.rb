@@ -56,9 +56,9 @@ class Appunto < ActiveRecord::Base
                                             and visite.visitable_id = appunti.id)")
   scope :assegnato, joins(:visite)
   
-  scope :modificato_dal, lambda{ |ago| where("appunti.created_at >= ?", ago)} 
+  scope :modificato_dal, lambda{ |ago, riga_ago| includes(:appunto_righe).where("appunti.updated_at >= ? OR appunto_righe.updated_at >= ?", ago, riga_ago)} 
   
-  scope :con_righe, joins(:visite)
+  scope :con_righe, joins(:appunto_righe)
   
   #vecchio stile
   #scope :instance_appunti, lambda { |user| where("appunti.user_id = ?", user.id) }

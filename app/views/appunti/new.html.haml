@@ -2,3 +2,21 @@
 
 = render 'appunto_form'
 
+#appunti_div
+  = form_tag edit_or_print_appunti_path, :method => :post, :id => "form_appunti" do
+    .autopagerize_page_element
+      %ul#appunti.tasks
+        - @recent.each do |appunto|
+          %div.appunto_container  
+            = render appunto
+            - unless appunto.appunto_righe.empty?
+              %table#righe_small_list
+                - for a in appunto.appunto_righe.per_libro_id
+                  = render 'appunto_righe/appunto_riga_small', :appunto_riga => a
+                %tr
+                  %td
+                  %td.riga_quantita.totale= appunto.totale_copie
+                  %td
+                  %td
+                  %td
+                  %td.riga_importo.totale= number_to_currency appunto.totale_importo.to_f
