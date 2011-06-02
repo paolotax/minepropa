@@ -43,4 +43,8 @@ class Libro < ActiveRecord::Base
     def copie_consegnate
       copie_vendute - copie_da_consegnare || copie_consegnate
     end
+    
+    def fatturato
+      self.appunto_righe.sum("appunto_righe.prezzo_unitario * appunto_righe.quantita").to_f / 100 || self.fatturato
+    end
 end

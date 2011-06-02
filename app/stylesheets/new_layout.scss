@@ -1,14 +1,21 @@
-.radius-7 {
-  border-bottom-left-radius:7px 7px;
-  border-bottom-right-radius:7px 7px;
-  border-top-left-radius:7px 7px;
-  border-top-right-radius:7px 7px;
+$main-color: #1E7B12;
+
+@mixin rounded-corners($radius) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
 }
 
+@mixin box-shadow($color) {
+  -webkit-box-shadow: $color 0 0 3px;
+  box-shadow: $color 0 0 3px;
+}
+
+
 #create-appunto {
-  -webkit-box-shadow:#B6B6B6 0 0 3px;
-  border:  #A9C6D7, solid, 1px;
-  box-shadow:#B6B6B6 0 0 3px;
+  border:  1px solid #A9C6D7;
+  @include box-shadow(#B6B6B6);
+  @include rounded-corners(7px);
   margin-bottom:25px;
   margin-top:10px;
   padding:4px;
@@ -21,7 +28,7 @@
 
 
 #righe_small_list {
-  border: #A9C6D7, solid, 1px;
+  border: 1px solid #A9C6D7;
   width: 75%;
   margin-left: 33px;
   margin-right: 33px;
