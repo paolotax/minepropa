@@ -24,8 +24,10 @@
 %h2
   %a.gear
   %div Tags: 
-     
-#block_navigator.block.round
-  %ul#bl_navigator.links
-    %li.navigation-btn= link_to "Vacanze", {:controller => :tags, :action => :appunti_cloud, :id => 'vacanze'}
-    %li.navigation-btn= link_to "Calendario", calendar_path
+
+#cloud
+  -  @tags       = current_user.appunti.in_corso.order('id desc').tag_counts_on(:tags)
+  - tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class|
+    = link_to tag.name, {:controller => :tags, :action => :appunti_cloud, :id => tag.name}, {:class => css_class}
+%br
+

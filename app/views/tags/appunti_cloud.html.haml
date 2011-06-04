@@ -1,11 +1,5 @@
 - title @title
 
-- tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class|
-  = link_to tag.name, {:controller => :tags, :action => :appunti_cloud, :id => tag.name}, {:class => css_class}
-%br
-
-
-
 #table_fabbisogno
   %table
     %tr
@@ -31,4 +25,7 @@
               %td
               %td
               %td
-              %td.riga_importo.totale= number_to_currency appunto.totale_importo.to_f              
+              %td.riga_importo.totale= number_to_currency appunto.totale_importo.to_f    
+              %td
+              %td
+              %td          

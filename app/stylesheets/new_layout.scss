@@ -12,6 +12,31 @@ $main-color: #1E7B12;
 }
 
 
+
+#cloud {
+  margin-left: 20px;
+  margin-right: 20px;
+  line-height: 1.6em;
+  a {
+
+  }
+  
+}
+.css1 {
+  font-size: 1.0em;
+}
+.css2 {
+  font-size: 1.2em;
+}
+.css3 {
+  font-size: 1.4em;
+}
+.css4 {
+  font-size: 1.6em;
+}
+
+
+
 #create-appunto {
   border:  1px solid #A9C6D7;
   @include box-shadow(#B6B6B6);
@@ -22,9 +47,13 @@ $main-color: #1E7B12;
 }
 
 #righe_small_list {
-  border: 1px solid #A9C6D7;
+  border-left: 1px solid #E6E6E6;
+  border-right: 1px solid #E6E6E6;
+  border-bottom: 1px solid #E6E6E6;
+  @include rounded-corners(5px);
+  
   width: 75%;
-  margin-left: 33px;
+  margin-left: 32px;
   margin-right: 33px;
   li {
     
