@@ -161,8 +161,6 @@ GEM
       nokogiri (>= 1.2.0)
       rack (>= 1.0)
       rack-test (>= 0.5.3)
-    with_action (1.0.0)
-      actionpack
 
 PLATFORMS
   ruby
@@ -200,4 +198,3 @@ DEPENDENCIES
   ruby_parser
   spork
   webrat (= 0.7.2)
-  with_action

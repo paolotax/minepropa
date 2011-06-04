@@ -14,7 +14,7 @@ gem "hpricot"
 gem 'prawnto'
 gem 'devise'
 gem 'ruby_parser'
-gem 'with_action'
+
 gem "jquery-rails"
 gem "acts_as_list"
 gem 'meta_where'
