@@ -14,7 +14,7 @@ gem "hpricot"
 gem 'prawnto'
 gem 'devise'
 gem 'ruby_parser'
-gem 'with_action'
+
 gem "jquery-rails"
 gem "acts_as_list"
 gem 'meta_where'
@@ -33,6 +33,7 @@ gem "best_in_place"
 
 gem 'ancestry'
 gem 'acts-as-taggable-on'
+
 gem "nested_form"
 gem 'money'
 
