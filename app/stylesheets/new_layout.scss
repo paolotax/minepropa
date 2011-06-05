@@ -46,19 +46,17 @@ $main-color: #1E7B12;
   padding:4px;
 }
 
-#appunto_righe_list {
+.appunto_righe_list {
   border-left: 1px solid #E6E6E6;
   border-right: 1px solid #E6E6E6;
   border-bottom: 1px solid #E6E6E6;
   @include rounded-corners(7px);
-  width: 75%;
+  width: 60%;
   margin-left: 32px;
   margin-right: 33px;
   
-  .righe_small_list {
-  li {
-    
-    }
+  table {
+
     td.riga_quantita {
       text-align: right;
     }
@@ -75,6 +73,11 @@ $main-color: #1E7B12;
       border-top: 2px double black;
     }  
   }
+}
+
+.appunto_righe_sep {
+  height: 10px;
+  border-bottom: 1px solid #E6E6E6;
 }
 
 #table_fabbisogno {

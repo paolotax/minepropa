@@ -1,5 +1,5 @@
-#appunto_righe_list
-  %table.righe_small_list
+.appunto_righe_list
+  %table
     - for a in appunto.appunto_righe.per_libro_id
       = render 'appunto_righe/appunto_riga_small', :appunto_riga => a
     %tr
@@ -12,4 +12,5 @@
       %td
       %td
       %td
+.appunto_righe_sep
     
