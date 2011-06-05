@@ -10,7 +10,7 @@
           %div.appunto_container  
             = render appunto
             - unless appunto.appunto_righe.empty?
-              %table#righe_small_list
+              %table.righe_small_list
                 - for a in appunto.appunto_righe.per_libro_id
                   = render 'appunto_righe/appunto_riga_small', :appunto_riga => a
                 %tr

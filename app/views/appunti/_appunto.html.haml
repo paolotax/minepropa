@@ -11,5 +11,8 @@
     .task-title= best_in_place appunto, :note, :type => :input
     .labels= appunto_tags(appunto)
   .clear
+  / - @appunto_righe = appunto.appunto_righe
+  / - unless @appunto_righe.nil?
+  /   = render :partial => 'appunto_righe/appunto_righe'
     
     
