@@ -17,16 +17,5 @@
         - @appunti.each do |appunto|  
           = render appunto
           - unless appunto.appunto_righe.blank?
-            %table.righe_small_list
-              - for a in appunto.appunto_righe.per_libro_id
-                = render 'appunto_righe/appunto_riga_small', :appunto_riga => a
-              %tr
-                %td
-                %td.riga_quantita.totale= appunto.totale_copie
-                %td
-                %td
-                %td
-                %td.riga_importo.totale= number_to_currency appunto.totale_importo.to_f    
-                %td
-                %td
-                %td          
+            = render 'appunto_righe/appunto_righe', :appunto => appunto
+     

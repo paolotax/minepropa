@@ -46,33 +46,35 @@ $main-color: #1E7B12;
   padding:4px;
 }
 
-.righe_small_list {
+#appunto_righe_list {
   border-left: 1px solid #E6E6E6;
   border-right: 1px solid #E6E6E6;
   border-bottom: 1px solid #E6E6E6;
-  @include rounded-corners(5px);
-  
+  @include rounded-corners(7px);
   width: 75%;
   margin-left: 32px;
   margin-right: 33px;
+  
+  .righe_small_list {
   li {
     
+    }
+    td.riga_quantita {
+      text-align: right;
+    }
+    td.riga_operazione {
+      text-align: center;
+    }
+    td.riga_prezzo {
+      text-align: left;
+    }
+    td.riga_importo {
+      text-align: right;
+    }
+    td.totale {
+      border-top: 2px double black;
+    }  
   }
-  td.riga_quantita {
-    text-align: right;
-  }
-  td.riga_operazione {
-    text-align: center;
-  }
-  td.riga_prezzo {
-    text-align: left;
-  }
-  td.riga_importo {
-    text-align: right;
-  }
-  td.totale {
-    border-top: 2px double black;
-  }  
 }
 
 #table_fabbisogno {
