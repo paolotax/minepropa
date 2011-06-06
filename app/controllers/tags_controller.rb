@@ -23,10 +23,17 @@ class TagsController < ApplicationController
   def appunti_cloud
     @title      = params[:id]
     @appunti    = current_user.appunti.includes(:appunto_righe).order('scuola_id, destinatario').tagged_with(params[:id])
+    ids = @appunti.collect(&:id)
     
+    @incasso = (AppuntoRiga.
+                        where("appunto_righe.appunto_id in (?)", ids).
+                        where("appunto_righe.pagato = true").
+                        sum("quantita * prezzo_unitario")).to_f / 100
+                        
+                        
     @fabbisogno = AppuntoRiga.
                         joins(:libro).
-                        where("appunto_righe.appunto_id in (?)", @appunti.collect(&:id)).
+                        where("appunto_righe.appunto_id in (?)", ids).
                         where("(appunto_righe.consegnato = false or appunto_righe.consegnato is null)").
                         group("appunto_righe.libro_id, libri.titolo").
                         select("appunto_righe.libro_id, libri.titolo, sum(quantita) as quantita").
