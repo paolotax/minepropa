@@ -9,6 +9,7 @@
     .task-title= link_to destinatario, appunto_path(appunto)
     .task-title= link_to appunto.nome_scuola, scuola_path(appunto.scuola) unless appunto.scuola.blank?
     .task-title= best_in_place appunto, :note, :type => :input
+    .task-title.hidden= "prov=#{appunto.scuola.provincia}" 
     .labels= appunto_tags(appunto)
   .clear
   / - @appunto_righe = appunto.appunto_righe

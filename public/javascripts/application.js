@@ -24,7 +24,7 @@ $(document).ready(function() {
     
       $("#appunti li").each(function () {
           // console.log($(this).find('a').text());
-          if ($(this).find('a, .best_in_place, li').text().search(new RegExp(filter, "i")) < 0) {
+          if ($(this).find('a, .best_in_place, li, div.task-title.hidden').text().search(new RegExp(filter, "i")) < 0) {
               $(this).addClass("hidden");
           } else {
               $(this).removeClass("hidden");
