@@ -2,6 +2,7 @@
 
 %table
   %tr
+    %th C.M.
     %th Titolo
     %th Sigla
     %th Prezzo di copertina
@@ -9,9 +10,14 @@
     %th Da Consegnare
     %th Venduti
     %th Consegnati
+    %th Fatturato
+    %th coef
+
+    
   - totals = [0, 0]
   - @libri.each do |libro|
     %tr
+      %td= best_in_place libro, :cm
       %td= link_to libro.titolo, libro
       %td= best_in_place libro, :sigla
       %td= best_in_place libro, :copertina
@@ -20,7 +26,7 @@
       %td= libro.copie_vendute
       %td= libro.copie_consegnate
       %td= number_to_currency libro.fatturato
-
+      %td= best_in_place libro, :coefficente
 %br
 
 = link_to 'Nuovo Libro', new_libro_path
