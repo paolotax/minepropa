@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110523180743) do
+ActiveRecord::Schema.define(:version => 20110607091748) do
 
   create_table "appunti", :force => true do |t|
     t.string   "destinatario"
@@ -75,6 +75,8 @@ ActiveRecord::Schema.define(:version => 20110523180743) do
     t.integer  "prezzo_copertina"
     t.integer  "prezzo_consigliato"
     t.string   "currency"
+    t.float    "coefficente"
+    t.string   "cm"
   end
 
   create_table "scuole", :force => true do |t|
