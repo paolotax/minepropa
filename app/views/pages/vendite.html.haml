@@ -1,0 +1,24 @@
+/ - title "What's up"
+
+
+= render :partial => 'shared/search_appunti'
+
+= render :partial => 'appunti/appunto_form'
+
+#visible_taskslist_title.group-title Appunti in corso
+
+/ - tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class|
+/   = link_to tag.name, {:controller => :tags, :action => :appunti_cloud, :id => tag.name}, {:class => css_class}, :remote => true
+
+
+
+#visible_taskslist_header.tasks-header
+  .views-switcher
+    .list.active
+    .cal
+  #bar-sortby.sort-by
+    .sortby-label Ordina per
+    #bar-sortby-text.criteria - Label
+  #tasklist_menu_contact
+
+= render :partial => 'appunti/appunti'

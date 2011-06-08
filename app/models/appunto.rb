@@ -33,6 +33,11 @@ class Appunto < ActiveRecord::Base
   has_many :indirizzi, :as => :indirizzable,  :dependent => :destroy
   has_many :appunto_righe,  :dependent => :destroy
   
+  
+  delegate :nome_scuola, :to => :scuola,
+                         :allow_nil => true
+  
+  
   accepts_nested_attributes_for :indirizzi,     :reject_if => lambda { |a| a[:citta].blank? }, :allow_destroy => true
   accepts_nested_attributes_for :appunto_righe, :reject_if => lambda { |a| (a[:quantita].blank? || a[:libro_id].blank?)}, :allow_destroy => true
   
@@ -42,8 +47,9 @@ class Appunto < ActiveRecord::Base
   
   before_save :cleanup
   
-  scope :per_id, :order => "appunti.id DESC" 
+  scope :per_id,           :order => "appunti.id DESC" 
   scope :per_destinatario, :order => 'appunti.destinatario asc'
+  scope :per_scuola_id,    :order => 'appunti.scuola_id asc'
     
   scope :in_sospeso,  where(:stato.eq => "P")
   scope :in_corso,    where(:stato.ne => 'X')
@@ -58,7 +64,8 @@ class Appunto < ActiveRecord::Base
   
   scope :modificato_dal, lambda{ |ago, riga_ago| includes(:appunto_righe).where("appunti.updated_at >= ? OR appunto_righe.updated_at >= ?", ago, riga_ago)} 
   
-  scope :con_righe, joins(:appunto_righe)
+  scope :con_righe, where("exists (select appunto_righe.appunto_id from appunto_righe 
+                           where appunto_righe.appunto_id = appunti.id)")
   
   #vecchio stile
   #scope :instance_appunti, lambda { |user| where("appunti.user_id = ?", user.id) }
@@ -120,9 +127,9 @@ class Appunto < ActiveRecord::Base
     [scuola.nome_scuola, '('+scuola.citta.capitalize+')'].join(" ") if scuola
   end
 
-  def nome_scuola
-    scuola.nome_scuola if scuola
-  end  
+  # def nome_scuola
+  #   scuola.nome_scuola if scuola
+  # end  
   
   def nome_scuola=(nome)
     self.scuola = Scuola.find_by_nome_scuola(nome)

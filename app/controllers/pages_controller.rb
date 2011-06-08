@@ -17,6 +17,22 @@ class PagesController < ApplicationController
     end
 
   end
+  
+  def vendite
+
+    if mobile_device?
+
+      @search = current_user.appunti.includes([:appunti_righe, :scuola]).per_id.search(params[:search])
+      @appunti = @search.all
+    else
+      @term = params[:search]
+       # @search = current_user.appunti.in_corso.per_id.page(params[:page]).per(30).search(params[:search])
+      @appunti  = current_user.appunti.joins(:scuola).includes([:appunto_righe, :taggings, :visite]).con_righe.per_scuola_id
+      # @appunti = @search.relation
+      @tags = current_user.appunti.in_corso.tag_counts_on(:tags)
+    end
+
+  end
 
   def about
     @search = current_user.appunti.in_corso.per_id.non_assegnato.search(params[:search])

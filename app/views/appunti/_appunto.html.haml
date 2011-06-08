@@ -1,4 +1,4 @@
-%li.task{ :id => 'appunto_' + h(appunto.id) + '_visita_' + find_first_visita(appunto.id), :class => 'appunto_' + h(appunto.id) }
+%li.task{ :id => 'appunto_' + h(appunto.id) + '_visita_' }
   .task-elt.bulk
     = check_box_tag "appunti_ids[]", appunto.id, false, {:class => 'cb-element'}
   #status_image.task-elt.status{ :class => 'img_appunto_' + h(appunto.id) }
@@ -11,7 +11,9 @@
     .task-title= best_in_place appunto, :note, :type => :input
     .task-title.hidden= "prov=#{appunto.scuola.provincia}"
     .task-title.hidden= "citta=#{appunto.scuola.citta}" 
-    .labels= appunto_tags(appunto)
+    .labels= appunto.totale_copie
+    / .labels= appunto_tags(appunto)
+
   .clear
   / - @appunto_righe = appunto.appunto_righe
   / - unless @appunto_righe.nil?

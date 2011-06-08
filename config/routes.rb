@@ -39,6 +39,7 @@ Minepropa::Application.routes.draw do
   
   match '/about',      :to => 'pages#about'
   match '/calendar',   :to => 'pages#calendar'
+  match '/vendite',   :to => 'pages#vendite'
   
   post "versions/:id/revert" => "versions#revert", :as => "revert_version"
   
