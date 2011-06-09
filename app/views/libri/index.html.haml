@@ -29,7 +29,24 @@
       %td= best_in_place libro, :coefficente
 %br
 
-= number_to_currency(@fatturato)
-= @totale_copie
+%div.stat_copertina
+  Valore
+  = number_to_currency(@copertina)
+
+%div.stat_fatturato
+  Fatturato
+  = number_to_currency(@fatturato)
+
+%div.stat_costo
+  Costo
+  = number_to_currency(@costo)
+  
+%div.stat_ricavo
+  Ricavo
+  = number_to_currency(@ricavo)
+
+%div.stat_ricavo
+  Totale Copie
+  = @totale_copie
 
 = link_to 'Nuovo Libro', new_libro_path
