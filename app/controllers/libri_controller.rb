@@ -3,6 +3,10 @@ class LibriController < ApplicationController
   def index
     @libri = Libro.includes(:appunto_righe).all
 
+    @fatturato    = AppuntoRiga.sum("appunto_righe.quantita * appunto_righe.prezzo_unitario").to_f / 100
+    @totale_copie = AppuntoRiga.joins(:libro).sum("appunto_righe.quantita * libri.coefficente")  
+
+
     respond_to do |format|
       format.html
       format.json  { render :json => @libri }
