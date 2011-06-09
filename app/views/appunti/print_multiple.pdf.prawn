@@ -33,6 +33,8 @@
   pdf.text "tel. " + appunto.telefono unless appunto.telefono.nil?
   pdf.move_down(20)
   pdf.text "Consegna del " + l(Time.now, :format => :only_date)
+    pdf.move_down(20)
+  pdf.text "Ordine del " + l(appunto.created_at, :format => :only_date)
   pdf.move_down(20)
   
   
