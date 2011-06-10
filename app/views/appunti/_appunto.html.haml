@@ -1,4 +1,4 @@
-%li.task{ :id => 'appunto_' + h(appunto.id) + '_visita_' }
+%li.task{ :id => "appunto_#{appunto.id}_visita_", :class => "#{get_status_class(appunto.stato)}" }
   .task-elt.bulk
     = check_box_tag "appunti_ids[]", appunto.id, false, {:class => 'cb-element'}
   #status_image.task-elt.status{ :class => 'img_appunto_' + h(appunto.id) }

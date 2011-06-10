@@ -15,6 +15,19 @@ module AppuntiHelper
     end
   end
   
+  def get_status_class(status)
+    
+    if status == 'X'
+      return 'done'
+    else
+      if status == "P"
+        return "pending"
+      else  
+        return 'active'
+      end
+    end
+  end
+  
   def show_status_css(stato)
     if stato == 'X'
       content_tag :div, "", { :id => 'status_span', :class => 'done'}
