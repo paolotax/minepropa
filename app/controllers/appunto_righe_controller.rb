@@ -61,7 +61,8 @@ class AppuntoRigheController < ApplicationController
 
     respond_to do |format|
       if @appunto_riga.update_attributes(params[:appunto_riga])
-        format.html { redirect_to(@appunto_riga, :notice => 'Appunto riga was successfully updated.') }
+        flash[:notice] = 'Appunto riga was successfully updated.'
+        format.html { redirect_to @appunto_riga }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -75,9 +76,9 @@ class AppuntoRigheController < ApplicationController
   def destroy
     @appunto_riga = AppuntoRiga.find(params[:id])
     @appunto_riga.destroy
-
+    flash[:notice] = 'Riga eliminata.'
     respond_to do |format|
-      format.html { redirect_to(appunto_righe_url) }
+      format.html { redirect_to appunto_righe_url }
       format.js
       format.xml  { head :ok }
     end

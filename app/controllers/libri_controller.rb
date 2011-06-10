@@ -9,7 +9,6 @@ class LibriController < ApplicationController
     @ricavo       = @fatturato - @costo 
     @totale_copie = AppuntoRiga.joins(:libro).sum("appunto_righe.quantita * libri.coefficente")  
 
-
     respond_to do |format|
       format.html
       format.json  { render :json => @libri }
