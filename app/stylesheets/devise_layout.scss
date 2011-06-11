@@ -1,0 +1,977 @@
+body {
+  .logo {
+    left:25px;
+    position:absolute;
+    top:20px;
+    z-index:9;
+  }
+  .dialog {
+    background-image:-webkit-gradient(linear, 0 0%, 0 100%, from(#2C263F), to(rgba(44, 38, 63, 0.398438)));
+    border-bottom-color:#373553;
+    border-bottom-style:solid;
+    border-bottom-width:1px;
+    border-left-color:#373553;
+    border-left-style:solid;
+    border-left-width:1px;
+    border-right-color:#373553;
+    border-right-style:solid;
+    border-right-width:1px;
+    border-top-color:#373553;
+    border-top-style:solid;
+    border-top-width:1px;
+    color:#BFB8E5;
+    width:400px;
+  }
+}
+
+html input.text, body input.text {
+  background-color:#C9C3E6;
+  border-bottom-left-radius:3px 3px;
+  border-bottom-right-radius:3px 3px;
+  border-top-left-radius:3px 3px;
+  border-top-right-radius:3px 3px;
+  font-size:12px;
+  padding-bottom:7px;
+  padding-left:7px;
+  padding-right:7px;
+  padding-top:7px;
+}
+html input.checkbox, body input.checkbox {
+  margin-right:5px;
+}
+html input.submit, html input.button, html a.submit, html a.button, body input.submit, body input.button, body a.submit, body a.button {
+  -webkit-box-shadow:#232323 2px 2px 6px;
+  background-color:#9E8AFF;
+  background-image:url(https://api.heroku.com/images/button-smooth.png);
+  background-position:50% 100%;
+  background-repeat:repeat no-repeat;
+  border-bottom-left-radius:14px 14px;
+  border-bottom-right-radius:14px 14px;
+  border-top-left-radius:14px 14px;
+  border-top-right-radius:14px 14px;
+  color:#16153B;
+  cursor:pointer;
+  font-size:14px;
+  font-weight:bold;
+  padding-bottom:7px;
+  padding-left:20px;
+  padding-right:20px;
+  padding-top:7px;
+  text-decoration:none;
+  text-shadow:#C9C3E6 0 0 2px;
+}
+html input.submit:hover, html input.button:hover, html a.submit:hover, html a.button:hover, body input.submit:hover, body input.button:hover, body a.submit:hover, body a.button:hover {
+  background-color:#C9C3E6;
+  text-decoration:none;
+}
+html input.submit.disabled, html input.button.disabled, html a.submit.disabled, html a.button.disabled, body input.submit.disabled, body input.button.disabled, body a.submit.disabled, body a.button.disabled {
+  background-color:#555555;
+  color:#1C1C1C;
+  text-shadow:#AAAAAA 0 0 2px;
+}
+html input.submit.add, html input.submit.remove, html input.button.add, html input.button.remove, html a.submit.add, html a.submit.remove, html a.button.add, html a.button.remove, body input.submit.add, body input.submit.remove, body input.button.add, body input.button.remove, body a.submit.add, body a.submit.remove, body a.button.add, body a.button.remove {
+  background-color:#A3BA5F;
+  border-bottom-left-radius:10px 10px;
+  border-bottom-right-radius:10px 10px;
+  border-top-left-radius:10px 10px;
+  border-top-right-radius:10px 10px;
+  color:#353A1E;
+  font-size:14px;
+  padding-bottom:3px;
+  padding-left:7px;
+  padding-right:7px;
+  padding-top:2px;
+}
+html input.submit.add:hover, html input.submit.remove:hover, html input.button.add:hover, html input.button.remove:hover, html a.submit.add:hover, html a.submit.remove:hover, html a.button.add:hover, html a.button.remove:hover, body input.submit.add:hover, body input.submit.remove:hover, body input.button.add:hover, body input.button.remove:hover, body a.submit.add:hover, body a.submit.remove:hover, body a.button.add:hover, body a.button.remove:hover {
+  background-color:#CADE74;
+}
+html input.submit.remove, html input.button.remove, html a.submit.remove, html a.button.remove, body input.submit.remove, body input.button.remove, body a.submit.remove, body a.button.remove {
+  background-color:#A11C39;
+  color:#3B0000;
+  font-size:18px;
+  padding-bottom:2px;
+  padding-left:8px;
+  padding-right:8px;
+  padding-top:0;
+  text-shadow:#EEB4B5 0 0 2px;
+}
+html input.submit.remove:hover, html input.button.remove:hover, html a.submit.remove:hover, html a.button.remove:hover, body input.submit.remove:hover, body input.button.remove:hover, body a.submit.remove:hover, body a.button.remove:hover {
+  background-color:#D44F6C;
+  text-decoration:none;
+}
+html input.destroy, html a.destroy, body input.destroy, body a.destroy {
+  -webkit-box-shadow:#232323 2px 2px 6px;
+  background-color:#666666;
+  background-image:url(https://api.heroku.com/images/button-smooth-red.png);
+  background-position:50% 100%;
+  background-repeat:repeat no-repeat;
+  border-bottom-left-radius:14px 14px;
+  border-bottom-right-radius:14px 14px;
+  border-top-left-radius:14px 14px;
+  border-top-right-radius:14px 14px;
+  color:#0E0909;
+  cursor:pointer;
+  font-weight:bold;
+  margin-bottom:2px;
+  text-shadow:#999999 0 0 2px;
+}
+html input.destroy:hover, html a.destroy:hover, body input.destroy:hover, body a.destroy:hover {
+  background-color:#888888;
+}
+html input.selectbox, html a.selectbox, body input.selectbox, body a.selectbox {
+  background-image:url(https://api.heroku.com/images/form-select-closed.png);
+  background-position:100% 50%;
+  background-repeat:no-repeat no-repeat;
+  padding-right:25px;
+  position:relative;
+}
+html .selectbox-wrapper, html .ac_results, body .selectbox-wrapper, body .ac_results {
+  -webkit-box-shadow:#232323 2px 2px 6px;
+  background-color:#C2E3F3;
+  border-bottom-left-radius:3px 3px;
+  border-bottom-right-radius:3px 3px;
+  color:#27264C;
+  max-height:150px;
+  overflow-x:auto;
+  overflow-y:auto;
+  padding-bottom:3px;
+  position:absolute;
+  z-index:12;
+}
+html .selectbox-wrapper li, html .ac_results li, body .selectbox-wrapper li, body .ac_results li {
+  font-size:12px;
+  margin-bottom:-3px;
+  padding-bottom:5px;
+  padding-left:8px;
+  padding-right:5px;
+  padding-top:5px;
+}
+html .selectbox-wrapper li strong, html .ac_results li strong, body .selectbox-wrapper li strong, body .ac_results li strong {
+  font-weight:normal;
+}
+html .selectbox-wrapper li.selected, html .ac_results li.selected, body .selectbox-wrapper li.selected, body .ac_results li.selected {
+  color:#2A76B0;
+  font-weight:bold;
+}
+html .selectbox-wrapper li.current, html .ac_results li.current, body .selectbox-wrapper li.current, body .ac_results li.current {
+  background-color:#88B9F7;
+}
+html .selectbox-wrapper li.current:last-child, html .ac_results li.current:last-child, body .selectbox-wrapper li.current:last-child, body .ac_results li.current:last-child {
+  border-bottom-left-radius:3px 3px;
+  border-bottom-right-radius:3px 3px;
+}
+html select, body select {
+  background-color:#C9C3E6;
+  border-bottom-left-radius:3px 3px;
+  border-bottom-right-radius:3px 3px;
+  border-bottom-style:none;
+  border-color:initial;
+  border-left-style:none;
+  border-right-style:none;
+  border-top-left-radius:3px 3px;
+  border-top-right-radius:3px 3px;
+  border-top-style:none;
+  border-width:initial;
+  font-size:12px;
+  height:28px;
+  margin-left:0;
+  margin-top:0;
+  padding-bottom:7px;
+  padding-left:7px;
+  padding-right:7px;
+  padding-top:7px;
+}
+html .notice, body .notice {
+  -webkit-box-shadow:#1D1D1D 2px 2px 4px;
+  background-color:#5987A0;
+  background-image:url(https://api.heroku.com/images/notice-bkg.png);
+  background-position:50% 100%;
+  background-repeat:repeat no-repeat;
+  border-bottom-left-radius:7px 7px;
+  border-bottom-right-radius:7px 7px;
+  border-top-left-radius:7px 7px;
+  border-top-right-radius:7px 7px;
+  color:#FFFFFF;
+  margin-bottom:15px;
+  padding-bottom:8px;
+  padding-left:10px;
+  padding-right:10px;
+  padding-top:10px;
+}
+html .notice a, body .notice a {
+  color:#FFFFFF;
+  text-decoration:underline;
+}
+html .notice em, body .notice em {
+  border-bottom-left-radius:3px 3px;
+  border-bottom-right-radius:3px 3px;
+  border-top-left-radius:3px 3px;
+  border-top-right-radius:3px 3px;
+  padding-bottom:3px;
+  padding-left:3px;
+  padding-right:3px;
+  padding-top:3px;
+}
+html .notice h3, body .notice h3 {
+  background-image:url(https://api.heroku.com/images/notice-icon-35x35.png);
+  background-position:0 0;
+  background-repeat:no-repeat no-repeat;
+  line-height:30px;
+  padding-left:35px;
+  padding-top:1px;
+}
+html .notice.success, body .notice.success {
+  background-color:#7C984C;
+  background-image:url(https://api.heroku.com/images/notice-success-bkg.png);
+}
+html .notice.success em, body .notice.success em {
+  background-color:#D07872;
+  color:#40111F;
+}
+html .notice.success h3, body .notice.success h3 {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:none;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  line-height:24px;
+  padding-left:10px;
+}
+html .notice.error, body .notice.error {
+  background-color:#A11C39;
+  background-image:url(https://api.heroku.com/images/notice-error-bkg.png);
+}
+html .notice.error em, body .notice.error em {
+  background-color:#D07872;
+  color:#40111F;
+}
+html .notice.error h3, body .notice.error h3 {
+  background-image:url(https://api.heroku.com/images/notice-error-icon-35x35.png);
+  background-position:0 0;
+  background-repeat:no-repeat no-repeat;
+  padding-left:40px;
+}
+html form .overview, body form .overview {
+  padding-bottom:20px;
+  padding-left:20px;
+  padding-right:20px;
+  padding-top:20px;
+}
+html form .notice, body form .notice {
+  margin-bottom:20px;
+  margin-left:20px;
+  margin-right:20px;
+}
+html form fieldset, body form fieldset {
+  border-top-color:#232323;
+  border-top-style:solid;
+  border-top-width:4px;
+  overflow-x:auto;
+  overflow-y:auto;
+  padding-bottom:15px;
+  padding-left:30px;
+  padding-right:30px;
+  padding-top:20px;
+}
+html form fieldset:first-child, body form fieldset:first-child {
+  border-top-style:none;
+}
+html form fieldset:last-child, body form fieldset:last-child {
+  padding-bottom:0;
+}
+html form fieldset.active, body form fieldset.active {
+  background-color:#232323;
+}
+html form fieldset p.overview, body form fieldset p.overview {
+  padding-bottom:20px;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+}
+html form fieldset legend, html form fieldset h3, body form fieldset legend, body form fieldset h3 {
+  color:#BFB8E5;
+  padding-right:1em;
+}
+html form fieldset h3, body form fieldset h3 {
+  margin-bottom:20px;
+  padding-right:0;
+}
+html form fieldset .row, body form fieldset .row {
+  clear:both;
+  overflow-x:hidden;
+  overflow-y:hidden;
+}
+html form fieldset .row:last-child, body form fieldset .row:last-child {
+  padding-bottom:0;
+}
+html form fieldset .row .field, body form fieldset .row .field {
+  float:left;
+  margin-right:20px;
+}
+html form fieldset .row .field:last-child, body form fieldset .row .field:last-child {
+  margin-right:0;
+}
+html form fieldset .formError, body form fieldset .formError {
+  clear:both;
+  color:#E1B5B6;
+  display:block;
+  font-size:12px;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  padding-left:7px;
+  padding-top:7px;
+}
+html form fieldset .field, body form fieldset .field {
+  margin-bottom:15px;
+}
+html form fieldset .field label, body form fieldset .field label {
+  font-size:12px;
+  margin-bottom:2px;
+}
+html form fieldset .field label, html form fieldset .field input, html form fieldset .field .formError, body form fieldset .field label, body form fieldset .field input, body form fieldset .field .formError {
+  display:block;
+}
+html form fieldset .field .formError, body form fieldset .field .formError {
+  padding-left:0;
+  padding-top:2px;
+}
+html form fieldset .field.active select, html form fieldset .field.active .text, body form fieldset .field.active select, body form fieldset .field.active .text {
+  -webkit-box-shadow:#232323 2px 2px 6px;
+  background-color:#C2E3F3;
+}
+html form fieldset .field.active .selectbox, body form fieldset .field.active .selectbox {
+  background-image:url(https://api.heroku.com/images/form-select-active-closed.png);
+}
+html form fieldset .field.active .selectbox.open, body form fieldset .field.active .selectbox.open {
+  background-image:url(https://api.heroku.com/images/form-select-active-open.png);
+  border-bottom-left-radius:0 0;
+  border-bottom-right-radius:0 0;
+}
+html form fieldset .field.error, body form fieldset .field.error {
+  color:#D07872;
+}
+html form fieldset .field.error select, html form fieldset .field.error .text, body form fieldset .field.error select, body form fieldset .field.error .text {
+  background-color:#D07872;
+}
+html form fieldset .field.error .selectbox, body form fieldset .field.error .selectbox {
+  background-image:url(https://api.heroku.com/images/form-select-error-closed.png);
+}
+html form fieldset .field.error .selectbox.open, body form fieldset .field.error .selectbox.open {
+  background-image:url(https://api.heroku.com/images/form-select-error-open.png);
+}
+html form fieldset .field.error .selectbox-wrapper, body form fieldset .field.error .selectbox-wrapper {
+  background-color:#D07872;
+}
+html form fieldset .field.error.active select, html form fieldset .field.error.active .text, body form fieldset .field.error.active select, body form fieldset .field.error.active .text {
+  background-color:#E1B5B6;
+}
+html form fieldset .field.error.active .selectbox, body form fieldset .field.error.active .selectbox {
+  background-image:url(https://api.heroku.com/images/form-select-error-active-closed.png);
+}
+html form fieldset .field.error.active .selectbox.open, body form fieldset .field.error.active .selectbox.open {
+  background-image:url(https://api.heroku.com/images/form-select-error-active-open.png);
+}
+html form fieldset .field.error.active .selectbox-wrapper, html form fieldset .field.error.active .ac_results, body form fieldset .field.error.active .selectbox-wrapper, body form fieldset .field.error.active .ac_results {
+  background-color:#E1B5B6;
+}
+html form fieldset .field.error.active .selectbox-wrapper .selected, html form fieldset .field.error.active .ac_results .selected, body form fieldset .field.error.active .selectbox-wrapper .selected, body form fieldset .field.error.active .ac_results .selected {
+  color:#A11C39;
+}
+html form fieldset .field.error.active .selectbox-wrapper .current, html form fieldset .field.error.active .ac_results .current, body form fieldset .field.error.active .selectbox-wrapper .current, body form fieldset .field.error.active .ac_results .current {
+  background-color:#D07872;
+  color:#2A0B14;
+}
+html form p.submit, html form fieldset.submit, body form p.submit, body form fieldset.submit {
+  padding-bottom:20px;
+  padding-left:30px;
+  padding-right:30px;
+  padding-top:20px;
+  text-align:right;
+}
+html form p.submit .confirmation, html form fieldset.submit .confirmation, body form p.submit .confirmation, body form fieldset.submit .confirmation {
+  text-align:left;
+}
+html form p.submit p, html form fieldset.submit p, body form p.submit p, body form fieldset.submit p {
+  float:left;
+  line-height:30px;
+}
+html body #content form {
+  padding-bottom:0 !important;
+  padding-left:0 !important;
+  padding-right:0 !important;
+  padding-top:0 !important;
+}
+html body #content form.panel-body {
+  padding-bottom:0 !important;
+  padding-left:0 !important;
+  padding-right:0 !important;
+  padding-top:0 !important;
+}
+body {
+  background-color:#1C1828;
+  border-bottom-width:0;
+  border-color:initial;
+  border-left-width:0;
+  border-right-width:0;
+  border-style:initial;
+  border-top-width:0;
+  font-family:arial, helvetica, sans-serif;
+  font-size:100%;
+  font-style:inherit;
+  font-weight:inherit;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+  vertical-align:baseline;
+}
+body a {
+  color:#8D79F2;
+  text-decoration:none;
+}
+body a:hover {
+  text-decoration:underline;
+}
+body .notice {
+  -webkit-box-shadow:#040307 0 0 10px;
+  margin-bottom:15px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:0;
+  text-align:left;
+  width:382px;
+}
+body .notice h4 {
+  background-image:none;
+}
+body .logo {
+  left:25px;
+  position:absolute;
+  top:20px;
+  z-index:9;
+}
+body .logo a {
+  background-image:url(https://api.heroku.com/images/login/logo.png);
+  background-repeat:no-repeat no-repeat;
+  display:block;
+  height:56px;
+  text-indent:-2000px;
+  width:177px;
+}
+body .content {
+  margin-top:170px;
+  position:absolute;
+  text-align:center;
+  width:100%;
+  z-index:5;
+}
+body .dialog, body #message {
+  -webkit-box-shadow:#040307 0 0 10px;
+  background-repeat:repeat no-repeat;
+  border-bottom-left-radius:10px 10px;
+  border-bottom-right-radius:10px 10px;
+  border-top-left-radius:10px 10px;
+  border-top-right-radius:10px 10px;
+  margin-bottom:0;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:0;
+  text-align:left;
+}
+body .dialog {
+  background-image:-webkit-gradient(linear, 0 0%, 0 100%, from(#2C263F), to(rgba(44, 38, 63, 0.398438)));
+  border-bottom-color:#373553;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-left-color:#373553;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#373553;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#373553;
+  border-top-style:solid;
+  border-top-width:1px;
+  color:#BFB8E5;
+  width:400px;
+}
+body .dialog h2 {
+  border-bottom-color:initial;
+  border-bottom-style:initial;
+  border-bottom-width:0;
+  color:#FFFFFF;
+  font-family:Corbel, sans-serif;
+  font-size:20px;
+  padding-bottom:10px;
+  padding-left:30px;
+  padding-right:30px;
+  padding-top:20px;
+}
+body .dialog p {
+  font-size:14px;
+  padding-bottom:15px;
+  padding-left:30px;
+  padding-right:30px;
+}
+body .dialog fieldset {
+  background-color:transparent;
+  border-top-color:initial;
+  border-top-style:initial;
+  border-top-width:0;
+  padding-bottom:10px;
+  padding-left:30px;
+  padding-right:30px;
+  padding-top:30px;
+}
+body .dialog fieldset.active {
+  background-color:transparent;
+}
+body .dialog fieldset p {
+  padding-left:0;
+  padding-right:0;
+}
+body .dialog fieldset.submit {
+  border-bottom-style:none;
+  border-color:initial;
+  border-left-style:none;
+  border-right-style:none;
+  border-top-style:none;
+  border-width:initial;
+  padding-bottom:30px;
+  padding-left:30px;
+  padding-right:30px;
+  padding-top:0;
+}
+body .dialog fieldset.submit p {
+  padding-bottom:0;
+}
+body .dialog fieldset.submit input.submit {
+  -webkit-box-shadow:#000000 0 0 3px 0;
+  background-image:-webkit-gradient(linear, 0 0%, 0 100%, from(#A08DFF), to(#685BB5));
+  box-shadow:#000000 0 0 3px 0;
+  padding-bottom:6px;
+  padding-left:20px;
+  padding-right:20px;
+  padding-top:6px;
+}
+body .dialog fieldset.submit input.submit:hover {
+  background-image:-webkit-gradient(linear, 0 0%, 0 100%, from(#CAC4E6), to(#827EA5));
+}
+body .dialog input.text {
+  width:325px;
+}
+body .dialog#reset_password fieldset {
+  padding-top:5px;
+}
+body .dialog#signup fieldset {
+  border-top-color:initial !important;
+  border-top-style:initial !important;
+  border-top-width:0 !important;
+  padding-top:5px;
+}
+body .dialog#signup fieldset.submit {
+  padding-top:0;
+  text-align:left;
+}
+body .dialog#signup fieldset.submit #terms {
+  line-height:18px;
+}
+body .dialog#signup fieldset.submit input.submit {
+  float:right;
+  margin-top:5px;
+}
+body #message {
+  background-image:-webkit-gradient(linear, 0 0%, 0 100%, from(rgba(44, 38, 63, 0.898438)), to(rgba(44, 38, 63, 0.199219)));
+  border-bottom-color:#28283F;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-left-color:#28283F;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#28283F;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#28283F;
+  border-top-style:solid;
+  border-top-width:1px;
+  color:#585993;
+  display:block;
+  font-size:14px;
+  margin-top:20px;
+  padding-bottom:15px;
+  padding-left:30px;
+  padding-right:30px;
+  padding-top:15px;
+  text-align:center;
+  text-decoration:none;
+  width:340px;
+}
+body #message span {
+  color:#8D79F2;
+  display:inline-block;
+  margin-left:20px;
+}
+body #message:hover {
+  background-image:-webkit-gradient(linear, 0 0%, 0 100%, from(#372E51), to(rgba(55, 46, 81, 0.398438)));
+  border-bottom-color:#372E51;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-left-color:#372E51;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#372E51;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#372E51;
+  border-top-style:solid;
+  border-top-width:1px;
+  color:#6A6ACF;
+}
+body #message:hover span {
+  color:#C0ACFF;
+  text-decoration:underline;
+}
+div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, pre, a, abbr, acronym, address, code, del, dfn, em, img, dl, dt, dd, ol, ul, li, fieldset, form, input, label, legend, caption, tbody, tfoot, thead, tr {
+  border-bottom-width:0;
+  border-color:initial;
+  border-left-width:0;
+  border-right-width:0;
+  border-style:initial;
+  border-top-width:0;
+  font-family:arial, helvetica, sans-serif;
+  font-size:100%;
+  font-style:inherit;
+  font-weight:inherit;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+  vertical-align:baseline;
+}
+blockquote, q {
+  border-bottom-width:0;
+  border-color:initial;
+  border-left-width:0;
+  border-right-width:0;
+  border-style:initial;
+  border-top-width:0;
+  font-family:arial, helvetica, sans-serif;
+  font-size:100%;
+  font-style:inherit;
+  font-weight:inherit;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+  quotes:'', '';
+  vertical-align:baseline;
+}
+blockquote::before, blockquote::after, q::before, q::after {
+  content:'';
+}
+th, td, caption {
+  border-bottom-width:0;
+  border-color:initial;
+  border-left-width:0;
+  border-right-width:0;
+  border-style:initial;
+  border-top-width:0;
+  font-family:arial, helvetica, sans-serif;
+  font-size:100%;
+  font-style:inherit;
+  font-weight:normal;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+  text-align:left;
+  vertical-align:middle;
+}
+table {
+  -webkit-border-horizontal-spacing:0;
+  -webkit-border-vertical-spacing:0;
+  border-bottom-width:0;
+  border-collapse:separate;
+  border-color:initial;
+  border-left-width:0;
+  border-right-width:0;
+  border-style:initial;
+  border-top-width:0;
+  font-family:arial, helvetica, sans-serif;
+  font-size:100%;
+  font-style:inherit;
+  font-weight:inherit;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+  vertical-align:middle;
+}
+a img {
+  border-bottom-style:none;
+  border-color:initial;
+  border-left-style:none;
+  border-right-style:none;
+  border-top-style:none;
+  border-width:initial;
+}
+li {
+  list-style-type:none;
+}
+:focus {
+  outline-color:initial;
+  outline-style:initial;
+  outline-width:0;
+}
+.clear {
+  clear:both;
+}
+body.signup {
+  min-width:1044px;
+}
+body.signup #dialog fieldset {
+  border-top-color:initial;
+  border-top-style:initial;
+  border-top-width:0;
+}
+#mural #sky {
+  background-image:-webkit-gradient(linear, 0 0%, 0 100%, from(#06060A), to(#1C1828));
+  height:70%;
+  position:absolute;
+  top:0;
+  width:100%;
+  z-index:0;
+}
+#mural #landscape {
+  bottom:0;
+  height:700px;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  position:absolute;
+  width:100%;
+}
+#mural #landscape #fuji {
+  background-image:url(https://api.heroku.com/images/login/fuji.png);
+  background-position:0 100%;
+  background-repeat:no-repeat no-repeat;
+  bottom:100px;
+  display:block;
+  height:318px;
+  left:0;
+  position:absolute;
+  width:700px;
+  z-index:2;
+}
+#mural #landscape #sun, #mural #landscape #sun-reflection {
+  background-image:url(https://api.heroku.com/images/login/sun.png);
+  background-position:50% 50%;
+  background-repeat:no-repeat no-repeat;
+  bottom:115px;
+  height:120px;
+  position:absolute;
+  right:25%;
+  width:210px;
+  z-index:0;
+}
+#mural #landscape #sun-reflection {
+  background-image:url(https://api.heroku.com/images/login/sun-reflect.png);
+  height:30px;
+  opacity:0.4;
+  z-index:1;
+}
+#mural #landscape #water {
+  background-image:-webkit-gradient(linear, 0 0%, 0 100%, from(#0D131E), to(#05080F));
+  border-top-color:#282847;
+  border-top-style:solid;
+  border-top-width:1px;
+  bottom:0;
+  height:145px;
+  left:0;
+  position:absolute;
+  width:100%;
+}
+#mural #landscape #bonsai {
+  background-image:url(https://api.heroku.com/images/login/bonsai.png);
+  background-position:100% 100%;
+  background-repeat:no-repeat no-repeat;
+  bottom:0;
+  height:650px;
+  position:absolute;
+  right:0;
+  width:700px;
+  z-index:4;
+}
+#mural #landscape #foliage1, #mural #landscape #foliage2, #mural #landscape #foliage3 {
+  background-position:50% 50%;
+  background-repeat:no-repeat no-repeat;
+  position:absolute;
+}
+#mural #landscape #foliage1, #mural #landscape #foliage2 {
+  -webkit-transform:rotate(-180deg);
+  background-image:url(https://api.heroku.com/images/login/foliage-small.png);
+  height:115px;
+  width:247px;
+}
+#mural #landscape #foliage3 {
+  background-image:url(https://api.heroku.com/images/login/foliage-large.png);
+  height:210px;
+  width:385px;
+}
+#mural #landscape #foliage1 {
+  bottom:-55px;
+  left:-40px;
+  z-index:3;
+}
+#mural #landscape #foliage2 {
+  bottom:-58px;
+  right:540px;
+  z-index:3;
+}
+#mural #landscape #foliage3 {
+  bottom:-100px;
+  right:220px;
+  z-index:2;
+}
+#mural #landscape #ground, #mural #landscape #ground-surface {
+  background-color:#03040A;
+  bottom:0;
+  height:50px;
+  position:absolute;
+  right:0;
+  width:100%;
+  z-index:2;
+}
+#mural #landscape #ground-surface {
+  background-color:transparent;
+  background-image:url(https://api.heroku.com/images/login/ground.png);
+  background-position:50% 100%;
+  background-repeat:repeat no-repeat;
+  bottom:50px;
+  height:30px;
+}
+#mural #landscape #fuji {
+  background-size:80%;
+  bottom:80px;
+}
+#mural #landscape #sun, #mural #landscape #sun-reflection, #mural #landscape #bonsai, #mural #landscape #foliage1, #mural #landscape #foliage2, #mural #landscape #foliage3, #mural #landscape #ground-surface {
+  background-size:60%;
+}
+#mural #landscape #water {
+  height:110px;
+}
+#mural #landscape #sun {
+  background-size:40%;
+  bottom:75px;
+}
+#mural #landscape #sun-reflection {
+  bottom:85px;
+}
+#mural #landscape #foliage2 {
+  bottom:-58px;
+  right:340px;
+}
+#mural #landscape #foliage3 {
+  bottom:-100px;
+  right:90px;
+}
+#mural #landscape #fuji {
+  background-size:80%;
+  bottom:80px;
+}
+#mural #landscape #sun, #mural #landscape #sun-reflection, #mural #landscape #bonsai, #mural #landscape #foliage1, #mural #landscape #foliage2, #mural #landscape #foliage3, #mural #landscape #ground-surface {
+  background-size:60%;
+}
+#mural #landscape #water {
+  height:110px;
+}
+#mural #landscape #sun {
+  background-size:40%;
+  bottom:75px;
+}
+#mural #landscape #sun-reflection {
+  bottom:85px;
+}
+#mural #landscape #foliage2 {
+  bottom:-58px;
+  right:340px;
+}
+#mural #landscape #foliage3 {
+  bottom:-100px;
+  right:90px;
+}
+#mural #landscape #fuji {
+  background-size:40%;
+  bottom:53px;
+}
+#mural #landscape #bonsai, #mural #landscape #foliage1, #mural #landscape #foliage2, #mural #landscape #foliage3, #mural #landscape #ground-surface {
+  background-size:40%;
+}
+#mural #landscape #water {
+  height:70px;
+}
+#mural #landscape #sun {
+  background-size:30%;
+  bottom:30px;
+}
+#mural #landscape #sun-reflection {
+  display:none;
+}
+#mural #landscape #foliage2 {
+  bottom:-58px;
+  right:140px;
+}
+#mural #landscape #foliage3 {
+  bottom:-100px;
+  right:0;
+}
+#mural #landscape #fuji {
+  background-size:40%;
+  bottom:53px;
+}
+#mural #landscape #bonsai, #mural #landscape #foliage1, #mural #landscape #foliage2, #mural #landscape #foliage3, #mural #landscape #ground-surface {
+  background-size:40%;
+}
+#mural #landscape #water {
+  height:70px;
+}
+#mural #landscape #sun {
+  background-size:30%;
+  bottom:30px;
+}
+#mural #landscape #sun-reflection {
+  display:none;
+}
+#mural #landscape #foliage2 {
+  bottom:-58px;
+  right:140px;
+}
+#mural #landscape #foliage3 {
+  bottom:-100px;
+  right:0;
+}

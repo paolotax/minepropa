@@ -1,0 +1,26 @@
+!!!
+%html
+  %head
+    %title= yield :title || "Untitled"
+    
+    = stylesheet_link_tag 'compiled/devise_layout.css', :media => 'screen, print'
+
+    / = stylesheet_link_tag 'scaffold.css'
+    
+    = stylesheet_link_tag 'mobile' if mobile_device?
+    = csrf_meta_tag
+    = yield :head
+  %body
+    %h1.logo
+      = link_to "Todo-propa", root_path
+    .container
+      .content
+        #notice
+          - flash.each do |key, value|
+            = content_tag :div, raw(value), :id => "flash", :class => "#{key}"
+        = content_tag(:div, content_tag(:h2, yield(:title))) if show_title?
+        = yield
+    #footer
+      = render 'layouts/footer'
+      = debug(params) if Rails.env.development?
+  = yield :scripts
