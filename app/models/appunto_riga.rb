@@ -24,6 +24,9 @@ class AppuntoRiga < ActiveRecord::Base
   
   delegate :titolo, :copertina, :consigliato, :prezzo_copertina, :prezzo_consigliato, :to => :libro
   
+  after_save :update_righe_sum
+  after_destroy :decrement_righe_sum
+  
   
   #default_scope order("appunto_righe.id desc")
   
@@ -96,5 +99,21 @@ class AppuntoRiga < ActiveRecord::Base
       unitario * quantita
     end  
   end
+  
+  
+  private
+  
+    def update_righe_sum
+      return true unless quantita_changed?
+      Appunto.update_counters appunto.id, 
+        :appunto_righe_sum => (quantita - (quantita_was || 0))
+      return true
+    end
+    
+    def decrement_righe_sum
+      Appunto.update_counters appunto.id, 
+        :appunto_righe_sum => - quantita_was
+      return true
+    end
 
 end

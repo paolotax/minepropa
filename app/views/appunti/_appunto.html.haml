@@ -11,7 +11,7 @@
     .task-title= best_in_place appunto, :note, :type => :input
     .task-title.hidden= "prov=#{appunto.scuola.provincia}"
     .task-title.hidden= "citta=#{appunto.scuola.citta}" 
-    .labels= appunto.totale_copie
+    .labels= appunto.appunto_righe_sum
     .labels= appunto_tags(appunto)
 
   .clear
