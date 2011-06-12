@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(:version => 20110612043928) do
     t.string   "destinatario"
     t.text     "note"
     t.string   "telefono"
-    t.string   "stato",             :default => "", :null => false
+    t.string   "stato",          :default => "",  :null => false
     t.date     "scadenza"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -24,7 +24,8 @@ ActiveRecord::Schema.define(:version => 20110612043928) do
     t.integer  "position"
     t.string   "email"
     t.integer  "user_id"
-    t.integer  "appunto_righe_sum", :default => 0
+    t.integer  "totale_copie",   :default => 0
+    t.float    "totale_importo", :default => 0.0
   end
 
   create_table "appunto_righe", :force => true do |t|
