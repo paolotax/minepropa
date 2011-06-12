@@ -22,6 +22,12 @@
         = f.label :phone, 'Cellulare'
         = f.phone_field :phone, :class => 'text'
     %fieldset.submit
-      = f.submit "Sign up", { :class => 'submit'}
-    
-= render :partial => "devise/shared/links"
+      = f.submit "Registrati", { :class => 'submit'}
+
+
+%a{ :href => new_session_path(resource_name),  :id => "message" }
+  Sei già registrato?
+  %span 
+    Accedi
+
+/ = render :partial => "devise/shared/links"
