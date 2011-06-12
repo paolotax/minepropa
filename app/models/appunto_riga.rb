@@ -37,9 +37,7 @@ class AppuntoRiga < ActiveRecord::Base
   
   scope :per_id,       order("appunto_righe.id desc")
   scope :per_libro_id, order("appunto_righe.libro_id")
-  
-  
-  
+      
   composed_of :unitario,
       :class_name  => "Money",
       :mapping     => [%w(prezzo_unitario cents), %w(currency currency_as_string)],
@@ -89,15 +87,17 @@ class AppuntoRiga < ActiveRecord::Base
   end
   
   def importo
-    if unitario.blank?
-      if sconto.blank?
-        libro.copertina * quantita
-      else
-        (libro.copertina - ( libro.copertina / 100 * sconto )) * quantita
-      end
-    else
-      unitario * quantita
-    end  
+    
+    unitario * quantita
+    # if unitario.blank?
+    #   if sconto.blank?
+    #     libro.copertina * quantita
+    #   else
+    #     (libro.copertina - ( libro.copertina / 100 * sconto )) * quantita
+    #   end
+    # else
+    #   unitario * quantita
+    # end  
   end
   
   
@@ -106,13 +106,15 @@ class AppuntoRiga < ActiveRecord::Base
     def update_righe_sum
       return true unless quantita_changed?
       Appunto.update_counters appunto.id, 
-        :appunto_righe_sum => (quantita - (quantita_was || 0))
+        :totale_copie   => (quantita - (quantita_was || 0)),
+        :totale_importo => (quantita - (quantita_was || 0)).to_f * prezzo_unitario / 100
       return true
     end
     
     def decrement_righe_sum
       Appunto.update_counters appunto.id, 
-        :appunto_righe_sum => - quantita_was
+        :totale_copie   => - quantita_was,
+        :totale_importo => - quantita_was.to_f * prezzo_untario / 100
       return true
     end
 
