@@ -1,4 +1,4 @@
-%tr{ :id => "appunto_riga_#{appunto_riga.id}" }
+%tr{ :id => "appunto_riga_#{appunto_riga.id}", :class => 'riga_small' }
   %td.riga_titolo
     = link_to(appunto_riga.titolo, libro_url(appunto_riga.libro)) # unless appunto_riga.libro.nil?
   %td.riga_quantita

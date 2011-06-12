@@ -845,13 +845,17 @@
   margin-top:-4px;
   width:10px;
 }
+.riga_small .delete {
+  width: 11px;
+}
 
-#td_notes_activities .notes-activities-container .note-container .note .note-center .note-header .delete img {
-  
+#td_notes_activities .notes-activities-container .note-container .note .note-center .note-header .delete img,
+.riga_small .delete img {
   display: none;
 }
 
-#td_notes_activities .notes-activities-container .note-container .note:hover .note-center .note-header .delete img{
+#td_notes_activities .notes-activities-container .note-container .note:hover .note-center .note-header .delete img, 
+.riga_small:hover .delete img {
   display: block;
 /*  background-attachment:initial;
   background-clip:initial;
@@ -862,14 +866,14 @@
   background-repeat:no-repeat no-repeat;*/
 }
 #td_notes_activities .notes-activities-container .note-container .note .note-center .note-header .delete:hover {
-  background-attachment:initial;
+/*  background-attachment:initial;
   background-clip:initial;
   background-color:transparent;
   background-image:url('../../images/td-delete.png');
   background-origin:initial;
   background-position:0 -13px;
   background-repeat:no-repeat no-repeat;
-  cursor:pointer;
+  cursor:pointer;*/
 }
 #td_notes_activities .notes-activities-container .note-container .note .note-center .note-header .date {
   color:#545454;

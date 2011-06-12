@@ -143,14 +143,7 @@ class Appunto < ActiveRecord::Base
     self.note = note
   end
   
-  def totale_copie
-    self.appunto_righe.sum("appunto_righe.quantita")
-  end
-  
-  def totale_importo
-    self.appunto_righe.sum("appunto_righe.quantita * appunto_righe.prezzo_unitario").to_f / 100
-  end
-  
+
   private
   
     def cleanup

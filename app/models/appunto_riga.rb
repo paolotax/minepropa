@@ -114,7 +114,7 @@ class AppuntoRiga < ActiveRecord::Base
     def decrement_righe_sum
       Appunto.update_counters appunto.id, 
         :totale_copie   => - quantita_was,
-        :totale_importo => - quantita_was.to_f * prezzo_untario / 100
+        :totale_importo => - quantita_was.to_f * prezzo_unitario / 100
       return true
     end
 
