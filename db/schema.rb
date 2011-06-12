@@ -10,13 +10,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110607091748) do
+ActiveRecord::Schema.define(:version => 20110612043928) do
 
   create_table "appunti", :force => true do |t|
     t.string   "destinatario"
     t.text     "note"
     t.string   "telefono"
-    t.string   "stato",        :default => "", :null => false
+    t.string   "stato",             :default => "", :null => false
     t.date     "scadenza"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20110607091748) do
     t.integer  "position"
     t.string   "email"
     t.integer  "user_id"
+    t.integer  "appunto_righe_sum", :default => 0
   end
 
   create_table "appunto_righe", :force => true do |t|
@@ -38,6 +39,16 @@ ActiveRecord::Schema.define(:version => 20110607091748) do
     t.integer  "prezzo_unitario"
     t.string   "currency"
     t.decimal  "sconto",          :precision => 8, :scale => 2
+  end
+
+  create_table "feed_entries", :force => true do |t|
+    t.string   "name"
+    t.text     "summary"
+    t.string   "url"
+    t.datetime "published_at"
+    t.string   "guid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "indirizzi", :force => true do |t|
