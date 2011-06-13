@@ -20,6 +20,10 @@
             = content_tag :div, raw(value), :id => "flash", :class => "#{key}"
         = content_tag(:div, content_tag(:h2, yield(:title))) if show_title?
         = yield
+    #mural
+      #sky
+      #landscape
+    .clear  
     #footer
       = render 'layouts/footer'
       = debug(params) if Rails.env.development?
