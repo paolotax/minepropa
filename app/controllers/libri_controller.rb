@@ -3,11 +3,16 @@ class LibriController < ApplicationController
   def index
     @libri = Libro.includes(:appunto_righe).all
 
-    @fatturato    = AppuntoRiga.sum("appunto_righe.quantita * appunto_righe.prezzo_unitario").to_f / 100
-    @copertina    = AppuntoRiga.joins(:libro).sum("appunto_righe.quantita * libri.prezzo_copertina").to_f / 100  
+    @fatturato    = AppuntoRiga.per_utente(current_user).
+                                sum("appunto_righe.quantita * appunto_righe.prezzo_unitario").to_f / 100
+    @copertina    = AppuntoRiga.per_utente(current_user).
+                                joins(:libro).
+                                sum("appunto_righe.quantita * libri.prezzo_copertina").to_f / 100  
     @costo        = @copertina / 100 * 57
     @ricavo       = @fatturato - @costo 
-    @totale_copie = AppuntoRiga.joins(:libro).sum("appunto_righe.quantita * libri.coefficente")  
+    @totale_copie = AppuntoRiga.per_utente(current_user).
+                                joins(:libro).
+                                sum("appunto_righe.quantita * libri.coefficente")  
 
     respond_to do |format|
       format.html
@@ -17,7 +22,7 @@ class LibriController < ApplicationController
 
   def show
     @libro = Libro.find(params[:id])
-    @presenter = Libri::ShowPresenter.new(@libro)
+    @presenter = Libri::ShowPresenter.new(@libro, current_user)
     
     respond_to do |format|
       format.html # show.html.erb

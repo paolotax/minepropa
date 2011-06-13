@@ -22,10 +22,10 @@
       %td= best_in_place libro, :sigla
       %td= best_in_place libro, :copertina
       %td= best_in_place libro, :consigliato
-      %td= libro.copie_da_consegnare
-      %td= libro.copie_vendute
-      %td= libro.copie_consegnate
-      %td= number_to_currency libro.fatturato
+      %td= libro.copie_da_consegnare(current_user)
+      %td= libro.copie_vendute(current_user)
+      %td= libro.copie_consegnate(current_user)
+      %td= number_to_currency libro.fatturato(current_user)
       %td= best_in_place libro, :coefficente
 %br
 

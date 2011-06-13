@@ -37,6 +37,8 @@ class AppuntoRiga < ActiveRecord::Base
   
   scope :per_id,       order("appunto_righe.id desc")
   scope :per_libro_id, order("appunto_righe.libro_id")
+  
+  scope :per_utente, lambda { |user| joins(:appunto).where("appunti.user_id = ?", user.id) }
       
   composed_of :unitario,
       :class_name  => "Money",
