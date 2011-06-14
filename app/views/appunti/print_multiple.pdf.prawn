@@ -53,8 +53,8 @@
     righe = appunto.appunto_righe.per_libro_id.map do |riga|
      [
         riga.libro.titolo,
-        riga.libro.copertina,
         riga.quantita,
+        riga.libro.copertina,
         riga.unitario,
         number_to_currency(riga.importo)
       ]
