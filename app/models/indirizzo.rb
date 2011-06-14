@@ -31,6 +31,13 @@ class Indirizzo < ActiveRecord::Base
     self.cap + ' ' + self.citta + ' ' + self.provincia
   end
   
+  def to_s
+    s = self.destinatario + '\n' +
+        self.indirizzo + '\n' +
+        self.cap + ' ' + self.citta + ' ' + self.provincia
+    #s.split('\n').each { |line| p line }
+  end
+  
   def gmaps4rails_address
     [self.indirizzo, self.citta, self.provincia].join(', ')
   end
