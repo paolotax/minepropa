@@ -5,26 +5,27 @@ class Libri::ShowPresenter
   def initialize(libro, user)
     @libro = libro
     @user  = user
+    @righe = @libro.appunto_righe.per_utente(@user).per_id
   end
   
   def da_consegnare
-    @libro.appunto_righe.per_utente(@user).da_consegnare.per_id
+    @righe.da_consegnare
   end
   
   def da_pagare
-    @libro.appunto_righe.per_utente(@user).da_pagare.per_id
+    @righe.da_pagare
   end
   
   def consegnati
-    @libro.appunto_righe.per_utente(@user).consegnati.per_id
+    @righe.consegnati
   end
   
   def consegnati_da_pagare
-    @libro.appunto_righe.per_utente(@user).consegnati.da_pagare.per_id
+    @righe.consegnati.da_pagare
   end
   
   def consegnati_pagati
-    @libro.appunto_righe.per_utente(@user).consegnati.pagati.per_id
+    @righe.consegnati.pagati
   end
   
   memoize :da_consegnare, :da_pagare, :consegnati, :consegnati_da_pagare, :consegnati_pagati
