@@ -12,6 +12,20 @@ $main-color: #1E7B12;
 }
 
 
+div#map_directions {
+  width: 240px;
+  float: left;
+  margin-left: 10px;
+}
+
+div#map,
+div#map_appunti {
+  width: 500px;
+  height: 350px;
+}
+
+
+
 #td_libro_info {
   #libro_img_container {
 
