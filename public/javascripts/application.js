@@ -289,16 +289,24 @@ $(document).ready(function() {
   });
   
   $('#btn_elimina').live('click', function () {
-     var params = $('#form_appunti').serialize();
-     $.ajax({
-        url: '/appunti/delete_multiple.json',
-        data: params,
-        type: 'POST',
-        success: function() {
-          $('.cb-element:checked' ).parent().parent().remove();
-          $('#popin_bulk').hide();
-        } 
-     });
+     
+     if (confirm("Sei sicuro?"))
+     {
+        var params = $('#form_appunti').serialize();
+         $.ajax({
+            url: '/appunti/delete_multiple.json',
+            data: params,
+            type: 'POST',
+            success: function() {
+              $('.cb-element:checked' ).parent().parent().remove();
+              $('#popin_bulk').hide();
+            } 
+         });
+     }else{
+     
+     };
+     
+     
   });
   
 });
