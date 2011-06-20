@@ -14,6 +14,11 @@ class Scuole::ShowPresenter
     @scuola.appunti.per_id
   end
   
-  memoize :appunti_da_pagare, :appunti_in_corso
+  def copie_per_scuola
+    AppuntoRiga.joins(:appunto).where("appunti.scuola_id = ?", @scuola.id).sum(:quantita)
+  end
+    
+  
+  memoize :appunti_da_pagare, :appunti_in_corso, :copie_per_scuola
 
 end

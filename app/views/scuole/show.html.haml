@@ -18,7 +18,7 @@
   .scuola_latlong
     = best_in_place @indirizzo, :latitude
     = best_in_place @indirizzo, :longitude
-
+  = @presenter.copie_per_scuola  
 / - content_for :go_map do
 /   = javascript_include_tag 'jquery.gomap-1.3.0.js'
 
@@ -43,4 +43,7 @@
 /   = render :partial => 'pages/search_appunti'
 
 - if @scuola.appunti.any?
-  = render :partial => 'appunti/appunto', :collection => @presenter.appunti_in_corso
+  Appunti in corso
+  = render :partial => 'appunti/appunti', :object => @presenter.appunti_in_corso
+  Appunti da pagare
+  = render :partial => 'appunti/appunti', :collection => @presenter.appunti_da_pagare
