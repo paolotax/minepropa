@@ -42,6 +42,22 @@
 / - content_for :search_nav do
 /   = render :partial => 'pages/search_appunti'
 
+%table.libri.riepilogo
+  %th Titolo
+  %th Copie
+  %th Importo
+  - for libro in @presenter.riepilogo_venduto do
+    %tr
+      %td= libro.titolo
+      %td= libro.copie
+      %td= number_to_currency(libro.importo.to_f / 100)
+  / %tr
+  /   %td  Totale
+  /   %td= @presenter.totale_venduto[0].copie
+  /   %td= @tot[0].importo
+    
+
+
 - if @scuola.appunti.any?
   Appunti in corso
   = render :partial => 'appunti/appunti', :object => @presenter.appunti_in_corso

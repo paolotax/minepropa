@@ -24,7 +24,6 @@ class AppuntiController < ApplicationController
   
   def show
     @appunto = Appunto.find(params[:id])
-  
     @visita = Visita.new
     session[:return_to] ||= request.referer
     
@@ -87,8 +86,7 @@ class AppuntiController < ApplicationController
   end
 
   def destroy
-    @user = current_user
-    @appunto = @user.appunti.find(params[:id])
+    @appunto = current_user.appunti.find(params[:id])
     @appunto.destroy
 
     respond_to do |format|
