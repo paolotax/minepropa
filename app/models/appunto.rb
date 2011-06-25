@@ -52,7 +52,9 @@ class Appunto < ActiveRecord::Base
   scope :per_scuola_id,    :order => 'appunti.scuola_id asc'
     
   scope :in_sospeso,  where(:stato.eq => "P")
+  scope :da_fare,     where({:stato.ne => 'X'} & {:stato.ne => 'P'})
   scope :in_corso,    where(:stato.ne => 'X')
+  scope :completati,  where(:stato.eq => 'X')
   
   scope :da_correggere, where("scuola_id is null")
   scope :con_recapito,  where("telefono <> '' or email <> ''")

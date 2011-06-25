@@ -5,13 +5,21 @@ class Scuole::ShowPresenter
   def initialize(scuola)
     @scuola = scuola
   end
-  
+
+  def appunti_da_fare
+    @scuola.appunti.da_fare.per_id
+  end
+    
   def appunti_in_corso
     @scuola.appunti.in_corso.per_id
   end
   
   def appunti_da_pagare
-    @scuola.appunti.per_id
+    @scuola.appunti.in_sospeso.per_id
+  end
+  
+  def appunti_pagati
+    @scuola.appunti.completati.per_id
   end
   
   def copie_per_scuola
@@ -31,6 +39,6 @@ class Scuole::ShowPresenter
   end
     
   
-  memoize :appunti_da_pagare, :appunti_in_corso, :copie_per_scuola, :riepilogo_venduto, :totale_venduto
+  memoize :appunti_da_fare, :appunti_da_pagare, :appunti_in_corso, :copie_per_scuola, :riepilogo_venduto, :totale_venduto
 
 end

@@ -2,7 +2,7 @@
   = form_tag edit_or_print_appunti_path, :method => :post, :id => "form_appunti" do
     .autopagerize_page_element
       %ul#appunti.tasks
-        - @appunti.each do |appunto|  
+        - for appunto in appunti do
           = render appunto
           / - if current_controller = :appunti
           /   = paginate @appunti, :remote => true

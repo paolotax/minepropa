@@ -31,4 +31,4 @@
 /           - unless appunto.appunto_righe.blank?
 /             = render 'appunto_righe/appunto_righe', :appunto => appunto
 
-= render :partial => 'appunti/appunti'
+= render :partial => 'appunti/appunti', :locals => {:appunti => @appunti}

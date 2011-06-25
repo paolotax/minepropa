@@ -60,6 +60,8 @@
 
 - if @scuola.appunti.any?
   Appunti in corso
-  = render :partial => 'appunti/appunti', :object => @presenter.appunti_in_corso
+  %br
+  = render :partial => 'appunti/appunti', :locals => { :appunti => @presenter.appunti_da_fare}
   Appunti da pagare
-  = render :partial => 'appunti/appunti', :collection => @presenter.appunti_da_pagare
+  %br
+  = render :partial => 'appunti/appunti', :locals => { :appunti => @presenter.appunti_da_pagare}
