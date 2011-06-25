@@ -19,6 +19,6 @@ class Appunto::ShowPresenter
   end
     
   
-  memoize :appunti_da_pagare, :appunti_in_corso, :copie_per_scuola
+  memoize :appunto_righe, :appunti_da_pagare, :copie_per_scuola
 
 end
