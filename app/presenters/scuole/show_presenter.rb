@@ -18,7 +18,7 @@ class Scuole::ShowPresenter
     @scuola.appunti.in_sospeso.per_id
   end
   
-  def appunti_pagati
+  def appunti_completati
     @scuola.appunti.completati.per_id
   end
   
@@ -39,6 +39,6 @@ class Scuole::ShowPresenter
   end
     
   
-  memoize :appunti_da_fare, :appunti_da_pagare, :appunti_in_corso, :copie_per_scuola, :riepilogo_venduto, :totale_venduto
+  memoize :appunti_da_fare, :appunti_da_pagare, :appunti_in_corso, :appunti_completati, :copie_per_scuola, :riepilogo_venduto, :totale_venduto
 
 end

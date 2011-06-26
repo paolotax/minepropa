@@ -51,17 +51,24 @@
       %td= libro.titolo
       %td= libro.copie
       %td= number_to_currency(libro.importo.to_f / 100)
-  / %tr
-  /   %td  Totale
-  /   %td= @presenter.totale_venduto[0].copie
-  /   %td= @tot[0].importo
+  %tr
+    %td  Totale
+    %td= @presenter.totale_venduto[0].copie
+    %td= number_to_currency(@presenter.totale_venduto[0].sum_importo.to_f / 100)
     
 
 
 - if @scuola.appunti.any?
   Appunti in corso
   %br
-  = render :partial => 'appunti/appunti', :locals => { :appunti => @presenter.appunti_da_fare}
+  = render :partial => 'appunti/appunti', :locals => { :appunti => @presenter.appunti_da_fare }
   Appunti da pagare
   %br
-  = render :partial => 'appunti/appunti', :locals => { :appunti => @presenter.appunti_da_pagare}
+  = render :partial => 'appunti/appunti', :locals => { :appunti => @presenter.appunti_da_pagare }
+  Appunti completati
+  %br
+  = render :partial => 'appunti/appunti', :locals => { :appunti => @presenter.appunti_completati }
+  
+  
+  
+  

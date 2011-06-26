@@ -24,7 +24,7 @@
   background-attachment:initial;
   background-clip:initial;
   background-color:transparent;
-  background-image:url(https://www.producteev.com/static/images/create-task.png);
+  background-image:url('../../images/create-task.png');
   background-origin:initial;
   background-position:0 0;
   background-repeat:repeat no-repeat;
@@ -34,7 +34,7 @@
   background-attachment:initial;
   background-clip:initial;
   background-color:transparent;
-  background-image:url(https://www.producteev.com/static/images/create-task.png);
+  background-image:url('../../images/create-task.png');
   background-origin:initial;
   background-position:0 -40px;
   background-repeat:no-repeat no-repeat;
@@ -43,7 +43,7 @@
   background-attachment:initial;
   background-clip:initial;
   background-color:transparent;
-  background-image:url(https://www.producteev.com/static/images/create-task.png);
+  background-image:url('../../images/create-task.png');
   background-origin:initial;
   background-position:100% -80px;
   background-repeat:no-repeat no-repeat;
@@ -142,7 +142,7 @@
   background-attachment:initial;
   background-clip:initial;
   background-color:transparent;
-  background-image:url(https://www.producteev.com/static/images/icons.png);
+  background-image:url('../../images/icons.png');
   background-origin:initial;
   background-position:0 0;
   background-repeat:no-repeat no-repeat;
@@ -254,7 +254,7 @@
   background-attachment:initial;
   background-clip:initial;
   background-color:initial;
-  background-image:url(https://www.producteev.com/static/images/cm-task-list-bg-separator.png);
+  background-image:url('../../images/cm-task-list-bg-separator.png');
   background-origin:initial;
   background-position:0 0;
   background-repeat:no-repeat no-repeat;
@@ -419,7 +419,7 @@ ul.tasks.bulk .bulk {
   background-attachment:initial;
   background-clip:initial;
   background-color:transparent;
-  background-image:url(https://www.producteev.com/static/images/task-status.png);
+  background-image:url('../../images/task-status.png');
   background-origin:initial;
   background-position:7px 0;
   background-repeat:no-repeat no-repeat;
@@ -429,12 +429,31 @@ ul.tasks.bulk .bulk {
   background-attachment:initial;
   background-clip:initial;
   background-color:transparent;
-  background-image:url(https://www.producteev.com/static/images/task-status.png);
+  background-image:url('../../images/task-status.png');
   background-origin:initial;
   background-position:7px -34px;
   background-repeat:no-repeat no-repeat;
   cursor:pointer;
 }
+.tasks .pending .status {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:transparent;
+  background-image:url('../../images/task-status.png');
+  background-origin:initial;
+  background-position:7px -68px;
+  background-repeat:no-repeat no-repeat;
+  cursor:pointer;
+}
+
+.tasks .status a {
+  text-indent: -9999px;
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+
 .tasks .starred .task-elt.star {
   background-image:url(https://www.producteev.com/static/images/taskslist/stars/stars.png);
   background-position:0 0;

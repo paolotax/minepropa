@@ -193,7 +193,7 @@
   opacity:0.7;
 }
 #td_task_info .star-container #star_span {
-  background-image:url(https://www.producteev.com/static/images/taskslist/stars/stars-big.png);
+  background-image:url('../../images/taskslist/stars/stars-big.png');
 }
 #status_span {
   height:32px;
@@ -207,7 +207,7 @@
   background-attachment:initial;
   background-clip:initial;
   background-color:transparent;
-  background-image:url(https://www.producteev.com/static/images/task-details-status.png);
+  background-image:url('../../images/task-details-status.png');
   background-origin:initial;
   background-position:5px -6px;
   background-repeat:no-repeat no-repeat;

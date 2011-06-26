@@ -5,14 +5,15 @@ module AppuntiHelper
   def show_status_icon(status)
     
     if status == 'X'
-      return 's_comp_short.png'
+      return 'task-completed.png'
     else
       if status == "P"
         return "s_sosp_short.png"
       else  
-        return 's_blank_short.png'
+        return 'task-details-active.png'
       end
     end
+  
   end
   
   def get_status_class(status)
