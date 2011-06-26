@@ -292,42 +292,82 @@ $(document).ready(function() {
      
      if (confirm("Sei sicuro?"))
      {
-        var params = $('#form_appunti').serialize();
+       var params = $('#form_appunti').serialize();
          $.ajax({
-            url: '/appunti/delete_multiple.json',
-            data: params,
-            type: 'POST',
-            success: function() {
-              $('.cb-element:checked' ).parent().parent().remove();
-              $('#popin_bulk').hide();
-            } 
-         });
-     }else{
-     
-     };
-     
-     
+           url: '/appunti/delete_multiple.json',
+           data: params,
+           type: 'POST',
+           success: function() {
+             $('.cb-element:checked' ).parent().parent().remove();
+             $('#popin_bulk').hide();
+           } 
+        });
+      }else{
+      };
   });
   
+  // da modificare quando riuscirò a impostarte appunti_ids e stato come parametri
   $('#btn_completa').live('click', function () {
      
      if (confirm("Sei sicuro?"))
      {
         var params = $('#form_appunti').serialize();
         $.ajax({
-          url: '/appunti/update_multiple.json',
+          url: '/appunti/update_stato.json',
           data: params + '&stato=X',
           type: 'PUT',
-          // success: function() {
-          //   $('.cb-element:checked' ).parent().parent().remove();
-          //   $('#popin_bulk').hide();
-          // } 
+          success: function() {
+            $('.cb-element:checked' ).parent().parent().removeClass('active pending');
+            $('.cb-element:checked' ).parent().parent().addClass('done');
+          } 
         });
-        console.log(params);
+        // var appunto = {'appunto':{'stato':'X'}};
+        // var par = encodeURIComponent(appunto);
+        // console.log(par);
+      }else{
+      };
+  });
+  
+  $('#btn_attiva').live('click', function () {
+     
+     if (confirm("Sei sicuro?"))
+     {
+        var params = $('#form_appunti').serialize();
+        $.ajax({
+          url: '/appunti/update_stato.json',
+          data: params + '&stato=',
+          type: 'PUT',
+          success: function() {
+            $('.cb-element:checked' ).parent().parent().removeClass('done pending');
+            $('.cb-element:checked' ).parent().parent().addClass('active');
+          } 
+        });
+        // var appunto = {'appunto':{'stato':'X'}};
+        // var par = encodeURIComponent(appunto);
+        // console.log(par);
       }else{
     };
- 
+  });
+  
+  $('#btn_in_sospeso').live('click', function () {
      
+     if (confirm("Sei sicuro?"))
+     {
+        var params = $('#form_appunti').serialize();
+        $.ajax({
+          url: '/appunti/update_stato.json',
+          data: params + '&stato=P',
+          type: 'PUT',
+          success: function() {
+            $('.cb-element:checked' ).parent().parent().removeClass('active done');
+            $('.cb-element:checked' ).parent().parent().addClass('pending');
+          } 
+        });
+        // var appunto = {'appunto':{'stato':'X'}};
+        // var par = encodeURIComponent(appunto);
+        // console.log(par);
+      }else{
+    };
   });
   
 });

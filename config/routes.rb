@@ -30,6 +30,7 @@ Minepropa::Application.routes.draw do
       post 'edit_multiple'
       get  'print_multiple', :format => 'pdf'
       put  'update_multiple'
+      put  'update_stato'
       post  'delete_multiple'
     end
   end

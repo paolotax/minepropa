@@ -139,7 +139,9 @@ class AppuntiController < ApplicationController
   end
   
   def edit_multiple
+    #raise params.inspect
     @appunti = Appunto.find(params[:appunti_ids])
+    session[:return_to] ||= request.referer
     render 'edit_multiple'
   end
   
@@ -154,7 +156,21 @@ class AppuntiController < ApplicationController
     #   format.html { redirect_to :back }
     #   format.json { render :json => @appunti }
     # end
-    redirect_to :back
+    redirect_to session[:return_to]
+  end
+  
+  # da eliminare quando riuscirò a serializare form e aggiungere param appunto => stato
+  
+  def update_stato
+    #raise params.inspect
+    @appunti = Appunto.find(params[:appunti_ids])
+    @appunti.each do |a|
+      a.update_attributes!(:stato => params[:stato])
+    end
+    respond_to do |format|
+      format.html { redirect_to session[:return_to] }
+      format.json { render :json => @appunti }
+    end
   end
   
   def print_multiple
