@@ -144,12 +144,17 @@ class AppuntiController < ApplicationController
   end
   
   def update_multiple
+    #raise params.inspect
     @appunti = Appunto.find(params[:appunti_ids])
     @appunti.each do |a|
       a.update_attributes!(params[:appunto].reject { |k,v| v.blank? })  #  unless k == 'stato'
     end
     flash[:notice => "Updated"]
-    redirect_to appunti_path
+    # respond_to do |format|
+    #   format.html { redirect_to :back }
+    #   format.json { render :json => @appunti }
+    # end
+    redirect_to :back
   end
   
   def print_multiple

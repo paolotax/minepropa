@@ -309,6 +309,27 @@ $(document).ready(function() {
      
   });
   
+  $('#btn_completa').live('click', function () {
+     
+     if (confirm("Sei sicuro?"))
+     {
+        var params = $('#form_appunti').serialize();
+        $.ajax({
+          url: '/appunti/update_multiple.json',
+          data: params + '&stato=X',
+          type: 'PUT',
+          // success: function() {
+          //   $('.cb-element:checked' ).parent().parent().remove();
+          //   $('#popin_bulk').hide();
+          // } 
+        });
+        console.log(params);
+      }else{
+    };
+ 
+     
+  });
+  
 });
 
 
