@@ -209,10 +209,10 @@ $(document).ready(function() {
     var checkBoxStatus = $(this).attr('checked');
     $( '.tasks .active' ).each( function() {
        if (checkBoxStatus == true) {
-         $(this).show();
-       } else {
-         $(this).hide();
-       };
+          $(this).slideDown('slow');
+        } else {
+          $(this).slideUp('slow');
+        };
     });
   });
   
@@ -220,10 +220,10 @@ $(document).ready(function() {
     var checkBoxStatus = $(this).attr('checked');
     $( '.tasks .pending' ).each( function() {
        if (checkBoxStatus == true) {
-         $(this).show();
-       } else {
-         $(this).hide();
-       };
+          $(this).slideDown('slow');
+        } else {
+          $(this).slideUp('slow');
+        };
     });
   });
   
@@ -231,9 +231,9 @@ $(document).ready(function() {
     var checkBoxStatus = $(this).attr('checked');
     $( '.tasks .done' ).each( function() {
        if (checkBoxStatus == true) {
-         $(this).show();
+         $(this).slideDown('slow');
        } else {
-         $(this).hide();
+         $(this).slideUp('slow');
        };
     });
   });
