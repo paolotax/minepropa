@@ -3,7 +3,5 @@
     .autopagerize_page_element
       %ul#appunti.tasks
         - for appunto in appunti do
-          = render appunto
-          / - if current_controller = :appunti
-          /   = paginate @appunti, :remote => true
+          = render :partial => 'appunti/appunto', :locals => { :appunto => appunto, :app_righe => righe }
           

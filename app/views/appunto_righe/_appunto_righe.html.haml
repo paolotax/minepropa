@@ -1,7 +1,7 @@
 .appunto_righe_list
   %table
     - for a in appunto.appunto_righe.per_libro_id
-      = render 'appunto_righe/appunto_riga_small', :appunto_riga => a
+      = render :partial => 'appunto_righe/appunto_riga_small', :locals => {:appunto_riga => a}
     %tr
       %td
       %td.riga_quantita.totale= appunto.totale_copie

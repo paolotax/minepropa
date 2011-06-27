@@ -57,17 +57,17 @@
     %td= number_to_currency(@presenter.totale_venduto[0].sum_importo.to_f / 100)
     
 
-
 - if @scuola.appunti.any?
-  Appunti in corso
-  %br
-  = render :partial => 'appunti/appunti', :locals => { :appunti => @presenter.appunti_da_fare }
-  Appunti da pagare
-  %br
-  = render :partial => 'appunti/appunti', :locals => { :appunti => @presenter.appunti_da_pagare }
-  Appunti completati
-  %br
-  = render :partial => 'appunti/appunti', :locals => { :appunti => @presenter.appunti_completati }
+  #appunti_div
+    = form_tag edit_or_print_appunti_path, :method => :post, :id => "form_appunti" do
+      .autopagerize_page_element
+        %ul#appunti.tasks
+          #visible_taskslist_title.group-title Appunti attivi
+          = render :partial => 'appunti/appunto', :collection => @presenter.appunti_da_fare,    :locals => { :app_righe => true }
+          #visible_taskslist_title.group-title Appunti da pagare
+          = render :partial => 'appunti/appunto', :collection => @presenter.appunti_da_pagare,  :locals => { :app_righe => true }
+          #visible_taskslist_title.group-title Appunti completati
+          = render :partial => 'appunti/appunto', :collection => @presenter.appunti_completati, :locals => { :app_righe => true }
   
   
   

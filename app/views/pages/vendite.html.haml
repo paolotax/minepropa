@@ -1,4 +1,4 @@
-/ - title "What's up"
+/- title "Vendite"
 
 
 = render :partial => 'shared/search_appunti'
@@ -7,13 +7,4 @@
 #visible_taskslist_title.group-title Vendite
 
 = render :partial => 'appunti/appunti_header'
-= render :partial => 'appunti/appunti', :locals => {:appunti => @appunti}
-
-/ #appunti_div
-/   = form_tag edit_or_print_appunti_path, :method => :post, :id => "form_appunti" do
-/     .autopagerize_page_element
-/       %ul#appunti.tasks
-/         - @appunti.each do |appunto|  
-/           = render appunto
-/           - unless appunto.appunto_righe.blank?
-/             = render 'appunto_righe/appunto_righe', :appunto => appunto
+= render :partial => 'appunti/appunti', :locals => {:appunti => @appunti, :righe => false }

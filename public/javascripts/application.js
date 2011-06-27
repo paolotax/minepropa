@@ -207,35 +207,56 @@ $(document).ready(function() {
   
   $('input#cb_attivi').live( 'click', function() {
     var checkBoxStatus = $(this).attr('checked');
-    $( '.tasks .active' ).each( function() {
-       if (checkBoxStatus == true) {
-          $(this).slideDown('slow');
-        } else {
-          $(this).slideUp('slow');
-        };
-    });
+    
+    if (checkBoxStatus == true) {
+       $( '.tasks .active' ).slideDown('slow');
+    } else {
+       $( '.tasks .active' ).slideUp('slow');
+    };
+    
+    // $( '.tasks .active' ).each( function() {
+    //    if (checkBoxStatus == true) {
+    //       $(this).slideDown('slow');
+    //     } else {
+    //       $(this).slideUp('slow');
+    //     };
+    // });
   });
   
   $('input#cb_in_sospeso').live( 'click', function() {
     var checkBoxStatus = $(this).attr('checked');
-    $( '.tasks .pending' ).each( function() {
-       if (checkBoxStatus == true) {
-          $(this).slideDown('slow');
-        } else {
-          $(this).slideUp('slow');
-        };
-    });
+    
+    if (checkBoxStatus == true) {
+       $( '.tasks .pending' ).slideDown('slow');
+    } else {
+       $( '.tasks .pending' ).slideUp('slow');
+    };
+    
+    // $( '.tasks .pending' ).each( function() {
+    //    if (checkBoxStatus == true) {
+    //       $(this).slideDown('slow');
+    //     } else {
+    //       $(this).slideUp('slow');
+    //     };
+    // });
   });
   
   $('input#cb_completati').live( 'click', function() {
     var checkBoxStatus = $(this).attr('checked');
-    $( '.tasks .done' ).each( function() {
-       if (checkBoxStatus == true) {
-         $(this).slideDown('slow');
-       } else {
-         $(this).slideUp('slow');
-       };
-    });
+    
+    if (checkBoxStatus == true) {
+       $( '.tasks .done' ).slideDown('slow');
+       $( '.tasks .done ' ).slideDown('slow');
+    } else {
+       $( '.tasks .done' ).slideUp('slow');
+    };
+    // $( '.tasks .done' ).each( function() {
+    //    if (checkBoxStatus == true) {
+    //      $(this).slideDown('slow');
+    //    } else {
+    //      $(this).slideUp('slow');
+    //    };
+    // });
   });
 });
 
@@ -251,15 +272,24 @@ $(document).ready( function() {
   $('#popin_bulk').hide();
   
   $( '.notnone' ).live( 'click', function() {
-      $( '.cb-element' ).attr( 'checked', true );
+      $( '.cb-element' ).each( function() {
+        if ($(this).is(":visible") == true) {
+          $(this).attr( 'checked', true );
+          $('#popin_bulk').hide();
+        };
+      });
   });
   $( '.none' ).live( 'click', function() {
-      $( '.cb-element' ).attr( 'checked', false );
-      $('#popin_bulk').hide();
+      $( '.cb-element' ).each( function() {
+        if ($(this).is(":visible") == true) {
+          $(this).attr( 'checked', false );
+          $('#popin_bulk').hide();
+        };
+      });
   });
 
   $( '.checkAll' ).live( 'change', function() {
-      $( '.cb-element' ).attr( 'checked', $( this ).is( ':checked' ) ? 'checked' : '' );
+      $('.cb-element').attr( 'checked', $( this ).is( ':checked' ) ? 'checked' : '' );
       $( this ).next().text( $( this ).is( ':checked' ) ? 'Deseleziona Tutti' : 'Seleziona Tutti' );
   });
   $( '.invertSelection' ).live( 'click', function() {
@@ -268,8 +298,8 @@ $(document).ready( function() {
       }).trigger( 'change' );
   });
   
-  $( '.cb-element' ).live( 'change', function() {
-      $( '.cb-element' ).length == $( '.cb-element:checked' ).length ? $( '.checkAll' ).attr( 'checked', 'checked' ).next().text( 'Deseleziona Tutti' ) : $( '.checkAll' ).attr( 'checked', '' ).next().text( 'Seleziona Tutti' );
+  $('.cb-element').live( 'change', function() {
+      $('.cb-element').length == $('.cb-element:checked').length ? $('.checkAll').attr('checked', 'checked').next().text('Deseleziona Tutti') : $('.checkAll').attr('checked', '').next().text('Seleziona Tutti');
       //
       // popin
       //

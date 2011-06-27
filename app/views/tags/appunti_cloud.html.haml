@@ -15,13 +15,14 @@
 
 #visible_taskslist_title.group-title= @title
 = render :partial => 'appunti/appunti_header'
+= render :partial => 'appunti/appunti', :locals => { :appunti => @appunti, :righe => true }
 
-#appunti_div
-  = form_tag edit_or_print_appunti_path, :method => :post, :id => "form_appunti" do
-    .autopagerize_page_element
-      %ul#appunti.tasks
-        - @appunti.each do |appunto|  
-          = render appunto
-          - unless appunto.appunto_righe.blank?
-            = render 'appunto_righe/appunto_righe', :appunto => appunto
+/ #appunti_div
+/   = form_tag edit_or_print_appunti_path, :method => :post, :id => "form_appunti" do
+/     .autopagerize_page_element
+/       %ul#appunti.tasks
+/         - @appunti.each do |appunto|  
+/           = render appunto
+/           - unless appunto.appunto_righe.blank?
+/             = render 'appunto_righe/appunto_righe', :appunto => appunto
      

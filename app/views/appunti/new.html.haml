@@ -2,12 +2,17 @@
 
 = render 'form'
 
-#appunti_div
-  = form_tag edit_or_print_appunti_path, :method => :post, :id => "form_appunti" do
-    .autopagerize_page_element
-      %ul#appunti.tasks
-        - @recent.each do |appunto|
-          %div.appunto_container  
-            = render appunto
-            - unless appunto.appunto_righe.empty?
-              = render 'appunto_righe/appunto_righe', :appunto => appunto
+
+#visible_taskslist_title.group-title Ultimi inserimenti
+= render :partial => 'appunti/appunti_header'
+= render :partial => 'appunti/appunti', :locals => { :appunti => @recent, :righe => true }
+
+/ #appunti_div
+/   = form_tag edit_or_print_appunti_path, :method => :post, :id => "form_appunti" do
+/     .autopagerize_page_element
+/       %ul#appunti.tasks
+/         - @recent.each do |appunto|
+/           %div.appunto_container  
+/             = render appunto
+/             - unless appunto.appunto_righe.empty?
+/               = render 'appunto_righe/appunto_righe', :appunto => appunto
