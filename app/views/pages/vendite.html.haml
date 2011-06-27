@@ -2,20 +2,12 @@
 
 
 = render :partial => 'shared/search_appunti'
-
 = render :partial => 'appunti/appunto_form'
 
 #visible_taskslist_title.group-title Vendite
 
-#visible_taskslist_header.tasks-header
-  .views-switcher
-    .list.active
-    .cal
-  #bar-sortby.sort-by
-    .sortby-label Ordina per
-    #bar-sortby-text.criteria - Cliente
-  #tasklist_menu_contact
-
+= render :partial => 'appunti/appunti_header'
+= render :partial => 'appunti/appunti', :locals => {:appunti => @appunti}
 
 / #appunti_div
 /   = form_tag edit_or_print_appunti_path, :method => :post, :id => "form_appunti" do
@@ -25,5 +17,3 @@
 /           = render appunto
 /           - unless appunto.appunto_righe.blank?
 /             = render 'appunto_righe/appunto_righe', :appunto => appunto
-
-= render :partial => 'appunti/appunti', :locals => {:appunti => @appunti}

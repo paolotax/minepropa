@@ -1,5 +1,4 @@
-- title @title
-
+/ - title @title
 #table_fabbisogno
   %table
     %tr
@@ -12,6 +11,10 @@
 
 #table_calc
   = number_to_currency(@incasso)
+
+
+#visible_taskslist_title.group-title= @title
+= render :partial => 'appunti/appunti_header'
 
 #appunti_div
   = form_tag edit_or_print_appunti_path, :method => :post, :id => "form_appunti" do

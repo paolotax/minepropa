@@ -257,8 +257,6 @@ $(document).ready( function() {
       $( '.cb-element' ).attr( 'checked', false );
       $('#popin_bulk').hide();
   });
-  
-  
 
   $( '.checkAll' ).live( 'change', function() {
       $( '.cb-element' ).attr( 'checked', $( this ).is( ':checked' ) ? 'checked' : '' );

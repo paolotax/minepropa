@@ -12,21 +12,7 @@
 
 
 
-#visible_taskslist_header.tasks-header
-  .views-switcher
-    .list.active
-    .cal
-  #bar-sortby.sort-by
-    .sortby-label Ordina per
-    #bar-sortby-text.criteria - Label
-  #tasklist_menu_contact
-    %input{:type => 'checkbox', :value => 'attivi', :checked => 'checked', :id => 'cb_attivi'}
-    %label{ :for => 'cb_attivi'}
-      %span Attivi
-    %input{:type => 'checkbox', :value => 'in sospeso', :checked => 'checked', :id => 'cb_in_sospeso'}
-    %label{ :for => 'cb_in_sospeso'}
-      %span In sospeso
-
+= render :partial => 'appunti/appunti_header'
 = render :partial => 'appunti/appunti', :locals => {:appunti => @appunti}
 
 
