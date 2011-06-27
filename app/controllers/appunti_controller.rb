@@ -148,15 +148,15 @@ class AppuntiController < ApplicationController
   def update_multiple
     #raise params.inspect
     @appunti = Appunto.find(params[:appunti_ids])
+   
     @appunti.each do |a|
       a.update_attributes!(params[:appunto].reject { |k,v| v.blank? })  #  unless k == 'stato'
     end
-    flash[:notice => "Updated"]
-    # respond_to do |format|
-    #   format.html { redirect_to :back }
-    #   format.json { render :json => @appunti }
-    # end
-    redirect_to session[:return_to]
+    #flash[:notice => "Updated"]
+    respond_to do |format|
+      format.html { redirect_to session[:return_to] }
+      format.json { render :json => @appunti }
+    end
   end
   
   # da eliminare quando riuscirò a serializare form e aggiungere param appunto => stato
