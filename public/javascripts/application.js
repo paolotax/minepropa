@@ -203,14 +203,48 @@ $(document).ready(function($){
 
 });
 
+$(document).ready(function() {
+  
+  $('input#cb_attivi').live( 'click', function() {
+    var checkBoxStatus = $(this).attr('checked');
+    $( '.tasks .active' ).each( function() {
+       if (checkBoxStatus == true) {
+         $(this).show();
+       } else {
+         $(this).hide();
+       };
+    });
+  });
+  
+  $('input#cb_in_sospeso').live( 'click', function() {
+    var checkBoxStatus = $(this).attr('checked');
+    $( '.tasks .pending' ).each( function() {
+       if (checkBoxStatus == true) {
+         $(this).show();
+       } else {
+         $(this).hide();
+       };
+    });
+  });
+  
+  $('input#cb_completati').live( 'click', function() {
+    var checkBoxStatus = $(this).attr('checked');
+    $( '.tasks .done' ).each( function() {
+       if (checkBoxStatus == true) {
+         $(this).show();
+       } else {
+         $(this).hide();
+       };
+    });
+  });
+});
+
 
 /* -----------------------
     select all checkbox 
     e popin showhide
 ------------------------*/
 $(document).ready( function() {
-  
-  
   //
   // popin
   //
