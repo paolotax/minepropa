@@ -312,11 +312,9 @@ $(document).ready(function() {
      if (confirm("Sei sicuro?"))
      {
         var params = $('#form_appunti').serialize();
-        var statoStr = $.param({'appunto':{'stato':'X'}});
-        
         $.ajax({
           url: '/appunti/update_multiple.json',
-          data: params + '&' + statoStr,
+          data: params + '&' + $.param({'appunto':{'stato':'X'}}),
           type: 'PUT',
           success: function() {
             $('.cb-element:checked' ).parent().parent().removeClass('active pending');
