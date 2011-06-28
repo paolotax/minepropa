@@ -1,5 +1,7 @@
 class VersionsController < ApplicationController
   
+  before_filter :authenticate_user!
+  
   def revert
     @version = Version.find(params[:id])
     if @version.reify

@@ -1,5 +1,7 @@
 class LibriController < ApplicationController
-
+  
+  before_filter :authenticate_user!
+  
   def index
     @libri = Libro.includes(:appunto_righe).all
 

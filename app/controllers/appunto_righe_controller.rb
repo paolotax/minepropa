@@ -1,6 +1,8 @@
 class AppuntoRigheController < ApplicationController
-  # GET /appunto_righe
-  # GET /appunto_righe.xml
+  
+  before_filter :authenticate_user!
+  
+  
   def index
     @appunto_righe = AppuntoRiga.includes(:appunto, :libro).all
 

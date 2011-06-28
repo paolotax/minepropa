@@ -1,5 +1,7 @@
 class IndirizziController < ApplicationController
 
+  before_filter :authenticate_user!
+  
   def index
     @indirizzable = find_indirizzable
     @indirizzo = @indirizzable.indirizzi

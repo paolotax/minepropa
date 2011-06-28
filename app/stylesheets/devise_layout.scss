@@ -26,6 +26,77 @@ body {
     margin-top:0;
     text-align:left;
   }
+  
+  
+  .notice {
+    -webkit-box-shadow:#1D1D1D 2px 2px 4px;
+    background-color:#5987A0;
+    background-image:url('../../images/notice-bkg.png');
+    background-position:50% 100%;
+    background-repeat:repeat no-repeat;
+
+    @include rounded-corners(7px);
+
+    color:#FFFFFF;
+    margin-bottom:15px;
+    padding-bottom:8px;
+    padding-left:10px;
+    padding-right:10px;
+    padding-top:10px;
+    a {
+      color:#FFFFFF;
+      text-decoration:underline;
+    }
+    em {
+      @include rounded-corners(3px);
+      padding-bottom:3px;
+      padding-left:3px;
+      padding-right:3px;
+      padding-top:3px;
+    }
+    h3 {
+      background-image:url('../../images/notice-icon-35x35.png');
+      background-position:0 0;
+      background-repeat:no-repeat no-repeat;
+      line-height:30px;
+      padding-left:35px;
+      padding-top:1px;
+    }
+
+  }
+  .notice.alert {
+    background-color:#A11C39;
+    background-image:url('../../images/notice-error-bkg.png');
+    em {
+      background-color:#D07872;
+      color:#40111F;
+    }
+    h3 {
+      background-image:url(https://api.heroku.com/images/notice-error-icon-35x35.png);
+      background-position:0 0;
+      background-repeat:no-repeat no-repeat;
+      padding-left:40px;
+    }
+  }
+  .notice.success {
+    background-color:#7C984C;
+    background-image:url('../../images/notice-success-bkg.png');
+    em {
+      background-color:#D07872;
+      color:#40111F;
+    }
+    h3 {
+      background-attachment:initial;
+      background-clip:initial;
+      background-color:initial;
+      background-image:none;
+      background-origin:initial;
+      background-position:initial initial;
+      background-repeat:initial initial;
+      line-height:24px;
+      padding-left:10px;
+    }
+  }
 }
 
 html input.text, body input.text {
@@ -179,78 +250,74 @@ html select, body select {
   padding-right:7px;
   padding-top:7px;
 }
-html .notice, body .notice {
-  -webkit-box-shadow:#1D1D1D 2px 2px 4px;
-  background-color:#5987A0;
-  background-image:url('../../images/notice-bkg.png');
-  background-position:50% 100%;
-  background-repeat:repeat no-repeat;
-  border-bottom-left-radius:7px 7px;
-  border-bottom-right-radius:7px 7px;
-  border-top-left-radius:7px 7px;
-  border-top-right-radius:7px 7px;
-  color:#FFFFFF;
-  margin-bottom:15px;
-  padding-bottom:8px;
-  padding-left:10px;
-  padding-right:10px;
-  padding-top:10px;
-}
-html .notice a, body .notice a {
-  color:#FFFFFF;
-  text-decoration:underline;
-}
-html .notice em, body .notice em {
-  border-bottom-left-radius:3px 3px;
-  border-bottom-right-radius:3px 3px;
-  border-top-left-radius:3px 3px;
-  border-top-right-radius:3px 3px;
-  padding-bottom:3px;
-  padding-left:3px;
-  padding-right:3px;
-  padding-top:3px;
-}
-html .notice h3, body .notice h3 {
-  background-image:url('../../images/notice-icon-35x35.png');
-  background-position:0 0;
-  background-repeat:no-repeat no-repeat;
-  line-height:30px;
-  padding-left:35px;
-  padding-top:1px;
-}
-html .notice.success, body .notice.success {
-  background-color:#7C984C;
-  background-image:url('../../images/notice-success-bkg.png');
-}
-html .notice.success em, body .notice.success em {
-  background-color:#D07872;
-  color:#40111F;
-}
-html .notice.success h3, body .notice.success h3 {
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:initial;
-  background-image:none;
-  background-origin:initial;
-  background-position:initial initial;
-  background-repeat:initial initial;
-  line-height:24px;
-  padding-left:10px;
-}
-html .notice.error, body .notice.error {
-  background-color:#A11C39;
-  background-image:url('../../images/notice-error-bkg.png');
-}
-html .notice.error em, body .notice.error em {
-  background-color:#D07872;
-  color:#40111F;
-}
-html .notice.error h3, body .notice.error h3 {
-  background-image:url(https://api.heroku.com/images/notice-error-icon-35x35.png);
-  background-position:0 0;
-  background-repeat:no-repeat no-repeat;
-  padding-left:40px;
-}
+// html .notice, body .notice {
+//   -webkit-box-shadow:#1D1D1D 2px 2px 4px;
+//   background-color:#5987A0;
+//   background-image:url('../../images/notice-bkg.png');
+//   background-position:50% 100%;
+//   background-repeat:repeat no-repeat;
+//   
+//   @include rounded-corners(7px);
+//   
+//   color:#FFFFFF;
+//   margin-bottom:15px;
+//   padding-bottom:8px;
+//   padding-left:10px;
+//   padding-right:10px;
+//   padding-top:10px;
+// }
+// html .notice a, body .notice a {
+//   color:#FFFFFF;
+//   text-decoration:underline;
+// }
+// html .notice em, body .notice em {
+//   @include rounded-corners(3px);
+//   padding-bottom:3px;
+//   padding-left:3px;
+//   padding-right:3px;
+//   padding-top:3px;
+// }
+// html .notice h3, body .notice h3 {
+//   background-image:url('../../images/notice-icon-35x35.png');
+//   background-position:0 0;
+//   background-repeat:no-repeat no-repeat;
+//   line-height:30px;
+//   padding-left:35px;
+//   padding-top:1px;
+// }
+// html .notice .success, body .notice .success {
+//   background-color:#7C984C;
+//   background-image:url('../../images/notice-success-bkg.png');
+// }
+// html .notice .success em, body .notice .success em {
+//   background-color:#D07872;
+//   color:#40111F;
+// }
+// html .notice .success h3, body .notice .success h3 {
+//   background-attachment:initial;
+//   background-clip:initial;
+//   background-color:initial;
+//   background-image:none;
+//   background-origin:initial;
+//   background-position:initial initial;
+//   background-repeat:initial initial;
+//   line-height:24px;
+//   padding-left:10px;
+// }
+// html .notice .alert, body .notice .alert {
+//   background-color:#A11C39;
+//   background-image:url('../../images/notice-error-bkg.png');
+// }
+// html .notice .error em, body .notice .error em {
+//   background-color:#D07872;
+//   color:#40111F;
+// }
+// html .notice .error h3, body .notice .error h3 {
+//   background-image:url(https://api.heroku.com/images/notice-error-icon-35x35.png);
+//   background-position:0 0;
+//   background-repeat:no-repeat no-repeat;
+//   padding-left:40px;
+// }
 html form .overview, body form .overview {
   padding-bottom:20px;
   padding-left:20px;
