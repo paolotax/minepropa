@@ -2,7 +2,7 @@ $("#notice").html('<div class="flash notice"><%= escape_javascript(flash.delete(
 
 
 /* Add the new comment to the bottom of the comments list */
-$("<%= escape_javascript(render(@appunto)) %>").insertBefore("#appunti li:first");
+$("<%= escape_javascript(render(:partial => 'appunti/appunto', :locals => { :appunto => @appunto, :app_righe => true })) %>").insertBefore("#appunti li:first");
 
 /* Highlight the new comment */
 $("#appunto_<%= @appunto.id %>_visita_").effect("highlight", {}, 3000);
