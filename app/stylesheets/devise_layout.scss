@@ -1,3 +1,5 @@
+@import "new_layout";
+
 body {
   .logo {
     left:25px;
@@ -6,30 +8,29 @@ body {
     z-index:9;
   }
   .dialog {
+    background-image: -moz-linear-gradient(center top , #2C263F 0%, rgba(44, 38, 63, 0.4) 100%);
     background-image:-webkit-gradient(linear, 0 0%, 0 100%, from(#2C263F), to(rgba(44, 38, 63, 0.398438)));
-    border-bottom-color:#373553;
-    border-bottom-style:solid;
-    border-bottom-width:1px;
-    border-left-color:#373553;
-    border-left-style:solid;
-    border-left-width:1px;
-    border-right-color:#373553;
-    border-right-style:solid;
-    border-right-width:1px;
-    border-top-color:#373553;
-    border-top-style:solid;
-    border-top-width:1px;
+    border: 1px solid #373553;
+    color: #BFB8E5;
+    width: 400px;
     color:#BFB8E5;
     width:400px;
+  }
+  .dialog, #message {
+    -webkit-box-shadow:#040307 0 0 10px;
+    background-repeat:repeat-x;
+    @include rounded-corners(10px);
+    margin-bottom:0;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:0;
+    text-align:left;
   }
 }
 
 html input.text, body input.text {
   background-color:#C9C3E6;
-  border-bottom-left-radius:3px 3px;
-  border-bottom-right-radius:3px 3px;
-  border-top-left-radius:3px 3px;
-  border-top-right-radius:3px 3px;
+  @include rounded-corners(3px);
   font-size:12px;
   padding-bottom:7px;
   padding-left:7px;
@@ -42,13 +43,10 @@ html input.checkbox, body input.checkbox {
 html input.submit, html input.button, html a.submit, html a.button, body input.submit, body input.button, body a.submit, body a.button {
   -webkit-box-shadow:#232323 2px 2px 6px;
   background-color:#9E8AFF;
-  background-image:url(https://api.heroku.com/images/button-smooth.png);
+  background-image:url('../../images/button-smooth.png');
   background-position:50% 100%;
   background-repeat:repeat no-repeat;
-  border-bottom-left-radius:14px 14px;
-  border-bottom-right-radius:14px 14px;
-  border-top-left-radius:14px 14px;
-  border-top-right-radius:14px 14px;
+  @include rounded-corners(14px);
   color:#16153B;
   cursor:pointer;
   font-size:14px;
@@ -102,7 +100,7 @@ html input.submit.remove:hover, html input.button.remove:hover, html a.submit.re
 html input.destroy, html a.destroy, body input.destroy, body a.destroy {
   -webkit-box-shadow:#232323 2px 2px 6px;
   background-color:#666666;
-  background-image:url(https://api.heroku.com/images/button-smooth-red.png);
+  background-image:url('../../images/button-smooth-red.png');
   background-position:50% 100%;
   background-repeat:repeat no-repeat;
   border-bottom-left-radius:14px 14px;
@@ -119,7 +117,7 @@ html input.destroy:hover, html a.destroy:hover, body input.destroy:hover, body a
   background-color:#888888;
 }
 html input.selectbox, html a.selectbox, body input.selectbox, body a.selectbox {
-  background-image:url(https://api.heroku.com/images/form-select-closed.png);
+  background-image:url('../..images/form-select-closed.png');
   background-position:100% 50%;
   background-repeat:no-repeat no-repeat;
   padding-right:25px;
@@ -184,7 +182,7 @@ html select, body select {
 html .notice, body .notice {
   -webkit-box-shadow:#1D1D1D 2px 2px 4px;
   background-color:#5987A0;
-  background-image:url(https://api.heroku.com/images/notice-bkg.png);
+  background-image:url('../../images/notice-bkg.png');
   background-position:50% 100%;
   background-repeat:repeat no-repeat;
   border-bottom-left-radius:7px 7px;
@@ -213,7 +211,7 @@ html .notice em, body .notice em {
   padding-top:3px;
 }
 html .notice h3, body .notice h3 {
-  background-image:url(https://api.heroku.com/images/notice-icon-35x35.png);
+  background-image:url('../../images/notice-icon-35x35.png');
   background-position:0 0;
   background-repeat:no-repeat no-repeat;
   line-height:30px;
@@ -222,7 +220,7 @@ html .notice h3, body .notice h3 {
 }
 html .notice.success, body .notice.success {
   background-color:#7C984C;
-  background-image:url(https://api.heroku.com/images/notice-success-bkg.png);
+  background-image:url('../../images/notice-success-bkg.png');
 }
 html .notice.success em, body .notice.success em {
   background-color:#D07872;
@@ -241,7 +239,7 @@ html .notice.success h3, body .notice.success h3 {
 }
 html .notice.error, body .notice.error {
   background-color:#A11C39;
-  background-image:url(https://api.heroku.com/images/notice-error-bkg.png);
+  background-image:url('../../images/notice-error-bkg.png');
 }
 html .notice.error em, body .notice.error em {
   background-color:#D07872;
@@ -462,7 +460,8 @@ body .logo {
 }
 body .logo a {
   background-image:url('/images/TodoPropaLogin.png');
-  background-repeat:no-repeat no-repeat;
+  background-repeat:no-repeat;
+  background-position:top left;
   display:block;
   height:100px;
   text-indent:-2000px;
@@ -475,36 +474,7 @@ body .content {
   width:100%;
   z-index:5;
 }
-body .dialog, body #message {
-  -webkit-box-shadow:#040307 0 0 10px;
-  background-repeat:repeat no-repeat;
-  border-bottom-left-radius:10px 10px;
-  border-bottom-right-radius:10px 10px;
-  border-top-left-radius:10px 10px;
-  border-top-right-radius:10px 10px;
-  margin-bottom:0;
-  margin-left:auto;
-  margin-right:auto;
-  margin-top:0;
-  text-align:left;
-}
-body .dialog {
-  background-image:-webkit-gradient(linear, 0 0%, 0 100%, from(#2C263F), to(rgba(44, 38, 63, 0.398438)));
-  border-bottom-color:#373553;
-  border-bottom-style:solid;
-  border-bottom-width:1px;
-  border-left-color:#373553;
-  border-left-style:solid;
-  border-left-width:1px;
-  border-right-color:#373553;
-  border-right-style:solid;
-  border-right-width:1px;
-  border-top-color:#373553;
-  border-top-style:solid;
-  border-top-width:1px;
-  color:#BFB8E5;
-  width:400px;
-}
+
 body .dialog h2 {
   border-bottom-color:initial;
   border-bottom-style:initial;

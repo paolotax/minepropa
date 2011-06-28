@@ -1,2437 +1,1510 @@
 #blackout {
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:transparent;
-  background-image:url(https://www.producteev.com/static/images/blackout.png);
-  background-origin:initial;
-  background-position:0 0;
-  background-repeat:repeat repeat;
-  height:100%;
-  left:0;
-  position:fixed;
-  top:0;
-  width:100%;
-  z-index:100;
+    background: url("../../images/blackout.png") repeat scroll 0 0 transparent;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 110;
 }
 .pop-in {
-  -webkit-box-shadow:#888888 2px 2px 5px;
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:#FFFFFF;
-  background-image:initial;
-  background-origin:initial;
-  background-position:initial initial;
-  background-repeat:initial initial;
-  border-bottom-color:#3E7DAE;
-  border-bottom-style:solid;
-  border-bottom-width:1px;
-  border-left-color:#3E7DAE;
-  border-left-style:solid;
-  border-left-width:1px;
-  border-right-color:#3E7DAE;
-  border-right-style:solid;
-  border-right-width:1px;
-  border-top-color:#3E7DAE;
-  border-top-style:solid;
-  border-top-width:1px;
-  padding-bottom:2px;
-  padding-left:2px;
-  padding-right:2px;
-  padding-top:2px;
-  position:absolute;
-  z-index:101;
+    -moz-box-shadow: 2px 2px 5px #888888;
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #3E7DAE;
+    padding: 2px;
+    position: absolute;
+    z-index: 101;
+}
+.pop-in .text {
+    color: #545454;
+    font-size: 12px;
+    line-height: 16px;
+    padding: 12px;
 }
 .pop-in .inner {
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:#FFFFFF;
-  background-image:url(https://www.producteev.com/static/images/pop-in.png);
-  background-origin:initial;
-  background-position:0 0;
-  background-repeat:repeat no-repeat;
+    background: url("../../images/pop-in.png") repeat-x scroll 0 0 #FFFFFF;
 }
 .pop-in .corner {
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:transparent;
-  background-image:url(https://www.producteev.com/static/images/pop-in-corners.png);
-  background-origin:initial;
-  background-position:0 0;
-  background-repeat:no-repeat no-repeat;
-  height:18px;
-  position:absolute;
-  width:20px;
+    background: url("../../images/pop-in-corners.png") no-repeat scroll 0 0 transparent;
+    height: 18px;
+    position: absolute;
+    width: 20px;
 }
 .corner-tl .corner {
-  left:9px;
-  top:-16px;
+    left: 9px;
+    top: -16px;
 }
 .corner-middle .corner {
-  left:188px;
-  top:-16px;
+    left: 188px;
+    top: -16px;
 }
 .corner-tr .corner {
-  background-position:0 -18px;
-  right:4px;
-  top:-16px;
+    background-position: 0 -18px;
+    right: 4px;
+    top: -16px;
 }
 .pop-in .expand {
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:transparent;
-  background-image:url(https://www.producteev.com/static/images/expand.png);
-  background-origin:initial;
-  background-position:100% -9px;
-  background-repeat:no-repeat no-repeat;
-  color:#718D9E;
-  display:inline-block;
-  font-family:Georgia;
-  font-size:11px;
-  font-style:italic;
-  line-height:normal;
-  margin-bottom:5px;
-  margin-left:0;
-  margin-right:0;
-  margin-top:8px;
-  padding-bottom:0;
-  padding-left:0;
-  padding-right:14px;
-  padding-top:0;
+    background: url("../../images/expand.png") no-repeat scroll right -9px transparent;
+    color: #718D9E;
+    display: inline-block;
+    font-family: Georgia;
+    font-size: 11px;
+    font-style: italic;
+    line-height: normal;
+    margin: 8px 0 5px;
+    padding: 0 14px 0 0;
 }
 .pop-in .title-section {
-  color:#718D9E;
-  display:inline-block;
-  font-family:Georgia;
-  font-size:11px;
-  font-style:italic;
-  font-weight:bold;
-  line-height:normal;
-  margin-bottom:5px;
-  margin-left:0;
-  margin-right:0;
-  margin-top:8px;
-  padding-bottom:0;
-  padding-left:10px;
-  padding-right:14px;
-  padding-top:0;
+    color: #718D9E;
+    display: inline-block;
+    font-family: Georgia;
+    font-size: 11px;
+    font-style: italic;
+    font-weight: bold;
+    line-height: normal;
+    margin: 8px 0 5px;
+    padding: 0 14px 0 10px;
 }
 .pop-in .show {
-  background-position:100% -27px;
+    background-position: right -27px;
 }
 .pop-in {
-  -webkit-box-shadow:#888888 2px 2px 5px;
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:#FFFFFF;
-  background-image:initial;
-  background-origin:initial;
-  background-position:initial initial;
-  background-repeat:initial initial;
-  border-bottom-color:#3E7DAE;
-  border-bottom-style:solid;
-  border-bottom-width:1px;
-  border-left-color:#3E7DAE;
-  border-left-style:solid;
-  border-left-width:1px;
-  border-right-color:#3E7DAE;
-  border-right-style:solid;
-  border-right-width:1px;
-  border-top-color:#3E7DAE;
-  border-top-style:solid;
-  border-top-width:1px;
-  padding-bottom:2px;
-  padding-left:2px;
-  padding-right:2px;
-  padding-top:2px;
-  position:absolute;
-  z-index:101;
+    -moz-box-shadow: 2px 2px 5px #888888;
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #3E7DAE;
+    padding: 2px;
+    position: absolute;
+    z-index: 101;
 }
 .ppn-info {
-  left:50%;
-  margin-bottom:0;
-  margin-left:-190px;
-  margin-right:0;
-  margin-top:0;
-  top:180px;
-  width:380px;
+    left: 50%;
+    margin: 0 0 0 -190px;
+    top: 180px;
+    width: 380px;
 }
 .ppn-info .inner {
-  padding-bottom:12px;
-  padding-left:15px;
-  padding-right:15px;
-  padding-top:0;
-  position:relative;
+    padding: 0 15px 12px;
+    position: relative;
 }
 .ppn-info h3 {
-  border-bottom-color:#E6E6E6;
-  border-bottom-style:solid;
-  border-bottom-width:1px;
-  color:#224165;
-  font-family:arial;
-  font-size:20px;
-  font-weight:bold;
-  height:24px;
-  line-height:24px;
+    border-bottom: 1px solid #E6E6E6;
+    color: #224165;
+    font-family: "arial";
+    font-size: 20px;
+    font-weight: bold;
+    height: 24px;
+    line-height: 24px;
 }
 .ppn-info .close {
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:transparent;
-  background-image:url(https://www.producteev.com/static/images/icons.png);
-  background-origin:initial;
-  background-position:-6px -525px;
-  background-repeat:no-repeat no-repeat;
-  display:block;
-  height:9px;
-  overflow-x:hidden;
-  overflow-y:hidden;
-  position:absolute;
-  right:10px;
-  text-indent:-100000px;
-  top:10px;
-  width:9px;
-  z-index:101;
+    background: url("../../images/icons.png") no-repeat scroll -6px -525px transparent;
+    display: block;
+    height: 9px;
+    overflow: hidden;
+    position: absolute;
+    right: 10px;
+    text-indent: -100000px;
+    top: 10px;
+    width: 9px;
+    z-index: 101;
 }
 .ppn-info p {
-  font-size:14px;
-  line-height:18px;
-  margin-bottom:10px;
-  margin-left:0;
-  margin-right:0;
-  margin-top:10px;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 10px 0;
 }
 .ppn-info ul {
-  font-size:14px;
-  margin-bottom:0;
-  margin-left:0;
-  margin-right:0;
-  margin-top:0;
+    font-size: 14px;
+    margin: 0;
 }
 .ppn-info ul li {
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:transparent;
-  background-image:url(https://www.producteev.com/static/images/ppn-info-arrow.png);
-  background-origin:initial;
-  background-position:4px 8px;
-  background-repeat:no-repeat no-repeat;
-  list-style-image:initial;
-  list-style-position:initial;
-  list-style-type:none;
-  padding-bottom:0;
-  padding-left:15px;
-  padding-right:0;
-  padding-top:0;
+    background: url("../../images/ppn-info-arrow.png") no-repeat scroll 4px 8px transparent;
+    list-style: none outside none;
+    padding: 0 0 0 15px;
 }
 .ppn-info ul a {
-  font-weight:bold;
+    font-weight: bold;
 }
 .ppn-channel {
-  left:410px;
-  top:345px;
-  width:300px;
+    left: 410px;
+    top: 345px;
+    width: 300px;
 }
 .ppn-channel .inner {
-  padding-bottom:2px;
-  padding-left:6px;
-  padding-right:6px;
-  padding-top:6px;
+    padding: 6px 6px 2px;
 }
 .ppn-channel .inner .communication-channel {
-  border-bottom-color:#E6E6E6;
-  border-bottom-style:solid;
-  border-bottom-width:1px;
-  margin-bottom:0;
-  margin-left:0;
-  margin-right:0;
-  margin-top:0;
-  padding-bottom:10px;
-  padding-left:0;
-  padding-right:0;
-  padding-top:0;
+    border-bottom: 1px solid #E6E6E6;
+    margin: 0;
+    padding: 0 0 10px;
 }
 .ppn-channel .inner .communication-channel .term {
-  color:#718D9E;
-  font-family:Georgia;
-  font-style:italic;
+    color: #718D9E;
+    font-family: Georgia;
+    font-style: italic;
 }
 .ppn-channel .inner .communication-channel .value {
-  color:#08396C;
-  font-weight:bold;
+    color: #08396C;
+    font-weight: bold;
 }
 .ppn-channel .channels-list {
-  border-bottom-color:#E6E6E6;
-  border-bottom-style:solid;
-  border-bottom-width:1px;
-  border-left-color:#E6E6E6;
-  border-left-style:solid;
-  border-left-width:0;
-  border-right-color:#E6E6E6;
-  border-right-style:solid;
-  border-right-width:0;
-  border-top-color:#E6E6E6;
-  border-top-style:solid;
-  border-top-width:1px;
-  margin-bottom:0;
-  margin-left:0;
-  margin-right:0;
-  margin-top:0;
+    border-color: #E6E6E6;
+    border-style: solid;
+    border-width: 1px 0;
+    margin: 0;
 }
 .ppn-channel .channels-list li {
-  list-style-image:initial;
-  list-style-position:initial;
-  list-style-type:none;
+    list-style: none outside none;
 }
 .ppn-channel .channels-list .p-channel {
-  border-bottom-color:#E6E6E6;
-  border-bottom-style:solid;
-  border-bottom-width:1px;
-  clear:both;
-  display:block;
-  height:27px;
-  line-height:27px;
+    border-bottom: 1px solid #E6E6E6;
+    clear: both;
+    display: block;
+    height: 27px;
+    line-height: 27px;
 }
 .ppn-channel .channels-list .p-channel span {
-  float:left;
+    float: left;
 }
 .ppn-channel .channels-list .checkbox {
-  height:24px;
-  padding-bottom:0;
-  padding-left:2px;
-  padding-right:2px;
-  padding-top:3px;
+    height: 24px;
+    padding: 3px 2px 0;
 }
 .ppn-channel .channels-list .image {
-  height:23px;
-  padding-bottom:0;
-  padding-left:4px;
-  padding-right:4px;
-  padding-top:4px;
+    height: 23px;
+    padding: 4px 4px 0;
 }
 .ppn-channel .channels-list .name {
-  color:#5C5C5C;
-  margin-bottom:0;
-  margin-left:5px;
-  margin-right:0;
-  margin-top:0;
+    color: #5C5C5C;
+    margin: 0 0 0 5px;
 }
 .ppn-channel .channels-list .selected .name {
-  color:#335475;
-  font-weight:bold;
+    color: #335475;
+    font-weight: bold;
 }
 .ppn-channel .channels-list .last {
-  border-bottom-style:none;
-  border-color:initial;
-  border-left-style:none;
-  border-right-style:none;
-  border-top-style:none;
-  border-width:initial;
+    border: medium none;
 }
 .ppn-assign {
-  top:460px;
-  width:276px;
+    top: 460px;
+    width: 276px;
 }
 .ppn-colleagues_request {
-  width:350px;
+    width: 350px;
 }
 .ppn-confirmation {
 }
 .ppn-confirmation .confirmation {
-  color:#8DA4B1;
-  float:left;
-  font-weight:bold;
-  margin-bottom:9px;
-  margin-left:9px;
-  margin-right:9px;
-  margin-top:9px;
+    color: #8DA4B1;
+    float: left;
+    font-weight: bold;
+    margin: 9px;
 }
 .ppn-confirmation .btn_red, .ppn-confirmation .btn_blue {
-  float:right;
-  margin-bottom:2px;
-  margin-left:2px;
-  margin-right:2px;
-  margin-top:2px;
+    float: right;
+    margin: 2px;
 }
 .ppn-assign .inner {
-  padding-bottom:2px;
-  padding-left:0;
-  padding-right:0;
-  padding-top:0;
+    padding: 0 0 2px;
 }
 .ppn-confirmation .inner {
-  padding-bottom:0;
-  padding-left:0;
-  padding-right:0;
-  padding-top:0;
+    padding: 0;
 }
 .ppn-assign .current-assign, .ppn-colleagues_request .current-assign {
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:transparent;
-  background-image:url(https://www.producteev.com/static/images/ppn-show-options.png);
-  background-origin:initial;
-  background-position:0 0;
-  background-repeat:repeat no-repeat;
-  border-bottom-color:#E6E6E6;
-  border-bottom-style:none;
-  border-bottom-width:1px;
-  border-color:initial;
-  border-left-style:none;
-  border-right-style:none;
-  border-top-style:none;
-  border-width:initial;
-  color:#8DA4B1;
-  font-weight:bold;
-  height:26px;
-  padding-bottom:0;
-  padding-left:3px;
-  padding-right:0;
-  padding-top:5px;
+    background: url("../../images/ppn-show-options.png") repeat-x scroll 0 0 transparent;
+    border: medium none;
+    color: #8DA4B1;
+    font-weight: bold;
+    height: 26px;
+    padding: 5px 0 0 3px;
 }
 .ppn-assign .current-assign img {
-  float:left;
-  height:16px;
-  margin-bottom:0;
-  margin-left:0;
-  margin-right:7px;
-  margin-top:0;
-  padding-top:2px;
-  vertical-align:top;
-  width:16px;
+    float: left;
+    height: 16px;
+    margin: 0 7px 0 0;
+    padding-top: 2px;
+    vertical-align: top;
+    width: 16px;
 }
 .ppn-assign .current-assign p, .ppn-colleagues_request .current-assign p {
-  color:#335475;
-  font-size:11px;
-  line-height:14px;
-  margin-bottom:0;
-  margin-left:0;
-  margin-right:0;
-  margin-top:0;
-  padding-top:4px;
-  text-align:center;
-  text-transform:uppercase;
-  width:100%;
+    color: #335475;
+    font-size: 11px;
+    line-height: 14px;
+    margin: 0;
+    padding-top: 4px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
 }
 .current-assign.orange p {
-  color:#F98E37;
+    color: #F98E37;
 }
 .ppn-assign .current-assign a:hover {
-  text-decoration:underline;
+    text-decoration: underline;
 }
 .ppn-assign .collaborators-list {
-  border-bottom-color:initial;
-  border-bottom-style:initial;
-  border-bottom-width:0;
-  border-left-color:#E6E6E6;
-  border-left-style:solid;
-  border-left-width:0;
-  border-right-color:#E6E6E6;
-  border-right-style:solid;
-  border-right-width:0;
-  border-top-color:#E6E6E6;
-  border-top-style:solid;
-  border-top-width:1px;
-  height:auto;
-  margin-bottom:0;
-  margin-left:0;
-  margin-right:0;
-  margin-top:0;
-  overflow-x:auto;
-  overflow-y:auto;
-  padding-bottom:5px;
+    border-color: #E6E6E6 #E6E6E6 -moz-use-text-color;
+    border-style: solid solid none;
+    border-width: 1px 0 0;
+    height: auto;
+    margin: 0;
+    overflow: auto;
+    padding-bottom: 5px;
 }
 .ppn-assign .collaborators-list .collaborator {
-  border-bottom-color:#E6E6E6;
-  border-bottom-style:solid;
-  border-bottom-width:1px;
-  clear:both;
-  display:block;
-  height:27px;
-  line-height:27px;
+    border-bottom: 1px solid #E6E6E6;
+    clear: both;
+    display: block;
+    height: 27px;
+    line-height: 27px;
 }
 .ppn-assign .collaborators-list .collaborator .users-list-loader {
-  float:left;
-  margin-top:8px;
+    float: left;
+    margin-top: 8px;
 }
 .ppn-assign .checkbox {
-  float:left;
-  margin-bottom:0;
-  margin-left:3px;
-  margin-right:0;
-  margin-top:8px;
+    float: left;
+    margin: 8px 0 0 3px;
 }
 .ppn-assign .label-title {
-  float:left;
-  margin-left:5px;
+    float: left;
+    margin-left: 5px;
 }
 .ppn-assign .collaborators-list .image {
-  display:inline;
-  padding-bottom:0;
-  padding-left:4px;
-  padding-right:4px;
-  padding-top:4px;
+    display: inline;
+    padding: 4px 4px 0;
 }
 .ppn-assign .add-area {
-  padding-bottom:4px;
-  padding-left:0;
-  padding-right:0;
-  padding-top:4px;
+    padding: 4px 0;
 }
 .ppn-assign .collaborators-list li.user .image {
-  padding-bottom:0;
-  padding-left:0;
-  padding-right:0;
-  padding-top:0;
+    padding: 0;
 }
 .ppn-assign .collaborators-list li.user .image img {
-  height:16px;
-  margin-left:5px;
-  margin-right:5px;
-  margin-top:5px;
-  width:16px;
+    height: 16px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    width: 16px;
 }
 .ppn-assign .collaborators-list .name {
-  color:#5C5C5C;
-  font-size:12px;
-  font-weight:bold;
+    color: #5C5C5C;
+    font-size: 12px;
+    font-weight: bold;
+}
+.ppn-assign .collaborators-list .name .creator {
+    color: #A3A3A3;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: normal;
 }
 .ppn-assign .collaborators-list .guest .name {
-  color:#387FB2;
-  font-weight:normal;
+    color: #387FB2;
+    font-weight: normal;
 }
 .ppn-assign .collaborators-list .last {
-  border-bottom-style:none;
-  border-color:initial;
-  border-left-style:none;
-  border-right-style:none;
-  border-top-style:none;
-  border-width:initial;
+    border: medium none;
 }
 .ppn-timing {
-  width:auto;
+    width: auto;
 }
 .ppn-timing .inner {
-  height:31px;
+    height: 31px;
 }
 .ppn-timing .display-options {
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:transparent;
-  background-image:url(https://www.producteev.com/static/images/ppn-show-options.png);
-  background-origin:initial;
-  background-position:0 0;
-  background-repeat:repeat no-repeat;
-  border-bottom-style:none;
-  border-color:initial;
-  border-left-style:none;
-  border-right-style:none;
-  border-top-style:none;
-  border-width:initial;
-  height:26px;
-  padding-bottom:0;
-  padding-left:3px;
-  padding-right:0;
-  padding-top:5px;
-  width:99.5%;
+    background: url("../../images/ppn-show-options.png") repeat-x scroll 0 0 transparent;
+    border: medium none;
+    height: 26px;
+    padding: 5px 0 0 3px;
+    width: 99.5%;
 }
 .ppn-timing .display-options .selectable a {
-  padding-bottom:0;
-  padding-left:7px;
-  padding-right:0;
-  padding-top:0;
+    padding: 0 0 0 7px;
 }
 .ppn-timing .display-options .selected a {
-  background-image:url(https://www.producteev.com/static/images/display-options-ppn.png);
-  padding-bottom:0;
-  padding-left:7px;
-  padding-right:0;
-  padding-top:0;
+    background-image: url("../../images/display-options-ppn.png");
+    padding: 0 0 0 7px;
 }
 .ppn-timing .display-options .selectable a span {
-  padding-bottom:0;
-  padding-left:0;
-  padding-right:7px;
-  padding-top:0;
+    padding: 0 7px 0 0;
 }
 .ppn-timing .display-options .selected a span {
-  background-image:url(https://www.producteev.com/static/images/display-options-ppn.png);
-  padding-bottom:0;
-  padding-left:0;
-  padding-right:7px;
-  padding-top:0;
+    background-image: url("../../images/display-options-ppn.png");
+    padding: 0 7px 0 0;
 }
 .ppn-timing .wrap {
-  padding-bottom:5px;
-  padding-left:15px;
-  padding-right:15px;
-  padding-top:5px;
+    padding: 5px 15px;
 }
 .ppn-timing .calendar th, .ppn-timing .calendar td {
-  border-bottom-color:#F5F5F5;
-  border-bottom-style:solid;
-  border-bottom-width:1px;
-  border-left-color:#F5F5F5;
-  border-left-style:solid;
-  border-left-width:1px;
-  border-right-color:#F5F5F5;
-  border-right-style:solid;
-  border-right-width:1px;
-  border-top-color:#F5F5F5;
-  border-top-style:solid;
-  border-top-width:1px;
-  color:#7A8087;
-  padding-bottom:6px;
-  padding-left:6px;
-  padding-right:6px;
-  padding-top:6px;
-  text-align:center;
+    border: 1px solid #F5F5F5;
+    color: #7A8087;
+    padding: 6px;
+    text-align: center;
 }
 .ppn-timing .calendar thead th {
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:#ECECEC;
-  background-image:initial;
-  background-origin:initial;
-  background-position:initial initial;
-  background-repeat:initial initial;
-  color:#7A8087;
-  font-weight:bold;
+    background: none repeat scroll 0 0 #ECECEC;
+    color: #7A8087;
+    font-weight: bold;
 }
 .ppn-timing .calendar thead th a {
-  color:#75A7CE;
-  text-decoration:underline;
+    color: #75A7CE;
+    text-decoration: underline;
 }
 .ppn-timing .calendar tbody th {
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:#ECECEC;
-  background-image:initial;
-  background-origin:initial;
-  background-position:initial initial;
-  background-repeat:initial initial;
+    background: none repeat scroll 0 0 #ECECEC;
 }
 .ppn-timing .calendar tbody td {
-  padding-bottom:0;
-  padding-left:0;
-  padding-right:0;
-  padding-top:0;
+    padding: 0;
 }
 .ppn-timing .calendar tbody td a {
-  color:#7A8087;
-  cursor:pointer;
-  display:block;
-  padding-bottom:6px;
-  padding-left:6px;
-  padding-right:6px;
-  padding-top:6px;
+    color: #7A8087;
+    cursor: pointer;
+    display: block;
+    padding: 6px;
 }
 .ppn-timing .calendar tbody td.selected a {
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:#84BBE8;
-  background-image:initial;
-  background-origin:initial;
-  background-position:initial initial;
-  background-repeat:initial initial;
-  color:#FFFFFF;
-  text-decoration:underline;
+    background: none repeat scroll 0 0 #84BBE8;
+    color: #FFFFFF;
+    text-decoration: underline;
 }
 .ppn-timing .calendar tbody td.today a {
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:#135A8D;
-  background-image:initial;
-  background-origin:initial;
-  background-position:initial initial;
-  background-repeat:initial initial;
-  color:#FFFFFF;
-  font-weight:bold;
+    background: none repeat scroll 0 0 #135A8D;
+    color: #FFFFFF;
+    font-weight: bold;
 }
 .ppn-timing input.time {
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:white;
-  background-image:initial;
-  background-origin:initial;
-  background-position:initial initial;
-  background-repeat:initial initial;
-  border-bottom-color:#CCCCCC;
-  border-bottom-style:solid;
-  border-bottom-width:1px;
-  border-left-color:#CCCCCC;
-  border-left-style:solid;
-  border-left-width:1px;
-  border-right-color:#CCCCCC;
-  border-right-style:solid;
-  border-right-width:1px;
-  border-top-color:#CCCCCC;
-  border-top-style:solid;
-  border-top-width:1px;
-  color:#5C5C5C;
-  padding-bottom:2px;
-  padding-left:2px;
-  padding-right:2px;
-  padding-top:2px;
-  text-align:center;
-  width:20px;
+    background: none repeat scroll 0 0 white;
+    border: 1px solid #CCCCCC;
+    color: #5C5C5C;
+    padding: 2px;
+    text-align: center;
+    width: 20px;
 }
 .ppn-timing span.time {
-  color:#5C5C5C;
-  font-weight:bold;
-  margin-left:0;
+    color: #5C5C5C;
+    font-weight: bold;
+    margin-left: 0;
 }
 .ppn-timing span.all_day {
-  color:#135A8D;
-  font-weight:bold;
-  margin-left:0;
+    color: #135A8D;
+    font-weight: bold;
+    margin-left: 0;
 }
 .ppn-timing .set-reminder {
-  color:#5C5C5C;
-  font-weight:bold;
+    color: #5C5C5C;
+    font-weight: bold;
 }
 .ppn-timing .alerts {
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:#F2EFE6;
-  background-image:initial;
-  background-origin:initial;
-  background-position:initial initial;
-  background-repeat:initial initial;
-  border-bottom-color:#DCD5C3;
-  border-bottom-style:solid;
-  border-bottom-width:1px;
-  border-left-color:#DCD5C3;
-  border-left-style:solid;
-  border-left-width:1px;
-  border-right-color:#DCD5C3;
-  border-right-style:solid;
-  border-right-width:1px;
-  border-top-color:#DCD5C3;
-  border-top-style:solid;
-  border-top-width:1px;
-  padding-bottom:2px;
-  padding-left:5px;
-  padding-right:5px;
-  padding-top:5px;
+    background: none repeat scroll 0 0 #F2EFE6;
+    border: 1px solid #DCD5C3;
+    padding: 5px 5px 2px;
 }
 .ppn-timing .reminder {
-  border-bottom-color:#DCD5C3;
-  border-bottom-style:solid;
-  border-bottom-width:1px;
-  height:28px;
-  padding-bottom:3px;
-  padding-left:0;
-  padding-right:0;
-  padding-top:0;
+    border-bottom: 1px solid #DCD5C3;
+    height: 28px;
+    padding: 0 0 3px;
 }
 .ppn-timing .communication-channels {
-  height:22px;
-  margin-top:9px;
+    height: 22px;
+    margin-top: 9px;
 }
 .ppn-timing #input_repetition {
-  background-color:#FFFFFF;
-  border-bottom-color:#DCD5C1;
-  border-bottom-left-radius:3px 3px;
-  border-bottom-right-radius:3px 3px;
-  border-bottom-style:solid;
-  border-bottom-width:1px;
-  border-left-color:#DCD5C1;
-  border-left-style:solid;
-  border-left-width:1px;
-  border-right-color:#DCD5C1;
-  border-right-style:solid;
-  border-right-width:1px;
-  border-top-color:#DCD5C1;
-  border-top-left-radius:3px 3px;
-  border-top-right-radius:3px 3px;
-  border-top-style:solid;
-  border-top-width:1px;
-  color:#000000;
-  float:right;
-  font-weight:bold;
-  margin-top:4px;
-  padding-bottom:3px;
-  padding-left:7px;
-  padding-right:2px;
-  padding-top:3px;
-  width:121px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    background-color: #FFFFFF;
+    border: 1px solid #DCD5C1;
+    color: #000000;
+    float: right;
+    font-weight: bold;
+    margin-top: 4px;
+    padding: 3px 2px 3px 7px;
+    width: 121px;
 }
 .ppn-timing .btn_blue {
-  display:block;
-  margin-bottom:3px;
-  margin-left:auto;
-  margin-right:auto;
-  margin-top:5px;
-  width:324px;
+    display: block;
+    margin: 5px auto 3px;
+    width: 324px;
 }
 #editable_repetition {
-  float:right;
+    float: right;
 }
 #uneditable_repetition {
-  float:right;
+    float: right;
 }
 #loaders {
-  float:left;
-  width:30px;
+    float: left;
+    width: 30px;
 }
 #text_repetition {
-  color:#5C5C5C;
-  cursor:pointer;
-  float:right;
-  font-weight:bold;
-  margin-top:6px;
-  padding-bottom:3px;
-  padding-left:7px;
-  padding-right:2px;
-  padding-top:3px;
-  width:123px;
+    color: #5C5C5C;
+    cursor: pointer;
+    float: right;
+    font-weight: bold;
+    margin-top: 6px;
+    padding: 3px 2px 3px 7px;
+    width: 123px;
 }
 div.autocomplete {
-  -webkit-box-shadow:#888888 1px 1px 3px;
-  background-color:#FFFFFF;
-  border-bottom-color:#DCD5C1;
-  border-bottom-style:solid;
-  border-bottom-width:1px;
-  border-left-color:#DCD5C1;
-  border-left-style:solid;
-  border-left-width:1px;
-  border-right-color:#DCD5C1;
-  border-right-style:solid;
-  border-right-width:1px;
-  border-top-color:#DCD5C1;
-  border-top-style:solid;
-  border-top-width:1px;
-  color:#333333;
-  margin-bottom:0;
-  margin-left:0;
-  margin-right:0;
-  margin-top:0;
-  padding-bottom:3px;
-  padding-left:8px;
-  padding-right:8px;
-  padding-top:3px;
-  position:absolute;
-  width:250px;
+    -moz-box-shadow: 1px 1px 3px #888888;
+    background-color: #FFFFFF;
+    border: 1px solid #DCD5C1;
+    color: #333333;
+    margin: 0;
+    padding: 3px 8px;
+    position: absolute;
+    width: 250px;
 }
 div.autocomplete ul li.selected {
-  background-color:#84BBE8;
+    background-color: #84BBE8;
 }
 div.autocomplete ul {
-  margin-bottom:0;
-  margin-left:0;
-  margin-right:0;
-  margin-top:0;
-  padding-bottom:0;
-  padding-left:0;
-  padding-right:0;
-  padding-top:0;
+    margin: 0;
+    padding: 0;
 }
 div.autocomplete ul li {
-  cursor:pointer;
-  display:block;
-  list-style-type:none;
-  margin-bottom:0;
-  margin-left:0;
-  margin-right:0;
-  margin-top:0;
-  padding-bottom:0;
-  padding-left:0;
-  padding-right:0;
-  padding-top:0;
+    cursor: pointer;
+    display: block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 #auto_complete_repetition li {
-  margin-bottom:0;
-  margin-left:0;
-  margin-right:0;
-  margin-top:0;
-  padding-bottom:0;
-  padding-left:0;
-  padding-right:0;
-  padding-top:0;
+    margin: 0;
+    padding: 0;
 }
 .ppn-timing #loader_repetition {
-  display:block;
-  float:right;
-  padding-right:3px;
-  padding-top:7px;
+    display: block;
+    float: right;
+    padding-right: 3px;
+    padding-top: 7px;
 }
 #alert_repetition {
-  float:right;
-  margin-right:3px;
-  margin-top:8px;
+    float: right;
+    margin-right: 3px;
+    margin-top: 8px;
 }
 #cancel_repetition {
-  background-attachment:scroll;
-  background-clip:initial;
-  background-color:transparent;
-  background-image:url(https://www.producteev.com/static/images/icons.png);
-  background-origin:initial;
-  background-position:0 -519px;
-  background-repeat:no-repeat no-repeat;
-  cursor:pointer;
-  float:right;
-  height:20px;
-  margin-left:-1px;
-  margin-top:4px;
-  width:20px;
+    background: url("../../images/icons.png") no-repeat scroll 0 -519px transparent;
+    cursor: pointer;
+    float: right;
+    height: 20px;
+    margin-left: -1px;
+    margin-top: 4px;
+    width: 20px;
 }
 .ppn-timing .reminder label {
-  color:#8C7537;
-  float:left;
-  font-family:Georgia;
-  font-size:14px;
-  font-style:italic;
-  height:28px;
-  line-height:28px;
+    color: #8C7537;
+    float: left;
+    font-family: Georgia;
+    font-size: 14px;
+    font-style: italic;
+    height: 28px;
+    line-height: 28px;
 }
 .ppn-timing .communication-channels label {
-  color:#8C7537;
-  float:left;
-  font-family:Georgia;
-  font-size:14px;
-  font-style:italic;
-  height:22px;
-  line-height:22px;
+    color: #8C7537;
+    float: left;
+    font-family: Georgia;
+    font-size: 14px;
+    font-style: italic;
+    height: 22px;
+    line-height: 22px;
 }
 .ppn-timing .reminder select {
-  float:right;
-  font-weight:bold;
-  padding-bottom:2px;
-  padding-left:2px;
-  padding-right:2px;
-  padding-top:2px;
-  width:153px;
+    float: right;
+    font-weight: bold;
+    padding: 2px;
+    width: 153px;
 }
 .ppn-timing .channels .term {
-  color:#718D9E;
-  float:left;
-  font-family:Georgia;
-  font-size:11px;
-  font-style:italic;
-  margin-bottom:0;
-  margin-left:0;
-  margin-right:0;
-  margin-top:10px;
-  width:55px;
+    color: #718D9E;
+    float: left;
+    font-family: Georgia;
+    font-size: 11px;
+    font-style: italic;
+    margin: 10px 0 0;
+    width: 55px;
 }
 .ppn-timing .channels-list {
-  float:right;
-  margin-bottom:0;
-  margin-left:0;
-  margin-right:0;
-  margin-top:0;
-  width:100%;
+    float: right;
+    margin: 0;
+    width: 100%;
 }
 .ppn-timing .channels-list .channel {
-  clear:both;
-  display:block;
-  height:27px;
-  line-height:27px;
+    clear: both;
+    display: block;
+    height: 27px;
+    line-height: 27px;
 }
 .ppn-timing .channels-list .checkbox {
-  height:24px;
-  padding-bottom:0;
-  padding-left:2px;
-  padding-right:4px;
-  padding-top:3px;
+    height: 24px;
+    padding: 3px 4px 0 2px;
 }
 .ppn-timing .channels-list .name {
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:transparent;
-  background-image:url(https://www.producteev.com/static/images/icons.png);
-  background-origin:initial;
-  background-position:0 0;
-  background-repeat:no-repeat no-repeat;
-  color:#5C5C5C;
-  font-weight:bold;
-  padding-bottom:0;
-  padding-left:22px;
-  padding-right:0;
-  padding-top:0;
+    background: url("../../images/icons.png") no-repeat scroll 0 0 transparent;
+    color: #5C5C5C;
+    font-weight: bold;
+    padding: 0 0 0 22px;
 }
 .ppn-timing .channels-list .email {
-  background-position:0 -556px;
+    background-position: 0 -556px;
 }
 .ppn-timing .channels-list .mobile {
-  background-position:0 -596px;
+    background-position: 0 -596px;
 }
 .ppn-timing .channels-list .im {
-  background-position:0 -637px;
+    background-position: 0 -637px;
 }
 .ppn-timing .channels-list .gtalk {
-  background-position:0 -1234px;
+    background-position: 0 -1234px;
 }
 .ppn-timing .channels-list .aim {
-  background-position:0 -996px;
+    background-position: 0 -996px;
 }
 .ppn-timing .channels-list .wlm {
-  background-position:0 -1077px;
+    background-position: 0 -1077px;
 }
 .ppn-timing .channels-list .yahoo {
-  background-position:0 -1116px;
+    background-position: 0 -1116px;
 }
 .ppn-timing .channels-list .icq {
-  background-position:0 -1037px;
+    background-position: 0 -1037px;
 }
 .ppn-timing .channels-list .twitter {
-  background-position:0 -1155px;
+    background-position: 0 -1155px;
 }
 .ppn-timing .channels-list .last {
-  border-bottom-color:initial;
-  border-bottom-style:none;
-  border-bottom-width:initial;
+    border-bottom: medium none;
 }
 .ppn-timing .add-channel {
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:transparent;
-  background-image:url(https://www.producteev.com/static/images/icons.png);
-  background-origin:initial;
-  background-position:0 -159px;
-  background-repeat:no-repeat no-repeat;
-  color:#718D9E;
-  float:right;
-  font-family:Georgia;
-  font-size:11px;
-  font-style:italic;
-  height:20px;
-  line-height:20px;
-  padding-bottom:0;
-  padding-left:20px;
-  padding-right:0;
-  padding-top:0;
+    background: url("../../images/icons.png") no-repeat scroll 0 -159px transparent;
+    color: #718D9E;
+    float: right;
+    font-family: Georgia;
+    font-size: 11px;
+    font-style: italic;
+    height: 20px;
+    line-height: 20px;
+    padding: 0 0 0 20px;
 }
 .ppn-timing .channels-list input.didnt-start {
-  border-bottom-style:none;
-  border-color:initial;
-  border-left-style:none;
-  border-right-style:none;
-  border-top-style:none;
-  border-width:initial;
-  color:#7A8087;
-  padding-bottom:2px;
-  padding-left:2px;
-  padding-right:2px;
-  padding-top:2px;
-  width:240px;
+    border: medium none;
+    color: #7A8087;
+    padding: 2px;
+    width: 240px;
 }
 .ppn-timing .channels-list input.typing {
-  border-bottom-style:none;
-  border-color:initial;
-  border-left-style:none;
-  border-right-style:none;
-  border-top-style:none;
-  border-width:initial;
-  color:#5C5C5C;
-  padding-bottom:2px;
-  padding-left:2px;
-  padding-right:2px;
-  padding-top:2px;
-  width:240px;
+    border: medium none;
+    color: #5C5C5C;
+    padding: 2px;
+    width: 240px;
 }
 .class-to-delete-1 {
-  top:568px;
+    top: 568px;
 }
 .ppn-assign .current-assign a, .ppn-assign .collaborators-list .selected .name, .ppn-timing .channels-list .selected .name {
-  color:#545454;
+    color: #545454;
 }
 .ppn-assign .collaborators-list li, .ppn-timing .channels-list li {
-  list-style-image:initial;
-  list-style-position:initial;
-  list-style-type:none;
+    list-style: none outside none;
 }
 .ppn-assign .collaborators-list li.user {
-  border-bottom-color:#E6E6E6;
-  border-bottom-style:solid;
-  border-bottom-width:1px;
-  color:#333333;
-  height:27px;
-  line-height:27px;
-  margin-left:5px;
+    border-bottom: 1px solid #E6E6E6;
+    color: #333333;
+    height: 27px;
+    line-height: 27px;
+    margin-left: 5px;
 }
 .ppn-assign .collaborators-list li.user label {
-  height:10px;
-  margin-left:5px;
-  width:100%;
+    height: 10px;
+    margin-left: 5px;
+    width: 100%;
 }
 .ppn-assign .collaborators-list .collaborator span, .ppn-timing .channels-list .channel span {
-  display:block;
-  float:left;
-  max-width:250px;
-  overflow-x:hidden;
-  overflow-y:hidden;
+    display: block;
+    float: left;
+    max-width: 250px;
+    overflow: hidden;
 }
 .ppn-assign .collaborators-list .collaborator span img {
-  height:16px;
-  width:16px;
+    height: 16px;
+    width: 16px;
 }
 .pop-in a.add {
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:transparent;
-  background-image:url(https://www.producteev.com/static/images/icons.png);
-  background-origin:initial;
-  background-position:0 -163px;
-  background-repeat:no-repeat no-repeat;
-  color:#718D9E;
-  font-family:Georgia;
-  font-size:11px;
-  font-style:italic;
-  margin-left:0;
-  padding-left:18px;
+    background: url("../../images/icons.png") no-repeat scroll 0 -163px transparent;
+    color: #718D9E;
+    font-family: Georgia;
+    font-size: 11px;
+    font-style: italic;
+    margin-left: 0;
+    padding-left: 18px;
 }
 .pop-in .menu-new-label {
-  height:30px;
-  line-height:30px;
-  padding-left:5px;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 5px;
 }
 .pop-in.tasklist-labels ul {
-  max-height:150px;
-  overflow-x:hidden;
-  overflow-y:auto;
+    max-height: 150px;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 .tasklist-labels .btn_blue {
-  display:block;
-  margin-bottom:0;
-  margin-left:auto;
-  margin-right:auto;
-  margin-top:5px;
-  width:244px;
+    display: block;
+    margin: 5px auto 0;
+    width: 244px;
 }
 .ppn-more {
-  border-bottom-color:#9F9F9F;
-  border-left-color:#9F9F9F;
-  border-right-color:#9F9F9F;
-  border-top-color:#9F9F9F;
-  left:9px;
-  top:367px;
-  width:180px;
+    border-color: #9F9F9F;
+    left: 9px;
+    top: 367px;
+    width: 180px;
 }
 .pop-in.invite ul.collaborators-list {
-  height:200px;
-  max-height:200px;
-  padding-left:12px;
+    height: 200px;
+    max-height: 200px;
+    padding-left: 12px;
 }
 .pop-in.invite .zones {
-  padding-left:3px;
+    padding-left: 3px;
 }
 .pop-in.invite .input_email {
-  border-bottom-style:none;
-  border-color:initial;
-  border-left-style:none;
-  border-right-style:none;
-  border-top-style:none;
-  border-width:initial;
-  margin-left:0;
+    border: medium none;
+    margin-left: 0;
 }
 .pop-in.invite .btn-invite span {
-  text-align:center;
-  width:231px;
+    text-align: center;
+    width: 231px;
 }
 .input-border {
-  border-bottom-color:#CCCCCC;
-  border-bottom-style:solid;
-  border-bottom-width:1px;
-  border-left-color:#CCCCCC;
-  border-left-style:solid;
-  border-left-width:1px;
-  border-right-color:#CCCCCC;
-  border-right-style:solid;
-  border-right-width:1px;
-  border-top-color:#CCCCCC;
-  border-top-style:solid;
-  border-top-width:1px;
-  margin-left:9px;
+    border: 1px solid #CCCCCC;
+    margin-left: 9px;
 }
 #popin_add_label_label_title {
-  border-bottom-style:none;
-  border-color:initial;
-  border-left-style:none;
-  border-right-style:none;
-  border-top-style:none;
-  border-width:initial;
+    border: medium none;
 }
 #task_create_popin_add_label_label_title {
-  border-bottom-style:none;
-  border-color:initial;
-  border-left-style:none;
-  border-right-style:none;
-  border-top-style:none;
-  border-width:initial;
+    border: medium none;
 }
 #popin_add_label_bulk_label_title {
-  border-bottom-style:none;
-  border-color:initial;
-  border-left-style:none;
-  border-right-style:none;
-  border-top-style:none;
-  border-width:initial;
+    border: medium none;
 }
 #form_invite_single {
-  margin-left:10px;
+    margin-left: 10px;
 }
 #set-time {
-  line-height:33px;
-  margin-right:3px;
-  text-align:right;
+    line-height: 33px;
+    margin-right: 3px;
+    text-align: right;
 }
 #popin_set_responsible {
-  font-size:12px;
+    font-size: 12px;
 }
 #popin_add_label_color {
-  margin-left:5px;
-  margin-right:5px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 #task_create_popin_add_label_color {
-  margin-left:5px;
-  margin-right:5px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 #popin_add_label_bulk_color {
-  margin-left:5px;
-  margin-right:5px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 #popin_label_colors_colors .color {
-  cursor:pointer;
-  float:left;
-  height:16px;
-  margin-bottom:4px;
-  margin-left:4px;
-  margin-right:4px;
-  margin-top:4px;
-  width:16px;
+    cursor: pointer;
+    float: left;
+    height: 16px;
+    margin: 4px;
+    width: 16px;
 }
 #popin_label_colors_colors .color:hover {
-  border-bottom-color:#333333;
-  border-bottom-style:solid;
-  border-bottom-width:2px;
-  border-left-color:#333333;
-  border-left-style:solid;
-  border-left-width:2px;
-  border-right-color:#333333;
-  border-right-style:solid;
-  border-right-width:2px;
-  border-top-color:#333333;
-  border-top-style:solid;
-  border-top-width:2px;
-  margin-bottom:2px;
-  margin-left:2px;
-  margin-right:2px;
-  margin-top:2px;
+    border: 2px solid #333333;
+    margin: 2px;
 }
 #popin_add_label .btn-blue span {
-  text-align:center;
-  width:236px;
+    text-align: center;
+    width: 236px;
 }
 #popin_add_label .btn-blue {
-  margin-top:4px;
+    margin-top: 4px;
 }
 #popin_set_private .btn-blue span {
-  text-align:center;
-  width:236px;
+    text-align: center;
+    width: 236px;
 }
 .popin_sortby {
-  -webkit-box-shadow:#555555 0 0 3px;
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:#FFFFFF;
-  background-image:initial;
-  background-origin:initial;
-  background-position:initial initial;
-  background-repeat:initial initial;
-  border-bottom-color:#E6E6E6;
-  border-bottom-style:solid;
-  border-bottom-width:1px;
-  border-left-color:#E6E6E6;
-  border-left-style:solid;
-  border-left-width:1px;
-  border-right-color:#E6E6E6;
-  border-right-style:solid;
-  border-right-width:1px;
-  border-top-color:#E6E6E6;
-  border-top-style:solid;
-  border-top-width:1px;
-  padding-bottom:0;
-  padding-left:0;
-  padding-right:0;
-  padding-top:0;
-  width:100%;
-  z-index:9999999;
+    -moz-box-shadow: 0 0 3px #555555;
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #E6E6E6;
+    padding: 0;
+    width: 100%;
+    z-index: 9999999;
 }
 .popin_sortby ul {
-  margin-bottom:7px;
-  margin-left:7px;
-  margin-right:7px;
-  margin-top:7px;
-  padding-bottom:0;
-  padding-left:7px;
-  padding-right:7px;
-  padding-top:0;
+    margin: 7px;
+    padding: 0 7px;
 }
 .popin_sortby li {
-  border-bottom-color:#EEEEEE;
-  border-bottom-style:solid;
-  border-bottom-width:1px;
-  color:#545454;
-  cursor:pointer;
-  font-size:11px;
-  font-weight:bold;
-  line-height:18px;
-  list-style-image:initial;
-  list-style-position:initial;
-  list-style-type:none;
-  margin-bottom:3px;
-  padding-bottom:3px;
+    border-bottom: 1px solid #EEEEEE;
+    color: #545454;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 18px;
+    list-style: none outside none;
+    margin-bottom: 3px;
+    padding-bottom: 3px;
 }
 .popin_sortby li:hover {
-  color:#4B728F;
-  text-decoration:underline;
+    color: #4B728F;
+    text-decoration: underline;
 }
 .popin_sortby .close {
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:transparent;
-  background-image:url(https://www.producteev.com/static/images/icons.png);
-  background-origin:initial;
-  background-position:-6px -525px;
-  background-repeat:no-repeat no-repeat;
-  cursor:pointer;
-  float:right;
-  height:9px;
-  margin-right:7px;
-  width:9px;
+    background: url("../../images/icons.png") no-repeat scroll -6px -525px transparent;
+    cursor: pointer;
+    float: right;
+    height: 9px;
+    margin-right: 7px;
+    width: 9px;
 }
 #popin_help_filter_pop {
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:#82A5C2;
-  background-image:initial;
-  background-origin:initial;
-  background-position:initial initial;
-  background-repeat:initial initial;
-  border-bottom-left-radius:5px 5px;
-  border-bottom-right-radius:5px 5px;
-  border-top-left-radius:5px 5px;
-  border-top-right-radius:5px 5px;
-  left:50%;
-  margin-left:-362px;
-  padding-bottom:4px;
-  padding-left:4px;
-  padding-right:4px;
-  padding-top:4px;
-  position:absolute;
-  top:53px;
-  width:725px;
-  z-index:101;
+    -moz-border-radius: 5px 5px 5px 5px;
+    background: none repeat scroll 0 0 #82A5C2;
+    left: 50%;
+    margin-left: -362px;
+    padding: 4px;
+    position: absolute;
+    top: 53px;
+    width: 725px;
+    z-index: 101;
 }
 .popin_help_filter_empty {
-  margin-left:auto;
-  margin-right:auto;
-  position:relative;
-  width:725px;
-  z-index:1;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    width: 725px;
+    z-index: 1;
 }
 .popin_help_filter_empty .container1 {
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:initial;
-  background-image:url(https://www.producteev.com/static/images/tips-middle.png);
-  background-origin:initial;
-  background-position:0 0;
-  background-repeat:no-repeat repeat;
+    background: url("../../images/tips-middle.png") repeat-y scroll 0 0 transparent;
 }
 .popin_help_filter_empty .container2 {
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:initial;
-  background-image:url(https://www.producteev.com/static/images/tips-top.png);
-  background-origin:initial;
-  background-position:0 0;
-  background-repeat:no-repeat no-repeat;
+    background: url("../../images/tips-top.png") no-repeat scroll 0 0 transparent;
 }
 .popin_help_filter_empty .container2 .close {
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:initial;
-  background-image:url(https://www.producteev.com/static/images/tips-close.png);
-  background-origin:initial;
-  background-position:0 0;
-  background-repeat:no-repeat no-repeat;
-  cursor:pointer;
-  display:block;
-  float:right;
-  height:13px;
-  margin-right:20px;
-  margin-top:15px;
-  width:13px;
+    background: url("../../images/tips-close.png") no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+    display: block;
+    float: right;
+    height: 13px;
+    margin-right: 20px;
+    margin-top: 15px;
+    width: 13px;
 }
 .popin_help_filter_empty .container3 {
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:initial;
-  background-image:url(https://www.producteev.com/static/images/tips-bottom.png);
-  background-origin:initial;
-  background-position:0 100%;
-  background-repeat:no-repeat no-repeat;
-  padding-bottom:40px;
+    background: url("../../images/tips-bottom.png") no-repeat scroll 0 bottom transparent;
+    padding-bottom: 40px;
 }
 .popin_help_filter_empty .container1 .content a {
-  color:#000000;
-  font-weight:bold;
-  text-decoration:underline;
+    color: #000000;
+    font-weight: bold;
+    text-decoration: underline;
 }
 .popin_help_filter_empty .container1 .content {
-  color:#333333;
-  font-family:arial;
-  font-size:12px;
-  line-height:18px;
-  margin-left:auto;
-  margin-right:auto;
-  padding-bottom:10px;
-  padding-left:0;
-  padding-right:0;
-  padding-top:10px;
-  width:570px;
+    color: #333333;
+    font-family: "arial";
+    font-size: 12px;
+    line-height: 18px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 0;
+    width: 570px;
 }
 .popin_help_filter_empty .content .title-tips {
-  border-bottom-color:#CCCCCC;
-  border-bottom-style:dotted;
-  border-bottom-width:1px;
-  color:#8C7537;
-  font-family:Georgia;
-  font-size:20px;
-  padding-bottom:20px;
-  padding-left:20px;
-  padding-right:20px;
-  padding-top:20px;
-  text-align:center;
+    border-bottom: 1px dotted #CCCCCC;
+    color: #8C7537;
+    font-family: "Georgia";
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
 }
 .popin_help_filter_empty .content .tasks-frame {
-  border-bottom-color:#CCCCCC;
-  border-bottom-style:solid;
-  border-bottom-width:1px;
-  padding-bottom:35px;
-  padding-left:0;
-  padding-right:0;
-  padding-top:20px;
+    border-bottom: 1px solid #CCCCCC;
+    padding: 20px 0 35px;
 }
 .popin_help_filter_empty .content .tasks-frame ul li {
-  line-height:12px;
-  list-style-image:initial;
-  list-style-position:initial;
-  list-style-type:decimal;
-  margin-bottom:5px;
+    line-height: 12px;
+    list-style: decimal outside none;
+    margin-bottom: 5px;
 }
 .popin_help_filter_empty .content .natural-language {
-  border-bottom-color:#CCCCCC;
-  border-bottom-style:solid;
-  border-bottom-width:1px;
-  padding-bottom:20px;
-  padding-left:0;
-  padding-right:0;
-  padding-top:20px;
+    border-bottom: 1px solid #CCCCCC;
+    padding: 20px 0;
 }
 .popin_help_filter_empty .content .natural-language ul {
-  padding-left:20px;
+    padding-left: 20px;
 }
 .popin_help_filter_empty .content .natural-language ul li {
-  line-height:12px;
-  list-style-image:initial;
-  list-style-position:initial;
-  list-style-type:decimal;
-  margin-bottom:5px;
-  margin-left:283px;
+    line-height: 12px;
+    list-style: decimal outside none;
+    margin-bottom: 5px;
+    margin-left: 283px;
 }
 .popin_help_filter_empty .content .support {
-  padding-bottom:20px;
-  padding-left:0;
-  padding-right:0;
-  padding-top:20px;
+    padding: 20px 0;
 }
 .popin_help_filter_empty .content .support ul {
-  padding-top:10px;
+    padding-top: 10px;
 }
 .popin_help_filter_empty .content .support ul li {
-  line-height:12px;
-  list-style-image:initial;
-  list-style-position:initial;
-  list-style-type:disc;
-  margin-bottom:5px;
-  margin-left:298px;
+    line-height: 12px;
+    list-style: disc outside none;
+    margin-bottom: 5px;
+    margin-left: 298px;
 }
 .popin_help_filter_empty .content .screencast {
-  border-bottom-color:#CCCCCC;
-  border-bottom-style:solid;
-  border-bottom-width:1px;
-  padding-bottom:65px;
-  padding-left:0;
-  padding-right:0;
-  padding-top:20px;
+    border-bottom: 1px solid #CCCCCC;
+    padding: 20px 0 65px;
 }
 .popin_help_filter_empty .content a.link {
-  color:#025998;
-  display:block;
-  margin-top:10px;
-  padding-right:20px;
-  text-align:right;
-  text-decoration:none;
+    color: #025998;
+    display: block;
+    margin-top: 10px;
+    padding-right: 20px;
+    text-align: right;
+    text-decoration: none;
 }
 .popin_help_filter_empty .content a.link img {
-  float:right;
-  margin-left:6px;
-  margin-top:4px;
+    float: right;
+    margin-left: 6px;
+    margin-top: 4px;
 }
 .popin_help_filter_empty .content a.link:hover {
-  text-decoration:underline;
+    text-decoration: underline;
 }
 .popin_help_filter_empty .content .title {
-  color:#06386F;
-  font-family:Georgia;
-  font-size:14px;
-  font-weight:bold;
-  margin-bottom:20px;
+    color: #06386F;
+    font-family: "Georgia";
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 .popin_help_filter_empty .content .illu-left {
-  float:left;
-  height:177px;
-  margin-right:40px;
-  width:263px;
+    float: left;
+    height: 177px;
+    margin-right: 40px;
+    width: 263px;
 }
 .popin_help_filter_empty .content .illu-right {
-  float:right;
-  height:177px;
-  margin-left:40px;
-  width:263px;
+    float: right;
+    height: 177px;
+    margin-left: 40px;
+    width: 263px;
 }
 #popin_bulk {
-  -webkit-box-shadow:#555555 0 0 5px;
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:#FFFFFF;
-  background-image:url(https://www.producteev.com/static/images/popin-bulk-bg.png);
-  background-origin:initial;
-  background-position:0 0;
-  background-repeat:repeat no-repeat;
-  border-bottom-color:#CCCCCC;
-  border-bottom-style:solid;
-  border-bottom-width:1px;
-  border-left-color:#CCCCCC;
-  border-left-style:solid;
-  border-left-width:1px;
-  border-right-color:#CCCCCC;
-  border-right-style:solid;
-  border-right-width:1px;
-  border-top-color:#CCCCCC;
-  border-top-style:solid;
-  border-top-width:1px;
-  margin-left:70px;
-  padding-bottom:2px;
-  padding-left:2px;
-  padding-right:2px;
-  padding-top:3px;
-  position:absolute;
-  width:130px;
-  z-index:10;
+    -moz-box-shadow: 0 0 5px #555555;
+    background: url("../../images/popin-bulk-bg.png") repeat-x scroll 0 0 #FFFFFF;
+    border: 1px solid #CCCCCC;
+    margin-left: 70px;
+    padding: 3px 2px 2px;
+    position: absolute;
+    width: 130px;
+    z-index: 10;
 }
 #popin_bulk .title-bulk {
-  color:#335475;
-  font-size:11px;
-  font-weight:bold;
-  margin-left:5px;
-  text-transform:uppercase;
+    color: #335475;
+    font-size: 11px;
+    font-weight: bold;
+    margin-left: 5px;
+    text-transform: uppercase;
 }
 #popin_bulk .bottom {
-  height:2px;
-  width:130px;
+    height: 2px;
+    width: 130px;
 }
 #popin_bulk ul {
-  line-height:12px;
-  margin-bottom:0;
-  margin-left:0;
-  margin-right:0;
-  margin-top:6px;
-  padding-bottom:0;
-  padding-left:0;
-  padding-right:0;
-  padding-top:0;
+    line-height: 12px;
+    margin: 6px 0 0;
+    padding: 0;
 }
 #popin_bulk ul li {
-  border-bottom-color:#EAEAEA;
-  border-bottom-style:solid;
-  border-bottom-width:1px;
-  list-style-image:initial;
-  list-style-position:initial;
-  list-style-type:none;
-  margin-bottom:0;
-  margin-left:0;
-  margin-right:0;
-  margin-top:0;
-  padding-bottom:5px;
-  padding-left:0;
-  padding-right:0;
-  padding-top:5px;
+    border-bottom: 1px solid #EAEAEA;
+    list-style: none outside none;
+    margin: 0;
+    padding: 5px 0;
 }
 #popin_bulk ul li.star {
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:initial;
-  background-image:url(https://www.producteev.com/static/images/bulk-star.png);
-  background-origin:initial;
-  background-position:10px 3px;
-  background-repeat:no-repeat no-repeat;
+    background: url("../../images/bulk-star.png") no-repeat scroll 10px 3px transparent;
 }
 #popin_bulk ul li.unstar {
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:initial;
-  background-image:url(https://www.producteev.com/static/images/bulk-unstar.png);
-  background-origin:initial;
-  background-position:10px 3px;
-  background-repeat:no-repeat no-repeat;
+    background: url("../../images/bulk-unstar.png") no-repeat scroll 10px 3px transparent;
 }
 #popin_bulk ul li.done {
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:initial;
-  background-image:url(https://www.producteev.com/static/images/bulk-done.png);
-  background-origin:initial;
-  background-position:10px 3px;
-  background-repeat:no-repeat no-repeat;
+    background: url("../../images/bulk-done.png") no-repeat scroll 10px 3px transparent;
 }
 #popin_bulk ul li.undone {
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:initial;
-  background-image:url(https://www.producteev.com/static/images/bulk-undone.png);
-  background-origin:initial;
-  background-position:10px 3px;
-  background-repeat:no-repeat no-repeat;
+    background: url("../../images/bulk-undone.png") no-repeat scroll 10px 3px transparent;
 }
 #popin_bulk ul li.assign {
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:initial;
-  background-image:url(https://www.producteev.com/static/images/bulk-user.png);
-  background-origin:initial;
-  background-position:10px 3px;
-  background-repeat:no-repeat no-repeat;
+    background: url("../../images/bulk-user.png") no-repeat scroll 10px 3px transparent;
 }
 #popin_bulk ul li.setlabel {
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:initial;
-  background-image:url(https://www.producteev.com/static/images/bulk-label.png);
-  background-origin:initial;
-  background-position:10px 3px;
-  background-repeat:no-repeat no-repeat;
+    background: url("../../images/bulk-label.png") no-repeat scroll 10px 3px transparent;
 }
 #popin_bulk ul li.delete {
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:initial;
-  background-image:url(https://www.producteev.com/static/images/bulk-delete.png);
-  background-origin:initial;
-  background-position:10px 3px;
-  background-repeat:no-repeat no-repeat;
+    background: url("../../images/bulk-delete.png") no-repeat scroll 10px 3px transparent;
 }
 #popin_bulk ul li.workspace {
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:initial;
-  background-image:url(https://www.producteev.com/static/images/bulk-workspace.png);
-  background-origin:initial;
-  background-position:10px 3px;
-  background-repeat:no-repeat no-repeat;
+    background: url("../../images/bulk-workspace.png") no-repeat scroll 10px 3px transparent;
 }
 #popin_bulk ul li.all {
-  text-align:center;
+    text-align: center;
 }
 #popin_bulk ul li.all .bulk-select {
-  color:#555555;
-  font-size:12px;
+    color: #555555;
+    font-size: 12px;
 }
 #popin_bulk ul li.all a {
-  color:#2A5DB0;
+    color: #2A5DB0;
 }
 #popin_bulk ul li a.none {
-  border-left-color:#999999;
-  border-left-style:solid;
-  border-left-width:1px;
-  padding-left:9px;
+    border-left: 1px solid #999999;
+    padding-left: 9px;
 }
 #popin_bulk ul li a.notnone {
-  padding-right:9px;
+    padding-right: 9px;
 }
 #popin_bulk div.cntr_all_none {
-  margin-top:5px;
+    margin-top: 5px;
 }
 #popin_bulk div.cntr_all_none a {
-  display:inline;
-  margin-left:0;
-  margin-right:0;
+    display: inline;
+    margin-left: 0;
+    margin-right: 0;
 }
 #popin_bulk div.ctnr_label {
-  float:left;
-  width:94px;
+    float: left;
+    width: 94px;
 }
 #popin_bulk ul li a {
-  color:#555555;
-  display:block;
-  font-size:12px;
-  margin-left:35px;
-  margin-right:6px;
+    color: #555555;
+    display: block;
+    font-size: 12px;
+    margin-left: 35px;
+    margin-right: 6px;
 }
 #popin_bulk ul li a:hover {
-  text-decoration:underline;
+    text-decoration: underline;
 }
 #popin_timing_update_calendar {
-  color:#5C5C5C;
-  font-weight:bold;
-  margin-top:4px;
+    color: #5C5C5C;
+    font-weight: bold;
+    margin-top: 4px;
 }
 #popin_timing_sync_calendar {
-  color:#5C5C5C;
-  font-weight:bold;
-  line-height:24px;
-  margin-top:4px;
+    color: #5C5C5C;
+    font-weight: bold;
+    line-height: 24px;
+    margin-top: 4px;
 }
 #popin_timing_gcalendar_link {
-  display:block;
-  line-height:28px;
+    display: block;
+    line-height: 28px;
 }
 .pop-in .quick-save {
-  height:20px;
-  line-height:normal;
-  margin-right:3px;
+    height: 20px;
+    line-height: normal;
+    margin-right: 3px;
 }
 .pop-in .quick-save a {
-  color:#7A8087;
-  float:right;
-  text-decoration:underline;
+    color: #7A8087;
+    float: right;
+    text-decoration: underline;
 }
 #popin_set_responsible .btn-blue span {
-  text-align:center;
-  width:236px;
+    text-align: center;
+    width: 236px;
 }
 #add_label_input_popin {
-  -webkit-box-shadow:rgba(139, 118, 49, 0.398438) 0 0 6px;
-  background-color:#FFFFFF;
-  border-bottom-color:rgba(139, 118, 49, 0.597656) !important;
-  border-bottom-style:solid !important;
-  border-bottom-width:1px !important;
-  border-color:initial;
-  border-left-color:rgba(139, 118, 49, 0.597656) !important;
-  border-left-style:solid !important;
-  border-left-width:1px !important;
-  border-right-color:rgba(139, 118, 49, 0.597656) !important;
-  border-right-style:solid !important;
-  border-right-width:1px !important;
-  border-top-color:rgba(139, 118, 49, 0.597656) !important;
-  border-top-style:solid !important;
-  border-top-width:1px !important;
-  color:#545454;
-  float:left;
-  font-family:Arial, Helvetica, sans-serif;
-  font-size:14px;
-  margin-bottom:6px;
-  margin-left:0;
-  margin-right:0;
-  margin-top:3px;
-  padding-bottom:2px;
-  padding-left:2px;
-  padding-right:2px;
-  padding-top:2px;
+    -moz-box-shadow: 0 0 6px rgba(139, 118, 49, 0.4);
+    background-color: #FFFFFF;
+    border: 1px solid rgba(139, 118, 49, 0.6) !important;
+    color: #545454;
+    float: left;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    margin: 3px 0 6px;
+    padding: 2px;
 }
 #popin_add_label .counter {
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:transparent;
-  background-image:url(https://www.producteev.com/static/images/sidebar-counter.png);
-  background-origin:initial;
-  background-position:0 0;
-  background-repeat:no-repeat no-repeat;
-  color:#768395;
-  cursor:pointer;
-  float:right;
-  font-size:11px;
-  font-weight:bold;
-  height:16px;
-  line-height:16px;
-  margin-right:5px;
-  margin-top:6px;
-  text-align:center;
-  width:25px;
+    background: url("../../images/sidebar-counter.png") no-repeat scroll 0 0 transparent;
+    color: #768395;
+    cursor: pointer;
+    float: right;
+    font-size: 11px;
+    font-weight: bold;
+    height: 16px;
+    line-height: 16px;
+    margin-right: 5px;
+    margin-top: 6px;
+    text-align: center;
+    width: 25px;
 }
 #popin_add_label .cancel {
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:initial;
-  background-image:none;
-  background-origin:initial;
-  background-position:initial initial;
-  background-repeat:initial initial;
-  color:#718D9E;
-  float:left;
-  font-family:Georgia;
-  font-size:11px;
-  font-style:italic;
-  margin-right:5px;
+    background: none repeat scroll 0 0 transparent;
+    color: #718D9E;
+    float: left;
+    font-family: Georgia;
+    font-size: 11px;
+    font-style: italic;
+    margin-right: 5px;
 }
 #popin_add_label .cancel:hover {
-  text-decoration:underline;
+    text-decoration: underline;
+}
+#popin_add_label .popin-notice {
+    padding: 3px;
 }
 .ppn-label-mgr {
-  width:129px;
+    width: 129px;
 }
 .ppn-label-mgr .item-label-mgr {
-  border-bottom-color:#EAEAEA;
-  border-bottom-style:solid;
-  border-bottom-width:1px;
-  color:#555555;
-  cursor:pointer;
-  line-height:20px;
-  margin-left:3px;
-  padding-bottom:1px;
-  padding-left:1px;
-  padding-right:1px;
-  padding-top:1px;
+    border-bottom: 1px solid #EAEAEA;
+    color: #555555;
+    cursor: pointer;
+    line-height: 20px;
+    margin-left: 3px;
+    padding: 1px;
 }
 .ppn-label-mgr #popin_label_colors_colors {
-  height:75px;
+    height: 75px;
 }
 .ppn-star {
-  height:30px;
-  width:192px;
+    height: 30px;
+    width: 192px;
 }
 #popin_star .star_ctnr {
-  float:left;
+    float: left;
 }
 #popin_star .star_ctnr .star {
-  background-image:url(https://www.producteev.com/static/images/taskslist/stars/stars.png);
-  cursor:pointer;
-  float:left;
-  height:28px;
-  width:32px;
+    background-image: url("../../images/taskslist/stars/stars.png");
+    cursor: pointer;
+    float: left;
+    height: 28px;
+    width: 32px;
 }
 .ppn-vote {
-  width:331px;
+    width: 331px;
 }
 .ppn-vote .inner.sc {
-  padding-top:8px;
+    padding-top: 8px;
 }
 .ppn-vote .vote-action {
-  height:20px;
-  margin-bottom:auto;
-  margin-left:auto;
-  margin-right:auto;
-  margin-top:auto;
-  width:120px;
+    height: 20px;
+    margin: auto;
+    width: 120px;
 }
 .ppn-vote .vote-action .star {
-  background-image:url(https://www.producteev.com/static/images/taskslist/stars/star-vote-null.png);
-  background-position:5px 0;
-  background-repeat:no-repeat no-repeat;
-  cursor:pointer;
-  float:left;
-  height:20px;
-  padding-left:5px;
-  width:20px;
+    background-image: url("../../images/taskslist/stars/star-vote-null.png");
+    background-position: 5px 0;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    float: left;
+    height: 20px;
+    padding-left: 5px;
+    width: 20px;
 }
 .ppn-vote .vote-action .star.starred {
-  background-image:url(https://www.producteev.com/static/images/taskslist/stars/star-vote-yellow.png);
+    background-image: url("../../images/taskslist/stars/star-vote-yellow.png");
 }
 .ppn-vote .vote-action .star.starred-over {
-  background-image:url(https://www.producteev.com/static/images/taskslist/stars/star-vote-yellow-brillant.png);
+    background-image: url("../../images/taskslist/stars/star-vote-yellow-brillant.png");
 }
 .ppn-vote .cancel-vote {
-  margin-top:5px;
-  text-align:center;
+    margin-top: 5px;
+    text-align: center;
 }
 .ppn-vote .cancel-vote a {
-  color:#999999;
-  cursor:pointer;
-  font-size:11px;
+    color: #999999;
+    cursor: pointer;
+    font-size: 11px;
 }
 .ppn-vote .cancel-vote a:hover {
-  text-decoration:underline;
+    text-decoration: underline;
 }
 .ppn-vote .vote-resume {
-  border-bottom-color:#EEEEEE;
-  border-bottom-style:solid;
-  border-bottom-width:1px;
-  border-left-color:initial;
-  border-left-style:none;
-  border-left-width:initial;
-  border-right-color:initial;
-  border-right-style:none;
-  border-right-width:initial;
-  border-top-color:#EEEEEE;
-  border-top-style:solid;
-  border-top-width:1px;
-  height:23px;
-  line-height:23px;
-  margin-bottom:8px;
-  margin-top:5px;
-  text-align:center;
+    border-color: #EEEEEE -moz-use-text-color;
+    border-style: solid none;
+    border-width: 1px medium;
+    height: 23px;
+    line-height: 23px;
+    margin-bottom: 8px;
+    margin-top: 5px;
+    text-align: center;
 }
 .ppn-vote .vote-resume .text {
-  color:#999999;
-  font-size:12px;
+    color: #999999;
+    font-size: 12px;
 }
 .ppn-vote .vote-resume .value {
-  color:#545454;
-  font-size:12px;
+    color: #545454;
+    font-size: 12px;
 }
 .ppn-vote .vote-resume .value.strong {
-  font-weight:bold;
+    font-weight: bold;
 }
 .ppn-vote .vote-action .star.first {
-  background-position:0 50%;
-  padding-bottom:0;
-  padding-left:0;
-  padding-right:0;
-  padding-top:0;
+    background-position: 0 50%;
+    padding: 0;
 }
 .ppn-vote .users-details {
-  margin-left:17px;
+    margin-left: 17px;
 }
 .ppn-vote .users-details .user {
-  height:20px;
-  line-height:20px;
-  margin-bottom:7px;
+    height: 20px;
+    line-height: 20px;
+    margin-bottom: 7px;
 }
 .ppn-vote .users-details .user .name {
-  color:#545454;
-  font-size:12px;
-  line-height:24px;
-  padding-bottom:10px;
-  padding-left:15px;
-  padding-right:0;
-  padding-top:10px;
+    color: #545454;
+    font-size: 12px;
+    line-height: 24px;
+    padding: 10px 0 10px 15px;
 }
 .ppn-vote .users-details .user .date {
-  color:#AAAAAA;
-  font-size:11px;
-  line-height:25px;
-  padding-bottom:10px;
-  padding-left:0;
-  padding-right:0;
-  padding-top:10px;
+    color: #AAAAAA;
+    font-size: 11px;
+    line-height: 25px;
+    padding: 10px 0;
 }
 .ppn-vote .users-details .user .stars .star-user {
-  background-image:url(https://www.producteev.com/static/images/taskslist/stars/star-vote-grey.png);
-  background-repeat:no-repeat no-repeat;
-  float:left;
-  height:20px;
-  margin-right:3px;
-  width:20px;
+    background-image: url("../../images/taskslist/stars/star-vote-grey.png");
+    background-repeat: no-repeat;
+    float: left;
+    height: 20px;
+    margin-right: 3px;
+    width: 20px;
 }
 .ppn-vote .users-details .user .stars.not-voted .star-user {
-  background-image:url(https://www.producteev.com/static/images/taskslist/stars/circle.png);
+    background-image: url("../../images/taskslist/stars/circle.png");
 }
 .ppn-vote .users-details .user .stars .star-user.starred {
-  background-image:url(https://www.producteev.com/static/images/taskslist/stars/star-vote-yellow.png);
+    background-image: url("../../images/taskslist/stars/star-vote-yellow.png");
 }
 #popin_note {
-  width:400px;
+    width: 400px;
 }
 #popin_note .ppn-assign {
-  width:auto;
+    width: auto;
 }
 #popin_note #task-notes {
-  margin-bottom:0;
-  margin-left:0;
-  margin-right:0;
-  margin-top:0;
-  max-height:200px;
-  overflow-y:scroll;
-  width:auto;
+    margin: 0;
+    max-height: 200px;
+    overflow-y: scroll;
+    width: auto;
 }
 #popin_note #task-notes .notes .note .note-content {
-  width:316px;
+    width: 316px;
 }
 #popin_note #create-note-input textarea {
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:transparent;
-  background-image:initial;
-  background-origin:initial;
-  background-position:initial initial;
-  background-repeat:initial initial;
-  border-bottom-style:none;
-  border-color:initial;
-  border-left-style:none;
-  border-right-style:none;
-  border-top-style:none;
-  border-width:initial;
-  color:#7F7F7F;
-  font-family:Georgia;
-  font-size:14px;
-  font-style:italic;
-  height:50px;
-  outline-color:initial;
-  outline-style:none;
-  outline-width:initial;
-  padding-bottom:5px;
-  padding-left:5px;
-  padding-right:5px;
-  padding-top:5px;
-  width:380px;
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    color: #7F7F7F;
+    font-family: Georgia;
+    font-size: 14px;
+    font-style: italic;
+    height: 50px;
+    outline: medium none;
+    padding: 5px;
+    width: 380px;
 }
 #popin_note #create-note {
-  border-bottom-style:none;
-  border-color:initial;
-  border-left-style:none;
-  border-right-style:none;
-  border-top-style:none;
-  border-width:initial;
-  margin-left:0;
-  padding-bottom:0;
-  padding-left:2px;
-  padding-right:2px;
-  padding-top:4px;
-  width:auto;
+    border: medium none;
+    margin-left: 0;
+    padding: 4px 2px 0;
+    width: auto;
 }
 #popin_note ul {
-  margin-bottom:0;
-  margin-left:0;
-  margin-right:0;
-  margin-top:0;
-  padding-bottom:0;
-  padding-left:0;
-  padding-right:0;
-  padding-top:0;
+    margin: 0;
+    padding: 0;
 }
 #popin_note ul li {
-  list-style-image:initial;
-  list-style-position:initial;
-  list-style-type:none;
-  margin-bottom:0;
-  margin-left:0;
-  margin-right:0;
-  margin-top:0;
+    list-style: none outside none;
+    margin: 0;
 }
 #popin_note ul li.attach {
-  height:30px;
-  width:200px;
+    height: 30px;
+    width: 200px;
 }
 #popin_note ul li.attach embed {
-  float:right;
-  margin-top:5px;
+    float: right;
+    margin-top: 5px;
 }
 #popin_note #popin_note_input {
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:#EEEEEE;
-  background-image:initial;
-  background-origin:initial;
-  background-position:initial initial;
-  background-repeat:initial initial;
-  border-bottom-color:#DDDDDD;
-  border-bottom-style:solid;
-  border-bottom-width:1px;
-  border-left-color:#DDDDDD;
-  border-left-style:solid;
-  border-left-width:1px;
-  border-right-color:#DDDDDD;
-  border-right-style:solid;
-  border-right-width:1px;
-  border-top-color:#DDDDDD;
-  border-top-style:solid;
-  border-top-width:1px;
-  color:#545454;
-  cursor:pointer;
+    background: none repeat scroll 0 0 #EEEEEE;
+    border: 1px solid #DDDDDD;
+    color: #545454;
+    cursor: pointer;
 }
 #popin_note #popin_note_input:hover {
-  border-bottom-color:#AAAAAA;
-  border-bottom-style:solid;
-  border-bottom-width:1px;
-  border-left-color:#AAAAAA;
-  border-left-style:solid;
-  border-left-width:1px;
-  border-right-color:#AAAAAA;
-  border-right-style:solid;
-  border-right-width:1px;
-  border-top-color:#AAAAAA;
-  border-top-style:solid;
-  border-top-width:1px;
+    border: 1px solid #AAAAAA;
 }
 .popin-send-message {
-  width:530px;
+    width: 530px;
 }
 .popin-send-message .collaborators-list {
-  max-height:100px;
-  overflow-y:auto;
-  padding-left:5%;
+    max-height: 100px;
+    overflow-y: auto;
+    padding-left: 5%;
 }
 .popin-send-message #form_contacts_message {
-  padding-top:10px;
+    padding-top: 10px;
 }
 .popin-send-message .collaborators-list .title {
-  font-weight:bold;
+    font-weight: bold;
 }
 .popin-send-message input.from:focus, .popin-send-message .message:focus, .popin-send-message input.subject:focus {
-  -webkit-box-shadow:rgba(139, 118, 49, 0.398438) 0 0 4px;
-  border-bottom-color:rgba(139, 118, 49, 0.597656);
-  border-bottom-style:solid;
-  border-bottom-width:1px;
-  border-left-color:rgba(139, 118, 49, 0.597656);
-  border-left-style:solid;
-  border-left-width:1px;
-  border-right-color:rgba(139, 118, 49, 0.597656);
-  border-right-style:solid;
-  border-right-width:1px;
-  border-top-color:rgba(139, 118, 49, 0.597656);
-  border-top-style:solid;
-  border-top-width:1px;
+    -moz-box-shadow: 0 0 4px rgba(139, 118, 49, 0.4);
+    border: 1px solid rgba(139, 118, 49, 0.6);
 }
 .popin-send-message input.from, .popin-send-message input.subject {
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:white;
-  background-image:initial;
-  background-origin:initial;
-  background-position:initial initial;
-  background-repeat:initial initial;
-  border-bottom-color:#BBBBBB;
-  border-bottom-style:solid;
-  border-bottom-width:1px;
-  border-left-color:#BBBBBB;
-  border-left-style:solid;
-  border-left-width:1px;
-  border-right-color:#BBBBBB;
-  border-right-style:solid;
-  border-right-width:1px;
-  border-top-color:#BBBBBB;
-  border-top-style:solid;
-  border-top-width:1px;
-  color:#666666;
-  display:inline;
-  float:right;
-  margin-bottom:10px;
-  margin-left:4px;
-  margin-right:6px;
-  margin-top:0;
-  padding-bottom:2px;
-  padding-left:2px;
-  padding-right:2px;
-  padding-top:2px;
-  width:430px;
+    background: none repeat scroll 0 0 white;
+    border: 1px solid #BBBBBB;
+    color: #666666;
+    display: inline;
+    float: right;
+    margin: 0 6px 10px 4px;
+    padding: 2px;
+    width: 430px;
 }
 .popin-send-message .title span {
-  float:right;
-  line-height:18px;
+    float: right;
+    line-height: 18px;
 }
 .popin-send-message .message-subject {
-  float:right;
-  font-weight:bold;
-  line-height:18px;
+    float: right;
+    font-weight: bold;
+    line-height: 18px;
 }
 .popin-send-message .plaintext {
-  color:#545454;
-  font-size:12px;
-  margin-bottom:0;
-  margin-left:15px;
-  margin-right:15px;
-  margin-top:0;
+    color: #545454;
+    font-size: 12px;
+    margin: 0 15px;
 }
 .popin-send-message .message-body {
-  font-weight:bold;
-  margin-bottom:5px;
-  margin-left:24px;
-  margin-right:0;
-  margin-top:0;
-  width:477px;
+    font-weight: bold;
+    margin: 0 0 5px 24px;
+    width: 477px;
 }
 .popin-send-message .message {
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:white;
-  background-image:initial;
-  background-origin:initial;
-  background-position:initial initial;
-  background-repeat:initial initial;
-  border-bottom-color:#BBBBBB;
-  border-bottom-style:solid;
-  border-bottom-width:1px;
-  border-left-color:#BBBBBB;
-  border-left-style:solid;
-  border-left-width:1px;
-  border-right-color:#BBBBBB;
-  border-right-style:solid;
-  border-right-width:1px;
-  border-top-color:#BBBBBB;
-  border-top-style:solid;
-  border-top-width:1px;
-  color:#666666;
-  display:block;
-  font-family:Arial;
-  font-size:12px;
-  height:150px;
-  margin-left:auto;
-  margin-right:auto;
-  outline-color:initial;
-  outline-style:none;
-  outline-width:initial;
-  padding-bottom:2px;
-  padding-left:2px;
-  padding-right:2px;
-  padding-top:2px;
-  width:512px;
+    background: none repeat scroll 0 0 white;
+    border: 1px solid #BBBBBB;
+    color: #666666;
+    display: block;
+    font-family: "Arial";
+    font-size: 12px;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    outline: medium none;
+    padding: 2px;
+    width: 512px;
 }
 .popin-send-message .labels-list {
-  font-weight:bold;
+    font-weight: bold;
+    margin-top: 10px;
 }
 .popin-send-message .to-label-title {
-  float:right;
-  font-weight:bold;
-  line-height:18px;
+    float: right;
+    font-weight: bold;
+    line-height: 18px;
 }
 .popin-send-message .labels-ctnr {
-  float:right;
-  margin-bottom:10px;
-  margin-left:5px;
-  margin-right:5px;
-  margin-top:0;
-  max-height:100px;
-  overflow-x:hidden;
-  overflow-y:auto;
-  padding-bottom:0;
-  padding-left:0;
-  padding-right:0;
-  padding-top:0;
-  width:446px;
+    float: right;
+    margin: 0 5px 10px;
+    max-height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0;
+    width: 436px;
 }
 .popin-send-message .to-label-list {
-  border-bottom-left-radius:2px 2px;
-  border-bottom-right-radius:2px 2px;
-  border-top-left-radius:2px 2px;
-  border-top-right-radius:2px 2px;
-  color:#FFFFFF;
-  float:left;
-  font-weight:bold;
-  margin-left:5px;
-  padding-bottom:3px;
-  padding-left:3px;
-  padding-right:3px;
-  padding-top:3px;
+    -moz-border-radius: 2px 2px 2px 2px;
+    color: #FFFFFF;
+    float: left;
+    font-weight: bold;
+    margin-left: 5px;
+    padding: 3px;
 }
 .popin-send-message .btn_blue {
-  margin-bottom:5px;
-  margin-left:7px;
-  margin-right:16px;
-  margin-top:5px;
+    margin: 5px 16px 5px 7px;
 }
 .popin-send-message label span {
-  margin-left:3px;
+    margin-left: 5px;
 }
 .popin-send-message-container {
-  margin-bottom:15px;
-  margin-left:15px;
-  margin-right:0;
-  margin-top:0;
-  padding-bottom:0;
-  padding-left:0;
-  padding-right:0;
-  padding-top:0;
+    margin: 0 0 15px 15px;
+    padding: 0;
 }
 ul.popin-send-message-container {
-  float:right;
-  margin-bottom:10px;
-  margin-left:5px;
-  margin-right:5px;
-  margin-top:0;
-  max-height:100px;
-  overflow-x:hidden;
-  overflow-y:auto;
-  padding-bottom:0;
-  padding-left:0;
-  padding-right:0;
-  padding-top:0;
-  width:436px;
+    float: right;
+    margin: 0 5px 10px;
+    max-height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0;
+    width: 436px;
 }
 .popin-send-message .title {
-  font-weight:bold;
+    font-weight: bold;
 }
 .popin-send-message span.title {
-  float:right;
-  line-height:18px;
+    float: right;
+    line-height: 18px;
 }
 .popin-send-message .separator {
-  border-left-color:#BBBBBB;
-  border-left-style:solid;
-  border-left-width:1px;
-  display:inline-block;
-  height:25px;
-  margin-bottom:-8px;
-  width:0;
+    border-left: 1px solid #BBBBBB;
+    display: inline-block;
+    height: 25px;
+    margin-bottom: -8px;
+    width: 0;
 }
 .popin-send-message-container .popin-send-message-user {
-  color:#333333;
-  display:inline;
-  height:22px;
-  line-height:22px;
-  list-style-image:initial;
-  list-style-position:initial;
-  list-style-type:none;
-  margin-left:auto;
-  margin-right:auto;
-  padding-bottom:0;
-  padding-left:0;
-  padding-right:0;
-  padding-top:0;
-  width:440px;
+    color: #333333;
+    display: inline;
+    height: 22px;
+    line-height: 22px;
+    list-style: none outside none;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    width: 440px;
 }
 .current-assign .popin-send-message-close {
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:initial;
-  background-image:url(https://www.producteev.com/static/images/task_details/td-delete.png);
-  background-origin:initial;
-  background-position:0 0;
-  background-repeat:no-repeat no-repeat;
-  cursor:pointer;
-  float:right;
-  height:10px;
-  margin-top:5px;
-  position:absolute;
-  right:10px;
-  width:11px;
+    background: url("../../images/task_details/td-delete.png") no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+    float: right;
+    height: 10px;
+    margin-top: 5px;
+    position: absolute;
+    right: 10px;
+    width: 11px;
 }
 .current-assign .popin-send-message-close:hover {
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:initial;
-  background-image:url(https://www.producteev.com/static/images/task_details/td-delete.png);
-  background-origin:initial;
-  background-position:0 -13px;
-  background-repeat:no-repeat no-repeat;
+    background: url("../../images/task_details/td-delete.png") no-repeat scroll 0 -13px transparent;
 }
 .requests-container {
-  padding-bottom:5px;
-  padding-left:4px;
-  padding-right:4px;
-  padding-top:0;
+    padding: 0 4px 5px;
 }
 .requests-container .block {
-  border-bottom-color:#CCCCCC;
-  border-bottom-style:solid;
-  border-bottom-width:1px;
-  height:60px;
-  margin-top:5px;
-  width:342px;
+    border-bottom: 1px solid #CCCCCC;
+    height: 60px;
+    margin-top: 5px;
+    width: 342px;
 }
 .block .decline-message {
-  display:none;
+    display: none;
 }
 .block .invite-content {
-  display:block;
+    display: block;
 }
 .block.decline .invite-content {
-  display:none;
+    display: none;
 }
 .block.decline .decline-message {
-  display:block;
+    display: block;
 }
 .invite-content .btn-css, .btns .btn-css {
-  float:right;
-  font-size:12px;
-  margin-bottom:0;
-  margin-left:5px;
-  margin-right:5px;
-  margin-top:4px;
-  padding-bottom:3px;
-  padding-left:10px;
-  padding-right:10px;
-  padding-top:3px;
+    float: right;
+    font-size: 12px;
+    margin: 4px 5px 0;
+    padding: 3px 10px;
 }
 .decline-message .sure {
-  color:#08396C;
-  float:left;
-  font-size:12px;
-  font-weight:bold;
-  height:55px;
-  line-height:55px;
-  width:168px;
+    color: #08396C;
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+    height: 55px;
+    line-height: 55px;
+    width: 168px;
 }
 .decline-message .btns {
-  float:left;
-  height:35px;
-  margin-top:13px;
-  width:174px;
+    float: left;
+    height: 35px;
+    margin-top: 13px;
+    width: 174px;
 }
 .decline-message .btns .separator {
-  float:left;
-  height:20px;
-  width:5px;
+    float: left;
+    height: 20px;
+    width: 5px;
 }
 .block .avatar {
-  display:block;
-  float:left;
-  height:50px;
-  margin-right:5px;
-  width:50px;
+    display: block;
+    float: left;
+    height: 50px;
+    margin-right: 5px;
+    width: 50px;
 }
 .block .info-container {
-  float:left;
-  height:60px;
-  width:190px;
+    float: left;
+    height: 60px;
+    width: 190px;
 }
 .info-container .name-invited {
-  color:#08396C;
-  display:block;
-  float:left;
-  font-size:12px;
-  font-weight:bold;
-  line-height:14px;
-  overflow-x:hidden;
-  overflow-y:hidden;
-  width:185px;
+    color: #08396C;
+    display: block;
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 14px;
+    overflow: hidden;
+    width: 185px;
 }
 .info-container .description {
-  color:#545454;
-  float:left;
-  font-size:11px;
-  line-height:14px;
-  margin-top:3px;
-  overflow-x:hidden;
-  overflow-y:hidden;
-  width:170px;
+    color: #545454;
+    float: left;
+    font-size: 11px;
+    line-height: 14px;
+    margin-top: 3px;
+    overflow: hidden;
+    width: 170px;
 }
 #popin_set_dashboard .btn_blue {
-  display:block;
-  margin-bottom:0;
-  margin-left:auto;
-  margin-right:auto;
-  margin-top:3px;
-  width:240px;
+    display: block;
+    margin: 3px auto 0;
+    width: 240px;
 }
 #popin_scheduling {
-  width:320px;
+    width: 320px;
 }
 #popin_scheduling ul {
-  max-height:140px;
+    max-height: 140px;
 }
 #popin_scheduling .less-important {
-  font-weight:normal;
+    font-weight: normal;
 }
-#popin_scheduling .btn_blue {
-  width:288px;
+#popin_scheduling .btn_blue, #popin_scheduling .btn_red {
+    width: 288px;
 }
-#popin_scheduling .btn_red {
-  width:288px;
+#popin_scheduling .popin-notice {
+    padding: 5px;
+}
+#popin_offer_ts ul {
+    float: left;
+    max-height: 140px;
+    padding: 0;
+    width: 276px;
+}
+#popin_offer_ts ul, #popin_offer_ts ul li {
+    border: 0 none;
 }
 #title_new_label .add-label-btn {
-  float:left;
-  font-size:11px;
-  font-weight:normal;
-  margin-bottom:0;
-  margin-left:5px;
-  margin-right:5px;
-  margin-top:3px;
-  padding-bottom:3px;
-  padding-left:3px;
-  padding-right:3px;
-  padding-top:3px;
-  width:auto;
+    float: left;
+    font-size: 11px;
+    font-weight: normal;
+    margin: 3px 5px 0;
+    padding: 3px;
+    width: auto;
 }
