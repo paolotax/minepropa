@@ -3,8 +3,26 @@ Minepropa::Application.routes.draw do
   resources :appunto_righe
 
   resources :libri
+  
+  class SSL
+    def self.matches?(request)
+      # This way you don't need SSL for your development server
+      return true unless Rails.env.production?
+      request.ssl?
+    end
+  end
 
-  devise_for :users
+  # Require SSL for Devise
+  constraints SSL do
+    devise_for :users
+  end
+
+  # Redirect to SSL from non-SSL so you don't get 404s
+  # Repeat for any custom Devise routes
+  match "/users(/*path)", :to => redirect { |_, request| "https://" + request.host_with_port + request.fullpath }
+  
+  
+  #devise_for :users
   
   resources :scuole do
     collection do
