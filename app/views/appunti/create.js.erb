@@ -1,4 +1,6 @@
-$(".notice").html('<div class="flash notice"><%= flash[:notice] = "ciao" %></div>');
+<%- notice = "L'appunto e' stato creato.  #{view_context.link_to("annulla", revert_version_path(@appunto.versions.scoped.last), :method => :post)}" %>
+
+$(".notice").html("L'appunto e' stato creato. ");
 
 
 /* Add the new comment to the bottom of the comments list */
