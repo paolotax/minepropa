@@ -9,6 +9,13 @@ Number.prototype.formatMoney = function(c, d, t){
 
 $(document).ready(function() {
   
+  $('#bar-sortby').click(function() {
+    
+    $('ul#appunti>li').tsort('#a_nome_scuola');
+    
+  });
+  
+  
   $("#input_price").change(function() {
   
     var val = $(this).val();
