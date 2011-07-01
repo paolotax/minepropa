@@ -56,10 +56,8 @@ class AppuntiController < ApplicationController
 
     respond_to do |format|
       if @appunto.save
-        flash[:success] = "L'appunto e' stato creato.  #{undo_link}"
-        
         format.mobile { redirect_to root_path }
-        format.html   { redirect_to [@appunto]  }
+        format.html   { redirect_to [@appunto],  :flash => {:success = "L'appunto e' stato creato.  #{undo_link}" } }
         format.json   { render :json => @appunto, :status => :created, :location => @appunto }
         format.js
       else
