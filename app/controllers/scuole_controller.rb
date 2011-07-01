@@ -5,6 +5,13 @@ class ScuoleController < ApplicationController
   def index
     @search = current_user.scuole.order('scuole.position asc').search(params[:search])
     @scuole = @search.relation
+    
+    @venduto_per_scuola = current_user.scuole.
+                                joins(:appunti => :appunto_righe).
+                                select('scuole.id, scuole.nome_scuola, sum(appunto_righe.quantita * appunto_righe.prezzo_unitario) as venduto').
+                                group('scuole.id, scuole.nome_scuola').
+                                order('scuole.id')
+    
     respond_to do |format|
       format.html # index.html.erb
       format.js

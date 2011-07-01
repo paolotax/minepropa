@@ -26,6 +26,13 @@
 #scuole.left_scuole
   = render :partial => 'scuole'
 
+
+- for v in @venduto_per_scuola do
+  = v.nome_scuola
+  = v.venduto
+  %br
+
 #scuole.right_scuole
+
 
 			
