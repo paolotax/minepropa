@@ -27,10 +27,19 @@
   = render :partial => 'scuole'
 
 
-- for v in @venduto_per_scuola do
-  = v.nome_scuola
-  = v.venduto
-  %br
+%table
+  %tr
+    %th
+      Nome Scuola
+    %th
+      Venduto
+  - for v in @venduto_per_scuola do
+    %tr
+      %td
+        = v.nome_scuola
+      %td
+        = v.venduto
+
 
 #scuole.right_scuole
 
