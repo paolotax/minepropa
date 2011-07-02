@@ -4,7 +4,8 @@
     .cal
   #bar-sortby.sort-by
     .sortby-label Ordina per
-    #bar-sortby-text.criteria - Label
+    #bar-sortby-text.criteria 
+      = select( 'sort_by_select', [],  ['Data creazione', 'Data modifica', 'Scuola', 'Posizione'], {}, { :index => nil })
   #tasklist_menu_contact
     %input{:type => 'checkbox', :value => 'attivi', :checked => true, :id => 'cb_attivi'}
     %label{ :for => 'cb_attivi'}

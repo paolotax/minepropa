@@ -9,19 +9,20 @@ Number.prototype.formatMoney = function(c, d, t){
 
 $(document).ready(function() {
   
+  $('#libri_table').dataTable();
+
+
+
   $('#bar-sortby').click(function() {
-    
     $('ul#appunti>li').tsort('#a_nome_scuola');
-    
   });
-  
+
+
   
   $("#input_price").change(function() {
-  
     var val = $(this).val();
     console.log(val);
     $(".vac_price").attr('value', val);
-  
   });
 
 

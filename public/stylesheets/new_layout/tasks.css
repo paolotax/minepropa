@@ -188,11 +188,15 @@
     padding-left: 10px;
     vertical-align: middle;
 }
+
+
+
+
 .tasks .task {
     border-color: #E6E6E6;
     border-style: solid;
     border-width: 0 0 1px;
-    height: 33px;
+/*    height: 33px;*/
     line-height: 33px;
 }
 .tasks .first {
@@ -205,6 +209,11 @@
     float: left;
     height: 33px;
 }
+
+
+
+
+
 .tasks .checkbox {
     border-left: 1px solid #E6E6E6;
     line-height: 25px;
@@ -222,10 +231,20 @@
     display: block;
     width: 17px;
 }
+
+
+
+
 .tasks .bulk {
     text-align: center;
     width: 32px;
+    height: 33px;
 }
+
+
+
+
+
 .tasks .tasks-bulk-checkbox {
     cursor: pointer;
 }
@@ -306,22 +325,41 @@ ul.tasks.bulk .bulk {
     vertical-align: top;
     width: 16px;
 }
+
+
+
 .tasks .details {
     border: medium none;
     font-size: 14px;
     height: 33px;
     overflow: hidden;
     padding: 0 0;
-    width: 485px;
+    width: 600px;
 }
+
 .tasks .details .task-title {
-    color: #224165;
-    float: left;
-    margin: 0 0 0 0;
-    padding-left: 8px;
-    white-space: nowrap;
-    width: 250px;
+  color:#224165;
+  float:left;
+ margin: 0 0 0 0;
+  padding-left:8px;
+  width:120px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
 }
+
+.tasks .details .labels {
+    cursor: default;
+    float: right;
+    height: 15px;
+    line-height: 15px;
+    padding: 8px 0 0;
+}
+
+
+
+
+
 .tasks .details .workspace {
     background: url("../../images/task-back-workspace.png") no-repeat scroll right center #EDF0F1;
     color: #526D89;
@@ -367,13 +405,9 @@ ul.tasks.bulk .bulk {
 .tasks .hot .hot-task {
     display: block;
 }
-.tasks .details .labels {
-    cursor: default;
-    float: right;
-    height: 15px;
-    line-height: 15px;
-    padding: 8px 0 0;
-}
+
+
+
 .tasks .note {
     background: url("../../images/task-back-note.png") no-repeat scroll 0 0 #F8F8F8;
     border: medium none;
