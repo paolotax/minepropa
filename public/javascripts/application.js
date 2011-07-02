@@ -15,8 +15,13 @@ $(document).ready(function() {
 
   $('#bar-sortby select').change(function() {
     var val = $(this).val();
-    console.log(val);
-    $('ul#appunti>li').tsort('.'+val);
+    if (val == "Data creazione") {
+      $('ul#appunti>li').tsort('.created_at', {order:'desc'});
+    } else if (val == "Data modifica") {
+      $('ul#appunti>li').tsort('.updated_at', {order:'desc'});
+    } else {
+      $('ul#appunti>li').tsort('.'+val.toLowerCase());
+    }
   });
 
 
