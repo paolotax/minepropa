@@ -13,8 +13,10 @@ $(document).ready(function() {
 
 
 
-  $('#bar-sortby').click(function() {
-    $('ul#appunti>li').tsort('#a_nome_scuola');
+  $('#bar-sortby select').change(function() {
+    var val = $(this).val();
+    console.log(val);
+    $('ul#appunti>li').tsort('.'+val);
   });
 
 

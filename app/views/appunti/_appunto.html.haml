@@ -14,7 +14,7 @@
   .task-elt.details
     - destinatario = (appunto.destinatario.blank?) ? '...' : appunto.destinatario
     .task-title= link_to destinatario, appunto_path(appunto)
-    #a_nome_scuola.task-title= link_to appunto.nome_scuola, scuola_path(appunto.scuola) unless appunto.scuola.blank?
+    .scuola.task-title= link_to appunto.nome_scuola, scuola_path(appunto.scuola) unless appunto.scuola.blank?
     .task-title= best_in_place appunto, :note, :type => :input
     / .labels= appunto.totale_copie
     / .labels= number_to_currency(appunto.totale_importo)
