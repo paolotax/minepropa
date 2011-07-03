@@ -2027,7 +2027,7 @@ h3 {
   background-attachment:initial;
   background-clip:initial;
   background-color:initial;
-  background-image:url(https://www.producteev.com/static/images/tasks-header-bg.png);
+  background-image:url('../../images/tasks-header-bg.png');
   background-origin:initial;
   background-position:0 0;
   background-repeat:repeat no-repeat;

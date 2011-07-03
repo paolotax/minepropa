@@ -319,7 +319,6 @@ $(document).ready( function() {
       $( '.cb-element' ).each( function() {
         if ($(this).is(":visible") == true) {
           $(this).attr( 'checked', true );
-          $('#popin_bulk').hide();
         };
       });
   });

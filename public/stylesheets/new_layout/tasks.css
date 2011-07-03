@@ -157,9 +157,30 @@
 .bulk .cm-tab:hover {
     color: #000000;
 }
+
+
+
+
 #tasklist_menu_contact {
+    font-size:11px;
+    font-weight:bold;
+    height:27px;
+    line-height:27px;
+    margin-right:5px;
+    margin-top:4px;
+    text-shadow:#FFFFFF 0 1px 0;
     float: right;
 }
+
+#tasklist_menu_contact label{
+    width: 150px;
+}
+
+
+
+
+
+
 #tasklist_menu_contact .cm-tab {
     color: #9D763F;
     display: inline;
