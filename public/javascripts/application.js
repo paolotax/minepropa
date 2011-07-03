@@ -10,16 +10,27 @@ Number.prototype.formatMoney = function(c, d, t){
 $(document).ready(function() {
   
   $('li.task .note').live('click', function() {
-    var appunto_id = $('.id', $(this).parent()).html();
     
-    $.ajax({
-      url: '/appunti/'+appunto_id+'.js',
-      type: 'GET',
-      success: function() {
+    var appunto_li = $(this).parent();
+    
+    var appunto_id = $('.id', appunto_li).html();
+    
+    var righe_list = $('.appunto_righe_list', appunto_li);
+    console.log(righe_list.length)
+    
+    if (righe_list.length) {
+      righe_list.toggle('slow');
+      $('.appunto_righe_sep', appunto_li).toggle('slow');
+    } else {
+      $.ajax({
+        url: '/appunti/'+appunto_id+'.js',
+        type: 'GET',
+        success: function() {
 
-      } 
-    });
-    
+        } 
+      });
+    };
+
   });
   
   $('#libri_table').dataTable();
