@@ -9,9 +9,20 @@ Number.prototype.formatMoney = function(c, d, t){
 
 $(document).ready(function() {
   
+  $('li.task .note').live('click', function() {
+    var appunto_id = $('.id', $(this).parent()).html();
+    
+    $.ajax({
+      url: '/appunti/'+appunto_id+'.js',
+      type: 'GET',
+      success: function() {
+
+      } 
+    });
+    
+  });
+  
   $('#libri_table').dataTable();
-
-
 
   $('#bar-sortby select').change(function() {
     var val = $(this).val();

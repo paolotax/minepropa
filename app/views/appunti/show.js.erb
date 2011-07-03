@@ -1,0 +1,1 @@
+$("li#appunto_<%= @appunto.id %>_visita_").html("<%= escape_javascript(render(:partial => 'appunti/appunto', :locals => { :appunto => @appunto, :app_righe => true })) %>");
