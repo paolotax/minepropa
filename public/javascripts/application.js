@@ -9,14 +9,22 @@ Number.prototype.formatMoney = function(c, d, t){
 
 $(document).ready(function() {
   
+  $(document).ajaxStart(function() {
+    $.growlUI('Attendi...', 'Sto caricando');
+  }).ajaxStop($.unblockUI);
+  
+  // $("#loading").bind("ajaxSend", function(){
+  //   $(this).show();
+  // }).bind("ajaxComplete", function(){
+  //   $(this).hide();
+  // });
+  
+  
   $('li.task .note').live('click', function() {
     
     var appunto_li = $(this).parent();
-    
     var appunto_id = $('.id', appunto_li).html();
-    
     var righe_list = $('.appunto_righe_list', appunto_li);
-    console.log(righe_list.length)
     
     if (righe_list.length) {
       righe_list.toggle('slow');
@@ -30,7 +38,6 @@ $(document).ready(function() {
         } 
       });
     };
-
   });
   
   $('#libri_table').dataTable();

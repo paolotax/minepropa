@@ -24,7 +24,20 @@ div#map_appunti {
   height: 350px;
 }
 
+#loading {
+  padding: 10px 0 10px 0;
+  width: auto;
+  color: #FFF;
+  font-size: 15px;
+  font-style: bold;
+  text-align: center;
+  background-color: black;
+}
 
+div.growlUI { background: url(check48.png) no-repeat 10px 10px }
+div.growlUI h1, div.growlUI h2 {
+	color: white; padding: 5px 5px 5px 75px; text-align: left
+}
 
 #td_libro_info {
   #libro_img_container {

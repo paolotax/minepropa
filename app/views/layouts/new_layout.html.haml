@@ -18,7 +18,8 @@
     = javascript_include_tag "nested_form"
     = javascript_include_tag "jquery.tinysort.min.js"
     = javascript_include_tag "jquery.dataTables.min.js"
-    
+    = javascript_include_tag "jquery.blockUI.js"
+     
     = javascript_include_tag 'application.js'
     
     = stylesheet_link_tag 'new_layout/reset.css'
@@ -38,6 +39,8 @@
     = csrf_meta_tag
     = yield :head
   %body
+    #loading.hidden
+      caricamento...
     #header
       = render 'layouts/header'
     #container.col-2.radius-8
