@@ -7,11 +7,12 @@ if ($('.notice').length) {
   $(".notice").html("Appunto inserito. " + '<%= notice %>' );
 }
 
-/* Add the new comment to the bottom of the comments list */
 $("<%= escape_javascript(render(:partial => 'appunti/appunto', :locals => { :appunto => @appunto, :app_righe => true })) %>").insertBefore("#appunti li:first");
 
 /* Highlight the new comment */
 $("#appunto_<%= @appunto.id %>_visita_").effect("highlight", {}, 3000);
+
+$(".best_in_place").best_in_place();
 
 /* Reset the comment form */
 $("#new_appunto")[0].reset();

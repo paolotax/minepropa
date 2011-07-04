@@ -1,3 +1,3 @@
-<!-- $("li#appunto_<%= @appunto.id %>_visita_").html("<%= escape_javascript(render(:partial => 'appunti/appunto', :locals => { :appunto => @appunto, :app_righe => true })) %>").hide().slideDown('slow'); -->
-
 $("li#appunto_<%= @appunto.id %>_visita_").append("<%= escape_javascript(render :partial => 'appunto_righe/appunto_righe', :locals => { :appunto => @appunto }) %>").hide().slideDown('slow');
+
+$(".best_in_place").best_in_place();
