@@ -32,7 +32,6 @@
 
 #map
 
-
 / - unless @json.nil?
 /   #scuola_map
 /     = gmaps4rails(@json, { "auto_adjust" => true })
@@ -41,6 +40,13 @@
 
 / - content_for :search_nav do
 /   = render :partial => 'pages/search_appunti'
+- indirizzo = @scuola.indirizzi.first
+- lat_long = [indirizzo.latitude, indirizzo.longitude]
+- @piu_vicini = Appunto.da_fare.near(lat_long, 10)
+
+%ul#appunti.tasks
+  - for v in @piu_vicini do
+    = render v, :app_righe => false
 
 %table.libri.riepilogo
   %th Titolo

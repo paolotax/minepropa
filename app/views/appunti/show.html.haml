@@ -16,7 +16,6 @@
             = best_in_place @appunto, :destinatario, :type => :input
           #td_task_title_input.title-container
             = best_in_place @appunto, :nome_scuola
-            / = best_in_place @appunto, :nome_scuola, :type => :select, :collection => [["IC ALFONSINE", 2],["E MATTEOTTI ALF", 3]]
           #td_task_title_input.title-container
             = best_in_place @appunto, :note, :type => :textarea
         .clear
@@ -50,14 +49,3 @@
           %ul#td_notes_activities_list
             - for a in @appunto.appunto_righe.per_libro_id
               = render a unless a.libro.nil?
-
-
-
-
-/ - title "appunto"
-/ 
-/ = render @appunto
-/   
-/ #a_visita
-/   = render 'appunti/visita_add'
-/   = render 'appunti/visita_del'
