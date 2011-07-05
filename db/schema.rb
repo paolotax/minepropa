@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110704185541) do
+ActiveRecord::Schema.define(:version => 20110705104946) do
 
   create_table "appunti", :force => true do |t|
     t.string   "destinatario"
@@ -42,6 +42,16 @@ ActiveRecord::Schema.define(:version => 20110704185541) do
     t.integer  "prezzo_unitario"
     t.string   "currency"
     t.decimal  "sconto",          :precision => 8, :scale => 2
+  end
+
+  create_table "feed_entries", :force => true do |t|
+    t.string   "name"
+    t.text     "summary"
+    t.string   "url"
+    t.datetime "published_at"
+    t.string   "guid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "indirizzi", :force => true do |t|
@@ -82,6 +92,12 @@ ActiveRecord::Schema.define(:version => 20110704185541) do
     t.integer  "position"
     t.integer  "user_id"
     t.string   "ancestry"
+    t.string   "telefono"
+    t.string   "fax"
+    t.string   "cellulare"
+    t.string   "email"
+    t.string   "partita_iva"
+    t.string   "codice_fiscale"
   end
 
   add_index "scuole", ["ancestry"], :name => "index_scuole_on_ancestry"

@@ -52,7 +52,7 @@ class Scuola < ActiveRecord::Base
 
   def lat_long
     indirizzo = self.indirizzi.first
-    return indirizzo.latitude+','+indirizzo.longitude unless indirizzo.nil?
+    return indirizzo.latitude.to_s+','+indirizzo.longitude.to_s unless indirizzo.nil?
   end
   
   private

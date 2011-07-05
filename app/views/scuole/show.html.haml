@@ -1,3 +1,5 @@
+- require 'conversion'
+
 - title "#{@scuola.nome_scuola} #{@scuola.citta} #{@scuola.provincia}"
   
 .scuola_id
@@ -47,6 +49,13 @@
 %ul#appunti.tasks
   - for v in @piu_vicini do
     = render v, :app_righe => false
+    - l_l = [v.latitude, v.longitude] 
+    - distance = indirizzo.distance_from(l_l)
+    = "#{format("%.3f", Conversion.m2km(distance))} km"
+    - if (distance > 0)
+      - b = indirizzo.bearing_to(l_l)
+      =  Geocoder::Calculations.compass_point(b)
+      %br
 
 %table.libri.riepilogo
   %th Titolo
