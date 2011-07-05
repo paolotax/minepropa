@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110612043928) do
+ActiveRecord::Schema.define(:version => 20110704185541) do
 
   create_table "appunti", :force => true do |t|
     t.string   "destinatario"
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(:version => 20110612043928) do
     t.integer  "user_id"
     t.integer  "totale_copie",   :default => 0
     t.float    "totale_importo", :default => 0.0
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   create_table "appunto_righe", :force => true do |t|
@@ -42,16 +44,6 @@ ActiveRecord::Schema.define(:version => 20110612043928) do
     t.decimal  "sconto",          :precision => 8, :scale => 2
   end
 
-  create_table "feed_entries", :force => true do |t|
-    t.string   "name"
-    t.text     "summary"
-    t.string   "url"
-    t.datetime "published_at"
-    t.string   "guid"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "indirizzi", :force => true do |t|
     t.string   "destinatario"
     t.string   "indirizzo"
@@ -63,9 +55,9 @@ ActiveRecord::Schema.define(:version => 20110612043928) do
     t.string   "indirizzable_type"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "latitude"
-    t.string   "longitude"
     t.boolean  "gmaps"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   create_table "libri", :force => true do |t|

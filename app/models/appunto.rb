@@ -19,6 +19,8 @@
 
 class Appunto < ActiveRecord::Base
   
+  reverse_geocoded_by :latitude, :longitude
+  
   acts_as_list
   
   acts_as_taggable

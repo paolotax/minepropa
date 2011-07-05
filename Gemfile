@@ -23,7 +23,9 @@ gem 'formtastic', '~> 1.2.3'
 
 gem 'gmaps4rails'
 gem 'crack'
+
 gem 'geokit'
+gem 'geocoder'
 
 gem 'rails3-jquery-autocomplete'
 

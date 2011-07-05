@@ -21,7 +21,11 @@
 
 class Indirizzo < ActiveRecord::Base
   
-  acts_as_gmappable :process_geocoding => "before_save"
+  geocoded_by :full_street_address
+  after_validation :geocode, 
+                      :if => lambda{ |obj| obj.indirizzo_changed? || obj.citta_changed? || obj.cap_changed? }
+  
+  #acts_as_gmappable :process_geocoding => "before_save"
   
   belongs_to :indirizzable, :polymorphic => true
   
@@ -33,6 +37,10 @@ class Indirizzo < ActiveRecord::Base
   
   def to_s
     return "#{destinatario}\n#{indirizzo}\n#{cap} #{citta} #{provincia}"
+  end
+  
+  def full_street_address
+    [self.citta, self.indirizzo, self.provincia].join(', ')
   end
   
   def gmaps4rails_address
@@ -50,6 +58,6 @@ class Indirizzo < ActiveRecord::Base
   
   def to_gomap_marker
     data = []
-    data << { :latitude => self.latitude.to_f, :longitude => self.longitude.to_f, :title => self.citta, :draggable => true, :id => 'baseMarker', :html => { :content => self.label_indirizzo, :popup => true  } }    
+    data << { :latitude => self.latitude, :longitude => self.longitude, :title => self.citta, :draggable => true, :id => 'baseMarker', :html => { :content => self.label_indirizzo, :popup => true  } }    
   end
 end

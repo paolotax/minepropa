@@ -61,9 +61,6 @@ class Scuola < ActiveRecord::Base
       self[:nome_scuola] = self[:nome_scuola].upcase
       self[:provincia]   = self[:provincia].upcase
       self[:citta]       = self[:citta].titleize
-      
-      # x = self[:citta].split.each {|v| v.capitalize! } 
-      # self[:citta] = x.join(" ")
     end
   
 end
