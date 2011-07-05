@@ -17,6 +17,13 @@
       = best_in_place @indirizzo, :provincia
   .scuola_indirizzo_id
     = @indirizzo.id
+  = best_in_place @scuola, :telefono  
+  = best_in_place @scuola, :fax 
+  = best_in_place @scuola, :cellulare 
+  = best_in_place @scuola, :email 
+  = best_in_place @scuola, :codice_fiscale 
+  = best_in_place @scuola, :partita_iva 
+  
   .scuola_latlong
     = best_in_place @indirizzo, :latitude
     = best_in_place @indirizzo, :longitude

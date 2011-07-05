@@ -9,6 +9,12 @@
     = f.input :citta,        :input_html => { :cols => 40  }
     = f.input :provincia,    :input_html => { :size => 5  }
     / = f.input :parent_id, :as => :select, :collection => Scuola.direzioni.order(:nome_scuola)
+    = f.input :telefono,    :input_html => { :size => 10  }
+    = f.input :fax,         :input_html => { :size => 10  }
+    = f.input :cellulare,   :input_html => { :size => 10  }
+    = f.input :email
+    = f.input :codice_fiscale
+    = f.input :partita_iva
     %li
       %label{:for => "parent_id"} Direzione
       = f.collection_select :parent_id, Scuola.direzioni.order(:provincia, :nome_scuola), :id, :nome_scuola, {:include_blank => true}, { :class => 'select_direzione'}
