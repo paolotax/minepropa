@@ -39,7 +39,7 @@ class Appunto < ActiveRecord::Base
   delegate :nome_scuola, :to => :scuola,
                          :allow_nil => true
   
-  
+
   accepts_nested_attributes_for :indirizzi,     :reject_if => lambda { |a| a[:citta].blank? }, :allow_destroy => true
   accepts_nested_attributes_for :appunto_righe, :reject_if => lambda { |a| (a[:quantita].blank? || a[:libro_id].blank?)}, :allow_destroy => true
   
@@ -47,7 +47,7 @@ class Appunto < ActiveRecord::Base
   validates :user_id,  :presence => true
   validates :nome_scuola,  :presence => true
   
-  before_save :cleanup
+  before_save :cleanup, :set_lat_long
   
   scope :per_id,           :order => "appunti.id DESC" 
   scope :per_destinatario, :order => 'appunti.destinatario asc'
@@ -152,6 +152,14 @@ class Appunto < ActiveRecord::Base
   
     def cleanup
       self[:destinatario] = self[:destinatario].titleize unless self[:destinatario].nil?
+    end
+    
+    def set_lat_long
+      indirizzo = scuola.indirizzi.first
+      unless indirizzo.nil?
+        self.latitude = indirizzo.latitude
+        self.longitude = indirizzo.longitude
+      end
     end
   
 end
