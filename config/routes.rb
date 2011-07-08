@@ -1,5 +1,7 @@
 Minepropa::Application.routes.draw do
 
+  resources :fatture
+
   resources :appunto_righe
 
   resources :libri

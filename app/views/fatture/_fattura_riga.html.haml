@@ -1,0 +1,23 @@
+%tr{ :id => "fattura_riga_#{fattura_riga.id}", :class => 'riga_small' }
+  %td.riga_titolo
+    = link_to(fattura_riga.titolo, libro_url(fattura_riga.libro)) # unless appunto_riga.libro.nil?
+  %td.riga_quantita
+    = best_in_place fattura_riga, :quantita
+  %td.riga_operazione
+    = " x "
+  %td.riga_prezzo
+    = best_in_place fattura_riga, :copertina
+  %td.riga_operazione
+    = " - "
+  %td.riga_sconto
+    = "#{fattura_riga.sconto}%"
+  %td.riga_operazione
+    = " = "  
+  %td.riga_importo
+    = fattura_riga.importo.format(:symbol)
+  %td.riga_consegnato
+    = best_in_place fattura_riga, :consegnato,  :type => :checkbox, :collection => ["no", "si"] 
+  %td.riga_pagato
+    = best_in_place fattura_riga, :pagato,      :type => :checkbox, :collection => ["no", "si"]
+  %td.delete
+    = link_to image_tag("td-delete.png"), fattura_riga, {:method => :delete, :remote => true}

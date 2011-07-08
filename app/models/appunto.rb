@@ -1,20 +1,24 @@
 # == Schema Information
-# Schema version: 20110228203907
+# Schema version: 20110705104946
 #
 # Table name: appunti
 #
-#  id           :integer         not null, primary key
-#  destinatario :string(255)
-#  note         :text
-#  telefono     :string(255)
-#  stato        :string(255)     default(""), not null
-#  scadenza     :date
-#  created_at   :datetime
-#  updated_at   :datetime
-#  scuola_id    :integer
-#  position     :integer
-#  email        :string(255)
-#  user_id      :integer
+#  id             :integer         not null, primary key
+#  destinatario   :string(255)
+#  note           :text
+#  telefono       :string(255)
+#  stato          :string(255)     default(""), not null
+#  scadenza       :date
+#  created_at     :datetime
+#  updated_at     :datetime
+#  scuola_id      :integer
+#  position       :integer
+#  email          :string(255)
+#  user_id        :integer
+#  totale_copie   :integer         default(0)
+#  totale_importo :float           default(0.0)
+#  latitude       :float
+#  longitude      :float
 #
 
 class Appunto < ActiveRecord::Base

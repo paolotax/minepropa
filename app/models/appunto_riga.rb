@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20110523180743
+# Schema version: 20110708083650
 #
 # Table name: appunto_righe
 #
@@ -15,12 +15,14 @@
 #  prezzo_unitario :integer
 #  currency        :string(255)
 #  sconto          :decimal(8, 2)
+#  fattura_id      :integer
 #
 
 class AppuntoRiga < ActiveRecord::Base
   
   belongs_to :libro
   belongs_to :appunto
+  belongs_to :fattura
   
   delegate :titolo, :copertina, :consigliato, :prezzo_copertina, :prezzo_consigliato, :to => :libro
   
@@ -34,11 +36,14 @@ class AppuntoRiga < ActiveRecord::Base
   scope :consegnati,    where("appunto_righe.consegnato = true")
   scope :pagati,        where("appunto_righe.pagato = true")
   scope :da_pagare,     where("appunto_righe.pagato = false OR appunto_righe.pagato IS NULL")
+  scope :da_fatturare,  where("appunto_righe.fattura_id is null")
   
+  scope :per_appunto,  order("appunto_righe.appunto_id, appunto_righe.libro_id")      
   scope :per_id,       order("appunto_righe.id desc")
   scope :per_libro_id, order("appunto_righe.libro_id")
   
   scope :per_utente, lambda { |user| joins(:appunto).where("appunti.user_id = ?", user.id) }
+  scope :per_scuola, lambda { |scuola| joins(:appunto).where("appunti.scuola_id = ?", scuola.id) }
       
   composed_of :unitario,
       :class_name  => "Money",
@@ -100,6 +105,10 @@ class AppuntoRiga < ActiveRecord::Base
     # else
     #   unitario * quantita
     # end  
+  end
+  
+  def sconto
+    100 - ((prezzo_unitario * 100).to_f / prezzo_copertina)
   end
   
   

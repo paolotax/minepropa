@@ -241,8 +241,8 @@ $(document).ready(function($){
 		yearSuffix: ''};
 	$.datepicker.setDefaults($.datepicker.regional['it']);
 
-  $( "#giorno_giro" ).datepicker({
-    'dateFormat': "D, d MM yy"
+  $( "input#fattura_data" ).datepicker({
+    'dateFormat': "d MM yy"
   });
 
 });

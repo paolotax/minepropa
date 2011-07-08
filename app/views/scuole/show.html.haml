@@ -41,6 +41,9 @@
 
 #map
 
+.btn_blue
+  = link_to "Fattura", new_fattura_path(:scuola => @scuola)
+
 / - unless @json.nil?
 /   #scuola_map
 /     = gmaps4rails(@json, { "auto_adjust" => true })

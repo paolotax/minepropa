@@ -12,5 +12,9 @@ ActiveSupport::Inflector.inflections do |inflect|
    inflect.irregular 'indirizzo', 'indirizzi'
    inflect.irregular 'libro', 'libri'
    inflect.irregular 'riga', 'righe'
+   inflect.irregular 'fattura', 'fatture'
+   inflect.irregular 'insegnante', 'insegnanti'
+   inflect.irregular 'classe', 'classi'
+   inflect.irregular 'adozione', 'adozioni'
    inflect.uncountable %w( fish sheep )
 end

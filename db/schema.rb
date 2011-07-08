@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110705104946) do
+ActiveRecord::Schema.define(:version => 20110708083650) do
 
   create_table "appunti", :force => true do |t|
     t.string   "destinatario"
@@ -42,7 +42,26 @@ ActiveRecord::Schema.define(:version => 20110705104946) do
     t.integer  "prezzo_unitario"
     t.string   "currency"
     t.decimal  "sconto",          :precision => 8, :scale => 2
+    t.integer  "fattura_id"
   end
+
+  add_index "appunto_righe", ["fattura_id"], :name => "index_appunto_righe_on_fattura_id"
+
+  create_table "fatture", :force => true do |t|
+    t.integer  "numero"
+    t.date     "data"
+    t.integer  "scuola_id"
+    t.integer  "user_id"
+    t.integer  "causale_id"
+    t.boolean  "dettaglio_righe"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "fatture", ["causale_id"], :name => "index_fatture_on_causale_id"
+  add_index "fatture", ["scuola_id"], :name => "index_fatture_on_scuola_id"
+  add_index "fatture", ["user_id", "causale_id", "numero"], :name => "index_fatture_per_utente_and_causale", :unique => true
+  add_index "fatture", ["user_id"], :name => "index_fatture_on_user_id"
 
   create_table "indirizzi", :force => true do |t|
     t.string   "destinatario"

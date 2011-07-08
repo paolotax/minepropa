@@ -1,0 +1,26 @@
+%p#notice= notice
+
+%p
+  %b Numero:
+  = @fattura.numero
+%p
+  %b Data:
+  = @fattura.data
+%p
+  %b Scuola:
+  = @fattura.scuola
+%p
+  %b User:
+  = @fattura.user
+%p
+  %b Causale:
+  = @fattura.causale_id
+%p
+  %b Dettaglio righe:
+  = @fattura.dettaglio_righe
+  
+= render @fattura.appunto_righe
+
+= link_to 'Edit', edit_fattura_path(@fattura)
+\|
+= link_to 'Back', fatture_path

@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20110308194101
+# Schema version: 20110705104946
 #
 # Table name: indirizzi
 #
@@ -14,9 +14,9 @@
 #  indirizzable_type :string(255)
 #  created_at        :datetime
 #  updated_at        :datetime
-#  latitude          :string(255)
-#  longitude         :string(255)
 #  gmaps             :boolean
+#  latitude          :float
+#  longitude         :float
 #
 
 class Indirizzo < ActiveRecord::Base
