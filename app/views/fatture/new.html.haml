@@ -1,5 +1,7 @@
 %h1 New fattura
 
+- indirizzo = @scuola.indirizzi.first
+= indirizzo.label_indirizzo.html_safe
 = render 'form'
 
 

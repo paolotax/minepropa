@@ -30,7 +30,7 @@ class Indirizzo < ActiveRecord::Base
   belongs_to :indirizzable, :polymorphic => true
   
   def label_indirizzo
-    self.destinatario + '</br>' +
+    '<em>'+ self.destinatario + '</em></br>' +
     self.indirizzo + '</br>' +
     self.cap + ' ' + self.citta + ' ' + self.provincia
   end

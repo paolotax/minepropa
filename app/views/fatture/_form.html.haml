@@ -5,19 +5,14 @@
       %ul
         - @fattura.errors.full_messages.each do |msg|
           %li= msg
-
+  = f.hidden_field :scuola_id
+  = f.hidden_field :user_id
   .field
     = f.label :numero
     = f.text_field :numero
   .field
     = f.label :data
     = f.text_field :data
-  .field
-    = f.label :scuola_id
-    = f.text_field :scuola_id
-  .field
-    = f.label :user_id
-    = f.text_field :user_id
   .field
     = f.label :causale_id
     = f.text_field :causale_id

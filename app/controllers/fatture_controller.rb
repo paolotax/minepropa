@@ -10,9 +10,12 @@ class FattureController < ApplicationController
 
   def show
     @fattura = Fattura.find(params[:id])
-
+    @scuola = @fattura.scuola
+    @appunto_righe = @fattura.appunto_righe.includes([:appunto, :libro]).per_appunto
+    
     respond_to do |format|
       format.html # show.html.erb
+      format.pdf { render = false }
     end
   end
 
