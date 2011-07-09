@@ -17,7 +17,7 @@
 class Fattura < ActiveRecord::Base
   belongs_to :scuola
   belongs_to :user
-  has_many :appunto_righe
+  has_many :appunto_righe, :dependent => :nullify
   
   TIPO_FATTURA = [ "Fattura", "Vendita" ]
   

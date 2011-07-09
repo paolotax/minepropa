@@ -1,4 +1,8 @@
 class FattureController < ApplicationController
+  
+  require "prawn/measurement_extensions"
+  
+  prawnto :prawn => { :page_size => 'A4', :margin => 8.mm }
 
   def index
     @fatture = Fattura.all
@@ -15,7 +19,7 @@ class FattureController < ApplicationController
     
     respond_to do |format|
       format.html # show.html.erb
-      format.pdf { render = false }
+      format.pdf { render :layout => false }
     end
   end
 
