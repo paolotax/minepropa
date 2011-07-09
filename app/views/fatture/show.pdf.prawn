@@ -6,7 +6,7 @@ pdf.repeat :all do
       # pdf.image logo, :at => [pdf.bounds.left, pdf.bounds.top], :width => 200, :height => 35
 
       pdf.font_size = 10
-      pdf.line_width = 0.1
+      pdf.line_width = 0.5
 
       pdf.move_down 5
       pdf.text "#{current_user.name}", :size => 13 unless current_user.nil?
