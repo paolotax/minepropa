@@ -41,7 +41,8 @@ $(document).ready(function() {
   });
   
   $('#libri_table').dataTable();
-
+  $('#fatture_table').dataTable();
+  
   $('#bar-sortby select').change(function() {
     var val = $(this).val();
     if (val == "Data creazione") {

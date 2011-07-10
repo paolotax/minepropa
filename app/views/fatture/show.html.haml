@@ -1,37 +1,37 @@
-%p#notice= notice
+#fattura_info_buttons
+  = link_to 'Edit', edit_fattura_path(@fattura)
+  \|
+  = link_to 'Back', fatture_path
+  \|
+  = link_to 'print', fattura_path(@fattura, :format => 'pdf' )
+.clear  
+#fattura_info
+  %p
+    %b Numero:
+    = best_in_place @fattura, :numero
+  %p
+    %b Data:
+    = best_in_place @fattura, :data
+  %p
+    %b Cliente:
+    = @fattura.scuola
+  %p
+    %b Pagamento:
+    = best_in_place @fattura, :condizioni_pagamento
+  %p
+    %b Pagata:
+    = best_in_place @fattura, :pagata
+#fattura_totali
+  %p
+    %b Totale Copie:
+    = @fattura.totale_copie
+  %p
+    %b Totale Fattura:
+    = @fattura.importo
 
-%p
-  %b Numero:
-  = @fattura.numero
-%p
-  %b Data:
-  = @fattura.data
-%p
-  %b Scuola:
-  = @fattura.scuola
-%p
-  %b User:
-  = @fattura.user
-%p
-  %b Causale:
-  = @fattura.causale_id
-%p
-  %b Dettaglio righe:
-  = @fattura.dettaglio_righe
-%p
-  %b Totale Copie:
-  = @fattura.totale_copie
-%p
-  %b Totale Fattura:
-  = @fattura.importo
-  
 
-  
 
-= link_to 'Edit', edit_fattura_path(@fattura)
-\|
-= link_to 'Back', fatture_path
-\|
-= link_to 'print', fattura_path(@fattura, :format => 'pdf' )
+.clear
 
-= nested_righe_per_appunto(@appunto_righe)
+#fattura_righe
+  = nested_righe_per_appunto(@appunto_righe)

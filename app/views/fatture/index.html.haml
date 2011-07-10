@@ -1,28 +1,27 @@
 %h1 Listing fatture
 
-%table
-  %tr
-    %th Numero
-    %th Data
-    %th Scuola
-    %th User
-    %th Causale
-    %th Dettaglio righe
-    %th
-    %th
-    %th
-
-  - @fatture.each do |fattura|
+%table#fatture_table
+  %thead
     %tr
-      %td= fattura.numero
-      %td= fattura.data
-      %td= fattura.scuola_id
-      %td= fattura.user_id
-      %td= fattura.causale_id
-      %td= fattura.dettaglio_righe
-      %td= link_to 'Show', fattura
-      %td= link_to 'Edit', edit_fattura_path(fattura)
-      %td= link_to 'Destroy', fattura, :confirm => 'Are you sure?', :method => :delete
+      %th Numero
+      %th Data
+      %th Cliente
+      %th Copie
+      %th Importo
+      %th
+      %th
+      %th
+  %tbody
+    - @fatture.each do |fattura|
+      %tr
+        %td= fattura.numero
+        %td= fattura.data
+        %td= fattura.scuola
+        %td= fattura.totale_copie
+        %td= fattura.importo
+        %td= link_to 'Show', fattura
+        %td= link_to 'Edit', edit_fattura_path(fattura)
+        %td= link_to 'Destroy', fattura, :confirm => 'Are you sure?', :method => :delete
 
 %br
 

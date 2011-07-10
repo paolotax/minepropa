@@ -1,3 +1,5 @@
+require 'prawn/graphics'
+
 pdf.repeat :all do
     # header
     pdf.bounding_box [pdf.bounds.left, pdf.bounds.top], :width  => pdf.bounds.width do
@@ -64,6 +66,7 @@ pdf.repeat :all do
       pdf.bounding_box [pdf.bounds.left, pdf.bounds.top - 71.mm], :width => 72.mm, :height => 8.mm do
         pdf.stroke_bounds
         pdf.draw_text "CONDIZIONI DI PAGAMENTO", :at => [pdf.bounds.left + 1, pdf.bounds.top - 6], :size => 6
+        pdf.draw_text "#{@fattura.condizioni_pagamento}", :at => [pdf.bounds.left + 1, pdf.bounds.top - 6], :size => 6
       end
 
 
@@ -186,7 +189,7 @@ pdf.bounding_box([pdf.bounds.left, pdf.bounds.top - 106.mm], :width  => pdf.boun
       end
       pdf.table r, 
         #:border_style => :grid,
-        :border_width   => 0.02,
+        :border_width   => 0.5,
         :font_size => 8,
         #:row_colors => ["FFFFFF","DDDDDD"],
         :column_widths => { 0 => 72.mm, 1 => 20.mm, 2 => 20.mm, 3 => 20.mm, 4 => 48.mm, 5 => 8.mm },
@@ -257,6 +260,24 @@ pdf.bounding_box [pdf.bounds.left, pdf.bounds.bottom + 28.mm], :width  => pdf.bo
     end
   end    
 end
+
+if (@fattura.pagata == true)
+  pdf.create_stamp("PAGATO") do 
+    pdf.rotate(30, :origin => [-5, -5]) do
+      pdf.stroke_color "FF3333" 
+      #pdf.stroke_ellipse [0, 0], 29, 15 
+      pdf.stroke_color "000000"
+      pdf.fill_color "993333" 
+      pdf.font("Times-Roman") do
+        pdf.draw_text "PAGATO", :at => [-23, -3] 
+      end
+      pdf.fill_color "000000" 
+    end
+  end
+  
+  pdf.stamp_at "PAGATO", [170, 400]
+end
+
 
 
 

@@ -473,3 +473,37 @@ input.qta {
     padding-left:10px;
   }
 }
+
+#fattura_info {
+  margin-top: 20px;
+  float: left;
+  padding: 5px;
+  border:  1px solid #A9C6D7;
+  @include box-shadow(#B6B6B6);
+  @include rounded-corners(5px);
+  p {
+    padding: 5px;
+  }
+}
+#fattura_info_buttons {
+  float: right;
+  a {
+    padding: 5px;
+  }
+}
+#fattura_totali {
+  margin-top: 20px;
+  float: right;
+  padding: 5px;
+  border:  1px solid #A9C6D7;
+  @include box-shadow(#B6B6B6);
+  @include rounded-corners(5px);
+}
+#fattura_righe {
+  margin-top: 20px;
+  padding: 5px;
+  border:  1px solid #A9C6D7;
+  @include box-shadow(#B6B6B6);
+  @include rounded-corners(5px);
+  
+}
