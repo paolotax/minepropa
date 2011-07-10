@@ -15,6 +15,7 @@ class FattureController < ApplicationController
   def show
     @fattura = Fattura.find(params[:id])
     @scuola = @fattura.scuola
+    @indirizzo = @scuola.indirizzi.first
     @appunto_righe = @fattura.appunto_righe.includes([:appunto, :libro]).per_appunto
     
     respond_to do |format|

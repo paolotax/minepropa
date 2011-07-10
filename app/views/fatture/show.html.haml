@@ -5,6 +5,7 @@
   \|
   = link_to 'print', fattura_path(@fattura, :format => 'pdf' )
 .clear  
+
 #fattura_info
   %p
     %b Numero:
@@ -21,6 +22,10 @@
   %p
     %b Pagata:
     = best_in_place @fattura, :pagata
+
+#fattura_destinatario
+  = render :partial => 'indirizzi/indirizzo', :locals => { :scuola => @scuola, :indirizzo => @indirizzo }
+
 #fattura_totali
   %p
     %b Totale Copie:
