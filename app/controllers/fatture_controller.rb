@@ -6,6 +6,17 @@ class FattureController < ApplicationController
 
   def index
     @fatture = Fattura.all
+    
+    @da_fatturare = Scuola.
+                      joins(:appunti => :appunto_righe).
+                      select("scuole.id, scuole.nome_scuola, scuole.provincia, appunti.stato").
+                      select("count(distinct appunti.id) as count").
+                      select("sum(appunto_righe.quantita) as copie").
+                      select("sum(appunto_righe.quantita * appunto_righe.prezzo_unitario) as importo").
+                      where("appunto_righe.fattura_id is null").
+                      group("scuole.id, scuole.nome_scuola, scuole.provincia, appunti.stato").
+                      order("scuole.provincia, scuole.nome_scuola")
+    
     respond_to do |format|
       format.html # index.html.erb
 

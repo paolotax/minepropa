@@ -25,4 +25,28 @@
 
 %br
 
+
+%table#da_fatturare_table
+  %thead
+    %tr
+      %th Codice
+      %th Cliente
+      %th Provincia
+      %th Nr.Appunti
+      %th Copie
+      %th Importo
+      %th Stato
+  %tbody
+    - @da_fatturare.each do |s|
+      %tr
+        %td= s.id
+        %td= link_to s.nome_scuola, scuola_path(s.id)
+        %td= s.provincia
+        %td= s.count
+        %td= s.copie
+        %td= number_to_currency(s.importo.to_f / 100)
+        %td= s.stato
+
+
+
 = link_to 'New Fattura', new_fattura_path
