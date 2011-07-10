@@ -42,8 +42,9 @@ class AppuntoRiga < ActiveRecord::Base
   scope :per_id,       order("appunto_righe.id desc")
   scope :per_libro_id, order("appunto_righe.libro_id")
   
-  scope :per_utente, lambda { |user| joins(:appunto).where("appunti.user_id = ?", user.id) }
-  scope :per_scuola, lambda { |scuola| joins(:appunto).where("appunti.scuola_id = ?", scuola.id) }
+  scope :per_utente,  lambda { |user| joins(:appunto).where("appunti.user_id = ?", user.id) }
+  scope :per_scuola,  lambda { |scuola| joins(:appunto).where("appunti.scuola_id = ?", scuola.id) }
+  scope :per_fattura, lambda { |fatt| where("appunto_righe.fattura_id = ?", fatt) }
       
   composed_of :unitario,
       :class_name  => "Money",
@@ -115,10 +116,15 @@ class AppuntoRiga < ActiveRecord::Base
   private
   
     def update_righe_sum
-      return true unless quantita_changed?
+      return true unless quantita_changed? || prezzo_unitario_changed? || fattura_id_changed?
       Appunto.update_counters appunto.id, 
         :totale_copie   => (quantita - (quantita_was || 0)),
         :totale_importo => (quantita - (quantita_was || 0)).to_f * prezzo_unitario / 100
+      unless fattura.nil?
+        Fattura.update_counters fattura.id, 
+          :totale_copie    => (quantita - (quantita_was || 0)),
+          :importo_fattura => (quantita - (quantita_was || 0)) * prezzo_unitario
+      end
       return true
     end
     
@@ -126,6 +132,11 @@ class AppuntoRiga < ActiveRecord::Base
       Appunto.update_counters appunto.id, 
         :totale_copie   => - quantita_was,
         :totale_importo => - quantita_was.to_f * prezzo_unitario / 100
+      unless fattura.nil?
+        Fattura.update_counters fattura.id, 
+          :totale_copie    => - quantita_was,
+          :importo_fattura => - quantita_was * prezzo_unitario
+      end
       return true
     end
 

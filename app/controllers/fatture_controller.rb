@@ -2,7 +2,7 @@ class FattureController < ApplicationController
   
   require "prawn/measurement_extensions"
   
-  prawnto :prawn => { :page_size => 'A4', :margin => 8.mm }
+  prawnto :prawn => { :page_size => 'A4', :margin_top => 8.mm, :margin_bottom => 8.mm, :margin_left => 15.mm, :margin_right => 8.mm }
 
   def index
     @fatture = Fattura.all
@@ -44,7 +44,7 @@ class FattureController < ApplicationController
   def create
     @fattura = Fattura.new(params[:fattura])
     @fattura.add_righe_from_scuola(@fattura.scuola)
-    
+
     respond_to do |format|
       if @fattura.save
         format.html { redirect_to(@fattura, :notice => 'Fattura was successfully created.') }

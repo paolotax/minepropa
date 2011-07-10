@@ -18,11 +18,20 @@
 %p
   %b Dettaglio righe:
   = @fattura.dettaglio_righe
+%p
+  %b Totale Copie:
+  = @fattura.totale_copie
+%p
+  %b Totale Fattura:
+  = @fattura.importo
   
-= render @fattura.appunto_righe
+
+  
 
 = link_to 'Edit', edit_fattura_path(@fattura)
 \|
 = link_to 'Back', fatture_path
 \|
 = link_to 'print', fattura_path(@fattura, :format => 'pdf' )
+
+= nested_righe_per_appunto(@appunto_righe)

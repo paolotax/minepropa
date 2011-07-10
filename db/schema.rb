@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110708083650) do
+ActiveRecord::Schema.define(:version => 20110710081331) do
 
   create_table "appunti", :force => true do |t|
     t.string   "destinatario"
@@ -56,22 +56,18 @@ ActiveRecord::Schema.define(:version => 20110708083650) do
     t.boolean  "dettaglio_righe"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "condizioni_pagamento"
+    t.boolean  "pagata"
+    t.integer  "totale_copie",         :default => 0
+    t.integer  "importo_fattura",      :default => 0
+    t.integer  "totale_iva",           :default => 0
+    t.string   "currency"
   end
 
   add_index "fatture", ["causale_id"], :name => "index_fatture_on_causale_id"
   add_index "fatture", ["scuola_id"], :name => "index_fatture_on_scuola_id"
   add_index "fatture", ["user_id", "causale_id", "numero"], :name => "index_fatture_per_utente_and_causale", :unique => true
   add_index "fatture", ["user_id"], :name => "index_fatture_on_user_id"
-
-  create_table "feed_entries", :force => true do |t|
-    t.string   "name"
-    t.text     "summary"
-    t.string   "url"
-    t.datetime "published_at"
-    t.string   "guid"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "indirizzi", :force => true do |t|
     t.string   "destinatario"

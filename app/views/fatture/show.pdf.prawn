@@ -17,6 +17,7 @@ pdf.repeat :all do
       pdf.text "cell #{current_user.phone}" unless current_user.nil?
       pdf.text "email #{current_user.email}" unless current_user.nil?
     
+
       pdf.bounding_box [pdf.bounds.width / 2.0, pdf.bounds.top - 55.mm], :width => pdf.bounds.width / 2.0 do
         if !@scuola.indirizzi.empty?
           indirizzo = @scuola.indirizzi.first
@@ -28,19 +29,16 @@ pdf.repeat :all do
       end
       
 
-      
       pdf.bounding_box [pdf.bounds.left, pdf.bounds.top - 55.mm], :width => 44.mm, :height => 8.mm do
         pdf.stroke_bounds
         pdf.text "FATTURA", :align => :center, :valign => :center
       end
+
+
       pdf.bounding_box [pdf.bounds.left, pdf.bounds.top - 63.mm], :width => 72.mm, :height => 8.mm do
         pdf.bounding_box [ pdf.bounds.left, pdf.bounds.top], :width => 8.mm, :height => 8.mm do
           pdf.stroke_bounds
           pdf.draw_text "PAG", :at => [pdf.bounds.left + 1, pdf.bounds.top - 6], :size => 6
-          
-          # pagecount = pdf.page_count
-          # pdf.text "#{pagecount}", :align => :center, :valign => :center, :size => 9
-          
         end
         pdf.bounding_box [ pdf.bounds.left + 8.mm, pdf.bounds.top], :width => 18.mm, :height => 8.mm do
           pdf.stroke_bounds
@@ -61,10 +59,14 @@ pdf.repeat :all do
           pdf.draw_text "COD.CLIENTE", :at => [pdf.bounds.left + 1, pdf.bounds.top - 6], :size => 6
         end
       end
+
+
       pdf.bounding_box [pdf.bounds.left, pdf.bounds.top - 71.mm], :width => 72.mm, :height => 8.mm do
         pdf.stroke_bounds
         pdf.draw_text "CONDIZIONI DI PAGAMENTO", :at => [pdf.bounds.left + 1, pdf.bounds.top - 6], :size => 6
       end
+
+
       pdf.bounding_box [pdf.bounds.left, pdf.bounds.top - 79.mm], :width => 72.mm, :height => 8.mm do
         pdf.bounding_box [ pdf.bounds.left, pdf.bounds.top], :width => 44.mm, :height => 8.mm do
           pdf.stroke_bounds
@@ -81,6 +83,8 @@ pdf.repeat :all do
           end
         end
       end
+
+
       pdf.bounding_box [pdf.bounds.left, pdf.bounds.top - 87.mm], :width => 72.mm, :height => 8.mm do
         pdf.bounding_box [ pdf.bounds.left, pdf.bounds.top], :width => 15.mm, :height => 8.mm do
           pdf.stroke_bounds
@@ -97,30 +101,73 @@ pdf.repeat :all do
           end
         end
       end
-      
-            
+
+
       pdf.bounding_box [pdf.bounds.left, pdf.bounds.top - 95.mm], :width => pdf.bounds.width do
-        pdf.table [["Titolo", "Prezzo Unitario", "Quantità", "Sconto", "Importo"]],
-              :border_width   => 0.02,
+        pdf.table [["Titolo", "Quantità", "Prezzo Unitario", "% Sconto", "Importo", "IVA"]],
+              :border_width   => 0.5,
               :font_size => 7,
               #:row_colors => ["FFFFFF","DDDDDD"],
-              :column_widths => { 0 => 72.mm, 1 => 20.mm, 2 => 20.mm, 3 => 20.mm, 4 => 48.mm },
-              :align  => { 0 => :left, 1 => :right, 2 => :right, 3 => :right, 4 => :right }
+              :column_widths => { 0 => 72.mm, 1 => 20.mm, 2 => 20.mm, 3 => 20.mm, 4 => 48.mm, 5 => 8.mm },
+              :align  => { 0 => :left, 1 => :right, 2 => :right, 3 => :right, 4 => :right, 5 => :right }
       end
     end
 
     # footer
-    pdf.bounding_box [pdf.bounds.left, pdf.bounds.bottom + 55.mm], :width  => pdf.bounds.width do
-        pdf.font "Helvetica"
-        pdf.stroke_horizontal_rule
-        pdf.move_down(5)
-        pdf.text "And here's a sexy footer", :size => 16
+    pdf.bounding_box [pdf.bounds.left, pdf.bounds.bottom + 28.mm], :width  => pdf.bounds.width, :height => 50.mm do
+    
+      pdf.bounding_box [pdf.bounds.left, pdf.bounds.top], :width  => 188.mm, :height => 24.mm do
+        pdf.stroke_bounds
+        
+        pdf.bounding_box [pdf.bounds.left, pdf.bounds.top], :width  => 32.mm, :height => 15.mm do
+          pdf.stroke_bounds
+          pdf.draw_text "IMPONIBILE", :at => [pdf.bounds.left + 1, pdf.bounds.top - 6], :size => 6
+        end
+        
+        pdf.bounding_box [pdf.bounds.left + 32.mm , pdf.bounds.top], :width  => 8.mm, :height => 15.mm do
+          pdf.stroke_bounds
+          pdf.draw_text "% IVA", :at => [pdf.bounds.left + 1, pdf.bounds.top - 6], :size => 6
+        end
+        
+        pdf.bounding_box [pdf.bounds.left + 40.mm, pdf.bounds.top], :width  => 32.mm, :height => 15.mm do
+          pdf.stroke_bounds
+          pdf.draw_text "IMPOSTA", :at => [pdf.bounds.left + 1, pdf.bounds.top - 6], :size => 6
+        end
+        
+        pdf.bounding_box [pdf.bounds.left + 72.mm, pdf.bounds.top], :width  => 108.mm, :height => 15.mm do
+
+        end
+        
+        pdf.bounding_box [pdf.bounds.left, pdf.bounds.top - 15.mm], :width  => 40.mm, :height => 9.mm do
+          pdf.stroke_bounds
+          pdf.draw_text "TOT.INPONIBILE", :at => [pdf.bounds.left + 1, pdf.bounds.top - 6], :size => 6
+        end
+        
+        pdf.bounding_box [pdf.bounds.left + 40.mm, pdf.bounds.top - 15.mm], :width  => 32.mm, :height => 9.mm do
+          pdf.stroke_bounds
+          pdf.draw_text "TOTALE IMPOSTA", :at => [pdf.bounds.left + 1, pdf.bounds.top - 6], :size => 6
+        end
+        
+        pdf.bounding_box [pdf.bounds.left + 72.mm, pdf.bounds.top - 15.mm], :width  => 32.mm, :height => 9.mm do
+          pdf.stroke_bounds
+          pdf.draw_text "SPESE DI PORTO E IMBALLO", :at => [pdf.bounds.left + 1, pdf.bounds.top - 6], :size => 6
+        end
+        
+        pdf.bounding_box [pdf.bounds.left + 144.mm, pdf.bounds.top - 13.mm], :width  => 44.mm, :height => 11.mm do
+          pdf.stroke_bounds
+          pdf.draw_text "TOTALE FATTURA   EUR", :at => [pdf.bounds.left + 1, pdf.bounds.top - 6], :size => 6, :style => :bold
+        end
+      end    
     end
 end
 
+pdf.repeat(:all, :dynamic => true) do
+  pdf.draw_text page_number, :at => [pdf.bounds.left + 7, pdf.bounds.top - 69.mm]
+end
 
-pdf.bounding_box([pdf.bounds.left, pdf.bounds.top - 108.mm], 
-      :width  => pdf.bounds.width, :height => 124.mm) do
+
+#  TABLE
+pdf.bounding_box([pdf.bounds.left, pdf.bounds.top - 106.mm], :width  => pdf.bounds.width, :height => 135.mm) do
   
   unless @appunto_righe.empty?
 
@@ -130,10 +177,11 @@ pdf.bounding_box([pdf.bounds.left, pdf.bounds.top - 108.mm],
       r = righe.map do |riga|
         [
           riga.libro.titolo,
-          riga.libro.copertina,
           riga.quantita,
+          riga.libro.copertina,
           riga.sconto,
-          number_to_currency(riga.importo)
+          number_to_currency(riga.importo),
+          "VA"
         ]
       end
       pdf.table r, 
@@ -141,12 +189,76 @@ pdf.bounding_box([pdf.bounds.left, pdf.bounds.top - 108.mm],
         :border_width   => 0.02,
         :font_size => 8,
         #:row_colors => ["FFFFFF","DDDDDD"],
-        :column_widths => { 0 => 72.mm, 1 => 20.mm, 2 => 20.mm, 3 => 20.mm, 4 => 48.mm },
-        :align  => { 0 => :left, 1 => :right, 2 => :right, 3 => :right, 4 => :right }
+        :column_widths => { 0 => 72.mm, 1 => 20.mm, 2 => 20.mm, 3 => 20.mm, 4 => 48.mm, 5 => 8.mm },
+        :align  => { 0 => :left, 1 => :right, 2 => :right, 3 => :right, 4 => :right, 5 => :right }
       pdf.move_down(5)
     end
   end
 end
+
+
+#  FOOTER WITH TOTALS
+pdf.bounding_box [pdf.bounds.left, pdf.bounds.bottom + 28.mm], :width  => pdf.bounds.width, :height => 50.mm do
+
+  pdf.bounding_box [pdf.bounds.left, pdf.bounds.top], :width  => 188.mm, :height => 24.mm do
+  
+    pdf.bounding_box [pdf.bounds.left, pdf.bounds.top], :width  => 32.mm, :height => 15.mm do
+
+      pdf.bounding_box [ pdf.bounds.left + 1.mm, pdf.bounds.top - 2.mm ], :width => pdf.bounds.width - 2.mm, :height => 6.mm do
+        pdf.text "#{@fattura.importo}", :align => :right, :valign => :center, :size => 8
+      end
+    end
+    
+    pdf.bounding_box [pdf.bounds.left + 32.mm , pdf.bounds.top], :width  => 8.mm, :height => 15.mm do
+
+      pdf.bounding_box [ pdf.bounds.left + 1.mm, pdf.bounds.top - 2.mm ], :width => pdf.bounds.width - 2.mm, :height => 6.mm do
+        pdf.text "0 %", :align => :right, :valign => :center, :size => 8
+      end
+    end
+    
+    pdf.bounding_box [pdf.bounds.left + 40.mm, pdf.bounds.top], :width  => 32.mm, :height => 15.mm do
+
+      pdf.bounding_box [ pdf.bounds.left + 1.mm, pdf.bounds.top - 2.mm ], :width => pdf.bounds.width - 2.mm, :height => 6.mm do
+        pdf.text "0", :align => :right, :valign => :center, :size => 8
+      end
+    end
+    
+    pdf.bounding_box [pdf.bounds.left + 72.mm, pdf.bounds.top], :width  => 108.mm, :height => 15.mm do
+      pdf.bounding_box [ pdf.bounds.left + 1.mm, pdf.bounds.top - 2.mm ], :width => pdf.bounds.width - 2.mm, :height => 6.mm do
+        pdf.text "VA: IVA ass.editore art.74.1.C", :align => :left, :valign => :center, :size => 8
+      end
+    end
+    
+    pdf.bounding_box [pdf.bounds.left, pdf.bounds.top - 15.mm], :width  => 40.mm, :height => 9.mm do
+      pdf.bounding_box [ pdf.bounds.left + 1.mm, pdf.bounds.top - 2.mm ], :width => pdf.bounds.width - 2.mm, :height => 6.mm do
+        pdf.text "#{@fattura.importo}", :align => :right, :valign => :center, :size => 8
+      end
+    end
+    
+    pdf.bounding_box [pdf.bounds.left + 40.mm, pdf.bounds.top - 15.mm], :width  => 32.mm, :height => 9.mm do
+
+      pdf.bounding_box [ pdf.bounds.left + 1.mm, pdf.bounds.top - 2.mm ], :width => pdf.bounds.width - 2.mm, :height => 6.mm do
+        pdf.text "0,00", :align => :right, :valign => :center, :size => 8
+      end
+    end
+    
+    pdf.bounding_box [pdf.bounds.left + 72.mm, pdf.bounds.top - 15.mm], :width  => 32.mm, :height => 9.mm do
+
+      pdf.bounding_box [ pdf.bounds.left + 1.mm, pdf.bounds.top - 2.mm ], :width => pdf.bounds.width - 2.mm, :height => 6.mm do
+        pdf.text "0,00", :align => :right, :valign => :center, :size => 8
+      end
+    end
+    
+    pdf.bounding_box [pdf.bounds.left + 144.mm, pdf.bounds.top - 13.mm], :width  => 44.mm, :height => 11.mm do
+
+      pdf.bounding_box [ pdf.bounds.left + 1.mm, pdf.bounds.top - 2.mm ], :width => pdf.bounds.width - 2.mm, :height => 8.mm do
+        pdf.text "#{@fattura.importo}", :align => :right, :valign => :center, :size => 8
+      end
+    end
+  end    
+end
+
+
 
 
 
