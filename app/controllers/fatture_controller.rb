@@ -2,10 +2,12 @@ class FattureController < ApplicationController
   
   require "prawn/measurement_extensions"
   
+  before_filter :authenticate_user!
+  
   prawnto :prawn => { :page_size => 'A4', :margin_top => 8.mm, :margin_bottom => 8.mm, :margin_left => 15.mm, :margin_right => 8.mm }
 
   def index
-    @fatture = Fattura.all
+    @fatture = current_user.fatture.all
     
     @da_fatturare = Scuola.
                       joins(:appunti => :appunto_righe).
