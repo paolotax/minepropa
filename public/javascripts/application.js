@@ -41,7 +41,7 @@ $(document).ready(function() {
   });
   
   $('#libri_table').dataTable();
-  $('#fatture_table').dataTable();
+  $('#da_fatturare_table').dataTable();
   
   $('#bar-sortby select').change(function() {
     var val = $(this).val();

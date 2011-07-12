@@ -30,20 +30,22 @@
   = @presenter.copie_per_scuola  
 / - content_for :go_map do
 /   = javascript_include_tag 'jquery.gomap-1.3.0.js'
-
+%br
 #scuola_edit
   = link_to "edit", edit_scuola_path(@scuola)
   |
   = link_to "new", new_scuola_path
-  
+%br  
 #map_show
   = submit_tag "Mostra Mappa" 
 
 #map
+%br
+
 
 .btn_blue
   = link_to "Fattura", new_fattura_path(:scuola => @scuola)
-
+%br
 / - unless @json.nil?
 /   #scuola_map
 /     = gmaps4rails(@json, { "auto_adjust" => true })
@@ -52,20 +54,7 @@
 
 / - content_for :search_nav do
 /   = render :partial => 'pages/search_appunti'
-- indirizzo = @scuola.indirizzi.first
-- lat_long = [indirizzo.latitude, indirizzo.longitude]
-- @piu_vicini = Appunto.da_fare.near(lat_long, 10)
 
-%ul#appunti.tasks
-  - for v in @piu_vicini do
-    = render v, :app_righe => false
-    - l_l = [v.latitude, v.longitude] 
-    - distance = indirizzo.distance_from(l_l)
-    = "#{format("%.3f", Conversion.m2km(distance))} km"
-    - if (distance > 0)
-      - b = indirizzo.bearing_to(l_l)
-      =  Geocoder::Calculations.compass_point(b)
-      %br
 
 %table.libri.riepilogo
   %th Titolo
@@ -94,6 +83,26 @@
           #visible_taskslist_title.group-title Appunti completati
           = render :partial => 'appunti/appunto', :collection => @presenter.appunti_completati, :locals => { :app_righe => true }
   
-  
+
+
+
+
+
+
+
+#visible_taskslist_title.group-title Nei dintorni...
+- indirizzo = @scuola.indirizzi.first
+- lat_long = [indirizzo.latitude, indirizzo.longitude]
+- @piu_vicini = Appunto.da_fare.near(lat_long, 10)
+%ul#appunti.tasks
+  - for v in @piu_vicini do
+    = render v, :app_righe => false
+    - l_l = [v.latitude, v.longitude] 
+    - distance = indirizzo.distance_from(l_l)
+    = "#{format("%.3f", Conversion.m2km(distance))} km"
+    - if (distance > 0)
+      - b = indirizzo.bearing_to(l_l)
+      =  Geocoder::Calculations.compass_point(b)
+      %br
   
   
