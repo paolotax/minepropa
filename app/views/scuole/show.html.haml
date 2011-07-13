@@ -42,9 +42,7 @@
 #map
 %br
 
-
-.btn_blue
-  = link_to "Fattura", new_fattura_path(:scuola => @scuola)
+= link_to "Fattura", new_fattura_path(:scuola => @scuola), :class => 'btn_blue'
 %br
 / - unless @json.nil?
 /   #scuola_map

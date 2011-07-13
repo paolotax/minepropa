@@ -46,7 +46,7 @@ pdf.repeat :all do
           pdf.stroke_bounds
           pdf.draw_text "DATA", :at => [pdf.bounds.left + 1, pdf.bounds.top - 6], :size => 6
           pdf.bounding_box [ pdf.bounds.left + 1.mm, pdf.bounds.top - 2.mm ], :width => pdf.bounds.width - 2.mm, :height => 6.mm do
-            pdf.text "#{l(@fattura.created_at, :format => :only_date)}", :align => :center, :valign => :center, :size => 8
+            pdf.text "#{l(@fattura.data, :format => :only_date)}", :align => :center, :valign => :center, :size => 8
           end
         end
         pdf.bounding_box [pdf.bounds.left + 26.mm, pdf.bounds.top], :width => 18.mm, :height => 8.mm do
@@ -66,7 +66,9 @@ pdf.repeat :all do
       pdf.bounding_box [pdf.bounds.left, pdf.bounds.top - 71.mm], :width => 72.mm, :height => 8.mm do
         pdf.stroke_bounds
         pdf.draw_text "CONDIZIONI DI PAGAMENTO", :at => [pdf.bounds.left + 1, pdf.bounds.top - 6], :size => 6
-        pdf.draw_text "#{@fattura.condizioni_pagamento}", :at => [pdf.bounds.left + 1, pdf.bounds.top - 6], :size => 6
+        pdf.bounding_box [ pdf.bounds.left + 1.mm, pdf.bounds.top - 2.mm ], :width => pdf.bounds.width - 2.mm, :height => 6.mm do
+          pdf.text "#{@fattura.condizioni_pagamento}", :align => :center, :valign => :center, :size => 8
+        end
       end
 
 
@@ -100,7 +102,7 @@ pdf.repeat :all do
           pdf.stroke_bounds
           pdf.draw_text "NOSTRO CODICE IBAN PER BONIFICI", :at => [pdf.bounds.left + 1, pdf.bounds.top - 6], :size => 6
           pdf.bounding_box [ pdf.bounds.left + 1.mm, pdf.bounds.top - 2.mm ], :width => pdf.bounds.width - 2.mm, :height => 6.mm do
-            pdf.text "IT 04 1558 2037 ", :align => :center, :valign => :center, :size => 8
+            pdf.text "IT81M0538702414000000075619", :align => :center, :valign => :center, :size => 8
           end
         end
       end
@@ -176,7 +178,7 @@ pdf.bounding_box([pdf.bounds.left, pdf.bounds.top - 106.mm], :width  => pdf.boun
 
     
     @appunto_righe.group_by(&:appunto).each do |a, righe|
-      pdf.text "Ordine del #{l a.created_at, :format => :short} - Consegna del #{a.tag_list}"
+       pdf.text "Ordine del #{l a.created_at, :format => :short} - Consegna del #{a.tag_list}"
       r = righe.map do |riga|
         [
           riga.libro.titolo,
