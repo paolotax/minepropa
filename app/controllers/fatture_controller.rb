@@ -40,6 +40,8 @@ class FattureController < ApplicationController
   def new
     @scuola = Scuola.find(params[:scuola])
     @fattura = Fattura.new({:scuola => @scuola, :user => current_user})
+    @fattura.numero = @fattura.get_new_id(current_user)
+    @fattura.data   = Time.now
     @appunto_righe = AppuntoRiga.includes([:appunto, :libro]).per_scuola(@scuola).da_fatturare.per_appunto
     
     respond_to do |format|

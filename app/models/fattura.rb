@@ -52,7 +52,8 @@ class Fattura < ActiveRecord::Base
     end
   end
   
-  
-
+  def get_new_id(user)
+    Fattura.where("user_id = ?", user.id).last == nil ? 1 : Fattura.where("user_id = ?", user.id).last[:numero] + 1  
+  end
   
 end

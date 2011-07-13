@@ -1,5 +1,7 @@
 %h1 Listing fatture
 
+- totali_fatture =  {:count => 0, :copie => 0, :importo => 0}
+
 %table#fatture_table
   %thead
     %tr
@@ -14,11 +16,12 @@
   %tbody
     - @fatture.each do |fattura|
       %tr
-        %td= fattura.numero
-        %td= fattura.data
+        %td= best_in_place fattura, :numero
+        %td= best_in_place fattura, :data
         %td= fattura.scuola
         %td= fattura.totale_copie
         %td= fattura.importo
+        %td= best_in_place fattura, :pagata
         %td= link_to 'Show', fattura
         %td= link_to 'Edit', edit_fattura_path(fattura)
         %td= link_to 'Destroy', fattura, :confirm => 'Are you sure?', :method => :delete

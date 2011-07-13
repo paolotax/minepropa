@@ -226,7 +226,7 @@ input.qta {
   width: 30%;
 }
 
-.field {
+form .field {
   margin-bottom:1em;
   margin-top:-0.5em;
   padding-bottom:0.5em;
@@ -239,6 +239,10 @@ input.qta {
     padding-top:0.2em;
     width:25%;
   }
+}
+
+form .actions {
+  float: right;
 }
 
 .vac_box {
@@ -518,3 +522,7 @@ input.qta {
   @include rounded-corners(5px);
   
 }
+
+
+
+  

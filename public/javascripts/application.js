@@ -148,15 +148,6 @@ $(document).ready(function() {
 });
 
 
-/* ------------------------------
-    new_layout
--------------------------------*/
-$(document).ready(function() {
-  
-  
-  
-});
-
 
 /* ----------------
     sidebar menu 
@@ -242,9 +233,7 @@ $(document).ready(function($){
 		yearSuffix: ''};
 	$.datepicker.setDefaults($.datepicker.regional['it']);
 
-  $( "input#fattura_data" ).datepicker({
-    'dateFormat': "d MM yy"
-  });
+  $( "input#fattura_data" ).datepicker();
 
 });
 

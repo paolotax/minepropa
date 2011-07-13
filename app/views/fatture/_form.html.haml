@@ -7,17 +7,18 @@
           %li= msg
   = f.hidden_field :scuola_id
   = f.hidden_field :user_id
+  .actions
+    = f.submit 'Salva', :class => 'btn_blue'
   .field
     = f.label :numero
     = f.text_field :numero
   .field
     = f.label :data
-    = f.text_field :data
+    = f.text_field :data, :value => @fattura.data.strftime("%d/%m/%Y")
   .field
     = f.label :condizioni_pagamento
     = f.text_field :condizioni_pagamento
   .field
     = f.label :pagata
     = f.check_box :pagata
-  .actions
-    = f.submit 'Save'
+
