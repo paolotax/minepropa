@@ -536,6 +536,36 @@ function calcRoute(ds, dd, my) {
 /* ---------------
     google maps 
 ----------------*/
+
+$(document).ready(function() {
+  
+  $('#map_test').click(function({
+    
+    lat = 15
+    // lon = parseFloat($('#scuola_longitude').val());
+    
+    console.log(lat);
+    
+    #('#mappa_scuola').gpMap({
+        latitude: lat,
+        longitude: lon,
+        zoom: 15,
+        maptype:  'ROADMAP',
+        directions: true,
+        getDirections: true,
+        streetViewControl: true
+    });
+    
+  });
+  
+  
+  
+  
+  
+
+
+});
+
 $(document).ready(function() {
   
   $("#print_calendar").click(function(){
