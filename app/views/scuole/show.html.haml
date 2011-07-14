@@ -7,7 +7,7 @@
         .back
           = link_to "Indietro", "javascript:history.back()"
         .delete
-          = link_to "Elimina", @appunto, :method => :delete, :confirm => 'Sei sicuro?', :title => 'Elimina      appunto'
+          = link_to "Elimina", @scuola, :method => :delete, :confirm => 'Sei sicuro?', :title => 'Elimina      appunto'
       #td_task_info
         #td_task_title_input.title-container
           = best_in_place @scuola, :nome_scuola
@@ -48,7 +48,7 @@
     
   #scuola_latitude
     = @indirizzo.latitude
-  #scuola_logitude
+  #scuola_longitude
     = @indirizzo.longitude
     
   = @presenter.copie_per_scuola  
@@ -60,10 +60,10 @@
   |
   = link_to "new", new_scuola_path
 %br  
+
 #map_show
   = submit_tag "Mostra Mappa" 
-#map_test
-  = submit_tag "Mostra test"
+#map
 
 #mappa_scuola
 %br

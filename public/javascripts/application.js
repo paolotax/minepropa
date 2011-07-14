@@ -536,34 +536,44 @@ function calcRoute(ds, dd, my) {
 /* ---------------
     google maps 
 ----------------*/
-
 $(document).ready(function() {
+
+  lat = parseFloat($('#scuola_latitude').text());
+  lon = parseFloat($('#scuola_longitude').text());
+  console.log(lat + " " + lon);
   
-  $('#map_test').click(function({
-    
-    lat = 15
-    // lon = parseFloat($('#scuola_longitude').val());
-    
-    console.log(lat);
-    
-    #('#mappa_scuola').gpMap({
-        latitude: lat,
-        longitude: lon,
-        zoom: 15,
-        maptype:  'ROADMAP',
-        directions: true,
-        getDirections: true,
-        streetViewControl: true
+  var scu_id  = $.trim($('.scuola_id').text());
+  var ind_id  = $.trim($('.scuola_indirizzo_id').text());
+  var url = scu_id + ".json";
+  
+  
+  $("#mappa_scuola").goMap({
+       markers: [{ 
+                   id: 'baseMarker',
+                   draggable: true,
+                   latitude: lat, 
+                   longitude: lon, 
+                   html: { 
+                       'content': $('#fattura_destinatario').html(), 
+                       'popup': true 
+                   }}], 
+       zoom: 15,
+       maptype:  'ROADMAP',
+       directions: true,
+       getDirections: true,
+       streetViewControl: true
+   });
+
+   $.goMap.createListener({type:'marker', marker:'baseMarker'}, 'dragend', function() { 
+      var lat = this.getPosition().lat();
+      var lng = this.getPosition().lng();
+      $('.scuola_latlong').html(lat + ' ' + lng);
+      $.ajax({
+        type: 'put',
+        data: '&longitude=' + lng + '&latitude=' + lat, 
+        url: '/maps/' + ind_id + '/update_latlong/' 
+      });
     });
-    
-  });
-  
-  
-  
-  
-  
-
-
 });
 
 $(document).ready(function() {
