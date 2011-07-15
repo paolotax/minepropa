@@ -8,6 +8,15 @@ class ApplicationController < ActionController::Base
   before_filter :instantiate_controller_and_action_names
 
   layout :layout_by_resource
+  
+  def after_sign_in_path_for(resource_or_scope)
+    some_url(:protocol => 'http')
+  end
+
+  # Tell Devise to redirect after sign_out
+  def after_sign_out_path_for(resource_or_scope)
+    some_url(:protocol => 'http')
+  end
 
   protected
 

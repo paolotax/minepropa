@@ -16,13 +16,16 @@ Minepropa::Application.routes.draw do
 
   # Require SSL for Devise
   constraints SSL do
-    devise_for :users
+    devise_for :users, :controllers => {
+      :registrations => 'registrations'
+    } do {
+      # your custom Devise routes here
+    }
+    end
   end
-
   # Redirect to SSL from non-SSL so you don't get 404s
-  # Repeat for any custom Devise routes
+    # Repeat for any custom Devise routes
   match "/users(/*path)", :to => redirect { |_, request| "https://" + request.host_with_port + request.fullpath }
-  
   
   #devise_for :users
   
