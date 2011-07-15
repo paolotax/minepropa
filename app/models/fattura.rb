@@ -52,6 +52,18 @@ class Fattura < ActiveRecord::Base
     end
   end
   
+  def add_righe_from_appunti(scuola, appunti)
+    app = Appunto.find(appunti)
+   
+    app.each do |a|
+      a.appunto_righe.each do |riga|
+        self.totale_copie += riga.quantita
+        self.importo_fattura += riga.quantita * riga.prezzo_unitario
+        self.appunto_righe << riga
+      end
+    end
+  end
+  
   def get_new_id(user)
     Fattura.where("user_id = ?", user.id).last == nil ? 1 : Fattura.where("user_id = ?", user.id).last[:numero] + 1  
   end

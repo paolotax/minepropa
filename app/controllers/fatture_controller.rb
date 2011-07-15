@@ -58,9 +58,15 @@ class FattureController < ApplicationController
   # POST /fatture
   # POST /fatture.xml
   def create
+    #raise params.inspect
     @fattura = Fattura.new(params[:fattura])
-    @fattura.add_righe_from_scuola(@fattura.scuola)
-
+    
+    if params[:appunti_ids].nil?
+      @fattura.add_righe_from_scuola(@fattura.scuola)
+    else
+      @fattura.add_righe_from_appunti(@fattura.scuola, params[:appunti_ids])
+    end
+    
     respond_to do |format|
       if @fattura.save
         format.html { redirect_to(@fattura, :notice => 'Fattura was successfully created.') }
