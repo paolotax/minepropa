@@ -39,21 +39,7 @@ div.growlUI h1, div.growlUI h2 {
 	color: white; padding: 5px 5px 5px 75px; text-align: left
 }
 
-#td_libro_info {
-  #libro_img_container {
 
-    float:left;
-    margin-left: 20px;
-    img {
-      width: 120px;
-      height: 167px;
-    }
-  }
-  .info-container {
-    float:left;
-    width:500px;
-  }
-}
 
 
 #cloud {
@@ -527,6 +513,50 @@ form .actions {
   width: 400px;
   height: 400px;
   float: right;
+}
+
+#td_libro_info {
+  background-image:-webkit-gradient(linear, 0 0%, 0 100%, from(#FEFEFE), to(#F9F9F9));
+  border-bottom: 1px solid #F0F0F0;
+  border-top: 1px solid #EEEDED;
+  padding-bottom:20px;
+  padding-top:20px;
+  
+  #libro_img_container {
+    float:left;
+    margin-left: 20px;
+    margin-right: 20px;
+    img {
+      width: 100px;
+      height: 140px;
+    }
+  }
+  .info-container {
+    float:left;
+    width:500px;
+  }
+}
+
+#td_scuola_info {
+  background-image:-webkit-gradient(linear, 0 0%, 0 100%, from(#FEFEFE), to(#F9F9F9));
+  border-bottom: 1px solid #F0F0F0;
+  border-top: 1px solid #EEEDED;
+  padding-bottom:20px;
+  padding-top:20px;
+  
+  #scuola_img_container {
+    float:left;
+    margin-left: 20px;
+    margin-right: 20px;
+    img {
+      width: 100px;
+      height: 140px;
+    }
+  }
+  .info-container {
+    float:left;
+    width:500px;
+  }
 }
 
 

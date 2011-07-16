@@ -8,7 +8,10 @@
           = link_to "Indietro", "javascript:history.back()"
         .delete
           = link_to "Elimina", @scuola, :method => :delete, :confirm => 'Sei sicuro?', :title => 'Elimina      appunto'
-      #td_task_info
+      
+      #td_scuola_info
+        #scuola_img_container
+          = image_tag "school-icon.png"
         #td_task_title_input.title-container
           = best_in_place @scuola, :nome_scuola
           = best_in_place @scuola, :citta
