@@ -558,7 +558,7 @@ $(document).ready(function() {
                      longitude: lon, 
                      html: { 
                          'content': $('#fattura_destinatario').html(), 
-                         'popup': true 
+                         'popup': false 
                      }}], 
          zoom: 15,
          maptype:  'ROADMAP',
@@ -576,7 +576,10 @@ $(document).ready(function() {
           data: '&longitude=' + lng + '&latitude=' + lat, 
           url: '/maps/' + ind_id + '/update_latlong/' 
         });
-      });
+     });
+     
+     $(".best_in_place").best_in_place();
+      
   }
 });
 
