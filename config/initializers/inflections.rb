@@ -11,6 +11,7 @@ ActiveSupport::Inflector.inflections do |inflect|
    inflect.irregular 'visita', 'visite'   
    inflect.irregular 'indirizzo', 'indirizzi'
    inflect.irregular 'libro', 'libri'
+   inflect.irregular 'librino', 'librini'
    inflect.irregular 'riga', 'righe'
    inflect.irregular 'fattura', 'fatture'
    inflect.irregular 'insegnante', 'insegnanti'

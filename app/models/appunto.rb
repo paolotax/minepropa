@@ -37,7 +37,7 @@ class Appunto < ActiveRecord::Base
   
   has_many :visite,    :as => :visitable,     :dependent => :destroy
   has_many :indirizzi, :as => :indirizzable,  :dependent => :destroy
-  has_many :appunto_righe,  :dependent => :destroy
+  has_many :appunto_righe,  :include => [:libro], :dependent => :destroy
   
   
   delegate :nome_scuola, :to => :scuola,

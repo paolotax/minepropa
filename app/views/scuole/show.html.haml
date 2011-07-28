@@ -16,12 +16,10 @@
           = best_in_place @scuola, :nome_scuola
           = best_in_place @scuola, :citta
           = best_in_place @scuola, :provincia
-  
-  / - title "#{@scuola.nome_scuola} #{@scuola.citta} #{@scuola.provincia}"
 
-#fattura_destinatario
-  = render :partial => 'indirizzi/indirizzo', :locals => { :scuola => @scuola, :indirizzo => @indirizzo }
-
+        #fattura_destinatario
+          = render :partial => 'indirizzi/indirizzo', :locals => { :scuola => @scuola, :indirizzo => @indirizzo }
+        .clear
   
 .scuola_id
   = @scuola.id
@@ -104,11 +102,11 @@
       .autopagerize_page_element
         %ul#appunti.tasks
           #visible_taskslist_title.group-title Appunti attivi
-          = render :partial => 'appunti/appunto', :collection => @presenter.appunti_da_fare,    :locals => { :app_righe => true }
+          = render :partial => 'appunti/appunto', :collection => @presenter.appunti_da_fare,    :locals => { :app_righe => false }
           #visible_taskslist_title.group-title Appunti da pagare
-          = render :partial => 'appunti/appunto', :collection => @presenter.appunti_da_pagare,  :locals => { :app_righe => true }
+          = render :partial => 'appunti/appunto', :collection => @presenter.appunti_da_pagare,  :locals => { :app_righe => false }
           #visible_taskslist_title.group-title Appunti completati
-          = render :partial => 'appunti/appunto', :collection => @presenter.appunti_completati, :locals => { :app_righe => true }
+          = render :partial => 'appunti/appunto', :collection => @presenter.appunti_completati, :locals => { :app_righe => false }
   
 
 

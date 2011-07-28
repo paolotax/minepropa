@@ -94,18 +94,8 @@ class AppuntoRiga < ActiveRecord::Base
     self.libro.prezzo_consigliato unless libro.nil?
   end
   
-  def importo
-    
+  def importo    
     unitario * quantita
-    # if unitario.blank?
-    #   if sconto.blank?
-    #     libro.copertina * quantita
-    #   else
-    #     (libro.copertina - ( libro.copertina / 100 * sconto )) * quantita
-    #   end
-    # else
-    #   unitario * quantita
-    # end  
   end
   
   def sconto

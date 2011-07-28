@@ -8,8 +8,8 @@
       %th Numero
       %th Data
       %th Cliente
-      %th Copie
-      %th Importo
+      %th.t-right Copie
+      %th.t-right Importo
       %th
       %th
       %th
@@ -19,8 +19,8 @@
         %td= best_in_place fattura, :numero
         %td= best_in_place fattura, :data
         %td= fattura.scuola
-        %td= fattura.totale_copie
-        %td= fattura.importo
+        %td.t-right= fattura.totale_copie
+        %td.t-right= fattura.importo
         %td= best_in_place fattura, :pagata
         %td= link_to 'Show', fattura
         %td= link_to 'Edit', edit_fattura_path(fattura)
@@ -36,10 +36,10 @@
       %th Codice
       %th Cliente
       %th Provincia
-      %th Nr.Appunti
-      %th Copie
-      %th Importo
-      %th Stato
+      %th.t-right Nr.Appunti
+      %th.t-right Copie
+      %th.t-right Importo
+      %th.t-center Stato
   %tbody
     - @da_fatturare.each do |s|
       - totali[:count] += s.count.to_i
@@ -49,18 +49,18 @@
         %td= s.id
         %td= link_to s.nome_scuola, scuola_path(s.id)
         %td= s.provincia
-        %td= s.count
-        %td= s.copie
-        %td= s.importo.to_f / 100
-        %td= s.stato
+        %td.t-right= s.count
+        %td.t-right= s.copie
+        %td.t-right= s.importo.to_f / 100
+        %td.t-center= s.stato
   %tfoot
     %tr
       %td 
       %td 
       %td 
-      %td= totali[:count]
-      %td= totali[:copie]
-      %td= totali[:importo].to_f / 100
+      %td.t-right= totali[:count]
+      %td.t-right= totali[:copie]
+      %td.t-right= totali[:importo].to_f / 100
       %td
     
 

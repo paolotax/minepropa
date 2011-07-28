@@ -6,6 +6,8 @@
           = link_to "Indietro", "javascript:history.back()"
         .delete
           = link_to "Elimina", @libro, :method => :delete, :confirm => 'Sei sicuro?', :title => 'Elimina libro'
+        .edit
+          = link_to 'Modifica', edit_libro_path(@libro)
       
       %p#notice= notice
       
@@ -17,7 +19,9 @@
           #td_task_title_input.title-container
             = best_in_place @libro, :titolo
           #td_task_title_input.title-container
+            abbreviazione
             = best_in_place @libro, :sigla
+            prezzo copertina
             = best_in_place @libro, :copertina
             = best_in_place @libro, :consigliato
             = best_in_place @libro, :coefficente
@@ -25,36 +29,25 @@
         .clear
       #td_task_more_info
 
-#libro_dettagli
-  %p
-    %b Da Consegnare:
-    = @presenter.da_consegnare.sum(:quantita)
-  %p
-    %b Consegnati:
-    = @presenter.consegnati.sum(:quantita)
 
 
-= link_to 'Edit', edit_libro_path(@libro)
-\|
-= link_to 'Back', libri_path
 
-
-#ta_da_consegnare
-  %h2 Da Consegnare:
+#visible_taskslist_title.group-title
+  = "#{pluralize(@presenter.da_consegnare.sum(:quantita), 'librino' )} da consegnare"
 #td_notes_activities
   .notes-activities-container
     - for a in @presenter.da_consegnare
       = render 'appunto_righe/appunto_riga_full', :appunto_riga => a
 
-#ta_da_consegnare
-  %h2 Da Pagare:
+#visible_taskslist_title.group-title
+  = "#{pluralize(@presenter.da_pagare.sum(:quantita), 'librino' )} da pagare"
 #td_notes_activities
   .notes-activities-container
     - for a in @presenter.consegnati_da_pagare
       = render 'appunto_righe/appunto_riga_full', :appunto_riga => a
 
-#ta_da_consegnare
-  %h2 Pagati
+#visible_taskslist_title.group-title
+  = "#{pluralize(@presenter.consegnati_pagati.sum(:quantita), 'librino' )} pagati"
 #td_notes_activities
   .notes-activities-container
     - for a in @presenter.consegnati_pagati

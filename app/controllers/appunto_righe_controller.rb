@@ -4,7 +4,7 @@ class AppuntoRigheController < ApplicationController
   
   
   def index
-    @appunto_righe = AppuntoRiga.includes(:appunto, :libro).all
+    @appunto_righe = AppuntoRiga.all
 
     respond_to do |format|
       format.html # index.html.erb

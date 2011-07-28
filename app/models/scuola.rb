@@ -37,13 +37,22 @@ class Scuola < ActiveRecord::Base
   accepts_nested_attributes_for :indirizzi, :allow_destroy => true 
   
   validates :user_id,      :presence => true
-  validates :nome_scuola,  :presence => true
+  validates :nome_scuola,  :presence => true,
+                           :uniqueness => { :scope => :user_id, :message => "gia' utilizzato!"}
   validates :citta,        :presence => true
-  validates :provincia,    :presence => true, :length => { :maximum => 2 }
+  validates :provincia,    :presence => true, :length => { :is => 2 }
   
   before_save :clean_up
   
   scope :direzioni,  where(:nome_scuola.matches % "IC %" | :nome_scuola.matches % "D %")
+  scope :elementari, where(:nome_scuola.matches % "E %")
+  scope :cartolerie, where(:nome_scuola.matches % "C %")
+  scope :dell_utente,   lambda { |user| where('scuole.user_id = ?', user) }
+  scope :per_provincia, lambda { |prov| where('scuole.provincia = ?', prov) }
+  
+  scope :con_appunti_in_corso, lambda {
+                                  select('scuole.id, scuole.nome_scuola, count(appunti.id) as count_appunti_id').joins(:appunti).group('scuole.id, scuole.nome_scuola') & Appunto.in_corso
+                               }
   
   # default_scope :order => "scuole.position ASC"
   

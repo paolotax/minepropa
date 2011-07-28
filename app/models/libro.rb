@@ -17,7 +17,7 @@
 #
 
 class Libro < ActiveRecord::Base
-  has_many :appunto_righe
+  has_many :appunto_righe, :include => [:libro, {:appunto => [:scuola]}]
   
   default_scope order("libri.id")
   

@@ -20,7 +20,7 @@ class ScuoleController < ApplicationController
 
   def show
 
-    @scuola = Scuola.find(params[:id])    
+    @scuola = current_user.scuole.find(params[:id])    
     @presenter = Scuole::ShowPresenter.new(@scuola)
 
     # da eliminare ?
@@ -48,7 +48,7 @@ class ScuoleController < ApplicationController
   end
 
   def edit
-    @scuola    = Scuola.find(params[:id])
+    @scuola    = current_user.scuole.find(params[:id])
     @indirizzo = @scuola.indirizzi.first
     if @indirizzo == nil
       @indirizzo  = @scuola.indirizzi.build
@@ -60,7 +60,7 @@ class ScuoleController < ApplicationController
 
     respond_to do |format|
       if @scuola.save
-        format.html { redirect_to(@scuola, :notice => 'Scuola was successfully created.') }
+        format.html { redirect_to(@scuola, :notice => 'Scuola inserita.') }
       else
         format.html { render :action => "new" }
       end
@@ -68,11 +68,11 @@ class ScuoleController < ApplicationController
   end
 
   def update
-    @scuola = Scuola.find(params[:id])
+    @scuola = current_user.scuole.find(params[:id])
 
     respond_to do |format|
       if @scuola.update_attributes(params[:scuola])
-        format.html { redirect_to(@scuola, :notice => 'Scuola was successfully updated.') }
+        format.html { redirect_to(@scuola, :notice => 'Scuola modificata.') }
       else
         format.html { render :action => "edit" }
       end
