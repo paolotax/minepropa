@@ -51,7 +51,9 @@ class Scuola < ActiveRecord::Base
   scope :per_provincia, lambda { |prov| where('scuole.provincia = ?', prov) }
   
   scope :con_appunti_in_corso, lambda {
-                                  select('scuole.id, scuole.nome_scuola, count(appunti.id) as count_appunti_id').joins(:appunti).group('scuole.id, scuole.nome_scuola') & Appunto.in_corso
+                                  select('scuole.*, count(appunti.id) as count_appunti_id').
+                                  joins(:appunti).
+                                  group(Scuola.column_names.map { |x| "scuole.#{x}" }.join(', ')) & Appunto.in_corso
                                }
   
   # default_scope :order => "scuole.position ASC"
