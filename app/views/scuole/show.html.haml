@@ -7,7 +7,7 @@
         .back
           = link_to "Indietro", "javascript:history.back()"
         .delete
-          = link_to "Elimina", @scuola, :method => :delete, :confirm => 'Sei sicuro?', :title => 'Elimina      appunto'
+          = link_to "Elimina", @scuola, :method => :delete, :confirm => 'Sei sicuro?', :title => "Elimina #{@scuola.class}"
       
       #td_scuola_info
         #scuola_img_container
@@ -16,8 +16,8 @@
           = best_in_place @scuola, :nome_scuola
           = best_in_place @scuola, :citta
           = best_in_place @scuola, :provincia
-
-        #fattura_destinatario
+        #mappa_scuola
+        #info_destinatario
           = render :partial => 'indirizzi/indirizzo', :locals => { :scuola => @scuola, :indirizzo => @indirizzo }
         .clear
   
@@ -62,12 +62,7 @@
   = link_to "new", new_scuola_path
 %br  
 
-#map_show
-  = submit_tag "Mostra Mappa" 
-#map
 
-#mappa_scuola
-%br
 
 = link_to "Fattura", new_fattura_path(:scuola => @scuola), :class => 'btn_blue'
 %br

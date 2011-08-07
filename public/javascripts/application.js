@@ -9,6 +9,10 @@ Number.prototype.formatMoney = function(c, d, t){
 
 $(document).ready(function() {
   
+  $('div#search-container input').live('focus', function() {
+    $(this).addClass('typing');
+  });
+  
   $(document).ajaxStart(function() {
     $.growlUI('Attendi...', 'Sto caricando');
   }).ajaxStop($.unblockUI);
