@@ -28,6 +28,8 @@ class Scuola < ActiveRecord::Base
   belongs_to :user
   has_many :appunti
   has_many :fatture
+  has_many :classi
+  has_many :adozioni, :through => :classi
   
   has_many :visite,    :as => :visitable,    :dependent => :destroy 
   has_many :indirizzi, :as => :indirizzable, :dependent => :destroy
@@ -44,6 +46,7 @@ class Scuola < ActiveRecord::Base
   
   before_save :clean_up
   
+
   scope :direzioni,  where(:nome_scuola.matches % "IC %" | :nome_scuola.matches % "D %")
   scope :elementari, where(:nome_scuola.matches % "E %")
   scope :cartolerie, where(:nome_scuola.matches % "C %")
@@ -76,7 +79,22 @@ class Scuola < ActiveRecord::Base
     indirizzo = self.indirizzi.first
     return indirizzo.latitude.to_s+','+indirizzo.longitude.to_s unless indirizzo.nil?
   end
-  
+
+  def get_adozioni_per_libro
+    adozioni = Adozione.
+                  joins(:classe, :libro).
+                  select('classi.scuola_id, classi.classe as cl, adozioni.materia_id, adozioni.libro_id, libri.titolo, libri.type').
+                  select('sum(adozioni.nr_sezioni) as totale_sezioni, sum(adozioni.nr_copie) as totale_copie').
+                  select('array_agg(classi.sezione) as sezioni').
+                  select('array_agg(adozioni.id)    as adozioni_ids').
+                  where("classi.scuola_id = ?", self.id).
+                  group('classi.scuola_id, classi.classe, adozioni.materia_id, adozioni.libro_id, libri.titolo, libri.type')
+    
+    adozioni.each { |a| a.sezioni = a.sezioni.gsub(/[{}]/, '').split(',').sort.join }
+    #adozioni.sort { |a,b| a.cl <=> b.cl && a.materia_id <=> b.materia_id && a.sezioni <=> b.sezioni }
+    
+    adozioni.sort { |a,b| [a.cl, a.materia_id, a.sezioni] <=> [b.cl, b.materia_id, b.sezioni] }
+  end  
   private
   
     def clean_up

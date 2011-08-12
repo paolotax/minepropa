@@ -1,0 +1,26 @@
+= form_tag update_individual_adozioni_path, :method => :put do
+  %table
+    %tr
+      %th= "Titolo"
+      %th= "Classe"
+      %th= "Materia"
+      %th= "Copie"
+    - for a in @adozioni do    
+      = fields_for "adozioni[]", a do |f|
+      
+        -if a.errors.any?
+          #error_explanation
+            %h2= "#{pluralize(a.errors.count, "error")} prohibited this adozione from being saved:"
+            %ul
+              - a.errors.full_messages.each do |msg|
+                %li= msg
+        %tr
+          %td= f.collection_select( :libro_id, Libro.per_classe_e_materia(a.classe.classe, a.materia_id), :id, :titolo )
+          %td= f.collection_select( :classe_id, Classe.per_scuola(a.classe.scuola_id), :id, :to_s )
+          %td= f.collection_select( :materia_id, Materia.all, :id, :materia )
+          %td= f.text_field :nr_copie
+  = submit_tag 'Salva'
+
+%br
+%br
+= @adozioni.size

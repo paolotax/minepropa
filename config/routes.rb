@@ -1,5 +1,17 @@
 Minepropa::Application.routes.draw do
 
+  resources :materie
+
+  resources :classi
+
+  resources :adozioni do
+    collection do
+      post 'edit_individual'
+      put 'update_individual'
+    end
+  end
+  
+
   resources :fatture
 
   resources :appunto_righe

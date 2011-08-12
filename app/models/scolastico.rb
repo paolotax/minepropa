@@ -1,0 +1,3 @@
+class Scolastico < Libro
+  
+end

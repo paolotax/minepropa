@@ -1,0 +1,3 @@
+class Scorrimento < Libro
+  
+end

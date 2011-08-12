@@ -33,7 +33,9 @@ class ScuoleController < ApplicationController
     #da eliminare ?
     @search = @scuola.appunti.page(params[:page]).per(8).search(params[:search])
     @appunti = @search.relation
-
+ 
+    @adozioni = @scuola.get_adozioni_per_libro
+    
     respond_to do |format|
       format.html # show.html.erb
       format.js    { render :json => @indirizzo }

@@ -1,0 +1,3 @@
+class Vacanze < Libro
+  
+end

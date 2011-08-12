@@ -528,6 +528,10 @@ form .actions {
   width: 300px;
   height:250px;
   float: right;
+  margin-right: 20px;
+  border: 1px solid #CCCCCC;
+  padding: 10px;
+  @include rounded-corners(5px);
 }
 
 #td_libro_info {
@@ -584,6 +588,24 @@ th.t-center {
   text-align: center;
 }
 
+table {
+  border: #cccccc 1px solid;
+  @include rounded-corners(5px);
+  // margin: 20px;
+}
 
+table thead tr {
+  background: #cccccc;
+}
+
+table thead tr th{
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+tr.scolastico {
+  font-size: bigger;
+  background: yellow;
+}
 
   

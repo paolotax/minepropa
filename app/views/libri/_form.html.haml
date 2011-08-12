@@ -5,7 +5,11 @@
       %ul
         - @libro.errors.full_messages.each do |msg|
           %li= msg
-
+  .field
+    = f.label :type_helper
+    = f.select :type_helper, %w[Vacanze Parascolastico Scorrimento Scolastico Concorrenza].map
+     
+    end
   .field
     = f.label :titolo
     = f.text_field :titolo
@@ -25,7 +29,7 @@
     = f.label :prezzo_consigliato
     = f.text_field :prezzo_consigliato
   .field
-    = f.label :categoria_id
-    = f.text_field :categoria_id
+    = f.label :materia_id
+    = f.text_field :materia_id
   .actions
     = f.submit 'Save'

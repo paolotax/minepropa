@@ -1,0 +1,10 @@
+= form_for @adozione do |f|
+  -if @adozione.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@adozione.errors.count, "error")} prohibited this adozione from being saved:"
+      %ul
+        - @adozione.errors.full_messages.each do |msg|
+          %li= msg
+
+  .actions
+    = f.submit 'Save'

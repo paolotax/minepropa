@@ -1,0 +1,12 @@
+%tr{ :class => adozione.type.downcase }
+  %td= adozione.materia.materia
+  %td= adozione.cl
+  %td= adozione.sezioni
+  %td= adozione.titolo
+  %td= adozione.totale_copie
+  %td
+    = form_tag  edit_individual_adozioni_path do
+      - ids = adozione.adozioni_ids.gsub(/[{}]/, '').split(',')
+      - for i in ids
+        = hidden_field_tag 'adozione_ids[]', i.to_i
+      = submit_tag 'Modifica'

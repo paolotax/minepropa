@@ -17,5 +17,6 @@ ActiveSupport::Inflector.inflections do |inflect|
    inflect.irregular 'insegnante', 'insegnanti'
    inflect.irregular 'classe', 'classi'
    inflect.irregular 'adozione', 'adozioni'
+   inflect.irregular 'materia', 'materie'
    inflect.uncountable %w( fish sheep )
 end

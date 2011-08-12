@@ -1,0 +1,3 @@
+class Concorrenza < Libro
+  
+end
