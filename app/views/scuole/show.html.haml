@@ -71,6 +71,7 @@
 / - content_for :search_nav do
 /   = render :partial => 'pages/search_appunti'
 
+
 %table#scuola_adozioni
   %thead
     %tr
@@ -79,11 +80,20 @@
       %th= "sezioni"
       %th= "libro"
       %th= "copie"
-      %th
   %tbody
-    = render @adozioni
-    
-    
+    - @grouped_adozioni.each do |k, v|
+      %tr{:class => k[:type].downcase}
+        %td= k[:materia]
+        %td= k[:classe]
+        %td= v.map {|c| c.classe.sezione}.sort.join
+        %td= k[:titolo] 
+        %td= v.sum(&:nr_copie)
+        %td
+          = form_tag  edit_individual_adozioni_path do
+            - ids = v.map(&:id)
+            - for i in ids
+              = hidden_field_tag 'adozione_ids[]', i
+            = submit_tag 'Modifica'
     
 
 %table.libri.riepilogo

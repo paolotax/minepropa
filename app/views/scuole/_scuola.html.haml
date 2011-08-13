@@ -1,4 +1,4 @@
-%li.scuola_item{'id' => "scuola_#{scuola.id}" }
+%li.scuola_item[scuola]
   / %span.handle
   /   = image_tag "sort_down.gif"
   #s_check
@@ -6,6 +6,6 @@
   #s_nome_scuola
     = link_to scuola.nome_scuola , scuola_path(scuola)
     %br
-    =scuola.citta
-    =  hidden_field_tag 'lat_long',  scuola.lat_long
-  #clear
+    = scuola.citta
+    = hidden_field_tag 'lat_long',  scuola.lat_long
+  .clear

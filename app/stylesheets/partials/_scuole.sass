@@ -1,0 +1,55 @@
+@import mixins
+
+@import compass/utilities/general/float
+@import compass/css3/border-radius
+@import compass/utilities/lists/inline-block-list
+@import compass/css3/text-shadow
+@import compass/css3/box-shadow
+
+ul.scuole_sort_list
+  +no-bullets
+  margin-bottom: 15px
+  padding-left: 0px !important
+
+
+.scuola_item
+  border-bottom-color: #E6E6E6
+  border-bottom-style: solid
+  border-bottom-width: 1px
+  border-left-color: #E6E6E6
+  border-left-style: solid
+  border-left-width: 1px
+  border-right-color: #E6E6E6
+  border-right-style: solid
+  border-right-width: 1px
+  border-top-color: #E6E6E6
+  border-top-style: solid
+  border-top-width: 0
+  .handle
+    float: left
+    width: 33px
+    text-align: center
+    display: block
+  #s_check
+    float: left
+    width: 33px
+    text-align: center
+    display: block
+    margin-top: 10px
+  #s_nome_scuola
+    float: left
+    a
+      color: $blue-link
+      font-size: 14px
+      font-weight: bold
+      text-decoration: none
+      
+.scuola_item.cloned_scuola
+  background-color: #F6891F
+  +border-radius(8px)
+  
+// .nested_scuole
+//   padding-left: 30px !important
+//   background-color: red
+//   li
+//     background-color: blue

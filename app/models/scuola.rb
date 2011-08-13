@@ -91,10 +91,17 @@ class Scuola < ActiveRecord::Base
                   group('classi.scuola_id, classi.classe, adozioni.materia_id, adozioni.libro_id, libri.titolo, libri.type')
     
     adozioni.each { |a| a.sezioni = a.sezioni.gsub(/[{}]/, '').split(',').sort.join }
-    #adozioni.sort { |a,b| a.cl <=> b.cl && a.materia_id <=> b.materia_id && a.sezioni <=> b.sezioni }
-    
+    #adozioni.sort { |a,b| a.cl <=> b.cl && a.materia_id <=> b.materia_id && a.sezioni <=> b.sezioni }    
     adozioni.sort { |a,b| [a.cl, a.materia_id, a.sezioni] <=> [b.cl, b.materia_id, b.sezioni] }
   end  
+  
+  def get_adozioni
+    adozioni = self.adozioni.
+                    includes(:libro, :classe, :materia).
+                    order('classi.classe, adozioni.materia_id, classi.sezione, libri.id').
+                    group_by {|c| { :classe => c.classe.classe, :materia => c.materia.materia, :titolo => c.libro.titolo, :type => c.libro.type }}
+  end
+  
   private
   
     def clean_up
