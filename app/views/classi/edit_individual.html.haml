@@ -1,0 +1,23 @@
+= form_tag update_individual_scuola_classi_path(@classi[0].scuola_id), :method => :put do
+  %table
+    %tr
+      %th= "Classe"
+      %th= "Sezione"
+      %th= "Nr alunni"
+    - for a in @classi do    
+      = fields_for "classi[]", a do |f|
+      
+        -if a.errors.any?
+          #error_explanation
+            %h2= "#{pluralize(a.errors.count, "errore")} Impossibile salvare classi:"
+            %ul
+              - a.errors.full_messages.each do |msg|
+                %li= msg
+        %tr
+          = f.hidden_field :scuola_id
+          %td= f.select( :classe, %w(1 2 3 4 5))
+          %td= f.text_field :sezione
+          %td= f.text_field :nr_alunni
+          %td= link_to 'Destroy', [@scuola, a], :confirm => 'Sei sicuro?', :method => :delete
+          
+  = submit_tag 'Salva'

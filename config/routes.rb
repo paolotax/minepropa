@@ -2,8 +2,6 @@ Minepropa::Application.routes.draw do
 
   resources :materie
 
-  resources :classi
-
   resources :adozioni do
     collection do
       post 'edit_individual'
@@ -11,7 +9,6 @@ Minepropa::Application.routes.draw do
     end
   end
   
-
   resources :fatture
 
   resources :appunto_righe
@@ -46,7 +43,12 @@ Minepropa::Application.routes.draw do
       post 'sort'
     end
     resources :indirizzi
-
+    resources :classi do
+      collection do
+        post 'edit_individual'
+        put 'update_individual'
+      end
+    end
   end
   
   resources :appunti do

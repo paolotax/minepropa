@@ -35,6 +35,7 @@ class ScuoleController < ApplicationController
     @appunti = @search.relation
  
     @grouped_adozioni = @scuola.get_adozioni
+    @grouped_classi   = @scuola.get_classi
     
     respond_to do |format|
       format.html # show.html.erb

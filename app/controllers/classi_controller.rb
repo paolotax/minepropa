@@ -1,6 +1,7 @@
 class ClassiController < ApplicationController
-  # GET /classi
-  # GET /classi.xml
+
+  before_filter :authenticate_user!
+  
   def index
     @classi = Classe.all
 
@@ -21,63 +22,79 @@ class ClassiController < ApplicationController
     end
   end
 
-  # GET /classi/new
-  # GET /classi/new.xml
   def new
+    #raise params.inspect
     @classe = Classe.new
+    @scuola = Scuola.find(params[:scuola_id]) if params[:scuola_id].present?
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @classe }
+      format.jsob  { render :json => @classe }
     end
   end
 
-  # GET /classi/1/edit
   def edit
     @classe = Classe.find(params[:id])
   end
 
-  # POST /classi
-  # POST /classi.xml
+
   def create
-    @classe = Classe.new(params[:classe])
+    #raise params.inspect
+    @scuola = Scuola.find(params[:scuola_id])
+    @classe = @scuola.classi.build(params[:classe])
 
     respond_to do |format|
       if @classe.save
-        format.html { redirect_to(@classe, :notice => 'Classe was successfully created.') }
-        format.xml  { render :xml => @classe, :status => :created, :location => @classe }
+        format.html { redirect_to(scuola_url(@classe.scuola), :notice => 'Classe was successfully created.') }
+        format.json  { render :json => @classe, :status => :created, :location => @classe }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @classe.errors, :status => :unprocessable_entity }
+        format.json  { render :json => @classe.errors, :status => :unprocessable_entity }
       end
     end
   end
 
-  # PUT /classi/1
-  # PUT /classi/1.xml
+
   def update
     @classe = Classe.find(params[:id])
 
     respond_to do |format|
       if @classe.update_attributes(params[:classe])
         format.html { redirect_to(@classe, :notice => 'Classe was successfully updated.') }
-        format.xml  { head :ok }
+        format.json  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @classe.errors, :status => :unprocessable_entity }
+        format.json  { render :json => @classe.errors, :status => :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /classi/1
-  # DELETE /classi/1.xml
+
   def destroy
     @classe = Classe.find(params[:id])
     @classe.destroy
 
     respond_to do |format|
       format.html { redirect_to(classi_url) }
-      format.xml  { head :ok }
+      format.json  { head :ok }
+    end
+  end
+  
+  def edit_individual
+    @classi = Classe.includes(:scuola).find(params[:classe_ids])
+    @scuola = @classi[0].scuola
+    respond_to do |format|
+      format.html
+    end
+  end
+
+  def update_individual
+    @classi = Classe.update(params[:classi].keys, params[:classi].values).reject { |p| p.errors.empty? }
+    if @classi.empty?           
+      flash[:notice] = "Classi modificate"
+      redirect_to scuola_path(params[:classi].values[0][:scuola_id])
+    else
+      render :action => "edit_individual"
     end
   end
 end

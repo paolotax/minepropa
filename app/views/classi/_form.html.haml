@@ -1,10 +1,19 @@
-= form_for @classe do |f|
+= form_for [@scuola, @classe] do |f|
   -if @classe.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@classe.errors.count, "error")} prohibited this classe from being saved:"
+      %h2= "#{pluralize(@classe.errors.count, "errore")} impedisce di salvare la classe:"
       %ul
         - @classe.errors.full_messages.each do |msg|
           %li= msg
-
   .actions
     = f.submit 'Save'
+  = f.hidden_field :scuola_id
+  .field
+    = f.label :classe
+    = f.select :classe, %w(1 2 3 4 5)
+  .field
+    = f.label :sezione
+    = f.text_field :sezione
+  .field
+    = f.label :nr_alunni
+    = f.text_field :nr_alunni

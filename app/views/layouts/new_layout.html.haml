@@ -53,7 +53,9 @@
               = yield(:search_bar)
             = render 'layouts/block_navigator'
           = render 'layouts/links'
+          = render "layouts/location_badge"
         #content
+
           - flash.each do |key, value|
             = content_tag(:div, raw(value), :class => "notice #{key}")
           = content_tag(:div, content_tag(:h2, yield(:title))) if show_title?

@@ -102,6 +102,12 @@ class Scuola < ActiveRecord::Base
                     group_by {|c| { :classe => c.classe.classe, :materia => c.materia.materia, :titolo => c.libro.titolo, :type => c.libro.type }}
   end
   
+  def get_classi
+    classi = self.classi.
+                    order('classi.classe, classi.sezione').
+                    group_by(&:classe)
+  end
+  
   private
   
     def clean_up
