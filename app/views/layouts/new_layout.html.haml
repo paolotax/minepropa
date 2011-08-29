@@ -13,7 +13,7 @@
     = javascript_include_tag 'best_in_place.js'
     = javascript_include_tag 'inflection.js'
     
-    = stylesheet_link_tag    "token-input-facebook"
+    
     = javascript_include_tag "jquery.tokeninput"
     = javascript_include_tag "nested_form"
     = javascript_include_tag "jquery.tinysort.min.js"
@@ -31,14 +31,20 @@
     = stylesheet_link_tag 'new_layout/popin.css',  :media => 'screen, print'
     
     = stylesheet_link_tag 'redmond/jquery-ui-1.8.12.custom'
-    = stylesheet_link_tag 'compiled/new_layout.css', :media => 'screen, print'
-
+    = stylesheet_link_tag    "token-input-facebook"
+    
+    
+    = stylesheet_link_tag 'compiled/new_layout.css', :media => 'all'
+    = stylesheet_link_tag 'compiled/print.css', :media => 'print'
+    
     / = stylesheet_link_tag 'scaffold.css'
     
     = stylesheet_link_tag 'mobile' if mobile_device?
     = csrf_meta_tag
     = yield :head
   %body{:class => page_class}
+    - flash.each do |key, value|
+      = content_tag(:div, raw(value), :class => "notice #{key}")
     #loading.hidden
       caricamento...
     #header
@@ -55,12 +61,9 @@
           = render 'layouts/links'
           = render "layouts/location_badge"
         #content
-
-          - flash.each do |key, value|
-            = content_tag(:div, raw(value), :class => "notice #{key}")
           = content_tag(:div, content_tag(:h2, yield(:title))) if show_title?
           = yield
     #footer
       = render 'layouts/footer'
-      = debug(params) if Rails.env.development?
+    / = debug(params) if Rails.env.development?
   = yield :scripts

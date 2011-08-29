@@ -1,6 +1,6 @@
 - content_for :head do
   = formtastic_stylesheet_link_tag
-
+  
 = semantic_form_for(@scuola, :namespace => 'cat_form') do |f|
   - render 'shared/error_messages', :object => f.object
   = f.buttons

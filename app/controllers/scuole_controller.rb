@@ -3,9 +3,13 @@ class ScuoleController < ApplicationController
   before_filter :authenticate_user!
   
   def index
-    @search = current_user.scuole.order('scuole.position asc').search(params[:search])
+    @search = current_user.scuole.includes(:indirizzi).order('scuole.position asc').search(params[:search])
     @scuole = @search.relation
     
+    if params[:provincia].present?
+      @scuole = @scuole.per_provincia(params[:provincia])
+    end
+        
     @venduto_per_scuola = current_user.scuole.
                                 joins(:appunti => :appunto_righe).
                                 select('scuole.id, scuole.nome_scuola, sum(appunto_righe.quantita * appunto_righe.prezzo_unitario) as venduto').

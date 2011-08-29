@@ -1,5 +1,7 @@
 @import "mixins";
 @import 'partials/scuole';
+@import "compass/css3/transform";
+
 
 div#map_directions {
   width: 240px;
@@ -158,33 +160,88 @@ div.growlUI h1, div.growlUI h2 {
   
 
 
-.delete img{
-  // width: 55px; /* width of each image.*/
-  // height: 60px; /* height of each image.*/
-  // border:0;
-  // -webkit-transition:-webkit-transform 0.1s ease-in; /*animate transform property */
-  // -o-transition:-o-transform 0.1s ease-in; /*animate transform property in Opera */
-}
-
 .delete img:hover{
   -moz-transform:scale(1.4); /*scale up image 1.8x*/
   -webkit-transform:scale(1.4);
   -o-transform:scale(1.4);
 }
 
-#task_details .header .edit {
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:transparent;
-  background-image:url(https://www.producteev.com/static/images/task_details/td-delete.png);
-  background-origin:initial;
-  background-position:0 1px;
-  background-repeat:no-repeat no-repeat;
-  color:#666666;
-  float:right;
-  height:10px;
-  margin-top:8px;
+
+#task_details .header {
+  background-color:#F8F8F8;
+  border-border: 1px solid #F7F6F6;
+  @include border-top-right-radius(8px);
+  height:25px;
+  padding-bottom:0;
+  padding-left:10px;
+  padding-right:10px;
+  padding-top:0;
+  a {
+    color:inherit;
+    font-weight:bold;
+    padding-left:15px;
+    text-transform:uppercase;    
+  }
+  > div {
+    padding-bottom:0;
+    margin-left:20px;
+    padding-top:0;
+    background-attachment:initial;
+    background-clip:initial;
+    background-image:url('../../images/td-strip.png');
+    background-color:transparent;
+    background-origin:initial;
+    background-repeat: no-repeat;
+    height:12px;
+    margin-top:8px;
+    color:#666666;
+    &:hover {
+      @include scale(1.1);
+      cursor:pointer;
+    }
+  }
+  .back {
+    margin-left: 0;
+    background-position:0 0;
+    float:left;
+    &:hover {
+      background-position:0 -12px;
+      color:#4888B6;
+      
+    }
+  }
+  .delete {
+    background-position:0 -24px;
+    float:right;
+    &:hover {
+      background-position:0 -36px;
+      color:#FD5C5C;
+
+    }
+  }
+  .edit {
+    background-position:0 -48px;
+    float:right;
+    &:hover {
+      background-position:0 -60px;
+      color:#4888B6;
+
+    }
+  }
+  .new {
+    background-position:0 -72px;
+    float:right;
+    &:hover {
+      background-position:0 -84px;
+      color:#4888B6;
+
+    }
+  }
 }
+
+
+
+
 
 .td_create_appunto_riga {
   float:right;
@@ -403,14 +460,23 @@ form .actions {
 
 
 .notice {
-  -webkit-box-shadow:#1D1D1D 2px 2px 4px;
+  // position: absolute;
+  // z-index: 6001;
+  // top: 0;
+  // left: 0;
+  // right: 0;
+  // background: #fde073;
+  // text-align: center;
+  // line-height: 2.5;
+  // overflow: hidden; 
+  // @include box-shadow(black 0 0 5px);
+  
+  @include rounded-corners(7px);
+  @include box-shadow(#1D1D1D 2px 2px 4px);
   background-color:#5987A0;
   background-image:url('../../images/notice-bkg.png');
   background-position:50% 100%;
   background-repeat:repeat no-repeat;
-
-  @include rounded-corners(7px);
-
   color:#FFFFFF;
   margin-bottom:15px;
   padding-bottom:8px;
@@ -436,8 +502,9 @@ form .actions {
     padding-left:35px;
     padding-top:1px;
   }
-
 }
+
+
 .notice.alert {
   background-color:#A11C39;
   background-image:url('../../images/notice-error-bkg.png');

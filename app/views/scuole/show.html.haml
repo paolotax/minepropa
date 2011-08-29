@@ -8,6 +8,10 @@
           = link_to "Indietro", "javascript:history.back()"
         .delete
           = link_to "Elimina", @scuola, :method => :delete, :confirm => 'Sei sicuro?', :title => "Elimina #{@scuola.class}"
+        .edit
+          = link_to "Modifica", edit_scuola_path(@scuola)
+        .new
+          = link_to "Nuova", new_scuola_path
       
       #td_scuola_info
         #scuola_img_container
@@ -21,7 +25,7 @@
           = render :partial => 'indirizzi/indirizzo', :locals => { :scuola => @scuola, :indirizzo => @indirizzo }
         .clear
   
-.scuola_id
+.scuola_id.hidden
   = @scuola.id
   
 / - unless @indirizzo.nil?
@@ -52,14 +56,6 @@
 / - content_for :go_map do
 /   = javascript_include_tag 'jquery.gomap-1.3.0.js'
 %br
-#scuola_edit
-  = link_to "edit", edit_scuola_path(@scuola)
-  |
-  = link_to "new", new_scuola_path
-%br  
-
-
-
 = link_to "Fattura", new_fattura_path(:scuola => @scuola), :class => 'btn_blue'
 %br
 / - unless @json.nil?

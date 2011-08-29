@@ -3,3 +3,26 @@
 //Recommended Blueprint configuration with scoping and semantic layout:
 body.bp {
   @include blueprint-print(true); }
+
+#sidebar { 
+  display: none; 
+}
+
+#header,
+#scuola_img_container {
+  display: none;
+}
+
+#content {
+  float: right;
+  width: 100%;
+  font-size: 12pt;
+}
+
+#main {
+  margin-left: auto;
+  width: 100%;
+  #td_header {
+    display: none; 
+  }
+}
