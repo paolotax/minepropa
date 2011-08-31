@@ -3,15 +3,8 @@
 #content_task_details
   #task_details
     .is_admin
-      #td_header.header
-        .back
-          = link_to "Indietro", "javascript:history.back()"
-        .delete
-          = link_to "Elimina", @scuola, :method => :delete, :confirm => 'Sei sicuro?', :title => "Elimina #{@scuola.class}"
-        .edit
-          = link_to "Modifica", edit_scuola_path(@scuola)
-        .new
-          = link_to "Nuova", new_scuola_path
+      = render :partial => 'shared/toolbar_show', :locals => {:obj => @scuola}
+
       
       #td_scuola_info
         #scuola_img_container

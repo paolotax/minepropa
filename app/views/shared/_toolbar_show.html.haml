@@ -1,0 +1,10 @@
+#toolbar_show.header
+  .back
+    = link_to "Indietro", "javascript:history.back()"
+  .delete
+    = link_to "Elimina", obj, :method => :delete, :confirm => 'Sei sicuro?', :title => "Elimina #{@scuola.class}"
+  .edit
+    = link_to "Modifica", {:action => :edit, :controller => @current_controller}
+    / = link_to "Modifica", edit_scuola_path(obj)
+  .new
+    = link_to "Nuova", {:action => :new, :controller => @current_controller}

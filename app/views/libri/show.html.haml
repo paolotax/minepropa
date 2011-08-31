@@ -1,17 +1,10 @@
 #content_task_details
   #task_details
     .is_admin
-      #td_header.header
-        .back
-          = link_to "Indietro", "javascript:history.back()"
-        .delete
-          = link_to "Elimina", @libro, :method => :delete, :confirm => 'Sei sicuro?', :title => 'Elimina libro'
-        .edit
-          = link_to 'Modifica', edit_libro_path(@libro)
-      
+      = render :partial => 'shared/toolbar_show', :locals => {:obj => @libro}
+
       %p#notice= notice
-      
-      
+
       #td_libro_info
         #libro_img_container
           = image_tag "libri/#{@libro.sigla}.jpg"

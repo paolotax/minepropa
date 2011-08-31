@@ -1,9 +1,14 @@
+#content_task_details
+  = render :partial => 'shared/toolbar_show', :locals => {:obj => @fattura}
+
+
 #fattura_info_buttons
   = link_to 'Edit', edit_fattura_path(@fattura)
   \|
   = link_to 'Back', fatture_path
   \|
   = link_to 'print', fattura_path(@fattura, :format => 'pdf' )
+
 .clear  
 
 #fattura_info
