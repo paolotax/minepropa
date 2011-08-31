@@ -1,6 +1,5 @@
+#content_task_details
+  = render :partial => 'shared/toolbar_show', :locals => {:obj => @classe}
+
 %p#notice= notice
 
-
-= link_to 'Edit', edit_scuola_classe_path([@scuola, @classe])
-\|
-= link_to 'Back', classi_path

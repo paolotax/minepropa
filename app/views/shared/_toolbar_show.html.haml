@@ -8,3 +8,5 @@
     / = link_to "Modifica", edit_scuola_path(obj)
   .new
     = link_to "Nuova", {:action => :new, :controller => @current_controller}
+  .print
+    = link_to "Stampa", {:action => :show, :controller => @current_controller, :format => 'pdf'}
