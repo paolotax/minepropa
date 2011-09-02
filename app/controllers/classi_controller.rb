@@ -29,7 +29,7 @@ class ClassiController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.jsob  { render :json => @classe }
+      format.json  { render :json => @classe }
     end
   end
 

@@ -1,4 +1,4 @@
-= form_for @adozione do |f|
+= form_for [@scuola, @adozione] do |f|
   -if @adozione.errors.any?
     #error_explanation
       %h2= "#{pluralize(@adozione.errors.count, "error")} prohibited this adozione from being saved:"
@@ -8,3 +8,17 @@
 
   .actions
     = f.submit 'Save'
+  = hidden_field_tag @scuola.id
+  .field
+    = f.label :libro
+    = f.collection_select( :libro_id, @libri, :id, :titolo, {:include_blank => true} )
+  .field
+    = f.label :classe
+    = f.collection_select( :classe_id, @classi.order('classi.classe'), :id, :to_s, {:include_blank => true} )
+  .field
+    = f.label :materia
+    = f.collection_select( :materia_id, Materia.all, :id, :materia, {:include_blank => true} )
+
+  .field
+    = f.label :nr_copie
+    = f.text_field :nr_copie

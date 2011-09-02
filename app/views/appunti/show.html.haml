@@ -1,11 +1,7 @@
 #content_task_details
   #task_details
     .is_admin
-      #td_header.header
-        .back
-          = link_to "Indietro", "javascript:history.back()"
-        .delete
-          = link_to "Elimina", @appunto, :method => :delete, :confirm => 'Sei sicuro?', :title => 'Elimina      appunto'
+      = render :partial => 'shared/toolbar_show', :locals => {:obj => @appunto}
       #td_task_info
         .status-container
           = show_status_css(@appunto.stato)
@@ -30,9 +26,6 @@
             email
             = best_in_place @appunto, :email
         .clear
-        = link_to 'print', appunto_path(@appunto, :format => 'pdf' )
-        |
-        = link_to 'edit', edit_appunto_path(@appunto)
         
         .access-container
           Creator:

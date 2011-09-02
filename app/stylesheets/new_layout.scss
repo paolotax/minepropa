@@ -182,6 +182,12 @@ div.growlUI h1, div.growlUI h2 {
     padding-left:15px;
     text-transform:uppercase;    
   }
+  // input {
+  //   background-color:none;
+  //   font-weight:bold;
+  //   padding-left:15px;
+  //   text-transform:uppercase;
+  // }
   > div {
     padding-bottom:0;
     margin-left:20px;
@@ -210,6 +216,16 @@ div.growlUI h1, div.growlUI h2 {
       
     }
   }
+  .submit {
+    margin-left: 0;
+    background-position:0 0;
+    float:right;
+    &:hover {
+      background-position:0 -12px;
+      color:#4888B6;
+      
+    }
+  }
   .delete {
     background-position:0 -24px;
     float:right;
@@ -229,6 +245,15 @@ div.growlUI h1, div.growlUI h2 {
     }
   }
   .new {
+    background-position:0 -72px;
+    float:right;
+    &:hover {
+      background-position:0 -84px;
+      color:#4888B6;
+
+    }
+  }
+  .print {
     background-position:0 -72px;
     float:right;
     &:hover {
@@ -550,6 +575,7 @@ form .actions {
     padding: 5px;
   }
 }
+
 #fattura_destinatario {
   margin-top: 20px;
   float: right;
@@ -561,12 +587,7 @@ form .actions {
     padding: 5px;
   }
 }
-#fattura_info_buttons {
-  float: right;
-  a {
-    padding: 5px;
-  }
-}
+
 #fattura_totali {
   margin-top: 20px;
   float: right;

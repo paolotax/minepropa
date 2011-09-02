@@ -8,7 +8,6 @@
           = f.text_field :destinatario, {:class => 'itext small', :placeholder => "... chi?"}
           = f.autocomplete_field :nome_scuola, autocomplete_scuola_nome_scuola_appunti_path, {:size => 40, :placeholder => "... dove?", :class => 'itext small'}
     = f.submit "Aggiungi", :class => "btn_green"
-    / %a#task_create_btn_add.add.btn_green Aggiungi
     .clear
     .create_task_more
       #create-task-input

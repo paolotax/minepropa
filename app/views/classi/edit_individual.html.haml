@@ -1,9 +1,20 @@
 = form_tag update_individual_scuola_classi_path(@classi[0].scuola_id), :method => :put do
+
+  #content_task_details
+    #toolbar_show.header
+      .back
+        = link_to "Indietro", "javascript:history.back()"
+      .submit
+        = submit_tag 'Salva', :class => 'btn_grey'
+      .new
+        = link_to "Nuova", {:action => :new, :controller => @current_controller}
+
   %table
     %tr
       %th= "Classe"
       %th= "Sezione"
       %th= "Nr alunni"
+      %th
     - for a in @classi do    
       = fields_for "classi[]", a do |f|
       
@@ -20,4 +31,3 @@
           %td= f.text_field :nr_alunni
           %td= link_to 'Destroy', [@scuola, a], :confirm => 'Sei sicuro?', :method => :delete
           
-  = submit_tag 'Salva'

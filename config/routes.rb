@@ -1,14 +1,9 @@
 Minepropa::Application.routes.draw do
 
+  get "stampe/sovrapacchi_adozioni"
+
   resources :materie
 
-  resources :adozioni do
-    collection do
-      post 'edit_individual'
-      put 'update_individual'
-    end
-  end
-  
   resources :fatture
 
   resources :appunto_righe
@@ -21,6 +16,12 @@ Minepropa::Application.routes.draw do
     end
     resources :indirizzi
     resources :classi do
+      collection do
+        post 'edit_individual'
+        put 'update_individual'
+      end
+    end
+    resources :adozioni do
       collection do
         post 'edit_individual'
         put 'update_individual'

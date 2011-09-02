@@ -101,7 +101,7 @@
         %td= k[:titolo] 
         %td= v.sum(&:nr_copie)
         %td
-          = form_tag  edit_individual_adozioni_path do
+          = form_tag  edit_individual_scuola_adozioni_path(@scuola) do
             - ids = v.map(&:id)
             - for i in ids
               = hidden_field_tag 'adozione_ids[]', i

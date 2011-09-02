@@ -1,6 +1,5 @@
 class AdozioniController < ApplicationController
-  # GET /adozioni
-  # GET /adozioni.xml
+
   def index
     @adozioni = Adozione.all
 
@@ -10,8 +9,7 @@ class AdozioniController < ApplicationController
     end
   end
 
-  # GET /adozioni/1
-  # GET /adozioni/1.xml
+
   def show
     @adozione = Adozione.find(params[:id])
 
@@ -21,33 +19,34 @@ class AdozioniController < ApplicationController
     end
   end
 
-  # GET /adozioni/new
-  # GET /adozioni/new.xml
+
   def new
     @adozione = Adozione.new
-
+    
+    @scuola = Scuola.find(params[:scuola_id]) if params[:scuola_id].present?
+    @classi = @scuola.classi unless @scuola.nil?
+    @libri  = Libro.unscoped.where("libri.type in ('Scolastico', 'Concorrenza')").order('libri.type desc, libri.titolo asc')
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @adozione }
     end
   end
 
-  # GET /adozioni/1/edit
-  def edit
-    @adozione = Adozione.find(params[:id])
-  end
 
-  # POST /adozioni
-  # POST /adozioni.xml
+
+
+
   def create
     @adozione = Adozione.new(params[:adozione])
 
     respond_to do |format|
       if @adozione.save
-        format.html { redirect_to(@adozione, :notice => 'Adozione was successfully created.') }
-        format.xml  { render :xml => @adozione, :status => :created, :location => @adozione }
+
+        format.html { redirect_to( @adozione.classe.scuola, :notice => 'Adozione was successfully created.') }
+
       else
-        format.html { render :action => "new" }
+        format.html { redirect_to( new_scuola_adozione_url ) }
         format.xml  { render :xml => @adozione.errors, :status => :unprocessable_entity }
       end
     end
@@ -76,13 +75,15 @@ class AdozioniController < ApplicationController
     @adozione.destroy
 
     respond_to do |format|
-      format.html { redirect_to(adozioni_url) }
+      format.html { redirect_to(scuola_url(@adozione.classe.scuola)) }
       format.xml  { head :ok }
     end
   end
   
   def edit_individual
     @adozioni = Adozione.includes([[:classe => :scuola], :libro]).find(params[:adozione_ids])
+    @scuola = Scuola.first
+    
     respond_to do |format|
       format.html
     end

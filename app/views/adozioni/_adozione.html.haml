@@ -5,7 +5,7 @@
   %td= adozione.titolo
   %td= adozione.totale_copie
   %td
-    = form_tag  edit_individual_adozioni_path do
+    = form_tag  edit_individual_scuola_adozioni_path do
       - ids = adozione.adozioni_ids.gsub(/[{}]/, '').split(',')
       - for i in ids
         = hidden_field_tag 'adozione_ids[]', i.to_i

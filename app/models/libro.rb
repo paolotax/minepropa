@@ -1,11 +1,11 @@
 # == Schema Information
-# Schema version: 20110607091748
+# Schema version: 20110808105615
 #
 # Table name: libri
 #
 #  id                 :integer         not null, primary key
 #  titolo             :string(255)
-#  categoria_id       :integer
+#  materia_id         :integer
 #  created_at         :datetime
 #  updated_at         :datetime
 #  sigla              :string(255)
@@ -14,6 +14,7 @@
 #  currency           :string(255)
 #  coefficente        :float
 #  cm                 :string(255)
+#  type               :string(255)
 #
 
 class Libro < ActiveRecord::Base

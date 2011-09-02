@@ -2,7 +2,7 @@
   .back
     = link_to "Indietro", "javascript:history.back()"
   .delete
-    = link_to "Elimina", obj, :method => :delete, :confirm => 'Sei sicuro?', :title => "Elimina #{@scuola.class}"
+    = link_to "Elimina", obj, :method => :delete, :confirm => 'Sei sicuro?', :title => "Elimina #{obj.class}"
   .edit
     = link_to "Modifica", {:action => :edit, :controller => @current_controller}
     / = link_to "Modifica", edit_scuola_path(obj)

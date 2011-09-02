@@ -1,10 +1,23 @@
-= form_tag update_individual_adozioni_path, :method => :put do
+= form_tag update_individual_scuola_adozioni_path, :method => :put do
+
+  #content_task_details
+    #toolbar_show.header
+      .back
+        = link_to "Indietro", "javascript:history.back()"
+      .submit
+        = submit_tag 'Salva', :class => 'btn_blue'
+      .new
+        = link_to "Nuova", { :action => :new, :controller => @current_controller }
+
+  
+
   %table
     %tr
       %th= "Titolo"
       %th= "Classe"
       %th= "Materia"
       %th= "Copie"
+      %th
     - for a in @adozioni do    
       = fields_for "adozioni[]", a do |f|
       
@@ -19,4 +32,5 @@
           %td= f.collection_select( :classe_id, Classe.per_scuola(a.classe.scuola_id), :id, :to_s )
           %td= f.collection_select( :materia_id, Materia.all, :id, :materia )
           %td= f.text_field :nr_copie
-  = submit_tag 'Salva'
+          %td= link_to 'Elimina', [@scuola, a], :confirm => 'Sei sicuro?', :method => :delete
+

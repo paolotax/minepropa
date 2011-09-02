@@ -1,3 +1,19 @@
+# == Schema Information
+# Schema version: 20110808105615
+#
+# Table name: classi
+#
+#  id         :integer         not null, primary key
+#  classe     :integer
+#  sezione    :string(255)
+#  nr_alunni  :integer
+#  scuola_id  :integer
+#  spec_id    :string(255)
+#  sper_id    :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 class Classe < ActiveRecord::Base
   belongs_to :scuola
   has_many :adozioni
