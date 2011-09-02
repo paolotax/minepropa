@@ -81,8 +81,12 @@ class ClassiController < ApplicationController
   end
   
   def edit_individual
-    @classi = Classe.includes(:scuola).find(params[:classe_ids])
-    @scuola = @classi[0].scuola
+    
+    @scuola = Scuola.find(params[:scuola_id])
+    @classi = @scuola.classi.order('classi.classe, classi.sezione')
+    
+    # @classi = Classe.includes(:scuola).find(params[:classe_ids])
+    # @scuola = @classi[0].scuola
     respond_to do |format|
       format.html
     end

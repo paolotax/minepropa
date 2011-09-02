@@ -241,6 +241,10 @@ $(document).ready(function($){
 
 });
 
+
+/* -------------------
+    input#cb_attivi 
+--------------------*/
 $(document).ready(function() {
   
   $('input#cb_attivi').live( 'click', function() {
