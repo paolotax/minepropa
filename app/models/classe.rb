@@ -21,6 +21,9 @@ class Classe < ActiveRecord::Base
   validates :sezione, :uniqueness => {:scope => [:classe, :scuola_id],
                                         :message => "e' gia' stata utilizzata"}
   
+  after_save :update_nr_copie
+
+
   scope :per_scuola, lambda { 
     |sc| where('classi.scuola_id = ?', sc).order([:classe, :sezione])
   }
@@ -29,5 +32,11 @@ class Classe < ActiveRecord::Base
     "#{self.classe} #{self.sezione}"
   end
   
+  def update_nr_copie
+    self.adozioni.scolastico.each do |a|
+      a.update_attributes(:nr_copie => self.nr_alunni)
+    end
+  end
+    
   
 end

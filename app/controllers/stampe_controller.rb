@@ -6,7 +6,7 @@ class StampeController < ApplicationController
     
     @scuola = Scuola.find(params[:id])
     
-    @adozioni = @scuola.adozioni.includes(:classe).scolastico
+    @adozioni = @scuola.adozioni.includes(:classe).scolastico.order("classi.classe, libri.id, classi.sezione")
     
     render 'sovrapacchi_adozioni.pdf'
  end
