@@ -21,5 +21,10 @@ class Adozione < ActiveRecord::Base
   belongs_to :materia
 
   validates :classe_id, :uniqueness => {:scope => [:materia_id, :libro_id],
-                                        :message => "e' gia' stata utilizzata"}   
+                                        :message => "e' gia' stata utilizzata"}  
+                                        
+                                        
+  scope :scolastico, joins(:libro).where("libri.type = 'Scolastico'")
+  # scope :per_scuola, lambda {|s| }
+   
 end

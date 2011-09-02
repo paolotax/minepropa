@@ -92,6 +92,7 @@
       %th= "sezioni"
       %th= "libro"
       %th= "copie"
+      %th= link_to "Stampa sovrapacchi", {:action => :sovrapacchi_adozioni, :controller => :stampe, :id => @scuola.id, :format => 'pdf'}
   %tbody
     - @grouped_adozioni.each do |k, v|
       %tr{:class => k[:type].downcase}
