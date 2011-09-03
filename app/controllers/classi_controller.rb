@@ -47,6 +47,7 @@ class ClassiController < ApplicationController
       if @classe.save
         format.html { redirect_to(scuola_url(@classe.scuola), :notice => 'Classe was successfully created.') }
         format.json  { render :json => @classe, :status => :created, :location => @classe }
+        format.js
       else
         format.html { render :action => "new" }
         format.json  { render :json => @classe.errors, :status => :unprocessable_entity }
@@ -75,8 +76,9 @@ class ClassiController < ApplicationController
     @classe.destroy
 
     respond_to do |format|
-      format.html { redirect_to(classi_url) }
+      format.html { redirect_to(scuola_url(@classe.scuola)) }
       format.json  { head :ok }
+      format.js
     end
   end
   

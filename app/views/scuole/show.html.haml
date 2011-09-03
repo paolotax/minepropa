@@ -66,6 +66,9 @@
       %th= "classe"
       %th= "sezioni"
       %th= "alunni"
+      %th
+        = form_tag  edit_individual_scuola_classi_path(@scuola) do
+          = submit_tag "Modifica"
   %tbody
     - @grouped_classi.each do |k, v|
       %tr

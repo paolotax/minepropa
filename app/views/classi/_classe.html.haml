@@ -1,0 +1,8 @@
+= fields_for "classi[]", @classe do |f|
+  %tr[@classe]
+    = f.hidden_field :scuola_id
+    %td= f.select( :classe, %w(1 2 3 4 5))
+    %td= f.text_field :sezione
+    %td= f.text_field :nr_alunni
+    %td.delete
+      = link_to "Elimina", [@scuola, @classe], :method => :delete, :remote => true

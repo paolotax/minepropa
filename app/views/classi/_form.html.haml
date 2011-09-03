@@ -1,4 +1,4 @@
-= form_for [@scuola, @classe] do |f|
+= form_for [@scuola, @classe], :remote => true do |f|
   -if @classe.errors.any?
     #error_explanation
       %h2= "#{pluralize(@classe.errors.count, "errore")} impedisce di salvare la classe:"
@@ -10,7 +10,7 @@
   = f.hidden_field :scuola_id
   .field
     = f.label :classe
-    = f.select :classe, %w(1 2 3 4 5)
+    = f.select :classe, %w(1 2 3 4 5), :include_blank => true
   .field
     = f.label :sezione
     = f.text_field :sezione

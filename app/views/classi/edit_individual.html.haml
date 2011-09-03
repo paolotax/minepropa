@@ -9,7 +9,9 @@
       .new
         = link_to "Nuova", {:action => :new, :controller => @current_controller}
 
-    %table
+    %h1= @scuola.to_s
+    
+    %table#table_classi
       %tr
         %th= "Classe"
         %th= "Sezione"
@@ -24,14 +26,15 @@
               %ul
                 - a.errors.full_messages.each do |msg|
                   %li= msg
-          %tr
+          %tr[a]
             = f.hidden_field :scuola_id
             %td= f.select( :classe, %w(1 2 3 4 5))
             %td= f.text_field :sezione
             %td= f.text_field :nr_alunni
-            %td= link_to 'Destroy', [@scuola, a], :confirm => 'Sei sicuro?', :method => :delete
-            #td_notes_activities
-.td_create_appunto_riga
-  - @classe = @scuola.classi.build
-  = render 'classi/form'
+            %td.delete= link_to 'Elimina', [@scuola, a], :method => :delete, :remote => true
+
+#td_notes_activities
+  .td_create_appunto_riga
+    - @classe = @scuola.classi.build
+    = render 'classi/form'
 .clear

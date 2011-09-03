@@ -157,14 +157,40 @@ div.growlUI h1, div.growlUI h2 {
 }
 
 
-  
 
-
-.delete img:hover{
-  -moz-transform:scale(1.4); /*scale up image 1.8x*/
-  -webkit-transform:scale(1.4);
-  -o-transform:scale(1.4);
+.classe {
+  .delete a {
+    display:none;
+  }
+  &:hover .delete a {
+    display: block;
+  } 
 }
+  
+.delete a {
+  padding-bottom:0;
+  margin-left:20px;
+  padding-top:0;
+  background-attachment:initial;
+  background-clip:initial;
+  background-image:url('../../images/td-strip.png');
+  background-color:transparent;
+  background-origin:initial;
+  background-repeat: no-repeat;
+  background-position:0 -24px;
+  float:right;
+  height:12px;
+  width:11px;
+  color:#666666;
+  text-indent: -19999px;
+  &:hover {
+    cursor:pointer;
+    background-position:0 -36px;
+    color:#FD5C5C;
+    @include scale(1.5);
+  }
+}
+
 
 
 #toolbar_show.header {

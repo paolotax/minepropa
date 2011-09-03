@@ -1,0 +1,18 @@
+
+$("#table_classi").append("<%= escape_javascript(render(:partial => 'classi/classe')) %>");
+
+
+
+// /* Highlight the new classe */
+$("tr#classe_<%= @classe.id %>").effect("highlight", {}, 3000);
+
+ 
+$(".best_in_place").best_in_place();
+ 
+// /* Reset the comment form */
+
+// $("#new_appunto")[0].reset();
+// $(".token-input-token-facebook").remove();
+// $('.token-input-list-facebook').hide();
+// $('#task_create_input').show();
+// $('.create_task_more').hide();
