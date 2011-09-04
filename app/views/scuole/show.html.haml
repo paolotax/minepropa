@@ -102,7 +102,7 @@
         %td= k[:materia]
         %td= k[:classe]
         %td= v.map {|c| c.classe.sezione}.sort.join
-        %td= k[:titolo] 
+        %td= link_to k[:titolo], libro_path(v[0][:libro_id]) 
         %td= v.sum(&:nr_copie)
         %td
           = form_tag  edit_individual_scuola_adozioni_path(@scuola) do

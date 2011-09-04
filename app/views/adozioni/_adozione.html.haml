@@ -2,7 +2,7 @@
   %td= adozione.materia.materia
   %td= adozione.cl
   %td= adozione.sezioni
-  %td= adozione.titolo
+  %td= link_to adozione.titolo, libro_path(adozione.libro_id)
   %td= adozione.totale_copie
   %td
     = form_tag  edit_individual_scuola_adozioni_path do
