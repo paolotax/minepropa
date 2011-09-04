@@ -1,7 +1,8 @@
 Minepropa::Application.routes.draw do
 
-  get "stampe/sovrapacchi_adozioni"
-
+  get  "stampe/sovrapacchi_adozioni"
+  match "stampe/riepilogo_adozioni" => "stampe#riepilogo_adozioni", :via => 'post', :format => 'pdf'
+  
   resources :materie
 
   resources :fatture

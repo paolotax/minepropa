@@ -35,6 +35,7 @@ gem "best_in_place"
 
 gem 'ancestry'
 gem 'acts-as-taggable-on'
+gem 'acts_as_tree'
 
 gem "nested_form"
 gem 'money'

@@ -5,10 +5,21 @@ class StampeController < ApplicationController
   def sovrapacchi_adozioni
     
     @scuola = Scuola.find(params[:id])
-    
     @adozioni = @scuola.adozioni.includes(:classe).scolastico.order("classi.classe, libri.id, classi.sezione")
-    
     render 'sovrapacchi_adozioni.pdf'
- end
+  end
+
+  def riepilogo_adozioni
+   
+    @riepilogo = Libro.unscoped.
+                  joins(:adozioni => [:classe => :scuola]).
+                  select("libri.id, libri.titolo").
+                  select('count (adozioni.*) as nr_sezioni').
+                  where("libri.type = 'Scolastico'").
+                  group("libri.id, libri.titolo").
+                  where("scuole.id in (?)", params[:scuola_ids]).
+                  order('libri.titolo')
+   
+  end
 
 end
