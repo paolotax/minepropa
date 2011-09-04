@@ -11,14 +11,21 @@
         .info-container
           #td_task_title_input.title-container
             = best_in_place @libro, :titolo
-          #td_task_title_input.title-container
-            abbreviazione
+          .cm
+            c.m.
+            = best_in_place @libro, :cm
+          .abbreviazione
+            abbr.
             = best_in_place @libro, :sigla
+          .prezzo_copertina
             prezzo copertina
             = best_in_place @libro, :copertina
+          .prezzo_consigliato
+            prezzo consigliato
             = best_in_place @libro, :consigliato
+          .coefficente
+            coef.
             = best_in_place @libro, :coefficente
-            = best_in_place @libro, :cm
         .clear
       #td_task_more_info
 
