@@ -1,0 +1,15 @@
+- for s in @scuole do
+  = s.nome_scuola
+  %br
+  - for a in s.adozioni.scolastico do
+    = a.libro.titolo
+    = a.classe.to_s
+    %br
+  %br
+  - for p in s.appunti.in_corso do
+    = p.destinatario
+    =p.note
+    %br
+  %br
+      
+    

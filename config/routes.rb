@@ -2,6 +2,7 @@ Minepropa::Application.routes.draw do
 
   get  "stampe/sovrapacchi_adozioni"
   match "stampe/riepilogo_adozioni" => "stampe#riepilogo_adozioni", :via => 'post', :format => 'pdf'
+  match "stampe/giro" => "stampe#giro", :via => 'post'
   
   resources :materie
 

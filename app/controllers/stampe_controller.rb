@@ -21,5 +21,9 @@ class StampeController < ApplicationController
                   order('libri.titolo')
    
   end
+  
+  def giro
+    @scuole = Scuola.find(params[:scuola_ids])
+  end
 
 end
