@@ -26,3 +26,14 @@ body.bp {
     display: none; 
   }
 }
+
+#giro input[type=submit] {
+  display:none;
+}
+#giro a {
+  text-decoration:none;
+  color: black;
+}
+#giro .adozioni_scuola {
+  width: 500px;
+}

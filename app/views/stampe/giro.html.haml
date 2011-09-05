@@ -1,16 +1,16 @@
-- form_tag stampe_riepilogo_adozioni_path, :method => :post do
-  - ids = params[:scuola_ids]
-  - for id in ids do
-    = hidden_field_tag 'scuola_ids[]', id
-  = submit_tag "Riepilogo"
-
-- form_tag stampe_sovrapacchi_adozioni_path, :method => :post do
-  - ids = params[:scuola_ids]
-  - for id in ids do
-    = hidden_field_tag 'scuola_ids[]', id
-  = submit_tag "Sovrapacchi"
-
 #giro
+  - form_tag stampe_riepilogo_adozioni_path, :method => :post do
+    - ids = params[:scuola_ids]
+    - for id in ids do
+      = hidden_field_tag 'scuola_ids[]', id
+    = submit_tag "Riepilogo"
+
+  - form_tag stampe_sovrapacchi_adozioni_path, :method => :post do
+    - ids = params[:scuola_ids]
+    - for id in ids do
+      = hidden_field_tag 'scuola_ids[]', id
+    = submit_tag "Sovrapacchi"
+
   - for s in @scuole do
     .scuola
       %h1
