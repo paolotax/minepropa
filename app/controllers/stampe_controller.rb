@@ -4,8 +4,10 @@ class StampeController < ApplicationController
   
   def sovrapacchi_adozioni
     
-    @scuola = Scuola.find(params[:id])
-    @adozioni = @scuola.adozioni.includes(:classe).scolastico.order("classi.classe, libri.id, classi.sezione")
+    @adozioni = Adozione.scolastico.joins([:classe => :scuola]).where("classi.scuola_id in (?)", params[:scuola_ids]).order("classi.classe, libri.id, classi.sezione")
+    
+    #@scuola = Scuola.find(params[:id])
+    #@adozioni = @scuola.adozioni.includes(:classe).scolastico.order("classi.classe, libri.id, classi.sezione")
     render 'sovrapacchi_adozioni.pdf'
   end
 
@@ -23,7 +25,7 @@ class StampeController < ApplicationController
   end
   
   def giro
-    @scuole = Scuola.find(params[:scuola_ids])
+    @scuole = Scuola.order("scuole.id").find(params[:scuola_ids])
   end
 
 end

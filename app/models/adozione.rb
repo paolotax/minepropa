@@ -26,5 +26,8 @@ class Adozione < ActiveRecord::Base
                                         
   scope :scolastico, joins(:libro).where("libri.type = 'Scolastico'")
   # scope :per_scuola, lambda {|s| }
+  
+  scope :per_classe_e_sezione, joins(:classe).order("classi.classe, classi.sezione, adozioni.materia_id")
+  
    
 end
