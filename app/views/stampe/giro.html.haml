@@ -37,5 +37,15 @@
               = p.telefono
             .stampa  
               = link_to "Stampa", appunto_path(p, :format => 'pdf')
+      %ul.recapiti_scuola
+        - for t in s.appunti.con_recapito do
+          %li
+            .telefono
+              tel.
+              = t.telefono
+              = t.destinatario
+        
+    
+    
       
     
