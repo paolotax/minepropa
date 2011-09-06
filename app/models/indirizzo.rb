@@ -23,7 +23,7 @@ class Indirizzo < ActiveRecord::Base
   
   geocoded_by :full_street_address
   after_validation :geocode, 
-                      :if => lambda{ |obj| obj.indirizzo_changed? || obj.citta_changed? || obj.cap_changed? }
+                      :if => lambda{ |obj| obj.indirizzo_changed? || obj.cap_changed? || obj.citta_changed? || obj.cap_changed? }
   
   #acts_as_gmappable :process_geocoding => "before_save"
   
@@ -32,7 +32,7 @@ class Indirizzo < ActiveRecord::Base
   def label_indirizzo
     '<em>'+ self.destinatario + '</em></br>' +
     self.indirizzo + '</br>' +
-    self.cap + ' ' + self.citta + ' ' + self.provincia
+    self.cap + ' ' + self.citta + ' ' + self.provincias
   end
   
   def to_s
@@ -40,11 +40,11 @@ class Indirizzo < ActiveRecord::Base
   end
   
   def full_street_address
-    [self.citta, self.indirizzo, self.provincia].join(', ')
+    [self.indirizzo, self.cap, self.citta, self.provincia].join(', ')
   end
   
   def gmaps4rails_address
-    [self.indirizzo, self.citta, self.provincia].join(', ')
+    [self.indirizzo, self.cap, self.citta, self.provincia].join(', ')
   end
   
   def self.gmaps4rails_trusted_scopes
