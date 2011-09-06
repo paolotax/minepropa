@@ -32,7 +32,7 @@ class Indirizzo < ActiveRecord::Base
   def label_indirizzo
     '<em>'+ self.destinatario + '</em></br>' +
     self.indirizzo + '</br>' +
-    self.cap + ' ' + self.citta + ' ' + self.provincias
+    self.cap + ' ' + self.citta + ' ' + self.provincia
   end
   
   def to_s
