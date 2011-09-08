@@ -63,7 +63,7 @@ class Appunto < ActiveRecord::Base
   scope :completati,  where(:stato.eq => 'X')
   
   scope :da_correggere, where("scuola_id is null")
-  scope :con_recapito,  where("telefono <> '' or email <> ''")
+  scope :con_recapito,  where("appunti.telefono <> '' or appunti.email <> ''")
 
   scope :non_assegnato, where("not exists (select visite.visitable_id from visite 
                                             where visite.visitable_type = 'Appunto' 
