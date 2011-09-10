@@ -24,8 +24,4 @@ class StampeController < ApplicationController
    
   end
   
-  def giro
-    @scuole = Scuola.order("scuole.id").find(params[:scuola_ids])
-  end
-
 end

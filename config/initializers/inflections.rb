@@ -3,8 +3,11 @@
 # Add new inflection rules using the following format
 # (all these examples are active by default):
 ActiveSupport::Inflector.inflections do |inflect|
+   
    inflect.plural /^(ox)$/i, '\1en'
    inflect.singular /^(ox)en/i, '\1'
+   
+   
    inflect.irregular 'person', 'people'
    inflect.irregular 'appunto', 'appunti'
    inflect.irregular 'scuola', 'scuole'
@@ -18,5 +21,15 @@ ActiveSupport::Inflector.inflections do |inflect|
    inflect.irregular 'classe', 'classi'
    inflect.irregular 'adozione', 'adozioni'
    inflect.irregular 'materia', 'materie'
+   inflect.irregular 'tappa', 'tappe'
+   inflect.irregular 'giro', 'giri'
+
+   
+   # inflect.plural /^([\w]*)a/i, '\1e'
+   # inflect.singular /^([\w]*)e/i, '\1a'
+   # inflect.plural /^([\w]*)o/i, '\1i'
+   # inflect.singular /^([\w]*)i/i, '\1o'
+   
+   
    inflect.uncountable %w( fish sheep )
 end

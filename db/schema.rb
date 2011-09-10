@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110808105615) do
+ActiveRecord::Schema.define(:version => 20110909041834) do
 
   create_table "adozioni", :force => true do |t|
     t.integer  "classe_id"
@@ -93,6 +93,24 @@ ActiveRecord::Schema.define(:version => 20110808105615) do
   add_index "fatture", ["user_id", "causale_id", "numero"], :name => "index_fatture_per_utente_and_causale", :unique => true
   add_index "fatture", ["user_id"], :name => "index_fatture_on_user_id"
 
+  create_table "feed_entries", :force => true do |t|
+    t.string   "name"
+    t.text     "summary"
+    t.string   "url"
+    t.datetime "published_at"
+    t.string   "guid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "giri", :force => true do |t|
+    t.string   "titolo"
+    t.date     "data"
+    t.text     "note"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "indirizzi", :force => true do |t|
     t.string   "destinatario"
     t.string   "indirizzo"
@@ -148,6 +166,35 @@ ActiveRecord::Schema.define(:version => 20110808105615) do
 
   add_index "scuole", ["ancestry"], :name => "index_scuole_on_ancestry"
 
+  create_table "scuole_adozioni", :id => false, :force => true do |t|
+    t.integer "IdAdozione",                 :null => false
+    t.string  "IdScuola",     :limit => 12
+    t.integer "IdClasse",                   :null => false
+    t.string  "IdLibro",      :limit => 13
+    t.integer "IdMateria",                  :null => false
+    t.string  "Anno",         :limit => 4
+    t.integer "Nuove"
+    t.integer "Perse"
+    t.integer "NrSez"
+    t.integer "Saldo"
+    t.integer "NrCopie"
+    t.string  "IdTipo",       :limit => 2
+    t.integer "TipoAdozione"
+  end
+
+  add_index "scuole_adozioni", ["IdAdozione"], :name => "IdAdozione", :unique => true
+  add_index "scuole_adozioni", ["IdClasse"], :name => "IdClasse"
+
+  create_table "scuole_classi", :id => false, :force => true do |t|
+    t.integer "IdClasse",                :null => false
+    t.string  "IdScuola",  :limit => 12
+    t.integer "Classe",                  :null => false
+    t.string  "Sezioni",   :limit => 20, :null => false
+    t.string  "Sigla",     :limit => 5
+    t.integer "NrSezioni"
+    t.integer "NrAlunni"
+  end
+
   create_table "scuole_to_export", :id => false, :force => true do |t|
     t.string  "Tipo",         :limit => 20
     t.string  "Nome",         :limit => 60
@@ -183,6 +230,14 @@ ActiveRecord::Schema.define(:version => 20110808105615) do
 
   create_table "tags", :force => true do |t|
     t.string "name"
+  end
+
+  create_table "tappe", :force => true do |t|
+    t.integer  "giro_id"
+    t.integer  "scuola_id"
+    t.integer  "posizione"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|

@@ -1,24 +1,24 @@
 #giro
   - form_tag stampe_riepilogo_adozioni_path, :method => :post do
-    - ids = params[:scuola_ids]
-    - for id in ids do
+
+    - for id in @scuola_ids do
       = hidden_field_tag 'scuola_ids[]', id
     = submit_tag "Riepilogo"
 
   - form_tag stampe_sovrapacchi_adozioni_path, :method => :post do
-    - ids = params[:scuola_ids]
-    - for id in ids do
+    
+    - for id in @scuola_ids do
       = hidden_field_tag 'scuola_ids[]', id
     = submit_tag "Sovrapacchi"
 
-  - for s in @scuole do
+  - for s in @tappe do
     .scuola
       %h1
-        = link_to s.nome_scuola, s
+        = link_to s.scuola.nome_scuola, s.scuola
       %br
     
       %ul.adozioni_scuola
-        - for a in s.adozioni.scolastico.per_classe_e_sezione do
+        - for a in s.scuola.adozioni.scolastico.per_classe_e_sezione do
           %li
             .titolo
               = link_to a.libro.titolo, a.libro
@@ -27,7 +27,7 @@
             .clear  
       .clear
       %ul.appunti_scuola
-        - for p in s.appunti.in_corso do
+        - for p in s.scuola.appunti.in_corso do
           %li
             .destinatario
               = p.destinatario
@@ -38,15 +38,10 @@
             .stampa  
               = link_to "Stampa", appunto_path(p, :format => 'pdf')
       %ul.recapiti_scuola
-        - for t in s.appunti.con_recapito do
+        - for t in s.scuola.appunti.con_recapito do
           %li
             .telefono
               tel.
               = t.telefono
               = t.destinatario
               = t.note
-        
-    
-    
-      
-    

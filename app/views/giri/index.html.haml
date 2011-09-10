@@ -1,0 +1,16 @@
+%h1 Lista giri
+
+%table
+  %tr
+    %th #
+    %th descrizione
+    %th data
+    %th # tappe
+    %th
+  - for g in @giri do
+    %tr
+      %td= link_to g.id, g
+      %td= g.titolo
+      %td= g.data
+      %td= g.tappe.size
+      %td.edit= link_to "Edit", edit_giro_url(g)

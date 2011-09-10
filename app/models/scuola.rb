@@ -33,6 +33,7 @@ class Scuola < ActiveRecord::Base
   
   has_many :visite,    :as => :visitable,    :dependent => :destroy 
   has_many :indirizzi, :as => :indirizzable, :dependent => :destroy
+  has_many :giri, :through => :tappe
   
   #attr_accessible :nome_scuola, :citta, :provincia, :position
   

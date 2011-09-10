@@ -1,0 +1,31 @@
+- nested_form_for @giro do |f|
+  / = f.error_messages
+
+  %p
+    = f.submit "Salva"
+
+  %p
+    = f.label :titolo 
+    %br
+    = f.text_field :titolo
+  %p  
+    = f.label :data 
+    %br
+    = f.text_field :data
+  %p  
+    = f.label :note 
+    %br
+    = f.text_area :note
+    
+  
+  - f.fields_for :tappe do |t|
+    %p
+      = t.label :scuola_id, "Scuola" 
+      %br
+      = t.collection_select( :scuola_id, @current_user.scuole, :id, :nome_scuola, {:include_blank => true} )
+    %p
+      = t.label :posizione, "pos" 
+      %br
+      = t.text_field :posizione
+      = t.link_to_remove "Elimina"
+  = f.link_to_add "Nuova tappa", :tappe
