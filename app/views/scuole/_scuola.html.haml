@@ -10,4 +10,11 @@
     / = hidden_field_tag 'lat_long',  scuola.lat_long
   #s_id
     = scuola.id
+  
+  - unless scuola.giri.blank?
+    .s_giro
+      = scuola.giri.size
+  - unless scuola.adozioni.scolastico.blank?
+    .s_adozioni
+      = scuola.adozioni.scolastico.size
   .clear

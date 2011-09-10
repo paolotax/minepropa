@@ -748,4 +748,25 @@ tr.scolastico {
   } 
 }
 
+.s_giro {
+  
+  float: right;
+  @include rounded_corners(7px);
+  padding: 3px;
+  color: white;
+  font-style: bold;
+  background-color: red;
+  
+}
+.s_adozioni {
+  
+  float: right;
+  @include rounded_corners(7px);
+  padding: 3px 10px 3px 10px;
+  color: white;
+  font-style: bold;
+  background-color: green;
+  
+}
+
   

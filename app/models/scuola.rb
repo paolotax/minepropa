@@ -33,6 +33,8 @@ class Scuola < ActiveRecord::Base
   
   has_many :visite,    :as => :visitable,    :dependent => :destroy 
   has_many :indirizzi, :as => :indirizzable, :dependent => :destroy
+  
+  has_many :tappe
   has_many :giri, :through => :tappe
   
   #attr_accessible :nome_scuola, :citta, :provincia, :position
@@ -41,7 +43,7 @@ class Scuola < ActiveRecord::Base
   
   validates :user_id,      :presence => true
   validates :nome_scuola,  :presence => true,
-                           :uniqueness => { :scope => :user_id, :message => "gia' utilizzato!"}
+                           :uniqueness => { :scope => :user_id, :message => "gia' utilizzato!" }
   validates :citta,        :presence => true
   validates :provincia,    :presence => true, :length => { :is => 2 }
   
@@ -54,12 +56,24 @@ class Scuola < ActiveRecord::Base
   scope :dell_utente,   lambda { |user| where('scuole.user_id = ?', user) }
   scope :per_provincia, lambda { |prov| where('scuole.provincia = ?', prov) }
   
+  scope :per_id, order(:id)
+  
   scope :con_appunti_in_corso, lambda {
                                   select('scuole.*, count(appunti.id) as count_appunti_id').
                                   joins(:appunti).
                                   group(Scuola.column_names.map { |x| "scuole.#{x}" }.join(', ')) & Appunto.in_corso
                                }
   
+  # scope :con_adozioni, lambda {
+  #                                 select('scuole.*, count(adozioni.id) as count_adozioni_id').
+  #                                 joins(:adozioni).
+  #                                 group(Scuola.column_names.map { |x| "scuole.#{x}" }.join(', ')) & Adozione.scolastico
+  #                              }
+  
+  scope :con_adozioni, includes(:adozioni).where('adozioni.id is not null') & Adozione.scolastico
+  
+  scope :da_visitare, includes(:giri).where('giri.id is null')
+
   # default_scope :order => "scuole.position ASC"
   
   def to_s
