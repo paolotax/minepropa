@@ -175,13 +175,13 @@ ActiveRecord::Schema.define(:version => 20110911060858) do
     t.string  "IdLibro",      :limit => 13
     t.integer "IdMateria",                  :null => false
     t.string  "Anno",         :limit => 4
-    t.integer "Nuove"
-    t.integer "Perse"
-    t.integer "NrSez"
-    t.integer "Saldo"
-    t.integer "NrCopie"
+    t.integer "Nuove",        :limit => 2
+    t.integer "Perse",        :limit => 2
+    t.integer "NrSez",        :limit => 2
+    t.integer "Saldo",        :limit => 2
+    t.integer "NrCopie",      :limit => 2
     t.string  "IdTipo",       :limit => 2
-    t.integer "TipoAdozione"
+    t.integer "TipoAdozione", :limit => 2
   end
 
   add_index "scuole_adozioni", ["IdAdozione"], :name => "IdAdozione", :unique => true
@@ -190,11 +190,11 @@ ActiveRecord::Schema.define(:version => 20110911060858) do
   create_table "scuole_classi", :id => false, :force => true do |t|
     t.integer "IdClasse",                :null => false
     t.string  "IdScuola",  :limit => 12
-    t.integer "Classe",                  :null => false
+    t.integer "Classe",    :limit => 2,  :null => false
     t.string  "Sezioni",   :limit => 20, :null => false
     t.string  "Sigla",     :limit => 5
-    t.integer "NrSezioni"
-    t.integer "NrAlunni"
+    t.integer "NrSezioni", :limit => 2
+    t.integer "NrAlunni",  :limit => 2
   end
 
   create_table "scuole_to_export", :id => false, :force => true do |t|
