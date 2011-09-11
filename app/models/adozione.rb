@@ -29,5 +29,16 @@ class Adozione < ActiveRecord::Base
   
   scope :per_classe_e_sezione, joins(:classe).order("classi.classe, classi.sezione, adozioni.materia_id")
   
-   
+  def after_save
+    self.update_counter_cache
+  end
+
+  def after_destroy
+    self.update_counter_cache
+  end
+
+  def update_counter_cache
+    self.classe.scuola.mie_adozioni_counter = Adozione.joins(:classe).scolastico.where("classi.scuola_id = ?", self.classe.scuola.id).count
+    self.classe.scuola.save
+  end 
 end

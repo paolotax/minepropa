@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110909041834) do
+ActiveRecord::Schema.define(:version => 20110911060858) do
 
   create_table "adozioni", :force => true do |t|
     t.integer  "classe_id"
@@ -162,6 +162,8 @@ ActiveRecord::Schema.define(:version => 20110909041834) do
     t.string   "email"
     t.string   "partita_iva"
     t.string   "codice_fiscale"
+    t.integer  "mie_adozioni_counter",     :default => 0
+    t.integer  "appunti_in_corso_counter", :default => 0
   end
 
   add_index "scuole", ["ancestry"], :name => "index_scuole_on_ancestry"

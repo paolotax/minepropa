@@ -3,7 +3,7 @@ class ScuoleController < ApplicationController
   before_filter :authenticate_user!
   
   def index
-    @search = current_user.scuole.includes([:indirizzi, :giri, :adozioni => :libro]).order('scuole.position asc').search(params[:search])
+    @search = current_user.scuole.includes([:indirizzi, :giri]).order('scuole.position asc').search(params[:search])
     @scuole = @search.relation
     
     if params[:provincia].present?

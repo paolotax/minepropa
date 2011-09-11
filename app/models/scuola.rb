@@ -30,6 +30,8 @@ class Scuola < ActiveRecord::Base
   has_many :fatture
   has_many :classi
   has_many :adozioni, :through => :classi
+  has_many :mie_adozioni, :through => :classi, :source => :adozioni, :include => :libro, :conditions => "libri.type = 'Scolastico'"
+  
   
   has_many :visite,    :as => :visitable,    :dependent => :destroy 
   has_many :indirizzi, :as => :indirizzable, :dependent => :destroy

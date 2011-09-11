@@ -151,7 +151,20 @@ class Appunto < ActiveRecord::Base
     self.note = note
   end
   
+  def after_save
+    self.update_counter_cache
+  end
 
+  def after_destroy
+    self.update_counter_cache
+  end
+
+  def update_counter_cache
+    self.scuola.appunti_in_corso_counter = Appunto.in_corso.where("scuola_id = ?", self.scuola.id).count
+    self.scuola.scuola.save
+  end
+  
+  
   private
   
     def cleanup
