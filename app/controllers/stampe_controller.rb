@@ -16,7 +16,7 @@ class StampeController < ApplicationController
     @riepilogo = Libro.unscoped.
                   joins(:adozioni => [:classe => :scuola]).
                   select("libri.id, libri.titolo").
-                  select('count (adozioni.*) as numero_sezioni').
+                  select('count (adozioni.*) as nr_sezioni').
                   where("libri.type = 'Scolastico'").
                   group("libri.id, libri.titolo").
                   where("scuole.id in (?)", params[:scuola_ids]).

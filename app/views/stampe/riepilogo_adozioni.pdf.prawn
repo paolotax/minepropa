@@ -25,7 +25,7 @@ pdf.move_down(20)
 righe = @riepilogo.map do |riga|
  [
     riga.titolo,
-    riga.numero_sezioni
+    riga.nr_sezioni
   ]
 end
 
