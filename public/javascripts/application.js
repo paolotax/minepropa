@@ -113,7 +113,6 @@ $(document).ready(function() {
 });
 
 
-
 /* ------------------------------
     Lista scuole check clone 
 -------------------------------*/
@@ -317,6 +316,7 @@ $(document).ready( function() {
       $( '.cb-element' ).each( function() {
         if ($(this).is(":visible") == true) {
           $(this).attr( 'checked', true );
+          $(this).parent().parent().addClass('is_checked');
         };
       });
   });
@@ -325,6 +325,7 @@ $(document).ready( function() {
         if ($(this).is(":visible") == true) {
           $(this).attr( 'checked', false );
           $('#popin_bulk').hide();
+          $(this).parent().parent().removeClass('is_checked');
         };
       });
   });
@@ -354,9 +355,9 @@ $(document).ready( function() {
           .animate({top: position.top - 150},'slow','easeOutBack');
       
       if($(this).is(':checked')) {
-        $(this).parent().parent().addClass('active_task')
+        $(this).parent().parent().addClass('is_checked')
       } else {
-        $(this).parent().parent().removeClass('active_task')
+        $(this).parent().parent().removeClass('is_checked')
       }
       
   });
