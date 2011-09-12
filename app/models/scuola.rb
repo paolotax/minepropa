@@ -26,10 +26,10 @@ class Scuola < ActiveRecord::Base
   has_ancestry
   
   belongs_to :user
-  has_many :appunti
-  has_many :fatture
-  has_many :classi
-  has_many :adozioni, :through => :classi
+  has_many :appunti,     :dependent => :destroy
+  has_many :fatture,     :dependent => :destroy
+  has_many :classi,      :dependent => :destroy
+  has_many :adozioni, :through => :classi, :include => :libro
   has_many :mie_adozioni, :through => :classi, :source => :adozioni, :include => :libro, :conditions => "libri.type = 'Scolastico'"
   
   

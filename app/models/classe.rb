@@ -16,7 +16,7 @@
 
 class Classe < ActiveRecord::Base
   belongs_to :scuola
-  has_many :adozioni
+  has_many :adozioni,     :dependent => :destroy
   
   validates :sezione, :uniqueness => {:scope => [:classe, :scuola_id],
                                         :message => "e' gia' stata utilizzata"}
