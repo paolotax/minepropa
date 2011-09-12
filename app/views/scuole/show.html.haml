@@ -138,7 +138,7 @@
       .autopagerize_page_element
         %ul#appunti.tasks
           #visible_taskslist_title.group-title Appunti attivi
-          = render :partial => 'appunti/appunto', :collection => @presenter.appunti_da_fare,    :locals => { :app_righe => false }
+          = render @presenter.appunti_da_fare, :app_righe => false
           #visible_taskslist_title.group-title Appunti da pagare
           = render :partial => 'appunti/appunto', :collection => @presenter.appunti_da_pagare,  :locals => { :app_righe => false }
           #visible_taskslist_title.group-title Appunti completati

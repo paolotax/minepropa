@@ -161,7 +161,7 @@ class Appunto < ActiveRecord::Base
 
   def update_counter_cache
     self.scuola.appunti_in_corso_counter = Appunto.in_corso.where("scuola_id = ?", self.scuola.id).count
-    self.scuola.scuola.save
+    self.scuola.save
   end
   
   
