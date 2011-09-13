@@ -792,7 +792,51 @@ tr.scolastico {
 }
 
 
- 
+#giro_form {
+  form div label {
+    display: block;
+    float: left;
+    width: 130px;
+    padding: 3px 5px;
+    margin: 0 0 5px 0;
+    text-align: right;
+  }
+
+  input, select, textarea {
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 100%;
+    color: #000000;
+  }
+
+  form div select, form div textarea {
+    width: 200px;
+    padding: 1px 3px;
+    margin: 0 0 0 0;
+  }
+
+  form div {
+    clear: left;
+    display: block;
+    width: 354px;
+    zoom: 1;
+    margin: 5px 0 0 0;
+    padding: 1px 3px;
+  }
+
+
+  form div input.inputText, form div input.inputPassword {
+    width: 200px;
+    padding: 1px 3px;
+    margin: 0 0 0 0;
+  }
+
+  form div input.inputFile {
+    width: 211px;
+  }
+  
+}
+
+
 
 // style=background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: rgb(246, 252, 201); background-position: initial initial; background-repeat: initial initial; 
 

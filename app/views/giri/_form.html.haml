@@ -1,31 +1,26 @@
-- nested_form_for @giro do |f|
-  / = f.error_messages
-
-  %p
-    = f.submit "Salva"
-
-  %p
-    = f.label :titolo 
-    %br
-    = f.text_field :titolo
-  %p  
-    = f.label :data 
-    %br
-    = f.text_field :data
-  %p  
-    = f.label :note 
-    %br
-    = f.text_area :note
+#giro_form
+  - nested_form_for @giro do |f|
+    / = f.error_messages
+    %fieldset
+      %legend Nuovo giro
+      = f.submit "Salva"
+      .f_titolo
+        = f.label :titolo 
+        = f.text_field :titolo
+      .f_data
+        = f.label :data 
+        = f.text_field :data
+      .f_note
+        = f.label :note 
+        = f.text_area :note
     
   
-  - f.fields_for :tappe do |t|
-    %p
-      = t.label :scuola_id, "Scuola" 
-      %br
-      = t.collection_select( :scuola_id, @current_user.scuole.con_adozioni.da_visitare.per_id, :id, :nome_scuola, {:include_blank => true} )
-    %p
-      = t.label :posizione, "pos" 
-      %br
-      = t.text_field :posizione
-      = t.link_to_remove "Elimina"
-  = f.link_to_add "Nuova tappa", :tappe
+    - f.fields_for :tappe do |t|
+      %p
+        = t.label :scuola_id, "Scuola" 
+        = t.collection_select( :scuola_id, @current_user.scuole.con_adozioni.da_visitare.per_id, :id, :nome_scuola, {:include_blank => true} )
+        = t.label :posizione, "pos" 
+        = t.text_field :posizione
+        = t.link_to_remove "Elimina"
+      .clear
+    = f.link_to_add "Nuova tappa", :tappe
