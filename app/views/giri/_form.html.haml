@@ -18,7 +18,7 @@
     - f.fields_for :tappe do |t|
       %p
         = t.label :scuola_id, "Scuola" 
-        = t.collection_select( :scuola_id, @current_user.scuole.con_adozioni.da_visitare.per_id, :id, :nome_scuola, {:include_blank => true} )
+        / = t.collection_select( :scuola_id, @current_user.scuole.con_adozioni.da_visitare.per_id, :id, :nome_scuola, {:include_blank => true} )
         = t.collection_select( :scuola_id, @current_user.scuole.per_id, :id, :nome_scuola, {:include_blank => true} )
         
         = t.label :posizione, "pos" 
