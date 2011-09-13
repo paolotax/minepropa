@@ -19,6 +19,8 @@
       %p
         = t.label :scuola_id, "Scuola" 
         = t.collection_select( :scuola_id, @current_user.scuole.con_adozioni.da_visitare.per_id, :id, :nome_scuola, {:include_blank => true} )
+        = t.label :scuola_id, "Scuola" 
+        = t.collection_select( :scuola_id, @current_user.scuole, :id, :nome_scuola, {:include_blank => true} )
         = t.label :posizione, "pos" 
         = t.text_field :posizione
         = t.link_to_remove "Elimina"
