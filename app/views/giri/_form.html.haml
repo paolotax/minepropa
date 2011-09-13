@@ -20,9 +20,9 @@
         = t.label :scuola_id, "Scuola" 
         / = t.collection_select( :scuola_id, @current_user.scuole.con_adozioni.da_visitare.per_id, :id, :nome_scuola, {:include_blank => true} )
         = t.collection_select( :scuola_id, @current_user.scuole.per_id, :id, :nome_scuola, {:include_blank => true} )
-        
+        = t.text_field :scuola, :readonly => true
         = t.label :posizione, "pos" 
-        = t.text_field :posizione
+        = t.text_field :posizione, :size => 2
         = t.link_to_remove "Elimina"
       .clear
     = f.link_to_add "Nuova tappa", :tappe
