@@ -45,7 +45,7 @@ gem 'money'
 
 group :development do
   gem 'rspec-rails'
-  gem 'annotate-models'
+  gem 'annotate'
   gem 'faker'	
   
   #gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
