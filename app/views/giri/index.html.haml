@@ -10,7 +10,7 @@
     %th
   - tot = 0
   - for g in @giri do
-    tot += g.tappe.size
+    - tot += g.tappe.size
     %tr
       %td= link_to g.id, g
       %td= g.titolo
