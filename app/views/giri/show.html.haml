@@ -1,5 +1,5 @@
 #giro
-  %h1= "Giro #{g.title } nr. #{g.id} del #{g.data} #{g.note}" 
+  %h1= "Giro #{g.titolo } nr. #{g.id} del #{g.data} #{g.note}" 
   - form_tag stampe_riepilogo_adozioni_path, :method => :post do
 
     - for id in @scuola_ids do
