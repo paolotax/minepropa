@@ -6,11 +6,23 @@
     %th descrizione
     %th data
     %th # tappe
+    %th note
     %th
+  - tot = 0
   - for g in @giri do
+    tot += g.tappe.size
     %tr
       %td= link_to g.id, g
       %td= g.titolo
       %td= g.data
       %td= g.tappe.size
+      %td= g.note
       %td.edit= link_to "Edit", edit_giro_url(g)
+  %tr
+    %td
+    %td
+    %td
+    %td= tot
+    %td
+    %td
+    
