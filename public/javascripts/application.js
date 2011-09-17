@@ -185,8 +185,9 @@ $(document).ready( function() {
       $('.create_task_more').hide();
   });
   
-  $('#appunto_nome_scuola').live('focus', function() {
+  $('#create-task-input #appunto_nome_scuola').live('focus', function() {
       $('.token-input-list-facebook').hide();
+      $('#task_create_input').show();
       $('.create_task_more').slideDown();
   });
   

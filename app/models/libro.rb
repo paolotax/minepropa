@@ -22,15 +22,15 @@ class Libro < ActiveRecord::Base
   has_many :appunto_righe, :include => [:libro, {:appunto => [:scuola]}]
   has_many :adozioni
   
-  default_scope order("libri.id")  
+  #default_scope order("libri.id")  
   scope :per_classe_e_materia, lambda {
                                   |cl,mat| joins(:adozioni => :classe).
                                            select('distinct libri.*').
                                            where('classi.classe = ?', cl).
                                            where('adozioni.materia_id = ?', mat)
-                                        
                                }
-
+  scope :per_titolo, unscoped.order(:titolo)
+  scope :vendibili, where("libri.type <> 'Concorrenza'").where("libri.type <> 'Scorrimento'")
   
   composed_of :copertina,
       :class_name  => "Money",
@@ -44,6 +44,11 @@ class Libro < ActiveRecord::Base
       :constructor => Proc.new { |prezzo_consigliato, currency| Money.new(prezzo_consigliato || 0, currency || Money.default_currency) },
       :converter   => Proc.new { |value| value.respond_to?(:to_money) ? value.to_money : raise(ArgumentError, "Can't convert #{value.class} to Money") }
       
+  
+  #fratelli usato per option group
+  def bros
+    Libro.unscoped.where("type = ?", self.type).order(:titolo)
+  end
       
   def self.inherited(child)
     child.instance_eval do
