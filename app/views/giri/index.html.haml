@@ -5,7 +5,7 @@
     %th #
     %th descrizione
     %th data
-    %th # tappe
+    %th.right # tappe
     %th note
     %th
   - tot = 0
@@ -14,15 +14,15 @@
     %tr
       %td= link_to g.id, g
       %td= g.titolo
-      %td= g.data
-      %td= g.tappe.size
+      %td= l g.data
+      %td.right= g.tappe.size
       %td= g.note
       %td.edit= link_to "Edit", edit_giro_url(g)
   %tr
     %td
     %td
     %td
-    %td= tot
+    %td.right= tot
     %td
     %td
     
