@@ -1,7 +1,7 @@
 class GiriController < ApplicationController
     
   def index
-    @giri = Giro.all
+    @giri = Giro.recent
   end
   
   def show

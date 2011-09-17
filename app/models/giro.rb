@@ -17,4 +17,6 @@ class Giro < ActiveRecord::Base
   accepts_nested_attributes_for :tappe, :reject_if => lambda { |a| a[:scuola_id].blank? }, :allow_destroy => true
     
   has_many :scuole, :through => :tappe
+  
+  scope :recent, order('giri.data desc')
 end
