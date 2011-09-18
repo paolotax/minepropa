@@ -1,62 +1,6 @@
 - content_for :head do
   = formtastic_stylesheet_link_tag
 
-
-/ #create-appunto
-/   = form_for @appunto, { :method => 'post',  :action => appunti_path, :remote => true } do |f|
-/     #create-task-input.first
-/       .inner
-/         .input
-/           %img#task_create_loader.class{ :src => "/images/ajax-loader.gif",  :alt => "loader", :style => "display:none;" }
-/           = f.text_field :destinatario, {:class => 'itext small', :placeholder => "... chi?"}
-/           = f.autocomplete_field :nome_scuola, autocomplete_scuola_nome_scuola_appunti_path, {:size => 40, :placeholder => "... dove?", :class => 'itext small'}
-/     = f.submit "Aggiungi", :class => "btn_green"
-/     / %a#task_create_btn_add.add.btn_green Aggiungi
-/     .clear
-/     .create_task_more
-/       #create-task-input
-/         .inner
-/           .input
-/             = f.text_field :note, { :class => 'itext', :placeholder => "... che cosa?"}
-/       #create-task-input.tags
-/         .inner
-/           .input
-/             %input#task_create_input.itext{ :name => "title", :placeholder => "... tagga"}
-/             = f.text_field :tag_tokens, {:class => 'itext small', :style => "display: none;"}
-/       #create-task-input.tags
-/         .inner
-/           .input
-/             = f.text_field :telefono, {:class => 'itext small', :placeholder => "... telefono"}
-/             = f.text_field :email,    {:class => 'itext small', :placeholder => "... email"}
-/ 
-/       %ul#task_create_actions.actions 
-/         %li#create_task_action_reset.action.reset 
-/           %a
-/             %span#task_create_reset
-/               Resetta
-/       .clear
-/     
-/       = render :partial => 'appunti/form_vacanze'
-
-
-/ .form_appunto
-/   = semantic_form_for @appunto do |f|
-/     - render 'shared/error_messages', :object => f.object
-/   
-/     = f.buttons do
-/       = f.commit_button "Salva Modifiche", :button_html => { :class => 'btn_blue' }
-/     = f.inputs do
-/       = f.input :stato, :as => :radio, :collection => {"da consegnare" => "", "in sospeso" => "P", "consegnato" => "X" }
-/       = f.input :destinatario, :input_html => { :size => 40  }, :wrapper_html => { :class => "important" } 
-/       = f.autocompleted_input  :nome_scuola, :url => autocomplete_scuola_nome_scuola_appunti_path, :size => 40
-/       = f.input :note,         :input_html => { :rows => 5, :cols => 40  }
-/       %li.text.optional
-/         = f.label :tag_tokens, "Tags"
-/         = f.text_field :tag_tokens, "data-pre" => @appunto.tags.map(&:attributes).to_json
-/       = f.input :telefono,     :input_html => { :size => 40  }
-/       = f.input :email,        :input_html => { :size => 40  }
-/ 
-/ 
 /     = f.semantic_fields_for :indirizzi do |indirizzo|
 /       = indirizzo.inputs do
 /         = indirizzo.input :destinatario
@@ -79,13 +23,12 @@
           = f.label :stato, "in sospeso"
           = f.radio_button :stato, 'X'
           = f.label :stato, "consegnato"
-        = f.label :stato
-      %p
-        = f.text_field :destinatario,  {:size => 40, :placeholder => "... chi?"}
-        = f.label :destinatario
       %p
         = f.autocomplete_field :nome_scuola, autocomplete_scuola_nome_scuola_appunti_path, {:size => 40, :placeholder => "... dove?"}
         = f.label :scuola 
+      %p
+        = f.text_field :destinatario,  {:size => 40, :placeholder => "... chi?"}
+        = f.label :destinatario
       %p
         = f.text_area :note, :rows => 3, :cols => 40
       %p
@@ -104,10 +47,11 @@
         - @vendibili = Libro.unscoped.vendibili.select('distinct type').order(:type)
         = t.select :libro_id, option_groups_from_collection_for_select(@vendibili, :bros, :type, :id, :titolo), :prompt => true
         = t.label :quantita
-        = t.text_field :quantita, {:class => 'qta'}
-        = t.label "Prezzo o Sconto"
-        = t.text_field :price, {:class => 'qta'}
-        = t.link_to_remove "Elimina", :class => 'btn_red'
+        = t.text_field :quantita, {:class => 'qta', :value => 1}
+        ~ t.label :price, "Prezzo"
+        = t.text_field :price, {:class => 'qta', :value => 'c'}
+        .delete
+          = t.link_to_remove "Elimina"
     = f.link_to_add "Aggiungi riga", :appunto_righe, :class => 'btn_green'
     %fieldset
       = f.submit "Salva", :class => 'btn_blue'
