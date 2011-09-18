@@ -40,18 +40,18 @@
       %p
         = f.email_field :email, :size => 40
         = f.label :email
-        
+    - @vendibili = Libro.unscoped.vendibili.select('distinct type').order(:type)
+    %fieldset
+      = f.submit "Salva", :class => 'btn_blue'
     - f.fields_for :appunto_righe do |t|
       %p
         = t.hidden_field :appunto_id
-        - @vendibili = Libro.unscoped.vendibili.select('distinct type').order(:type)
-        = t.select :libro_id, option_groups_from_collection_for_select(@vendibili, :bros, :type, :id, :titolo), :prompt => true
+        = t.select :libro_id, option_groups_from_collection_for_select(@vendibili, :bros, :type, :id, :titolo, t.object.libro_id), :prompt => true
         = t.label :quantita
-        = t.text_field :quantita, {:class => 'qta', :value => 1}
+        = t.text_field :quantita, {:class => 'qta'}
         ~ t.label :price, "Prezzo"
-        = t.text_field :price, {:class => 'qta', :value => 'c'}
-        .delete
-          = t.link_to_remove "Elimina"
-    = f.link_to_add "Aggiungi riga", :appunto_righe, :class => 'btn_green'
+        = t.text_field :price, {:class => 'qta'}
+        = t.link_to_remove "Elimina", :class => 'btn_red'
     %fieldset
-      = f.submit "Salva", :class => 'btn_blue'
+      = f.link_to_add "Aggiungi riga", :appunto_righe, :class => 'btn_green'
+    

@@ -44,7 +44,7 @@ class AppuntiController < ApplicationController
   def edit
     session[:return_to] ||= request.referer
     
-    @appunto = current_user.appunti.find(params[:id])
+    @appunto = current_user.appunti.includes(:appunto_righe).find(params[:id])
     @indirizzo = @appunto.indirizzi.first
     if @indirizzo == nil
       @indirizzo = @appunto.indirizzi.build
