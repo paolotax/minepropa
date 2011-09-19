@@ -21,7 +21,7 @@
   pdf.float do
     pdf.bounding_box [pdf.bounds.width / 2.0, pdf.bounds.top], :width => 300 do
       pdf.move_down(200)
-      pdf.text appunto.destinatario, :size => 12, :spacing => 4
+      pdf.text appunto.destinatario, :size => 14, :style => :bold, :spacing => 4
       
       if !appunto.scuola.indirizzi.empty?
         indirizzo = appunto.scuola.indirizzi.first

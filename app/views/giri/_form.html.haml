@@ -19,8 +19,11 @@
       %p
         = t.label :scuola_id, "Scuola" 
         / = t.collection_select( :scuola_id, @current_user.scuole.con_adozioni.da_visitare.per_id, :id, :nome_scuola, {:include_blank => true} )
-        = t.collection_select( :scuola_id, @current_user.scuole.per_id, :id, :nome_scuola, {:include_blank => true} )
-        = t.object.scuola
+        - if current_action == 'new'
+          = t.collection_select( :scuola_id, @current_user.scuole.per_id, :id, :nome_scuola, {:include_blank => true} )
+        - if current_action = 'edit'
+          = t.object.scuola
+        = current_action
         = t.label :posizione, "pos" 
         = t.text_field :posizione, :size => 2
         = t.link_to_remove "Elimina"
