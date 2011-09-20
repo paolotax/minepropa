@@ -29,16 +29,18 @@
             .clear  
       .clear
       %ul.appunti_scuola
-        - for p in s.scuola.appunti.in_corso do
-          %li
-            .destinatario
-              = p.destinatario
-            .note
-              = p.note
-            .telefono
-              = p.telefono
-            .stampa  
-              = link_to "Stampa", appunto_path(p, :format => 'pdf')
+        = render :partial => 'appunti/appunti', :locals => { :appunti => s.scuola.appunti.in_corso,  :righe =>  false }
+        / = render s.scuola.appunti.in_corso, :locals => {:righe => true}
+        / - for p in s.scuola.appunti.in_corso do
+        /           %li
+        /             .destinatario
+        /               = p.destinatario
+        /             .note
+        /               = p.note
+        /             .telefono
+        /               = p.telefono
+        /             .stampa  
+        /               = link_to "Stampa", appunto_path(p, :format => 'pdf')
       %ul.recapiti_scuola
         - for t in s.scuola.appunti.con_recapito do
           %li
