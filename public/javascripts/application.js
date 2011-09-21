@@ -372,17 +372,51 @@ $(document).ready( function() {
 $(document).ready(function() {
 
   $('#btn_pdf').live('click', function () {
-    var params = $('#form_appunti').serialize();
-    // console.log(params);
-    $('#form_appunti').attr({'action': '/appunti/print_multiple', 'method': 'get'});
-    $('#form_appunti').submit();
-    return false;
-    // non funziona
-    //     $('form').submit(function () {
-    //       console.log(params);  
-    //       $.get(this.action, params, null, 'script');  
-    //       return false;
-    // });
+    // var params = $('#form_appunti').serialize();
+    // // console.log(params);
+    // $('#form_appunti').attr({'action': '/appunti/print_multiple', 'method': 'get'});
+    // $('#form_appunti').submit();
+    // return false;
+    // // non funziona
+    // //     $('form').submit(function () {
+    // //       console.log(params);  
+    // //       $.get(this.action, params, null, 'script');  
+    // //       return false;
+    // // });
+    
+    var ids = '';
+    $('.cb-element:checked').each(function() {
+        
+        var id = $('.id', $(this).parent().parent()).html();
+        
+        ids = ids + '&appunti_ids=' + id.toString();
+        
+        // ids.push({
+        //     'appunto_ids':  id
+        // });
+       
+    });
+     console.log(ids);
+
+    
+    $.ajax({
+      url: '/appunti/print_multiple.pdf',
+      data: ids,
+      type: 'get',
+      success: function() {
+        // $('.cb-element:checked' ).parent().parent().removeClass('active pending');
+        // $('.cb-element:checked' ).parent().parent().addClass('done');
+      } 
+    });
+    
+    var recursiveEncoded = $.param(ids);
+    var recursiveDecoded = decodeURIComponent($.param(ids));
+
+    alert(recursiveEncoded);
+    alert(recursiveDecoded);
+    
+    var data = $.param(ids);
+    console.log(data);
   });
   
   $('#btn_edit').live('click', function () {
