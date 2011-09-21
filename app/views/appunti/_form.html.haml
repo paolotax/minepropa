@@ -31,9 +31,10 @@
         = f.label :destinatario
       %p
         = f.text_area :note, :rows => 3, :cols => 40
-      %p
+      .line.token_container
         = f.text_field :tag_tokens, "data-pre" => @appunto.tags.map(&:attributes).to_json
         = f.label :tag_tokens, "Tags"
+        .clear
       %p
         = f.telephone_field :telefono, :size => 40 
         = f.label :telefono

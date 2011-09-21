@@ -1,6 +1,6 @@
 class AppuntiController < ApplicationController
   
-  prawnto :prawn => { :page_size => 'A4', :top_margin => 10 }
+  prawnto :prawn => { :page_size => 'A4', :top_margin => 10 }, :inline => false, :filename => "sovrapacchi"
   autocomplete :scuola, :nome_scuola
   before_filter :authenticate_user!
   helper_method :sort_column, :sort_direction
