@@ -384,39 +384,34 @@ $(document).ready(function() {
     // //       return false;
     // // });
     
-    var ids = '';
-    $('.cb-element:checked').each(function() {
-        
-        var id = $('.id', $(this).parent().parent()).html();
-        
-        ids = ids + '&appunti_ids=' + id.toString();
-        
-        // ids.push({
-        //     'appunto_ids':  id
-        // });
-       
-    });
+    // var ids = [];
+    // $('.cb-element:checked').each(function() {
+    //     
+    //     var id = $('.id', $(this).parent().parent()).html();
+    //     
+    //     // ids = ids + '&appunti_ids=' + id.toString();
+    //     
+    //     ids.push(id);
+    //    
+    // });
+    
+    var ids = {
+      appunti_ids: [2157,2158,2153]
+    };
      console.log(ids);
 
     
     $.ajax({
-      url: '/appunti/print_multiple.pdf',
-      data: ids,
+      url: '/appunti/print_multiple',
+      data: $.param(ids),
       type: 'get',
-      success: function() {
-        // $('.cb-element:checked' ).parent().parent().removeClass('active pending');
+      success: function(response) {
+        window.open(response);
+         // $('.cb-element:checked' ).parent().parent().removeClass('active pending');
         // $('.cb-element:checked' ).parent().parent().addClass('done');
       } 
     });
     
-    var recursiveEncoded = $.param(ids);
-    var recursiveDecoded = decodeURIComponent($.param(ids));
-
-    alert(recursiveEncoded);
-    alert(recursiveDecoded);
-    
-    var data = $.param(ids);
-    console.log(data);
   });
   
   $('#btn_edit').live('click', function () {
