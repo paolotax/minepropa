@@ -45,5 +45,16 @@ class User < ActiveRecord::Base
     scuole.select('distinct provincia').order('provincia')
   end
   
+  def grouped_appunti_count
+    appunti.
+    in_corso.
+    joins(:scuola).
+    select("scuole.provincia, scuole.citta, count(appunti.id) as count_appunti_in_corso").
+    group("scuole.provincia, scuole.citta").
+    order("scuole.provincia, scuole.citta").
+    all.
+    group_by(&:provincia)
+  end
+  
   
 end

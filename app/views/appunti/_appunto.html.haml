@@ -1,11 +1,11 @@
 %li.task{ :id => "appunto_#{appunto.id}_visita_", :class => "#{get_status_class(appunto.stato)}" }
   .id.hidden= appunto.id
-  .provincia.hidden= "prov=#{appunto.scuola.provincia}"
-  .citta.hidden= "citta=#{appunto.scuola.citta}"
+  .provincia.hidden= "prov=#{appunto.provincia}"
+  .citta.hidden= "citta=#{appunto.citta}"
   .stato.hidden= appunto.stato
   .created_at.hidden= appunto.created_at
   .updated_at.hidden= appunto.updated_at
-  .posizione.hidden= appunto.scuola.position
+  .posizione.hidden= appunto.position
   .task-elt.bulk
     = check_box_tag "appunti_ids[]", appunto.id, false, {:class => 'cb-element'}
   #status_image.task-elt.status{ :class => "img_appunto_#{appunto.id}" }

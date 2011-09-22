@@ -40,7 +40,7 @@ class Appunto < ActiveRecord::Base
   has_many :appunto_righe,  :include => [:libro], :dependent => :destroy
   
   
-  delegate :nome_scuola, :to => :scuola,
+  delegate :nome_scuola, :citta, :provincia, :position, :to => :scuola,
                          :allow_nil => true
   
 
@@ -61,6 +61,8 @@ class Appunto < ActiveRecord::Base
   scope :da_fare,     where({:stato.ne => 'X'} & {:stato.ne => 'P'})
   scope :in_corso,    where(:stato.ne => 'X')
   scope :completati,  where(:stato.eq => 'X')
+  
+  scope :recent, where("appunti.created_at > ? or appunti.updated_at > ?", 2.weeks.ago, 2.weeks.ago)
   
   scope :da_correggere, where("scuola_id is null")
   scope :con_recapito,  where("appunti.telefono <> '' or appunti.email <> ''")
@@ -129,6 +131,10 @@ class Appunto < ActiveRecord::Base
     end
     appunti
   end
+
+
+  
+
 
   def scuola_nome_scuola_completo
     [scuola.nome_scuola, '('+scuola.citta.capitalize+')'].join(" ") if scuola

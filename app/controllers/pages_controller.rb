@@ -9,10 +9,15 @@ class PagesController < ApplicationController
       @search = current_user.appunti.includes([:appunti_righe, :scuola]).in_corso.per_id.search(params[:search])
       @appunti = @search.all
     else
-      @term = params[:search]
-      # @search = current_user.appunti.in_corso.per_id.page(params[:page]).per(30).search(params[:search])
-      @search = current_user.appunti.includes([:appunto_righe, :scuola, :visite, {:taggings => :tag}]).in_corso.per_id.search(params[:search])
-      @appunti = @search.relation
+      
+      # @term = params[:search]
+      # # @search = current_user.appunti.in_corso.per_id.page(params[:page]).per(30).search(params[:search])
+      # @search = current_user.appunti.includes([:appunto_righe, :scuola, :visite, {:taggings => :tag}]).in_corso.per_id.search(params[:search])
+      # @appunti = @search.relation
+      
+      @appunti = current_user.grouped_appunti_count
+      @recent  = current_user.appunti.includes(:scuola).recent
+      
       @tags = current_user.appunti.in_corso.tag_counts_on(:tags)
     end
 

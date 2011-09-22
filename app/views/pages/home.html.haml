@@ -1,18 +1,38 @@
 / - title "What's up"
 
 
-= render :partial => 'shared/search_appunti'
+/ = render :partial => 'shared/search_appunti'
+/ 
+/ = render :partial => 'appunti/appunto_form'
+/ 
+/ #visible_taskslist_title.group-title Appunti in corso
+/ 
+/ / - tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class|
+/ /   = link_to tag.name, {:controller => :tags, :action => :appunti_cloud, :id => tag.name}, {:class => css_class}, :remote => true
+/ 
+/ 
+/ 
+/ = render :partial => 'appunti/appunti_header'
+/ = render :partial => 'appunti/appunti', :locals => {:appunti => @appunti, :righe => false}
+
+
 
 = render :partial => 'appunti/appunto_form'
 
-#visible_taskslist_title.group-title Appunti in corso
-
-/ - tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class|
-/   = link_to tag.name, {:controller => :tags, :action => :appunti_cloud, :id => tag.name}, {:class => css_class}, :remote => true
-
-
-= render :partial => 'appunti/appunti_header'
-= render :partial => 'appunti/appunti', :locals => {:appunti => @appunti, :righe => false}
-
-
+- @appunti.each do |k, v|
+  .group.provincia
+    = k
+    .list
+      - v.each do |a|
+        .citta
+          = a.citta
+        .count.in-corso
+          = a.count_appunti_in_corso
+    
   
+  
+  
+#visible_taskslist_title.group-title Appunti recenti
+= render :partial => 'appunti/appunti_header'
+= render :partial => 'appunti/appunti', :locals => {:appunti => @recent, :righe => false}
+
