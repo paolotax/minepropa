@@ -1,11 +1,11 @@
 %li.task{ :id => "appunto_#{appunto.id}_visita_", :class => "#{get_status_class(appunto.stato)}" }
   .id.hidden= appunto.id
-  .provincia.hidden= "prov=#{appunto.provincia}"
-  .citta.hidden= "citta=#{appunto.citta}"
+  .provincia.hidden= "prov=#{appunto.scuola_provincia}"
+  .citta.hidden= "citta=#{appunto.scuola_citta}"
   .stato.hidden= appunto.stato
   .created_at.hidden= appunto.created_at
   .updated_at.hidden= appunto.updated_at
-  .posizione.hidden= appunto.position
+  .posizione.hidden= appunto.scuola_position
   .task-elt.bulk
     = check_box_tag "appunti_ids[]", appunto.id, false, {:class => 'cb-element'}
   #status_image.task-elt.status{ :class => "img_appunto_#{appunto.id}" }
@@ -13,7 +13,7 @@
       %span
     / = link_to image_tag(show_status_icon(appunto.stato)), toggle_stato_appunto_path(appunto), :class => "img_appunto_" + h(appunto.id)
   .task-elt.details
-    .scuola.task-title= link_to appunto.nome_scuola, scuola_path(appunto.scuola) unless appunto.scuola.blank?
+    .scuola.task-title= link_to appunto.scuola_nome_scuola, scuola_path(appunto.scuola) unless appunto.scuola.blank?
     - destinatario = (appunto.destinatario.blank?) ? '...' : appunto.destinatario
     .task-title= link_to destinatario, appunto_path(appunto)
     .task-title= best_in_place appunto, :note, :type => :input

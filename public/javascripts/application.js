@@ -185,7 +185,7 @@ $(document).ready( function() {
       $('.create_task_more').hide();
   });
   
-  $('#create-task-input #appunto_nome_scuola').live('focus', function() {
+  $('#create-task-input #appunto_scuola_nome_scuola').live('focus', function() {
       $('.token-input-list-facebook').hide();
       $('#task_create_input').show();
       $('.create_task_more').slideDown();
@@ -1062,7 +1062,7 @@ $.fn.hoverClass = function(c) {
 $(document).ready(function() {
 
   // uso bestupper se no non va autocomplete --  con css non funziona query
-  $('#appunto_nome_scuola').bestupper();
+  $('#appunto_scuola_nome_scuola').bestupper();
 
 });
 

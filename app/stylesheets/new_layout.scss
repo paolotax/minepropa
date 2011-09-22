@@ -1,6 +1,9 @@
 @import "mixins";
 @import 'partials/scuole';
 @import "compass/css3/transform";
+@import "compass/utilities/lists/horizontal-list";
+@import "compass/css3/inline-block";
+
 
 
 div#map_directions {
@@ -940,8 +943,6 @@ tr.scolastico {
   
 }
 
-
-
 // style=background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: rgb(246, 252, 201); background-position: initial initial; background-repeat: initial initial; 
 
 #sidebar li a .counter {
@@ -967,5 +968,20 @@ tr.scolastico {
   text-align:center;
   top:0;
   width:25px;
+}
+
+
+#count-citta-list {
+  ul {
+    @include horizontal-list;
+    li {
+      display: inline-block;
+    }
+  }
+  .provincia {
+    margin-bottom: 10px;
+    font-size: 13px;
+    padding: 5px;
+  }
 }
   

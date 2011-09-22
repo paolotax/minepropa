@@ -6,7 +6,7 @@
         .input
           %img#task_create_loader.class{ :src => "/images/ajax-loader.gif",  :alt => "loader", :style => "display:none;" }
           = f.text_field :destinatario, {:class => 'itext small', :placeholder => "... chi?"}
-          = f.autocomplete_field :nome_scuola, autocomplete_scuola_nome_scuola_appunti_path, {:size => 40, :placeholder => "... dove?", :class => 'itext small'}
+          = f.autocomplete_field :scuola_nome_scuola, autocomplete_scuola_nome_scuola_appunti_path, {:size => 40, :placeholder => "... dove?", :class => 'itext small'}
     = f.submit "Aggiungi", :class => "btn_green"
     .clear
     .create_task_more

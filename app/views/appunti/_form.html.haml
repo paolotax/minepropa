@@ -24,7 +24,7 @@
           = f.radio_button :stato, 'X'
           = f.label :stato, "consegnato"
       %p
-        = f.autocomplete_field :nome_scuola, autocomplete_scuola_nome_scuola_appunti_path, {:size => 40, :placeholder => "... dove?"}
+        = f.autocomplete_field :scuola_nome_scuola, autocomplete_scuola_nome_scuola_appunti_path, {:size => 40, :placeholder => "... dove?"}
         = f.label :scuola 
       %p
         = f.text_field :destinatario,  {:size => 40, :placeholder => "... chi?"}

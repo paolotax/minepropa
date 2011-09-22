@@ -19,15 +19,19 @@
 
 = render :partial => 'appunti/appunto_form'
 
-- @appunti.each do |k, v|
-  .group.provincia
-    = k
-    .list
-      - v.each do |a|
-        .citta
-          = a.citta
-        .count.in-corso
-          = a.count_appunti_in_corso
+#count-citta-list
+  - @appunti.each do |k, v|
+    .provincia-group
+      %span.provincia= k
+      %span.tot-citta= v.length
+      %span.tot-appunti= v.map{|p| p.count_appunti_in_corso.to_i}.inject(:+)
+      %ul.list-group
+        - v.each do |a|
+          %li
+            %span.citta
+              = a.citta
+            %span.count-appunti
+              = a.count_appunti_in_corso
     
   
   

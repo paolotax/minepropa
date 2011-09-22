@@ -47,7 +47,7 @@ class User < ActiveRecord::Base
   
   def grouped_appunti_count
     appunti.
-    in_corso.
+    da_fare.
     joins(:scuola).
     select("scuole.provincia, scuole.citta, count(appunti.id) as count_appunti_in_corso").
     group("scuole.provincia, scuole.citta").

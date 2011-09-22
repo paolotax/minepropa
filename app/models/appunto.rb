@@ -41,6 +41,7 @@ class Appunto < ActiveRecord::Base
   
   
   delegate :nome_scuola, :citta, :provincia, :position, :to => :scuola,
+                         :prefix => true,
                          :allow_nil => true
   
 
@@ -49,7 +50,7 @@ class Appunto < ActiveRecord::Base
   
   
   validates :user_id,  :presence => true
-  validates :nome_scuola,  :presence => true
+  validates :scuola_nome_scuola,  :presence => true
   
   before_save :cleanup, :set_lat_long
   
@@ -144,7 +145,7 @@ class Appunto < ActiveRecord::Base
   #   scuola.nome_scuola if scuola
   # end  
   
-  def nome_scuola=(nome)
+  def scuola_nome_scuola=(nome)
     self.scuola = Scuola.find_by_nome_scuola(nome)
   end
   
