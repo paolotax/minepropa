@@ -122,12 +122,11 @@ class Appunto < ActiveRecord::Base
   end
   
   def self.provincia(params)
-    
+
     appunti = scoped
     if params[:provincia]
       appunti = appunti.joins(:scuola).where(:scuola => { :provincia => params[:provincia] })
     end
-    
     appunti
   end
 
@@ -164,6 +163,7 @@ class Appunto < ActiveRecord::Base
     self.scuola.save
   end
   
+
   
   private
   

@@ -37,13 +37,20 @@ module ApplicationHelper
     end
   end
   
-  def get_provincie_user
-    @provincie = current_user.scuole.select('distinct provincia')
-    # @provincie.each do |p|
-    #   provincie << p
-    # end
-    # provincie
-  end    
+  def get_provincia_link(provincia) 
+    
+    if @current_controller == 'scuole' then
+      content_tag :li, :class => 'links' do
+        link_to provincia, scuole_url(:provincia => provincia), :remote => true
+      end
+    else
+      content_tag :li, :class => 'links' do
+        link_to provincia, appunti_url(:provincia => provincia), :remote => true
+      end      
+    end
+  end
+  
+  
   
   def get_citta_user
     @citta = current_user.scuole.select('distinct citta')

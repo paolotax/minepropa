@@ -1,6 +1,6 @@
 #provincie_block
   %ul.links
-    - get_provincie_user.each do |p|
+    - current_user.get_provincie.each do |p|
       - unless p.nil?
-        %li.links= link_to p.provincia, params.merge(:provincia => p.provincia), :remote => true
+        = get_provincia_link(p.provincia)
   .clear

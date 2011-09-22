@@ -1,1 +1,1 @@
-$("#content").html("<%= escape_javascript(render( @appunti )) %>");
+$(".tasks").html("<%= escape_javascript(render @appunti, :app_righe => false) %>");

@@ -40,4 +40,10 @@ class User < ActiveRecord::Base
   def to_s
     self.username
   end
+  
+  def get_provincie
+    scuole.select('distinct provincia').order('provincia')
+  end
+  
+  
 end

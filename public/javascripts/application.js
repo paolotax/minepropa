@@ -372,45 +372,45 @@ $(document).ready( function() {
 $(document).ready(function() {
 
   $('#btn_pdf').live('click', function () {
-    // var params = $('#form_appunti').serialize();
-    // // console.log(params);
-    // $('#form_appunti').attr({'action': '/appunti/print_multiple', 'method': 'get'});
-    // $('#form_appunti').submit();
-    // return false;
-    // // non funziona
-    // //     $('form').submit(function () {
-    // //       console.log(params);  
-    // //       $.get(this.action, params, null, 'script');  
-    // //       return false;
-    // // });
-    
-    // var ids = [];
-    // $('.cb-element:checked').each(function() {
-    //     
-    //     var id = $('.id', $(this).parent().parent()).html();
-    //     
-    //     // ids = ids + '&appunti_ids=' + id.toString();
-    //     
-    //     ids.push(id);
-    //    
+    var params = $('#form_appunti').serialize();
+    // console.log(params);
+    $('#form_appunti').attr({'action': '/appunti/print_multiple', 'method': 'get'});
+    $('#form_appunti').submit();
+    return false;
+    // non funziona
+    //     $('form').submit(function () {
+    //       console.log(params);  
+    //       $.get(this.action, params, null, 'script');  
+    //       return false;
     // });
     
-    var ids = {
-      appunti_ids: [2157,2158,2153]
-    };
-     console.log(ids);
-
-    
-    $.ajax({
-      url: '/appunti/print_multiple',
-      data: $.param(ids),
-      type: 'get',
-      success: function(response) {
-        window.open(response);
-         // $('.cb-element:checked' ).parent().parent().removeClass('active pending');
-        // $('.cb-element:checked' ).parent().parent().addClass('done');
-      } 
-    });
+    // // var ids = [];
+    // // $('.cb-element:checked').each(function() {
+    // //     
+    // //     var id = $('.id', $(this).parent().parent()).html();
+    // //     
+    // //     // ids = ids + '&appunti_ids=' + id.toString();
+    // //     
+    // //     ids.push(id);
+    // //    
+    // // });
+    // 
+    // var ids = {
+    //   appunti_ids: [2157,2158,2153]
+    // };
+    //  console.log(ids);
+    // 
+    // 
+    // $.ajax({
+    //   url: '/appunti/print_multiple',
+    //   data: $.param(ids),
+    //   type: 'get',
+    //   success: function(response) {
+    //     window.open(response);
+    //      // $('.cb-element:checked' ).parent().parent().removeClass('active pending');
+    //     // $('.cb-element:checked' ).parent().parent().addClass('done');
+    //   } 
+    // });
     
   });
   

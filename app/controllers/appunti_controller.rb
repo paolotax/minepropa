@@ -6,20 +6,27 @@ class AppuntiController < ApplicationController
   helper_method :sort_column, :sort_direction
   
   def get_items(parameters)
+
     Scuola.where(:user_id => current_user.id).where(['nome_scuola LIKE ?', "%#{parameters[:term]}%"]).limit(10).order(:nome_scuola)
   end
   
   def index
+
     if mobile_device?
       @search = current_user.appunti.per_id.search(params[:search])  
       @appunti = @search.all
     else
-      @search = current_user.appunti.per_id.page(params[:page]).per(30).search(params[:search])  
+      # @search = current_user.appunti.per_id.page(params[:page]).per(30).search(params[:search])  
+      @search = current_user.appunti.in_corso.provincia(params).per_id.search(params[:search])  
+      # if params[:provincia]?
+      #   @search = @search.per_provincia(params[:provincia])
+      # end
       @appunti = @search.relation
     end
   end
   
   def show
+
     @appunto = Appunto.find(params[:id])
     @visita = Visita.new
     session[:return_to] ||= request.referer
