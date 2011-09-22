@@ -20,8 +20,8 @@
     / .labels= appunto.totale_copie
     / .labels= number_to_currency(appunto.totale_importo)
     
-    .labels= appunto.tag_list
-    / .labels= appunto_tags(appunto)
+    / .labels= appunto.tag_list
+    .labels= appunto_tags(appunto)
   .note= "#{appunto.totale_copie}"
   .clear
   - if ( app_righe == true )

@@ -62,10 +62,16 @@ module AppuntiHelper
     end
   end
   
+  def appunto_tag(tag)
+    content_tag :li do
+      link_to tag, appunti_cloud_tags_url(:id => tag)
+    end
+  end
+  
   def appunto_tags(appunto)
     
     content_tag :ul do
-      appunto.tag_list.collect {|item| concat(content_tag(:li, item))}
+      appunto.tag_list.collect {|item| concat(appunto_tag(item))}
     end
 
   end
