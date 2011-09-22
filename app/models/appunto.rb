@@ -124,11 +124,14 @@ class Appunto < ActiveRecord::Base
     self.tag_list = self.tag_list.to_s + ', ' + tag_array.join(',')
   end
   
-  def self.provincia(params)
+  def self.filtra(params)
 
     appunti = scoped
     if params[:provincia]
       appunti = appunti.joins(:scuola).where(:scuola => { :provincia => params[:provincia] })
+    end
+    if params[:citta]
+      appunti = appunti.joins(:scuola).where(:scuola => { :citta => params[:citta] })
     end
     appunti
   end

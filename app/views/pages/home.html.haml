@@ -28,10 +28,11 @@
       %ul.list-group
         - v.each do |a|
           %li
-            %span.citta
-              = a.citta
-            %span.count-appunti
-              = a.count_appunti_in_corso
+            = link_to appunti_url(:citta => a.citta), :remote => true do
+              %span.citta
+                = a.citta
+              %span.count-appunti
+                = a.count_appunti_in_corso
     
   
   

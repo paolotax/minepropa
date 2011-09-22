@@ -17,7 +17,7 @@ class AppuntiController < ApplicationController
       @appunti = @search.all
     else
       # @search = current_user.appunti.per_id.page(params[:page]).per(30).search(params[:search])  
-      @search = current_user.appunti.in_corso.provincia(params).per_id.search(params[:search])  
+      @search = current_user.appunti.in_corso.filtra(params).per_id.search(params[:search])  
       # if params[:provincia]?
       #   @search = @search.per_provincia(params[:provincia])
       # end
