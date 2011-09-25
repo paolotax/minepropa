@@ -13,19 +13,32 @@
       %th
       %th
       %th
+      %th
   %tbody
     - @fatture.each do |fattura|
       %tr
+        - totali_fatture[:copie] += fattura.totale_copie
+        - totali_fatture[:importo] += fattura.importo_fattura
         %td= best_in_place fattura, :numero
         %td= best_in_place fattura, :data
-        %td= fattura.scuola
+        %td= link_to fattura.scuola, fattura.scuola
         %td.t-right= fattura.totale_copie
         %td.t-right= fattura.importo
         %td= best_in_place fattura, :pagata
         %td= link_to 'Show', fattura
         %td= link_to 'Edit', edit_fattura_path(fattura)
         %td= link_to 'Destroy', fattura, :confirm => 'Are you sure?', :method => :delete
-
+    %tr
+      %td
+      %td
+      %td
+      %td.t-tight= totali_fatture[:copie]
+      %td.t-tight= totali_fatture[:importo].to_f / 100
+      %td
+      %td
+      %td
+      %td
+      
 %br
 
 - totali =  {:count => 0, :copie => 0, :importo => 0}

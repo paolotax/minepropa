@@ -45,7 +45,7 @@ class AppuntoRiga < ActiveRecord::Base
   scope :per_utente,  lambda { |user| joins(:appunto).where("appunti.user_id = ?", user.id) }
   scope :per_scuola,  lambda { |scuola| joins(:appunto).where("appunti.scuola_id = ?", scuola.id) }
   scope :per_fattura, lambda { |fatt| where("appunto_righe.fattura_id = ?", fatt) }
-      
+  
   composed_of :unitario,
       :class_name  => "Money",
       :mapping     => [%w(prezzo_unitario cents), %w(currency currency_as_string)],

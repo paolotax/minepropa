@@ -1,19 +1,6 @@
-- content_for :head do
-  = formtastic_stylesheet_link_tag
-
-/     = f.semantic_fields_for :indirizzi do |indirizzo|
-/       = indirizzo.inputs do
-/         = indirizzo.input :destinatario
-/         = indirizzo.input :indirizzo
-/         = indirizzo.input :citta
-/         = indirizzo.input :cap
-/         = indirizzo.input :provincia
-/         = indirizzo.input :latitude
-/         = indirizzo.input :longitude
-
 #appunto_form
   = nested_form_for @appunto do |f|
-    - render 'shared/error_messages', :object => f.object
+    = render 'shared/error_messages', :object => f.object
     %fieldset
       %p
         .radio_buttons

@@ -77,6 +77,7 @@ class Appunto < ActiveRecord::Base
   
   scope :con_righe, where("exists (select appunto_righe.appunto_id from appunto_righe 
                            where appunto_righe.appunto_id = appunti.id)")
+
   
   #vecchio stile
   #scope :instance_appunti, lambda { |user| where("appunti.user_id = ?", user.id) }

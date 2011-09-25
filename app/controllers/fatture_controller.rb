@@ -7,7 +7,7 @@ class FattureController < ApplicationController
   prawnto :prawn => { :page_size => 'A4', :margin_top => 8.mm, :margin_bottom => 8.mm, :margin_left => 15.mm, :margin_right => 8.mm }
 
   def index
-    @fatture = current_user.fatture.all
+    @fatture = current_user.fatture.per_numero.all
     
     @da_fatturare = Scuola.
                       joins(:appunti => :appunto_righe).

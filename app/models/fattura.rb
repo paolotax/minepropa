@@ -25,30 +25,31 @@ class Fattura < ActiveRecord::Base
   belongs_to :user
   has_many :appunto_righe, :dependent => :nullify
   
-
+  validates :data, :presence => true
+  validates :numero, :presence => true
+  
+  scope :per_numero, order('fatture.numero desc')
+  
   composed_of :importo,
       :class_name  => "Money",
       :mapping     => [%w(importo_fattura cents), %w(currency currency_as_string)],
       :constructor => Proc.new { |importo_fattura, currency| Money.new(importo_fattura || 0, currency || Money.default_currency) },
-      :converter   => Proc.new { |value| value.respond_to?(:to_money) ? value.to_money : raise(ArgumentError, "Can't convert #{value.class} to Money") }
+      :converter   => Proc.new { |value| value.respond_to?(:to_money) ? value.to_money : raise(ArgumentError, "Impossibile convertire #{value.class}") }
   
   composed_of :iva,
       :class_name  => "Money",
       :mapping     => [%w(totale_iva cents), %w(currency currency_as_string)],
       :constructor => Proc.new { |totale_iva, currency| Money.new(totale_iva || 0, currency || Money.default_currency) },
-      :converter   => Proc.new { |value| value.respond_to?(:to_money) ? value.to_money : raise(ArgumentError, "Can't convert #{value.class} to Money") }
+      :converter   => Proc.new { |value| value.respond_to?(:to_money) ? value.to_money : raise(ArgumentError, "Impossibile convertire #{value.class}") }
   
   TIPO_FATTURA = [ "Fattura", "Vendita" ]
   TIPO_PAGAMENTO = ["Contanti", "Assegno", "Bonifico Bancario", "Bollettino Postale"]
   
   def add_righe_from_scuola(scuola) 
-    scuola.appunti.each do |appunto|
-      #riga.appunto_id = nil
-      appunto.appunto_righe.each do |riga|
-        self.totale_copie += riga.quantita
-        self.importo_fattura += riga.quantita * riga.prezzo_unitario
-        self.appunto_righe << riga
-      end
+    scuola.appunto_righe.da_fatturare.each do |riga|
+      self.totale_copie += riga.quantita
+      self.importo_fattura += riga.quantita * riga.prezzo_unitario
+      self.appunto_righe << riga
     end
   end
   
@@ -56,7 +57,7 @@ class Fattura < ActiveRecord::Base
     app = Appunto.find(appunti)
    
     app.each do |a|
-      a.appunto_righe.each do |riga|
+      a.appunto_righe.da_fatturare.each do |riga|
         self.totale_copie += riga.quantita
         self.importo_fattura += riga.quantita * riga.prezzo_unitario
         self.appunto_righe << riga
@@ -68,4 +69,31 @@ class Fattura < ActiveRecord::Base
     Fattura.where("user_id = ?", user.id).last == nil ? 1 : Fattura.where("user_id = ?", user.id).last[:numero] + 1  
   end
   
+  def ricalcola
+    self.totale_copie = self.appunto_righe.sum(:quantita)
+    self.importo_fattura = self.appunto_righe.sum("appunto_righe.prezzo_unitario * appunto_righe.quantita")
+    self.save
+  end
+  
+  def sistema_minguzzi
+    ming = Scuola.find(253)
+    
+    ming.appunto_righe.where("appunto_righe.appunto_id in (2316, 2434, 2441)").each do |a|
+      a.update_attributes(:fattura_id => 8)
+    end
+    
+    ming.appunto_righe.where("appunto_righe.appunto_id in (2481, 2501, 2543)").each do |a|
+      a.update_attributes(:fattura_id => 9)
+    end
+    
+    ming.appunto_righe.where("appunto_righe.appunto_id in (2594)").each do |a|
+      a.update_attributes(:fattura_id => 10)
+    end
+
+    ming.fatture.all.each do |f|
+      f.ricalcola
+    end
+    
+    p "done!"
+  end
 end

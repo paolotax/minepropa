@@ -10,6 +10,7 @@ class Scuola < ActiveRecord::Base
   has_many :adozioni, :through => :classi, :include => :libro
   has_many :mie_adozioni, :through => :classi, :source => :adozioni, :include => :libro, :conditions => "libri.type = 'Scolastico'"
   
+  has_many :appunto_righe, :through => :appunti
   
   has_many :visite,    :as => :visitable,    :dependent => :destroy 
   has_many :indirizzi, :as => :indirizzable, :dependent => :destroy
