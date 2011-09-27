@@ -60,7 +60,7 @@
 
     pdf.table righe, :border_style => :grid,
       :row_colors => ["FFFFFF","DDDDDD"],
-      :headers => ["Titolo", "Quantità", "Pr.Copertina", "Prezzo", "Importo"],
+      :headers => ["Titolo", "Pr.Copertina", "Quantità", "Prezzo", "Importo"],
       :align => { 0 => :left, 1 => :right, 2 => :right, 3 => :right, 4 => :right }
 
     pdf.move_down(10)
