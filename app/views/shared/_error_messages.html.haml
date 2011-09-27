@@ -1,11 +1,9 @@
 - if object.errors.any?
   #error_explanation
     %h2
-      = pluralize(object.errors.count, "error")
-      impossibile salvare questo 
-      = object.class.to_s.underscore.humanize
+      = "Impossibile salvare questo #{object.class.to_s.underscore.humanize}. #{pluralize(object.errors.count, "errore")}"
     %p
       ci sono problemi con i seguenti campi:
       %ul
-        = object.errors.full_messages.each do |msg|
+        - object.errors.full_messages.each do |msg|
           %li=msg

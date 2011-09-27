@@ -178,7 +178,7 @@ pdf.bounding_box([pdf.bounds.left, pdf.bounds.top - 106.mm], :width  => pdf.boun
 
     
     @appunto_righe.group_by(&:appunto).each do |a, righe|
-       pdf.text "Ordine del #{l a.created_at, :format => :short} - Consegna del #{a.tag_list}"
+      pdf.text "" #pdf.text "Ordine del #{l a.created_at, :format => :short} - Consegna del #{a.tag_list}"
       r = righe.map do |riga|
         [
           riga.libro.titolo,
