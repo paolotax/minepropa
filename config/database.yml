@@ -11,7 +11,7 @@ development:
   reconnect: false
   database: minepropa_development
   pool: 5
-  username: paolotax
+  username: ptax
   password: ptax
   min_messages: warning
 
@@ -25,7 +25,7 @@ test:
   reconnect: false
   database: minepropa_test
   pool: 5
-  username: paolotax
+  username: ptax
   password: ptax
 
 

@@ -1,5 +1,6 @@
 .bundle
 db/*.sqlite3
+config/database.yml
 log/*.log
 tmp/**/*
 tmp/*
@@ -13,4 +14,3 @@ doc/app
 webrat.log
 Guardfile
 .rvmrc
-config/database.yml
