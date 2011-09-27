@@ -51,8 +51,8 @@
     righe = @appunto.appunto_righe.per_libro_id.map do |riga|
      [
         riga.libro.titolo,
-        riga.libro.copertina,
         riga.quantita,
+        riga.libro.copertina,        
         riga.unitario,
         number_to_currency(riga.importo)
       ]
@@ -60,7 +60,7 @@
 
     pdf.table righe, :border_style => :grid,
       :row_colors => ["FFFFFF","DDDDDD"],
-      :headers => ["Titolo", "Pr.Copertina", "Quantità", "Prezzo", "Importo"],
+      :headers => ["Titolo", "Quantità", "Pr.Copertina", "Prezzo", "Importo"],
       :align => { 0 => :left, 1 => :right, 2 => :right, 3 => :right, 4 => :right }
 
     pdf.move_down(10)
