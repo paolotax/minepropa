@@ -12,3 +12,5 @@ doc/app
 .DS_Store
 webrat.log
 Guardfile
+.rvmrc
+config/database.yml
