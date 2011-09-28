@@ -43,13 +43,13 @@
     = csrf_meta_tag
     = yield :head
   %body{:class => page_class}
-    - flash.each do |key, value|
-      = content_tag(:div, raw(value), :class => "notice #{key}")
     #loading.hidden
       caricamento...
     #header
       = render 'layouts/header'
     #container.col-2.radius-8
+      - flash.each do |key, value|
+        = content_tag(:div, raw(value), :class => "notice #{key}")
       #main.sc
         = render 'shared/popin_bulk'
         #sidebar
