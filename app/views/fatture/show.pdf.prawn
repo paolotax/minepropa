@@ -184,7 +184,7 @@ pdf.bounding_box([pdf.bounds.left, pdf.bounds.top - 106.mm], :width  => pdf.boun
           riga.libro.titolo,
           riga.quantita,
           riga.libro.copertina,
-          riga.sconto,
+          riga.sconto.round(2),
           number_to_currency(riga.importo),
           "VA"
         ]
