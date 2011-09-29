@@ -23,12 +23,17 @@
 class Fattura < ActiveRecord::Base
   belongs_to :scuola
   belongs_to :user
+  
   has_many :appunto_righe, :dependent => :nullify
+  has_many :appunti, :through => :appunto_righe
   
   validates :data, :presence => true
   validates :numero, :presence => true
   
   scope :per_numero, order('fatture.numero desc')
+  
+  after_save :update_righe_status, :update_appunti_status
+  #before_destroy :update_righe_status
   
   composed_of :importo,
       :class_name  => "Money",
@@ -96,4 +101,20 @@ class Fattura < ActiveRecord::Base
     
     p "done!"
   end
+  
+  private
+  
+    def update_righe_status
+      appunto_righe.each do |riga|
+        riga.update_attributes({:pagato => self.pagata, :consegnato => true})
+      end
+    end
+    
+    def update_appunti_status
+      if pagata?
+        appunti.each do |a|
+          a.update_attributes({:stato => "X"})
+        end
+      end
+    end
 end
