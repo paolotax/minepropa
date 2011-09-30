@@ -125,6 +125,13 @@ class Appunto < ActiveRecord::Base
     self.tag_list = self.tag_list.to_s + ', ' + tag_array.join(',')
   end
   
+  def tag_remove=(empty)
+    #raise empty.inspect
+    if empty == '1'
+      self.tag_list = ''
+    end
+  end
+  
   def self.filtra(params)
 
     appunti = scoped

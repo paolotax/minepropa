@@ -13,7 +13,7 @@
           = appunto.scuola.nome_scuola unless appunto.scuola.nil?
           = appunto.note
       = f.buttons do
-        = f.commit_button "Salva Modifiche"
+        = f.commit_button "Salva", :class => 'btn_blue'
       = f.inputs do
         %li.text.optional
           = f.label :stato
@@ -26,5 +26,8 @@
         %li.text.optional
           = f.label :tag_add, "Aggiungi Tag"
           = f.text_field :tag_add
+        %li.text.optional
+          = f.label :tag_remove, "Rimuovi tutti i tags"
+          = f.check_box :tag_remove
         = f.input :telefono,     :input_html => { :size => 40  }
         = f.input :email,        :input_html => { :size => 40  }
