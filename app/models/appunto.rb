@@ -39,6 +39,7 @@ class Appunto < ActiveRecord::Base
   has_many :indirizzi, :as => :indirizzable,  :dependent => :destroy
   has_many :appunto_righe,  :include => [:libro], :dependent => :destroy
   
+  has_one :fattura, :through => :appunto_righe
   
   delegate :nome_scuola, :citta, :provincia, :position, :to => :scuola,
                          :prefix => true,
@@ -79,6 +80,11 @@ class Appunto < ActiveRecord::Base
                            where appunto_righe.appunto_id = appunti.id)")
 
   
+  scope :fatturato, where("exists (select appunto_righe.appunto_id from appunto_righe 
+                                   where appunto_righe.appunto_id = appunti.id and appunto_righe.fattura_id is not null)" )
+  
+  scope :non_fatturato, where("exists (select appunto_righe.appunto_id from appunto_righe 
+                                  where appunto_righe.appunto_id = appunti.id and appunto_righe.fattura_id is null)" )
   #vecchio stile
   #scope :instance_appunti, lambda { |user| where("appunti.user_id = ?", user.id) }
   
@@ -127,6 +133,7 @@ class Appunto < ActiveRecord::Base
   
   def tag_remove=(empty)
     #raise empty.inspect
+    
     if empty == '1'
       self.tag_list = ''
     end
@@ -181,7 +188,9 @@ class Appunto < ActiveRecord::Base
     self.scuola.save
   end
   
-
+  
+  
+  after_save :update_righe_status
   
   private
   
@@ -196,5 +205,23 @@ class Appunto < ActiveRecord::Base
         self.longitude = indirizzo.longitude
       end
     end
+    
+    def update_righe_status
+      
+      if stato == 'X'
+        appunto_righe.each do |riga|
+          riga.update_attributes({:pagato => true, :consegnato => true})
+        end
+      elsif stato == 'P'
+        appunto_righe.each do |riga|
+          riga.update_attributes({:pagato => false, :consegnato => true})
+        end
+      else
+        appunto_righe.each do |riga|
+          riga.update_attributes({:pagato => false, :consegnato => false})
+        end
+      end
+    end
+    
   
 end

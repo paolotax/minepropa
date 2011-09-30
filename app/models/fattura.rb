@@ -105,9 +105,9 @@ class Fattura < ActiveRecord::Base
   private
   
     def update_righe_status
-      appunto_righe.each do |riga|
-        riga.update_attributes({:pagato => self.pagata, :consegnato => true})
-      end
+      # appunto_righe.each do |riga|
+      #   riga.update_attributes({:pagato => self.pagata, :consegnato => true})
+      # end
     end
     
     def update_appunti_status

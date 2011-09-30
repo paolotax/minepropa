@@ -1,8 +1,15 @@
-$('#appunto_<%= h(@appunto.id) %>_visita_').removeClass('done pending active');
-$('#appunto_<%= h(@appunto.id) %>_visita_').addClass('<%= get_status_class(@appunto.stato) %>');
+var current_appunto = $('#appunto_<%= h(@appunto.id) %>_visita_');
+
+if ($(".appunto_righe_list", current_appunto).length > 0) {
+	current_appunto.replaceWith("<%= escape_javascript(render @appunto, :app_righe => true ) %>" );
+} else {
+	current_appunto.replaceWith("<%= escape_javascript(render @appunto, :app_righe => false ) %>" );
+}
 
 
-// Vecchio sistema con icone
-// 
-// $('.img_appunto_<%= h(@appunto.id) %>').html('<%= link_to image_tag(show_status_icon(@appunto.stato)), toggle_stato_appunto_path(@appunto) %>');
-// $(".ts_appunto_<%= h(@appunto.id) %>").html('<small><%= get_posted_string(@appunto) %></small>');
+//
+//  Vecchio sistemas
+// var current_appunto = $('#appunto_<%= h(@appunto.id) %>_visita_');
+// current_appunto.removeClass('done pending active');
+// current_appunto.addClass('<%= get_status_class(@appunto.stato) %>');
+
