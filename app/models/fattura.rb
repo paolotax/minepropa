@@ -32,7 +32,7 @@ class Fattura < ActiveRecord::Base
   
   scope :per_numero, order('fatture.numero desc')
   
-  after_save :update_righe_status, :update_appunti_status
+  after_save :update_appunti_status
   #before_destroy :update_righe_status
   
   composed_of :importo,
@@ -104,17 +104,17 @@ class Fattura < ActiveRecord::Base
   
   private
   
-    def update_righe_status
-      # appunto_righe.each do |riga|
-      #   riga.update_attributes({:pagato => self.pagata, :consegnato => true})
-      # end
-    end
     
     def update_appunti_status
       if pagata?
         appunti.each do |a|
           a.update_attributes({:stato => "X"})
         end
+      else
+        appunti.each do |a|
+          a.update_attributes({:stato => "P"})
+        end
       end
+        
     end
 end

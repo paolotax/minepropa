@@ -16,7 +16,7 @@ class PagesController < ApplicationController
       # @appunti = @search.relation
       
       @appunti = current_user.grouped_appunti_count
-      @recent  = current_user.appunti.includes(:scuola).recent.per_id
+      @recent  = current_user.appunti.includes(:scuola).in_corso.per_id
       
       @tags = current_user.appunti.in_corso.tag_counts_on(:tags)
     end
