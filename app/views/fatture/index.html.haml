@@ -21,12 +21,12 @@
         - totali_fatture[:importo] += fattura.importo_fattura
         %td= best_in_place fattura, :numero
         %td= best_in_place fattura, :data
-        %td= link_to fattura.scuola, fattura.scuola
+        %td.t-scuola= link_to fattura.scuola.nome_scuola, fattura.scuola                      # to delegate
         %td.t-right= fattura.totale_copie
         %td.t-right= fattura.importo
+        %td= best_in_place fattura, :condizioni_pagamento
         %td= best_in_place fattura, :pagata
         %td= link_to 'Show', fattura
-        %td= link_to 'Edit', edit_fattura_path(fattura)
         %td= link_to 'Destroy', fattura, :confirm => 'Are you sure?', :method => :delete
     %tr
       %td
@@ -43,7 +43,7 @@
 
 - totali =  {:count => 0, :copie => 0, :importo => 0}
 
-%table#da_fatturare_table
+%table#in_sospeso
   %thead
     %tr
       %th Codice
@@ -54,7 +54,7 @@
       %th.t-right Importo
       %th.t-center Stato
   %tbody
-    - @da_fatturare.each do |s|
+    - @in_sospeso.each do |s|
       - totali[:count] += s.count.to_i
       - totali[:copie] += s.copie.to_i
       - totali[:importo] += s.importo.to_f
@@ -77,5 +77,36 @@
       %td
     
 
+%table#pagate
+  %thead
+    %tr
+      %th Codice
+      %th Cliente
+      %th Provincia
+      %th.t-right Nr.Appunti
+      %th.t-right Copie
+      %th.t-right Importo
+      %th.t-center Stato
+  %tbody
+    - @pagate.each do |s|
+      - totali[:count] += s.count.to_i
+      - totali[:copie] += s.copie.to_i
+      - totali[:importo] += s.importo.to_f
+      %tr
+        %td= s.id
+        %td= link_to s.nome_scuola, scuola_path(s.id)
+        %td= s.provincia
+        %td.t-right= s.count
+        %td.t-right= s.copie
+        %td.t-right= s.importo.to_f / 100
+        %td.t-center= s.stato
+  %tfoot
+    %tr
+      %td 
+      %td 
+      %td 
+      %td.t-right= totali[:count]
+      %td.t-right= totali[:copie]
+      %td.t-right= totali[:importo].to_f / 100
+      %td
 
-= link_to 'New Fattura', new_fattura_path

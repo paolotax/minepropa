@@ -9,13 +9,29 @@ class FattureController < ApplicationController
   def index
     @fatture = current_user.fatture.per_numero.all
     
-    @da_fatturare = Scuola.
+    @in_sospeso = Scuola.
                       joins(:appunti => :appunto_righe).
                       select("scuole.id, scuole.nome_scuola, scuole.provincia, appunti.stato").
                       select("count(distinct appunti.id) as count").
                       select("sum(appunto_righe.quantita) as copie").
                       select("sum(appunto_righe.quantita * appunto_righe.prezzo_unitario) as importo").
                       where("appunto_righe.fattura_id is null").
+                      
+                      where("appunti.stato = 'P' or appunti.stato is null or appunti.stato = ''").
+                      
+                      group("scuole.id, scuole.nome_scuola, scuole.provincia, appunti.stato").
+                      order("scuole.provincia, scuole.nome_scuola")
+    
+    @pagate =    Scuola.
+                      joins(:appunti => :appunto_righe).
+                      select("scuole.id, scuole.nome_scuola, scuole.provincia, appunti.stato").
+                      select("count(distinct appunti.id) as count").
+                      select("sum(appunto_righe.quantita) as copie").
+                      select("sum(appunto_righe.quantita * appunto_righe.prezzo_unitario) as importo").
+                      where("appunto_righe.fattura_id is null").
+                      
+                      where("appunti.stato = 'X'").
+                      
                       group("scuole.id, scuole.nome_scuola, scuole.provincia, appunti.stato").
                       order("scuole.provincia, scuole.nome_scuola")
     

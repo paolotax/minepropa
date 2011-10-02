@@ -740,6 +740,10 @@ th.t-center {
   text-align: center;
 }
 
+td.t-scuola {
+	width: 200px;
+}
+
 table {
   border: #cccccc 1px solid;
   @include rounded-corners(5px);
