@@ -41,6 +41,7 @@ class AppuntiController < ApplicationController
 
   def new
     @appunto   = current_user.appunti.build
+    @appunto.scuola = Scuola.find(params[:scuola]) if params[:scuola]
     @indirizzo = @appunto.indirizzi.build
     #@recent    = Appunto.modificato_dal(Time.now.at_beginning_of_day, Time.now.at_beginning_of_day).per_id
   end

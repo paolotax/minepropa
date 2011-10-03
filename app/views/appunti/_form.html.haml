@@ -2,14 +2,14 @@
   = nested_form_for @appunto do |f|
     = render 'shared/error_messages', :object => f.object
     %fieldset
-      %p
-        .radio_buttons
-          = f.radio_button :stato, ''
-          = f.label :stato, "da consegnare"
-          = f.radio_button :stato, 'P'
-          = f.label :stato, "in sospeso"
-          = f.radio_button :stato, 'X'
-          = f.label :stato, "consegnato"
+      .radio_buttons.left
+        = f.radio_button :stato, ''
+        = f.label :stato, "da consegnare"
+        = f.radio_button :stato, 'P'
+        = f.label :stato, "in sospeso"
+        = f.radio_button :stato, 'X'
+        = f.label :stato, "consegnato"
+      .right= f.submit "Salva", :class => 'btn_blue'
       %p
         = f.autocomplete_field :scuola_nome_scuola, autocomplete_scuola_nome_scuola_appunti_path, {:size => 40, :placeholder => "... dove?"}
         = f.label :scuola 
@@ -29,8 +29,6 @@
         = f.email_field :email, :size => 40
         = f.label :email
     - @vendibili = Libro.unscoped.vendibili.select('distinct type').order(:type)
-    %fieldset
-      = f.submit "Salva", :class => 'btn_blue'
     - f.fields_for :appunto_righe do |t|
       %p
         = t.hidden_field :appunto_id
