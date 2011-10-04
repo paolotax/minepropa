@@ -1,37 +1,26 @@
 #content_task_details
   = render :partial => 'shared/toolbar_show', :locals => {:obj => @fattura}
 
-.clear  
-
 #fattura_info
-  %p
-    %b Numero:
-    = best_in_place @fattura, :numero
-  %p
-    %b Data:
-    = best_in_place @fattura, :data
-  %p
-    %b Cliente:
-    = @fattura.scuola
-  %p
-    %b Pagamento:
-    = best_in_place @fattura, :condizioni_pagamento
-  %p
-    %b Pagata:
-    = best_in_place @fattura, :pagata
-
+  %dl
+    %dt numero:
+    %dd= best_in_place @fattura, :numero
+    %dt data:
+    %dd= best_in_place @fattura, :data
+    %dt cliente:
+    %dd= link_to @fattura.scuola.nome_scuola, @fattura.scuola
+    %dt pagamento:
+    %dd= best_in_place @fattura, :condizioni_pagamento, :type => :select, :collection => [['Contanti', 'Contanti'], ['Bonifico', 'Bonifico'], ['Assegno', 'Assegno']]
+    %dt pagata:
+    %dd= best_in_place @fattura, :pagata, :type => :checkbox, :collection => ["Non ancora", "Si"]
+  %dl  
+    %dt totale copie:
+    %dd= @fattura.totale_copie
+    %dt totale fattura:
+    %dd= @fattura.importo
+    
 #fattura_destinatario
-  = render :partial => 'indirizzi/indirizzo', :locals => { :scuola => @scuola, :indirizzo => @indirizzo }
-
-#fattura_totali
-  %p
-    %b Totale Copie:
-    = @fattura.totale_copie
-  %p
-    %b Totale Fattura:
-    = @fattura.importo
-
-
+  = render @indirizzo, :scuola => @scuola
 
 .clear
 

@@ -35,7 +35,8 @@ class Scuole::ShowPresenter
   end
   
   def totale_venduto
-    AppuntoRiga.select("sum(appunto_righe.quantita) as copie, sum(appunto_righe.quantita * appunto_righe.prezzo_unitario) as sum_importo").           joins(:appunto => :scuola).where("scuole.id = ?", @scuola.id)
+    AppuntoRiga.select("sum(appunto_righe.quantita) as copie, sum(appunto_righe.quantita * appunto_righe.prezzo_unitario) as sum_importo").           
+                joins(:appunto => :scuola).where("scuole.id = ?", @scuola.id)
   end
     
   

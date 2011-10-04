@@ -643,8 +643,27 @@ form .actions {
   border:  1px solid #A9C6D7;
   @include box-shadow(#B6B6B6);
   @include rounded-corners(5px);
-  p {
-    padding: 5px;
+  dl {
+    clear: both;
+  }
+
+  dt {
+    float: left;
+    font-weight: bold;
+    text-align: right;
+    width: 120px;
+  }
+
+  dd {
+    margin-left: 125px;
+  }
+
+  dd p:first-child {
+    margin-top: 0;
+  }
+
+  dd, dt {
+    // padding-top: 20px;
   }
 }
 
@@ -655,19 +674,31 @@ form .actions {
   border:  1px solid #A9C6D7;
   @include box-shadow(#B6B6B6);
   @include rounded-corners(5px);
-  p {
-    padding: 5px;
+  dl {
+    clear: both;
+  }
+
+  dt {
+    float: left;
+    font-weight: bold;
+    text-align: right;
+    width: 120px;
+  }
+
+  dd {
+    margin-left: 125px;
+  }
+
+  dd p:first-child {
+    margin-top: 0;
+  }
+
+  dd, dt {
+    // padding-top: 20px;
   }
 }
 
-#fattura_totali {
-  margin-top: 20px;
-  float: right;
-  padding: 5px;
-  border:  1px solid #A9C6D7;
-  @include box-shadow(#B6B6B6);
-  @include rounded-corners(5px);
-}
+
 #fattura_righe {
   margin-top: 20px;
   padding: 5px;

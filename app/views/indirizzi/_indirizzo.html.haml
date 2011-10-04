@@ -1,34 +1,29 @@
 - unless indirizzo.nil?
-  .scuola_descrizione
-    = best_in_place indirizzo, :destinatario
-  .scuola_indirizzo
-    %span
-      = best_in_place indirizzo, :indirizzo
-    %br  
-      = best_in_place indirizzo, :cap
-      = best_in_place indirizzo, :citta
-      = best_in_place indirizzo, :provincia
-  .scuola_indirizzo_id
-    = hidden_field_tag indirizzo.id
-  %p
-    %b Partita IVA:
-    = best_in_place scuola, :partita_iva
-  %p
-    %b Codice fiscale:
-    = best_in_place scuola, :codice_fiscale 
-  %p
-    %b Telefono:
-    = best_in_place scuola, :telefono 
-  %p
-    %b Fax:
-    = best_in_place scuola, :fax 
-  %p
-    %b email:
-    = best_in_place scuola, :email 
-  %p
-    %b cellulare:
-    = best_in_place scuola, :cellulare 
-  
-  .scuola_latlong
-    = hidden_field_tag indirizzo, :latitude
-    = hidden_field_tag indirizzo, :longitude
+  .indirizo_completo[indirizzo]  
+    %dl
+      %dt Spett.le
+      %dd
+        = best_in_place indirizzo, :destinatario
+        %br
+        = best_in_place indirizzo, :indirizzo
+        %br  
+        = best_in_place indirizzo, :cap
+        = best_in_place indirizzo, :citta
+        = best_in_place indirizzo, :provincia
+      %dt partita iva:
+      %dd= best_in_place scuola, :partita_iva
+      %dt codice fiscale:
+      %dd= best_in_place scuola, :codice_fiscale 
+      %dt telefono:
+      %dd= best_in_place scuola, :telefono 
+      %dt fax:
+      %dd= best_in_place scuola, :fax 
+      %dt email:
+      %dd= best_in_place scuola, :email 
+      %dt cellulare:
+      %dt= best_in_place scuola, :cellulare 
+    .scuola_indirizzo_id
+      = hidden_field_tag indirizzo.id
+    .scuola_latlong
+      = hidden_field_tag indirizzo, :latitude
+      = hidden_field_tag indirizzo, :longitude
