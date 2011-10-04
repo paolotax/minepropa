@@ -21,25 +21,6 @@
     %a.invertSelection
       Inverti Selezione
 
-#scuole.left_scuole
+#scuole
   = render :partial => 'scuole'
-
-
-%table
-  %tr
-    %th
-      Nome Scuola
-    %th
-      Venduto
-  - for v in @venduto_per_scuola do
-    %tr
-      %td
-        = v.nome_scuola
-      %td
-        = h (v.venduto.to_f / 100)
-
-
-#scuole.right_scuole
-
-
-			
+	

@@ -1,13 +1,4 @@
 = form_tag new_giro_path, :method => :get do
   = submit_tag "Submit"
   %ul.scuole_sort_list
-    = render @scuole
-    / = nested_scuole @scuole.arrange
-
-/ - scuole_per_provincia = @scuole.group_by{|elem| elem[:provincia]}
-
-/ - scuole_per_provincia.each do |provincia, scuole|
-/   %p= provincia
-/   %ul.scuole_sort_list
-/     - scuole.each do |scuola|
-/       = render scuola
+    = nested_scuole @scuole.arrange(:order => "provincia asc")

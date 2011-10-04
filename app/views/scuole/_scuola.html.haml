@@ -1,16 +1,17 @@
-%li.scuola_item[scuola]
+%li[scuola]
   / %span.handle
   /   = image_tag "sort_down.gif"
-  #s_check
+  .s_check
     = check_box_tag "scuola_ids[]", scuola.id, false, {:class => 'cb-element'}
-  #s_nome_scuola
-    = link_to scuola.nome_scuola , scuola_path(scuola)
-    %br
+  .s_nome_scuola
+    = link_to scuola.nome_scuola , scuola_url(scuola)
+  .s_citta_scuola
     = scuola.citta
     / = hidden_field_tag 'lat_long',  scuola.lat_long
-  #s_id
-    = scuola.id
-  
+  / .s_id
+  /   = scuola.id
+  .s_links
+    = link_to "Modifica", edit_scuola_url(scuola)
   - unless scuola.giri.blank?
     .s_giro
       = scuola.giri.size

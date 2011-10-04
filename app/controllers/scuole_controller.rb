@@ -10,12 +10,6 @@ class ScuoleController < ApplicationController
       @scuole = @scuole.per_provincia(params[:provincia])
     end
         
-    @venduto_per_scuola = current_user.scuole.
-                                joins(:appunti => :appunto_righe).
-                                select('scuole.id, scuole.nome_scuola, sum(appunto_righe.quantita * appunto_righe.prezzo_unitario) as venduto').
-                                group('scuole.id, scuole.nome_scuola').
-                                order('scuole.id')
-    
     respond_to do |format|
       format.html # index.html.erb
       format.js
