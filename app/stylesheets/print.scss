@@ -14,13 +14,11 @@ body.bp {
 }
 
 #content {
-  float: right;
-  width: 100%;
-  font-size: 12pt;
+  font-size: 16px;
 }
 
 #main {
-  margin-left: auto;
+  margin-left: -100px;
   width: 100%;
   #td_header {
     display: none; 
@@ -36,4 +34,19 @@ body.bp {
 }
 #giro .adozioni_scuola {
   width: 500px;
+}
+
+#appunti {
+	font-size: 16px;
+	color: black;
+	a {
+		font-size: 16px;
+	  text-decoration:none;
+	  color: black;
+	}
+	span {
+		font-size: 16px;
+		color: black;
+	}
+	
 }
