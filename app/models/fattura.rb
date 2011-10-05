@@ -71,7 +71,7 @@ class Fattura < ActiveRecord::Base
   end
   
   def get_new_id(user)
-    Fattura.where("user_id = ?", user.id).last == nil ? 1 : Fattura.where("user_id = ?", user.id).last[:numero] + 1  
+    Fattura.where("user_id = ?", user.id).order('numero desc').limit(1) == nil ? 1 : Fattura.where("user_id = ?", user.id).order('numero desc').limit(1)[0][:numero] + 1  
   end
   
   def ricalcola

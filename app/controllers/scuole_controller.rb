@@ -49,6 +49,9 @@ class ScuoleController < ApplicationController
   end
 
   def edit
+    
+    session[:return_to] ||= request.referer
+    
     @scuola    = current_user.scuole.find(params[:id])
     @indirizzo = @scuola.indirizzi.first
     if @indirizzo == nil
@@ -61,7 +64,7 @@ class ScuoleController < ApplicationController
 
     respond_to do |format|
       if @scuola.save
-        format.html { redirect_to(@scuola, :notice => 'Scuola inserita.') }
+        format.html { redirect_to(session[:return_to], :notice => 'Scuola inserita.') }
       else
         format.html { render :action => "new" }
       end
@@ -73,7 +76,7 @@ class ScuoleController < ApplicationController
 
     respond_to do |format|
       if @scuola.update_attributes(params[:scuola])
-        format.html { redirect_to(@scuola, :notice => 'Scuola modificata.') }
+        format.html { redirect_to(session[:return_to], :notice => 'Scuola modificata.') }
       else
         format.html { render :action => "edit" }
       end
