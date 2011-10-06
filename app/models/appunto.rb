@@ -188,6 +188,27 @@ class Appunto < ActiveRecord::Base
   
   
   
+  def self.controlla_appunti
+    
+    errori = []
+    
+    Appunto.con_righe.each do |a|
+      
+      calc = a.appunto_righe.sum('quantita * prezzo_unitario').to_f / 100 
+      
+      diff = calc - a.totale_importo
+      if !(diff == 0.0) 
+        errori << "#{a.id} #{diff} #{a.scuola.nome_scuola}"
+      end
+      
+    end
+    
+    errori
+  end
+  
+  
+  
+  
   after_save :update_righe_status
   
   private

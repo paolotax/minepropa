@@ -26,9 +26,12 @@ class AppuntoRiga < ActiveRecord::Base
   
   delegate :titolo, :copertina, :consigliato, :prezzo_copertina, :prezzo_consigliato, :to => :libro
   
-  after_save :update_righe_sum
-  after_destroy :decrement_righe_sum
+  # da correggere cambio di prezzo
+  # after_save :update_righe_sum
+  # after_destroy :decrement_righe_sum
   
+  after_save :ricalcola_totali
+  after_destroy :ricalcola_totali
   
   #default_scope order("appunto_righe.id desc")
   
@@ -105,15 +108,27 @@ class AppuntoRiga < ActiveRecord::Base
   
   private
   
+    def ricalcola_totali
+      return true unless quantita_changed? || prezzo_unitario_changed? || fattura_id_changed?
+      
+      appunto.update_attributes(:totale_copie => appunto.appunto_righe.sum(:quantita), :totale_importo => appunto.appunto_righe.sum('quantita * prezzo_unitario').to_f / 100)
+      unless fattura.nil?
+        fattura.update_attributes(:totale_copie => fattura.appunto_righe.sum(:quantita), :importo_fattura => fattura.appunto_righe.sum('quantita * prezzo_unitario'))
+      end  
+      return true
+    end
+  
+    # sarebbe meglio ma non funziona con cambiamento prezzo
     def update_righe_sum
       return true unless quantita_changed? || prezzo_unitario_changed? || fattura_id_changed?
+      
       Appunto.update_counters appunto.id, 
         :totale_copie   => (quantita - (quantita_was || 0)),
-        :totale_importo => (quantita - (quantita_was || 0)).to_f * prezzo_unitario / 100
+        :totale_importo => (quantita - (quantita_was || 0)).to_f * (prezzo_unitario - (prezzo_unitario_was || 0)) / 100
       unless fattura.nil?
         Fattura.update_counters fattura.id, 
           :totale_copie    => (quantita - (quantita_was || 0)),
-          :importo_fattura => (quantita - (quantita_was || 0)) * prezzo_unitario
+          :importo_fattura => (quantita - (quantita_was || 0)) * (prezzo_unitario - (prezzo_unitario_was || 0))
       end
       return true
     end
