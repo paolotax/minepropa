@@ -21,7 +21,7 @@
         = f.input :destinatario,                :input_html => { :size => 40 }
         %li.text.optional
           = f.label :scuola
-          = f.collection_select(:scuola_id, Scuola.all, :id, :nome_scuola, {:prompt => "cambia la scuola", :include_blank => true})
+          = f.collection_select(:scuola_id, current_user.scuole.all, :id, :nome_scuola, {:prompt => "cambia la scuola", :include_blank => true})
         = f.input :note,                        :input_html => { :rows => 5, :cols => 40  }
         %li.text.optional
           = f.label :tag_add, "Aggiungi Tag"

@@ -11,8 +11,11 @@
         = f.label :stato, "consegnato"
       .right= f.submit "Salva", :class => 'btn_blue'
       %p
-        = f.autocomplete_field :scuola_nome_scuola, autocomplete_scuola_nome_scuola_appunti_path, {:size => 40, :placeholder => "... dove?"}
+        = f.autocomplete_field :scuola_nome_scuola, autocomplete_scuola_nome_scuola_appunti_path, {:id_element => '#appunto_scuola_id', :size => 40, :placeholder => "... dove?"}
         = f.label :scuola 
+      / aggiunto per autocomplete
+      = f.hidden_field :scuola_id
+      
       %p
         = f.text_field :destinatario,  {:size => 40, :placeholder => "... chi?"}
         = f.label :destinatario
@@ -28,6 +31,7 @@
       %p
         = f.email_field :email, :size => 40
         = f.label :email
+      
     - @vendibili = Libro.unscoped.vendibili.select('distinct type').order(:type)
     - f.fields_for :appunto_righe do |t|
       %p

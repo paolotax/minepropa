@@ -1,12 +1,13 @@
 class AppuntiController < ApplicationController
   
   prawnto :prawn => { :page_size => 'A4', :top_margin => 10 }, :inline => false, :filename => "sovrapacchi"
+  
   autocomplete :scuola, :nome_scuola
+  
   before_filter :authenticate_user!
   helper_method :sort_column, :sort_direction
   
   def get_items(parameters)
-
     Scuola.where(:user_id => current_user.id).where(['nome_scuola LIKE ?', "%#{parameters[:term]}%"]).limit(10).order(:nome_scuola)
   end
   
@@ -57,6 +58,7 @@ class AppuntiController < ApplicationController
   end
   
   def create
+    
     @user = current_user
     @appunto = @user.appunti.build(params[:appunto])
 

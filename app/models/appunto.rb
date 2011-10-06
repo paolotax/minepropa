@@ -159,12 +159,10 @@ class Appunto < ActiveRecord::Base
     [scuola.nome_scuola, '('+scuola.citta.capitalize+')'].join(" ") if scuola
   end
 
-  # def nome_scuola
-  #   scuola.nome_scuola if scuola
-  # end  
   
+  # non funziona (user_id)
   def scuola_nome_scuola=(nome)
-    self.scuola = Scuola.find_by_nome_scuola(nome)
+    # self.scuola = Scuola.find_by_nome_scuola(nome)
   end
   
   def note_formatted
