@@ -14,7 +14,7 @@
             = link_to @appunto.scuola_nome_scuola, @appunto.scuola
             / = best_in_place @appunto, :scuola_nome_scuola
           #td_task_title_input.title-container
-            = best_in_place @appunto, :note, :type => :textarea
+            = find_and_preserve @appunto.note # best_in_place @appunto, :note, :type => :textarea
         .clear
       #td_task_more_info
         #td_task_timing.timing-container
