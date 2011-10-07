@@ -73,7 +73,6 @@ module AppuntiHelper
     content_tag :ul do
       appunto.tag_list.collect {|item| concat(appunto_tag(item))}
     end
-
   end
   
   def get_posted_string(appunto)

@@ -951,7 +951,7 @@ div.autocomplete ul li {
 #popin_bulk ul li.setlabel {
     background: url("../../images/bulk-label.png") no-repeat scroll 10px 3px transparent;
 }
-#popin_bulk ul li.delete {
+#popin_bulk ul li.elimina {
     background: url("../../images/bulk-delete.png") no-repeat scroll 10px 3px transparent;
 }
 #popin_bulk ul li.workspace {

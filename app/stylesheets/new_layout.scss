@@ -1,5 +1,10 @@
 @import "mixins";
-@import 'partials/scuole';
+
+@import "partials/scuole";
+@import "partials/appunti";
+
+
+
 @import "compass/css3/transform";
 @import "compass/utilities/lists/horizontal-list";
 @import "compass/css3/inline-block";
@@ -1105,3 +1110,55 @@ tr.scolastico {
 		@include border-bottom-radius(5px);
 	}
 }
+
+
+
+#task_details .labels {
+	cursor:default;
+  float:left;
+  height:15px;
+  line-height:15px;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:8px;
+	ul {
+		float:left;
+	  line-height:14px;
+	  margin-bottom:0;
+	  margin-left:0;
+	  margin-right:0;
+	  margin-top:0;
+		li {
+			background-attachment:initial;
+		  background-clip:initial;
+		  background-color:#1F3AC9;
+		  background-image:-webkit-gradient(linear, 0 0%, 0 100%, from(#4962E5), to(#1F3AC9));
+		  background-origin:initial;
+		  border-bottom-left-radius:2px 2px;
+		  border-bottom-right-radius:2px 2px;
+		  border-top-left-radius:2px 2px;
+		  border-top-right-radius:2px 2px;
+		  color:#FFFFFF;
+		  cursor:pointer;
+		  display:inline-block;
+		  font-family:Arial;
+		  font-size:11px;
+		  letter-spacing:0.5px;
+		  line-height:12px;
+		  margin-bottom:0;
+		  margin-left:0;
+		  margin-right:5px;
+		  margin-top:0;
+		  padding-bottom:2px;
+		  padding-left:5px;
+		  padding-right:5px;
+		  padding-top:2px;
+			a {
+				color:#FFFFFF;
+			}
+		}
+	} 
+	
+}
+

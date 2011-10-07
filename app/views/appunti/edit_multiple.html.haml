@@ -9,9 +9,10 @@
       - for appunto in @appunti do
         %li
           = hidden_field_tag "appunti_ids[]", appunto.id
-          = appunto.destinatario
-          = appunto.scuola.nome_scuola unless appunto.scuola.nil?
-          = appunto.note
+          = render appunto, :app_righe => false
+          / = appunto.destinatario
+          / = appunto.scuola.nome_scuola unless appunto.scuola.nil?
+          / = appunto.note
       = f.buttons do
         = f.commit_button "Salva", :class => 'btn_blue'
       = f.inputs do
