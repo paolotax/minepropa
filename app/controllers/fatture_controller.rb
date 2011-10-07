@@ -9,7 +9,7 @@ class FattureController < ApplicationController
   def index
     @fatture = current_user.fatture.per_numero.all
     
-    @in_sospeso = Scuola.
+    @in_sospeso = current_user.scuole.
                       joins(:appunti => :appunto_righe).
                       select("scuole.id, scuole.nome_scuola, scuole.provincia, appunti.stato").
                       select("count(distinct appunti.id) as count").
@@ -22,7 +22,7 @@ class FattureController < ApplicationController
                       group("scuole.id, scuole.nome_scuola, scuole.provincia, appunti.stato").
                       order("scuole.provincia, scuole.nome_scuola")
     
-    @pagate =    Scuola.
+    @pagate =    current_user.scuole.
                       joins(:appunti => :appunto_righe).
                       select("scuole.id, scuole.nome_scuola, scuole.provincia, appunti.stato").
                       select("count(distinct appunti.id) as count").
