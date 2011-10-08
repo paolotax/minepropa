@@ -1,0 +1,28 @@
+%li[appunto]{:class => "#{get_status_class(appunto.stato)}" }
+  .check
+    = check_box_tag "appunti_ids[]", appunto.id, false, {:class => 'cb-element'}
+  .stato
+    = link_to( toggle_stato_appunto_path(appunto), {:class => "img_appunto_#{appunto.id}"}) do
+      %span
+  .scuola
+    = link_to appunto.scuola_nome_scuola, scuola_path(appunto.scuola) unless appunto.scuola.blank?
+    - destinatario = (appunto.destinatario.blank?) ? '...' : appunto.destinatario
+    .destinatario
+      = link_to destinatario, appunto_path(appunto)
+  .note
+    = best_in_place appunto, :note, :type => :input
+  .labels
+    = appunto_tags(appunto)
+  .totale_copie
+    = "#{appunto.totale_copie}"
+  .id.hidden= appunto.id
+  .provincia.hidden= "prov=#{appunto.scuola_provincia}"
+  .citta.hidden= "citta=#{appunto.scuola_citta}"
+  .stato.hidden= appunto.stato
+  .created_at.hidden= appunto.created_at
+  .updated_at.hidden= appunto.updated_at
+  .posizione.hidden= appunto.scuola_position
+  .clear
+  - if ( app_righe == true )
+    - unless appunto.appunto_righe.blank?
+      = render :partial => 'appunto_righe/appunto_righe', :locals => { :appunto => appunto }

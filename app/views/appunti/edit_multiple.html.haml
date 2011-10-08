@@ -5,30 +5,30 @@
 
 .form_appunto
   = semantic_form_for :appunto, :url => update_multiple_appunti_path, :html => {:method => :put} do |f|
-    %ul
-      - for appunto in @appunti do
-        %li
+    #appunti-list
+      %ul
+        - for appunto in @appunti do
           = hidden_field_tag "appunti_ids[]", appunto.id
-          = render appunto, :app_righe => false
+          = render :partial => 'appunti/appunto_new', :locals => { :appunto => appunto, :app_righe => false }
           / = appunto.destinatario
           / = appunto.scuola.nome_scuola unless appunto.scuola.nil?
-          / = appunto.note
-      = f.buttons do
-        = f.commit_button "Salva", :class => 'btn_blue'
-      = f.inputs do
-        %li.text.optional
-          = f.label :stato
-          = f.select(:stato, options_for_select([["da completare", ""],["in sospeso", "P"],["completato", "X"]]), :include_blank => true)
-        = f.input :destinatario,                :input_html => { :size => 40 }
-        %li.text.optional
-          = f.label :scuola
-          = f.collection_select(:scuola_id, current_user.scuole.all, :id, :nome_scuola, {:prompt => "cambia la scuola", :include_blank => true})
-        = f.input :note,                        :input_html => { :rows => 5, :cols => 40  }
-        %li.text.optional
-          = f.label :tag_add, "Aggiungi Tag"
-          = f.text_field :tag_add
-        %li.text.optional
-          = f.label :tag_remove, "Rimuovi tutti i tags"
-          = f.check_box :tag_remove
-        = f.input :telefono,     :input_html => { :size => 40  }
-        = f.input :email,        :input_html => { :size => 40  }
+        / = appunto.note
+    = f.buttons do
+      = f.commit_button "Salva", :class => 'btn_blue'
+    = f.inputs do
+      %li.text.optional
+        = f.label :stato
+        = f.select(:stato, options_for_select([["da completare", ""],["in sospeso", "P"],["completato", "X"]]), :include_blank => true)
+      = f.input :destinatario,                :input_html => { :size => 40 }
+      %li.text.optional
+        = f.label :scuola
+        = f.collection_select(:scuola_id, current_user.scuole.all, :id, :nome_scuola, {:prompt => "cambia la scuola", :include_blank => true})
+      = f.input :note,                        :input_html => { :rows => 5, :cols => 40  }
+      %li.text.optional
+        = f.label :tag_add, "Aggiungi Tag"
+        = f.text_field :tag_add
+      %li.text.optional
+        = f.label :tag_remove, "Rimuovi tutti i tags"
+        = f.check_box :tag_remove
+      = f.input :telefono,     :input_html => { :size => 40  }
+      = f.input :email,        :input_html => { :size => 40  }

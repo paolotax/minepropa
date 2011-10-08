@@ -1,116 +1,54 @@
+#appunti-list {
+	font-family: "Comic Sans MS", cursive;
+	ul {
+		list-style-type: none;
+		padding-left: 0px;
+		li {
+			margin-bottom: 10px;
+			border: thin solid #B9B9B9;
+			padding-top: 5px;
+			padding-right: 20px;
+			padding-bottom: 5px;
+			padding-left: 20px;
+			-webkit-border-radius: 10px;
+			-moz-border-radius: 10px;
+			border-radius: 10px;
+			background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFFC9E), to(#C7CC3F));
+			color: #666;
+			.scuola {
+				float:left;
+				width: 150px;
+				color: #36C;
+				height: inherit;
+				clear: both;
+				margin-right: 10px;
+			}
 
+			.note {
+				margin-left: 150px;
+				padding-left: 10px;
+			}
+			.righe {
+				text-align: right;
+				float: right;
+				font-size: small;
+			}
+			.footer {
+				clear: both;
+				padding-top: 10px;
+			}
+			scuola img {
+				float: left;
+			}
 
-.tasks {
-  margin-bottom:15px;
-  margin-left:0;
-  margin-right:0;
-  margin-top:0;
+			#checkbox2 {
+				float: left;
+				vertical-align: middle;
+			}
+		}
+	}
+
 }
 
 
-.tasks .task {
-  border-bottom-color:#E6E6E6;
-  border-bottom-style:solid;
-  border-bottom-width:1px;
-  border-left-color:#E6E6E6;
-  border-left-style:solid;
-  border-left-width:0;
-  border-right-color:#E6E6E6;
-  border-right-style:solid;
-  border-right-width:0;
-  border-top-color:#E6E6E6;
-  border-top-style:solid;
-  border-top-width:0;
-  line-height:33px;
-}
-
-.tasks li {
-  list-style-image:none;
-  list-style-position:outside;
-  list-style-type:none;
-  margin-bottom:0;
-  margin-left:0;
-  margin-right:0;
-  margin-top:0;
-  position:relative;
-}
-
-.tasks .bulk {
-  height:33px;
-  text-align:center;
-  width:32px;
-}
-
-.tasks .task-elt {
-  border-bottom-color:#E6E6E6;
-  border-bottom-style:solid;
-  border-bottom-width:0;
-  border-left-color:#E6E6E6;
-  border-left-style:solid;
-  border-left-width:0;
-  border-right-color:#E6E6E6;
-  border-right-style:solid;
-  border-right-width:1px;
-  border-top-color:#E6E6E6;
-  border-top-style:solid;
-  border-top-width:0;
-  float:left;
-  height:33px;
-}
-
-.tasks .active .status {
-  background-attachment:scroll;
-  background-clip:initial;
-  background-color:transparent;
-  background-image:url(http://propa.heroku.com/images/task-status.png);
-  background-origin:initial;
-  background-position:7px 0;
-  background-repeat:no-repeat no-repeat;
-  cursor:pointer;
-}
-
-.tasks .status, 
-.tasks .star, 
-.tasks .responsible {
-  position:relative;
-  width:32px;
-}
-
-.tasks .details {
-  border-bottom-style:none;
-  border-bottom-width:medium;
-  border-color:initial;
-  border-left-style:none;
-  border-left-width:medium;
-  border-right-style:none;
-  border-right-width:medium;
-  border-top-style:none;
-  border-top-width:medium;
-  font-size:14px;
-  height:33px;
-  overflow-x:hidden;
-  overflow-y:hidden;
-  padding-bottom:0;
-  padding-left:0;
-  padding-right:0;
-  padding-top:0;
-  width:600px;
-}
-
-.tasks .task-elt {
-  border-bottom-color:#E6E6E6;
-  border-bottom-style:solid;
-  border-bottom-width:0;
-  border-left-color:#E6E6E6;
-  border-left-style:solid;
-  border-left-width:0;
-  border-right-color:#E6E6E6;
-  border-right-style:solid;
-  border-right-width:1px;
-  border-top-color:#E6E6E6;
-  border-top-style:solid;
-  border-top-width:0;
-  float:left;
-  height:33px;
-}
 
