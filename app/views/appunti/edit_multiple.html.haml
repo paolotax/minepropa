@@ -6,15 +6,12 @@
 .form_appunto
   = semantic_form_for :appunto, :url => update_multiple_appunti_path, :html => {:method => :put} do |f|
     #appunti-list
-      %ul
-        - for appunto in @appunti do
-          = hidden_field_tag "appunti_ids[]", appunto.id
-          = render :partial => 'appunti/appunto_new', :locals => { :appunto => appunto, :app_righe => false }
-          / = appunto.destinatario
-          / = appunto.scuola.nome_scuola unless appunto.scuola.nil?
-        / = appunto.note
+      - for appunto in @appunti do
+        / = hidden_field_tag "appunti_ids[]", appunto.id
+        = render :partial => 'appunti/appunto_new', :locals => { :appunto => appunto, :app_righe => false }
+      .clear
     = f.buttons do
-      = f.commit_button "Salva", :class => 'btn_blue'
+      = f.commit_button "Salva", :button_html => { :class => 'btn_blue' }
     = f.inputs do
       %li.text.optional
         = f.label :stato

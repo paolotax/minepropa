@@ -1,53 +1,20 @@
 #appunti-list {
 	font-family: "Comic Sans MS", cursive;
-	ul {
-		list-style-type: none;
-		padding-left: 0px;
-		li {
-			margin-bottom: 10px;
-			border: thin solid #B9B9B9;
-			padding-top: 5px;
-			padding-right: 20px;
-			padding-bottom: 5px;
-			padding-left: 20px;
-			-webkit-border-radius: 10px;
-			-moz-border-radius: 10px;
-			border-radius: 10px;
-			background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFFC9E), to(#C7CC3F));
-			color: #666;
-			.scuola {
-				float:left;
-				width: 150px;
-				color: #36C;
-				height: inherit;
-				clear: both;
-				margin-right: 10px;
-			}
-
-			.note {
-				margin-left: 150px;
-				padding-left: 10px;
-			}
-			.righe {
-				text-align: right;
-				float: right;
-				font-size: small;
-			}
-			.footer {
-				clear: both;
-				padding-top: 10px;
-			}
-			scuola img {
-				float: left;
-			}
-
-			#checkbox2 {
-				float: left;
-				vertical-align: middle;
-			}
-		}
+	font-size: 13px;
+	margin-right: -100px;
+	.appunto {
+		margin-bottom: 10px;
+		margin-right: 10px;
+		width: 216px;
+		border: thin solid #B9B9B9;
+		padding: 5px 10px 5px 10px;
+		float: left;
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		border-radius: 10px;
+		background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFFC9E), to(#C7CC3F));
+		color: #666;
 	}
-
 }
 
 
