@@ -1,6 +1,7 @@
 #appunti-list {
 	font-family: "Comic Sans MS", cursive;
 	font-size: 13px;
+	line-height: 18px;
 	margin-right: -100px;
 	.appunto {
 		margin-bottom: 10px;
@@ -9,13 +10,102 @@
 		border: thin solid #B9B9B9;
 		padding: 5px 10px 5px 10px;
 		float: left;
-		-webkit-border-radius: 10px;
-		-moz-border-radius: 10px;
-		border-radius: 10px;
-		background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFFC9E), to(#C7CC3F));
-		color: #666;
+
+		@include border-bottom-radius(5px);
+		
+		.totale_copie {
+			margin-top: 10px;
+			font-size: small;
+			font-style: italic;
+		}
+		&.pending {
+			color: #666;
+			background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#A0FFBF), to(#9CFF82))
+		}
+		&.active {
+			color: #666;
+			background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFFF69), to(#FFFF79)); 
+		}
+		.nome_scuola a,
+		.destinatario a {
+			color: #0080FF;
+			&:hover {
+				color: #6666FF;
+			}
+		}
 	}
+}
+
+.appunto .active .stato {
+    background: url("../../images/task-status.png") no-repeat scroll 7px 0 transparent;
+    cursor: pointer;
+}
+.appunto .done .stato {
+    background: url("../../images/task-status.png") no-repeat scroll 7px -34px transparent;
+    cursor: pointer;
 }
 
 
 
+
+.appunto .pending .stato {
+    background: url("../../images/task-status.png") no-repeat scroll 7px -68px transparent;
+    cursor: pointer;
+}
+
+.appunto .status a {
+  text-indent: -9999px;
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+.appunto .labels {
+	cursor:default;
+  // float:left;
+  height:15px;
+  line-height:15px;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:8px;
+
+	ul {
+		float:left;
+	  line-height:14px;
+	  margin-bottom: 0;
+	  margin-left:0;
+	  margin-right:0;
+	  margin-top:0;
+
+		li {
+			background-attachment:initial;
+		  background-clip:initial;
+		  background-color:#1F3AC9;
+		  background-image:-webkit-gradient(linear, 0 0%, 0 100%, from(#4962E5), to(#1F3AC9));
+		  background-origin:initial;
+		  border-bottom-left-radius:2px 2px;
+		  border-bottom-right-radius:2px 2px;
+		  border-top-left-radius:2px 2px;
+		  border-top-right-radius:2px 2px;
+		  color:#FFFFFF;
+		  cursor:pointer;
+		  display:inline-block;
+		  font-family:Arial;
+		  font-size:11px;
+		  letter-spacing:0.5px;
+		  line-height:12px;
+		  margin-bottom:0;
+		  margin-left:0;
+		  margin-right:5px;
+		  margin-top:5px;
+		  padding-bottom:2px;
+		  padding-left:5px;
+		  padding-right:5px;
+		  padding-top:2px;
+			a {
+				color:#FFFFFF;
+			}
+		}
+	} 
+}

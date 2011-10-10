@@ -23,7 +23,7 @@ ActiveSupport::Inflector.inflections do |inflect|
    inflect.irregular 'materia', 'materie'
    inflect.irregular 'tappa', 'tappe'
    inflect.irregular 'giro', 'giri'
-
+   inflect.irregular 'copia', 'copie'
    
    # inflect.plural /^([\w]*)a/i, '\1e'
    # inflect.singular /^([\w]*)e/i, '\1a'
