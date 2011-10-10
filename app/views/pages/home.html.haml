@@ -3,8 +3,9 @@
 
 = render :partial => 'shared/search_appunti'
 / 
-/ = render :partial => 'appunti/appunto_form'
-/ 
+= render :partial => 'appunti/appunto_form'
+= render :partial => 'appunti/appunto_form_old'
+
 / #visible_taskslist_title.group-title Appunti in corso
 / 
 / / - tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class|
@@ -17,7 +18,7 @@
 
 
 
-= render :partial => 'appunti/appunto_form'
+
 
 #count-citta-list
   - @appunti.each do |k, v|

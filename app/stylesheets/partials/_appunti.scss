@@ -10,9 +10,7 @@
 		border: thin solid #B9B9B9;
 		padding: 5px 10px 5px 10px;
 		float: left;
-
 		@include border-bottom-radius(5px);
-		
 		.totale_copie {
 			margin-top: 10px;
 			font-size: small;
@@ -33,18 +31,55 @@
 				color: #6666FF;
 			}
 		}
+		.labels {
+			cursor:default;
+		  // float:left;
+		  height:15px;
+		  line-height:15px;
+		  padding-bottom:0;
+		  padding-left:0;
+		  padding-right:0;
+		  padding-top:8px;
+			ul {
+				float:left;
+			  line-height:14px;
+			  margin-bottom: 0;
+			  margin-left:0;
+			  margin-right:0;
+			  margin-top:0;
+				li {
+					background-attachment:initial;
+				  background-clip:initial;
+				  background-color:#1F3AC9;
+				  background-image:-webkit-gradient(linear, 0 0%, 0 100%, from(#4962E5), to(#1F3AC9));
+				  background-origin:initial;
+				  border-bottom-left-radius:2px 2px;
+				  border-bottom-right-radius:2px 2px;
+				  border-top-left-radius:2px 2px;
+				  border-top-right-radius:2px 2px;
+				  color:#FFFFFF;
+				  cursor:pointer;
+				  display:inline-block;
+				  font-family:Arial;
+				  font-size:11px;
+				  letter-spacing:0.5px;
+				  line-height:12px;
+				  margin-bottom:0;
+				  margin-left:0;
+				  margin-right:5px;
+				  margin-top:5px;
+				  padding-bottom:2px;
+				  padding-left:5px;
+				  padding-right:5px;
+				  padding-top:2px;
+					a {
+						color:#FFFFFF;
+					}
+				}
+			} 
+		}
 	}
 }
-
-.appunto .active .stato {
-    background: url("../../images/task-status.png") no-repeat scroll 7px 0 transparent;
-    cursor: pointer;
-}
-.appunto .done .stato {
-    background: url("../../images/task-status.png") no-repeat scroll 7px -34px transparent;
-    cursor: pointer;
-}
-
 
 
 
@@ -60,52 +95,214 @@
   display: block;
 }
 
-.appunto .labels {
-	cursor:default;
-  // float:left;
-  height:15px;
-  line-height:15px;
-  padding-bottom:0;
-  padding-left:0;
-  padding-right:0;
-  padding-top:8px;
+.appunto .active .stato {
+    background: url("../../images/task-status.png") no-repeat scroll 7px 0 transparent;
+    cursor: pointer;
+}
+.appunto  .done .stato {
+    background: url("../../images/task-status.png") no-repeat scroll 7px -34px transparent;
+    cursor: pointer;
+}
 
-	ul {
-		float:left;
-	  line-height:14px;
-	  margin-bottom: 0;
-	  margin-left:0;
-	  margin-right:0;
-	  margin-top:0;
 
-		li {
-			background-attachment:initial;
-		  background-clip:initial;
-		  background-color:#1F3AC9;
-		  background-image:-webkit-gradient(linear, 0 0%, 0 100%, from(#4962E5), to(#1F3AC9));
-		  background-origin:initial;
-		  border-bottom-left-radius:2px 2px;
-		  border-bottom-right-radius:2px 2px;
-		  border-top-left-radius:2px 2px;
-		  border-top-right-radius:2px 2px;
-		  color:#FFFFFF;
-		  cursor:pointer;
-		  display:inline-block;
-		  font-family:Arial;
-		  font-size:11px;
-		  letter-spacing:0.5px;
-		  line-height:12px;
-		  margin-bottom:0;
-		  margin-left:0;
-		  margin-right:5px;
-		  margin-top:5px;
-		  padding-bottom:2px;
-		  padding-left:5px;
-		  padding-right:5px;
-		  padding-top:2px;
-			a {
-				color:#FFFFFF;
+
+#form-new-appunto {
+	
+	@include box-shadow(#B6B6B6 0 0 3px);
+
+  border: 1px solid #A9C6D7;
+  margin-bottom:25px;
+  margin-top:10px;
+  padding: 4px;
+	@include border-radius(7px);
+	.input {
+	  border: 2px solid #5E8B5F;
+	  padding-bottom:0;
+	  padding-left:10px;
+	  padding-right:7px;
+	  padding-top:8px;
+		@include border-radius(4px);
+		.column {
+			float:left;
+			width: 540px;
+			.medium {
+				float: left;
+				width: 250px;
 			}
 		}
-	} 
+		.column2 {
+			float:left;
+			width:auto;
+			
+		}
+	}
+	input[type=text],
+  input[type=email],
+  input[type=tel], 
+  textarea,
+  select { 
+  	padding: 9px;
+  	border: solid 1px #E5E5E5;
+  	outline: 0;
+  	font: normal 13px/100% Verdana, Tahoma, sans-serif;
+  	background: #FFFFFF url('bg_form.png') left top repeat-x;
+  	background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #EEEEEE), to(#FFFFFF));
+  	background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 25px);
+		@include box-shadow(rgba(0,0,0, 0.1) 0 0 8px);
+  }
+  textarea { 
+		width: 520px;
+  	height: 50px;
+  	line-height: 150%;
+  }
+	.token-input-list-facebook {
+    padding: 9px;
+  	border: solid 1px #E5E5E5;
+    width: 320px;
+  	max-width: 320px;
+    background: #FFFFFF url('bg_form.png') left top repeat-x;
+  	background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #EEEEEE), to(#FFFFFF));
+  	background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 25px);
+  	
+    @include box-shadow(rgba(0,0,0, 0.1) 0 0 8px);
+  }
+  .token_container ul {
+    width: 320px;
+    float: left;
+  }
+  .token_container label {
+    float: left;
+    margin-left: 10px;
+  }
+  ul.token-input-list-facebook li input {
+    -webkit-appearance:caret;
+    background: none;
+    margin: 0;
+    padding-bottom:3px;
+    padding-left:8px;
+    padding-right:8px;
+    padding-top:3px;
+    width: 100px;
+  }
+  input:hover, textarea:hover,
+  input:focus, textarea:focus { 
+  	border-color: #C9C9C9; 
+  	-webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 8px;
+  }
+  label {
+  	margin-left: 10px; 
+  	margin-right: 10px; 
+  	color: #999999; 
+  }
+  .submit input {
+  	width: auto;
+  	padding: 9px 15px;
+  	background: #617798;
+  	border: 0;
+  	font-size: 14px;
+  	color: #FFFFFF;
+  	-moz-border-radius: 5px;
+  	-webkit-border-radius: 5px;
+  }
+  input.qta {
+    width: 50px;
+  }
+}
+
+
+#appunto_form {
+  margin-top: 20px;
+  width: 600px;
+  margin: auto;
+  p {
+    margin-bottom: 10px;
+  }
+  .line {
+    display: table-cell;
+    vertical-align: middle;
+    margin-bottom: 10px;
+  }
+  input[type=text],
+  input[type=email],
+  input[type=tel], 
+  textarea,
+  select { 
+  	padding: 9px;
+  	border: solid 1px #E5E5E5;
+  	outline: 0;
+  	font: normal 13px/100% Verdana, Tahoma, sans-serif;
+  	width: 200px;
+  	background: #FFFFFF url('bg_form.png') left top repeat-x;
+  	background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #EEEEEE), to(#FFFFFF));
+  	background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 25px);
+  	box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+  	-moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+  	-webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+  }
+  textarea { 
+  	width: 400px;
+  	max-width: 400px;
+  	height: 150px;
+  	line-height: 150%;
+  }
+  .token-input-list-facebook {
+    
+    padding: 9px;
+  	border: solid 1px #E5E5E5;
+  	
+    width: 320px;
+  	max-width: 320px;
+  	
+    background: #FFFFFF url('bg_form.png') left top repeat-x;
+  	background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #EEEEEE), to(#FFFFFF));
+  	background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 25px);
+  	box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+  	-moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+  	-webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+  }
+  .token_container ul {
+    width: 320px;
+    float: left;
+  }
+  .token_container label {
+    float: left;
+    margin-left: 10px;
+  }
+  ul.token-input-list-facebook li input {
+    -webkit-appearance:caret;
+    background: none;
+    margin: 0;
+
+    padding-bottom:3px;
+    padding-left:8px;
+    padding-right:8px;
+    padding-top:3px;
+    width: 100px;
+  }
+  input:hover, textarea:hover,
+  input:focus, textarea:focus { 
+  	border-color: #C9C9C9; 
+  	-webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 8px;
+  }
+
+  label {
+  	margin-left: 10px; 
+  	margin-right: 10px; 
+  	color: #999999; 
+  }
+
+  .submit input {
+  	width: auto;
+  	padding: 9px 15px;
+  	background: #617798;
+  	border: 0;
+  	font-size: 14px;
+  	color: #FFFFFF;
+  	-moz-border-radius: 5px;
+  	-webkit-border-radius: 5px;
+  }
+
+  input.qta {
+    width: 50px;
+  }
 }
