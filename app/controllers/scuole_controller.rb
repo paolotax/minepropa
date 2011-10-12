@@ -44,13 +44,16 @@ class ScuoleController < ApplicationController
   end
 
   def new
+    
+    session[:return_to] = request.referer
+        
     @scuola    = Scuola.new
     @indirizzo = @scuola.indirizzi.build
   end
 
   def edit
     
-    session[:return_to] ||= request.referer
+    session[:return_to] = request.referer
     
     @scuola    = current_user.scuole.find(params[:id])
     @indirizzo = @scuola.indirizzi.first

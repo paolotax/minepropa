@@ -27,10 +27,9 @@ class AppuntiController < ApplicationController
   end
   
   def show
-
     @appunto = Appunto.find(params[:id])
     @visita = Visita.new
-    session[:return_to] ||= request.referer
+    
     
     respond_to do |format|
       format.html  # show.html.erb
@@ -41,6 +40,9 @@ class AppuntiController < ApplicationController
   end
 
   def new
+    
+    session[:return_to] = request.referer
+    
     @appunto   = current_user.appunti.build
     @appunto.scuola = Scuola.find(params[:scuola]) if params[:scuola]
     @indirizzo = @appunto.indirizzi.build
@@ -48,7 +50,9 @@ class AppuntiController < ApplicationController
   end
 
   def edit
-    session[:return_to] ||= request.referer
+    
+    
+    session[:return_to] = request.referer
     
     @appunto = current_user.appunti.includes(:appunto_righe).find(params[:id])
     @indirizzo = @appunto.indirizzi.first
@@ -147,9 +151,10 @@ class AppuntiController < ApplicationController
   end
   
   def edit_multiple
-    #raise params.inspect
+    
+    session[:return_to] = request.referer
+    
     @appunti = Appunto.find(params[:appunti_ids])
-    session[:return_to] ||= request.referer
     render 'edit_multiple'
   end
   
@@ -176,7 +181,6 @@ class AppuntiController < ApplicationController
       a.update_attributes!(:stato => params[:stato])
     end
     respond_to do |format|
-      format.html { redirect_to session[:return_to] }
       format.json { render :json => @appunti }
     end
   end

@@ -30,6 +30,7 @@ class PagesController < ApplicationController
       @search = current_user.appunti.includes([:appunti_righe, :scuola]).per_id.search(params[:search])
       @appunti = @search.all
     else
+      
       @term = params[:search]
        # @search = current_user.appunti.in_corso.per_id.page(params[:page]).per(30).search(params[:search])
       @appunti  = current_user.appunti.joins(:scuola).includes([{:appunto_righe => :libro}, :taggings, :visite]).con_righe.per_scuola_id.per_id
