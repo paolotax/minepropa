@@ -786,7 +786,7 @@ td.t-scuola {
 
 table {
   border: #cccccc 1px solid;
-  @include rounded-corners(5px);
+  @include border-radius(5px);
   // margin: 20px;
 }
 
@@ -957,8 +957,37 @@ tr.scolastico {
 #count-citta-list {
   ul {
     @include horizontal-list;
-    li {
-      display: inline-block;
+    float:left;
+	  line-height:14px;
+	  margin-bottom: 0;
+	  margin-left:0;
+	  margin-right:0;
+	  margin-top:0;
+		li {
+			background-attachment:initial;
+		  background-clip:initial;
+		  background-color:#1F3AC9;
+		  background-image:-webkit-gradient(linear, 0 0%, 0 100%, from(#4962E5), to(#1F3AC9));
+		  background-origin:initial;
+		  @include border-radius(3px);
+		  color:#FFFFFF;
+		  cursor:pointer;
+		  display:inline-block;
+		  font-family:Arial;
+		  font-size:11px;
+		  letter-spacing:0.5px;
+		  line-height:12px;
+		  margin-bottom:0;
+		  margin-left:0;
+		  margin-right:5px;
+		  margin-top:5px;
+		  padding-bottom:2px;
+		  padding-left:5px;
+		  padding-right:5px;
+		  padding-top:2px;
+			a {
+				color:#FFFFFF;
+			}
     }
   }
   .provincia {
