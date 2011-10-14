@@ -1,18 +1,34 @@
 #form-new-appunto
   - @appunto = Appunto.new
-  = form_for @appunto, { :method => 'post',  :action => appunti_path, :remote => true } do |f|
+  = nested_form_for @appunto, { :method => 'post',  :action => appunti_path, :remote => true } do |f|
+    = render 'shared/error_messages', :object => f.object
     .input
       .column
         = f.autocomplete_field :scuola_nome_scuola, autocomplete_scuola_nome_scuola_appunti_path, {:id_element => '#appunto_scuola_id', :placeholder => "... dove?", :class => 'nome_scuola medium'}
         / aggiunto per autocomplete
         = f.hidden_field :scuola_id
         = f.text_field :destinatario, {:class => 'destinatario medium', :placeholder => "... chi?"}
-        = f.text_area :note, { :class => 'note large', :placeholder => "... che cosa?"}
-      .column2
-        = f.submit "Aggiungi", :class => "btn_green"
+        = f.text_area :note, { :class => 'note large', :placeholder => "... che cosa?", :style => "margin-bottom: 5px;"}
+      = f.submit "Aggiungi", :class => "btn_green", :style => 'float:right; margin-right:15px; margin-top:5px;'
       .clear
     .input
-      %input{ :name => "title", :placeholder => "... tagga"}
-      = f.text_field :telefono, {:class => 'itext small', :placeholder => "... telefono?"}
+      / %input{ :name => "title", :placeholder => "... tagga"}
+      = f.text_field :tag_tokens
+      %br
+      = f.text_field :telefono, {:placeholder => "... telefono?", :class => 'telefono medium'}
+      = f.text_field :email,    {:placeholder => "... email?",    :class => 'email medium'}
+    .input
+      - @vendibili = Libro.unscoped.vendibili.select('distinct type').order(:type)
+      - f.fields_for :appunto_righe do |t|
+        %p
+          = t.hidden_field :appunto_id
+          = t.select :libro_id, option_groups_from_collection_for_select(@vendibili, :bros, :type, :id, :titolo, t.object.libro_id), :prompt => true
+          = t.label :quantita
+          = t.text_field :quantita, {:class => 'qta'}
+          ~ t.label :price, "Prezzo"
+          = t.text_field :price, {:class => 'qta', :value => ''}
+          = t.link_to_remove "-", :class => 'btn_red'
+      %fieldset
+        = f.link_to_add "Aggiungi riga", :appunto_righe, :class => 'btn_green'
       
 

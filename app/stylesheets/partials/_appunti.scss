@@ -121,19 +121,22 @@
 	  padding-left:10px;
 	  padding-right:7px;
 	  padding-top:8px;
+	  margin-bottom: 3px;
+	  overflow: hidden;
 		@include border-radius(4px);
 		.column {
 			float:left;
 			width: 540px;
-			.medium {
-				float: left;
-				width: 250px;
-			}
+
 		}
 		.column2 {
 			float:left;
 			width:auto;
 			
+		}
+		.medium {
+			float: left;
+			width: 250px;
 		}
 	}
 	input[type=text],
@@ -142,6 +145,7 @@
   textarea,
   select { 
   	padding: 9px;
+  	margin-bottom: 3px;
   	border: solid 1px #E5E5E5;
   	outline: 0;
   	font: normal 13px/100% Verdana, Tahoma, sans-serif;
@@ -156,10 +160,10 @@
   	line-height: 150%;
   }
 	.token-input-list-facebook {
-    padding: 9px;
+    padding: 5px 9px;
   	border: solid 1px #E5E5E5;
-    width: 320px;
-  	max-width: 320px;
+    width: 520px;
+  	max-width: 520px;
     background: #FFFFFF url('bg_form.png') left top repeat-x;
   	background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #EEEEEE), to(#FFFFFF));
   	background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 25px);
@@ -167,7 +171,6 @@
     @include box-shadow(rgba(0,0,0, 0.1) 0 0 8px);
   }
   .token_container ul {
-    width: 320px;
     float: left;
   }
   .token_container label {
@@ -185,7 +188,8 @@
     width: 100px;
   }
   input:hover, textarea:hover,
-  input:focus, textarea:focus { 
+  input:focus, textarea:focus,
+  ul:hover,   ul:focus { 
   	border-color: #C9C9C9; 
   	-webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 8px;
   }
