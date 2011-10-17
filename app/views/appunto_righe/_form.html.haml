@@ -9,10 +9,9 @@
   .field_inline.titolo
     = f.label "Libro"
     %br
-    / = collection_select(:appunto_riga, :libro_id, Libro.all, :id, :titolo, :prompt => true)
-    / = grouped_collection_select(:appunto_riga, :libro_id, Libro.unscoped.select('distinct type'), :bros, :type, :id, :titolo)
     - @vendibili = Libro.unscoped.vendibili.select('distinct type').order(:type)
-    = f.select :libro_id, option_groups_from_collection_for_select(@vendibili, :bros, :type, :id, :titolo), :prompt => true
+    = f.select :libro_id, option_groups_from_collection_for_select(@vendibili, :bros, :type, :id, :titolo), {:prompt => true}, {:class => 'chzn-select', :style => 'width:300px;'}
+  
   .field_inline
     = f.label :quantita
     %br
@@ -32,4 +31,4 @@
     = f.label :pagato
     = f.check_box :pagato
 .clear
-  
+

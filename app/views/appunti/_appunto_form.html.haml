@@ -22,7 +22,8 @@
       - f.fields_for :appunto_righe do |t|
         %p
           = t.hidden_field :appunto_id
-          = t.select :libro_id, option_groups_from_collection_for_select(@vendibili, :bros, :type, :id, :titolo, t.object.libro_id), :prompt => true
+
+          = t.select( :libro_id, option_groups_from_collection_for_select(@vendibili, :bros, :type, :id, :titolo, t.object.libro_id), {:prompt => true}, {:class => 'xxx-chzn-select-tax'})
           = t.label :quantita
           = t.text_field :quantita, {:class => 'qta'}
           ~ t.label :price, "Prezzo"

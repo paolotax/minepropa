@@ -7,6 +7,48 @@ Number.prototype.formatMoney = function(c, d, t){
 };
 
 
+var chosen = {
+  init: function(){
+    $('.chzn-select').each(function() {
+      if ($('body').is('.Chrome, .Safari')) {
+        var $width = $(this).width() + 15 + 'px';
+        $(this).css('width', $width);
+      }
+      $(this).chosen();
+    });
+  }
+};
+
+function remove_fields(link) {
+  $(link).previous("input[type=hidden]").value = "1";
+  $(link).up(".fields").hide();
+}
+
+function add_fields(link, association, content) {
+  var new_id = new Date().getTime();
+  var regexp = new RegExp("new_" + association, "g")
+  $(link).up().insert({
+    before: content.replace(regexp, new_id)
+  });
+}
+
+$(document).ready(function(){
+  chosen.init();
+});
+
+$(document).ready(function() {
+
+  $('#form-new-appunto').live('nested:fieldAdded', function() {
+
+		$('.chzn-select-tax').chosen();
+		// $('.chzn-container').attr('style': 'width:391px');		
+	});
+
+
+
+
+});
+
 $(document).ready(function() {
   
   $('div#search-container input').live('focus', function() {
