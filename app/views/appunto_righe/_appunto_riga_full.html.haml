@@ -6,7 +6,7 @@
         .note-header
           %span.creator
             = link_to appunto_riga.appunto.destinatario, appunto_path(appunto_riga.appunto) unless appunto_riga.appunto.nil?
-            = link_to appunto_riga.appunto.nome_scuola, scuola_path(appunto_riga.appunto.scuola) unless appunto_riga.appunto.nil?
+            = link_to appunto_riga.appunto.scuola_nome_scuola, scuola_path(appunto_riga.appunto.scuola) unless appunto_riga.appunto.nil?
           .delete
             = link_to image_tag("td-delete.png"), appunto_riga, {:method => :delete, :remote => true}
           %span.date.radius-3= l appunto_riga.created_at, :format => :short
