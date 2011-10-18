@@ -37,7 +37,8 @@ class Scuola < ActiveRecord::Base
   scope :dell_utente,   lambda { |user| where('scuole.user_id = ?', user) }
   scope :per_provincia, lambda { |prov| where('scuole.provincia = ?', prov) }
   
-  scope :per_id, order(:id)
+  scope :per_id,       order(:id)
+  scope :per_position, order(:position)
   
   scope :con_appunti_in_corso, lambda {
                                   select('scuole.*, count(appunti.id) as count_appunti_id').
