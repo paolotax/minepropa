@@ -15,8 +15,9 @@ class PagesController < ApplicationController
       # @search = current_user.appunti.includes([:appunto_righe, :scuola, :visite, {:taggings => :tag}]).in_corso.per_id.search(params[:search])
       # @appunti = @search.relation
       
-      @appunti = current_user.grouped_appunti_count
-      @recent  = current_user.appunti.includes(:scuola).in_corso.per_id
+      @appunti = current_user.citta_con_appunti_in_corso(params[:provincia])
+      
+      @recent  = current_user.appunti.includes([:appunto_righe, :scuola, :visite, {:taggings => :tag}]).in_corso.filtra(params).per_id
       
       @tags = current_user.appunti.in_corso.tag_counts_on(:tags)
     end

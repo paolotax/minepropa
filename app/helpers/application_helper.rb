@@ -37,17 +37,27 @@ module ApplicationHelper
     end
   end
   
-  def get_provincia_link(provincia) 
-    
-    if @current_controller == 'scuole' then
-      content_tag :li, :class => 'links' do
-        link_to provincia, scuole_url(:provincia => provincia), :remote => true
-      end
+  def link_to_provincia(provincia)
+    if params[:provincia] == provincia
+      "<span>#{provincia}</span>".html_safe
     else
-      content_tag :li, :class => 'links' do
-        link_to provincia, appunti_url(:provincia => provincia), :remote => true
-      end      
+      link_to provincia, params.merge(:provincia => provincia) #, :remote => true
     end
+  end
+  
+  def get_provincia_link(provincia) 
+    content_tag :li, :class => 'links' do
+      link_to_provincia provincia
+    end
+    # if @current_controller == 'scuole' then
+    #   content_tag :li, :class => 'links' do
+    #     link_to provincia, scuole_url(:provincia => provincia), :remote => true
+    #   end
+    # else
+    #   content_tag :li, :class => 'links' do
+    #     link_to provincia, appunti_url(:provincia => provincia), :remote => true
+    #   end      
+    # end
   end
   
   
