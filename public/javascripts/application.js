@@ -243,8 +243,8 @@ $(document).ready( function() {
   
   
   $("#sidebar li a").click(function(){
-    $(this).parent().addClass('active').
-      siblings().removeClass('active');
+    $(this).removeClass('active');
+		$(this).addClass('active').
   });
 	
 	

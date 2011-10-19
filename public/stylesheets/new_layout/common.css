@@ -698,7 +698,7 @@ body > #container {
   margin-right:5px;
   width:15px;
 }
-#sidebar li.active {
+#sidebar li .active {
   background-color:#FFFFFF;
   background-image:none;
   border-bottom-color:#CBCBCB;
@@ -789,7 +789,7 @@ body > #container {
   padding-top:0;
   position:relative;
 }
-#sidebar li.active a {
+#sidebar li a.active {
   color:#165586;
 }
 #sidebar li a .counter {
@@ -816,7 +816,7 @@ body > #container {
   top:0;
   width:25px;
 }
-#sidebar li.active a .counter {
+#sidebar li a.active .counter {
   display:block;
 }
 #sidebar ul.collaborators li a {
@@ -1042,7 +1042,7 @@ body > #container {
   background-position:14px -957px;
   background-repeat:no-repeat no-repeat;
 }
-#sidebar li.active a {
+#sidebar li a.active {
   background-position-y:0;
 }
 #sidebar li.add {
