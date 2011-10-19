@@ -244,7 +244,7 @@ $(document).ready( function() {
   
   $("#sidebar li a").click(function(){
     $(this).removeClass('active');
-		$(this).addClass('active').
+		$(this).addClass('active');
   });
 	
 	
