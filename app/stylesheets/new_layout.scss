@@ -10,7 +10,7 @@
 
 @import "partials/scuole";
 @import "partials/appunti";
-
+@import "partials/sidebar";
 
 #error_explanation {
   width: 400px;
@@ -895,36 +895,7 @@ tr.scolastico {
 }
 
 
-#sidebar li  a.active .counter {
-  display:block;
-}
 
-// #sidebar .links .active {
-//   background-color:#FFFFFF;
-//   background-image:none;
-//   border-bottom-color:#CBCBCB;
-//   border-bottom-style:solid;
-//   border-bottom-width:1px;
-//   border-left-color:#CBCBCB;
-//   border-left-style:solid;
-//   border-left-width:0;
-//   border-right-color:#CBCBCB;
-//   border-right-style:solid;
-//   border-right-width:0;
-//   border-top-color:#CBCBCB;
-//   border-top-style:solid;
-//   border-top-width:1px;
-//   font-weight:bold;
-//   margin-bottom:0;
-//   margin-left:0;
-//   margin-right:0;
-//   margin-top:-2px;
-//   padding-bottom:1px;
-//   padding-left:0;
-//   padding-right:0;
-//   padding-top:1px;
-// 
-// }
 
 
 
@@ -982,43 +953,22 @@ tr.scolastico {
   
 }
 
-// style=background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: rgb(246, 252, 201); background-position: initial initial; background-repeat: initial initial; 
 
-#sidebar li a .counter {
-  background-attachment:initial;
-  background-clip:initial;
-  background-color:transparent;
-  background-image:url(https://www.producteev.com/static/images/sidebar-counter.png);
-  background-origin:initial;
-  background-position:0 0;
-  background-repeat:no-repeat no-repeat;
-  color:#768395;
-  display:none;
-  font-size:11px;
-  font-weight:bold;
-  height:16px;
-  line-height:16px;
-  margin-bottom:0;
-  margin-left:0;
-  margin-right:8px;
-  margin-top:4px;
-  position:absolute;
-  right:0;
-  text-align:center;
-  top:0;
-  width:25px;
-}
 
 
 #count-citta-list {
+  overflow: hidden;
+  margin-bottom: 10px;
+  .provincia-group {
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
   ul {
     @include horizontal-list;
     float:left;
 	  line-height:14px;
-	  margin-bottom: 0;
-	  margin-left:0;
-	  margin-right:0;
-	  margin-top:0;
+    margin: 0;
+
 		li {
 			background-attachment:initial;
 		  background-clip:initial;
@@ -1052,6 +1002,8 @@ tr.scolastico {
     padding: 5px;
   }
 }
+
+
 
 
 #scuole {

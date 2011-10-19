@@ -44,34 +44,12 @@ module ApplicationHelper
     end
   end
   
-  #link_to_unless_current(name, options = {}, html_options = {}, &block) public
-  
-  def link_to_provincia(provincia)
-    if params[:provincia] == provincia
-      "<span>#{provincia}</span>".html_safe
-    else
-      link_to provincia, params.merge(:provincia => provincia) #, :remote => true
-    end
-  end
-  
+
   def get_provincia_link(provincia) 
     
-    
-    content_tag :li, :class => 'links' do
-      
-      # link_to_unless_current provincia, params.merge(:provincia => provincia)
-      link_to_current_with_class provincia, "active", params.merge(:provincia => provincia), :class => provincia
-    
+    content_tag :li, :class => 'provincia' do
+      link_to_current_with_class provincia, "active", params.merge(:provincia => provincia), :class => provincia, :remote => true
     end
-    # if @current_controller == 'scuole' then
-    #   content_tag :li, :class => 'links' do
-    #     link_to provincia, scuole_url(:provincia => provincia), :remote => true
-    #   end
-    # else
-    #   content_tag :li, :class => 'links' do
-    #     link_to provincia, appunti_url(:provincia => provincia), :remote => true
-    #   end      
-    # end
   end
   
   
