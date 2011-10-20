@@ -10,12 +10,11 @@
   
 #block_navigator.block.round
   %ul#bl_navigator.links
-    %li.navigation-btn= link_to_unless_current "Appunti in corso",     root_path,    :class => 'appunti_in_corso'
-    %li.navigation-btn= link_to_unless_current "Scuole",               scuole_path,  :class => 'scuole'
-    %li.navigation-btn= link_to_unless_current "Libri",                libri_path
-    / %li.navigation-btn= link_to_unless_current "Vendite",              vendite_path
-    %li.navigation-btn= link_to_unless_current "Fatture",              fatture_path
-    %li.navigation-btn= link_to_unless_current "Giri",                 giri_path
+    %li.nav-btn= link_to_current_with_class "Appunti in corso", 'active', root_path,    :class => 'appunti_in_corso'
+    %li.nav-btn= link_to_current_with_class "Scuole",           'active', scuole_path,  :class => 'scuole'
+    %li.nav-btn= link_to_current_with_class "Libri",            'active', libri_path,   :class => 'libri'
+    %li.nav-btn= link_to_current_with_class "Fatture",          'active', fatture_path, :class => 'fatture'
+    %li.nav-btn= link_to_current_with_class "Giri",             'active', giri_path,    :class => 'giri'
     
 
 %h2

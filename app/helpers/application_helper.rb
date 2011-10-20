@@ -18,29 +18,27 @@ module ApplicationHelper
   def search_url(controller)
   
     if controller == 'pages'
-      
       # need a refactoring
       if @current_action == 'home'
         return root_url
+      elsif @current_action == 'about'  
+        return about_url
+      elsif @current_action == 'calendar'
+        return calendar_url
       else
-        if @current_action == 'about'  
-          return about_url
-        else
-          if @current_action == 'calendar'
-            return calendar_url
-          end
-        end  
+        return appunti_url
       end
-      
-    else
-      return appunti_url
     end
   end
   
   def link_to_current_with_class(name, current_class, options = {}, html_options = {}, &block)
     link_to_unless_current(name, options, html_options) do
       html_options[:class] = current_class + " " + html_options[:class]
-      link_to(name, options, html_options) unless name.nil?
+      
+      link_to(options, html_options) do
+        haml_tag :span, name
+        haml_tag :span, 0, :class => 'counter'
+      end
     end
   end
   
@@ -48,7 +46,11 @@ module ApplicationHelper
   def get_provincia_link(provincia) 
     
     content_tag :li, :class => 'provincia' do
-      link_to_current_with_class provincia, "active", params.merge(:provincia => provincia), :class => provincia, :remote => true
+      link_to(params.merge(:provincia => provincia), :class => provincia.downcase, :remote => true) do
+        haml_tag :span, provincia
+        haml_tag :span, 0, :class => 'counter'
+        #link_to_current_with_class(provincia, "active", params.merge(:provincia => provincia), :class => provincia.downcase)
+      end
     end
   end
   
@@ -56,10 +58,6 @@ module ApplicationHelper
   
   def get_citta_user
     @citta = current_user.scuole.select('distinct citta')
-    # @provincie.each do |p|
-    #   provincie << p
-    # end
-    # provincie
   end
   
 end

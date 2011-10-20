@@ -187,7 +187,7 @@
   border-top-style:solid;
   border-top-width:1px;
   font-weight:bold;
-  margin-bottom:0;
+  margin-bottom:-1px;
   margin-left:0;
   margin-right:0;
   margin-top:-2px;
@@ -265,7 +265,7 @@
 #sidebar li a.active {
   color:#165586;
 }
-#sidebar li a .counter {
+#sidebar li .counter {
   background-attachment:initial;
   background-clip:initial;
   background-color:transparent;
