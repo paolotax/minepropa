@@ -42,6 +42,9 @@ gem 'money'
 
 #gem 'feedzirra', :git => 'https://github.com/bananastalktome/feedzirra.git'
 
+gem 'exception_notification'
+gem 'letter_opener', group: :development
+
 
 group :development do
   gem 'rspec-rails'

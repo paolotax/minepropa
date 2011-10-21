@@ -29,5 +29,12 @@ Minepropa::Application.configure do
   #   require_dependency File.join("app","models","#{c}.rb")
   # end
   
+  config.middleware.use ExceptionNotifier,
+    sender_address: 'noreply@propa.heroku.com',
+    exception_recipients: 'tax@propa.heroku.com',
+    ignore_exceptions: ExceptionNotifier.default_ignore_exceptions # + [RuntimeError]
+
+  config.action_mailer.delivery_method = :letter_opener
+  
 end
 

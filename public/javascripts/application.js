@@ -13,6 +13,7 @@ $(document).ready(function(){
 	});
 	$(window).bind('popstate', function(){ 
 		$.getScript(location.href);
+		return true;
 	});
 });
 
