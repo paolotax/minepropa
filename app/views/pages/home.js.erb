@@ -1,3 +1,17 @@
 $("#count-citta-list").replaceWith("<%= escape_javascript(render :partial => 'appunti/citta_list') %>");
 
 $("#appunti.tasks").html("<%= escape_javascript(render @recent, :app_righe => false) %>");
+
+// function removeActiveLinks(link) {
+// 	link.parent().siblings().each(function() {
+//     $('a', $(this)).removeClass('active');
+//   });
+// }
+
+<% if params[:provincia].present? %>
+   var s = $(".provincia a.<%= params[:provincia].downcase %>");
+		console.log(s);
+		removeActiveLinks(s);
+		s.addClass('active'); 
+		$('.counter', s).text("<%= @recent.length %>")
+<% end %>

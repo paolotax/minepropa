@@ -2,45 +2,45 @@ class ClassiController < ApplicationController
 
   before_filter :authenticate_user!
   
+  before_filter :get_scuola
+  
+  def get_scuola
+    @scuola = Scuola.find(params[:scuola_id])
+  end
+  
   def index
-    @classi = Classe.all
+    @classi = @scuola.classi.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @classi }
+      format.json  { render json: @classi }
     end
   end
 
-  # GET /classi/1
-  # GET /classi/1.xml
   def show
-    @classe = Classe.find(params[:id])
+    @classe = @scuola.classi.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @classe }
+      format.html
+      format.json  { render json: @classe }
     end
   end
 
   def new
-    #raise params.inspect
-    @classe = Classe.new
-    @scuola = Scuola.find(params[:scuola_id]) if params[:scuola_id].present?
+    @classe = @scuola.classi.new
 
     respond_to do |format|
-      format.html # new.html.erb
-      format.json  { render :json => @classe }
+      format.html
+      format.json  { render json: @classe, location: @classe }
     end
   end
 
   def edit
-    @classe = Classe.find(params[:id])
+    @classe = @scuola.classi.find(params[:id])
   end
 
 
   def create
-    #raise params.inspect
-    @scuola = Scuola.find(params[:scuola_id])
     @classe = @scuola.classi.build(params[:classe])
 
     respond_to do |format|
@@ -57,7 +57,7 @@ class ClassiController < ApplicationController
 
 
   def update
-    @classe = Classe.find(params[:id])
+    @classe = @scuola.classi.find(params[:id])
 
     respond_to do |format|
       if @classe.update_attributes(params[:classe])
@@ -72,7 +72,7 @@ class ClassiController < ApplicationController
 
 
   def destroy
-    @classe = Classe.find(params[:id])
+    @classe = @scuola.classi.find(params[:id])
     @classe.destroy
 
     respond_to do |format|
@@ -83,19 +83,11 @@ class ClassiController < ApplicationController
   end
   
   def edit_individual
-    
-    @scuola = Scuola.find(params[:scuola_id])
     @classi = @scuola.classi.order('classi.classe, classi.sezione')
-    
-    # @classi = Classe.includes(:scuola).find(params[:classe_ids])
-    # @scuola = @classi[0].scuola
-    respond_to do |format|
-      format.html
-    end
   end
 
   def update_individual
-    @classi = Classe.update(params[:classi].keys, params[:classi].values).reject { |p| p.errors.empty? }
+    @classi = @scuola.classi.update(params[:classi].keys, params[:classi].values).reject { |p| p.errors.empty? }
     if @classi.empty?           
       flash[:notice] = "Classi modificate"
       redirect_to scuola_path(params[:classi].values[0][:scuola_id])

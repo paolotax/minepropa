@@ -1,12 +1,15 @@
 class AdozioniController < ApplicationController
-
+  
+  before_filter :get_scuola
+  
+  
   def index
-    @adozioni = Adozione.all
+    @adozioni = @scuola.adozioni.all
   end
 
 
   def show
-    @adozione = Adozione.find(params[:id])
+    @adozione = @suola.adozioni.find(params[:id])
   end
 
 
@@ -70,5 +73,11 @@ class AdozioniController < ApplicationController
       render :action => "edit_individual"
     end
   end
+  
+  private
+  
+    def get_scuola
+        @scuola = Scuola.find(params[:scuola_id])
+    end
   
 end

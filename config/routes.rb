@@ -15,16 +15,20 @@ Minepropa::Application.routes.draw do
   resources :libri
   
   resources :scuole do
+    
     collection do
       post 'sort'
     end
+    
     resources :indirizzi
+    
     resources :classi do
       collection do
         post 'edit_individual'
         put 'update_individual'
       end
     end
+    
     resources :adozioni do
       collection do
         post 'edit_individual'
@@ -50,7 +54,7 @@ Minepropa::Application.routes.draw do
       get  'print_multiple', :format => 'pdf'
       put  'update_multiple'
       put  'update_stato'
-      post  'delete_multiple'
+      post 'delete_multiple'
     end
   end
 

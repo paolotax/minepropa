@@ -7,14 +7,29 @@ Number.prototype.formatMoney = function(c, d, t){
 };
 
 
+function removeActiveLinks(link) {
+	link.parent().siblings().each(function() {
+    $('a', $(this)).removeClass('active');
+  });
+}
+
 $(document).ready(function(){
-	$('.links a[data-remote=true]').live('ajax:success', function(e){ 
-		window.history.pushState('', '', $(e.target).attr('href')); 
-	});
-	$(window).bind('popstate', function(){ 
-		$.getScript(location.href);
-		return true;
-	});
+	
+	// $('.links a[data-remote=true]').live('ajax:success', function(e){ 
+	// 	window.history.pushState('', '', $(e.target).attr('href')); 
+	// });
+	// $(window).bind('popstate', function(){ 
+	// 	$.getScript(location.href);
+	// });
+	
+	$("#sidebar li a").click(function(){
+    
+    console.log($(this).parent().siblings());
+    $(this).removeActiveLinks();
+
+    $(this).addClass('active');
+  });
+	
 });
 
 
@@ -253,15 +268,7 @@ $(document).ready( function() {
   });
   
   
-  $("#sidebar li a").click(function(){
-    
-    console.log($(this).parent().siblings());
-    
-    $(this).parent().siblings().each(function() {
-      $('a', $(this)).removeClass('active');
-    });
-    $(this).addClass('active');
-  });
+
 	
 	
 });
