@@ -1,0 +1,13 @@
+%table.libri.riepilogo
+  %th Titolo
+  %th Copie
+  %th Importo
+  - for libro in @presenter.riepilogo_venduto do
+    %tr
+      %td= libro.titolo
+      %td= libro.copie
+      %td= number_to_currency(libro.importo.to_f / 100)
+  %tr
+    %td  Totale
+    %td= @presenter.totale_venduto[0].copie
+    %td= number_to_currency(@presenter.totale_venduto[0].sum_importo.to_f / 100)

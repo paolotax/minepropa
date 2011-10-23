@@ -9,27 +9,39 @@ Number.prototype.formatMoney = function(c, d, t){
 
 function removeActiveLinks(link) {
 	link.parent().siblings().each(function() {
-    $('a', $(this)).removeClass('active');
+    var currLink = $('a', $(this));
+		currLink.removeClass('active');
+		$(".counter", currLink).text("");
   });
 }
 
 $(document).ready(function(){
 	
-	// $('.links a[data-remote=true]').live('ajax:success', function(e){ 
-	// 	window.history.pushState('', '', $(e.target).attr('href')); 
-	// });
+	$(".provincia a").live("click", function(e) {
+		removeActiveLinks($(this));
+	    $(this).addClass('active');
+		$.getScript(this.href);
+	  if (history && history.replaceState) {
+      history.replaceState(null, document.title, this.href);
+    }
+	  e.preventDefault();
+	});
+	// 
 	// $(window).bind('popstate', function(){ 
 	// 	$.getScript(location.href);
 	// });
-	
-	$("#sidebar li a").click(function(){
-    
-    console.log($(this).parent().siblings());
-    $(this).removeActiveLinks();
-
-    $(this).addClass('active');
+	// 
+	$("#scuola .nav a.tab").click(function(e) {
+    $("#scuola .nav li a").removeClass("selected");
+    $(this).addClass("selected");
+    $("#scuola .nav_section").append('<div class="progress"><img src="/images/progress_large.gif" width="32" height="32" alt="" /></div>');
+    $.getScript(this.href);
+    if (history && history.replaceState) {
+      history.replaceState(null, document.title, this.href);
+    }
+    e.preventDefault();
   });
-	
+
 });
 
 

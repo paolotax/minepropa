@@ -1,0 +1,14 @@
+#visible_taskslist_title.group-title Nei dintorni...
+- indirizzo = @scuola.indirizzi.first
+- lat_long = [indirizzo.latitude, indirizzo.longitude]
+- @piu_vicini = Appunto.da_fare.near(lat_long, 10)
+%ul#appunti.tasks
+  - for v in @piu_vicini do
+    = render v, :app_righe => false
+    - l_l = [v.latitude, v.longitude] 
+    - distance = indirizzo.distance_from(l_l)
+    = "#{format("%.3f", Conversion.m2km(distance))} km"
+    - if (distance > 0)
+      - b = indirizzo.bearing_to(l_l)
+      =  Geocoder::Calculations.compass_point(b)
+      %br

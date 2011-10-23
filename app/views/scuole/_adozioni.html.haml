@@ -1,0 +1,29 @@
+%table#scuola_adozioni
+  %thead
+    %tr
+      %th= "materia"
+      %th= "classe"
+      %th= "sezioni"
+      %th= "libro"
+      %th= "copie"
+      %th
+      %th 
+  %tbody
+    - @presenter.grouped_adozioni.each do |k, v|
+      - ids = v.map(&:id)
+      %tr{:class => k[:type].downcase}
+        %td= k[:materia]
+        %td= k[:classe]
+        %td= v.map {|c| c.classe.sezione}.sort.join
+        %td= link_to k[:titolo], libro_path(v[0][:libro_id]) 
+        %td= v.sum(&:nr_copie)
+        %td
+          = form_tag  edit_individual_scuola_adozioni_url(@scuola) do
+            - for i in ids
+              = hidden_field_tag 'adozione_ids[]', i
+            = submit_tag 'Modifica'
+        %td
+          = form_tag stampe_sovrapacchi_adozioni_url, :format => 'pdf' do
+            - for i in ids
+              = hidden_field_tag 'adozione_ids[]', i
+            = submit_tag 'Stampa'

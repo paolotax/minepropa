@@ -28,18 +28,11 @@ class ScuoleController < ApplicationController
       @coord = @indirizzo.to_gomap_marker
     end
     
-    #da eliminare ?
-    @search = @scuola.appunti.page(params[:page]).per(8).search(params[:search])
-    @appunti = @search.relation
- 
-    @grouped_adozioni = @scuola.get_adozioni
-    @grouped_classi   = @scuola.get_classi
-    
     respond_to do |format|
       format.html # show.html.erb
-      format.js    { render :json => @indirizzo }
       format.json  { render :json => @coord }
       format.pdf   { render :pdf  => @scuola }
+      format.js
     end
   end
 

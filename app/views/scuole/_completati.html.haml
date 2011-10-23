@@ -1,0 +1,7 @@
+- if @scuola.appunti.any?
+  #appunti_div
+    = form_tag edit_or_print_appunti_path, :method => :post, :id => "form_appunti" do
+      .autopagerize_page_element
+        %ul#appunti.tasks
+          #visible_taskslist_title.group-title completati
+          = render :partial => 'appunti/appunto', :collection => @presenter.appunti_completati, :locals => { :app_righe => false }

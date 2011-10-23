@@ -14,6 +14,11 @@ module ApplicationHelper
                       url_or_object,
                       options)
   end
+
+  def tab_link(name, url)
+    selected = url.all? { |key, value| params[key] == value }
+    link_to(name, url, :class => (selected ? "selected tab" : "tab"))
+  end
   
   def search_url(controller)
   
@@ -46,7 +51,8 @@ module ApplicationHelper
   def get_provincia_link(provincia) 
     
     content_tag :li, :class => 'provincia' do
-      link_to(params.merge(:provincia => provincia), :class => provincia.downcase, :remote => true) do
+      link_to(params.merge(:provincia => provincia), :class => provincia.downcase) do
+        haml_tag :img, src: "images/ajax-loader-bg-white.gif", style: "display:none;", class: "navigation-loader"
         haml_tag :span, provincia
         haml_tag :span, 0, :class => 'counter'
         #link_to_current_with_class(provincia, "active", params.merge(:provincia => provincia), :class => provincia.downcase)

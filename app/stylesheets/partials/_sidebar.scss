@@ -191,6 +191,9 @@
   margin-left:0;
   margin-right:0;
   margin-top:-2px;
+	.navigation-loader {
+		display:block;
+	}
   // padding-bottom:1px;
   // padding-left:0;
   // padding-right:0;
@@ -237,12 +240,18 @@
   border-width:initial;
   text-decoration:underline;
 }
+
+
+
+#sidebar .provincia .navigation-loader,
 #sidebar .filters li .navigation-loader {
   display:block;
   float:left;
   margin-left:-21px;
   margin-top:4px;
 }
+
+
 #sidebar .labels li .navigation-loader {
   display:block;
   float:left;

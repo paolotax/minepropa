@@ -38,8 +38,19 @@ class Scuole::ShowPresenter
     AppuntoRiga.select("sum(appunto_righe.quantita) as copie, sum(appunto_righe.quantita * appunto_righe.prezzo_unitario) as sum_importo").           
                 joins(:appunto => :scuola).where("scuole.id = ?", @scuola.id)
   end
+  
+  def grouped_adozioni
+    @scuola.get_adozioni
+  end
+  
+  def grouped_classi
+    @scuola.get_classi
+  end
     
   
-  memoize :appunti_da_fare, :appunti_da_pagare, :appunti_in_corso, :appunti_completati, :copie_per_scuola, :riepilogo_venduto, :totale_venduto
+  memoize :appunti_da_fare, :appunti_da_pagare, :appunti_in_corso, :appunti_completati, 
+          :copie_per_scuola, :riepilogo_venduto, :totale_venduto,
+          :grouped_adozioni, :grouped_classi
+          
 
 end

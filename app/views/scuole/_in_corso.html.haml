@@ -1,0 +1,12 @@
+= link_to "Nuova Fattura", new_fattura_path(:scuola => @scuola), :class => 'btn_blue'
+= link_to "Nuovo Appunto", new_appunto_path(:scuola => @scuola.id), :class => 'btn_blue'
+
+- if @scuola.appunti.any?
+  #appunti_div
+    = form_tag edit_or_print_appunti_path, :method => :post, :id => "form_appunti" do
+      .autopagerize_page_element
+        %ul#appunti.tasks
+          #visible_taskslist_title.group-title da fare
+          = render @presenter.appunti_da_fare, :app_righe => false
+          #visible_taskslist_title.group-title in sospeso
+          = render :partial => 'appunti/appunto', :collection => @presenter.appunti_da_pagare,  :locals => { :app_righe => false }
