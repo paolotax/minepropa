@@ -30,12 +30,17 @@ $(document).ready(function(){
 	$(".links a").pjax({
 		container: '#content',
 		timeout: 30000,
-		complete: function() {
+		complete: function(xhr) {
+			console.log(xhr);
+			removeActiveLinks($(this));
+			$(this).addClass('active');
 			$(".navigation-loader").hide();
+			$(".counter").text($("#hidden_count").text());
 		}
 	}).live('click', function(){
 			removeActiveLinks($(this));
 			$(this).addClass('active');
+			$(".counter", this).text("");
 			$(".navigation-loader", this).show();
 		});
 	

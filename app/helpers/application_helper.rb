@@ -54,7 +54,7 @@ module ApplicationHelper
       link_to(params.merge(:provincia => provincia), :class => provincia.downcase) do
         haml_tag :img, src: "images/ajax-loader-bg-white.gif", style: "display:none;", class: "navigation-loader"
         haml_tag :span, provincia
-        haml_tag :span, 0, :class => 'counter'
+        haml_tag :span, "", :class => 'counter'
         #link_to_current_with_class(provincia, "active", params.merge(:provincia => provincia), :class => provincia.downcase)
       end
     end

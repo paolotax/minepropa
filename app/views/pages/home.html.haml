@@ -4,6 +4,8 @@
 = render :partial => 'appunti/appunto_form'
 = render :partial => 'appunti/citta_list'
 
+#hidden_count.hidden= @recent.length
+
 #visible_taskslist_title.group-title Appunti recenti
 = render :partial => 'appunti/appunti_header'
 = render :partial => 'appunti/appunti', :locals => {:appunti => @recent, :righe => false}
