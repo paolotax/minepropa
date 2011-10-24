@@ -25,6 +25,14 @@ class ApplicationController < ActionController::Base
     #raise resource_or_scope.inspect
     root_url(:protocol => 'http')
   end
+  
+  def render(options = nil, extra_options = {}, &block)
+    if request.headers['X-PJAX'] == 'true'
+      options = {} if options.nil?
+      options[:layout] = false 
+    end
+    super(options, extra_options, &block)
+  end
 
   protected
 

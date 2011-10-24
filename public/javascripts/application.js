@@ -17,31 +17,48 @@ function removeActiveLinks(link) {
 
 $(document).ready(function(){
 	
-	$(".provincia a").live("click", function(e) {
-		removeActiveLinks($(this));
-	    $(this).addClass('active');
-		$.getScript(this.href);
-	  if (history && history.replaceState) {
-      history.replaceState(null, document.title, this.href);
-    }
-	  e.preventDefault();
+	$('.provincia a').pjax({
+		container: '#content',
+		timeout: 20000		
 	});
-	// 
-	// $(window).bind('popstate', function(){ 
-	// 	$.getScript(location.href);
-	// });
-	// 
-	$("#scuola .nav a.tab").click(function(e) {
-    $("#scuola .nav li a").removeClass("selected");
-    $(this).addClass("selected");
-    $("#scuola .nav_section").append('<div class="progress"><img src="/images/progress_large.gif" width="32" height="32" alt="" /></div>');
-    $.getScript(this.href);
-    if (history && history.replaceState) {
-      history.replaceState(null, document.title, this.href);
-    }
-    e.preventDefault();
-  });
+	
+	$("#scuola .nav a.tab").pjax({
+		container: '#scuola',
+		timeout: 2000
+	});
 
+	$("#sidebar a").live("click", function() {
+		removeActiveLinks($(this));
+		$(this).addClass('active');
+	});
+
+	// $(".provincia a").live("click", function(e) {
+	// 	removeActiveLinks($(this));
+	//     $(this).addClass('active');
+	// 	$.getScript(this.href);
+	//   if (history && history.pushState) {
+	// 		window.history.ready = true;
+	//       history.pushState(null, document.title, this.href);
+	//     }
+	//   e.preventDefault();
+	// });
+	// $("#scuola .nav a.tab").click(function(e) {
+	//     $("#scuola .nav li a").removeClass("selected");
+	//     $(this).addClass("selected");
+	//     $("#scuola .nav_section").append('<div class="progress"><img src="/images/progress_large.gif" width="32" height="32" alt="" /></div>');
+	//     $.getScript(this.href);
+	//     if (history && history.replaceState) {
+	// 		window.history.ready = true;
+	//       history.replaceState(null, document.title, this.href);
+	//     }
+	//     e.preventDefault();
+	//   });
+	// 
+	// $(window).bind('popstate', function (ev){
+	//   if (!window.history.ready && !ev.originalEvent.state)
+	// 		return;
+	//   $.getScript(location.href); // workaround for popstate on load
+	// });
 });
 
 

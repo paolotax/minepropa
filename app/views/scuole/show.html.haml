@@ -1,7 +1,5 @@
 - title "#{@scuola.nome_scuola}", false
 
-/ - require 'conversion'
-
 #scuola
   #content_task_details
     #task_details
@@ -23,27 +21,26 @@
   #scuola_longitude.hidden
     =  @indirizzo.longitude    
 
-
-  %ul.nav.horizontal
-    %li.selected
-      = tab_link "#{pluralize(@scuola.appunti.in_corso.size, 'Appunto')} in corso", :view => "in_corso"
-    %li
-      = tab_link "#{pluralize(@scuola.appunti.completati.size, 'Appunto')} completati", :view => "completati"
-    %li
-      = tab_link "Vicini", :view => "vicini"
-    %li
-      = tab_link "Info", :view => "info_scuola"
-    %li
-      = tab_link "Classi", :view => 'classi'
-    %li
-      = tab_link "Adozioni", :view => 'adozioni'
-    %li
-      = tab_link "Venduto", :view => "venduto"
-    / = content_tag :li, link_to("Next Episode >", @episode.next), :class => "next" if !@episode.last_published? && @episode.next
-    / = content_tag :li, link_to("< Previous Episode", @episode.previous), :class => "previous" if @episode.previous
-
-  .nav_section
-    = params[:view].present? ? render(params[:view]) : render("in_corso")
+  #scuola-tabs
+    %ul.nav.horizontal
+      %li.selected
+        = tab_link "#{pluralize(@scuola.appunti.in_corso.size, 'Appunto')} in corso", :view => "in_corso"
+      %li
+        = tab_link "#{pluralize(@scuola.appunti.completati.size, 'Appunto')} completati", :view => "completati"
+      %li
+        = tab_link "Vicini", :view => "vicini"
+      %li
+        = tab_link "Info", :view => "info_scuola"
+      %li
+        = tab_link "Classi", :view => 'classi'
+      %li
+        = tab_link "Adozioni", :view => 'adozioni'
+      %li
+        = tab_link "Venduto", :view => "venduto"
+      / = content_tag :li, link_to("Next Episode >", @episode.next), :class => "next" if !@episode.last_published? && @episode.next
+      / = content_tag :li, link_to("< Previous Episode", @episode.previous), :class => "previous" if @episode.previous
+    .nav_section
+      = params[:view].present? ? render(params[:view]) : render("in_corso")
 
 
   
