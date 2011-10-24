@@ -17,19 +17,39 @@ function removeActiveLinks(link) {
 
 $(document).ready(function(){
 	
-	$('.provincia a').pjax({
-		container: '#content',
-		timeout: 20000		
-	});
+	// $('.provincia a').pjax({
+	// 	container: '#content',
+	// 	timeout: 20000		
+	// });
 	
 	$("#scuola .nav a.tab").pjax({
-		container: '#scuola',
-		timeout: 2000
+		container: '#content',
+		timeout: 20000
 	});
-
+	
+	$(".links a").pjax({
+		container: '#content',
+		timeout: 30000,
+		complete: function() {
+			$(".navigation-loader").hide();
+		}
+	}).live('click', function(){
+			removeActiveLinks($(this));
+			$(this).addClass('active');
+			$(".navigation-loader", this).show();
+		});
+	
+	// #("#content").bind("pjax:start", function() {
+	// 	console.log("start");
+	// });
+	
+	$("#cloud a").pjax({
+		container: '#content',
+		timeout: 30000
+	});
+	
 	$("#sidebar a").live("click", function() {
-		removeActiveLinks($(this));
-		$(this).addClass('active');
+
 	});
 
 	// $(".provincia a").live("click", function(e) {
