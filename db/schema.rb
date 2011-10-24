@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110911060858) do
+ActiveRecord::Schema.define(:version => 20111024141105) do
 
   create_table "adozioni", :force => true do |t|
     t.integer  "classe_id"
@@ -39,6 +40,17 @@ ActiveRecord::Schema.define(:version => 20110911060858) do
     t.float    "totale_importo", :default => 0.0
     t.float    "latitude"
     t.float    "longitude"
+  end
+
+  create_table "appunti_to_import_bergami", :id => false, :force => true do |t|
+    t.string  "destinatario"
+    t.string  "Note1"
+    t.string  "Note2"
+    t.string  "Telefono"
+    t.string  "IdScuola"
+    t.string  "Stato"
+    t.integer "scuola_id"
+    t.string  "note"
   end
 
   create_table "appunto_righe", :force => true do |t|
@@ -175,13 +187,13 @@ ActiveRecord::Schema.define(:version => 20110911060858) do
     t.string  "IdLibro",      :limit => 13
     t.integer "IdMateria",                  :null => false
     t.string  "Anno",         :limit => 4
-    t.integer "Nuove",        :limit => 2
-    t.integer "Perse",        :limit => 2
-    t.integer "NrSez",        :limit => 2
-    t.integer "Saldo",        :limit => 2
-    t.integer "NrCopie",      :limit => 2
+    t.integer "Nuove"
+    t.integer "Perse"
+    t.integer "NrSez"
+    t.integer "Saldo"
+    t.integer "NrCopie"
     t.string  "IdTipo",       :limit => 2
-    t.integer "TipoAdozione", :limit => 2
+    t.integer "TipoAdozione"
   end
 
   add_index "scuole_adozioni", ["IdAdozione"], :name => "IdAdozione", :unique => true
@@ -190,11 +202,11 @@ ActiveRecord::Schema.define(:version => 20110911060858) do
   create_table "scuole_classi", :id => false, :force => true do |t|
     t.integer "IdClasse",                :null => false
     t.string  "IdScuola",  :limit => 12
-    t.integer "Classe",    :limit => 2,  :null => false
+    t.integer "Classe",                  :null => false
     t.string  "Sezioni",   :limit => 20, :null => false
     t.string  "Sigla",     :limit => 5
-    t.integer "NrSezioni", :limit => 2
-    t.integer "NrAlunni",  :limit => 2
+    t.integer "NrSezioni"
+    t.integer "NrAlunni"
   end
 
   create_table "scuole_to_export", :id => false, :force => true do |t|
@@ -215,6 +227,26 @@ ActiveRecord::Schema.define(:version => 20110911060858) do
     t.string  "IdDirezione",  :limit => 12
     t.string  "IdScuola",     :limit => 12
     t.integer "id"
+  end
+
+  create_table "scuole_to_import_bergami", :id => false, :force => true do |t|
+    t.integer "id"
+    t.integer "ancestry"
+    t.string  "nome_scuola"
+    t.string  "citta"
+    t.string  "provincia"
+    t.integer "user_id"
+    t.string  "telefono"
+    t.string  "fax"
+    t.string  "email"
+    t.string  "destinatario"
+    t.string  "indirizzo"
+    t.string  "cap"
+    t.string  "scuola_old_id"
+    t.string  "ancestry_old"
+    t.string  "tipo"
+    t.float   "latitude"
+    t.float   "longitude"
   end
 
   create_table "taggings", :force => true do |t|
@@ -259,6 +291,8 @@ ActiveRecord::Schema.define(:version => 20110911060858) do
     t.string   "username"
     t.string   "phone"
     t.string   "name"
+    t.string   "codice_fiscale"
+    t.string   "partita_iva"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

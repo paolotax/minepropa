@@ -18,7 +18,8 @@ pdf.repeat :all do
       pdf.text "tel 051 6342585  fax 051 6341521"
       pdf.text "cell #{current_user.phone}" unless current_user.nil?
       pdf.text "email #{current_user.email}" unless current_user.nil?
-    
+      pdf.text "partita iva #{current_user.partita_iva}" unless current_user.nil?
+      pdf.text "codice fiscale #{current_user.codice_fiscale}" unless current_user.nil?
 
       pdf.bounding_box [pdf.bounds.width / 2.0, pdf.bounds.top - 55.mm], :width => pdf.bounds.width / 2.0 do
         if !@scuola.indirizzi.empty?

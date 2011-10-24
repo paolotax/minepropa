@@ -10,29 +10,34 @@
       .field
         = f.label :username, 'Nome utente'
         = f.text_field :username
-    %p
-      = f.label :email
-      %br/
-      = f.text_field :email  
-    %p
-      = f.label :password
-      %i (leave blank if you don't want to change it)
-      %br/
-      = f.password_field :password
-    %p
-      = f.label :password_confirmation
-      %br/
-      = f.password_field :password_confirmation
-    %p
-      = f.label :current_password
-      %i (we need your current password to confirm your changes)
-      %br/
-      = f.password_field :current_password
-    %p
-      = f.label :phone, 'Cellulare'
-      %br/
-      = f.phone_field :phone
-    %p= f.submit "Update"
+      .field
+        = f.label :email
+        = f.text_field :email  
+      .field
+        = f.label :password
+        = f.password_field :password
+        %i (leave blank if you don't want to change it)
+      
+      .field
+        = f.label :password_confirmation
+        = f.password_field :password_confirmation
+      .field
+        = f.label :current_password
+        = f.password_field :current_password
+        %i (we need your current password to confirm your changes)
+      
+      .field
+        = f.label :phone, 'Cellulare'
+        = f.phone_field :phone
+      .field
+        = f.label :codice_fiscale, 'Codice Fiscale'
+        = f.text_field :codice_fiscale
+      .field
+        = f.label :partita_iva, 'Partita IVA'
+        = f.text_field :partita_iva
+    
+    %fieldset= f.submit "Update"
+  
   %h3 Cancel my account
   %p
     Unhappy? #{link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete}.
