@@ -2,11 +2,7 @@
 %html
   %head
     %title= yield :title || "Untitled"
-    
     = stylesheet_link_tag 'compiled/devise_layout.css', :media => 'screen, print'
-
-    / = stylesheet_link_tag 'scaffold.css'
-    
     = stylesheet_link_tag 'mobile' if mobile_device?
     = csrf_meta_tag
     = yield :head

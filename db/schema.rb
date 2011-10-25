@@ -42,17 +42,6 @@ ActiveRecord::Schema.define(:version => 20111024141105) do
     t.float    "longitude"
   end
 
-  create_table "appunti_to_import_bergami", :id => false, :force => true do |t|
-    t.string  "destinatario"
-    t.string  "Note1"
-    t.string  "Note2"
-    t.string  "Telefono"
-    t.string  "IdScuola"
-    t.string  "Stato"
-    t.integer "scuola_id"
-    t.string  "note"
-  end
-
   create_table "appunto_righe", :force => true do |t|
     t.integer  "libro_id"
     t.integer  "appunto_id"
@@ -227,26 +216,6 @@ ActiveRecord::Schema.define(:version => 20111024141105) do
     t.string  "IdDirezione",  :limit => 12
     t.string  "IdScuola",     :limit => 12
     t.integer "id"
-  end
-
-  create_table "scuole_to_import_bergami", :id => false, :force => true do |t|
-    t.integer "id"
-    t.integer "ancestry"
-    t.string  "nome_scuola"
-    t.string  "citta"
-    t.string  "provincia"
-    t.integer "user_id"
-    t.string  "telefono"
-    t.string  "fax"
-    t.string  "email"
-    t.string  "destinatario"
-    t.string  "indirizzo"
-    t.string  "cap"
-    t.string  "scuola_old_id"
-    t.string  "ancestry_old"
-    t.string  "tipo"
-    t.float   "latitude"
-    t.float   "longitude"
   end
 
   create_table "taggings", :force => true do |t|

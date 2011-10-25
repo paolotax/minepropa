@@ -54,7 +54,7 @@
     = stylesheet_link_tag 'mobile' if mobile_device?
     = csrf_meta_tag
     = yield :head
-  %body{:class => page_class}
+  %body{:class => "#{Rails.env} #{page_class}"}
     #loading.hidden
       caricamento...
     #header
