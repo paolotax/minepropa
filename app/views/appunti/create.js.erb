@@ -1,32 +1,25 @@
 <% if @appunto.new_record? %>
-	
-	
-
 	$("input#appunto_scuola_nome_scuola").effect("highlight", { color: 'red'}, 5000);
-	
 <% else %>
 
-<%- notice = view_context.link_to("annulla", revert_version_path(@appunto.versions.scoped.last), :method => :post) %>
+	<%- notice = view_context.link_to("annulla", revert_version_path(@appunto.versions.scoped.last), :method => :post) %>
+	if ($('.notice').length) {
+	  $(".notice").html("Appunto inserito. " + '<%= notice %>' );
+	} else {
+	  $('div#content').prepend('<div class="notice success"></div>');
+	  $(".notice").html("Appunto inserito. " + '<%= notice %>' );
+	}
+	$("<%= escape_javascript(render(:partial => 'appunti/appunto', :locals => { :appunto => @appunto, :app_righe => true })) %>").insertBefore("#appunti li:first");
+	/* Highlight the new comment */
+	$("#appunto_<%= @appunto.id %>_visita_").effect("highlight", {}, 3000);
 
-if ($('.notice').length) {
-  $(".notice").html("Appunto inserito. " + '<%= notice %>' );
-} else {
-  $('div#content').prepend('<div class="notice success"></div>');
-  $(".notice").html("Appunto inserito. " + '<%= notice %>' );
-}
+	$(".best_in_place").best_in_place();
 
-$("<%= escape_javascript(render(:partial => 'appunti/appunto', :locals => { :appunto => @appunto, :app_righe => true })) %>").insertBefore("#appunti li:first");
-
-/* Highlight the new comment */
-$("#appunto_<%= @appunto.id %>_visita_").effect("highlight", {}, 3000);
-
-$(".best_in_place").best_in_place();
-
-/* Reset the comment form */
-$("#new_appunto")[0].reset();
-// $(".token-input-token-facebook").remove();
-// $('.token-input-list-facebook').hide();
-// $('#task_create_input').show();
-// $('.create_task_more').hide();
+	/* Reset the comment form */
+	$("#new_appunto")[0].reset();
+	// $(".token-input-token-facebook").remove();
+	// $('.token-input-list-facebook').hide();
+	// $('#task_create_input').show();
+	// $('.create_task_more').hide();
 
 <% end %>
