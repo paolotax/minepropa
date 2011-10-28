@@ -35,6 +35,13 @@
   end
 
   pdf.move_down(200)
+  
+  pdf.text( "PIEGHI DI LIBRI", :size => 16, :style => :bold )
+  
+  pdf.move_down(200)
+  
+  
+  
   pdf.text @appunto.note, :size => 12
   pdf.move_down(20)
   pdf.text "tel. " + @appunto.telefono unless @appunto.telefono.nil?
@@ -44,6 +51,7 @@
   pdf.text "Ordine del " + l(@appunto.created_at, :format => :only_date), :size => 14
   
   pdf.move_down(20)
+
   
   
   unless @appunto.appunto_righe.empty?
