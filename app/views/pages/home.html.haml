@@ -2,10 +2,23 @@
 
 = render :partial => 'shared/search_appunti'
 = render :partial => 'appunti/appunto_form'
-= render :partial => 'appunti/citta_list'
 
 #hidden_count.hidden= @recent.length
 
+
+- if @tag || params[:provincia].present?
+  %div.filters
+    %strong Filtering:
+    - if params[:provincia].present?
+      %span.filter
+        = params[:provincia]
+        = link_to "x", params.merge(:provincia => nil, :page => nil).delete(:_pjax => true)
+    - if @tag
+      %span.filter
+        = @tag.display_name
+        = link_to "x", params.merge(:tag_id => nil, :page => nil)
+
+= render :partial => 'appunti/citta_list'
 #visible_taskslist_title.group-title Appunti recenti
 = render :partial => 'appunti/appunti_header'
 = render :partial => 'appunti/appunti', :locals => {:appunti => @recent, :righe => false}

@@ -48,7 +48,7 @@ module ApplicationHelper
   end
   
 
-  def get_provincia_link(provincia) 
+  def link_to_provincia(provincia) 
     
     content_tag :li, :class => 'provincia' do
       link_to(params.merge(:provincia => provincia), :class => provincia.downcase) do

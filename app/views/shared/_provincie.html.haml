@@ -1,6 +1,9 @@
+%h2
+  %a.gear
+  %div Provincie:
 #provincie_block
   %ul.links
     - current_user.get_provincie.each do |p|
       - unless p.blank?
-        = get_provincia_link(p.provincia)
+        = link_to_provincia p.provincia
   .clear
