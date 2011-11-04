@@ -204,6 +204,7 @@ DEPENDENCIES
   nested_form
   paper_trail
   pg
+  prawn
   prawnto
   rails (= 3.0.10)
   rails3-jquery-autocomplete

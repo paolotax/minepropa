@@ -1,6 +1,6 @@
 class AppuntiController < ApplicationController
   
-  prawnto :prawn => { :page_size => 'A4', :top_margin => 10 }, :inline => false, :filename => "sovrapacchi"
+  #prawnto :prawn => { :page_size => 'A4', :top_margin => 10 }, :inline => false, :filename => "sovrapacchi"
   
   autocomplete :scuola, :nome_scuola
   
@@ -24,7 +24,7 @@ class AppuntiController < ApplicationController
   end
   
   def show
-    @appunto = Appunto.find(params[:id])
+    @appunto = Appunto.includes(:appunto_righe => [:libro]).find(params[:id])
     @visita = Visita.new
     
     
@@ -32,7 +32,14 @@ class AppuntiController < ApplicationController
       format.html  # show.html.erb
       format.js
       format.json  { render :json => @appunto }
-      format.pdf   { render = false }
+      # format.pdf   { render = false }
+      
+      format.pdf do
+        pdf = AppuntoPdf.new(@appunto, view_context)
+        send_data pdf.render, filename: "appunto_#{@appunto.id}.pdf",
+                              type: "application/pdf",
+                              disposition: "inline"
+      end
     end
   end
 

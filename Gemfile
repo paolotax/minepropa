@@ -11,7 +11,13 @@ gem "haml-rails"
 gem 'compass'
 
 gem "hpricot"
+
+gem 'prawn'
+
 gem 'prawnto'
+
+
+
 gem 'devise'
 gem 'ruby_parser'
 
