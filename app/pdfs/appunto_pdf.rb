@@ -2,41 +2,27 @@
 
 class AppuntoPdf < Prawn::Document
   
-  def initialize(appunto, view)
+  def initialize(appunti, view)
     super()
-    @appunto = appunto
+    @appunti = appunti
     @view = view
-    @righe = appunto.appunto_righe
-    intestazione
-    destinatario
-    appunto_number
-    line_items unless @righe.blank?
-    mess
+    
+    @appunti.each do |a|
+      @righe = a.appunto_righe
+      intestazione(a)
+      destinatario(a)
+      appunto_number(a)
+      line_items(a) unless @righe.blank?
+      start_new_page unless a == @appunti.last
+    end
     #     total_price
   end
   
-  def mess
-    # stroke_axis
-    # line_to and curve_to
-    stroke do
-      move_to 0, 0
-      line_to 100, 100
-      line_to 0, 100
-      curve_to [150, 250], :bounds => [[20, 200], [120, 200]]
-      curve_to [200, 0], :bounds => [[150, 200], [450, 10]]
-    end
-    # line and curve
-    stroke do
-      line [300,200], [400,50]
-      curve [500, 0], [400, 200], :bounds => [[600, 300], [300, 390]]
-    end
+  def appunto_number(appunto)
+    text "ordine \##{appunto.id} del #{l(appunto.created_at)}", size: 16, style: :bold
   end
   
-  def appunto_number
-    text "ordine \##{@appunto.id} del #{l(@appunto.created_at)}", size: 16, style: :bold
-  end
-  
-  def line_items
+  def line_items(appunto)
     table line_item_rows, :border_style => :grid,
                           :row_colors => ["FFFFFF","DDDDDD"],
                           :headers => ["Titolo", "Quantità", "Pr.Copertina", "Prezzo", "Importo"],
@@ -58,12 +44,12 @@ class AppuntoPdf < Prawn::Document
     @view.l(data,  :format => :only_date)
   end
   
-  def total_price    
+  def total_price(appunto)    
     move_down 15
-    text "Total Price: #{price(@appunto.total_price)}", size: 16, style: :bold
+    text "Total Price: #{price(appunto.total_price)}", size: 16, style: :bold
   end
   
-  def intestazione
+  def intestazione(appunto)
 
     bounding_box([-10, 730], :width => 200, :height => 35) do
       #stroke_bounds
@@ -84,14 +70,14 @@ class AppuntoPdf < Prawn::Document
     end
   end
   
-  def destinatario
-    
+  def destinatario(appunto)
+  
     bounding_box [bounds.width / 2.0, bounds.top], :width => 300 do
       move_down(200)
-      text @appunto.destinatario, :size => 12, :style => :bold, :spacing => 4
+      text appunto.destinatario, :size => 12, :style => :bold, :spacing => 4
 
-      if !@appunto.scuola.indirizzi.empty?
-        indirizzo = @appunto.scuola.indirizzi.first
+      if !appunto.scuola.indirizzi.empty?
+        indirizzo = appunto.scuola.indirizzi.first
         text indirizzo.destinatario,  :size => 14, :style => :bold, :spacing => 4
         text indirizzo.indirizzo
         text indirizzo.cap + ' ' + indirizzo.citta + ' ' + indirizzo.provincia

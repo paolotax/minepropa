@@ -35,7 +35,8 @@ class AppuntiController < ApplicationController
       # format.pdf   { render = false }
       
       format.pdf do
-        pdf = AppuntoPdf.new(@appunto, view_context)
+        @appunti = Array(@appunto)
+        pdf = AppuntoPdf.new(@appunti, view_context)
         send_data pdf.render, filename: "appunto_#{@appunto.id}.pdf",
                               type: "application/pdf",
                               disposition: "inline"
@@ -191,8 +192,13 @@ class AppuntiController < ApplicationController
   
   def print_multiple
     #raise params.inspect
-    @appunti = Appunto.includes(:appunto_righe).find(params[:appunti_ids])
-    render 'print_multiple.pdf'
+    @appunti = Appunto.includes(:appunto_righe => [:libro]).find(params[:appunti_ids])
+    
+    pdf = AppuntoPdf.new(@appunti, view_context)
+    send_data pdf.render, filename: "appunti_da_stampare.pdf",
+                          type: "application/pdf",
+                          disposition: "inline"
+    #render 'print_multiple.pdf'
   end 
   
   def delete_multiple
