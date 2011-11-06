@@ -1,28 +1,66 @@
 # encoding: utf-8
+require "prawn/measurement_extensions"
 
 class AppuntoPdf < Prawn::Document
   
+  include LayoutPdf
+  
   def initialize(appunti, view)
-    super()
+    super(:page_size => "A4", 
+          :page_layout => :portrait,
+          :margin => [1.cm, 15.mm],
+          :info => {
+              :Title => "sovrapacchi",
+              :Author => "todo-propa",
+              :Subject => "sovrapacchi",
+              :Keywords => "sovrapacchi appunti todo-propa",
+              :Creator => "todo-propa",
+              :Producer => "Prawn",
+              :CreationDate => Time.now
+          })
     @appunti = appunti
     @view = view
-    
+
     @appunti.each do |a|
+      
       @righe = a.appunto_righe
-      intestazione(a)
+      intestazione
       destinatario(a)
-      appunto_number(a)
-      line_items(a) unless @righe.blank?
+      pieghi_di_libri?(a)
+      
+      note(a)
+      unless @righe.blank?
+        appunto_number(a)
+        line_items(a) 
+        totali(a)
+      end
+      
       start_new_page unless a == @appunti.last
     end
-    #     total_price
+  end
+  
+  def pieghi_di_libri?(appunto)
+    #stroke_rectangle [0, bounds.top - 100], 16, 150
+    text_box("PIEGHI DI LIBRI",
+            at: [0, bounds.top - 250],
+            size: 13, style: :bold, rotate: 90)
+  end
+  
+  def note(appunto)
+    move_down 40
+    stroke_horizontal_rule
+    move_down 10
+    text appunto.note, :size => 13
+    text "tel. #{appunto.telefono}", :size => 13 unless appunto.telefono.blank?
   end
   
   def appunto_number(appunto)
-    text "ordine \##{appunto.id} del #{l(appunto.created_at)}", size: 16, style: :bold
+    move_down 20
+    text "ordine \##{appunto.id} del #{l(appunto.created_at)}", size: 13, style: :bold
   end
   
   def line_items(appunto)
+    move_down 10
     table line_item_rows, :border_style => :grid,
                           :row_colors => ["FFFFFF","DDDDDD"],
                           :headers => ["Titolo", "Quantità", "Pr.Copertina", "Prezzo", "Importo"],
@@ -37,43 +75,32 @@ class AppuntoPdf < Prawn::Document
   end
   
   def price(num)
-    @view.number_to_currency(num)
+    @view.number_to_currency(num, :locale => :it)
   end
   
   def l(data)
-    @view.l(data,  :format => :only_date)
+    @view.l data, :format => :only_date
   end
   
-  def total_price(appunto)    
-    move_down 15
-    text "Total Price: #{price(appunto.total_price)}", size: 16, style: :bold
+  def t(data)
+    @view.t data
   end
   
-  def intestazione(appunto)
-
-    bounding_box([-10, 730], :width => 200, :height => 35) do
-      #stroke_bounds
-      stef = "#{RAILS_ROOT}/public/images/giunti_scuola.jpg"
-      image stef, :width => 200, :height => 35
-    end
-    bounding_box([250, 730], :width => 300, :height => 100) do
-      #stroke_bounds
-      font_size 10
-      text "Agente di Zona - #{current_user.name}", :size => 13, :align => :right unless current_user.nil?
-      text "Via Zanardi 376/2",  :align => :right
-      text "40131 Bologna BO",   :align => :right
-      move_down 10
-      text "tel 051 6342585  fax 051 6341521", :align => :right
-      text "cell #{current_user.phone}", :align => :right unless current_user.nil?
-      text "email #{current_user.email}", :align => :right unless current_user.nil?
-      move_down 10
-    end
+  def totali(appunto)  
+    move_down(10)
+    text "Totale copie: #{appunto.totale_copie}", :size => 14, :style => :bold
+    text "Totale importo: #{price(appunto.totale_importo)}", :size => 14, :style => :bold
+  end
+  
+  def intestazione
+    logo
+    agente(current_user) unless current_user.nil?
   end
   
   def destinatario(appunto)
   
-    bounding_box [bounds.width / 2.0, bounds.top], :width => 300 do
-      move_down(200)
+    bounding_box [bounds.width / 2.0, bounds.top - 150], :width => bounds.width / 2.0, :height => 100 do
+      #stroke_bounds
       text appunto.destinatario, :size => 12, :style => :bold, :spacing => 4
 
       if !appunto.scuola.indirizzi.empty?
