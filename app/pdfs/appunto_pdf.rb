@@ -43,7 +43,7 @@ class AppuntoPdf < Prawn::Document
     #stroke_rectangle [0, bounds.top - 100], 16, 150
     text_box("PIEGHI DI LIBRI",
             at: [0, bounds.top - 250],
-            size: 13, style: :bold, rotate: 90) unless appunto.tag_list.find_index("posta")
+            size: 13, style: :bold, rotate: 90) if appunto.tag_list.find_index("posta")
   end
   
   def note(appunto)
