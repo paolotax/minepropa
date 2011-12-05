@@ -2,7 +2,6 @@
 # four configuration values can also be set straight in your models.
 Devise.setup do |config|
   
-  config.authentication_keys = [ :username ]
   config.password_length = 4..20
   
   # ==> Mailer Configuration
@@ -25,7 +24,8 @@ Devise.setup do |config|
   # parameters are used only when authenticating and not when retrieving from
   # session. If you need permissions, you should implement that in a before filter.
   # config.authentication_keys = [ :email ]
-
+  config.authentication_keys = [ :username ]
+  
   # Tell if authentication through request.params is enabled. True by default.
   # config.params_authenticatable = true
 
