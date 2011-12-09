@@ -102,7 +102,11 @@ class AppuntoRiga < ActiveRecord::Base
   end
   
   def sconto
-    100 - ((prezzo_unitario * 100).to_f / prezzo_copertina)
+    if prezzo_copertina > prezzo_unitario
+      100 - ((prezzo_unitario * 100).to_f / prezzo_copertina)
+    else
+      0.0
+    end
   end
   
   
