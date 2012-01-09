@@ -22,7 +22,12 @@ $(document).ready(function(){
 	// 	timeout: 20000		
 	// });
 	
-	$("#scuola .nav a.tab").pjax([data-pjax-container])
+  $("#scuola .nav a.tab").pjax({
+    container: '#content',
+    timeout: 20000
+  });
+	
+  // $("#scuola .nav a.tab").pjax([data-pjax-container])
 	
 	$(".links a").pjax({
 		container: '#content',
